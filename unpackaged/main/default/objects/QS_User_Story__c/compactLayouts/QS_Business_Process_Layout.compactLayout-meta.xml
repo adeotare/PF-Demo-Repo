@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Business_Process_Layout</fullName>
+    <fields>Name</fields>
+    <fields>QS_L2_Reference__c</fields>
+    <fields>QS_Track__c</fields>
+    <fields>QS_Process_Link__c</fields>
+    <fields>QS_Sort_Order__c</fields>
+    <label>Business Process Layout</label>
+</CompactLayout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event</fullName>
+    <active>true</active>
+    <label>Event</label>
+    <picklistValues>
+        <picklist>Detail__c</picklist>
+        <values>
+            <fullName>In person</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_Type__c</picklist>
+        <values>
+            <fullName>Active Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Audit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Demo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discovery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executive Level</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Generic Demo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Score Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incident Response</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Acquia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Co-Sell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QBR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Success Plan Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Welcome Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wellness Call</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Letter%2FQuote</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

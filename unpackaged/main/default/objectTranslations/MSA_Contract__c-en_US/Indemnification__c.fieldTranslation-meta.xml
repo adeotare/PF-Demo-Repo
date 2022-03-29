@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Indemnification --></label>
+        <name>Indemnification__c</name>
+        <picklistValues>
+            <masterLabel>Expansive - Covers gross negligence and IP outside US, Canada or Europe</masterLabel>
+            <translation><!-- Expansive - Covers gross negligence and IP outside US, Canada or Europe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expansive - IP Indemnification outside US, Canada or Europe</masterLabel>
+            <translation><!-- Expansive - IP Indemnification outside US, Canada or Europe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expansive - covers gross negligence</masterLabel>
+            <translation><!-- Expansive - covers gross negligence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silent</masterLabel>
+            <translation><!-- Silent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard Language - Limited</masterLabel>
+            <translation><!-- Standard Language - Limited --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

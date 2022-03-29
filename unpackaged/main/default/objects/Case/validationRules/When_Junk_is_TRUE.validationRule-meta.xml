@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>When_Junk_is_TRUE</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ Junk__c = TRUE,
+NOT(  ISBLANK(TEXT( Reason) )),
+NOT( ISBLANK( Purchased_Product__c ))  
+)</errorConditionFormula>
+    <errorMessage>Update Case Reason Field</errorMessage>
+</ValidationRule>

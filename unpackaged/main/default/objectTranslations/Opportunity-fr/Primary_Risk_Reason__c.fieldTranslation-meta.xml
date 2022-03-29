@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Primary Risk Reason --></label>
+        <name>Primary_Risk_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Competitive Pressure</masterLabel>
+            <translation><!-- Competitive Pressure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Divestiture of Asset(s)</masterLabel>
+            <translation><!-- Divestiture of Asset(s) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M&amp;A</masterLabel>
+            <translation><!-- M&amp;A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Satisfaction</masterLabel>
+            <translation><!-- Product Satisfaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renegotiation Cost</masterLabel>
+            <translation><!-- Renegotiation Cost --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- System/functional area within the track to which the requirement applies. --></help>
+        <label><!-- System Area --></label>
+        <name>QS_Area__c</name>
+        <picklistValues>
+            <masterLabel>Account Health Management</masterLabel>
+            <translation><!-- Account Health Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Account Management</masterLabel>
+            <translation><!-- Account Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Activity Management</masterLabel>
+            <translation><!-- Activity Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Analytics Management (Reporting &amp; Supporting REQs)</masterLabel>
+            <translation><!-- Analytics Management (Reporting &amp; Supporting REQs) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bookings Management</masterLabel>
+            <translation><!-- Bookings Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign Management</masterLabel>
+            <translation><!-- Campaign Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Collaboration Management</masterLabel>
+            <translation><!-- Collaboration Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Community/Portal Management (Customer/Partner)</masterLabel>
+            <translation><!-- Community/Portal Management (Customer/Partner) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact Management</masterLabel>
+            <translation><!-- Contact Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact Role Management (Account &amp; Oppty)</masterLabel>
+            <translation><!-- Contact Role Management (Account &amp; Oppty) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Content Management and/or Knowledge</masterLabel>
+            <translation><!-- Content Management and/or Knowledge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Entitlement &amp; SLA Management</masterLabel>
+            <translation><!-- Customer Entitlement &amp; SLA Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Migration</masterLabel>
+            <translation><!-- Data Migration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Quality Management</masterLabel>
+            <translation><!-- Data Quality Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - Collections/Payment Management</masterLabel>
+            <translation><!-- Finance - Collections/Payment Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - ERP Account Management</masterLabel>
+            <translation><!-- Finance - ERP Account Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - ERP Asset Management</masterLabel>
+            <translation><!-- Finance - ERP Asset Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - ERP Product Management</masterLabel>
+            <translation><!-- Finance - ERP Product Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - ERP Project/Expense Management</masterLabel>
+            <translation><!-- Finance - ERP Project/Expense Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - NetSuite</masterLabel>
+            <translation><!-- Finance - NetSuite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - Other ERP</masterLabel>
+            <translation><!-- Finance - Other ERP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - Record to Report</masterLabel>
+            <translation><!-- Finance - Record to Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - Revenue Management</masterLabel>
+            <translation><!-- Finance - Revenue Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - Vendor Management</masterLabel>
+            <translation><!-- Finance - Vendor Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - ZAB</masterLabel>
+            <translation><!-- Finance - ZAB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Idea Management</masterLabel>
+            <translation><!-- Idea Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration</masterLabel>
+            <translation><!-- Integration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Management</masterLabel>
+            <translation><!-- Lead Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Master Agreement Contract Management</masterLabel>
+            <translation><!-- Master Agreement Contract Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity Close/Post-Mortem Management</masterLabel>
+            <translation><!-- Opportunity Close/Post-Mortem Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity Creation &amp; Management</masterLabel>
+            <translation><!-- Opportunity Creation &amp; Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity Deal Desk Management</masterLabel>
+            <translation><!-- Opportunity Deal Desk Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity Forecast Management</masterLabel>
+            <translation><!-- Opportunity Forecast Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity Renewal Management</masterLabel>
+            <translation><!-- Opportunity Renewal Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity Sales Process Management</masterLabel>
+            <translation><!-- Opportunity Sales Process Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity Splits/Commission Management</masterLabel>
+            <translation><!-- Opportunity Splits/Commission Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order/Fulfillment Management</masterLabel>
+            <translation><!-- Order/Fulfillment Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMIS</masterLabel>
+            <translation><!-- PMIS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS Expense Management</masterLabel>
+            <translation><!-- PS Expense Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS Project Management</masterLabel>
+            <translation><!-- PS Project Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS Resource &amp; Time Management</masterLabel>
+            <translation><!-- PS Resource &amp; Time Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner/Channel Management</masterLabel>
+            <translation><!-- Partner/Channel Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product &amp; Pricebook Management</masterLabel>
+            <translation><!-- Product &amp; Pricebook Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purchased Products/Subscription Management</masterLabel>
+            <translation><!-- Purchased Products/Subscription Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote Approval Management</masterLabel>
+            <translation><!-- Quote Approval Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote Output Document Management</masterLabel>
+            <translation><!-- Quote Output Document Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quoting, Pricing &amp; Discount Management (CPQ Setup)</masterLabel>
+            <translation><!-- Quoting, Pricing &amp; Discount Management (CPQ Setup) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support Case Management</masterLabel>
+            <translation><!-- Support Case Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Setup</masterLabel>
+            <translation><!-- System Setup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Team &amp; Territory Management (Account &amp; Oppty)</masterLabel>
+            <translation><!-- Team &amp; Territory Management (Account &amp; Oppty) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Management (Permissions, Profiles, Roles)</masterLabel>
+            <translation><!-- User Management (Permissions, Profiles, Roles) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Productivity Management (UI &amp; Automation)</masterLabel>
+            <translation><!-- User Productivity Management (UI &amp; Automation) --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

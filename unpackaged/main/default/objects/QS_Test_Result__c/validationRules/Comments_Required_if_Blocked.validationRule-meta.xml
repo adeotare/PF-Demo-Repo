@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Comments_Required_if_Blocked</fullName>
+    <active>true</active>
+    <description>Comments are required if test result is marked as &quot;Blocked&quot;</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( QS_Test_Result_Status__c , &quot;Blocked&quot;),
+QS_Comments__c = &quot;&quot;)</errorConditionFormula>
+    <errorDisplayField>QS_Comments__c</errorDisplayField>
+    <errorMessage>Comments required</errorMessage>
+</ValidationRule>

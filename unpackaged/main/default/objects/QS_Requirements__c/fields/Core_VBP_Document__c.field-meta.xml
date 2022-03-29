@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Core_VBP_Document__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates which VBP document pertains to this requirement.</inlineHelpText>
+    <label>Core VBP Document</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>F&amp;A: Customer Contract Database</fullName>
+                <default>false</default>
+                <label>F&amp;A: Customer Contract Database</label>
+            </value>
+            <value>
+                <fullName>F&amp;A: Contract Excellence &amp; Lifecycle Management</fullName>
+                <default>false</default>
+                <label>F&amp;A: Contract Excellence &amp; Lifecycle Management</label>
+            </value>
+            <value>
+                <fullName>F&amp;A: Renewals &amp; Revenue Sweep</fullName>
+                <default>false</default>
+                <label>F&amp;A: Renewals &amp; Revenue Sweep</label>
+            </value>
+            <value>
+                <fullName>F&amp;A: Deal Desk</fullName>
+                <default>false</default>
+                <label>F&amp;A: Deal Desk</label>
+            </value>
+            <value>
+                <fullName>GTM:_CAPDB_Customer_and_Prospect_Database</fullName>
+                <default>false</default>
+                <label>GTM: CAPDB (Customer and Prospect Database)</label>
+            </value>
+            <value>
+                <fullName>GTM: Sales Compensation Plan</fullName>
+                <default>false</default>
+                <label>GTM: Sales Compensation Plan</label>
+            </value>
+            <value>
+                <fullName>GTM: Territory Mapping &amp; Coverage</fullName>
+                <default>false</default>
+                <label>GTM: Territory Mapping &amp; Coverage</label>
+            </value>
+            <value>
+                <fullName>GTM: Vista Value Selling System</fullName>
+                <default>false</default>
+                <label>GTM: Vista Value Selling System</label>
+            </value>
+            <value>
+                <fullName>GTM: Customer Health &amp; Heal Desk</fullName>
+                <default>false</default>
+                <label>GTM: Customer Health &amp; Heal Desk</label>
+            </value>
+            <value>
+                <fullName>GTM: Sales Forecasting Process</fullName>
+                <default>false</default>
+                <label>GTM: Sales Forecasting Process</label>
+            </value>
+            <value>
+                <fullName>GTM: Win-Loss Reporting Process</fullName>
+                <default>false</default>
+                <label>GTM: Win-Loss Reporting Process</label>
+            </value>
+            <value>
+                <fullName>BOSS: BOSS Transformation</fullName>
+                <default>false</default>
+                <label>BOSS: BOSS Transformation</label>
+            </value>
+            <value>
+                <fullName>GTM: Lead Management</fullName>
+                <default>false</default>
+                <label>GTM: Lead Management</label>
+            </value>
+            <value>
+                <fullName>GTM: Lead Development</fullName>
+                <default>false</default>
+                <label>GTM: Lead Development</label>
+            </value>
+            <value>
+                <fullName>GTM: Lead Nurturing</fullName>
+                <default>false</default>
+                <label>GTM: Lead Nurturing</label>
+            </value>
+            <value>
+                <fullName>GTM: Customer Experience Management Using Net Promoter</fullName>
+                <default>false</default>
+                <label>GTM: Customer Experience Management Using Net Promoter</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

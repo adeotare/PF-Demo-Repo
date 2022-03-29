@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_and_Notes_for_Retesting</fullName>
+    <active>true</active>
+    <description>Failure Reason and Resolution Notes is required for Ready for retest</description>
+    <errorConditionFormula>( QS_Resolver_Notes__c =&#39;&#39; ||  text(QS_Failure_Reason__c)=&#39;&#39;) &amp;&amp;
+ QS_Ready_for_Retest__c =true</errorConditionFormula>
+    <errorMessage>Failure reason and resolution note are needed if Ready for Test</errorMessage>
+</ValidationRule>

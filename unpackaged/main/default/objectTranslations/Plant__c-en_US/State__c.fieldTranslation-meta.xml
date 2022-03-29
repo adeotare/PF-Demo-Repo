@@ -1,0 +1,1433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- State/Province --></label>
+        <name>State__c</name>
+        <picklistValues>
+            <masterLabel>Acre</masterLabel>
+            <translation><!-- Acre --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agrigento</masterLabel>
+            <translation><!-- Agrigento --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aguascalientes</masterLabel>
+            <translation><!-- Aguascalientes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alabama</masterLabel>
+            <translation><!-- Alabama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alagoas</masterLabel>
+            <translation><!-- Alagoas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaska</masterLabel>
+            <translation><!-- Alaska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alberta</masterLabel>
+            <translation><!-- Alberta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alessandria</masterLabel>
+            <translation><!-- Alessandria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amapá</masterLabel>
+            <translation><!-- Amapá --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amazonas</masterLabel>
+            <translation><!-- Amazonas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ancona</masterLabel>
+            <translation><!-- Ancona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Andaman and Nicobar Islands</masterLabel>
+            <translation><!-- Andaman and Nicobar Islands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Andhra Pradesh</masterLabel>
+            <translation><!-- Andhra Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Anhui</masterLabel>
+            <translation><!-- Anhui --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aosta</masterLabel>
+            <translation><!-- Aosta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arezzo</masterLabel>
+            <translation><!-- Arezzo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arizona</masterLabel>
+            <translation><!-- Arizona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arkansas</masterLabel>
+            <translation><!-- Arkansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arunachal Pradesh</masterLabel>
+            <translation><!-- Arunachal Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ascoli Piceno</masterLabel>
+            <translation><!-- Ascoli Piceno --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assam</masterLabel>
+            <translation><!-- Assam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asti</masterLabel>
+            <translation><!-- Asti --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Australian Capital Territory</masterLabel>
+            <translation><!-- Australian Capital Territory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Avellino</masterLabel>
+            <translation><!-- Avellino --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BENGALURU</masterLabel>
+            <translation><!-- BENGALURU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bahia</masterLabel>
+            <translation><!-- Bahia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baja California</masterLabel>
+            <translation><!-- Baja California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baja California Sur</masterLabel>
+            <translation><!-- Baja California Sur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bangalore</masterLabel>
+            <translation><!-- Bangalore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bari</masterLabel>
+            <translation><!-- Bari --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Barletta-Andria-Trani</masterLabel>
+            <translation><!-- Barletta-Andria-Trani --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Batangas</masterLabel>
+            <translation><!-- Batangas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beijing</masterLabel>
+            <translation><!-- Beijing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belluno</masterLabel>
+            <translation><!-- Belluno --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benevento</masterLabel>
+            <translation><!-- Benevento --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bergamo</masterLabel>
+            <translation><!-- Bergamo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Biella</masterLabel>
+            <translation><!-- Biella --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bihar</masterLabel>
+            <translation><!-- Bihar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bologna</masterLabel>
+            <translation><!-- Bologna --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bolzano</masterLabel>
+            <translation><!-- Bolzano --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brescia</masterLabel>
+            <translation><!-- Brescia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brindisi</masterLabel>
+            <translation><!-- Brindisi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>British Columbia</masterLabel>
+            <translation><!-- British Columbia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cagliari</masterLabel>
+            <translation><!-- Cagliari --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caltanissetta</masterLabel>
+            <translation><!-- Caltanissetta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campeche</masterLabel>
+            <translation><!-- Campeche --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campobasso</masterLabel>
+            <translation><!-- Campobasso --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carbonia-Iglesias</masterLabel>
+            <translation><!-- Carbonia-Iglesias --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carlow</masterLabel>
+            <translation><!-- Carlow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caserta</masterLabel>
+            <translation><!-- Caserta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Catania</masterLabel>
+            <translation><!-- Catania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Catanzaro</masterLabel>
+            <translation><!-- Catanzaro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cavan</masterLabel>
+            <translation><!-- Cavan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ceará</masterLabel>
+            <translation><!-- Ceará --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chandigarh</masterLabel>
+            <translation><!-- Chandigarh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chhattisgarh</masterLabel>
+            <translation><!-- Chhattisgarh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chiapas</masterLabel>
+            <translation><!-- Chiapas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chieti</masterLabel>
+            <translation><!-- Chieti --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chihuahua</masterLabel>
+            <translation><!-- Chihuahua --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chinese Taipei</masterLabel>
+            <translation><!-- Chinese Taipei --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chongqing</masterLabel>
+            <translation><!-- Chongqing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clare</masterLabel>
+            <translation><!-- Clare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coahuila</masterLabel>
+            <translation><!-- Coahuila --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colima</masterLabel>
+            <translation><!-- Colima --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colorado</masterLabel>
+            <translation><!-- Colorado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Community of Madrid</masterLabel>
+            <translation><!-- Community of Madrid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Como</masterLabel>
+            <translation><!-- Como --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connecticut</masterLabel>
+            <translation><!-- Connecticut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coquimbo</masterLabel>
+            <translation><!-- Coquimbo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cork</masterLabel>
+            <translation><!-- Cork --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cosenza</masterLabel>
+            <translation><!-- Cosenza --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cremona</masterLabel>
+            <translation><!-- Cremona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Crotone</masterLabel>
+            <translation><!-- Crotone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cuneo</masterLabel>
+            <translation><!-- Cuneo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dadra and Nagar Haveli</masterLabel>
+            <translation><!-- Dadra and Nagar Haveli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daman and Diu</masterLabel>
+            <translation><!-- Daman and Diu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delaware</masterLabel>
+            <translation><!-- Delaware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delhi</masterLabel>
+            <translation><!-- Delhi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>District of Columbia</masterLabel>
+            <translation><!-- District of Columbia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distrito Federal</masterLabel>
+            <translation><!-- Distrito Federal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donegal</masterLabel>
+            <translation><!-- Donegal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dublin</masterLabel>
+            <translation><!-- Dublin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Durango</masterLabel>
+            <translation><!-- Durango --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enna</masterLabel>
+            <translation><!-- Enna --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Espírito Santo</masterLabel>
+            <translation><!-- Espírito Santo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federal District</masterLabel>
+            <translation><!-- Federal District --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fermo</masterLabel>
+            <translation><!-- Fermo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ferrara</masterLabel>
+            <translation><!-- Ferrara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florence</masterLabel>
+            <translation><!-- Florence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florida</masterLabel>
+            <translation><!-- Florida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foggia</masterLabel>
+            <translation><!-- Foggia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forlì-Cesena</masterLabel>
+            <translation><!-- Forlì-Cesena --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Frosinone</masterLabel>
+            <translation><!-- Frosinone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fujian</masterLabel>
+            <translation><!-- Fujian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Galway</masterLabel>
+            <translation><!-- Galway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gansu</masterLabel>
+            <translation><!-- Gansu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Genoa</masterLabel>
+            <translation><!-- Genoa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgia</masterLabel>
+            <translation><!-- Georgia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Goa</masterLabel>
+            <translation><!-- Goa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Goiás</masterLabel>
+            <translation><!-- Goiás --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gorizia</masterLabel>
+            <translation><!-- Gorizia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grosseto</masterLabel>
+            <translation><!-- Grosseto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guanajuato</masterLabel>
+            <translation><!-- Guanajuato --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guangdong</masterLabel>
+            <translation><!-- Guangdong --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guangxi</masterLabel>
+            <translation><!-- Guangxi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guerrero</masterLabel>
+            <translation><!-- Guerrero --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guizhou</masterLabel>
+            <translation><!-- Guizhou --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gujarat</masterLabel>
+            <translation><!-- Gujarat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GÖLBASI</masterLabel>
+            <translation><!-- GÖLBASI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hainan</masterLabel>
+            <translation><!-- Hainan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haryana</masterLabel>
+            <translation><!-- Haryana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii</masterLabel>
+            <translation><!-- Hawaii --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hebei</masterLabel>
+            <translation><!-- Hebei --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heilongjiang</masterLabel>
+            <translation><!-- Heilongjiang --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Henan</masterLabel>
+            <translation><!-- Henan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hidalgo</masterLabel>
+            <translation><!-- Hidalgo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Himachal Pradesh</masterLabel>
+            <translation><!-- Himachal Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hong Kong</masterLabel>
+            <translation><!-- Hong Kong --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hubei</masterLabel>
+            <translation><!-- Hubei --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hunan</masterLabel>
+            <translation><!-- Hunan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Idaho</masterLabel>
+            <translation><!-- Idaho --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illinois</masterLabel>
+            <translation><!-- Illinois --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Imperia</masterLabel>
+            <translation><!-- Imperia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indiana</masterLabel>
+            <translation><!-- Indiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iowa</masterLabel>
+            <translation><!-- Iowa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Isernia</masterLabel>
+            <translation><!-- Isernia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jalisco</masterLabel>
+            <translation><!-- Jalisco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jammu and Kashmir</masterLabel>
+            <translation><!-- Jammu and Kashmir --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jharkhand</masterLabel>
+            <translation><!-- Jharkhand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jiangsu</masterLabel>
+            <translation><!-- Jiangsu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jiangxi</masterLabel>
+            <translation><!-- Jiangxi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jilin</masterLabel>
+            <translation><!-- Jilin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kansas</masterLabel>
+            <translation><!-- Kansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Karnataka</masterLabel>
+            <translation><!-- Karnataka --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kentucky</masterLabel>
+            <translation><!-- Kentucky --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kerala</masterLabel>
+            <translation><!-- Kerala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kerry</masterLabel>
+            <translation><!-- Kerry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kildare</masterLabel>
+            <translation><!-- Kildare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kilkenny</masterLabel>
+            <translation><!-- Kilkenny --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L&#39;Aquila</masterLabel>
+            <translation><!-- L&apos;Aquila --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LAHORE CANTT</masterLabel>
+            <translation><!-- LAHORE CANTT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LATIUM</masterLabel>
+            <translation><!-- LATIUM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LEBBEKE-WIEZE</masterLabel>
+            <translation><!-- LEBBEKE-WIEZE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LIMA 27</masterLabel>
+            <translation><!-- LIMA 27 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LYON</masterLabel>
+            <translation><!-- LYON --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>La Spezia</masterLabel>
+            <translation><!-- La Spezia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lakshadweep</masterLabel>
+            <translation><!-- Lakshadweep --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Laois</masterLabel>
+            <translation><!-- Laois --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latina</masterLabel>
+            <translation><!-- Latina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lecce</masterLabel>
+            <translation><!-- Lecce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lecco</masterLabel>
+            <translation><!-- Lecco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leitrim</masterLabel>
+            <translation><!-- Leitrim --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liaoning</masterLabel>
+            <translation><!-- Liaoning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Limerick</masterLabel>
+            <translation><!-- Limerick --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Livorno</masterLabel>
+            <translation><!-- Livorno --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lodi</masterLabel>
+            <translation><!-- Lodi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lombardy</masterLabel>
+            <translation><!-- Lombardy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Longford</masterLabel>
+            <translation><!-- Longford --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Louisiana</masterLabel>
+            <translation><!-- Louisiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Louth</masterLabel>
+            <translation><!-- Louth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lucca</masterLabel>
+            <translation><!-- Lucca --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MARENGO</masterLabel>
+            <translation><!-- MARENGO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Macao</masterLabel>
+            <translation><!-- Macao --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Macerata</masterLabel>
+            <translation><!-- Macerata --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Madhya Pradesh</masterLabel>
+            <translation><!-- Madhya Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maharashtra</masterLabel>
+            <translation><!-- Maharashtra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maine</masterLabel>
+            <translation><!-- Maine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manipur</masterLabel>
+            <translation><!-- Manipur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manitoba</masterLabel>
+            <translation><!-- Manitoba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mantua</masterLabel>
+            <translation><!-- Mantua --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maranhão</masterLabel>
+            <translation><!-- Maranhão --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maryland</masterLabel>
+            <translation><!-- Maryland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massa and Carrara</masterLabel>
+            <translation><!-- Massa and Carrara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massachusetts</masterLabel>
+            <translation><!-- Massachusetts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Matera</masterLabel>
+            <translation><!-- Matera --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mato Grosso</masterLabel>
+            <translation><!-- Mato Grosso --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mato Grosso do Sul</masterLabel>
+            <translation><!-- Mato Grosso do Sul --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mayo</masterLabel>
+            <translation><!-- Mayo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meath</masterLabel>
+            <translation><!-- Meath --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medio Campidano</masterLabel>
+            <translation><!-- Medio Campidano --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meghalaya</masterLabel>
+            <translation><!-- Meghalaya --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Messina</masterLabel>
+            <translation><!-- Messina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mexico State</masterLabel>
+            <translation><!-- Mexico State --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michigan</masterLabel>
+            <translation><!-- Michigan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michoacán</masterLabel>
+            <translation><!-- Michoacán --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Milan</masterLabel>
+            <translation><!-- Milan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minas Gerais</masterLabel>
+            <translation><!-- Minas Gerais --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minnesota</masterLabel>
+            <translation><!-- Minnesota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mississippi</masterLabel>
+            <translation><!-- Mississippi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missouri</masterLabel>
+            <translation><!-- Missouri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mizoram</masterLabel>
+            <translation><!-- Mizoram --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Modena</masterLabel>
+            <translation><!-- Modena --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monaghan</masterLabel>
+            <translation><!-- Monaghan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montana</masterLabel>
+            <translation><!-- Montana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monza and Brianza</masterLabel>
+            <translation><!-- Monza and Brianza --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Morelos</masterLabel>
+            <translation><!-- Morelos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NORTH-RHINE-WESTPHALIA</masterLabel>
+            <translation><!-- NORTH-RHINE-WESTPHALIA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NUEVA ECIJA</masterLabel>
+            <translation><!-- NUEVA ECIJA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nagaland</masterLabel>
+            <translation><!-- Nagaland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Naples</masterLabel>
+            <translation><!-- Naples --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nayarit</masterLabel>
+            <translation><!-- Nayarit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nebraska</masterLabel>
+            <translation><!-- Nebraska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nei Mongol</masterLabel>
+            <translation><!-- Nei Mongol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation><!-- Nevada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Brunswick</masterLabel>
+            <translation><!-- New Brunswick --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Hampshire</masterLabel>
+            <translation><!-- New Hampshire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Jersey</masterLabel>
+            <translation><!-- New Jersey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Mexico</masterLabel>
+            <translation><!-- New Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New South Wales</masterLabel>
+            <translation><!-- New South Wales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation><!-- New York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newfoundland and Labrador</masterLabel>
+            <translation><!-- Newfoundland and Labrador --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ningxia</masterLabel>
+            <translation><!-- Ningxia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Carolina</masterLabel>
+            <translation><!-- North Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Dakota</masterLabel>
+            <translation><!-- North Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Holland</masterLabel>
+            <translation><!-- North Holland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Northern Territory</masterLabel>
+            <translation><!-- Northern Territory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Northwest Territories</masterLabel>
+            <translation><!-- Northwest Territories --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nova Scotia</masterLabel>
+            <translation><!-- Nova Scotia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Novara</masterLabel>
+            <translation><!-- Novara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nuevo León</masterLabel>
+            <translation><!-- Nuevo León --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nunavut</masterLabel>
+            <translation><!-- Nunavut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nuoro</masterLabel>
+            <translation><!-- Nuoro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oaxaca</masterLabel>
+            <translation><!-- Oaxaca --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Odisha</masterLabel>
+            <translation><!-- Odisha --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Offaly</masterLabel>
+            <translation><!-- Offaly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ogliastra</masterLabel>
+            <translation><!-- Ogliastra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ohio</masterLabel>
+            <translation><!-- Ohio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oklahoma</masterLabel>
+            <translation><!-- Oklahoma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Olbia-Tempio</masterLabel>
+            <translation><!-- Olbia-Tempio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ontario</masterLabel>
+            <translation><!-- Ontario --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oregon</masterLabel>
+            <translation><!-- Oregon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oristano</masterLabel>
+            <translation><!-- Oristano --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Padua</masterLabel>
+            <translation><!-- Padua --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Palermo</masterLabel>
+            <translation><!-- Palermo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paraná</masterLabel>
+            <translation><!-- Paraná --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paraíba</masterLabel>
+            <translation><!-- Paraíba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parma</masterLabel>
+            <translation><!-- Parma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pará</masterLabel>
+            <translation><!-- Pará --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pavia</masterLabel>
+            <translation><!-- Pavia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pennsylvania</masterLabel>
+            <translation><!-- Pennsylvania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pernambuco</masterLabel>
+            <translation><!-- Pernambuco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Perugia</masterLabel>
+            <translation><!-- Perugia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pesaro and Urbino</masterLabel>
+            <translation><!-- Pesaro and Urbino --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pescara</masterLabel>
+            <translation><!-- Pescara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Piacenza</masterLabel>
+            <translation><!-- Piacenza --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Piauí</masterLabel>
+            <translation><!-- Piauí --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pisa</masterLabel>
+            <translation><!-- Pisa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pistoia</masterLabel>
+            <translation><!-- Pistoia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pordenone</masterLabel>
+            <translation><!-- Pordenone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Potenza</masterLabel>
+            <translation><!-- Potenza --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prato</masterLabel>
+            <translation><!-- Prato --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prince Edward Island</masterLabel>
+            <translation><!-- Prince Edward Island --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Province of Toledo</masterLabel>
+            <translation><!-- Province of Toledo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Puducherry</masterLabel>
+            <translation><!-- Puducherry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Puebla</masterLabel>
+            <translation><!-- Puebla --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Punjab</masterLabel>
+            <translation><!-- Punjab --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qinghai</masterLabel>
+            <translation><!-- Qinghai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quebec</masterLabel>
+            <translation><!-- Quebec --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queensland</masterLabel>
+            <translation><!-- Queensland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Querétaro</masterLabel>
+            <translation><!-- Querétaro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quintana Roo</masterLabel>
+            <translation><!-- Quintana Roo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ROGALAND</masterLabel>
+            <translation><!-- ROGALAND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ragusa</masterLabel>
+            <translation><!-- Ragusa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rajasthan</masterLabel>
+            <translation><!-- Rajasthan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ravenna</masterLabel>
+            <translation><!-- Ravenna --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reggio Calabria</masterLabel>
+            <translation><!-- Reggio Calabria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reggio Emilia</masterLabel>
+            <translation><!-- Reggio Emilia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rhode Island</masterLabel>
+            <translation><!-- Rhode Island --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rhône-Alpes</masterLabel>
+            <translation><!-- Rhône-Alpes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rieti</masterLabel>
+            <translation><!-- Rieti --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rimini</masterLabel>
+            <translation><!-- Rimini --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rio Grande do Norte</masterLabel>
+            <translation><!-- Rio Grande do Norte --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rio Grande do Sul</masterLabel>
+            <translation><!-- Rio Grande do Sul --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rio de Janeiro</masterLabel>
+            <translation><!-- Rio de Janeiro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rome</masterLabel>
+            <translation><!-- Rome --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rondônia</masterLabel>
+            <translation><!-- Rondônia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roraima</masterLabel>
+            <translation><!-- Roraima --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roscommon</masterLabel>
+            <translation><!-- Roscommon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rovigo</masterLabel>
+            <translation><!-- Rovigo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STAVANGER</masterLabel>
+            <translation><!-- STAVANGER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salerno</masterLabel>
+            <translation><!-- Salerno --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Luis Potosí</masterLabel>
+            <translation><!-- San Luis Potosí --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Santa Catarina</masterLabel>
+            <translation><!-- Santa Catarina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saskatchewan</masterLabel>
+            <translation><!-- Saskatchewan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sassari</masterLabel>
+            <translation><!-- Sassari --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Savona</masterLabel>
+            <translation><!-- Savona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sergipe</masterLabel>
+            <translation><!-- Sergipe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shaanxi</masterLabel>
+            <translation><!-- Shaanxi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shandong</masterLabel>
+            <translation><!-- Shandong --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shanghai</masterLabel>
+            <translation><!-- Shanghai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shanxi</masterLabel>
+            <translation><!-- Shanxi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sichuan</masterLabel>
+            <translation><!-- Sichuan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Siena</masterLabel>
+            <translation><!-- Siena --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sikkim</masterLabel>
+            <translation><!-- Sikkim --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sinaloa</masterLabel>
+            <translation><!-- Sinaloa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sligo</masterLabel>
+            <translation><!-- Sligo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sondrio</masterLabel>
+            <translation><!-- Sondrio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sonora</masterLabel>
+            <translation><!-- Sonora --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Australia</masterLabel>
+            <translation><!-- South Australia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Carolina</masterLabel>
+            <translation><!-- South Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Dakota</masterLabel>
+            <translation><!-- South Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Syracuse</masterLabel>
+            <translation><!-- Syracuse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>São Paulo</masterLabel>
+            <translation><!-- São Paulo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tabasco</masterLabel>
+            <translation><!-- Tabasco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tamaulipas</masterLabel>
+            <translation><!-- Tamaulipas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tamil Nadu</masterLabel>
+            <translation><!-- Tamil Nadu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Taranto</masterLabel>
+            <translation><!-- Taranto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tasmania</masterLabel>
+            <translation><!-- Tasmania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tennessee</masterLabel>
+            <translation><!-- Tennessee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teramo</masterLabel>
+            <translation><!-- Teramo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terni</masterLabel>
+            <translation><!-- Terni --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texas</masterLabel>
+            <translation><!-- Texas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tianjin</masterLabel>
+            <translation><!-- Tianjin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tipperary</masterLabel>
+            <translation><!-- Tipperary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tlaxcala</masterLabel>
+            <translation><!-- Tlaxcala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tocantins</masterLabel>
+            <translation><!-- Tocantins --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trapani</masterLabel>
+            <translation><!-- Trapani --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trento</masterLabel>
+            <translation><!-- Trento --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Treviso</masterLabel>
+            <translation><!-- Treviso --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trieste</masterLabel>
+            <translation><!-- Trieste --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tripura</masterLabel>
+            <translation><!-- Tripura --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turin</masterLabel>
+            <translation><!-- Turin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Udine</masterLabel>
+            <translation><!-- Udine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utah</masterLabel>
+            <translation><!-- Utah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uttar Pradesh</masterLabel>
+            <translation><!-- Uttar Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uttarakhand</masterLabel>
+            <translation><!-- Uttarakhand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Varese</masterLabel>
+            <translation><!-- Varese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venice</masterLabel>
+            <translation><!-- Venice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Veracruz</masterLabel>
+            <translation><!-- Veracruz --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbano-Cusio-Ossola</masterLabel>
+            <translation><!-- Verbano-Cusio-Ossola --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vercelli</masterLabel>
+            <translation><!-- Vercelli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vermont</masterLabel>
+            <translation><!-- Vermont --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verona</masterLabel>
+            <translation><!-- Verona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vibo Valentia</masterLabel>
+            <translation><!-- Vibo Valentia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vicenza</masterLabel>
+            <translation><!-- Vicenza --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Victoria</masterLabel>
+            <translation><!-- Victoria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virginia</masterLabel>
+            <translation><!-- Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Viterbo</masterLabel>
+            <translation><!-- Viterbo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington</masterLabel>
+            <translation><!-- Washington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waterford</masterLabel>
+            <translation><!-- Waterford --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Bengal</masterLabel>
+            <translation><!-- West Bengal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Virginia</masterLabel>
+            <translation><!-- West Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Western Australia</masterLabel>
+            <translation><!-- Western Australia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Westmeath</masterLabel>
+            <translation><!-- Westmeath --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wexford</masterLabel>
+            <translation><!-- Wexford --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wicklow</masterLabel>
+            <translation><!-- Wicklow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wisconsin</masterLabel>
+            <translation><!-- Wisconsin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wyoming</masterLabel>
+            <translation><!-- Wyoming --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Xinjiang</masterLabel>
+            <translation><!-- Xinjiang --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Xizang</masterLabel>
+            <translation><!-- Xizang --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yucatán</masterLabel>
+            <translation><!-- Yucatán --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yukon Territories</masterLabel>
+            <translation><!-- Yukon Territories --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yunnan</masterLabel>
+            <translation><!-- Yunnan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zacatecas</masterLabel>
+            <translation><!-- Zacatecas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zhejiang</masterLabel>
+            <translation><!-- Zhejiang --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zurich</masterLabel>
+            <translation><!-- Zurich --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

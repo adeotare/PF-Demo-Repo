@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Has_Been_Tested__c</fullName>
+    <externalId>false</externalId>
+    <formula>OR( QS_Failed_Test_Scenarios__c &lt;&gt; 0, 
+QS_Passed_Test_Scenarios__c &lt;&gt; 0 )</formula>
+    <label>Has Been Tested</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zone_Test_Scenarios</fullName>
+    <columns>NAME</columns>
+    <columns>QS_Sort_Order__c</columns>
+    <columns>QS_Scenario__c</columns>
+    <columns>QS_Status__c</columns>
+    <columns>QS_Testing_Readiness__c</columns>
+    <columns>QS_Requirement__c</columns>
+    <columns>QS_Track__c</columns>
+    <columns>QS_Assigned_To__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Leor Baum</value>
+    </filters>
+    <label>Zone Test Scenarios</label>
+</ListView>

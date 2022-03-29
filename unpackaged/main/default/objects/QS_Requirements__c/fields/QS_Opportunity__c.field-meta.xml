@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Opportunity__c</fullName>
+    <description>Used to denote the Opportunity being tested for this E2E requirement</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used to denote the Opportunity being tested for this E2E requirement</inlineHelpText>
+    <label>Opportunity</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

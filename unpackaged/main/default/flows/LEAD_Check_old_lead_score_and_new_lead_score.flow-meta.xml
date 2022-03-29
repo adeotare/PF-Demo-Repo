@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <decisions>
+        <name>Check_Lead_Score</name>
+        <label>Check Lead Score</label>
+        <locationX>417</locationX>
+        <locationY>522</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Old_score_is_greater_to_New_score</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>NewPardotScrore</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>PriorpardotScore</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_status_to_AQL</targetReference>
+            </connector>
+            <label>Old score is greater to New score</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>NewPardotScrore</name>
+        <dataType>Number</dataType>
+        <expression>FLOOR({!$Record.pi__score__c}/100)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>PriorpardotScore</name>
+        <dataType>Number</dataType>
+        <expression>FLOOR({!$Record__Prior.pi__score__c}/100)</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>LEAD: Check old lead score and new lead score {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>LEAD: Check old lead score and new lead score</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_status_to_AQL</name>
+        <label>Update status to AQL</label>
+        <locationX>826</locationX>
+        <locationY>454</locationY>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>AQL</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>449</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Check_Lead_Score</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pi__score__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Lead</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

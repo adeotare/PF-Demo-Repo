@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>When_junk_is_false</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+Junk__c = False ,
+ISPICKVAL( Status , &quot;Closed&quot;),
+OR(
+ISBLANK( TEXT( Reason )),
+
+ISBLANK( Purchased_Product__c )
+))</errorConditionFormula>
+    <errorMessage>Please update the case reason and Purchased Product before closing the case.</errorMessage>
+</ValidationRule>

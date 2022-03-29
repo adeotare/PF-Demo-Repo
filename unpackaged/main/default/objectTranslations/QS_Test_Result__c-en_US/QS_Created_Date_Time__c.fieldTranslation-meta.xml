@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Indicates the time the test result was created. Used in reporting --></help>
+        <label><!-- Created Date Time --></label>
+        <name>QS_Created_Date_Time__c</name>
+    </CustomFieldTranslation>

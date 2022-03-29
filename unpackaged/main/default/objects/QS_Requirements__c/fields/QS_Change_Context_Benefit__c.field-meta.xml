@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Change_Context_Benefit__c</fullName>
+    <description>Text area to call out changes to existing processes and put justifications for any changes this requirement will add</description>
+    <externalId>false</externalId>
+    <inlineHelpText>OPTIONAL: Update this field to include additional context and benefits to the changes. Can be used to flesh out the business justification or impact to current state when there&#39;s a more contentious change. Includes the &quot;what&#39;s in it for me?&quot; language.</inlineHelpText>
+    <label>Change Context + Benefit</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

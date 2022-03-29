@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Special and/or Consequential Damages --></label>
+        <name>Special_and_or_Consequential_Damages__c</name>
+        <picklistValues>
+            <masterLabel>Prohibited</masterLabel>
+            <translation><!-- Prohibited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silent</masterLabel>
+            <translation><!-- Silent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specifically Allowed</masterLabel>
+            <translation><!-- Specifically Allowed --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

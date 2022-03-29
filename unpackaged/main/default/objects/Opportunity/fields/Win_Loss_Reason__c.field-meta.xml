@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Win_Loss_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Win/Loss Reason</label>
+    <required>true</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Wrong Persona</fullName>
+                <default>false</default>
+                <label>Wrong Persona</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Will manage via Amendment</fullName>
+                <default>false</default>
+                <label>Will manage via Amendment</label>
+            </value>
+            <value>
+                <fullName>Prospect did not attend discovery call</fullName>
+                <default>false</default>
+                <label>Prospect did not attend discovery call</label>
+            </value>
+            <value>
+                <fullName>Timing</fullName>
+                <default>false</default>
+                <label>Timing</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Feature Requirement</fullName>
+                <default>false</default>
+                <label>Feature Requirement</label>
+            </value>
+            <value>
+                <fullName>Product Scope</fullName>
+                <default>false</default>
+                <label>Product Scope</label>
+            </value>
+            <value>
+                <fullName>Budget</fullName>
+                <default>false</default>
+                <label>Budget</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

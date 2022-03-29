@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Design_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Design Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Details Needed - Cannot Build</fullName>
+                <default>true</default>
+                <label>Details Needed - Cannot Build</label>
+            </value>
+            <value>
+                <fullName>Key Elements Known - Can Build &amp; Iterate</fullName>
+                <default>false</default>
+                <label>Key Elements Known - Can Build &amp; Iterate</label>
+            </value>
+            <value>
+                <fullName>All Details Known - Can Build</fullName>
+                <default>false</default>
+                <label>All Details Known - Can Build</label>
+            </value>
+            <value>
+                <fullName>Blocked - Encountered Complexity/Question</fullName>
+                <default>false</default>
+                <label>Blocked - Encountered Complexity/Question</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

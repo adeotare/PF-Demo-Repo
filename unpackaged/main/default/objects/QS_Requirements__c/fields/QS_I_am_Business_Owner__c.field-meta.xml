@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_I_am_Business_Owner__c</fullName>
+    <description>Used to denote if the logged in user is the business owner of a Requirement</description>
+    <externalId>false</externalId>
+    <formula>$User.Id = QS_Business_Owner__r.Id</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Used to denote if the logged in user is the business owner of a Requirement</inlineHelpText>
+    <label>I am Business Owner</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

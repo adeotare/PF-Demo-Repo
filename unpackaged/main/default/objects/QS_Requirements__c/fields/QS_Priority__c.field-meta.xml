@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Priority__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>How significant is this requirement to business functionality for Go-Live</inlineHelpText>
+    <label>Priority</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Must Have</fullName>
+                <default>false</default>
+                <label>Must Have</label>
+            </value>
+            <value>
+                <fullName>Negotiable</fullName>
+                <default>false</default>
+                <label>Negotiable</label>
+            </value>
+            <value>
+                <fullName>Nice to Have</fullName>
+                <default>false</default>
+                <label>Nice to Have</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

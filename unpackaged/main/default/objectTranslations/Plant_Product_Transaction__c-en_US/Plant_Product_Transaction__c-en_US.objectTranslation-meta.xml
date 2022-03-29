@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Plant Product Transaction</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Plant Product Transaction</value>
+    </caseValues>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Plant Product Transaction Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Calculate --></label>
+        <name>Calculate</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Quote --></label>
+        <name>Create_Quote</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Update_Order --></label>
+        <name>Update_Order</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Update_Subscription --></label>
+        <name>Update_Subscription</name>
+    </webLinks>
+</CustomObjectTranslation>

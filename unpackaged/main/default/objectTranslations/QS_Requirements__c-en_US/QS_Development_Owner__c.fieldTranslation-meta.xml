@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Person responsible for building the requirement out in the system --></help>
+        <label><!-- Development Owner --></label>
+        <name>QS_Development_Owner__c</name>
+        <relationshipLabel><!-- Requirements (Development Owner) --></relationshipLabel>
+    </CustomFieldTranslation>

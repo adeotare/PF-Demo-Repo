@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <decisions>
+        <name>Check_Pardot_Score</name>
+        <label>Check Pardot Score</label>
+        <locationX>393</locationX>
+        <locationY>354</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Old_score_is_greater_to_New_score</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>NewPardotScore</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>PriorPardotScore</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Status_to_AQL</targetReference>
+            </connector>
+            <label>Old score is greater to New score</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>NewPardotScore</name>
+        <dataType>Number</dataType>
+        <expression>FLOOR({!$Record.pi__score__c}/100)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>PriorPardotScore</name>
+        <dataType>Number</dataType>
+        <expression>FLOOR({!$Record__Prior.pi__score__c}/100)</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Contact : {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contact :Check Old Pardot Score is greater than New Pardot Score</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Status_to_AQL</name>
+        <label>Update Status to AQL</label>
+        <locationX>571</locationX>
+        <locationY>482</locationY>
+        <inputAssignments>
+            <field>Contact_Status__c</field>
+            <value>
+                <stringValue>AQL</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>449</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Check_Pardot_Score</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pi__score__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Contact</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

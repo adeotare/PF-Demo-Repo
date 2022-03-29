@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Complex_Requirements_MSA</fullName>
+    <columns>NAME</columns>
+    <columns>QS_Title__c</columns>
+    <columns>QS_Primary_Track__c</columns>
+    <columns>QS_Area__c</columns>
+    <columns>QS_Requirement_Status__c</columns>
+    <columns>Meeting_Category__c</columns>
+    <columns>Complexity_Impacts_LOE__c</columns>
+    <columns>Complexity_Comments__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>QS_Requirements__c.Business_Requirements</value>
+    </filters>
+    <filters>
+        <field>Complexity_Impacts_LOE__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>QS_Requirement_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Withdrawn</value>
+    </filters>
+    <filters>
+        <field>Meeting_Category__c</field>
+        <operation>equals</operation>
+        <value>&quot;DPSA, Opportunity, Quote&quot;</value>
+    </filters>
+    <label>Complex Requirements - MSA, Oppty, Quote</label>
+</ListView>

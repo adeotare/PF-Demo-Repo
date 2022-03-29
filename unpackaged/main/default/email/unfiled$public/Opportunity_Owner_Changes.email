@@ -1,0 +1,3 @@
+Hi {!Opportunity.OwnerFullName}
+<br>
+You have been made the owner of {!Opportunity.Link}.

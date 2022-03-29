@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Client_s_Assignment_Rights__c</fullName>
+    <externalId>false</externalId>
+    <label>Client&#39;s Assignment Rights</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No assignment w/o consent</fullName>
+                <default>false</default>
+                <label>No assignment w/o consent</label>
+            </value>
+            <value>
+                <fullName>No assignment w/o consent (except transfer, merger, acquisition, sale, etc)</fullName>
+                <default>false</default>
+                <label>No assignment w/o consent (except transfer, merger, acquisition, sale, etc)</label>
+            </value>
+            <value>
+                <fullName>Silent</fullName>
+                <default>false</default>
+                <label>Silent</label>
+            </value>
+            <value>
+                <fullName>Notification required</fullName>
+                <default>true</default>
+                <label>Notification required</label>
+            </value>
+            <value>
+                <fullName>Any assignment w/o consent</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Any assignment w/o consent</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

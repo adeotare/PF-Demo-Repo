@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Area__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>System/functional area within the track to which the requirement applies.</inlineHelpText>
+    <label>System Area</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account Health Management</fullName>
+                <default>false</default>
+                <label>Account Health Management</label>
+            </value>
+            <value>
+                <fullName>Account Management</fullName>
+                <default>false</default>
+                <label>Account Management</label>
+            </value>
+            <value>
+                <fullName>Activity Management</fullName>
+                <default>false</default>
+                <label>Activity Management</label>
+            </value>
+            <value>
+                <fullName>Analytics Management (Reporting &amp; Supporting REQs)</fullName>
+                <default>false</default>
+                <label>Analytics Management (Reporting &amp; Supporting REQs)</label>
+            </value>
+            <value>
+                <fullName>Bookings Management</fullName>
+                <default>false</default>
+                <label>Bookings Management</label>
+            </value>
+            <value>
+                <fullName>Campaign Management</fullName>
+                <default>false</default>
+                <label>Campaign Management</label>
+            </value>
+            <value>
+                <fullName>Collaboration Management</fullName>
+                <default>false</default>
+                <label>Collaboration Management</label>
+            </value>
+            <value>
+                <fullName>Community/Portal Management (Customer/Partner)</fullName>
+                <default>false</default>
+                <label>Community/Portal Management (Customer/Partner)</label>
+            </value>
+            <value>
+                <fullName>Contact Management</fullName>
+                <default>false</default>
+                <label>Contact Management</label>
+            </value>
+            <value>
+                <fullName>Contact Role Management (Account &amp; Oppty)</fullName>
+                <default>false</default>
+                <label>Contact Role Management (Account &amp; Oppty)</label>
+            </value>
+            <value>
+                <fullName>Content Management and/or Knowledge</fullName>
+                <default>false</default>
+                <label>Content Management and/or Knowledge</label>
+            </value>
+            <value>
+                <fullName>Purchased Products/Subscription Management</fullName>
+                <default>false</default>
+                <label>Purchased Products/Subscription Management</label>
+            </value>
+            <value>
+                <fullName>Customer Entitlement &amp; SLA Management</fullName>
+                <default>false</default>
+                <label>Customer Entitlement &amp; SLA Management</label>
+            </value>
+            <value>
+                <fullName>Data Migration</fullName>
+                <default>false</default>
+                <label>Data Migration</label>
+            </value>
+            <value>
+                <fullName>Data Quality Management</fullName>
+                <default>false</default>
+                <label>Data Quality Management</label>
+            </value>
+            <value>
+                <fullName>Finance - ZAB</fullName>
+                <default>false</default>
+                <label>Finance - ZAB</label>
+            </value>
+            <value>
+                <fullName>Finance - Collections/Payment Management</fullName>
+                <default>false</default>
+                <label>Finance - Collections/Payment Management</label>
+            </value>
+            <value>
+                <fullName>Finance - ERP Account Management</fullName>
+                <default>false</default>
+                <label>Finance - ERP Account Management</label>
+            </value>
+            <value>
+                <fullName>Finance - ERP Asset Management</fullName>
+                <default>false</default>
+                <label>Finance - ERP Asset Management</label>
+            </value>
+            <value>
+                <fullName>Finance - ERP Product Management</fullName>
+                <default>false</default>
+                <label>Finance - ERP Product Management</label>
+            </value>
+            <value>
+                <fullName>Finance - ERP Project/Expense Management</fullName>
+                <default>false</default>
+                <label>Finance - ERP Project/Expense Management</label>
+            </value>
+            <value>
+                <fullName>Finance - Record to Report</fullName>
+                <default>false</default>
+                <label>Finance - Record to Report</label>
+            </value>
+            <value>
+                <fullName>Finance - NetSuite</fullName>
+                <default>false</default>
+                <label>Finance - NetSuite</label>
+            </value>
+            <value>
+                <fullName>Finance - Revenue Management</fullName>
+                <default>false</default>
+                <label>Finance - Revenue Management</label>
+            </value>
+            <value>
+                <fullName>Finance - Other ERP</fullName>
+                <default>false</default>
+                <label>Finance - Other ERP</label>
+            </value>
+            <value>
+                <fullName>Finance - Vendor Management</fullName>
+                <default>false</default>
+                <label>Finance - Vendor Management</label>
+            </value>
+            <value>
+                <fullName>Idea Management</fullName>
+                <default>false</default>
+                <label>Idea Management</label>
+            </value>
+            <value>
+                <fullName>Integration</fullName>
+                <default>false</default>
+                <label>Integration</label>
+            </value>
+            <value>
+                <fullName>Lead Management</fullName>
+                <default>false</default>
+                <label>Lead Management</label>
+            </value>
+            <value>
+                <fullName>Master Agreement Contract Management</fullName>
+                <default>false</default>
+                <label>Master Agreement Contract Management</label>
+            </value>
+            <value>
+                <fullName>Opportunity Close/Post-Mortem Management</fullName>
+                <default>false</default>
+                <label>Opportunity Close/Post-Mortem Management</label>
+            </value>
+            <value>
+                <fullName>Opportunity Creation &amp; Management</fullName>
+                <default>false</default>
+                <label>Opportunity Creation &amp; Management</label>
+            </value>
+            <value>
+                <fullName>Opportunity Deal Desk Management</fullName>
+                <default>false</default>
+                <label>Opportunity Deal Desk Management</label>
+            </value>
+            <value>
+                <fullName>Opportunity Forecast Management</fullName>
+                <default>false</default>
+                <label>Opportunity Forecast Management</label>
+            </value>
+            <value>
+                <fullName>Opportunity Renewal Management</fullName>
+                <default>false</default>
+                <label>Opportunity Renewal Management</label>
+            </value>
+            <value>
+                <fullName>Opportunity Sales Process Management</fullName>
+                <default>false</default>
+                <label>Opportunity Sales Process Management</label>
+            </value>
+            <value>
+                <fullName>Opportunity Splits/Commission Management</fullName>
+                <default>false</default>
+                <label>Opportunity Splits/Commission Management</label>
+            </value>
+            <value>
+                <fullName>Order/Fulfillment Management</fullName>
+                <default>false</default>
+                <label>Order/Fulfillment Management</label>
+            </value>
+            <value>
+                <fullName>Partner/Channel Management</fullName>
+                <default>false</default>
+                <label>Partner/Channel Management</label>
+            </value>
+            <value>
+                <fullName>Product &amp; Pricebook Management</fullName>
+                <default>false</default>
+                <label>Product &amp; Pricebook Management</label>
+            </value>
+            <value>
+                <fullName>PS Expense Management</fullName>
+                <default>false</default>
+                <label>PS Expense Management</label>
+            </value>
+            <value>
+                <fullName>PS Project Management</fullName>
+                <default>false</default>
+                <label>PS Project Management</label>
+            </value>
+            <value>
+                <fullName>PS Resource &amp; Time Management</fullName>
+                <default>false</default>
+                <label>PS Resource &amp; Time Management</label>
+            </value>
+            <value>
+                <fullName>Quote Approval Management</fullName>
+                <default>false</default>
+                <label>Quote Approval Management</label>
+            </value>
+            <value>
+                <fullName>Quote Output Document Management</fullName>
+                <default>false</default>
+                <label>Quote Output Document Management</label>
+            </value>
+            <value>
+                <fullName>Quoting, Pricing &amp; Discount Management (CPQ Setup)</fullName>
+                <default>false</default>
+                <label>Quoting, Pricing &amp; Discount Management (CPQ Setup)</label>
+            </value>
+            <value>
+                <fullName>Support Case Management</fullName>
+                <default>false</default>
+                <label>Support Case Management</label>
+            </value>
+            <value>
+                <fullName>System Setup</fullName>
+                <default>false</default>
+                <label>System Setup</label>
+            </value>
+            <value>
+                <fullName>Team &amp; Territory Management (Account &amp; Oppty)</fullName>
+                <default>false</default>
+                <label>Team &amp; Territory Management (Account &amp; Oppty)</label>
+            </value>
+            <value>
+                <fullName>User Management</fullName>
+                <default>false</default>
+                <label>User Management (Permissions, Profiles, Roles)</label>
+            </value>
+            <value>
+                <fullName>User Productivity Management (UI &amp; Automation)</fullName>
+                <default>false</default>
+                <label>User Productivity Management (UI &amp; Automation)</label>
+            </value>
+            <value>
+                <fullName>PMIS</fullName>
+                <default>false</default>
+                <label>PMIS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <name>Email Support Queue</name>
+    <queueMembers>
+        <users>
+            <user>ashish.16@tcs.com</user>
+            <user>neeta.tawde@tcs.com</user>
+            <user>renuka.gunasekaran@tcs.com.pffull.inactive</user>
+            <user>jain.saurabh9@tcs.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

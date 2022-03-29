@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Contracting Entity --></label>
+        <name>Contracting_Entity__c</name>
+        <picklistValues>
+            <masterLabel>3MW RoW: 3MW GmbH</masterLabel>
+            <translation><!-- 3MW RoW: 3MW GmbH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3MW US: 3MW LLC</masterLabel>
+            <translation><!-- 3MW US: 3MW LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EK: PF Canada Inc.</masterLabel>
+            <translation><!-- EK: PF Canada Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GB RoW: GB AB</masterLabel>
+            <translation><!-- GB RoW: GB AB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GB US: GB Inc</masterLabel>
+            <translation><!-- GB US: GB Inc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PF: PF LLC</masterLabel>
+            <translation><!-- PF: PF LLC --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

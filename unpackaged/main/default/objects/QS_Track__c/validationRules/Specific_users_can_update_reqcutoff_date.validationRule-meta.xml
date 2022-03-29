@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Specific_users_can_update_reqcutoff_date</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISCHANGED(QS_Requirement_Cutoff_Date__c) ,  $User.QS_Create_Change_Request_Reqs__c = FALSE)</errorConditionFormula>
+    <errorMessage>Only specific users can change Track Req Cutoff Date</errorMessage>
+</ValidationRule>

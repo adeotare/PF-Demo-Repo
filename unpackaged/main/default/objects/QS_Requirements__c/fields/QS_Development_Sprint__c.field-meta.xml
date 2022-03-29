@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Development_Sprint__c</fullName>
+    <description>Picklist for which development sprint this requirement should be fully developed by.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Estimation of when the requirement will be delivered for testing.</inlineHelpText>
+    <label>Development Cycle</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Test Cycle 1</fullName>
+                <default>false</default>
+                <label>Test Cycle 1</label>
+            </value>
+            <value>
+                <fullName>Test Cycle 2</fullName>
+                <default>false</default>
+                <label>Test Cycle 2</label>
+            </value>
+            <value>
+                <fullName>Test Cycle 3</fullName>
+                <default>false</default>
+                <label>Test Cycle 3</label>
+            </value>
+            <value>
+                <fullName>Test Cycle 4</fullName>
+                <default>false</default>
+                <label>Test Cycle 4</label>
+            </value>
+            <value>
+                <fullName>End To End Testing</fullName>
+                <default>false</default>
+                <label>End To End Testing</label>
+            </value>
+            <value>
+                <fullName>Finance Invoice Testing</fullName>
+                <default>false</default>
+                <label>Finance Invoice Testing</label>
+            </value>
+            <value>
+                <fullName>Phase 2</fullName>
+                <default>false</default>
+                <label>Phase 2</label>
+            </value>
+            <value>
+                <fullName>Sprint 0</fullName>
+                <default>false</default>
+                <label>Sprint 0</label>
+            </value>
+            <value>
+                <fullName>Sprint 1</fullName>
+                <default>false</default>
+                <label>Sprint 1</label>
+            </value>
+            <value>
+                <fullName>Sprint 2</fullName>
+                <default>false</default>
+                <label>Sprint 2</label>
+            </value>
+            <value>
+                <fullName>Sprint 3</fullName>
+                <default>false</default>
+                <label>Sprint 3</label>
+            </value>
+            <value>
+                <fullName>Sprint 4</fullName>
+                <default>false</default>
+                <label>Sprint 4</label>
+            </value>
+            <value>
+                <fullName>Sprint 5</fullName>
+                <default>false</default>
+                <label>Sprint 5</label>
+            </value>
+            <value>
+                <fullName>Sprint 6</fullName>
+                <default>false</default>
+                <label>Sprint 6</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

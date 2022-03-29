@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Failure_Reason_required_for_fails</fullName>
+    <active>false</active>
+    <description>Failure Reason is required for failed test results</description>
+    <errorConditionFormula>TEXT( QS_Test_Result_Status__c ) != &quot;Passed&quot; &amp;&amp; ISBLANK(TEXT( QS_Failure_Reason__c ))</errorConditionFormula>
+    <errorMessage>A failure reason is required for failed test results</errorMessage>
+</ValidationRule>

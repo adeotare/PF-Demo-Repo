@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MWp__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL( Asset_Class__c , &#39;Solar PV&#39;) , &#39;DC&#39;,
+IF( ISPICKVAL( Asset_Class__c , &#39;Wind&#39;) , &#39;AC&#39;,
+IF( ISPICKVAL( Asset_Class__c , &#39;Hydro&#39;) , &#39;AC&#39;,
+IF( ISPICKVAL( Asset_Class__c , &#39;Storage&#39;) , &#39;DC&#39;,
+IF( ISPICKVAL( Asset_Class__c , &#39;Other Renewable&#39;) , &#39;AC&#39;,
+IF( ISPICKVAL( Asset_Class__c , &#39;Industrial&#39; ) , &#39; &#39;, null
+))))))</formula>
+    <label>MWp</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

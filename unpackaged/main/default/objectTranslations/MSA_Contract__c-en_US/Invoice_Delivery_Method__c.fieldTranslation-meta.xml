@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Invoice Delivery Method --></label>
+        <name>Invoice_Delivery_Method__c</name>
+        <picklistValues>
+            <masterLabel>Customer Community</masterLabel>
+            <translation><!-- Customer Community --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mail</masterLabel>
+            <translation><!-- Mail --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

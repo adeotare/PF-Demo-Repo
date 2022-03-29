@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Examples include:
+Basic Config - Picklists, layouts, quick formulas 
+Advanced Config -  Workflow rules, validation rules, complex formulas
+Code - apex classes, apex triggers
+Data - account/product hierarchies, assets
+Installation - of Appexchange --></help>
+        <label><!-- Development Type --></label>
+        <name>QS_Development_Type__c</name>
+        <picklistValues>
+            <masterLabel>Advanced Configuration</masterLabel>
+            <translation><!-- Advanced Configuration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Basic Configuration</masterLabel>
+            <translation><!-- Basic Configuration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Code</masterLabel>
+            <translation><!-- Code --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data</masterLabel>
+            <translation><!-- Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installation</masterLabel>
+            <translation><!-- Installation --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

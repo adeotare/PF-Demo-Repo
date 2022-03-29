@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Am_I_Assigned_Owner__c</fullName>
+    <description>Is the logged in user the same as the Primary Owner of the Action Item. If yes = true, no = false... Not to be on the page layout but can be used for dynamic List Views</description>
+    <externalId>false</externalId>
+    <formula>QS_Primary_Owner__r.Id = $User.Id</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Is the logged in user the same as the Primary Owner of the Action Item.</inlineHelpText>
+    <label>Am I Assigned Owner?</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

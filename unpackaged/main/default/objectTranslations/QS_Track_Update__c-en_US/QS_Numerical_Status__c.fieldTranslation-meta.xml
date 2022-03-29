@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Applies a numerical value to the overall status options --></help>
+        <label><!-- Numerical Status --></label>
+        <name>QS_Numerical_Status__c</name>
+    </CustomFieldTranslation>

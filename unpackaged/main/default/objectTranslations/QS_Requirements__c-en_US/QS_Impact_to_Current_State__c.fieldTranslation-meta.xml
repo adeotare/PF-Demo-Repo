@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Describe how this requirement differs from the existing systems, process, etc. Be sure to include how this impacts the end users of the systems + process - -  where they might need additional skills or behaviors to complete, or have strongly held beliefs. --></help>
+        <label><!-- Impact to Current State --></label>
+        <name>QS_Impact_to_Current_State__c</name>
+    </CustomFieldTranslation>

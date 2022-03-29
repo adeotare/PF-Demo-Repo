@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Which top level test scenario does this result apply to? --></help>
+        <label><!-- Test Scenario --></label>
+        <name>QS_Test_Scenario__c</name>
+        <relationshipLabel><!-- Test Results --></relationshipLabel>
+    </CustomFieldTranslation>

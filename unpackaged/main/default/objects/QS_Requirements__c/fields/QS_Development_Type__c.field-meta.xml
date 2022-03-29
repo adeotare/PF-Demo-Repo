@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Development_Type__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Examples include:
+Basic Config - Picklists, layouts, quick formulas 
+Advanced Config -  Workflow rules, validation rules, complex formulas
+Code - apex classes, apex triggers
+Data - account/product hierarchies, assets
+Installation - of Appexchange</inlineHelpText>
+    <label>Development Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Basic Configuration</fullName>
+                <default>false</default>
+                <label>Basic Configuration</label>
+            </value>
+            <value>
+                <fullName>Advanced Configuration</fullName>
+                <default>false</default>
+                <label>Advanced Configuration</label>
+            </value>
+            <value>
+                <fullName>Code</fullName>
+                <default>false</default>
+                <label>Code</label>
+            </value>
+            <value>
+                <fullName>Data</fullName>
+                <default>false</default>
+                <label>Data</label>
+            </value>
+            <value>
+                <fullName>Installation</fullName>
+                <default>false</default>
+                <label>Installation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

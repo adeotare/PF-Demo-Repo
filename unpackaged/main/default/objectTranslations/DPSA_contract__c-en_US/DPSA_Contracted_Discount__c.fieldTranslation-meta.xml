@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- DPSA Contracted Discount --></label>
+        <name>DPSA_Contracted_Discount__c</name>
+        <relationshipLabel><!-- DPSA contracts --></relationshipLabel>
+    </CustomFieldTranslation>

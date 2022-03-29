@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Indicates the Current UAT cycle. Populated when test results are being created and information is obtained from the latest test result record. --></help>
+        <label><!-- Current UAT Cycle --></label>
+        <name>QS_Current_UAT_Cycle__c</name>
+    </CustomFieldTranslation>

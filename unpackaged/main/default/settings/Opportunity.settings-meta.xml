@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpportunitySettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoActivateNewReminders>true</autoActivateNewReminders>
+    <customizableProductSchedulesEnabled>false</customizableProductSchedulesEnabled>
+    <doesEnforceStandardOpportunitySaveLogic>true</doesEnforceStandardOpportunitySaveLogic>
+    <enableExpandedPipelineInspectionSetup>false</enableExpandedPipelineInspectionSetup>
+    <enableFindSimilarOpportunities>false</enableFindSimilarOpportunities>
+    <enableOpportunityFieldHistoryTracking>true</enableOpportunityFieldHistoryTracking>
+    <enableOpportunityTeam>true</enableOpportunityTeam>
+    <enablePipelineInspection>false</enablePipelineInspection>
+    <enableUpdateReminders>true</enableUpdateReminders>
+    <oppAmountDealMotionEnabled>false</oppAmountDealMotionEnabled>
+    <oppCloseDateDealMotionEnabled>false</oppCloseDateDealMotionEnabled>
+    <promptToAddProducts>false</promptToAddProducts>
+</OpportunitySettings>

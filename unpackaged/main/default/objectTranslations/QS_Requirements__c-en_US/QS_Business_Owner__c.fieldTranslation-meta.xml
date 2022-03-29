@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- The primary owner pushing for this requirement. --></help>
+        <label><!-- Business Owner --></label>
+        <name>QS_Business_Owner__c</name>
+        <relationshipLabel><!-- Requirements (Business Owner) --></relationshipLabel>
+    </CustomFieldTranslation>

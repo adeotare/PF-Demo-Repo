@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Warranty --></label>
+        <name>Warranty__c</name>
+        <picklistValues>
+            <masterLabel>Any error/unconditional</masterLabel>
+            <translation><!-- Any error/unconditional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silent</masterLabel>
+            <translation><!-- Silent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tied to documentation</masterLabel>
+            <translation><!-- Tied to documentation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tied to functional specification</masterLabel>
+            <translation><!-- Tied to functional specification --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

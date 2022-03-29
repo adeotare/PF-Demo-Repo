@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Timezone --></label>
+        <name>Timezone__c</name>
+        <picklistValues>
+            <masterLabel>AUS Central Standard Time</masterLabel>
+            <translation><!-- AUS Central Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AUS Eastern Standard Time</masterLabel>
+            <translation><!-- AUS Eastern Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Afghanistan Standard Time</masterLabel>
+            <translation><!-- Afghanistan Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaskan Standard Time</masterLabel>
+            <translation><!-- Alaskan Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arab Standard Time</masterLabel>
+            <translation><!-- Arab Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arabian Standard Time</masterLabel>
+            <translation><!-- Arabian Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arabic Standard Time</masterLabel>
+            <translation><!-- Arabic Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Argentina Standard Time</masterLabel>
+            <translation><!-- Argentina Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Atlantic Standard Time</masterLabel>
+            <translation><!-- Atlantic Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Azerbaijan Standard Time</masterLabel>
+            <translation><!-- Azerbaijan Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Azores Standard Time</masterLabel>
+            <translation><!-- Azores Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bahia Standard Time</masterLabel>
+            <translation><!-- Bahia Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bangladesh Standard Time</masterLabel>
+            <translation><!-- Bangladesh Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canada Central Standard Time</masterLabel>
+            <translation><!-- Canada Central Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cape Verde Standard Time</masterLabel>
+            <translation><!-- Cape Verde Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caucasus Standard Time</masterLabel>
+            <translation><!-- Caucasus Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cen. Australia Standard Time</masterLabel>
+            <translation><!-- Cen. Australia Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Central America Standard Time</masterLabel>
+            <translation><!-- Central America Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Central Asia Standard Time</masterLabel>
+            <translation><!-- Central Asia Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Central Brazilian Standard Time</masterLabel>
+            <translation><!-- Central Brazilian Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Central Europe Standard Time</masterLabel>
+            <translation><!-- Central Europe Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Central European Standard Time</masterLabel>
+            <translation><!-- Central European Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Central Pacific Standard Time</masterLabel>
+            <translation><!-- Central Pacific Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Central Standard Time</masterLabel>
+            <translation><!-- Central Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Central Standard Time (Mexico)</masterLabel>
+            <translation><!-- Central Standard Time (Mexico) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China Standard Time</masterLabel>
+            <translation><!-- China Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coordinated Universal Time</masterLabel>
+            <translation><!-- Coordinated Universal Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dateline Standard Time</masterLabel>
+            <translation><!-- Dateline Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E. Africa Standard Time</masterLabel>
+            <translation><!-- E. Africa Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E. Australia Standard Time</masterLabel>
+            <translation><!-- E. Australia Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E. Europe Standard Time</masterLabel>
+            <translation><!-- E. Europe Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E. South America Standard Time</masterLabel>
+            <translation><!-- E. South America Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eastern Standard Time</masterLabel>
+            <translation><!-- Eastern Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Egypt Standard Time</masterLabel>
+            <translation><!-- Egypt Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ekaterinburg Standard Time</masterLabel>
+            <translation><!-- Ekaterinburg Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLE Standard Time</masterLabel>
+            <translation><!-- FLE Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fiji Standard Time</masterLabel>
+            <translation><!-- Fiji Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GMT Standard Time</masterLabel>
+            <translation><!-- GMT Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GTB Standard Time</masterLabel>
+            <translation><!-- GTB Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgian Standard Time</masterLabel>
+            <translation><!-- Georgian Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greenland Standard Time</masterLabel>
+            <translation><!-- Greenland Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greenwich Standard Time</masterLabel>
+            <translation><!-- Greenwich Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaiian Standard Time</masterLabel>
+            <translation><!-- Hawaiian Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>India Standard Time</masterLabel>
+            <translation><!-- India Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iran Standard Time</masterLabel>
+            <translation><!-- Iran Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jerusalem Standard Time</masterLabel>
+            <translation><!-- Jerusalem Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jordan Standard Time</masterLabel>
+            <translation><!-- Jordan Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kaliningrad Standard Time</masterLabel>
+            <translation><!-- Kaliningrad Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kamchatka Standard Time</masterLabel>
+            <translation><!-- Kamchatka Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Korea Standard Time</masterLabel>
+            <translation><!-- Korea Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Magadan Standard Time</masterLabel>
+            <translation><!-- Magadan Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malay Peninsula Standard Time</masterLabel>
+            <translation><!-- Malay Peninsula Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mauritius Standard Time</masterLabel>
+            <translation><!-- Mauritius Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid-Atlantic Standard Time</masterLabel>
+            <translation><!-- Mid-Atlantic Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Middle East Standard Time</masterLabel>
+            <translation><!-- Middle East Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montevideo Standard Time</masterLabel>
+            <translation><!-- Montevideo Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Morocco Standard Time</masterLabel>
+            <translation><!-- Morocco Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mountain Standard Time</masterLabel>
+            <translation><!-- Mountain Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mountain Standard Time (Mexico)</masterLabel>
+            <translation><!-- Mountain Standard Time (Mexico) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Myanmar Standard Time</masterLabel>
+            <translation><!-- Myanmar Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N. Central Asia Standard Time</masterLabel>
+            <translation><!-- N. Central Asia Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Namibia Standard Time</masterLabel>
+            <translation><!-- Namibia Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nepal Standard Time</masterLabel>
+            <translation><!-- Nepal Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Zealand Standard Time</masterLabel>
+            <translation><!-- New Zealand Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newfoundland Standard Time</masterLabel>
+            <translation><!-- Newfoundland Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Asia East Standard Time</masterLabel>
+            <translation><!-- North Asia East Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Asia Standard Time</masterLabel>
+            <translation><!-- North Asia Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pacific SA Standard Time</masterLabel>
+            <translation><!-- Pacific SA Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pacific Standard Time</masterLabel>
+            <translation><!-- Pacific Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pacific Standard Time (Mexico)</masterLabel>
+            <translation><!-- Pacific Standard Time (Mexico) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pakistan Standard Time</masterLabel>
+            <translation><!-- Pakistan Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paraguay Standard Time</masterLabel>
+            <translation><!-- Paraguay Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Romance Standard Time</masterLabel>
+            <translation><!-- Romance Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russian Standard Time</masterLabel>
+            <translation><!-- Russian Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SA Eastern Standard Time</masterLabel>
+            <translation><!-- SA Eastern Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SA Pacific Standard Time</masterLabel>
+            <translation><!-- SA Pacific Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SA Western Standard Time</masterLabel>
+            <translation><!-- SA Western Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SE Asia Standard Time</masterLabel>
+            <translation><!-- SE Asia Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Samoa Standard Time</masterLabel>
+            <translation><!-- Samoa Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Africa Standard Time</masterLabel>
+            <translation><!-- South Africa Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sri Lanka Standard Time</masterLabel>
+            <translation><!-- Sri Lanka Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Syria Standard Time</masterLabel>
+            <translation><!-- Syria Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Taipei Standard Time</masterLabel>
+            <translation><!-- Taipei Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tasmania Standard Time</masterLabel>
+            <translation><!-- Tasmania Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tokyo Standard Time</masterLabel>
+            <translation><!-- Tokyo Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tonga Standard Time</masterLabel>
+            <translation><!-- Tonga Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turkey Standard Time</masterLabel>
+            <translation><!-- Turkey Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Eastern Standard Time</masterLabel>
+            <translation><!-- US Eastern Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Mountain Standard Time</masterLabel>
+            <translation><!-- US Mountain Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ulaanbaatar Standard Time</masterLabel>
+            <translation><!-- Ulaanbaatar Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venezuela Standard Time</masterLabel>
+            <translation><!-- Venezuela Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vladivostok Standard Time</masterLabel>
+            <translation><!-- Vladivostok Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>W. Australia Standard Time</masterLabel>
+            <translation><!-- W. Australia Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>W. Central Africa Standard Time</masterLabel>
+            <translation><!-- W. Central Africa Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>W. Europe Standard Time</masterLabel>
+            <translation><!-- W. Europe Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Asia Standard Time</masterLabel>
+            <translation><!-- West Asia Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Pacific Standard Time</masterLabel>
+            <translation><!-- West Pacific Standard Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yakutsk Standard Time</masterLabel>
+            <translation><!-- Yakutsk Standard Time --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Failure_Criticality_required_for_fails</fullName>
+    <active>true</active>
+    <description>Failure Criticality required for failed Test Results</description>
+    <errorConditionFormula>OR(TEXT( QS_Test_Result_Status__c ) = &quot;Failed&quot;,TEXT( QS_Test_Result_Status__c ) = &quot;Passed, with Exception&quot;) &amp;&amp;  ISBLANK(TEXT( QS_Failure_Criticality__c ))</errorConditionFormula>
+    <errorMessage>You must state failure criticality for failed test results</errorMessage>
+</ValidationRule>

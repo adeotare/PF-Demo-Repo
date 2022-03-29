@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Special_and_or_Consequential_Damages__c</fullName>
+    <externalId>false</externalId>
+    <label>Special and/or Consequential Damages</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Specifically Allowed</fullName>
+                <default>false</default>
+                <label>Specifically Allowed</label>
+            </value>
+            <value>
+                <fullName>Silent</fullName>
+                <default>false</default>
+                <label>Silent</label>
+            </value>
+            <value>
+                <fullName>Prohibited</fullName>
+                <default>false</default>
+                <label>Prohibited</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

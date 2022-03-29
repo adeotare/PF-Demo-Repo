@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- When did this test occur? Will be set by default. --></help>
+        <label><!-- Test Cycle --></label>
+        <name>QS_Test_Cycle__c</name>
+        <picklistValues>
+            <masterLabel>End to End Testing</masterLabel>
+            <translation><!-- End to End Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go-Live</masterLabel>
+            <translation><!-- Go-Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated Testing</masterLabel>
+            <translation><!-- Integrated Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Go-Live</masterLabel>
+            <translation><!-- Post Go-Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-End to End Testing</masterLabel>
+            <translation><!-- Pre-End to End Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Go-Live</masterLabel>
+            <translation><!-- Pre-Go-Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Integrated Testing</masterLabel>
+            <translation><!-- Pre-Integrated Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Unit Testing</masterLabel>
+            <translation><!-- Pre-Unit Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Validation</masterLabel>
+            <translation><!-- Pre-Validation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unit Testing</masterLabel>
+            <translation><!-- Unit Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Validation</masterLabel>
+            <translation><!-- Validation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Working Models</masterLabel>
+            <translation><!-- Working Models --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

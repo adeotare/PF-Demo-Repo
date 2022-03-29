@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Order Subtype --></label>
+        <name>Order_Subtype__c</name>
+        <picklistValues>
+            <masterLabel>Full Cancellation</masterLabel>
+            <translation><!-- Full Cancellation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reduction</masterLabel>
+            <translation><!-- Reduction --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

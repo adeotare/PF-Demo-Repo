@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Must Have - this Scenario is critical for Go-Live
+Negotiable - this Scenario is recommended for Go-Live
+Nice to Have - this Scenario is not critical for Go-Live --></help>
+        <label><!-- Failure Criticality --></label>
+        <name>QS_Failure_Criticality__c</name>
+        <picklistValues>
+            <masterLabel>Must Have</masterLabel>
+            <translation><!-- Must Have --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Negotiable</masterLabel>
+            <translation><!-- Negotiable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nice to Have</masterLabel>
+            <translation><!-- Nice to Have --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

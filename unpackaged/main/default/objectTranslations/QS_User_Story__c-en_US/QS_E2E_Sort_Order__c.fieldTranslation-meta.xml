@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Sort field used to arrange ALL Business Processes in approximate End-to-End order, regardless of Track. --></help>
+        <label><!-- E2E Sort Order --></label>
+        <name>QS_E2E_Sort_Order__c</name>
+    </CustomFieldTranslation>

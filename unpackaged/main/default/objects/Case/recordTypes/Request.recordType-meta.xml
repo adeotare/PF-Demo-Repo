@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request</fullName>
+    <active>true</active>
+    <businessProcess>Support Process</businessProcess>
+    <label>Request</label>
+    <picklistValues>
+        <picklist>Case_Reason__c</picklist>
+        <values>
+            <fullName>API - 3rd Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API - Accounts Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API - Configuration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API - Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API - General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accounts Management - New User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accounts Management - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Admin - Jobs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Availability Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Backend Program Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bug</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calculation %2F Logic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Case Manager %2F Templates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communication Loss - Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communication Loss - Internal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Configuration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Configuration - Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Configuration - Data Logger</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Configuration - Missing Object</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Configuration - PI AF %2F SQL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Projects %2F Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer - General Info %2F Documentation %2F Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer - Invalid Input Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer - Site Level</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Contract Terms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data - Historical - Backfill %2F Reconstruction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data - Historical - Missing %2F Invalid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data - Live</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data - Raw - Extraction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Validation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Decommissioning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events - Backfill %2F Reconstruction %2F Reprocess</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events - False %2F Logic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation - Operational Backlog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation - Post SAT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal - Alerts %2F Stale Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal - Platform Sync</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal - Services %2F Infrastructure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Layout Changes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manual Jobs - Def Sync %2F Reprocess</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Metadata</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile Application</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA - SPAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N3 Software %2F FW Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Data Logger installlation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Device installation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Inverter %2F Meter installation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Notifications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PMGS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports - Custom %2F Specific Job</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports - General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports - Incentive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports - SSRS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports - Tabular Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upgrade to Edge Data Logger</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Confusion</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Component__c</picklist>
+        <values>
+            <fullName>Accounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Admin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asset Builder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asset Tags</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Case</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contacts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contracts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dashboards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data %26 Trends</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Quality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entitlements</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Home</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kiosk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PV Expected Production Generator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plant Assets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RFIs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SATs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SREC Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tabular Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work Orders</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Number_of_Plants_Affected__c</picklist>
+        <values>
+            <fullName>All</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multiple</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PF Community</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RFI Item</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Platform__c</picklist>
+        <values>
+            <fullName>Bluepoint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breeze development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drive O%26M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Edge Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ekhosoft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General and PF Community</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greenbyte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Services</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>P0 - Emergency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P1 - Critical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P2 - High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P3 - Medium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P4 - Low</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reporting_or_Revenue_Impacting__c</picklist>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ticket_Assignee__c</picklist>
+        <values>
+            <fullName>X</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Y</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ticket_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assigned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Backlogged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed by configuration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed w%2Fcode</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deferred</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Staging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LI-Under Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Needs Detail - Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Needs Detail - Internal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QA Passed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready for QA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready for Staging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Released</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unacknowledged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under Investigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Request%2FInquiry</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ccpe_r__Utilization_Category__c</picklist>
+        <values>
+            <fullName>Billable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Billable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

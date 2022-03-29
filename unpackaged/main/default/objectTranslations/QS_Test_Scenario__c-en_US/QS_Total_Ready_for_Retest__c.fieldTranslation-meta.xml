@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Total number of Test Results where &quot;Ready for Retest&quot; is checked --></help>
+        <label><!-- Total &quot;Ready for Retest&quot; --></label>
+        <name>QS_Total_Ready_for_Retest__c</name>
+    </CustomFieldTranslation>

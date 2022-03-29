@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Meeting Category --></label>
+        <name>Meeting_Category__c</name>
+        <picklistValues>
+            <masterLabel>Amendments/Decommissions</masterLabel>
+            <translation><!-- Amendments/Decommissions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Renewals</masterLabel>
+            <translation><!-- Contract Renewals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPSA, Opportunity, Quote</masterLabel>
+            <translation><!-- DPSA, Opportunity, Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Management</masterLabel>
+            <translation><!-- Project Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Service Handoff</masterLabel>
+            <translation><!-- Sales Service Handoff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support</masterLabel>
+            <translation><!-- Support --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

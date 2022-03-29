@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Any other explanation needed to detail what happened with the test. --></help>
+        <label><!-- Comments --></label>
+        <name>QS_Comments__c</name>
+    </CustomFieldTranslation>

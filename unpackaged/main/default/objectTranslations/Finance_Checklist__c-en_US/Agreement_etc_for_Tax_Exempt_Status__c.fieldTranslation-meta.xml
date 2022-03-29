@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Agreement, etc. for Tax Exempt Status --></label>
+        <name>Agreement_etc_for_Tax_Exempt_Status__c</name>
+    </CustomFieldTranslation>

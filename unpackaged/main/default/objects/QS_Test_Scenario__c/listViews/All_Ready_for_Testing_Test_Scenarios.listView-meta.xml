@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Ready_for_Testing_Test_Scenarios</fullName>
+    <columns>NAME</columns>
+    <columns>QS_Scenario__c</columns>
+    <columns>QS_Status__c</columns>
+    <columns>QS_Requirement__c</columns>
+    <columns>QS_Track__c</columns>
+    <columns>QS_Assigned_To__c</columns>
+    <columns>QS_Testing_Readiness__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>QS_Test_Scenario__c.UAT_Test_Scenario</value>
+    </filters>
+    <filters>
+        <field>QS_Testing_Readiness__c</field>
+        <operation>equals</operation>
+        <value>Ready for Testing</value>
+    </filters>
+    <label>All Ready for Testing Test Scenarios</label>
+</ListView>

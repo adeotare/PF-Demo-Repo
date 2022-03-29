@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Requirements</fullName>
+    <active>true</active>
+    <label>Business Requirements</label>
+    <picklistValues>
+        <picklist>Business_Test_Scenarios_Done__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Core_VBP_Document__c</picklist>
+        <values>
+            <fullName>BOSS%3A BOSS Transformation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>F%26A%3A Contract Excellence %26 Lifecycle Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>F%26A%3A Customer Contract Database</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>F%26A%3A Deal Desk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>F%26A%3A Renewals %26 Revenue Sweep</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GTM%3A Customer Experience Management Using Net Promoter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GTM%3A Customer Health %26 Heal Desk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GTM%3A Lead Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GTM%3A Lead Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GTM%3A Lead Nurturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GTM%3A Sales Compensation Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GTM%3A Sales Forecasting Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GTM%3A Territory Mapping %26 Coverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GTM%3A Vista Value Selling System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GTM%3A Win-Loss Reporting Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GTM%3A_CAPDB_Customer_and_Prospect_Database</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Design_Status__c</picklist>
+        <values>
+            <fullName>All Details Known - Can Build</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blocked - Encountered Complexity%2FQuestion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Details Needed - Cannot Build</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Key Elements Known - Can Build %26 Iterate</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Meeting_Category__c</picklist>
+        <values>
+            <fullName>Amendments%2FDecommissions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Renewals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DPSA%2C Opportunity%2C Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Service Handoff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Area__c</picklist>
+        <values>
+            <fullName>Account Health Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Account Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Activity Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Analytics Management %28Reporting %26 Supporting REQs%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bookings Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Campaign Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Collaboration Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community%2FPortal Management %28Customer%2FPartner%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact Role Management %28Account %26 Oppty%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Management and%2For Knowledge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Entitlement %26 SLA Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Migration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Quality Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance - NetSuite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance - Record to Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance - ZAB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Idea Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Master Agreement Contract Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Close%2FPost-Mortem Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Creation %26 Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Deal Desk Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Forecast Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Renewal Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Sales Process Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Splits%2FCommission Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order%2FFulfillment Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PMIS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PS Expense Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PS Project Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PS Resource %26 Time Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner%2FChannel Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product %26 Pricebook Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchased Products%2FSubscription Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote Approval Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote Output Document Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quoting%2C Pricing %26 Discount Management %28CPQ Setup%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support Case Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System Setup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Team %26 Territory Management %28Account %26 Oppty%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Productivity Management %28UI %26 Automation%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Build_Complexity__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Build_Status__c</picklist>
+        <values>
+            <fullName>Fully Built</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Partially Built</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Development_Sprint__c</picklist>
+        <values>
+            <fullName>End To End Testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance Invoice Testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phase 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sprint 0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sprint 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sprint 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sprint 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sprint 4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sprint 5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sprint 6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test Cycle 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test Cycle 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test Cycle 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test Cycle 4</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Development_Status__c</picklist>
+        <values>
+            <fullName>Closed%2FImplemented</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dev In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Post Go-Live</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready for QA%2FDev Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready for User Testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Withdrawn</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Development_Team__c</picklist>
+        <values>
+            <fullName>Partner 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portfolio IT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VCG</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Development_Type__c</picklist>
+        <values>
+            <fullName>Advanced Configuration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Basic Configuration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Installation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Impacted_Audience__c</picklist>
+        <values>
+            <fullName>All System users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SDR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Success</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Success Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Level_of_Change_Impact__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Priority__c</picklist>
+        <values>
+            <fullName>Must Have</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negotiable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nice to Have</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Product__c</picklist>
+        <values>
+            <fullName>Customizable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Req_Identified_During__c</picklist>
+        <values>
+            <fullName>Go-Live</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration Testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kickoff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post-Go-Live</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre- Integration Testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Go-Live</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Kickoff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Unit Testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-User Acceptance Testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit Testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Acceptance Testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Working Model</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Requirement_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved - Validated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consultant Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Discussion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Post Go-Live</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Withdrawn</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SOW_Coverage__c</picklist>
+        <values>
+            <fullName>Not currently covered by SOW</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>TCS Dec 2021 SOW Amendment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TCS Jan 2022 SOW</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>VBP_Design_Alignment_Mandate__c</picklist>
+        <values>
+            <fullName>Complexity Identified%2E Use case does not fit the above%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VBP can be solutioned in various ways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VBP demands prescribed technical solution</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>VBP_Design_Collaboration_Timing__c</picklist>
+        <values>
+            <fullName>Build Phase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Earliest %28Pre-work%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA - No dependencies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Requirements Gathering %28Pre-Development%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

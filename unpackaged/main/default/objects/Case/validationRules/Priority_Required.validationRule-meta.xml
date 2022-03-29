@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Priority_Required</fullName>
+    <active>false</active>
+    <errorConditionFormula>NOT(OR(
+ISPICKVAL( Priority , &quot;P0 - Emergency&quot;),
+ISPICKVAL( Priority , &quot;P1 - Critical&quot;),
+ISPICKVAL( Priority , &quot;P2 - High&quot;),
+ISPICKVAL( Priority , &quot;P3 - Medium&quot;),
+ISPICKVAL( Priority , &quot;P4 - Low&quot;)
+))</errorConditionFormula>
+    <errorDisplayField>Priority</errorDisplayField>
+    <errorMessage>Priority is required.</errorMessage>
+</ValidationRule>

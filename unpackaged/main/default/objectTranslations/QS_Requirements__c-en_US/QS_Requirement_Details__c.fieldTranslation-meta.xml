@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Anything needed to explain the details of the requirement should be included here, including the goal of the requirement. --></help>
+        <label><!-- Requirement Details --></label>
+        <name>QS_Requirement_Details__c</name>
+    </CustomFieldTranslation>

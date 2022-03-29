@@ -1,0 +1,19 @@
+Hi {!Case.Contact}<br>
+<br>
+
+One of your Case with us was marked Work Complete or<br>
+ Resolved.<br>
+<br>
+
+<b>Case Number:</b> 
+{!Case.CaseNumber}<br><br>
+
+<b>Case Subject:</b>{!Case.Subject}<br><br>
+
+
+ If you have a minute, please do us a favour by rating our Case process.<br><br>
+
+<a href="{!Case.CSAT_Survey_Link__c}"> Rate our process here</a><br><br>
+
+Thank you,<br>
+Power Factors Customer Support

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Track_Display_Order__c</fullName>
+    <description>Formula field to pull down the Track display order, which is intended to approximate the overall End-to-End process flow sort Order. Used for various reporting format purposes.</description>
+    <externalId>false</externalId>
+    <formula>QS_Primary_Track__r.QS_Track_Display_Order__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Formula field to pull down the Track display order, which is intended to approximate the overall End-to-End process flow sort Order. Used for various reporting format purposes.</inlineHelpText>
+    <label>Track Display Order</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Used by the developer to explain the failure:
+Code - Bad coding
+Configuration - Incorrect configuration 
+Product - Product malfunction
+User Error - Insufficient training --></help>
+        <label><!-- Failure Reason --></label>
+        <name>QS_Failure_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Defect - Code</masterLabel>
+            <translation><!-- Defect - Code --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Defect - Configuration</masterLabel>
+            <translation><!-- Defect - Configuration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Defect - Data</masterLabel>
+            <translation><!-- Defect - Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Defect - Product</masterLabel>
+            <translation><!-- Defect - Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invalid Scenario</masterLabel>
+            <translation><!-- Invalid Scenario --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Error/Training</masterLabel>
+            <translation><!-- User Error/Training --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

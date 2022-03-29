@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- The consultant or partner lead for the track. --></help>
+        <label><!-- Consultant/Partner Owner --></label>
+        <name>QS_Consultant_Partner_Owner__c</name>
+        <relationshipLabel><!-- Tracks (Consultant/Partner Owner) --></relationshipLabel>
+    </CustomFieldTranslation>

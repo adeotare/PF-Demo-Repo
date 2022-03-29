@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_Test_Scenario_Status</fullName>
+    <active>false</active>
+    <description>Lock Test Scenario Status until Requirement is ready for testing</description>
+    <errorConditionFormula>TEXT(QS_Requirement__r.QS_Development_Status__c) &lt;&gt; &quot;Ready for Testing&quot; 
+&amp;&amp; TEXT(QS_Requirement__r.QS_Requirement_Status__c) &lt;&gt; &quot;Withdrawn&quot; 
+&amp;&amp; ISCHANGED(QS_Status__c)</errorConditionFormula>
+    <errorMessage>Test Scenario status cannot be changed until the Requirement is ready to test</errorMessage>
+</ValidationRule>

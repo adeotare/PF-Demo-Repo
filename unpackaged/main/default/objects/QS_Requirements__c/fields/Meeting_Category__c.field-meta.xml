@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Meeting_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Meeting Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>DPSA, Opportunity, Quote</fullName>
+                <default>false</default>
+                <label>DPSA, Opportunity, Quote</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Sales Service Handoff</fullName>
+                <default>false</default>
+                <label>Sales Service Handoff</label>
+            </value>
+            <value>
+                <fullName>Project Management</fullName>
+                <default>false</default>
+                <label>Project Management</label>
+            </value>
+            <value>
+                <fullName>Amendments/Decommissions</fullName>
+                <default>false</default>
+                <label>Amendments/Decommissions</label>
+            </value>
+            <value>
+                <fullName>Contract Renewals</fullName>
+                <default>false</default>
+                <label>Contract Renewals</label>
+            </value>
+            <value>
+                <fullName>Support</fullName>
+                <default>false</default>
+                <label>Support</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

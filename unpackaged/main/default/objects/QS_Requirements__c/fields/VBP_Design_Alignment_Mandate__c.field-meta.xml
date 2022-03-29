@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VBP_Design_Alignment_Mandate__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Non-Negotiable example: Renewals: Automated Renewals
+Standard Variation example: Opportunity Deal Desk
+Customization example: Product Price Lists are configured and maintained in the CRM
+Complexity Identified example: Contracting: Multi-Year Deals</inlineHelpText>
+    <label>VBP Design Alignment Mandate</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>VBP demands prescribed technical solution</fullName>
+                <default>false</default>
+                <label>VBP demands prescribed technical solution</label>
+            </value>
+            <value>
+                <fullName>VBP can be solutioned in various ways</fullName>
+                <default>false</default>
+                <label>VBP can be solutioned in various ways</label>
+            </value>
+            <value>
+                <fullName>Complexity Identified. Use case does not fit the above.</fullName>
+                <default>false</default>
+                <label>Complexity Identified. Use case does not fit the above.</label>
+            </value>
+            <value>
+                <fullName>Customization. Known to vary company to company.</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Customization. Known to vary company to company.</label>
+            </value>
+            <value>
+                <fullName>Standard Variation. Solved for in various ways.</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Standard Variation. Solved for in various ways.</label>
+            </value>
+            <value>
+                <fullName>VBP. Process fundamentals must be followed.</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>VBP. Process fundamentals must be followed.</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

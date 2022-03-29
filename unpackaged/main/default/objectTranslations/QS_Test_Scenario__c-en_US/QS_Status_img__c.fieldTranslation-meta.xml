@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Color coded representation of the Test Scenario&apos;s Status
+Red = failed, Yellow = Not Tested or Retest, Green = Passed --></help>
+        <label><!-- Status (img) --></label>
+        <name>QS_Status_img__c</name>
+    </CustomFieldTranslation>

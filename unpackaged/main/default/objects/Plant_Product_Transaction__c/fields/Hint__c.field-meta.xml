@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hint__c</fullName>
+    <externalId>false</externalId>
+    <label>System Action</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Update Default Amend Quote Line for the same discount tier</fullName>
+                <default>false</default>
+                <label>Update Default Amend Quote Line for the same discount tier</label>
+            </value>
+            <value>
+                <fullName>Create New Quote Line with this product and Tier</fullName>
+                <default>false</default>
+                <label>Create New Quote Line with this product and Tier</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Freshdesk_Related_Requirements</fullName>
+    <columns>NAME</columns>
+    <columns>QS_Title__c</columns>
+    <columns>QS_Development_Team__c</columns>
+    <columns>SOW_Coverage__c</columns>
+    <columns>Complexity_Comments__c</columns>
+    <columns>Initial_Review_with_Business__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>QS_Requirements__c.Business_Requirements</value>
+    </filters>
+    <filters>
+        <field>QS_Primary_Track_Formula__c</field>
+        <operation>contains</operation>
+        <value>support</value>
+    </filters>
+    <filters>
+        <field>QS_Requirement_Status__c</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>Complexity_Comments__c</field>
+        <operation>contains</operation>
+        <value>freshdesk</value>
+    </filters>
+    <label>Freshdesk-Related Requirements</label>
+</ListView>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Client Audit Rights --></label>
+        <name>Client_Audit_Rights__c</name>
+        <picklistValues>
+            <masterLabel>Full access</masterLabel>
+            <translation><!-- Full access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Limited access</masterLabel>
+            <translation><!-- Limited access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No right</masterLabel>
+            <translation><!-- No right --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silent</masterLabel>
+            <translation><!-- Silent --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

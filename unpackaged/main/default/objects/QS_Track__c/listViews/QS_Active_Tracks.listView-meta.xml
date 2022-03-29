@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Active_Tracks</fullName>
+    <columns>NAME</columns>
+    <columns>QS_Overall__c</columns>
+    <columns>QS_Track_Lead__c</columns>
+    <columns>QS_VCG_Consultant__c</columns>
+    <columns>QS_Consultant_Partner_Owner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>QS_Active_Track__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Active Tracks</label>
+</ListView>

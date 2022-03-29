@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- A list of tasks to perform to complete the test scenario. --></help>
+        <label><!-- Test Steps --></label>
+        <name>QS_Test_Case_Action__c</name>
+    </CustomFieldTranslation>

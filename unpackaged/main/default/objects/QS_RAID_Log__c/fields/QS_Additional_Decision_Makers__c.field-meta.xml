@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Additional_Decision_Makers__c</fullName>
+    <description>Names of additional team members involved in making this decision</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the names of additional team members involved in making this decision</inlineHelpText>
+    <label>Additional Decision Makers</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

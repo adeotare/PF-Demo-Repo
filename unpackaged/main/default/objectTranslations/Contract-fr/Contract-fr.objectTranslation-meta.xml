@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    
+    
+    
+    
+    <recordTypes>
+        <label><!-- Contract Record Type --></label>
+        <name>Contract_Record_Type</name>
+    </recordTypes>
+    <webLinks>
+        <label><!-- Create_Contracted_Fixed_Price --></label>
+        <name>Create_Contracted_Fixed_Price</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Discounted_Price --></label>
+        <name>Create_Discounted_Price</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Implementation_Price --></label>
+        <name>Create_Implementation_Price</name>
+    </webLinks>
+</CustomObjectTranslation>

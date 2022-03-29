@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Client&apos;s Assignment Rights --></label>
+        <name>Client_s_Assignment_Rights__c</name>
+        <picklistValues>
+            <masterLabel>No assignment w/o consent</masterLabel>
+            <translation><!-- No assignment w/o consent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No assignment w/o consent (except transfer, merger, acquisition, sale, etc)</masterLabel>
+            <translation><!-- No assignment w/o consent (except transfer, merger, acquisition, sale, etc) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Notification required</masterLabel>
+            <translation><!-- Notification required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silent</masterLabel>
+            <translation><!-- Silent --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

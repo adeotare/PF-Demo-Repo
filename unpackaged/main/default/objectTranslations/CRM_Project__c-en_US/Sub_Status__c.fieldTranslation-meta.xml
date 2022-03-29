@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Sub Status --></label>
+        <name>Sub_Status__c</name>
+        <picklistValues>
+            <masterLabel>Backlog</masterLabel>
+            <translation><!-- Backlog --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blocked</masterLabel>
+            <translation><!-- Blocked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blocked - 3rd party</masterLabel>
+            <translation><!-- Blocked - 3rd party --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blocked - Customer</masterLabel>
+            <translation><!-- Blocked - Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blocked - Internal</masterLabel>
+            <translation><!-- Blocked - Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed - historical data import</masterLabel>
+            <translation><!-- Completed - historical data import --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed - work open</masterLabel>
+            <translation><!-- Completed - work open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Done</masterLabel>
+            <translation><!-- Done --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In progress</masterLabel>
+            <translation><!-- In progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inbox</masterLabel>
+            <translation><!-- Inbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Info collection</masterLabel>
+            <translation><!-- Info collection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality Checking</masterLabel>
+            <translation><!-- Quality Checking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Selected for Development</masterLabel>
+            <translation><!-- Selected for Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>To Do</masterLabel>
+            <translation><!-- To Do --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Under Spec</masterLabel>
+            <translation><!-- Under Spec --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Under construction / backlogged</masterLabel>
+            <translation><!-- Under construction / backlogged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting</masterLabel>
+            <translation><!-- Waiting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Won&#39;t do</masterLabel>
+            <translation><!-- Won&apos;t do --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

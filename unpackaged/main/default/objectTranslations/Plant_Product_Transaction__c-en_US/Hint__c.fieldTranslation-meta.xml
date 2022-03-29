@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- System Action --></label>
+        <name>Hint__c</name>
+        <picklistValues>
+            <masterLabel>Create New Quote Line with this product and Tier</masterLabel>
+            <translation><!-- Create New Quote Line with this product and Tier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update Default Amend Quote Line for the same discount tier</masterLabel>
+            <translation><!-- Update Default Amend Quote Line for the same discount tier --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

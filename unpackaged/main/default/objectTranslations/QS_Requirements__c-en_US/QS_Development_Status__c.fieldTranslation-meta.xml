@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Describes where in the process the development owner is in designing/building out the requirement. --></help>
+        <label><!-- Development Status --></label>
+        <name>QS_Development_Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed/Implemented</masterLabel>
+            <translation><!-- Closed/Implemented --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dev In Progress</masterLabel>
+            <translation><!-- Dev In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Go-Live</masterLabel>
+            <translation><!-- Post Go-Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for QA/Dev Complete</masterLabel>
+            <translation><!-- Ready for QA/Dev Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for User Testing</masterLabel>
+            <translation><!-- Ready for User Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

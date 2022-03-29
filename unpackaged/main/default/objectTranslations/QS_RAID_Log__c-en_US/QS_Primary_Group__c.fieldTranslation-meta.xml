@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- What group the action item falls under --></help>
+        <label><!-- Primary Group --></label>
+        <name>QS_Primary_Group__c</name>
+        <picklistValues>
+            <masterLabel>Business</masterLabel>
+            <translation><!-- Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT</masterLabel>
+            <translation><!-- IT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Vendor</masterLabel>
+            <translation><!-- Other Vendor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QS Deployment</masterLabel>
+            <translation><!-- QS Deployment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce CPQ</masterLabel>
+            <translation><!-- Salesforce CPQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VCG</masterLabel>
+            <translation><!-- VCG --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

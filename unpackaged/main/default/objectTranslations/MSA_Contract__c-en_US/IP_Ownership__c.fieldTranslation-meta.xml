@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- IP Ownership --></label>
+        <name>IP_Ownership__c</name>
+        <picklistValues>
+            <masterLabel>Client owns Customizations</masterLabel>
+            <translation><!-- Client owns Customizations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client owns more than just Customizations</masterLabel>
+            <translation><!-- Client owns more than just Customizations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company expressly owns</masterLabel>
+            <translation><!-- Company expressly owns --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silent</masterLabel>
+            <translation><!-- Silent --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Account Layout</layout>
+        <sections>
+            <label><!-- Merge Details --></label>
+            <section>Merge Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Competitor Page Layout</layout>
+        <sections>
+            <label><!-- Account Address --></label>
+            <section>Account Address</section>
+        </sections>
+        <sections>
+            <label><!-- Account Details --></label>
+            <section>Account Details</section>
+        </sections>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Legacy Details --></label>
+            <section>Legacy Details</section>
+        </sections>
+        <sections>
+            <label><!-- Merge Details --></label>
+            <section>Merge Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Customer Page Layout</layout>
+        <sections>
+            <label><!-- Account Address --></label>
+            <section>Account Address</section>
+        </sections>
+        <sections>
+            <label><!-- Account Details --></label>
+            <section>Account Details</section>
+        </sections>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Legacy Details --></label>
+            <section>Legacy Details</section>
+        </sections>
+        <sections>
+            <label><!-- Merge Details --></label>
+            <section>Merge Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Prospect Page Layout</layout>
+        <sections>
+            <label><!-- Account Address --></label>
+            <section>Account Address</section>
+        </sections>
+        <sections>
+            <label><!-- Account Details --></label>
+            <section>Account Details</section>
+        </sections>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Legacy Details --></label>
+            <section>Legacy Details</section>
+        </sections>
+        <sections>
+            <label><!-- Merge Details --></label>
+            <section>Merge Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Third Party Page Layout</layout>
+        <sections>
+            <label><!-- Account Address --></label>
+            <section>Account Address</section>
+        </sections>
+        <sections>
+            <label><!-- Account Details --></label>
+            <section>Account Details</section>
+        </sections>
+        <sections>
+            <label><!-- Additional Detail --></label>
+            <section>Additional Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Legacy Details --></label>
+            <section>Legacy Details</section>
+        </sections>
+        <sections>
+            <label><!-- Merge Details --></label>
+            <section>Merge Details</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Child Account --></label>
+        <name>Child_Account</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Collaboration Request Task --></label>
+        <name>Collaboration_Request_Task</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Create Quote --></label>
+        <name>Initial_Quote_Creation</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Event --></label>
+        <name>New_Event</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Test --></label>
+        <name>Test</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update Account Action --></label>
+        <name>Update_Account_Action</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- Competitor --></label>
+        <name>Competitor</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Customer --></label>
+        <name>Customer</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Prospect --></label>
+        <name>Prospect</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Third Party --></label>
+        <name>Third_Party</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Approving an Account, these additional Legal Entity ,Theater,Bill To and Ship To primaryaddresses ,Compliance Designation,Uses MSA of:must be confirmed --></errorMessage>
+        <name>Approving_an_Accounts</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Compliance Designations and Compliance Notes cannot be edited after account is approved. --></errorMessage>
+        <name>Cannot_edit_Account_field</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- PO Required field is only editable by System Administrators and Finance for Customer and Former Customer  Account Type and Partner  subtype --></errorMessage>
+        <name>PO_Required_field_can_not_be_edited</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please update parent account --></errorMessage>
+        <name>parent_account_required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+</CustomObjectTranslation>

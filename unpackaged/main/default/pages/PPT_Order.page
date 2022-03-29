@@ -1,0 +1,7 @@
+<apex:page standardController="Plant_Product_Transaction__c" extensions="PPTControllerforUpdateOrder" recordSetVar="ppt">
+   <flow:interview name="Update_Order_on_Plant_Product_Transaction" finishLocation="{!URLFOR('/{!accountId}')}">
+       <apex:param name="accountId" value="{!accountId}"/>
+    </flow:interview>
+    
+
+</apex:page>

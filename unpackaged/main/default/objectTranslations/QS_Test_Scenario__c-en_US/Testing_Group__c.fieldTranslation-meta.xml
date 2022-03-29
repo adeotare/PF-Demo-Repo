@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Testing Group --></label>
+        <name>Testing_Group__c</name>
+        <picklistValues>
+            <masterLabel>Business - All</masterLabel>
+            <translation><!-- Business - All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business - Detail</masterLabel>
+            <translation><!-- Business - Detail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ignore Forever</masterLabel>
+            <translation><!-- Ignore Forever --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QA</masterLabel>
+            <translation><!-- QA --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

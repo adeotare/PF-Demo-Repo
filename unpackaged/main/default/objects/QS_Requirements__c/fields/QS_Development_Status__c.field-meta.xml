@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Development_Status__c</fullName>
+    <description>Picklist showing the status of the current deployment, allowing for reporting into what requirement are built, are in progress, and are still open</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Describes where in the process the development owner is in designing/building out the requirement.</inlineHelpText>
+    <label>Development Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+                <label>Not Started</label>
+            </value>
+            <value>
+                <fullName>Dev In Progress</fullName>
+                <default>false</default>
+                <label>Dev In Progress</label>
+            </value>
+            <value>
+                <fullName>Ready for QA/Dev Complete</fullName>
+                <default>false</default>
+                <label>Ready for QA/Dev Complete</label>
+            </value>
+            <value>
+                <fullName>Ready for User Testing</fullName>
+                <default>false</default>
+                <label>Ready for User Testing</label>
+            </value>
+            <value>
+                <fullName>Closed/Implemented</fullName>
+                <default>false</default>
+                <label>Closed/Implemented</label>
+            </value>
+            <value>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+                <label>Withdrawn</label>
+            </value>
+            <value>
+                <fullName>Post Go-Live</fullName>
+                <default>false</default>
+                <label>Post Go-Live</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

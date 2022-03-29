@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Requirement_Status__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Where is this requirement in the process.</inlineHelpText>
+    <label>Requirement Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>true</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>In Discussion</fullName>
+                <default>false</default>
+                <label>In Discussion</label>
+            </value>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Consultant Approved</fullName>
+                <default>false</default>
+                <label>Consultant Approved</label>
+            </value>
+            <value>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+                <label>Withdrawn</label>
+            </value>
+            <value>
+                <fullName>Post Go-Live</fullName>
+                <default>false</default>
+                <label>Post Go-Live</label>
+            </value>
+            <value>
+                <fullName>Approved - Validated</fullName>
+                <default>false</default>
+                <label>Approved - Validated</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

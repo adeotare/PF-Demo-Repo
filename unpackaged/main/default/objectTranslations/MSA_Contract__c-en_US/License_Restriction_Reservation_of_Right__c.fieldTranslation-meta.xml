@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- License Restriction/Reservation of Right --></label>
+        <name>License_Restriction_Reservation_of_Right__c</name>
+        <picklistValues>
+            <masterLabel>Minimum Restrictions</masterLabel>
+            <translation><!-- Minimum Restrictions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PowerFactors language</masterLabel>
+            <translation><!-- PowerFactors language --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silent</masterLabel>
+            <translation><!-- Silent --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

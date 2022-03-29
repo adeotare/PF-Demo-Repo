@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Validate contract term and dates --></label>
+        <name>Validate_contract_term_and_dates__c</name>
+    </CustomFieldTranslation>

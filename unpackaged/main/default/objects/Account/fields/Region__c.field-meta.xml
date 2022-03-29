@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(CONTAINS(&#39;CA:PR:PM:SX:US&#39;,TEXT(BillingCountryCode )),&#39;North America&#39;
+,IF(CONTAINS(&#39;AQ:AU:CX:CC:CK:FJ:PF:TF:HM:KI:NR:NC:NZ:NU:NF:PG:PN:WS:SB:TL:TK:TO:TV:VU:WF&#39;,TEXT(BillingCountryCode) ),&#39;Oceania&#39;
+,IF(CONTAINS(&#39;AI:AG:AR:AW:BS:BB:BZ:BM:BO:BQ:BV:BR:KY:CL:CO:CR:CU:CW:DM:DO:EC:SV:FK:GF:GD:GP:GT:GY:HT:HN:JM:MQ:MX:MS:NI:PA:PY:PE:BL:KN:LC:MF:VC:GS:SR:TT:TC:UY:VE:VG&#39;,TEXT(BillingCountryCode) ),&#39;LATAM&#39;
+,IF(CONTAINS(&#39;JP:KP:KR&#39;,TEXT(BillingCountryCode) ),&#39;Japan/Korea&#39;
+,IF(CONTAINS(&#39;IN:NP:LK&#39;,TEXT(BillingCountryCode) ),&#39;India&#39;
+,IF(CONTAINS(&#39;AX:AL:AD:AM:AT:BY:BE:BA:BG:HR:CY:CZ:DK:EE:FO:FI:FR:GE:DE;GI:GR:GL:GG:VA:HU:IS:IR:IM:IL:IT:JE:LV:LI:LT:LU:MK:MT:MD:MC:ME:NL:NO:PL:PT:RO:RU:SM:RS:SK:SI:ES:SJ:SE:CH:TR:UA:GB&#39;,TEXT(BillingCountryCode) ),&#39;Europe&#39;
+,IF(CONTAINS(&#39;CN:MO:MN:TW&#39;,TEXT(BillingCountryCode) ),&#39;China&#39;
+,IF(CONTAINS(&#39;BD:BT:IO:BN:KH:ID:LA:MY:MV:MM:PH:RE:SG:TH:VN&#39;,TEXT(BillingCountryCode) ),&#39;ASEAN&#39;
+,IF(CONTAINS(&#39;AF:DZ:AO:AZ:BH:BJ:BW:BF:BI:CM:CV:CF:TD:KM:CG:CD:CI:DJ:EG:GQ:ER:ET:GA:GM:GH:GN:GW:IR:IQ:JO:KZ:KE:KW:KG:LB:LS:LR:LY:MG:MW:ML:MR:MU:YT:MA:MZ:NA:NE:NG:OM:PK:PS:QA:RW:SH:ST:SA:SN:SC:SL:SO:ZA:SS:SD:SZ:SY:TJ:TZ:TG:TN:TM:UG:AE:UZ:EH:YE:ZM:ZW&#39;,TEXT(BillingCountryCode) ),&#39;Africa &amp; MENA&#39;
+,null)))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Region</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

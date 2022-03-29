@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Action item is tied to the following Key Decision RAID Log --></help>
+        <label><!-- RAID Log --></label>
+        <name>Raid_Log__c</name>
+        <relationshipLabel><!-- Linked RAID items --></relationshipLabel>
+    </CustomFieldTranslation>

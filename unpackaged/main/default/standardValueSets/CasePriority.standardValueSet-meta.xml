@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>P0 - Emergency</fullName>
+        <default>false</default>
+        <label>P0 - Emergency</label>
+    </standardValue>
+    <standardValue>
+        <fullName>P1 - Critical</fullName>
+        <default>false</default>
+        <label>P1 - Critical</label>
+    </standardValue>
+    <standardValue>
+        <fullName>P2 - High</fullName>
+        <default>false</default>
+        <label>P2 - High</label>
+    </standardValue>
+    <standardValue>
+        <fullName>P3 - Medium</fullName>
+        <default>false</default>
+        <label>P3 - Medium</label>
+    </standardValue>
+    <standardValue>
+        <fullName>P4 - Low</fullName>
+        <default>true</default>
+        <label>P4 - Low</label>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- SOW Coverage --></label>
+        <name>SOW_Coverage__c</name>
+        <picklistValues>
+            <masterLabel>Not currently covered by SOW</masterLabel>
+            <translation><!-- Not currently covered by SOW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TCS Dec 2021 SOW Amendment</masterLabel>
+            <translation><!-- TCS Dec 2021 SOW Amendment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TCS Jan 2022 SOW</masterLabel>
+            <translation><!-- TCS Jan 2022 SOW --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

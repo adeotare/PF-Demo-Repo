@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Design_Review_Required_data</fullName>
+    <active>true</active>
+    <description>Build Complexity and Development Type need to be entered before Development Status can be set to &quot;Design Finalized&quot;</description>
+    <errorConditionFormula>text(QS_Development_Status__c)= &quot;Design Finalized&quot; &amp;&amp;  (  text(QS_Build_Complexity__c )=null || text(QS_Development_Type__c)= null )</errorConditionFormula>
+    <errorMessage>Build Complexity and Development Type need to be entered before Development Status can be set to &quot;Design Finalized&quot;</errorMessage>
+</ValidationRule>

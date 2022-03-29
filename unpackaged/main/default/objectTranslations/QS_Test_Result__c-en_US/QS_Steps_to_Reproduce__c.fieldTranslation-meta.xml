@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Specific step-by-step instructions to reproduce a failed result. --></help>
+        <label><!-- Steps to Reproduce --></label>
+        <name>QS_Steps_to_Reproduce__c</name>
+    </CustomFieldTranslation>

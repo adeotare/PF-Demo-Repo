@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Cross_Functional_Requirement__c</fullName>
+    <description>Denotes that the requirement has related requirements linked to it. Total Related Requirements &gt;0</description>
+    <externalId>false</externalId>
+    <formula>QS_Total_Related_Tracks__c &gt;0</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Denotes that the requirement has related requirements linked to it.</inlineHelpText>
+    <label>Cross Functional Requirement</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- The steps and tasks the Development Owner recommends to implement the requirement. --></help>
+        <label><!-- Proposed Solution --></label>
+        <name>QS_Proposed_Solution__c</name>
+    </CustomFieldTranslation>

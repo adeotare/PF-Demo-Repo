@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Numerical_Status__c</fullName>
+    <description>Applies a numerical value to the overall status options</description>
+    <externalId>false</externalId>
+    <formula>CASE( QS_Status__c , &quot;Green&quot;, 2, &quot;Yellow&quot;, 1, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Applies a numerical value to the overall status options</inlineHelpText>
+    <label>Numerical Status</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Solution_Topics</fullName>
+    <columns>NAME</columns>
+    <columns>Business_Need__c</columns>
+    <columns>CPQ_Technical_Considerations__c</columns>
+    <columns>Sort_Order__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Solution Topics</label>
+</ListView>

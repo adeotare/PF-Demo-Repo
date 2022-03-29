@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Professional_Services_Requirements</fullName>
+    <columns>NAME</columns>
+    <columns>QS_Area__c</columns>
+    <columns>QS_Requirement_Status__c</columns>
+    <columns>QS_Title__c</columns>
+    <columns>QS_Business_Owner__c</columns>
+    <columns>QS_User_Story__c</columns>
+    <columns>QS_Development_Sprint__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>QS_Primary_Track__c</field>
+        <operation>equals</operation>
+        <value>Professional Services</value>
+    </filters>
+    <filters>
+        <field>QS_Requirement_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Withdrawn,Post Go-Live</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>QS_Requirements__c.Business_Requirements</value>
+    </filters>
+    <label>Professional Services Requirements</label>
+</ListView>

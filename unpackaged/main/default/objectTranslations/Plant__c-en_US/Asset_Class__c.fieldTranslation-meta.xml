@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Asset Class --></label>
+        <name>Asset_Class__c</name>
+        <picklistValues>
+            <masterLabel>Hydro</masterLabel>
+            <translation><!-- Hydro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industrial</masterLabel>
+            <translation><!-- Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Renewable</masterLabel>
+            <translation><!-- Other Renewable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solar PV</masterLabel>
+            <translation><!-- Solar PV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Storage</masterLabel>
+            <translation><!-- Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wind</masterLabel>
+            <translation><!-- Wind --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

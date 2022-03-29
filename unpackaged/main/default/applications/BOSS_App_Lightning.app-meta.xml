@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <content>BOSS_App_Homepage</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>RAID_Log_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>QS_RAID_Log__c</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#132449</headerColor>
+        <logo>VistaLogo_RGB_VCG300x3001</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Business Operations and Systems Standards (BOSS) Lightning App</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>BOSS App Lightning</label>
+    <navType>Standard</navType>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Third Party User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Super User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Success</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Services/Onboarding</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF SDR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Sales Rep/Engineers</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Read-only</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Ops</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Legal</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Finance</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Customer Support</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Third Party User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Super User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Success</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Services/Onboarding</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF SDR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Sales Rep/Engineers</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Read-only</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Ops</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Legal</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Finance</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Customer Support</profile>
+    </profileActionOverrides>
+    <tabs>standard-home</tabs>
+    <tabs>QS_Track__c</tabs>
+    <tabs>QS_User_Story__c</tabs>
+    <tabs>QS_Requirements__c</tabs>
+    <tabs>QS_Test_Scenario__c</tabs>
+    <tabs>QS_Test_Result__c</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>QS_RAID_Log__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>BOSS_App_Lightning_UtilityBar</utilityBar>
+</CustomApplication>

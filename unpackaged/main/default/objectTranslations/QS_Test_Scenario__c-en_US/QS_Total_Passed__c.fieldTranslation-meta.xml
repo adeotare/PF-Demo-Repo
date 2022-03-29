@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Total number of Test Results with a &quot;Passed&quot;  or &quot;Passed with Exception&quot; status --></help>
+        <label><!-- Total Passed --></label>
+        <name>QS_Total_Passed__c</name>
+    </CustomFieldTranslation>

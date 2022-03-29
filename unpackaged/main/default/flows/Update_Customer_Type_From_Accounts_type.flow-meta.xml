@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <name>Check_account_type_is_not_null</name>
+        <label>Check account type is not null</label>
+        <locationX>456</locationX>
+        <locationY>383</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Account_type_is_not_null</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.Type</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Account_type_value</targetReference>
+            </connector>
+            <label>Account type is not null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Account_type_value</name>
+        <label>Check Account type value</label>
+        <locationX>677</locationX>
+        <locationY>372</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Account_type_is_Customer</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Customer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opportunity_type_is_updated</targetReference>
+            </connector>
+            <label>Account type is Customer</label>
+        </rules>
+        <rules>
+            <name>Account_type_is_Former_Customer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Former Customer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opportunity_type_is_updated_0</targetReference>
+            </connector>
+            <label>Account type is Former Customer</label>
+        </rules>
+        <rules>
+            <name>Account_type_is_Prospect</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Prospect</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opportunity_type_is_updated_0_0</targetReference>
+            </connector>
+            <label>Account type is Prospect</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Update Customer Type From Accounts type {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Customer Type From Accounts type</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Opportunity_type_is_updated</name>
+        <label>Opportunity type is updated</label>
+        <locationX>920</locationX>
+        <locationY>240</locationY>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Customer</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Opportunity_type_is_updated_0</name>
+        <label>Opportunity type is updated</label>
+        <locationX>1005</locationX>
+        <locationY>482</locationY>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Former Customer</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Opportunity_type_is_updated_0_0</name>
+        <label>Opportunity type is updated</label>
+        <locationX>699</locationX>
+        <locationY>564</locationY>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Prospect</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>330</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Check_account_type_is_not_null</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

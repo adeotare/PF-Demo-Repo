@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sending email alert for testing</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Collaboration Request email</name>
+    <style>none</style>
+    <subject>Collaboration Requested</subject>
+    <textOnly>For the new request, {!Task.CreatedBy}  has requested collaboration on {!Task.Link} .</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Project Type --></label>
+        <name>Project_Type__c</name>
+        <picklistValues>
+            <masterLabel>Drive O&amp;M</masterLabel>
+            <translation><!-- Drive O&amp;M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Edge Services</masterLabel>
+            <translation><!-- Edge Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Projects</masterLabel>
+            <translation><!-- Internal Projects --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monitoring Decommissioning</masterLabel>
+            <translation><!-- Monitoring Decommissioning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monitoring Implementation</masterLabel>
+            <translation><!-- Monitoring Implementation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T&amp;M</masterLabel>
+            <translation><!-- T&amp;M --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

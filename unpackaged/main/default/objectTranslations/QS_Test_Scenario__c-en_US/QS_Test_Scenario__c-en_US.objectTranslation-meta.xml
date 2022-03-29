@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Test Scenario</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Test Scenarios</value>
+    </caseValues>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Test Scenario Layout</layout>
+        <sections>
+            <label><!-- Additional Details --></label>
+            <section>Additional Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Test Details --></label>
+            <section>Test Details</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Log Retest Result --></label>
+        <name>QS_Log_Retest_Result</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Log Test Result --></label>
+        <name>QS_Log_Test_Result</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- UAT Test Scenario --></label>
+        <name>UAT_Test_Scenario</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Test Scenario status cannot be changed until the Requirement is ready to test --></errorMessage>
+        <name>Lock_Test_Scenario_Status</name>
+    </validationRules>
+</CustomObjectTranslation>

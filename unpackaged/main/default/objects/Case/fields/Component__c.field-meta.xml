@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Component__c</fullName>
+    <externalId>false</externalId>
+    <label>Component</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accounts</fullName>
+                <default>false</default>
+                <label>Accounts</label>
+            </value>
+            <value>
+                <fullName>Admin</fullName>
+                <default>false</default>
+                <label>Admin</label>
+            </value>
+            <value>
+                <fullName>Asset Builder</fullName>
+                <default>false</default>
+                <label>Asset Builder</label>
+            </value>
+            <value>
+                <fullName>Asset Tags</fullName>
+                <default>false</default>
+                <label>Asset Tags</label>
+            </value>
+            <value>
+                <fullName>Case</fullName>
+                <default>false</default>
+                <label>Case</label>
+            </value>
+            <value>
+                <fullName>Contacts</fullName>
+                <default>false</default>
+                <label>Contacts</label>
+            </value>
+            <value>
+                <fullName>Contracts</fullName>
+                <default>false</default>
+                <label>Contracts</label>
+            </value>
+            <value>
+                <fullName>Dashboards</fullName>
+                <default>false</default>
+                <label>Dashboards</label>
+            </value>
+            <value>
+                <fullName>Data &amp; Trends</fullName>
+                <default>false</default>
+                <label>Data &amp; Trends</label>
+            </value>
+            <value>
+                <fullName>Data Quality</fullName>
+                <default>false</default>
+                <label>Data Quality</label>
+            </value>
+            <value>
+                <fullName>Entitlements</fullName>
+                <default>false</default>
+                <label>Entitlements</label>
+            </value>
+            <value>
+                <fullName>Events</fullName>
+                <default>false</default>
+                <label>Events</label>
+            </value>
+            <value>
+                <fullName>Home</fullName>
+                <default>false</default>
+                <label>Home</label>
+            </value>
+            <value>
+                <fullName>Kiosk</fullName>
+                <default>false</default>
+                <label>Kiosk</label>
+            </value>
+            <value>
+                <fullName>Leads</fullName>
+                <default>false</default>
+                <label>Leads</label>
+            </value>
+            <value>
+                <fullName>Manage</fullName>
+                <default>false</default>
+                <label>Manage</label>
+            </value>
+            <value>
+                <fullName>Monitor</fullName>
+                <default>false</default>
+                <label>Monitor</label>
+            </value>
+            <value>
+                <fullName>Opportunities</fullName>
+                <default>false</default>
+                <label>Opportunities</label>
+            </value>
+            <value>
+                <fullName>Parts</fullName>
+                <default>false</default>
+                <label>Parts</label>
+            </value>
+            <value>
+                <fullName>Performance</fullName>
+                <default>false</default>
+                <label>Performance</label>
+            </value>
+            <value>
+                <fullName>Plant Assets</fullName>
+                <default>false</default>
+                <label>Plant Assets</label>
+            </value>
+            <value>
+                <fullName>PV Expected Production Generator</fullName>
+                <default>false</default>
+                <label>PV Expected Production Generator</label>
+            </value>
+            <value>
+                <fullName>Reports</fullName>
+                <default>false</default>
+                <label>Reports</label>
+            </value>
+            <value>
+                <fullName>RFIs</fullName>
+                <default>false</default>
+                <label>RFIs</label>
+            </value>
+            <value>
+                <fullName>SATs</fullName>
+                <default>false</default>
+                <label>SATs</label>
+            </value>
+            <value>
+                <fullName>SREC Reporting</fullName>
+                <default>false</default>
+                <label>SREC Reporting</label>
+            </value>
+            <value>
+                <fullName>Tabular Model</fullName>
+                <default>false</default>
+                <label>Tabular Model</label>
+            </value>
+            <value>
+                <fullName>Work Orders</fullName>
+                <default>false</default>
+                <label>Work Orders</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

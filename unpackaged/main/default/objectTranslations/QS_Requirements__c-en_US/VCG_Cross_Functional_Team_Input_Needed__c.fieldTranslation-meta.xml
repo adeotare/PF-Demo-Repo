@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Information the BOSS team needs from GTM, F&amp;A, etc. in order to solution the design/implement. --></help>
+        <label><!-- VCG Cross-Functional Team Input Needed --></label>
+        <name>VCG_Cross_Functional_Team_Input_Needed__c</name>
+    </CustomFieldTranslation>

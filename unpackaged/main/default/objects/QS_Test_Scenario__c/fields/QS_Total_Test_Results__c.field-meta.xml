@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Total_Test_Results__c</fullName>
+    <description>Total number of test results, regardless of status</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Total number of test results, regardless of status</inlineHelpText>
+    <label>Total Test Results</label>
+    <summaryFilterItems>
+        <field>QS_Test_Result__c.CreatedDate</field>
+        <operation>greaterOrEqual</operation>
+        <value>3/6/2022, 12:00 AM</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QS_Test_Result__c.QS_Test_Scenario__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

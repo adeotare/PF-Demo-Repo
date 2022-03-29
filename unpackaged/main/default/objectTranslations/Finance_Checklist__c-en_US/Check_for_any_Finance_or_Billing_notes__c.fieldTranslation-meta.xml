@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Check for any Finance or Billing notes --></label>
+        <name>Check_for_any_Finance_or_Billing_notes__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Product Line --></label>
+        <name>Product_Line__c</name>
+        <picklistValues>
+            <masterLabel>Add-ons</masterLabel>
+            <translation><!-- Add-ons --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bluepoint</masterLabel>
+            <translation><!-- Bluepoint --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Breeze Development</masterLabel>
+            <translation><!-- Breeze Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Core</masterLabel>
+            <translation><!-- Core --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Core Lite</masterLabel>
+            <translation><!-- Core Lite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Success</masterLabel>
+            <translation><!-- Customer Success --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Edge Services</masterLabel>
+            <translation><!-- Edge Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ekho</masterLabel>
+            <translation><!-- Ekho --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enterprise</masterLabel>
+            <translation><!-- Enterprise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O&amp;M</masterLabel>
+            <translation><!-- O&amp;M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pro</masterLabel>
+            <translation><!-- Pro --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

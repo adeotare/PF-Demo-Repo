@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Owner</fullName>
+        <default>false</default>
+        <label>Owner</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Rep</fullName>
+        <default>false</default>
+        <label>Rep</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Account Manager</fullName>
+        <default>false</default>
+        <label>Account Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Customer Success Associate</fullName>
+        <default>false</default>
+        <label>Customer Success Associate</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Customer Success Manager</fullName>
+        <default>false</default>
+        <label>Customer Success Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Technical Project Manager</fullName>
+        <default>false</default>
+        <label>Technical Project Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Business Development Rep</fullName>
+        <default>false</default>
+        <label>Business Development Rep</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Sales Engineer</fullName>
+        <default>false</default>
+        <label>Sales Engineer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Implementation Lead</fullName>
+        <default>false</default>
+        <label>Implementation Lead</label>
+    </standardValue>
+</StandardValueSet>

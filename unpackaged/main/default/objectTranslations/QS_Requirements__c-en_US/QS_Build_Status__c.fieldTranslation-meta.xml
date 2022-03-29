@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- None - nothing in QS to meet this REQ. 
+Partially Built - some functionality in QS that meets this REQ. Should be detailed in Proposed Solution. 
+Fully Built - this REQ is fully enabled by QS functionality. Should be detailed in Proposed Solution --></help>
+        <label><!-- QS Build Status --></label>
+        <name>QS_Build_Status__c</name>
+        <picklistValues>
+            <masterLabel>Fully Built</masterLabel>
+            <translation><!-- Fully Built --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partially Built</masterLabel>
+            <translation><!-- Partially Built --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

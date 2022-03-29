@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Requirements</fullName>
+    <columns>NAME</columns>
+    <columns>QS_Title__c</columns>
+    <columns>QS_Primary_Track__c</columns>
+    <columns>QS_Area__c</columns>
+    <columns>QS_Requirement_Status__c</columns>
+    <columns>QS_Development_Status__c</columns>
+    <columns>QS_Business_Owner__c</columns>
+    <columns>QS_Overall_Sort_Order__c</columns>
+    <columns>QS_Origin__c</columns>
+    <columns>QS_Build_Complexity__c</columns>
+    <columns>Design_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>QS_Primary_Track__c</field>
+        <operation>equals</operation>
+        <value>Legal</value>
+    </filters>
+    <label>All Requirements</label>
+</ListView>

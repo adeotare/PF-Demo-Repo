@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Indicates which VBP document pertains to this requirement. --></help>
+        <label><!-- Core VBP Document --></label>
+        <name>Core_VBP_Document__c</name>
+        <picklistValues>
+            <masterLabel>BOSS: BOSS Transformation</masterLabel>
+            <translation><!-- BOSS: BOSS Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F&amp;A: Contract Excellence &amp; Lifecycle Management</masterLabel>
+            <translation><!-- F&amp;A: Contract Excellence &amp; Lifecycle Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F&amp;A: Customer Contract Database</masterLabel>
+            <translation><!-- F&amp;A: Customer Contract Database --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F&amp;A: Deal Desk</masterLabel>
+            <translation><!-- F&amp;A: Deal Desk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F&amp;A: Renewals &amp; Revenue Sweep</masterLabel>
+            <translation><!-- F&amp;A: Renewals &amp; Revenue Sweep --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GTM: CAPDB (Customer and Prospect Database)</masterLabel>
+            <translation><!-- GTM: CAPDB (Customer and Prospect Database) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GTM: Customer Experience Management Using Net Promoter</masterLabel>
+            <translation><!-- GTM: Customer Experience Management Using Net Promoter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GTM: Customer Health &amp; Heal Desk</masterLabel>
+            <translation><!-- GTM: Customer Health &amp; Heal Desk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GTM: Lead Development</masterLabel>
+            <translation><!-- GTM: Lead Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GTM: Lead Management</masterLabel>
+            <translation><!-- GTM: Lead Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GTM: Lead Nurturing</masterLabel>
+            <translation><!-- GTM: Lead Nurturing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GTM: Sales Compensation Plan</masterLabel>
+            <translation><!-- GTM: Sales Compensation Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GTM: Sales Forecasting Process</masterLabel>
+            <translation><!-- GTM: Sales Forecasting Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GTM: Territory Mapping &amp; Coverage</masterLabel>
+            <translation><!-- GTM: Territory Mapping &amp; Coverage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GTM: Vista Value Selling System</masterLabel>
+            <translation><!-- GTM: Vista Value Selling System --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GTM: Win-Loss Reporting Process</masterLabel>
+            <translation><!-- GTM: Win-Loss Reporting Process --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

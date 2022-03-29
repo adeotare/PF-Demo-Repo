@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Case Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Platform__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accounts Management - Other</fullName>
+                <default>false</default>
+                <label>Accounts Management - Other</label>
+            </value>
+            <value>
+                <fullName>Accounts Management - New User</fullName>
+                <default>false</default>
+                <label>Accounts Management - New User</label>
+            </value>
+            <value>
+                <fullName>Admin - Jobs</fullName>
+                <default>false</default>
+                <label>Admin - Jobs</label>
+            </value>
+            <value>
+                <fullName>API - 3rd Party</fullName>
+                <default>false</default>
+                <label>API - 3rd Party</label>
+            </value>
+            <value>
+                <fullName>API - Accounts Management</fullName>
+                <default>false</default>
+                <label>API - Accounts Management</label>
+            </value>
+            <value>
+                <fullName>API - Configuration</fullName>
+                <default>false</default>
+                <label>API - Configuration</label>
+            </value>
+            <value>
+                <fullName>API - Customer</fullName>
+                <default>false</default>
+                <label>API - Customer</label>
+            </value>
+            <value>
+                <fullName>API - General</fullName>
+                <default>false</default>
+                <label>API - General</label>
+            </value>
+            <value>
+                <fullName>Availability Contract</fullName>
+                <default>false</default>
+                <label>Availability Contract</label>
+            </value>
+            <value>
+                <fullName>Backend Program Error</fullName>
+                <default>false</default>
+                <label>Backend Program Error</label>
+            </value>
+            <value>
+                <fullName>Bug</fullName>
+                <default>false</default>
+                <label>Bug</label>
+            </value>
+            <value>
+                <fullName>Calculation / Logic</fullName>
+                <default>false</default>
+                <label>Calculation / Logic</label>
+            </value>
+            <value>
+                <fullName>Case Manager / Templates</fullName>
+                <default>false</default>
+                <label>Case Manager / Templates</label>
+            </value>
+            <value>
+                <fullName>Communication Loss - Internal</fullName>
+                <default>false</default>
+                <label>Communication Loss - Internal</label>
+            </value>
+            <value>
+                <fullName>Configuration</fullName>
+                <default>false</default>
+                <label>Configuration</label>
+            </value>
+            <value>
+                <fullName>Configuration - Data Logger</fullName>
+                <default>false</default>
+                <label>Configuration - Data Logger</label>
+            </value>
+            <value>
+                <fullName>Configuration - Missing Object</fullName>
+                <default>false</default>
+                <label>Configuration - Missing Object</label>
+            </value>
+            <value>
+                <fullName>Configuration - PI AF / SQL</fullName>
+                <default>false</default>
+                <label>Configuration - PI AF / SQL</label>
+            </value>
+            <value>
+                <fullName>Customer Contract Terms</fullName>
+                <default>false</default>
+                <label>Customer Contract Terms</label>
+            </value>
+            <value>
+                <fullName>Custom Projects / Solutions</fullName>
+                <default>false</default>
+                <label>Custom Projects / Solutions</label>
+            </value>
+            <value>
+                <fullName>Communication Loss - Customer</fullName>
+                <default>false</default>
+                <label>Communication Loss - Customer</label>
+            </value>
+            <value>
+                <fullName>Configuration - Customer</fullName>
+                <default>false</default>
+                <label>Configuration - Customer</label>
+            </value>
+            <value>
+                <fullName>Customer - General Info / Documentation / Training</fullName>
+                <default>false</default>
+                <label>Customer - General Info / Documentation / Training</label>
+            </value>
+            <value>
+                <fullName>Customer - Invalid Input Data</fullName>
+                <default>false</default>
+                <label>Customer - Invalid Input Data</label>
+            </value>
+            <value>
+                <fullName>Customer - Site Level</fullName>
+                <default>false</default>
+                <label>Customer - Site Level</label>
+            </value>
+            <value>
+                <fullName>Data - Historical - Backfill / Reconstruction</fullName>
+                <default>false</default>
+                <label>Data - Historical - Backfill / Reconstruction</label>
+            </value>
+            <value>
+                <fullName>Data - Historical - Missing / Invalid</fullName>
+                <default>false</default>
+                <label>Data - Historical - Missing / Invalid</label>
+            </value>
+            <value>
+                <fullName>Data - Live</fullName>
+                <default>false</default>
+                <label>Data - Live</label>
+            </value>
+            <value>
+                <fullName>Data - Raw - Extraction</fullName>
+                <default>false</default>
+                <label>Data - Raw - Extraction</label>
+            </value>
+            <value>
+                <fullName>Data Issue</fullName>
+                <default>false</default>
+                <label>Data Issue</label>
+            </value>
+            <value>
+                <fullName>Data Validation</fullName>
+                <default>false</default>
+                <label>Data Validation</label>
+            </value>
+            <value>
+                <fullName>Decommissioning</fullName>
+                <default>false</default>
+                <label>Decommissioning</label>
+            </value>
+            <value>
+                <fullName>Internal - Platform Sync</fullName>
+                <default>false</default>
+                <label>Internal - Platform Sync</label>
+            </value>
+            <value>
+                <fullName>Events - Backfill / Reconstruction / Reprocess</fullName>
+                <default>false</default>
+                <label>Events - Backfill / Reconstruction / Reprocess</label>
+            </value>
+            <value>
+                <fullName>Events - False / Logic</fullName>
+                <default>false</default>
+                <label>Events - False / Logic</label>
+            </value>
+            <value>
+                <fullName>Implementation - Operational Backlog</fullName>
+                <default>false</default>
+                <label>Implementation - Operational Backlog</label>
+            </value>
+            <value>
+                <fullName>Implementation - Post SAT</fullName>
+                <default>false</default>
+                <label>Implementation - Post SAT</label>
+            </value>
+            <value>
+                <fullName>Internal - Services / Infrastructure</fullName>
+                <default>false</default>
+                <label>Internal - Services / Infrastructure</label>
+            </value>
+            <value>
+                <fullName>Internal - Alerts / Stale Data</fullName>
+                <default>false</default>
+                <label>Internal - Alerts / Stale Data</label>
+            </value>
+            <value>
+                <fullName>Layout Changes</fullName>
+                <default>false</default>
+                <label>Layout Changes</label>
+            </value>
+            <value>
+                <fullName>Manual Jobs - Def Sync / Reprocess</fullName>
+                <default>false</default>
+                <label>Manual Jobs - Def Sync / Reprocess</label>
+            </value>
+            <value>
+                <fullName>Metadata</fullName>
+                <default>false</default>
+                <label>Metadata</label>
+            </value>
+            <value>
+                <fullName>Mobile Application</fullName>
+                <default>false</default>
+                <label>Mobile Application</label>
+            </value>
+            <value>
+                <fullName>N/A - SPAM</fullName>
+                <default>false</default>
+                <label>N/A - SPAM</label>
+            </value>
+            <value>
+                <fullName>N3 Software / FW Update</fullName>
+                <default>false</default>
+                <label>N3 Software / FW Update</label>
+            </value>
+            <value>
+                <fullName>New Data Logger installlation</fullName>
+                <default>false</default>
+                <label>New Data Logger installlation</label>
+            </value>
+            <value>
+                <fullName>New Device installation</fullName>
+                <default>false</default>
+                <label>New Device installation</label>
+            </value>
+            <value>
+                <fullName>New Inverter / Meter installation</fullName>
+                <default>false</default>
+                <label>New Inverter / Meter installation</label>
+            </value>
+            <value>
+                <fullName>Notifications</fullName>
+                <default>false</default>
+                <label>Notifications</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>PMGS</fullName>
+                <default>false</default>
+                <label>PMGS</label>
+            </value>
+            <value>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+                <label>Feature Request</label>
+            </value>
+            <value>
+                <fullName>Reports - Custom / Specific Job</fullName>
+                <default>false</default>
+                <label>Reports - Custom / Specific Job</label>
+            </value>
+            <value>
+                <fullName>Reports - Incentive</fullName>
+                <default>false</default>
+                <label>Reports - Incentive</label>
+            </value>
+            <value>
+                <fullName>Reports - SSRS</fullName>
+                <default>false</default>
+                <label>Reports - SSRS</label>
+            </value>
+            <value>
+                <fullName>Reports - General</fullName>
+                <default>false</default>
+                <label>Reports - General</label>
+            </value>
+            <value>
+                <fullName>Reports - Tabular Model</fullName>
+                <default>false</default>
+                <label>Reports - Tabular Model</label>
+            </value>
+            <value>
+                <fullName>Upgrade to Edge Data Logger</fullName>
+                <default>false</default>
+                <label>Upgrade to Edge Data Logger</label>
+            </value>
+            <value>
+                <fullName>User Confusion</fullName>
+                <default>false</default>
+                <label>User Confusion</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>General and PF Community</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Accounts Management - Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>General and PF Community</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Accounts Management - New User</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>General and PF Community</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Admin - Jobs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>API - 3rd Party</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>API - Accounts Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>API - Configuration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>API - Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>API - General</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Availability Contract</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Backend Program Error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>General and PF Community</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Bug</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Calculation / Logic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Case Manager / Templates</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Communication Loss - Internal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>General and PF Community</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Configuration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Configuration - Data Logger</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Configuration - Missing Object</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Configuration - PI AF / SQL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Customer Contract Terms</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Custom Projects / Solutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Communication Loss - Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Configuration - Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>General and PF Community</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Customer - General Info / Documentation / Training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Customer - Invalid Input Data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <valueName>Customer - Site Level</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Data - Historical - Backfill / Reconstruction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Data - Historical - Missing / Invalid</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Data - Live</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Data - Raw - Extraction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Data Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <valueName>Data Validation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Decommissioning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>General and PF Community</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Internal - Platform Sync</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Events - Backfill / Reconstruction / Reprocess</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Events - False / Logic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Implementation - Operational Backlog</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Implementation - Post SAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Internal - Services / Infrastructure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Internal - Alerts / Stale Data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>General and PF Community</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Layout Changes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Manual Jobs - Def Sync / Reprocess</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>General and PF Community</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Metadata</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Mobile Application</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>General and PF Community</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>N/A - SPAM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <valueName>N3 Software / FW Update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <valueName>New Data Logger installlation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <valueName>New Device installation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <valueName>New Inverter / Meter installation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Notifications</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>General and PF Community</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>General and PF Community</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <valueName>Feature Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Reports - Custom / Specific Job</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Reports - Incentive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Reports - SSRS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Reports - General</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <valueName>Reports - Tabular Model</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <valueName>Upgrade to Edge Data Logger</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Other Services</controllingFieldValue>
+            <controllingFieldValue>General and PF Community</controllingFieldValue>
+            <controllingFieldValue>Greenbyte</controllingFieldValue>
+            <controllingFieldValue>Breeze development</controllingFieldValue>
+            <controllingFieldValue>Bluepoint</controllingFieldValue>
+            <controllingFieldValue>Ekhosoft</controllingFieldValue>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <valueName>User Confusion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <valueName>PMGS</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

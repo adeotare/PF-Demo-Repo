@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Test_Results</fullName>
+    <columns>NAME</columns>
+    <columns>QS_Test_Cycle__c</columns>
+    <columns>QS_Test_Scenario__c</columns>
+    <columns>QS_Steps_to_Reproduce__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>QS_Test_Result_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Test Results</label>
+</ListView>

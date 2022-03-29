@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_External_Impact__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checking this box indicates that a group outside of your company [like partners or customers] will be impacted by this change directly and require a communication or training.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Checking this box indicates that a group outside of your company [like partners or customers] will be impacted by this change directly and require a communication or training.</inlineHelpText>
+    <label>External Impact?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

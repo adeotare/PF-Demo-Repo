@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Denotes that the requirement has related requirements linked to it. --></help>
+        <label><!-- Cross Functional Requirement --></label>
+        <name>QS_Cross_Functional_Requirement__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoicing_Terms_SaaS__c</fullName>
+    <externalId>false</externalId>
+    <label>Invoicing Terms SaaS</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>In advance</fullName>
+                <default>true</default>
+                <label>In advance</label>
+            </value>
+            <value>
+                <fullName>In arrears</fullName>
+                <default>false</default>
+                <label>In arrears</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

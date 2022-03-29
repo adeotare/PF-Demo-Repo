@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Detail__c</fullName>
+    <externalId>false</externalId>
+    <label>Detail</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Outbound - Conversation</fullName>
+                <default>false</default>
+                <label>Outbound - Conversation</label>
+            </value>
+            <value>
+                <fullName>Outbound - Voicemail</fullName>
+                <default>false</default>
+                <label>Outbound - Voicemail</label>
+            </value>
+            <value>
+                <fullName>Outbound - No answer</fullName>
+                <default>false</default>
+                <label>Outbound - No answer</label>
+            </value>
+            <value>
+                <fullName>Inbound - Conversation</fullName>
+                <default>false</default>
+                <label>Inbound - Conversation</label>
+            </value>
+            <value>
+                <fullName>Virtual</fullName>
+                <default>false</default>
+                <label>Virtual</label>
+            </value>
+            <value>
+                <fullName>In person</fullName>
+                <default>false</default>
+                <label>In person</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>Pre-Sales/Engineering Task</fullName>
+                <default>false</default>
+                <label>Pre-Sales/Engineering Task</label>
+            </value>
+            <value>
+                <fullName>Account Manager Task</fullName>
+                <default>false</default>
+                <label>Account Manager Task</label>
+            </value>
+            <value>
+                <fullName>Account Executive Task</fullName>
+                <default>false</default>
+                <label>Account Executive Task</label>
+            </value>
+            <value>
+                <fullName>Legal Task</fullName>
+                <default>false</default>
+                <label>Legal Task</label>
+            </value>
+            <value>
+                <fullName>Finance Task</fullName>
+                <default>false</default>
+                <label>Finance Task</label>
+            </value>
+            <value>
+                <fullName>TPM Task</fullName>
+                <default>false</default>
+                <label>TPM Task</label>
+            </value>
+            <value>
+                <fullName>Renewals Task</fullName>
+                <default>false</default>
+                <label>Renewals Task</label>
+            </value>
+            <value>
+                <fullName>Sales Ops Task</fullName>
+                <default>false</default>
+                <label>Sales Ops Task</label>
+            </value>
+            <value>
+                <fullName>BDR Task</fullName>
+                <default>false</default>
+                <label>BDR Task</label>
+            </value>
+            <value>
+                <fullName>Professional Services Task</fullName>
+                <default>false</default>
+                <label>Professional Services Task</label>
+            </value>
+            <value>
+                <fullName>Product/PM Task</fullName>
+                <default>false</default>
+                <label>Product/PM Task</label>
+            </value>
+            <value>
+                <fullName>LinkedIn InMail</fullName>
+                <default>false</default>
+                <label>LinkedIn InMail</label>
+            </value>
+            <value>
+                <fullName>VITO</fullName>
+                <default>false</default>
+                <label>VITO</label>
+            </value>
+            <value>
+                <fullName>Promotional</fullName>
+                <default>false</default>
+                <label>Promotional</label>
+            </value>
+            <value>
+                <fullName>Correspondence</fullName>
+                <default>false</default>
+                <label>Correspondence</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Call</controllingFieldValue>
+            <valueName>Outbound - Conversation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Call</controllingFieldValue>
+            <valueName>Outbound - Voicemail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Call</controllingFieldValue>
+            <valueName>Outbound - No answer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Call</controllingFieldValue>
+            <valueName>Inbound - Conversation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Meeting</controllingFieldValue>
+            <valueName>Virtual</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Meeting</controllingFieldValue>
+            <valueName>In person</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Email</controllingFieldValue>
+            <valueName>Email</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Task</controllingFieldValue>
+            <valueName>Pre-Sales/Engineering Task</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Task</controllingFieldValue>
+            <valueName>Account Manager Task</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Task</controllingFieldValue>
+            <valueName>Account Executive Task</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Task</controllingFieldValue>
+            <valueName>Legal Task</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Task</controllingFieldValue>
+            <valueName>Finance Task</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Task</controllingFieldValue>
+            <valueName>TPM Task</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Task</controllingFieldValue>
+            <valueName>Renewals Task</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Task</controllingFieldValue>
+            <valueName>Sales Ops Task</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Task</controllingFieldValue>
+            <valueName>BDR Task</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Task</controllingFieldValue>
+            <valueName>Professional Services Task</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Task</controllingFieldValue>
+            <valueName>Product/PM Task</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Social Media</controllingFieldValue>
+            <valueName>LinkedIn InMail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Letter</controllingFieldValue>
+            <valueName>VITO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Letter</controllingFieldValue>
+            <valueName>Promotional</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Letter</controllingFieldValue>
+            <valueName>Correspondence</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

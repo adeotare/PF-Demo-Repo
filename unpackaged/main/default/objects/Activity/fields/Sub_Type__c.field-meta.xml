@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub-Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Detail__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pre-Sales SupportCustom Request</fullName>
+                <default>false</default>
+                <label>Pre-Sales SupportCustom Request</label>
+            </value>
+            <value>
+                <fullName>Business Case/ROI</fullName>
+                <default>false</default>
+                <label>Business Case/ROI</label>
+            </value>
+            <value>
+                <fullName>RAFI/RFP/SecQ</fullName>
+                <default>false</default>
+                <label>RAFI/RFP/SecQ</label>
+            </value>
+            <value>
+                <fullName>Sizing</fullName>
+                <default>false</default>
+                <label>Sizing</label>
+            </value>
+            <value>
+                <fullName>Skinned Demo preparation</fullName>
+                <default>false</default>
+                <label>Skinned Demo preparation</label>
+            </value>
+            <value>
+                <fullName>Custom Demo preparation</fullName>
+                <default>false</default>
+                <label>Custom Demo preparation</label>
+            </value>
+            <value>
+                <fullName>PoV Preparation</fullName>
+                <default>false</default>
+                <label>PoV Preparation</label>
+            </value>
+            <value>
+                <fullName>PoV Delivery</fullName>
+                <default>false</default>
+                <label>PoV Delivery</label>
+            </value>
+            <value>
+                <fullName>Solution Definition</fullName>
+                <default>false</default>
+                <label>Solution Definition</label>
+            </value>
+            <value>
+                <fullName>Opportunity Review</fullName>
+                <default>false</default>
+                <label>Opportunity Review</label>
+            </value>
+            <value>
+                <fullName>Customer Care</fullName>
+                <default>false</default>
+                <label>Customer Care</label>
+            </value>
+            <value>
+                <fullName>Business Review</fullName>
+                <default>false</default>
+                <label>Business Review</label>
+            </value>
+            <value>
+                <fullName>Account Transition</fullName>
+                <default>false</default>
+                <label>Account Transition</label>
+            </value>
+            <value>
+                <fullName>Client-Supplied Contract</fullName>
+                <default>false</default>
+                <label>Client-Supplied Contract</label>
+            </value>
+            <value>
+                <fullName>MSA</fullName>
+                <default>false</default>
+                <label>MSA</label>
+            </value>
+            <value>
+                <fullName>Custom Pricing</fullName>
+                <default>false</default>
+                <label>Custom Pricing</label>
+            </value>
+            <value>
+                <fullName>Additional Discount</fullName>
+                <default>false</default>
+                <label>Additional Discount</label>
+            </value>
+            <value>
+                <fullName>Review Scoping Details</fullName>
+                <default>false</default>
+                <label>Review Scoping Details</label>
+            </value>
+            <value>
+                <fullName>Create Quote</fullName>
+                <default>false</default>
+                <label>Create Quote</label>
+            </value>
+            <value>
+                <fullName>Proposal Support</fullName>
+                <default>false</default>
+                <label>Proposal Support</label>
+            </value>
+            <value>
+                <fullName>Opportunity Support</fullName>
+                <default>false</default>
+                <label>Opportunity Support</label>
+            </value>
+            <value>
+                <fullName>Duplicate Merge Request</fullName>
+                <default>false</default>
+                <label>Duplicate Merge Request</label>
+            </value>
+            <value>
+                <fullName>Account Reassignment</fullName>
+                <default>false</default>
+                <label>Account Reassignment</label>
+            </value>
+            <value>
+                <fullName>Territory Update</fullName>
+                <default>false</default>
+                <label>Territory Update</label>
+            </value>
+            <value>
+                <fullName>Pricing Estimation</fullName>
+                <default>false</default>
+                <label>Pricing Estimation</label>
+            </value>
+            <value>
+                <fullName>SOW</fullName>
+                <default>false</default>
+                <label>SOW</label>
+            </value>
+            <value>
+                <fullName>Implementation Escalation</fullName>
+                <default>false</default>
+                <label>Implementation Escalation</label>
+            </value>
+            <value>
+                <fullName>NDA Request</fullName>
+                <default>false</default>
+                <label>NDA Request</label>
+            </value>
+            <value>
+                <fullName>Active Opportunity</fullName>
+                <default>false</default>
+                <label>Active Opportunity</label>
+            </value>
+            <value>
+                <fullName>Partner Planning</fullName>
+                <default>false</default>
+                <label>Partner Planning</label>
+            </value>
+            <value>
+                <fullName>Partner Co-Sell</fullName>
+                <default>false</default>
+                <label>Partner Co-Sell</label>
+            </value>
+            <value>
+                <fullName>Customer</fullName>
+                <default>false</default>
+                <label>Customer</label>
+            </value>
+            <value>
+                <fullName>QBR</fullName>
+                <default>false</default>
+                <label>QBR</label>
+            </value>
+            <value>
+                <fullName>Executive Level</fullName>
+                <default>false</default>
+                <label>Executive Level</label>
+            </value>
+            <value>
+                <fullName>Generic Demo</fullName>
+                <default>false</default>
+                <label>Generic Demo</label>
+            </value>
+            <value>
+                <fullName>Custom Demo</fullName>
+                <default>false</default>
+                <label>Custom Demo</label>
+            </value>
+            <value>
+                <fullName>Security</fullName>
+                <default>false</default>
+                <label>Security</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Internal Acquia</fullName>
+                <default>false</default>
+                <label>Internal Acquia</label>
+            </value>
+            <value>
+                <fullName>Discovery</fullName>
+                <default>false</default>
+                <label>Discovery</label>
+            </value>
+            <value>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+                <label>Renewal</label>
+            </value>
+            <value>
+                <fullName>Welcome Call</fullName>
+                <default>false</default>
+                <label>Welcome Call</label>
+            </value>
+            <value>
+                <fullName>Wellness Call</fullName>
+                <default>false</default>
+                <label>Wellness Call</label>
+            </value>
+            <value>
+                <fullName>Health Score Update</fullName>
+                <default>false</default>
+                <label>Health Score Update</label>
+            </value>
+            <value>
+                <fullName>Incident Response</fullName>
+                <default>false</default>
+                <label>Incident Response</label>
+            </value>
+            <value>
+                <fullName>Success Plan Update</fullName>
+                <default>false</default>
+                <label>Success Plan Update</label>
+            </value>
+            <value>
+                <fullName>Audit</fullName>
+                <default>false</default>
+                <label>Audit</label>
+            </value>
+            <value>
+                <fullName>Marketing Email</fullName>
+                <default>false</default>
+                <label>Marketing Email</label>
+            </value>
+            <value>
+                <fullName>Check In</fullName>
+                <default>false</default>
+                <label>Check In</label>
+            </value>
+            <value>
+                <fullName>Follow Up</fullName>
+                <default>false</default>
+                <label>Follow Up</label>
+            </value>
+            <value>
+                <fullName>NPS</fullName>
+                <default>false</default>
+                <label>NPS</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Legal Task</controllingFieldValue>
+            <valueName>Client-Supplied Contract</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal Task</controllingFieldValue>
+            <valueName>MSA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Legal Task</controllingFieldValue>
+            <valueName>NDA Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Finance Task</controllingFieldValue>
+            <valueName>Custom Pricing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Finance Task</controllingFieldValue>
+            <valueName>Additional Discount</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TPM Task</controllingFieldValue>
+            <valueName>Review Scoping Details</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Renewals Task</controllingFieldValue>
+            <valueName>Create Quote</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales Ops Task</controllingFieldValue>
+            <valueName>Proposal Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales Ops Task</controllingFieldValue>
+            <valueName>Opportunity Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales Ops Task</controllingFieldValue>
+            <valueName>Duplicate Merge Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales Ops Task</controllingFieldValue>
+            <valueName>Account Reassignment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales Ops Task</controllingFieldValue>
+            <valueName>Territory Update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Professional Services Task</controllingFieldValue>
+            <valueName>Pricing Estimation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Professional Services Task</controllingFieldValue>
+            <valueName>SOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Professional Services Task</controllingFieldValue>
+            <valueName>Implementation Escalation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Active Opportunity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Partner Planning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Partner Co-Sell</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>QBR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Executive Level</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Generic Demo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Custom Demo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Security</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Internal Acquia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Discovery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Renewal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Welcome Call</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Wellness Call</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Health Score Update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Incident Response</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Success Plan Update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virtual</controllingFieldValue>
+            <controllingFieldValue>In person</controllingFieldValue>
+            <valueName>Audit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Email</controllingFieldValue>
+            <valueName>Marketing Email</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Email</controllingFieldValue>
+            <valueName>Check In</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Email</controllingFieldValue>
+            <valueName>Follow Up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Email</controllingFieldValue>
+            <valueName>NPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre-Sales/Engineering Task</controllingFieldValue>
+            <valueName>Pre-Sales SupportCustom Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre-Sales/Engineering Task</controllingFieldValue>
+            <valueName>Business Case/ROI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre-Sales/Engineering Task</controllingFieldValue>
+            <valueName>RAFI/RFP/SecQ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre-Sales/Engineering Task</controllingFieldValue>
+            <valueName>Sizing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre-Sales/Engineering Task</controllingFieldValue>
+            <valueName>Skinned Demo preparation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre-Sales/Engineering Task</controllingFieldValue>
+            <valueName>Custom Demo preparation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre-Sales/Engineering Task</controllingFieldValue>
+            <controllingFieldValue>Account Manager Task</controllingFieldValue>
+            <controllingFieldValue>Account Executive Task</controllingFieldValue>
+            <valueName>PoV Preparation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre-Sales/Engineering Task</controllingFieldValue>
+            <controllingFieldValue>Account Manager Task</controllingFieldValue>
+            <controllingFieldValue>Account Executive Task</controllingFieldValue>
+            <valueName>PoV Delivery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre-Sales/Engineering Task</controllingFieldValue>
+            <valueName>Solution Definition</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Manager Task</controllingFieldValue>
+            <controllingFieldValue>Account Executive Task</controllingFieldValue>
+            <valueName>Opportunity Review</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Manager Task</controllingFieldValue>
+            <controllingFieldValue>Account Executive Task</controllingFieldValue>
+            <valueName>Customer Care</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Manager Task</controllingFieldValue>
+            <controllingFieldValue>Account Executive Task</controllingFieldValue>
+            <valueName>Business Review</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Manager Task</controllingFieldValue>
+            <controllingFieldValue>Account Executive Task</controllingFieldValue>
+            <valueName>Account Transition</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

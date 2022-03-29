@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- When was this requirement added. --></help>
+        <label><!-- Req. Identified During --></label>
+        <name>QS_Req_Identified_During__c</name>
+        <picklistValues>
+            <masterLabel>Go-Live</masterLabel>
+            <translation><!-- Go-Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration Testing</masterLabel>
+            <translation><!-- Integration Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kickoff</masterLabel>
+            <translation><!-- Kickoff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post-Go-Live</masterLabel>
+            <translation><!-- Post-Go-Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre- Integration Testing</masterLabel>
+            <translation><!-- Pre- Integration Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Go-Live</masterLabel>
+            <translation><!-- Pre-Go-Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Kickoff</masterLabel>
+            <translation><!-- Pre-Kickoff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Unit Testing</masterLabel>
+            <translation><!-- Pre-Unit Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-User Acceptance Testing</masterLabel>
+            <translation><!-- Pre-User Acceptance Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unit Testing</masterLabel>
+            <translation><!-- Unit Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Acceptance Testing</masterLabel>
+            <translation><!-- User Acceptance Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Working Model</masterLabel>
+            <translation><!-- Working Model --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

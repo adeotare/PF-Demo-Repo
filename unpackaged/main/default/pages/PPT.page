@@ -1,0 +1,7 @@
+<apex:page standardController="Plant_Product_Transaction__c" extensions="PPTController" recordSetVar="ppts">
+   <flow:interview name="Create_Quote_and_Quote_Line" finishLocation="{!URLFOR('/{!accountId}')}">
+       <apex:param name="accountId" value="{!accountId}"/>
+    </flow:interview>
+    
+
+</apex:page>

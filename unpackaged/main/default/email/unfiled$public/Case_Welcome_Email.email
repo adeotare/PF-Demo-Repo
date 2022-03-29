@@ -1,0 +1,43 @@
+Dear {!Case.Contact}
+
+</br>
+
+</br> 
+
+We received your Issue Case{!Case.CaseNumber}: " {!Case.Subject}". A Power Factors Customer Support representative will respond to you shortly.
+
+ </br>
+
+To help speed and improve our troubleshooting, please provide as much specific information about the issue as possible, including:
+</br>
+</br>
+Specific problem definition (e.g. error message, data issue)
+When did the issue begin? 
+What was the behaviour prior?
+Specific site(s) or asset(s) affected
+Supporting screenshot or video
+References (i.e. URL for specific Drive page)
+ 
+</br>
+</br>
+
+Please update this Case in the {PF Community link} or respond to this email if further details are needed. Please include this {!Case.Thread_Id} on all emails related to this Case: {!Case.CaseNumber}
+
+ </br>
+</br>
+
+For your convenience, we've attached the details of the Case here:
+</br>
+</br>
+Subject:  {!Case.Subject}</br>
+Description: {!Case.Description}</br>
+Platform: {Purchased product}</br>
+Component: {Component}</br>
+Priority:{!Case.Priority}</br>
+ </br>
+</br>
+
+Thank you, 
+</br>
+</br>
+Power Factors Customer Support

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <description>REQ-2763</description>
+    <formulas>
+        <name>AccountName</name>
+        <dataType>String</dataType>
+        <expression>TRIM(LEFT({!$Record.Account__r.Name},15))</expression>
+    </formulas>
+    <formulas>
+        <name>ConcatenateName</name>
+        <dataType>String</dataType>
+        <expression>TRIM(LEFT({!$Record.Account__r.Name},15)) &amp; &quot;- &quot; &amp; {!$Record.Plant__r.Name}  &amp; &quot;- &quot; &amp; TRIM(LEFT({!$Record.Product__r.Name} ,15)) &amp; &quot;- &quot; &amp; TEXT({!$Record.PPT_Type__c})</expression>
+    </formulas>
+    <interviewLabel>PPT : Update Name field {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PPT : Update Name field</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_PPT_Name</name>
+        <label>Update PPT Name</label>
+        <locationX>577</locationX>
+        <locationY>386</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>ConcatenateName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>449</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Update_PPT_Name</targetReference>
+        </connector>
+        <object>Plant_Product_Transaction__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

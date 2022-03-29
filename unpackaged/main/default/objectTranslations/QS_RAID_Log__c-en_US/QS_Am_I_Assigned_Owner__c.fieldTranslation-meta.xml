@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Is the logged in user the same as the Primary Owner of the Action Item. --></help>
+        <label><!-- Am I Assigned Owner? --></label>
+        <name>QS_Am_I_Assigned_Owner__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Specifies when the business process design should be finalized, including coordination with VCG teams: GTM, F &amp; A, and  others. --></help>
+        <label><!-- VBP Design &amp; Collaboration Timing --></label>
+        <name>VBP_Design_Collaboration_Timing__c</name>
+        <picklistValues>
+            <masterLabel>Build Phase</masterLabel>
+            <translation><!-- Build Phase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Earliest (Pre-work)</masterLabel>
+            <translation><!-- Earliest (Pre-work) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A - No dependencies</masterLabel>
+            <translation><!-- N/A - No dependencies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requirements Gathering (Pre-Development)</masterLabel>
+            <translation><!-- Requirements Gathering (Pre-Development) --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

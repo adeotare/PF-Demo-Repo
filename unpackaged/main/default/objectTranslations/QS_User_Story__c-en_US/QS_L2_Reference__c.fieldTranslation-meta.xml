@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Title --></label>
+        <name>QS_L2_Reference__c</name>
+        <picklistValues>
+            <masterLabel>CPQ - Apply Pricing</masterLabel>
+            <translation><!-- CPQ - Apply Pricing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPQ - Configure Products &amp; Services</masterLabel>
+            <translation><!-- CPQ - Configure Products &amp; Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPQ - Generate Quote Output</masterLabel>
+            <translation><!-- CPQ - Generate Quote Output --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPQ - Initiate Quote</masterLabel>
+            <translation><!-- CPQ - Initiate Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPQ - Opportunity to Order Conversion</masterLabel>
+            <translation><!-- CPQ - Opportunity to Order Conversion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPQ - Perform Quote Approvals</masterLabel>
+            <translation><!-- CPQ - Perform Quote Approvals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPQ - Review &amp; Accept Quote</masterLabel>
+            <translation><!-- CPQ - Review &amp; Accept Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Support - Close Case</masterLabel>
+            <translation><!-- Customer Support - Close Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Support - Initiate Root Cause Analysis</masterLabel>
+            <translation><!-- Customer Support - Initiate Root Cause Analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Support - Open Case</masterLabel>
+            <translation><!-- Customer Support - Open Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Support - Review and Approve KB Articles</masterLabel>
+            <translation><!-- Customer Support - Review and Approve KB Articles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Support - Work Case</masterLabel>
+            <translation><!-- Customer Support - Work Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Customer Support</masterLabel>
+            <translation><!-- Data - Customer Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Finance</masterLabel>
+            <translation><!-- Data - Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Foundational</masterLabel>
+            <translation><!-- Data - Foundational --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Legal</masterLabel>
+            <translation><!-- Data - Legal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Marketing</masterLabel>
+            <translation><!-- Data - Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Professional Services</masterLabel>
+            <translation><!-- Data - Professional Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Sales</masterLabel>
+            <translation><!-- Data - Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - Convert Opportunity to Order</masterLabel>
+            <translation><!-- Finance - Convert Opportunity to Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - Decommission</masterLabel>
+            <translation><!-- Finance - Decommission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - Dunning &amp; Collection</masterLabel>
+            <translation><!-- Finance - Dunning &amp; Collection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - Fulfill/ Provision</masterLabel>
+            <translation><!-- Finance - Fulfill/ Provision --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - Integrate SF to ERP</masterLabel>
+            <translation><!-- Finance - Integrate SF to ERP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - Invoice Orders</masterLabel>
+            <translation><!-- Finance - Invoice Orders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - Manage Fixed Assets</masterLabel>
+            <translation><!-- Finance - Manage Fixed Assets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - Recognize Revenue</masterLabel>
+            <translation><!-- Finance - Recognize Revenue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance - Record to Report</masterLabel>
+            <translation><!-- Finance - Record to Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Setup and Security</masterLabel>
+            <translation><!-- General Setup and Security --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration - Build integrations to net new systems</masterLabel>
+            <translation><!-- Integration - Build integrations to net new systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration - Marketo (MAS) &amp; Salesforce (CRM)</masterLabel>
+            <translation><!-- Integration - Marketo (MAS) &amp; Salesforce (CRM) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration - PSA &amp; NetSuite</masterLabel>
+            <translation><!-- Integration - PSA &amp; NetSuite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration - Product Usage Stats &amp; Customer Success Platform</masterLabel>
+            <translation><!-- Integration - Product Usage Stats &amp; Customer Success Platform --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration - Rebuild existing integrations with (new) Salesforce org</masterLabel>
+            <translation><!-- Integration - Rebuild existing integrations with (new) Salesforce org --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration - Salesforce &amp; NetSuite</masterLabel>
+            <translation><!-- Integration - Salesforce &amp; NetSuite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration - Salesforce &amp; PSA</masterLabel>
+            <translation><!-- Integration - Salesforce &amp; PSA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal - Generate Contract</masterLabel>
+            <translation><!-- Legal - Generate Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal - Perform Legal Approvals</masterLabel>
+            <translation><!-- Legal - Perform Legal Approvals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal - Review &amp; Accept Contract</masterLabel>
+            <translation><!-- Legal - Review &amp; Accept Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing - Marketing Qualification</masterLabel>
+            <translation><!-- Marketing - Marketing Qualification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing - Participate in Marketing Program</masterLabel>
+            <translation><!-- Marketing - Participate in Marketing Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing - Sales Acceptance</masterLabel>
+            <translation><!-- Marketing - Sales Acceptance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing - Sales Qualification</masterLabel>
+            <translation><!-- Marketing - Sales Qualification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS - Assign Resources</masterLabel>
+            <translation><!-- PS - Assign Resources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS - Complete Project</masterLabel>
+            <translation><!-- PS - Complete Project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS - Create Project</masterLabel>
+            <translation><!-- PS - Create Project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS - Initiate Change Order</masterLabel>
+            <translation><!-- PS - Initiate Change Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS - Manage On-Going Project Activities</masterLabel>
+            <translation><!-- PS - Manage On-Going Project Activities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS - Onboarding Tools - Enhance</masterLabel>
+            <translation><!-- PS - Onboarding Tools - Enhance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS - Onboarding Tools - Lift &amp; Shift</masterLabel>
+            <translation><!-- PS - Onboarding Tools - Lift &amp; Shift --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS - Onboarding Tools Universal</masterLabel>
+            <translation><!-- PS - Onboarding Tools Universal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS - Perform Custom Scoping and Estimation</masterLabel>
+            <translation><!-- PS - Perform Custom Scoping and Estimation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reporting</masterLabel>
+            <translation><!-- Reporting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales - Collaboration</masterLabel>
+            <translation><!-- Sales - Collaboration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales - Initiate Add-On</masterLabel>
+            <translation><!-- Sales - Initiate Add-On --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales - Initiate Cancellation</masterLabel>
+            <translation><!-- Sales - Initiate Cancellation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales - Initiate Opportunity</masterLabel>
+            <translation><!-- Sales - Initiate Opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales - Initiate Renewal</masterLabel>
+            <translation><!-- Sales - Initiate Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales - Manage Opportunity</masterLabel>
+            <translation><!-- Sales - Manage Opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales - Review &amp; Accept</masterLabel>
+            <translation><!-- Sales - Review &amp; Accept --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

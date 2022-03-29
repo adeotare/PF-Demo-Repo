@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Formula field to pull down the Track display order, which is intended to approximate the overall End-to-End process flow sort Order. Used for various reporting format purposes. --></help>
+        <label><!-- Track Display Order --></label>
+        <name>QS_Track_Display_Order__c</name>
+    </CustomFieldTranslation>

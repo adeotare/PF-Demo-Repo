@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- The date in which the submitted issue will be fixed. --></help>
+        <label><!-- Estimated Resolution Date --></label>
+        <name>QS_Estimated_Resolution_Date__c</name>
+    </CustomFieldTranslation>

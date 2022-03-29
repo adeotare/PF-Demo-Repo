@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Test_Scenario__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Which top level test scenario does this result apply to?</inlineHelpText>
+    <label>Test Scenario</label>
+    <referenceTo>QS_Test_Scenario__c</referenceTo>
+    <relationshipLabel>Test Results</relationshipLabel>
+    <relationshipName>QS_Test_Results</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Any sync errors to correct in system --></label>
+        <name>Any_sync_errors_to_correct_in_system__c</name>
+    </CustomFieldTranslation>

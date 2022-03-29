@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_E2E_Account__c</fullName>
+    <description>Used to denote the Account being tested for the given E2E requirement</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used to denote the Account being tested for the given E2E requirement</inlineHelpText>
+    <label>E2E Account</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

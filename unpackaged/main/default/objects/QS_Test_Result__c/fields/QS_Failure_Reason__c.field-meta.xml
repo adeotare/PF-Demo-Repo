@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Failure_Reason__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Used by the developer to explain the failure:
+Code - Bad coding
+Configuration - Incorrect configuration 
+Product - Product malfunction
+User Error - Insufficient training</inlineHelpText>
+    <label>Failure Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Defect - Code</fullName>
+                <default>false</default>
+                <label>Defect - Code</label>
+            </value>
+            <value>
+                <fullName>Defect - Configuration</fullName>
+                <default>false</default>
+                <label>Defect - Configuration</label>
+            </value>
+            <value>
+                <fullName>Defect - Product</fullName>
+                <default>false</default>
+                <label>Defect - Product</label>
+            </value>
+            <value>
+                <fullName>Defect - Data</fullName>
+                <default>false</default>
+                <label>Defect - Data</label>
+            </value>
+            <value>
+                <fullName>User Error/Training</fullName>
+                <default>false</default>
+                <label>User Error/Training</label>
+            </value>
+            <value>
+                <fullName>Invalid Scenario</fullName>
+                <default>false</default>
+                <label>Invalid Scenario</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

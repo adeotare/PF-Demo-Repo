@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Requirement</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Requirements</value>
+    </caseValues>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Requirement Layout</layout>
+        <sections>
+            <label><!-- Change Management Detail --></label>
+            <section>Change Management Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Design &amp; Development Details --></label>
+            <section>Design &amp; Development Details</section>
+        </sections>
+        <sections>
+            <label><!-- Requirement Details --></label>
+            <section>Requirement Details</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Design and Development --></label>
+        <name>QS_Design_and_Development</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Testing Summaries --></label>
+        <name>QS_Testing_Summaries</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- Business Requirements --></label>
+        <name>Business_Requirements</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Build Complexity and Development Type need to be entered before Development Status can be set to &quot;Design Finalized&quot; --></errorMessage>
+        <name>Design_Review_Required_data</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only specific users can create Requirements after the cutoff date --></errorMessage>
+        <name>QS_Restricted_Req_Creation_and_Edit</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- QS_Clone_REQ_and_Test_Scenarios --></label>
+        <name>QS_Clone_REQ_and_Test_Scenarios</name>
+    </webLinks>
+</CustomObjectTranslation>

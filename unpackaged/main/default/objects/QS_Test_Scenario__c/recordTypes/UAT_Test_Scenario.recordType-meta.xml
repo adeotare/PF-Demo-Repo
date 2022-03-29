@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UAT_Test_Scenario</fullName>
+    <active>true</active>
+    <label>UAT Test Scenario</label>
+    <picklistValues>
+        <picklist>QS_Product_Family__c</picklist>
+        <values>
+            <fullName>Customizable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Status__c</picklist>
+        <values>
+            <fullName>Failed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Tested</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Passed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retest</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Testing_Readiness__c</picklist>
+        <values>
+            <fullName>Enhancement Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Ready</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Ready for Testing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Testing_Group__c</picklist>
+        <values>
+            <fullName>Business - Detail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business_All</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ignore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

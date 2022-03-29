@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Customer&apos;s Integrator --></label>
+        <name>Customer_s_Integrator__c</name>
+        <picklistValues>
+            <masterLabel>Norcal</masterLabel>
+            <translation><!-- Norcal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trekkor</masterLabel>
+            <translation><!-- Trekkor --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

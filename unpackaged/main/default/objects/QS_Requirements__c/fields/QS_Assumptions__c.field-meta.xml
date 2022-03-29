@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Assumptions__c</fullName>
+    <description>HTML field that allows user to put dependencies of the requirement and capture what is needed outside of the requirement details in order to implement the requirement successfully</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Field to capture key information related to the REQ such as system limitations, prerequisite permissions/configurations, process decisions, and/or agreed to conditions such as &quot;REQ will be accomplished using native configuration capability vs. code.“</inlineHelpText>
+    <label>Assumptions</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

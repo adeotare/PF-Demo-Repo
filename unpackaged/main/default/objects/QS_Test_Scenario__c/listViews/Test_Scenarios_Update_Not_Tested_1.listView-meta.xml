@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Test_Scenarios_Update_Not_Tested_1</fullName>
+    <columns>NAME</columns>
+    <columns>QS_Scenario__c</columns>
+    <columns>QS_Status__c</columns>
+    <columns>QS_Requirement__c</columns>
+    <columns>QS_Track__c</columns>
+    <columns>QS_Assigned_To__c</columns>
+    <columns>QS_Testing_Readiness__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>QS_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Not Tested</value>
+    </filters>
+    <filters>
+        <field>QS_Track__c</field>
+        <operation>notEqual</operation>
+        <value>Finance</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>QS_Test_Scenario__c.UAT_Test_Scenario</value>
+    </filters>
+    <filters>
+        <field>Testing_Group__c</field>
+        <operation>notEqual</operation>
+        <value>Ignore</value>
+    </filters>
+    <filters>
+        <field>QS_Assigned_To__c</field>
+        <operation>contains</operation>
+        <value>Mary Rose Silaya,Danica Pedraja,Neil Cepeda,Alicia Fisk,Etienne Buessler,Francis Gopez,Lee-Yan Marquez,Jon Martin,Josefin,Niklas Bergh,Sylvie Valero,Brendan Cook,Mark Collins,Patrik Lindvall,Elias Jaldenius,Ashton Renaud,Jason Selfe</value>
+    </filters>
+    <label>Test Scenarios - Update Not Tested 1</label>
+</ListView>

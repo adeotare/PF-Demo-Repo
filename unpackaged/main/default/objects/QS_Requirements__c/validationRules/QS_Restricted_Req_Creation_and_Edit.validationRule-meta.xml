@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Restricted_Req_Creation_and_Edit</fullName>
+    <active>true</active>
+    <description>Unless you&#39;re an approved user, you cannot create change reqs</description>
+    <errorConditionFormula>AND( 
+
+OR(ISNEW(),ISCHANGED( QS_Requirement_Status__c )), 
+
+$User.QS_Create_Change_Request_Reqs__c  = FALSE, 
+NOW() &gt; DATETIMEVALUE(QS_Primary_Track__r.QS_Requirement_Cutoff_Date__c), 
+RecordType.DeveloperName &lt;&gt; &quot;E2E_Requirements&quot;)</errorConditionFormula>
+    <errorMessage>Only specific users can create Requirements after the cutoff date</errorMessage>
+</ValidationRule>

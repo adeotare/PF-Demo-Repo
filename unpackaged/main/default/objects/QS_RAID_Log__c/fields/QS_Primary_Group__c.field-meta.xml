@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Primary_Group__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>What group the action item falls under</inlineHelpText>
+    <label>Primary Group</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Business</fullName>
+                <default>false</default>
+                <label>Business</label>
+            </value>
+            <value>
+                <fullName>IT</fullName>
+                <default>false</default>
+                <label>IT</label>
+            </value>
+            <value>
+                <fullName>VCG</fullName>
+                <default>false</default>
+                <label>VCG</label>
+            </value>
+            <value>
+                <fullName>Salesforce CPQ</fullName>
+                <default>false</default>
+                <label>Salesforce CPQ</label>
+            </value>
+            <value>
+                <fullName>QS Deployment</fullName>
+                <default>false</default>
+                <label>QS Deployment</label>
+            </value>
+            <value>
+                <fullName>Other Vendor</fullName>
+                <default>false</default>
+                <label>Other Vendor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

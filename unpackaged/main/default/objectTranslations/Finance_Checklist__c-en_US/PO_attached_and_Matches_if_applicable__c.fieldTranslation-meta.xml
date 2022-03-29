@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- PO attached and Matches (if applicable) --></label>
+        <name>PO_attached_and_Matches_if_applicable__c</name>
+    </CustomFieldTranslation>

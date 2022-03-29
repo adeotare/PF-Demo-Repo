@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- List out any accomplishments made this week by the business. --></help>
+        <label><!-- Accomplishments This Week --></label>
+        <name>QS_Accomplishments_This_Week__c</name>
+    </CustomFieldTranslation>

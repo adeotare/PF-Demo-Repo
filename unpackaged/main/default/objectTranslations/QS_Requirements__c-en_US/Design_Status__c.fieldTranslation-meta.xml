@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Design Status --></label>
+        <name>Design_Status__c</name>
+        <picklistValues>
+            <masterLabel>All Details Known - Can Build</masterLabel>
+            <translation><!-- All Details Known - Can Build --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blocked - Encountered Complexity/Question</masterLabel>
+            <translation><!-- Blocked - Encountered Complexity/Question --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Details Needed - Cannot Build</masterLabel>
+            <translation><!-- Details Needed - Cannot Build --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Key Elements Known - Can Build &amp; Iterate</masterLabel>
+            <translation><!-- Key Elements Known - Can Build &amp; Iterate --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

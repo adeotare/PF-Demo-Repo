@@ -1,0 +1,6 @@
+<apex:page standardController="Plant_Product_Transaction__c" extensions="PPTController" recordSetVar="ppts">
+       <apex:param name="accountId" value="{!accountId}"/>
+
+    
+
+</apex:page>

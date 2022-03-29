@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Standard - Best practice requirement
+Portfolio - Requirement unique to the company outside standard requirements that describe the needs and goals of the business --></help>
+        <label><!-- Standard --></label>
+        <name>QS_Origin__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Action_Done__c</fullName>
+    <description>Action taken to close on the action item.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please enter steps/resolution details, required to close a task.</inlineHelpText>
+    <label>Action Done</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

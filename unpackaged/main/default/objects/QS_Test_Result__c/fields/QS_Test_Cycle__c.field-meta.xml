@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Test_Cycle__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>When did this test occur? Will be set by default.</inlineHelpText>
+    <label>Test Cycle</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Working Models</fullName>
+                <default>true</default>
+                <label>Working Models</label>
+            </value>
+            <value>
+                <fullName>Pre-Validation</fullName>
+                <default>false</default>
+                <label>Pre-Validation</label>
+            </value>
+            <value>
+                <fullName>Validation</fullName>
+                <default>false</default>
+                <label>Validation</label>
+            </value>
+            <value>
+                <fullName>Pre-Unit Testing</fullName>
+                <default>false</default>
+                <label>Pre-Unit Testing</label>
+            </value>
+            <value>
+                <fullName>Unit Testing</fullName>
+                <default>false</default>
+                <label>Unit Testing</label>
+            </value>
+            <value>
+                <fullName>Pre-Integrated Testing</fullName>
+                <default>false</default>
+                <label>Pre-Integrated Testing</label>
+            </value>
+            <value>
+                <fullName>Integrated Testing</fullName>
+                <default>false</default>
+                <label>Integrated Testing</label>
+            </value>
+            <value>
+                <fullName>Pre-End to End Testing</fullName>
+                <default>false</default>
+                <label>Pre-End to End Testing</label>
+            </value>
+            <value>
+                <fullName>End to End Testing</fullName>
+                <default>false</default>
+                <label>End to End Testing</label>
+            </value>
+            <value>
+                <fullName>Pre-Go-Live</fullName>
+                <default>false</default>
+                <label>Pre-Go-Live</label>
+            </value>
+            <value>
+                <fullName>Go-Live</fullName>
+                <default>false</default>
+                <label>Go-Live</label>
+            </value>
+            <value>
+                <fullName>Post Go-Live</fullName>
+                <default>false</default>
+                <label>Post Go-Live</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- How significant is this requirement to business functionality for Go-Live --></help>
+        <label><!-- Priority --></label>
+        <name>QS_Priority__c</name>
+        <picklistValues>
+            <masterLabel>Must Have</masterLabel>
+            <translation><!-- Must Have --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Negotiable</masterLabel>
+            <translation><!-- Negotiable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nice to Have</masterLabel>
+            <translation><!-- Nice to Have --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

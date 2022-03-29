@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Collaboration_Request_completed</name>
+        <label>Collaboration Request completed</label>
+        <locationX>506</locationX>
+        <locationY>374</locationY>
+        <actionName>Task.Collaboration_Request_Email_Alert_completed_email_alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>When login users and assigned user is different</description>
+        <name>Send_Email_to_assign_users</name>
+        <label>Send Email to assign users</label>
+        <locationX>36</locationX>
+        <locationY>352</locationY>
+        <actionName>Task.Collaboration_Request_Email_Alerts</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>54.0</apiVersion>
+    <decisions>
+        <name>Email_send_when_Status_is_completed</name>
+        <label>Email send when Status is completed</label>
+        <locationX>234</locationX>
+        <locationY>378</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Email_send_when_Status_is_changed_to_completed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Collaboration_Request_completed</targetReference>
+            </connector>
+            <label>Email send when Status is changed to completed</label>
+        </rules>
+        <rules>
+            <name>Login_User_not_equal_to_Assigned_User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>LoginUser</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email_to_assign_users</targetReference>
+            </connector>
+            <label>Login User not equal to Assigned User</label>
+        </rules>
+    </decisions>
+    <description>REQ - 2450</description>
+    <formulas>
+        <name>LoginUser</name>
+        <dataType>String</dataType>
+        <expression>CASESAFEID({!$User.Id})</expression>
+    </formulas>
+    <interviewLabel>Task : Email send when Status is completed {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Task : Email send when Status is completed</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>112</locationX>
+        <locationY>5</locationY>
+        <connector>
+            <targetReference>Email_send_when_Status_is_completed</targetReference>
+        </connector>
+        <object>Task</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

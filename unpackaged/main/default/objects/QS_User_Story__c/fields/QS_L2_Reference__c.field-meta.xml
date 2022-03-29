@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_L2_Reference__c</fullName>
+    <externalId>false</externalId>
+    <label>Title</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CPQ - Apply Pricing</fullName>
+                <default>false</default>
+                <label>CPQ - Apply Pricing</label>
+            </value>
+            <value>
+                <fullName>CPQ - Configure Products &amp; Services</fullName>
+                <default>false</default>
+                <label>CPQ - Configure Products &amp; Services</label>
+            </value>
+            <value>
+                <fullName>CPQ - Generate Quote Output</fullName>
+                <default>false</default>
+                <label>CPQ - Generate Quote Output</label>
+            </value>
+            <value>
+                <fullName>CPQ - Initiate Quote</fullName>
+                <default>false</default>
+                <label>CPQ - Initiate Quote</label>
+            </value>
+            <value>
+                <fullName>CPQ - Opportunity to Order Conversion</fullName>
+                <default>false</default>
+                <label>CPQ - Opportunity to Order Conversion</label>
+            </value>
+            <value>
+                <fullName>CPQ - Perform Quote Approvals</fullName>
+                <default>false</default>
+                <label>CPQ - Perform Quote Approvals</label>
+            </value>
+            <value>
+                <fullName>CPQ - Review &amp; Accept Quote</fullName>
+                <default>false</default>
+                <label>CPQ - Review &amp; Accept Quote</label>
+            </value>
+            <value>
+                <fullName>Customer Support - Close Case</fullName>
+                <default>false</default>
+                <label>Customer Support - Close Case</label>
+            </value>
+            <value>
+                <fullName>Customer Support - Initiate Root Cause Analysis</fullName>
+                <default>false</default>
+                <label>Customer Support - Initiate Root Cause Analysis</label>
+            </value>
+            <value>
+                <fullName>Customer Support - Open Case</fullName>
+                <default>false</default>
+                <label>Customer Support - Open Case</label>
+            </value>
+            <value>
+                <fullName>Customer Support - Review and Approve KB Articles</fullName>
+                <default>false</default>
+                <label>Customer Support - Review and Approve KB Articles</label>
+            </value>
+            <value>
+                <fullName>Customer Support - Work Case</fullName>
+                <default>false</default>
+                <label>Customer Support - Work Case</label>
+            </value>
+            <value>
+                <fullName>Data - Customer Support</fullName>
+                <default>false</default>
+                <label>Data - Customer Support</label>
+            </value>
+            <value>
+                <fullName>Data - Finance</fullName>
+                <default>false</default>
+                <label>Data - Finance</label>
+            </value>
+            <value>
+                <fullName>Data - Foundational</fullName>
+                <default>false</default>
+                <label>Data - Foundational</label>
+            </value>
+            <value>
+                <fullName>Data - Legal</fullName>
+                <default>false</default>
+                <label>Data - Legal</label>
+            </value>
+            <value>
+                <fullName>Data - Marketing</fullName>
+                <default>false</default>
+                <label>Data - Marketing</label>
+            </value>
+            <value>
+                <fullName>Data - Professional Services</fullName>
+                <default>false</default>
+                <label>Data - Professional Services</label>
+            </value>
+            <value>
+                <fullName>Data - Sales</fullName>
+                <default>false</default>
+                <label>Data - Sales</label>
+            </value>
+            <value>
+                <fullName>Finance - Convert Opportunity to Order</fullName>
+                <default>false</default>
+                <label>Finance - Convert Opportunity to Order</label>
+            </value>
+            <value>
+                <fullName>Finance - Decommission</fullName>
+                <default>false</default>
+                <label>Finance - Decommission</label>
+            </value>
+            <value>
+                <fullName>Finance - Dunning &amp; Collection</fullName>
+                <default>false</default>
+                <label>Finance - Dunning &amp; Collection</label>
+            </value>
+            <value>
+                <fullName>Finance - Fulfill/ Provision</fullName>
+                <default>false</default>
+                <label>Finance - Fulfill/ Provision</label>
+            </value>
+            <value>
+                <fullName>Finance - Integrate SF to ERP</fullName>
+                <default>false</default>
+                <label>Finance - Integrate SF to ERP</label>
+            </value>
+            <value>
+                <fullName>Finance - Invoice Orders</fullName>
+                <default>false</default>
+                <label>Finance - Invoice Orders</label>
+            </value>
+            <value>
+                <fullName>Finance - Manage Fixed Assets</fullName>
+                <default>false</default>
+                <label>Finance - Manage Fixed Assets</label>
+            </value>
+            <value>
+                <fullName>Finance - Record to Report</fullName>
+                <default>false</default>
+                <label>Finance - Record to Report</label>
+            </value>
+            <value>
+                <fullName>Finance - Recognize Revenue</fullName>
+                <default>false</default>
+                <label>Finance - Recognize Revenue</label>
+            </value>
+            <value>
+                <fullName>General Setup and Security</fullName>
+                <default>false</default>
+                <label>General Setup and Security</label>
+            </value>
+            <value>
+                <fullName>Integration - Build integrations to net new systems</fullName>
+                <default>false</default>
+                <label>Integration - Build integrations to net new systems</label>
+            </value>
+            <value>
+                <fullName>Integration - Marketo (MAS) &amp; Salesforce (CRM)</fullName>
+                <default>false</default>
+                <label>Integration - Marketo (MAS) &amp; Salesforce (CRM)</label>
+            </value>
+            <value>
+                <fullName>Integration - PSA &amp; NetSuite</fullName>
+                <default>false</default>
+                <label>Integration - PSA &amp; NetSuite</label>
+            </value>
+            <value>
+                <fullName>Integration - Product Usage Stats &amp; Customer Success Platform</fullName>
+                <default>false</default>
+                <label>Integration - Product Usage Stats &amp; Customer Success Platform</label>
+            </value>
+            <value>
+                <fullName>Integration - Rebuild existing integrations with (new) Salesforce org</fullName>
+                <default>false</default>
+                <label>Integration - Rebuild existing integrations with (new) Salesforce org</label>
+            </value>
+            <value>
+                <fullName>Integration - Salesforce &amp; NetSuite</fullName>
+                <default>false</default>
+                <label>Integration - Salesforce &amp; NetSuite</label>
+            </value>
+            <value>
+                <fullName>Integration - Salesforce &amp; PSA</fullName>
+                <default>false</default>
+                <label>Integration - Salesforce &amp; PSA</label>
+            </value>
+            <value>
+                <fullName>Legal - Generate Contract</fullName>
+                <default>false</default>
+                <label>Legal - Generate Contract</label>
+            </value>
+            <value>
+                <fullName>Legal - Perform Legal Approvals</fullName>
+                <default>false</default>
+                <label>Legal - Perform Legal Approvals</label>
+            </value>
+            <value>
+                <fullName>Legal - Review &amp; Accept Contract</fullName>
+                <default>false</default>
+                <label>Legal - Review &amp; Accept Contract</label>
+            </value>
+            <value>
+                <fullName>Marketing - Marketing Qualification</fullName>
+                <default>false</default>
+                <label>Marketing - Marketing Qualification</label>
+            </value>
+            <value>
+                <fullName>Marketing - Participate in Marketing Program</fullName>
+                <default>false</default>
+                <label>Marketing - Participate in Marketing Program</label>
+            </value>
+            <value>
+                <fullName>Marketing - Sales Acceptance</fullName>
+                <default>false</default>
+                <label>Marketing - Sales Acceptance</label>
+            </value>
+            <value>
+                <fullName>Marketing - Sales Qualification</fullName>
+                <default>false</default>
+                <label>Marketing - Sales Qualification</label>
+            </value>
+            <value>
+                <fullName>PS - Assign Resources</fullName>
+                <default>false</default>
+                <label>PS - Assign Resources</label>
+            </value>
+            <value>
+                <fullName>PS - Complete Project</fullName>
+                <default>false</default>
+                <label>PS - Complete Project</label>
+            </value>
+            <value>
+                <fullName>PS - Create Project</fullName>
+                <default>false</default>
+                <label>PS - Create Project</label>
+            </value>
+            <value>
+                <fullName>PS - Initiate Change Order</fullName>
+                <default>false</default>
+                <label>PS - Initiate Change Order</label>
+            </value>
+            <value>
+                <fullName>PS - Manage On-Going Project Activities</fullName>
+                <default>false</default>
+                <label>PS - Manage On-Going Project Activities</label>
+            </value>
+            <value>
+                <fullName>PS - Perform Custom Scoping and Estimation</fullName>
+                <default>false</default>
+                <label>PS - Perform Custom Scoping and Estimation</label>
+            </value>
+            <value>
+                <fullName>PS - Onboarding Tools Universal</fullName>
+                <default>false</default>
+                <label>PS - Onboarding Tools Universal</label>
+            </value>
+            <value>
+                <fullName>PS - Onboarding Tools - Lift &amp; Shift</fullName>
+                <default>false</default>
+                <label>PS - Onboarding Tools - Lift &amp; Shift</label>
+            </value>
+            <value>
+                <fullName>PS - Onboarding Tools - Enhance</fullName>
+                <default>false</default>
+                <label>PS - Onboarding Tools - Enhance</label>
+            </value>
+            <value>
+                <fullName>Reporting</fullName>
+                <default>false</default>
+                <label>Reporting</label>
+            </value>
+            <value>
+                <fullName>Sales - Collaboration</fullName>
+                <default>false</default>
+                <label>Sales - Collaboration</label>
+            </value>
+            <value>
+                <fullName>Sales - Initiate Add-On</fullName>
+                <default>false</default>
+                <label>Sales - Initiate Add-On</label>
+            </value>
+            <value>
+                <fullName>Sales - Initiate Cancellation</fullName>
+                <default>false</default>
+                <label>Sales - Initiate Cancellation</label>
+            </value>
+            <value>
+                <fullName>Sales - Initiate Opportunity</fullName>
+                <default>false</default>
+                <label>Sales - Initiate Opportunity</label>
+            </value>
+            <value>
+                <fullName>Sales - Initiate Renewal</fullName>
+                <default>false</default>
+                <label>Sales - Initiate Renewal</label>
+            </value>
+            <value>
+                <fullName>Sales - Manage Opportunity</fullName>
+                <default>false</default>
+                <label>Sales - Manage Opportunity</label>
+            </value>
+            <value>
+                <fullName>Sales - Review &amp; Accept</fullName>
+                <default>false</default>
+                <label>Sales - Review &amp; Accept</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

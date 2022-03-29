@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Test Result</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Test Results</value>
+    </caseValues>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Test Result Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Resolution Section --></label>
+            <section>Resolution Section</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Comments required --></errorMessage>
+        <name>Comments_Required_if_Blocked</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must state failure criticality for failed test results --></errorMessage>
+        <name>Failure_Criticality_required_for_fails</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A failure reason is required for failed test results --></errorMessage>
+        <name>Failure_Reason_required_for_fails</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Failure reason and resolution note are needed if Ready for Test --></errorMessage>
+        <name>Reason_and_Notes_for_Retesting</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Woah McFly! You cannot log a Test Result if the Requirement is not ready for testing --></errorMessage>
+        <name>Restrict_Test_Result_Creation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Steps to Reproduce and URL for the Test Record that Failed or Passed with Exception is required --></errorMessage>
+        <name>Steps_to_reproduce_required</name>
+    </validationRules>
+</CustomObjectTranslation>

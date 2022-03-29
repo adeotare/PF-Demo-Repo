@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_I_am_a_Tester__c</fullName>
+    <description>Used to denote to the logged in user if they are assigned to a test scenario, either by the &quot;Assigned To&quot; or the &quot;Additional Testers&quot; field.  Helps filter for List Views or Reports</description>
+    <externalId>false</externalId>
+    <formula>OR(contains( QS_Additional_Testers__c , $User.FirstName &amp; &quot; &quot; &amp; $User.LastName ),
+ QS_Assigned_To__c = $User.Id )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>I am a Tester</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

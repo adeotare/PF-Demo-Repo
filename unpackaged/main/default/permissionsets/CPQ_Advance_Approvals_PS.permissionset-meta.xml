@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Admin user permissions across all Salesforce CPQ Advanced Approvals objects.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CPQ Advance Approvals PS</label>
+</PermissionSet>

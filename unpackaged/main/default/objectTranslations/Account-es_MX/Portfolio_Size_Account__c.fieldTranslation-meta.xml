@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Portfolio Size --></label>
+        <name>Portfolio_Size_Account__c</name>
+        <picklistValues>
+            <masterLabel>Large (1000 - 5000 MWp)</masterLabel>
+            <translation><!-- Large (1000 - 5000 MWp) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium (500 - 1000 MWp)</masterLabel>
+            <translation><!-- Medium (500 - 1000 MWp) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Small (&lt;500MWp)</masterLabel>
+            <translation><!-- Small (&lt;500MWp) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>X-Large (&gt;5000 MWp)</masterLabel>
+            <translation><!-- X-Large (&gt;5000 MWp) --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- List variants to the test scenario that should generate their own test result. Use this field to increase the breadth of the scenario and account for non-standard situations. --></help>
+        <label><!-- Testing Suggestions/Variations --></label>
+        <name>QS_Testing_Suggestions_Variations__c</name>
+    </CustomFieldTranslation>

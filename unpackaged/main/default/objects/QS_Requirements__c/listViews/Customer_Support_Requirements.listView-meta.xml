@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Support_Requirements</fullName>
+    <columns>NAME</columns>
+    <columns>QS_Area__c</columns>
+    <columns>QS_Requirement_Status__c</columns>
+    <columns>QS_Title__c</columns>
+    <columns>QS_SortOrder__c</columns>
+    <columns>QS_Business_Owner__c</columns>
+    <columns>QS_Development_Sprint__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>QS_Primary_Track__c</field>
+        <operation>contains</operation>
+        <value>Support</value>
+    </filters>
+    <label>Customer Support Requirements</label>
+</ListView>

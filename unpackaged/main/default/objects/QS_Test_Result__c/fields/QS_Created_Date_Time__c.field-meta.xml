@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Created_Date_Time__c</fullName>
+    <description>Indicates the time the test result was created. Used in reporting</description>
+    <externalId>false</externalId>
+    <formula>IF(
+Hour(TIMEVALUE(CreatedDate)) &lt; 10,
+Text(MONTH(DateValue(CreatedDate))) &amp;&quot;/&quot;&amp; Text(DAY(DateValue(CreatedDate))) &amp;&quot;, 0&quot;&amp;
+Text(
+Hour(
+TIMEVALUE(
+CreatedDate))
+)
+&amp;&quot;:00 GMT&quot;
+,
+Text(MONTH(DateValue(CreatedDate))) &amp;&quot;/&quot;&amp; Text(DAY(DateValue(CreatedDate))) &amp;&quot;, &quot;&amp;
+Text(
+Hour(
+TIMEVALUE(
+CreatedDate))
+)
+&amp;&quot;:00 GMT&quot;
+)</formula>
+    <inlineHelpText>Indicates the time the test result was created. Used in reporting</inlineHelpText>
+    <label>Created Date Time</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

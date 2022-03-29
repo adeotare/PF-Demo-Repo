@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Portfolio IT</fullName>
+        <default>false</default>
+        <label>PowerFactors Internal</label>
+    </customValue>
+    <customValue>
+        <fullName>VCG</fullName>
+        <default>false</default>
+        <label>VCG</label>
+    </customValue>
+    <customValue>
+        <fullName>Partner 1</fullName>
+        <default>false</default>
+        <label>TCS</label>
+    </customValue>
+    <customValue>
+        <fullName>Partner 2</fullName>
+        <default>false</default>
+        <label>Zone</label>
+    </customValue>
+    <masterLabel>BOSS Development Team</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

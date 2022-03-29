@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Opportunity Owner Changes</name>
+    <style>none</style>
+    <subject>Opportunity Record Owner Changed</subject>
+    <textOnly>Hi {!Opportunity.OwnerFullName}
+You have been made the owner of {!Opportunity.Link} record</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

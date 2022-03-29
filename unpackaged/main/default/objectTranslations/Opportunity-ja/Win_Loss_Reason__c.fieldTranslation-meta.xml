@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Win/Loss Reason --></label>
+        <name>Win_Loss_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Budget</masterLabel>
+            <translation><!-- Budget --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplicate</masterLabel>
+            <translation><!-- Duplicate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feature Requirement</masterLabel>
+            <translation><!-- Feature Requirement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price</masterLabel>
+            <translation><!-- Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Scope</masterLabel>
+            <translation><!-- Product Scope --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospect did not attend discovery call</masterLabel>
+            <translation><!-- Prospect did not attend discovery call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Timing</masterLabel>
+            <translation><!-- Timing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Will manage via Amendment</masterLabel>
+            <translation><!-- Will manage via Amendment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong Persona</masterLabel>
+            <translation><!-- Wrong Persona --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- The number of Test Results with a &quot;Failed&quot; status that has not been retested --></help>
+        <label><!-- Total Failed --></label>
+        <name>QS_Total_Failed__c</name>
+    </CustomFieldTranslation>

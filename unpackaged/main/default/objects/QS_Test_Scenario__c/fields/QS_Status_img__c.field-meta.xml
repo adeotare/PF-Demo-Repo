@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Status_img__c</fullName>
+    <description>Color coded representation of the Test Scenario&#39;s Status
+Red = failed, Yellow = Not Tested or Retest, Green = Passed</description>
+    <externalId>false</externalId>
+    <formula>IF(
+text(QS_Status__c) = &quot;Passed&quot;,
+IMAGE(&quot;/img/samples/color_green.gif&quot;, &quot;green&quot;, 30, 30) + &quot; Green&quot;,
+IF(
+text(QS_Status__c) = &quot;Not Tested&quot;,
+IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;yellow&quot;, 30, 30) + &quot; Yellow&quot;,
+IF(
+text(QS_Status__c) = &quot;Failed&quot; ,
+IMAGE(&quot;/img/samples/color_red.gif&quot;, &quot;red&quot;, 30, 30) + &quot; Red&quot;,
+IMAGE(&quot;/img/samples/color_red.gif&quot;, &quot;red&quot;, 30, 30) + &quot; Yellow&quot;
+)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Color coded representation of the Test Scenario&#39;s Status
+Red = failed, Yellow = Not Tested or Retest, Green = Passed</inlineHelpText>
+    <label>Status (img)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

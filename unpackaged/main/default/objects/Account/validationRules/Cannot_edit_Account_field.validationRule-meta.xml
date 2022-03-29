@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_edit_Account_field</fullName>
+    <active>true</active>
+    <description>Compliance Designations &amp; Compliance Notes cannot be edited if account is approved</description>
+    <errorConditionFormula>AND( ISPICKVAL( Account_Status__c , &#39;Approved&#39;),
+OR(
+
+ NOT( INCLUDES( Compliance_Designations__c , &#39;None&#39;) ),
+ NOT( INCLUDES( Compliance_Designations__c , &#39;NERC/CIP	&#39;) ),
+ NOT( INCLUDES( Compliance_Designations__c , &#39;Data Storage Location	&#39;) ),
+ NOT( INCLUDES( Compliance_Designations__c , &#39;SOC Certification	&#39;) ),
+
+ NOT( INCLUDES( Compliance_Designations__c , &#39;Other&#39;) ),
+ISBLANK(Compliance_Notes__c )
+
+
+),
+$Profile.Name &lt;&gt; &quot;PF Ops&quot;,
+$Profile.Name &lt;&gt; &quot;PF Legal&quot;,
+$Profile.Name &lt;&gt; &quot;PF Finance&quot;,
+$Profile.Name &lt;&gt; &quot;PF Super User&quot;,
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;
+
+)</errorConditionFormula>
+    <errorMessage>Compliance Designations and Compliance Notes cannot be edited after account is approved.</errorMessage>
+</ValidationRule>

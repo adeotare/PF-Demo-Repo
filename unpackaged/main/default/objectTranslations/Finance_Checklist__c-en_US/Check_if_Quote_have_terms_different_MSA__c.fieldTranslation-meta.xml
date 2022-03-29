@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Check if Quote have terms different MSA --></label>
+        <name>Check_if_Quote_have_terms_different_MSA__c</name>
+    </CustomFieldTranslation>

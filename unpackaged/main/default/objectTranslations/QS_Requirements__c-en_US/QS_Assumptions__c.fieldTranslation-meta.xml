@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Field to capture key information related to the REQ such as system limitations, prerequisite permissions/configurations, process decisions, and/or agreed to conditions such as &quot;REQ will be accomplished using native configuration capability vs. code.“ --></help>
+        <label><!-- Assumptions --></label>
+        <name>QS_Assumptions__c</name>
+    </CustomFieldTranslation>

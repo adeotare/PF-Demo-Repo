@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SOW_Coverage__c</fullName>
+    <externalId>false</externalId>
+    <label>SOW Coverage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not currently covered by SOW</fullName>
+                <default>true</default>
+                <label>Not currently covered by SOW</label>
+            </value>
+            <value>
+                <fullName>TCS Dec 2021 SOW Amendment</fullName>
+                <default>false</default>
+                <label>TCS Dec 2021 SOW Amendment</label>
+            </value>
+            <value>
+                <fullName>TCS Jan 2022 SOW</fullName>
+                <default>false</default>
+                <label>TCS Jan 2022 SOW</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Test_Scenario_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( QS_Total_Test_Results__c = 0 , &quot;Not Tested&quot;,
+if(QS_Total_Ready_for_Retest__c &gt; 0, &quot;Retest&quot;,
+if(QS_Total_Failed__c &gt;0, &quot;Failed&quot;,
+&quot;Passed&quot;
+)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status (Formula)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

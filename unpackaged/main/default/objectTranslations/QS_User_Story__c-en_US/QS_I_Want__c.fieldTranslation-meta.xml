@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- What is it that you need to happen? This should not specify a system or tool. (ie. What do you need?) --></help>
+        <label><!-- I Want To --></label>
+        <name>QS_I_Want__c</name>
+    </CustomFieldTranslation>

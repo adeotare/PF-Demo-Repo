@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Plant Termination Rights --></label>
+        <name>Plant_Termination_Rights__c</name>
+        <picklistValues>
+            <masterLabel>No right</masterLabel>
+            <translation><!-- No right --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminate for asset sale</masterLabel>
+            <translation><!-- Terminate for asset sale --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminate for service loss</masterLabel>
+            <translation><!-- Terminate for service loss --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

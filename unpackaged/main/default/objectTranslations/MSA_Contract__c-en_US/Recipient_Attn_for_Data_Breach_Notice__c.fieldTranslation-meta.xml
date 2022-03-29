@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Recipient Attn for Data Breach Notice --></label>
+        <name>Recipient_Attn_for_Data_Breach_Notice__c</name>
+        <relationshipLabel><!-- MSA Contracts --></relationshipLabel>
+    </CustomFieldTranslation>

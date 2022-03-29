@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Status Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+                <label>Competitor</label>
+            </value>
+            <value>
+                <fullName>Student</fullName>
+                <default>false</default>
+                <label>Student</label>
+            </value>
+            <value>
+                <fullName>Junk Data</fullName>
+                <default>false</default>
+                <label>Junk Data</label>
+            </value>
+            <value>
+                <fullName>False Interest</fullName>
+                <default>false</default>
+                <label>False Interest</label>
+            </value>
+            <value>
+                <fullName>Company Not a Target</fullName>
+                <default>false</default>
+                <label>Company Not a Target</label>
+            </value>
+            <value>
+                <fullName>Person not responsive</fullName>
+                <default>false</default>
+                <label>Person not responsive</label>
+            </value>
+            <value>
+                <fullName>We don’t have the right product</fullName>
+                <default>false</default>
+                <label>We don’t have the right product</label>
+            </value>
+            <value>
+                <fullName>No operational assets any time soon</fullName>
+                <default>false</default>
+                <label>No operational assets any time soon</label>
+            </value>
+            <value>
+                <fullName>Not right geography</fullName>
+                <default>false</default>
+                <label>Not right geography</label>
+            </value>
+            <value>
+                <fullName>Seniority level</fullName>
+                <default>false</default>
+                <label>Seniority level</label>
+            </value>
+            <value>
+                <fullName>Opportunity open w/ other contact</fullName>
+                <default>false</default>
+                <label>Opportunity open w/ other contact</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>Competitor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>Student</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>Junk Data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>False Interest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rejected</controllingFieldValue>
+            <valueName>Company Not a Target</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disqualified</controllingFieldValue>
+            <valueName>Person not responsive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disqualified</controllingFieldValue>
+            <valueName>We don’t have the right product</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disqualified</controllingFieldValue>
+            <valueName>No operational assets any time soon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disqualified</controllingFieldValue>
+            <valueName>Not right geography</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disqualified</controllingFieldValue>
+            <valueName>Seniority level</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disqualified</controllingFieldValue>
+            <valueName>Opportunity open w/ other contact</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

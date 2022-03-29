@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Client Termination Right --></label>
+        <name>Client_Termination_Right__c</name>
+        <picklistValues>
+            <masterLabel>No right</masterLabel>
+            <translation><!-- No right --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silent</masterLabel>
+            <translation><!-- Silent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminate for cause</masterLabel>
+            <translation><!-- Terminate for cause --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminate for convenience</masterLabel>
+            <translation><!-- Terminate for convenience --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

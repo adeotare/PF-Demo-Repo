@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Renewals Specialist</name>
+    <queueMembers>
+        <users>
+            <user>abhay.deotare@tcs.com</user>
+            <user>mohammadsameer.siddiqui@tcs.com</user>
+            <user>ravina.barud@tcs.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Task</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Where is this requirement in the process. --></help>
+        <label><!-- Requirement Status --></label>
+        <name>QS_Requirement_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved - Validated</masterLabel>
+            <translation><!-- Approved - Validated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consultant Approved</masterLabel>
+            <translation><!-- Consultant Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Discussion</masterLabel>
+            <translation><!-- In Discussion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Go-Live</masterLabel>
+            <translation><!-- Post Go-Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

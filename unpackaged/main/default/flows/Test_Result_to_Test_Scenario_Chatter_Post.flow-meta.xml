@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>AlertTester</name>
+        <label>AlertTester</label>
+        <locationX>161</locationX>
+        <locationY>132</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>TestScenarioID</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>ScenarioChatterPost</elementReference>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>NewChatterPostId</assignToReference>
+            <name>feedItemId</name>
+        </outputParameters>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <name>Test_Scenario_provided</name>
+        <label>Test Scenario provided</label>
+        <locationX>172</locationX>
+        <locationY>23</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>TestScenarioID</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AlertTester</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Stamps chatter post on Test Scenario from Test Result</description>
+    <interviewLabel>Test Result to Test Scenario Chatter Post {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Test Result to Test Scenario Chatter Post</label>
+    <processType>AutoLaunchedFlow</processType>
+    <startElementReference>Test_Scenario_provided</startElementReference>
+    <status>Active</status>
+    <textTemplates>
+        <name>ScenarioChatterPost</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>@[{!var_TestScenarioCreatorID}], this scenario is ready to be retested.
+
+Please review the resolution notes below and create a new test result:
+
+{!ResolutionNotes}
+
+
+
+Triggered by Test Result ID: {!TestResultID}</text>
+    </textTemplates>
+    <variables>
+        <name>NewChatterPostId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>ResolutionNotes</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>TestResultID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>TestScenarioID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>var_TestScenarioCreatorID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

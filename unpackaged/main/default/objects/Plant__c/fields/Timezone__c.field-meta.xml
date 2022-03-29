@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timezone__c</fullName>
+    <externalId>false</externalId>
+    <label>Timezone</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Morocco Standard Time</fullName>
+                <default>false</default>
+                <label>Morocco Standard Time</label>
+            </value>
+            <value>
+                <fullName>Coordinated Universal Time</fullName>
+                <default>false</default>
+                <label>Coordinated Universal Time</label>
+            </value>
+            <value>
+                <fullName>GMT Standard Time</fullName>
+                <default>false</default>
+                <label>GMT Standard Time</label>
+            </value>
+            <value>
+                <fullName>Greenwich Standard Time</fullName>
+                <default>false</default>
+                <label>Greenwich Standard Time</label>
+            </value>
+            <value>
+                <fullName>W. Europe Standard Time</fullName>
+                <default>false</default>
+                <label>W. Europe Standard Time</label>
+            </value>
+            <value>
+                <fullName>Central Europe Standard Time</fullName>
+                <default>false</default>
+                <label>Central Europe Standard Time</label>
+            </value>
+            <value>
+                <fullName>Romance Standard Time</fullName>
+                <default>false</default>
+                <label>Romance Standard Time</label>
+            </value>
+            <value>
+                <fullName>Central European Standard Time</fullName>
+                <default>false</default>
+                <label>Central European Standard Time</label>
+            </value>
+            <value>
+                <fullName>W. Central Africa Standard Time</fullName>
+                <default>false</default>
+                <label>W. Central Africa Standard Time</label>
+            </value>
+            <value>
+                <fullName>Namibia Standard Time</fullName>
+                <default>false</default>
+                <label>Namibia Standard Time</label>
+            </value>
+            <value>
+                <fullName>Jordan Standard Time</fullName>
+                <default>false</default>
+                <label>Jordan Standard Time</label>
+            </value>
+            <value>
+                <fullName>GTB Standard Time</fullName>
+                <default>false</default>
+                <label>GTB Standard Time</label>
+            </value>
+            <value>
+                <fullName>Middle East Standard Time</fullName>
+                <default>false</default>
+                <label>Middle East Standard Time</label>
+            </value>
+            <value>
+                <fullName>Egypt Standard Time</fullName>
+                <default>false</default>
+                <label>Egypt Standard Time</label>
+            </value>
+            <value>
+                <fullName>Syria Standard Time</fullName>
+                <default>false</default>
+                <label>Syria Standard Time</label>
+            </value>
+            <value>
+                <fullName>South Africa Standard Time</fullName>
+                <default>false</default>
+                <label>South Africa Standard Time</label>
+            </value>
+            <value>
+                <fullName>FLE Standard Time</fullName>
+                <default>false</default>
+                <label>FLE Standard Time</label>
+            </value>
+            <value>
+                <fullName>Turkey Standard Time</fullName>
+                <default>false</default>
+                <label>Turkey Standard Time</label>
+            </value>
+            <value>
+                <fullName>Jerusalem Standard Time</fullName>
+                <default>false</default>
+                <label>Jerusalem Standard Time</label>
+            </value>
+            <value>
+                <fullName>E. Europe Standard Time</fullName>
+                <default>false</default>
+                <label>E. Europe Standard Time</label>
+            </value>
+            <value>
+                <fullName>Arabic Standard Time</fullName>
+                <default>false</default>
+                <label>Arabic Standard Time</label>
+            </value>
+            <value>
+                <fullName>Kaliningrad Standard Time</fullName>
+                <default>false</default>
+                <label>Kaliningrad Standard Time</label>
+            </value>
+            <value>
+                <fullName>Arab Standard Time</fullName>
+                <default>false</default>
+                <label>Arab Standard Time</label>
+            </value>
+            <value>
+                <fullName>E. Africa Standard Time</fullName>
+                <default>false</default>
+                <label>E. Africa Standard Time</label>
+            </value>
+            <value>
+                <fullName>Iran Standard Time</fullName>
+                <default>false</default>
+                <label>Iran Standard Time</label>
+            </value>
+            <value>
+                <fullName>Arabian Standard Time</fullName>
+                <default>false</default>
+                <label>Arabian Standard Time</label>
+            </value>
+            <value>
+                <fullName>Azerbaijan Standard Time</fullName>
+                <default>false</default>
+                <label>Azerbaijan Standard Time</label>
+            </value>
+            <value>
+                <fullName>Russian Standard Time</fullName>
+                <default>false</default>
+                <label>Russian Standard Time</label>
+            </value>
+            <value>
+                <fullName>Mauritius Standard Time</fullName>
+                <default>false</default>
+                <label>Mauritius Standard Time</label>
+            </value>
+            <value>
+                <fullName>Georgian Standard Time</fullName>
+                <default>false</default>
+                <label>Georgian Standard Time</label>
+            </value>
+            <value>
+                <fullName>Caucasus Standard Time</fullName>
+                <default>false</default>
+                <label>Caucasus Standard Time</label>
+            </value>
+            <value>
+                <fullName>Afghanistan Standard Time</fullName>
+                <default>false</default>
+                <label>Afghanistan Standard Time</label>
+            </value>
+            <value>
+                <fullName>Pakistan Standard Time</fullName>
+                <default>false</default>
+                <label>Pakistan Standard Time</label>
+            </value>
+            <value>
+                <fullName>West Asia Standard Time</fullName>
+                <default>false</default>
+                <label>West Asia Standard Time</label>
+            </value>
+            <value>
+                <fullName>India Standard Time</fullName>
+                <default>false</default>
+                <label>India Standard Time</label>
+            </value>
+            <value>
+                <fullName>Sri Lanka Standard Time</fullName>
+                <default>false</default>
+                <label>Sri Lanka Standard Time</label>
+            </value>
+            <value>
+                <fullName>Nepal Standard Time</fullName>
+                <default>false</default>
+                <label>Nepal Standard Time</label>
+            </value>
+            <value>
+                <fullName>Central Asia Standard Time</fullName>
+                <default>false</default>
+                <label>Central Asia Standard Time</label>
+            </value>
+            <value>
+                <fullName>Bangladesh Standard Time</fullName>
+                <default>false</default>
+                <label>Bangladesh Standard Time</label>
+            </value>
+            <value>
+                <fullName>Ekaterinburg Standard Time</fullName>
+                <default>false</default>
+                <label>Ekaterinburg Standard Time</label>
+            </value>
+            <value>
+                <fullName>Myanmar Standard Time</fullName>
+                <default>false</default>
+                <label>Myanmar Standard Time</label>
+            </value>
+            <value>
+                <fullName>SE Asia Standard Time</fullName>
+                <default>false</default>
+                <label>SE Asia Standard Time</label>
+            </value>
+            <value>
+                <fullName>N. Central Asia Standard Time</fullName>
+                <default>false</default>
+                <label>N. Central Asia Standard Time</label>
+            </value>
+            <value>
+                <fullName>China Standard Time</fullName>
+                <default>false</default>
+                <label>China Standard Time</label>
+            </value>
+            <value>
+                <fullName>North Asia Standard Time</fullName>
+                <default>false</default>
+                <label>North Asia Standard Time</label>
+            </value>
+            <value>
+                <fullName>Malay Peninsula Standard Time</fullName>
+                <default>false</default>
+                <label>Malay Peninsula Standard Time</label>
+            </value>
+            <value>
+                <fullName>W. Australia Standard Time</fullName>
+                <default>false</default>
+                <label>W. Australia Standard Time</label>
+            </value>
+            <value>
+                <fullName>Taipei Standard Time</fullName>
+                <default>false</default>
+                <label>Taipei Standard Time</label>
+            </value>
+            <value>
+                <fullName>Ulaanbaatar Standard Time</fullName>
+                <default>false</default>
+                <label>Ulaanbaatar Standard Time</label>
+            </value>
+            <value>
+                <fullName>North Asia East Standard Time</fullName>
+                <default>false</default>
+                <label>North Asia East Standard Time</label>
+            </value>
+            <value>
+                <fullName>Tokyo Standard Time</fullName>
+                <default>false</default>
+                <label>Tokyo Standard Time</label>
+            </value>
+            <value>
+                <fullName>Korea Standard Time</fullName>
+                <default>false</default>
+                <label>Korea Standard Time</label>
+            </value>
+            <value>
+                <fullName>Cen. Australia Standard Time</fullName>
+                <default>false</default>
+                <label>Cen. Australia Standard Time</label>
+            </value>
+            <value>
+                <fullName>AUS Central Standard Time</fullName>
+                <default>false</default>
+                <label>AUS Central Standard Time</label>
+            </value>
+            <value>
+                <fullName>E. Australia Standard Time</fullName>
+                <default>false</default>
+                <label>E. Australia Standard Time</label>
+            </value>
+            <value>
+                <fullName>AUS Eastern Standard Time</fullName>
+                <default>false</default>
+                <label>AUS Eastern Standard Time</label>
+            </value>
+            <value>
+                <fullName>West Pacific Standard Time</fullName>
+                <default>false</default>
+                <label>West Pacific Standard Time</label>
+            </value>
+            <value>
+                <fullName>Tasmania Standard Time</fullName>
+                <default>false</default>
+                <label>Tasmania Standard Time</label>
+            </value>
+            <value>
+                <fullName>Yakutsk Standard Time</fullName>
+                <default>false</default>
+                <label>Yakutsk Standard Time</label>
+            </value>
+            <value>
+                <fullName>Central Pacific Standard Time</fullName>
+                <default>false</default>
+                <label>Central Pacific Standard Time</label>
+            </value>
+            <value>
+                <fullName>Vladivostok Standard Time</fullName>
+                <default>false</default>
+                <label>Vladivostok Standard Time</label>
+            </value>
+            <value>
+                <fullName>New Zealand Standard Time</fullName>
+                <default>false</default>
+                <label>New Zealand Standard Time</label>
+            </value>
+            <value>
+                <fullName>Fiji Standard Time</fullName>
+                <default>false</default>
+                <label>Fiji Standard Time</label>
+            </value>
+            <value>
+                <fullName>Magadan Standard Time</fullName>
+                <default>false</default>
+                <label>Magadan Standard Time</label>
+            </value>
+            <value>
+                <fullName>Kamchatka Standard Time</fullName>
+                <default>false</default>
+                <label>Kamchatka Standard Time</label>
+            </value>
+            <value>
+                <fullName>Tonga Standard Time</fullName>
+                <default>false</default>
+                <label>Tonga Standard Time</label>
+            </value>
+            <value>
+                <fullName>Samoa Standard Time</fullName>
+                <default>false</default>
+                <label>Samoa Standard Time</label>
+            </value>
+            <value>
+                <fullName>Azores Standard Time</fullName>
+                <default>false</default>
+                <label>Azores Standard Time</label>
+            </value>
+            <value>
+                <fullName>Cape Verde Standard Time</fullName>
+                <default>false</default>
+                <label>Cape Verde Standard Time</label>
+            </value>
+            <value>
+                <fullName>Mid-Atlantic Standard Time</fullName>
+                <default>false</default>
+                <label>Mid-Atlantic Standard Time</label>
+            </value>
+            <value>
+                <fullName>E. South America Standard Time</fullName>
+                <default>false</default>
+                <label>E. South America Standard Time</label>
+            </value>
+            <value>
+                <fullName>Argentina Standard Time</fullName>
+                <default>false</default>
+                <label>Argentina Standard Time</label>
+            </value>
+            <value>
+                <fullName>SA Eastern Standard Time</fullName>
+                <default>false</default>
+                <label>SA Eastern Standard Time</label>
+            </value>
+            <value>
+                <fullName>Greenland Standard Time</fullName>
+                <default>false</default>
+                <label>Greenland Standard Time</label>
+            </value>
+            <value>
+                <fullName>Montevideo Standard Time</fullName>
+                <default>false</default>
+                <label>Montevideo Standard Time</label>
+            </value>
+            <value>
+                <fullName>Bahia Standard Time</fullName>
+                <default>false</default>
+                <label>Bahia Standard Time</label>
+            </value>
+            <value>
+                <fullName>Newfoundland Standard Time</fullName>
+                <default>false</default>
+                <label>Newfoundland Standard Time</label>
+            </value>
+            <value>
+                <fullName>Paraguay Standard Time</fullName>
+                <default>false</default>
+                <label>Paraguay Standard Time</label>
+            </value>
+            <value>
+                <fullName>Atlantic Standard Time</fullName>
+                <default>false</default>
+                <label>Atlantic Standard Time</label>
+            </value>
+            <value>
+                <fullName>Central Brazilian Standard Time</fullName>
+                <default>false</default>
+                <label>Central Brazilian Standard Time</label>
+            </value>
+            <value>
+                <fullName>SA Western Standard Time</fullName>
+                <default>false</default>
+                <label>SA Western Standard Time</label>
+            </value>
+            <value>
+                <fullName>Pacific SA Standard Time</fullName>
+                <default>false</default>
+                <label>Pacific SA Standard Time</label>
+            </value>
+            <value>
+                <fullName>Venezuela Standard Time</fullName>
+                <default>false</default>
+                <label>Venezuela Standard Time</label>
+            </value>
+            <value>
+                <fullName>SA Pacific Standard Time</fullName>
+                <default>false</default>
+                <label>SA Pacific Standard Time</label>
+            </value>
+            <value>
+                <fullName>Eastern Standard Time</fullName>
+                <default>false</default>
+                <label>Eastern Standard Time</label>
+            </value>
+            <value>
+                <fullName>US Eastern Standard Time</fullName>
+                <default>false</default>
+                <label>US Eastern Standard Time</label>
+            </value>
+            <value>
+                <fullName>Central America Standard Time</fullName>
+                <default>false</default>
+                <label>Central America Standard Time</label>
+            </value>
+            <value>
+                <fullName>Central Standard Time</fullName>
+                <default>false</default>
+                <label>Central Standard Time</label>
+            </value>
+            <value>
+                <fullName>Central Standard Time (Mexico)</fullName>
+                <default>false</default>
+                <label>Central Standard Time (Mexico)</label>
+            </value>
+            <value>
+                <fullName>Canada Central Standard Time</fullName>
+                <default>false</default>
+                <label>Canada Central Standard Time</label>
+            </value>
+            <value>
+                <fullName>US Mountain Standard Time</fullName>
+                <default>false</default>
+                <label>US Mountain Standard Time</label>
+            </value>
+            <value>
+                <fullName>Mountain Standard Time (Mexico)</fullName>
+                <default>false</default>
+                <label>Mountain Standard Time (Mexico)</label>
+            </value>
+            <value>
+                <fullName>Mountain Standard Time</fullName>
+                <default>false</default>
+                <label>Mountain Standard Time</label>
+            </value>
+            <value>
+                <fullName>Pacific Standard Time (Mexico)</fullName>
+                <default>false</default>
+                <label>Pacific Standard Time (Mexico)</label>
+            </value>
+            <value>
+                <fullName>Pacific Standard Time</fullName>
+                <default>false</default>
+                <label>Pacific Standard Time</label>
+            </value>
+            <value>
+                <fullName>Alaskan Standard Time</fullName>
+                <default>false</default>
+                <label>Alaskan Standard Time</label>
+            </value>
+            <value>
+                <fullName>Hawaiian Standard Time</fullName>
+                <default>false</default>
+                <label>Hawaiian Standard Time</label>
+            </value>
+            <value>
+                <fullName>Dateline Standard Time</fullName>
+                <default>false</default>
+                <label>Dateline Standard Time</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

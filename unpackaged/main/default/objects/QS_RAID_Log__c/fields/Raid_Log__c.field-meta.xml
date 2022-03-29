@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Raid_Log__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Action item is tied to the following Key Decision RAID Log</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Action item is tied to the following Key Decision RAID Log</inlineHelpText>
+    <label>RAID Log</label>
+    <referenceTo>QS_RAID_Log__c</referenceTo>
+    <relationshipLabel>Linked RAID items</relationshipLabel>
+    <relationshipName>Decision_Action_Items</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

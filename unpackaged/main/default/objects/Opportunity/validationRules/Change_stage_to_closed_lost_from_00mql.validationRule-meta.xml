@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Change_stage_to_closed_lost_from_00mql</fullName>
+    <active>true</active>
+    <description>REQ-2446,
+If stage is change to closed lost from 00-mql stage</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( PRIORVALUE( StageName ), &#39;00 - MQL&#39;),
+ISPICKVAL( StageName ,&#39;Closed Lost&#39;),
+AND(
+NOT ISPICKVAL( Win_Loss_Reason__c , &#39;Wrong Persona&#39;) ,
+NOT ISPICKVAL( Win_Loss_Reason__c , &#39;Duplicate&#39;),
+NOT ISPICKVAL( Win_Loss_Reason__c , &#39;Will manage via Amendment&#39;)
+)
+)</errorConditionFormula>
+    <errorDisplayField>Win_Loss_Reason__c</errorDisplayField>
+    <errorMessage>Please select should  any one of this reasons Wrong Persona, Duplicate, Will manage via Amendment reasons</errorMessage>
+</ValidationRule>

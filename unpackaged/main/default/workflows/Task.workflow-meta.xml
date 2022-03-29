@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Collaboration_Request_Email_Alert_completed_email_alert</fullName>
+        <description>Collaboration Request Email Alert completed email alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Collaboration_Request_Completed_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Collaboration_Request_Email_Alerts</fullName>
+        <description>Collaboration Request Email Alerts</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Collaboration_Request_email</template>
+    </alerts>
+</Workflow>

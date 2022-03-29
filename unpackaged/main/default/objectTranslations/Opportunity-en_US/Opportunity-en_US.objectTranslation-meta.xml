@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Amendment Layout</layout>
+        <sections>
+            <label><!-- Additional Details --></label>
+            <section>Additional Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Legacy Information --></label>
+            <section>Legacy Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Products &amp; Services</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Legacy Information --></label>
+            <section>Legacy Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Renewal Layout</layout>
+        <sections>
+            <label><!-- Approval Information --></label>
+            <section>Approval Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Legacy Information --></label>
+            <section>Legacy Information</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Salesforce CPQ Configuration --></label>
+            <section>Salesforce CPQ Configuration</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Service Only</layout>
+        <sections>
+            <label><!-- Additional Details --></label>
+            <section>Additional Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Legacy Information --></label>
+            <section>Legacy Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Collaboration Request Task --></label>
+        <name>Collaboration_Request_Task</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Quote --></label>
+        <name>New_Quote</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- Used for modifying an existing Subscription Agreement- - to perform Decommissions, mid-term Add Ons, or Debookings. --></description>
+        <label><!-- Amendment --></label>
+        <name>Amendment</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- To be used for quotes containing a mixture of product types (subscription, services, etc). Contains all the elements of Value Selling. --></description>
+        <label><!-- Products &amp; Services --></label>
+        <name>Products_Services</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Renewal --></label>
+        <name>Renewal</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used for Change Orders and Services Only deals (opportunities without products). --></description>
+        <label><!-- Services Only --></label>
+        <name>Services_Only</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- User cannot  move stage to Close Pending  if PO Required field is blank on the Account . --></errorMessage>
+        <name>Can_not_advance_the_stage</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select should  any one of this reasons Wrong Persona, Duplicate, Will manage via Amendment reasons --></errorMessage>
+        <name>Change_stage_to_closed_lost_from_00mql</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only certain profiles can edit a closed opportunity --></errorMessage>
+        <name>Closed_Opportunity</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Stage can not be changed to Closed Won without approval. --></errorMessage>
+        <name>Opportunity_Stage_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Account is Unapproved.so Opportunity cannot progress --></errorMessage>
+        <name>Opportunity_cannot_progress_past_Stage_2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Your profile does not have permission to make stage close won, when the PO Number field is Blank --></errorMessage>
+        <name>Stage_can_not_be_Closed_won</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select should be any one of this reasons  Prospect did not attend discovery call, Timing, Price, Feature Requirement, Product Scope, Budget and Other reasons --></errorMessage>
+        <name>changing_stage_Closed_Lost_from_stage_0</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Your profile does not have permission to edit the close date after the stage is Close Pending or Closed Won --></errorMessage>
+        <name>status_validation_related_to_profiles</name>
+    </validationRules>
+</CustomObjectTranslation>
