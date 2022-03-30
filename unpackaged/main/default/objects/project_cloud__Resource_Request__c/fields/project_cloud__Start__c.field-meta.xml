@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Start__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The Start Date of the Resource Request is used in Resource Capacity and Load calculations to distribute requested hours across a date range.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field indicates the Start Date of the Date Range for which a Resource Request is being generated.</inlineHelpText>
+    <label>Start Date</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

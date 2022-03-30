@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Project__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The project that this snapshot was taken of</description>
+    <externalId>false</externalId>
+    <label>Project</label>
+    <referenceTo>project_cloud__Project__c</referenceTo>
+    <relationshipLabel>Project Snapshots</relationshipLabel>
+    <relationshipName>Project_Snapshots</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

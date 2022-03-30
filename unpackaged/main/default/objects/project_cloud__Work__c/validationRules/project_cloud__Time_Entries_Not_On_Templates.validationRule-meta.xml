@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Time_Entries_Not_On_Templates</fullName>
+    <active>true</active>
+    <description>Time Entries should not be created against Project Templates. If for whatever reason you want to allow this, please disable this validation rule.</description>
+    <errorConditionFormula>$RecordType.DeveloperName == &#39;Time_Entry&#39; &amp;&amp; project_cloud__Project_CCPE_Ignore__r.project_cloud__IsTemplate__c</errorConditionFormula>
+    <errorMessage>Time Entries must not be created against Project Templates</errorMessage>
+</ValidationRule>

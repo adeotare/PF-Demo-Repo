@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>This custom setting has been deprecated, the status&#39; are now implemented using custom labels</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Deprecated (Project Status&#39;)</label>
+    <visibility>Public</visibility>
+</CustomObject>

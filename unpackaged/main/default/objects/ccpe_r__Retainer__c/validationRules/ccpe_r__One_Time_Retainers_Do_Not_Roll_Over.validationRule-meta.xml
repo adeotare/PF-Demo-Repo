@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__One_Time_Retainers_Do_Not_Roll_Over</fullName>
+    <active>true</active>
+    <description>A one-time Retainer cannot roll-over</description>
+    <errorConditionFormula>ISPICKVAL(ccpe_r__Time_Period__c, &#39;One Time&#39;) &amp;&amp; (ccpe_r__Spend_Roll_Over__c == true || ccpe_r__Hours_Roll_Over__c == true)</errorConditionFormula>
+    <errorMessage>One-time Retainers cannot roll over</errorMessage>
+</ValidationRule>

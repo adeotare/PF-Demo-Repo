@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Subtotal_Rollup__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>The subtotal from all the invoice line items</inlineHelpText>
+    <label>Rollup Subtotal</label>
+    <summarizedField>project_cloud__Invoice_Line_Item__c.project_cloud__Subtotal__c</summarizedField>
+    <summaryForeignKey>project_cloud__Invoice_Line_Item__c.project_cloud__Invoice__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Quick_Entry</fullName>
+    <availableFields>
+        <field>project_cloud__Project__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <description>The Date and hours fields should not be added, they are included on all pages.
+1. By the tree component, for including additional fields on the quick entry part of the component
+2. By the timecard for creating a missing time entry</description>
+    <displayedFields>
+        <field>project_cloud__Comment__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Quick Entry</label>
+</FieldSet>

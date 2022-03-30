@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_ocp__Create_Project</fullName>
+    <availability>online</availability>
+    <description>Create a Project Cloud Project Related to the Opportunity</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Create Project</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/apex/project_cloud__project_new_override?ccpe_ocp__Opportunity__c={!Opportunity.Id}&amp;ccpe_ocp__Opportunity__r={!Opportunity.Name}&amp;ccpe_ocp__Account__c={!Opportunity.AccountId}&amp;ccpe_ocp__Account__r={!Opportunity.Account}</url>
+</WebLink>

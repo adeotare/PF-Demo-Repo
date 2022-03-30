@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Record_Type_Matches_Deprecated_Type</fullName>
+    <active>true</active>
+    <description>To prevent users from setting the type on a work object without setting the record type (through the data loader or api) The type is restricted to match the record type.</description>
+    <errorConditionFormula>SUBSTITUTE($RecordType.DeveloperName, &#39;_&#39;, &#39; &#39;) != TEXT(project_cloud__Type__c)</errorConditionFormula>
+    <errorDisplayField>project_cloud__Type__c</errorDisplayField>
+    <errorMessage>The Type field has been deprecated, please use record types to define the type of work.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Related_To__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Get the name of the Project, Phase or Task the ticket is related to, if there is no relation the value is &#39;No Parent;</description>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(project_cloud__Project__c)),
+	&#39;Project: &#39; &amp; project_cloud__Project__r.Name,
+	/*ELSE*/ IF(NOT(ISBLANK(project_cloud__Project_Phase__c)),
+		&#39;Project Phase: &#39; &amp; project_cloud__Project_Phase__r.Name,
+		/*ELSE*/ IF(NOT(ISBLANK(project_cloud__Project_Task__c)),
+			&#39;Project Task: &#39; &amp; project_cloud__Project_Task__r.Name,
+			/*ELSE*/
+			&#39;No Parent&#39;
+		)
+	)
+)</formula>
+    <inlineHelpText>Display the name of the Project, Phase or Task the ticket is related to, or &#39;No Parent&#39;</inlineHelpText>
+    <label>Related To</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Allocatable__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Indicates if the user can have their time allocated to a project. Also used by the SchedulableCreateBlankTimesheets class to identify users who need a Timesheet created for them each week
+(Cloud Coach 19-OCT-10)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check this box if this user needs to be assigned out to Project work and has a Cloud Coach license.</inlineHelpText>
+    <label>Allocatable</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

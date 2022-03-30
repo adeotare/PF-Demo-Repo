@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Time_Entries_On_Incomplete_Tasks_Only</fullName>
+    <active>false</active>
+    <description>When activated this validation rule prevents Time Entries from being created against Project Tasks which have been marked Completed</description>
+    <errorConditionFormula>project_cloud__Project_Task__r.project_cloud__IsComplete__c</errorConditionFormula>
+    <errorDisplayField>project_cloud__Project_Task__c</errorDisplayField>
+    <errorMessage>This Project Task has been marked Completed. Time can no longer be recorded against it.</errorMessage>
+</ValidationRule>

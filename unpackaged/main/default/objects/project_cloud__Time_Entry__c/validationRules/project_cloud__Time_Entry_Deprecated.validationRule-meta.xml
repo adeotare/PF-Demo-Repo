@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Time_Entry_Deprecated</fullName>
+    <active>true</active>
+    <description>The Time Entry object has been deprecated, to create a time entry use the Work Object with Type &#39;Time Entry&#39;</description>
+    <errorConditionFormula>ISNEW()</errorConditionFormula>
+    <errorMessage>The Time Entry object has been deprecated, to create a Time Entry use the Work Object with Type &#39;Time Entry&#39;</errorMessage>
+</ValidationRule>

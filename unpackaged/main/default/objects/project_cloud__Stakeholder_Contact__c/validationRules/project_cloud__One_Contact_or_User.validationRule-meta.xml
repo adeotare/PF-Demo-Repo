@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__One_Contact_or_User</fullName>
+    <active>true</active>
+    <description>This object must lookup to a single User or Contact</description>
+    <errorConditionFormula>project_cloud__User__c != null &amp;&amp; project_cloud__Contact__c != null</errorConditionFormula>
+    <errorMessage>Please select only one User or Contact</errorMessage>
+</ValidationRule>

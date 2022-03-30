@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__User_Owner_Same</fullName>
+    <active>true</active>
+    <description>The User Lookup must match the Owner of the record.</description>
+    <errorConditionFormula>OwnerId != ccpe_r__User__c</errorConditionFormula>
+    <errorDisplayField>ccpe_r__User__c</errorDisplayField>
+    <errorMessage>The user must be the same as the owner of the record</errorMessage>
+</ValidationRule>

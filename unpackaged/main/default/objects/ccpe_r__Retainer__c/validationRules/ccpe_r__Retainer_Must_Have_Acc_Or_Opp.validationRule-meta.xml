@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__Retainer_Must_Have_Acc_Or_Opp</fullName>
+    <active>true</active>
+    <description>Every retainer must be related to either an Account or an Opportunity.</description>
+    <errorConditionFormula>ISBLANK(ccpe_r__Account__c)</errorConditionFormula>
+    <errorDisplayField>ccpe_r__Account__c</errorDisplayField>
+    <errorMessage>There must be a related Account</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Late_Starting_Tasks__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Boolean value indicating if the Project has Tasks that start late.</description>
+    <externalId>false</externalId>
+    <formula>project_cloud__Late_Task_Start__c &lt; TODAY()</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>When checked, indicates that the project has tasks with a &quot;Not Started - Late&quot; status.</inlineHelpText>
+    <label>Late Starting Tasks?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

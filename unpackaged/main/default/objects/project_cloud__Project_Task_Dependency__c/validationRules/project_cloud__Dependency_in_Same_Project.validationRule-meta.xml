@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Dependency_in_Same_Project</fullName>
+    <active>true</active>
+    <description>Make sure the dependency junction Object is making a link between 2 tasks in the same project phase</description>
+    <errorConditionFormula>project_cloud__Child__r.project_cloud__Project_Phase__r.project_cloud__Project__r.Id != project_cloud__Parent__r.project_cloud__Project_Phase__r.project_cloud__Project__r.Id</errorConditionFormula>
+    <errorMessage>Dependencies between Projects Tasks in different Projects are currently not supported</errorMessage>
+</ValidationRule>

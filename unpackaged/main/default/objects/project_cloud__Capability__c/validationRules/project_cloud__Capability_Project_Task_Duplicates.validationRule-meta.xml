@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Capability_Project_Task_Duplicates</fullName>
+    <active>true</active>
+    <description>Prevent the existence of Capabilities that match the Primary Work Type of the related Project Task</description>
+    <errorConditionFormula>project_cloud__IsDuplicate__c</errorConditionFormula>
+    <errorDisplayField>project_cloud__Work_Type__c</errorDisplayField>
+    <errorMessage>The Project Task this Capability is related to has this Work Type as it&#39;s primary Work Type.</errorMessage>
+</ValidationRule>

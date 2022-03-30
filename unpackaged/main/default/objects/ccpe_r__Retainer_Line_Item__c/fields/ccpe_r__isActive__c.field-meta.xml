@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__isActive__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>ccpe_r__Start_Date__c &lt;= TODAY() &amp;&amp;
+IF(ISPICKVAL(ccpe_r__Line_Item_Criteria__r.ccpe_r__Retainer__r.ccpe_r__Time_Period__c,&#39;Week&#39;),
+   ( TODAY() &lt; (ccpe_r__Start_Date__c + 7) ),
+   IF(ISPICKVAL(ccpe_r__Line_Item_Criteria__r.ccpe_r__Retainer__r.ccpe_r__Time_Period__c,&#39;Month&#39;),
+      ( MONTH(ccpe_r__Start_Date__c) == MONTH(TODAY())  &amp;&amp; YEAR(ccpe_r__Start_Date__c) == Year(TODAY())),
+      IF(ISPICKVAL(ccpe_r__Line_Item_Criteria__r.ccpe_r__Retainer__r.ccpe_r__Time_Period__c,&#39;Quarter&#39;),
+         ( 0 &lt;= ( MONTH(TODAY()) - MONTH(ccpe_r__Start_Date__c) ) &amp;&amp; ( MONTH(TODAY()) - MONTH(ccpe_r__Start_Date__c) ) &lt; 3),
+         ISPICKVAL(ccpe_r__Line_Item_Criteria__r.ccpe_r__Retainer__r.ccpe_r__Time_Period__c,&#39;One Time&#39;)
+      )
+   )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Active</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

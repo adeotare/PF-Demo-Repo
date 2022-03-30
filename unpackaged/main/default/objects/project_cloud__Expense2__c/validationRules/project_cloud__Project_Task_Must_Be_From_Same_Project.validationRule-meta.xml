@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Project_Task_Must_Be_From_Same_Project</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISBLANK(project_cloud__Project_Task__c)) &amp;&amp; project_cloud__Project__c != project_cloud__Project_Task__r.project_cloud__Project_Phase__r.project_cloud__Project__c</errorConditionFormula>
+    <errorDisplayField>project_cloud__Project_Task__c</errorDisplayField>
+    <errorMessage>The related Project Task must come from the related Project</errorMessage>
+</ValidationRule>

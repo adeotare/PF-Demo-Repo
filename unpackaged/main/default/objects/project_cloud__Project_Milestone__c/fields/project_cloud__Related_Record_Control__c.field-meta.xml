@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Related_Record_Control__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Checked when completion of the Milestone is controlled by the related ‘Timeline’ records (Phases, Sprints, Tasks or Cards)</description>
+    <externalId>false</externalId>
+    <label>Related Record Control</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

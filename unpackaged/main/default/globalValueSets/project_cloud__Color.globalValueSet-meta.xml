@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>magenta</fullName>
+        <default>false</default>
+        <label>Magenta</label>
+    </customValue>
+    <customValue>
+        <fullName>pink</fullName>
+        <default>false</default>
+        <label>Pink</label>
+    </customValue>
+    <customValue>
+        <fullName>burgundy</fullName>
+        <default>false</default>
+        <label>Burgundy</label>
+    </customValue>
+    <customValue>
+        <fullName>orange</fullName>
+        <default>false</default>
+        <label>Orange</label>
+    </customValue>
+    <customValue>
+        <fullName>yellow</fullName>
+        <default>false</default>
+        <label>Yellow</label>
+    </customValue>
+    <customValue>
+        <fullName>green</fullName>
+        <default>false</default>
+        <label>Green</label>
+    </customValue>
+    <customValue>
+        <fullName>blue</fullName>
+        <default>false</default>
+        <label>Blue</label>
+    </customValue>
+    <customValue>
+        <fullName>purple</fullName>
+        <default>false</default>
+        <label>Purple</label>
+    </customValue>
+    <description>Colors used by the Cloud Coach application. These values should not be changed.</description>
+    <masterLabel>Color</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

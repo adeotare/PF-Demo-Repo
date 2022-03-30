@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__Only_1_Global_Line_Item_Allowed</fullName>
+    <active>true</active>
+    <description>Only a single Line Item Criteria may exist for a retainer marked Global</description>
+    <errorConditionFormula>IF(ISNEW(),
+ccpe_r__Retainer__r.ccpe_r__Type__c == &#39;Global&#39;, false)</errorConditionFormula>
+    <errorMessage>A Line Item cannot be added if the specified Retainer has a Global Line Item</errorMessage>
+</ValidationRule>

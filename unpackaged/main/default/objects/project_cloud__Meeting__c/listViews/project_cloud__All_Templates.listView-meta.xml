@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__All_Templates</fullName>
+    <columns>NAME</columns>
+    <columns>project_cloud__Duration__c</columns>
+    <columns>project_cloud__Objective__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>project_cloud__IsTemplate__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Templates</label>
+</ListView>

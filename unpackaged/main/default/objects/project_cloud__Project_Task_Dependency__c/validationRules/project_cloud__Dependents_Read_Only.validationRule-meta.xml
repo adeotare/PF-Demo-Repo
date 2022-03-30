@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Dependents_Read_Only</fullName>
+    <active>true</active>
+    <description>The Parent Dependent Lookup field is read only. I.e once the lookup is created it cannot be modified to point to another object</description>
+    <errorConditionFormula>ISCHANGED(project_cloud__Parent__c) || ISCHANGED(project_cloud__Child__c)</errorConditionFormula>
+    <errorMessage>The Parent and Child relationships cannot be modified.</errorMessage>
+</ValidationRule>

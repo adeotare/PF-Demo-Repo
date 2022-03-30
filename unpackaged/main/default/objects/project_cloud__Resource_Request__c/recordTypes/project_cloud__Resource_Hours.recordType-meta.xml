@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Resource_Hours</fullName>
+    <active>true</active>
+    <description>Create a Resource Request for a specific resource by inputting a total number of hours requested for a single resource over a given date range.</description>
+    <label>Resource (Hours)</label>
+    <picklistValues>
+        <picklist>project_cloud__Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Submitted</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>project_cloud__PTO_Type__c</picklist>
+        <values>
+            <fullName>Sick</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vacation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__Active__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Indicates if this is an active rate card or not.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This setting is only used for assigning rate cards, time can still be billed on an inactive rate card if it is assigned to the project</inlineHelpText>
+    <label>Active</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

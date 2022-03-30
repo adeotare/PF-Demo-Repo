@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__Cannot_Reference_Self</fullName>
+    <active>true</active>
+    <description>Line Items cannot reference themselves</description>
+    <errorConditionFormula>ccpe_r__Previous_Line_Item__c == Id &amp;&amp; Id != null</errorConditionFormula>
+    <errorDisplayField>ccpe_r__Previous_Line_Item__c</errorDisplayField>
+    <errorMessage>A Line Item cannot reference itself as the previous Line Item</errorMessage>
+</ValidationRule>

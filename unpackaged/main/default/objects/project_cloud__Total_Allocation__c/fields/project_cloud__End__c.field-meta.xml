@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__End__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The last end date for all the users allocations against this project task</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is a system object and should never be visible.</inlineHelpText>
+    <label>End</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Non_Working__c</fullName>
+    <defaultValue>0</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This is a system field that should never be updated by the user.
+It is a calculation of the number of days that a task is not being worked on based on the start date and the length of the task.
+If a Cannot End Before date has been specified, the Non Working days will be 0 unless the Cannot End Before date is the day before a Non Working day</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is a system field and should never be visible.</inlineHelpText>
+    <label>Non Working Days Total</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

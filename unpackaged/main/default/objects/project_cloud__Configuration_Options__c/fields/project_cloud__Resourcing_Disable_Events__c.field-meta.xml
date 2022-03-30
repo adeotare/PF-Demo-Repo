@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Resourcing_Disable_Events__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Disable Salesforce events being included in any resourcing calculations</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Disable Salesforce events being included in any resourcing calculations</inlineHelpText>
+    <label>Resourcing Disable Events</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

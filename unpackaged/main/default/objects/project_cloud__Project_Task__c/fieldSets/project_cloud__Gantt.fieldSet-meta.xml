@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Gantt</fullName>
+    <description>This fieldset was added to the package in error. The correct fieldset to use is the &quot;Mouseover&quot; Fieldset</description>
+    <label>Deprecated</label>
+</FieldSet>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SBQQ__LookupField__c</fullName>
+    <deprecated>false</deprecated>
+    <description>API Name of the custom field used in the query.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>API Name of the custom field used in the query.</inlineHelpText>
+    <label>Lookup Field</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SBQQ__Category__c</fullName>
+                <default>false</default>
+                <label>SBQQ__Category__c</label>
+            </value>
+            <value>
+                <fullName>Tier__c</fullName>
+                <default>false</default>
+                <label>Tier__c</label>
+            </value>
+            <value>
+                <fullName>Product_Family__c</fullName>
+                <default>false</default>
+                <label>Product_Family__c</label>
+            </value>
+            <value>
+                <fullName>Account__c</fullName>
+                <default>false</default>
+                <label>Account__c</label>
+            </value>
+            <value>
+                <fullName>ProductCode</fullName>
+                <default>false</default>
+                <label>ProductCode</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

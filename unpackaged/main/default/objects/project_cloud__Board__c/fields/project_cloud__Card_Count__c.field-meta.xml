@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Card_Count__c</fullName>
+    <deprecated>false</deprecated>
+    <description>A Count of the number of Cards on the Board</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Total Count of Cards on this Board</inlineHelpText>
+    <label>Total Card Count</label>
+    <summaryForeignKey>project_cloud__Card__c.project_cloud__Board__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

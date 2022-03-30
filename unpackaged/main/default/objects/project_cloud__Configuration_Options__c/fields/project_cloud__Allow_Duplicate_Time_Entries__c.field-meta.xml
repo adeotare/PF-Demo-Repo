@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Allow_Duplicate_Time_Entries__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>To save space and eliminate confusion on the timecard duplicate time entries are not permitted. If you would like to allow your users to enter more than one entry per day against the same unit of work enbale this option.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>To allow users to enter more than one entry per day against the same unit of work enable this option.</inlineHelpText>
+    <label>Allow Duplicate Time Entries</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

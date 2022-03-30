@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Can_only_populate_percentage_or_hours</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISBLANK(project_cloud__Percentage_of_Work_Day__c)), NOT(ISBLANK(project_cloud__Hours__c)))</errorConditionFormula>
+    <errorMessage>You can only populate Percentage of Day or Hours Per Person, not both.</errorMessage>
+</ValidationRule>

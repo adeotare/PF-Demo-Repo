@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Type_Required</fullName>
+    <active>true</active>
+    <description>All Work Objects require a Record Type to be selected. And once set must not be changed.</description>
+    <errorConditionFormula>/*Make sure the record type is not blank*/
+ISBLANK(RecordTypeId) ||
+/*Make sure the record type is not changed, unless it is being set from null (migrated)*/
+(ISCHANGED(RecordTypeId) &amp;&amp; NOT(ISBLANK(PRIORVALUE(RecordTypeId))))</errorConditionFormula>
+    <errorMessage>All Work Objects require a Record Type which can not be changed.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Fulfillments_Satisfied__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>This field has been deprecated in favor of the Related Requirements Fulfilled field.</inlineHelpText>
+    <label>Deprecated (Fulfillments Satisfied)</label>
+    <summaryFilterItems>
+        <field>project_cloud__Requirement_Fulfillment__c.project_cloud__Fulfilled__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>project_cloud__Requirement_Fulfillment__c.project_cloud__Requirement__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

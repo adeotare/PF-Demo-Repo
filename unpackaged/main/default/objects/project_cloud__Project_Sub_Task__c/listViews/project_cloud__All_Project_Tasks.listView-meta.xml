@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__All_Project_Tasks</fullName>
+    <columns>NAME</columns>
+    <columns>project_cloud__Sub_Task_Number__c</columns>
+    <columns>project_cloud__IsComplete__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Time_Entries_Timesheet_Locked</fullName>
+    <active>true</active>
+    <description>When the status of the Timesheet is Submitted or Approved the hours entered on a Time Entry can&#39;t be modifed</description>
+    <errorConditionFormula>$RecordType.DeveloperName == &#39;Time_Entry&#39; &amp;&amp;
+/*New record or hours changed. So mass updates of other values on time entries are possible*/
+(ISNEW() || ISCHANGED(project_cloud__Hours__c)) &amp;&amp; (
+	ISPICKVAL(project_cloud__Timesheet__r.project_cloud__Status__c, &#39;Submitted&#39;) ||
+	ISPICKVAL(project_cloud__Timesheet__r.project_cloud__Status__c, &#39;Approved&#39;)
+)</errorConditionFormula>
+    <errorMessage>Timesheet is locked. The Time Entry can not be modified.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Using the IsComplete checkbox and the rollup summary of Completed hours determine the status of the Project Task, or the On Hold checkbox to omit the Project Task from these calculations</description>
+    <externalId>false</externalId>
+    <formula>IF(
+			project_cloud__IsComplete__c,
+			$Label.project_cloud__project_status_completed,
+			IF(
+				project_cloud__IsOn_Hold__c,
+				$Label.project_cloud__project_status_on_hold,
+				IF(
+					project_cloud__Worked_Hours__c &gt; 0 || project_cloud__Completed_Percent__c &gt; 0,
+					IF(
+						TODAY() &gt; project_cloud__End__c,
+						$Label.project_cloud__project_status_in_progress_late,
+						$Label.project_cloud__project_status_in_progress
+					),
+					IF(
+						TODAY() &gt; project_cloud__Start__c,
+						$Label.project_cloud__project_status_not_started_late,
+						$Label.project_cloud__project_status_not_started
+					)
+				)
+			)
+		)</formula>
+    <inlineHelpText>The status of the Project Task, &#39;Not Started&#39; if not yet commenced, &#39;In Progress&#39; if completion percentage is &gt;1% or the task has time recorded against it, and &#39;Completed&#39; once the Project Manger has marked the task as complete</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

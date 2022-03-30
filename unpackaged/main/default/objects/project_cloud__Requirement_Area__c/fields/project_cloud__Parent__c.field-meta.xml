@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Parent__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>This lookup allows for requirement areas to be related to one another</inlineHelpText>
+    <label>Parent</label>
+    <referenceTo>project_cloud__Requirement_Area__c</referenceTo>
+    <relationshipLabel>Requirement Areas (Parent)</relationshipLabel>
+    <relationshipName>Requirement_Areas</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

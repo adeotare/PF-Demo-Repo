@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Only_Allocatable__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Restrict the results of the user queries to users with the Allocatable checkbox</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When resourcing and assigning capabilities, should only the users with the &#39;Allocatable&#39; checkbox be returned. This is useful for large organisations who want to keep the</inlineHelpText>
+    <label>Only Allocatable</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

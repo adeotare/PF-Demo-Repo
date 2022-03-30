@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__End__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Rollup summary of the latest end date of the all the Project Tasks in this Project Sub-Phase</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The calculated end date of the project phase based on the end date of the last project task within the project sub-phase</inlineHelpText>
+    <label>End (Rollup)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

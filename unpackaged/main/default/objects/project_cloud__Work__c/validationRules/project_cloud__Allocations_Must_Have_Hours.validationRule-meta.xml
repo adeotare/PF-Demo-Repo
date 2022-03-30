@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Allocations_Must_Have_Hours</fullName>
+    <active>true</active>
+    <description>Allocations require an hours value greater than 0</description>
+    <errorConditionFormula>$RecordType.DeveloperName == &#39;Allocation&#39; &amp;&amp; NOT(project_cloud__Hours__c &gt; 0)</errorConditionFormula>
+    <errorDisplayField>project_cloud__Hours__c</errorDisplayField>
+    <errorMessage>Allocations require an hours value greater than 0</errorMessage>
+</ValidationRule>

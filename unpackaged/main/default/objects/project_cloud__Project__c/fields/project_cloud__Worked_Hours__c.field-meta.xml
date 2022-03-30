@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Worked_Hours__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Sum of the hours completed on the Project, it&#39;s Phases, Tasks and Tickets using the time entry Work objects. This is calculated by the trigger WorkConfiguration</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Shows a rollup summary of hours entered to records under the project. This field should not be manually editable.</inlineHelpText>
+    <label>Entered Hours</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

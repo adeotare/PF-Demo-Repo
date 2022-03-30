@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Availability_Hourspan__c</fullName>
+    <defaultValue>&quot;0-2,2-4,4-8,8-*&quot;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This field is used by the Resources Load Tab for determining the highlighting of a Users Allocations. It is a Tab separated list of hour intervals. The spans are for highlighting the number in a range: Green, No Highlighting, Yellow, Red e.g 0-4,4-* is green if the number is between 0 and 4, or no highlighting otherwise. 0-2,2-4,4-8,8-* is 0-2 Green, 2-4 No Highlight, 4-8 Yellow, 8+ Red</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Numbers indicate the hours in a day that trigger color changes in loading Green, White, Yellow, Red. 0-2,2-4,4-8,8-* Displays Green under 2 hours, White 2 to 4 hours, Yellow 4-8 hours and Red over 8 hours</inlineHelpText>
+    <label>Resource Loading Indicators</label>
+    <length>40</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

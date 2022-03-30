@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Date_is_within_Timesheet_Range</fullName>
+    <active>false</active>
+    <description>Make sure the Date field on the Timesheet entry is within the Start and End Date on the Timesheet</description>
+    <errorConditionFormula>project_cloud__Date__c &lt; project_cloud__Timesheet__r.project_cloud__Start__c || project_cloud__Date__c &gt; project_cloud__Timesheet__r.project_cloud__End__c</errorConditionFormula>
+    <errorDisplayField>project_cloud__Date__c</errorDisplayField>
+    <errorMessage>The Date entered is not within the range of the timesheet</errorMessage>
+</ValidationRule>

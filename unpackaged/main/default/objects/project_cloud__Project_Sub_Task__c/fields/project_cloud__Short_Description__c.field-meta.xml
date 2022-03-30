@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Short_Description__c</fullName>
+    <deprecated>false</deprecated>
+    <description>A short description of the Sub Task</description>
+    <externalId>false</externalId>
+    <inlineHelpText>A plain text area with a 255 character limit allows users to provide a description of the Sub Task.</inlineHelpText>
+    <label>Short Description</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Suggest_Tasks__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Should Tasks be used to populate the suggested time entries section</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Selecting this check-box will show any records a user has a Salesforce Task attached to, in the users Timecard Genius</inlineHelpText>
+    <label>Suggest Tasks</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

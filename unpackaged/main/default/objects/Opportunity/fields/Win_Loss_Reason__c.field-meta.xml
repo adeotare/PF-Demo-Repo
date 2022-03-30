@@ -3,7 +3,7 @@
     <fullName>Win_Loss_Reason__c</fullName>
     <externalId>false</externalId>
     <label>Win/Loss Reason</label>
-    <required>true</required>
+    <required>false</required>
     <trackFeedHistory>true</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

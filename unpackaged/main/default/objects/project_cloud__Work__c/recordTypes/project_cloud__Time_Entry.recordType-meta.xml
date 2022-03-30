@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Time_Entry</fullName>
+    <active>true</active>
+    <description>Time Entries are records of actual work completed by a person. They can be related to any object.</description>
+    <label>Time Entry</label>
+    <picklistValues>
+        <picklist>ccpe_r__Utilization_Category__c</picklist>
+        <values>
+            <fullName>Billable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Billable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>project_cloud__Administration__c</picklist>
+        <values>
+            <fullName>Admin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sick</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>project_cloud__Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>project_cloud__Type__c</picklist>
+        <values>
+            <fullName>Time Entry</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

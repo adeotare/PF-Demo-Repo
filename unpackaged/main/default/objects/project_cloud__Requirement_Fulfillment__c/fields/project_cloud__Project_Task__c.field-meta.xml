@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Project_Task__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>This field will show the Project Task that is related to the Requirement Fulfillment.</inlineHelpText>
+    <label>Project Task</label>
+    <referenceTo>project_cloud__Project_Task__c</referenceTo>
+    <relationshipLabel>Requirement Fulfillments</relationshipLabel>
+    <relationshipName>Requirement_Fulfillments</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Hours_are_15_minute_blocks</fullName>
+    <active>false</active>
+    <description>This validation rule has been replaced by the Hours Valid blocks. Time is not entered in 15 minutes blocks but in multiples of the hours block value</description>
+    <errorConditionFormula>MOD(project_cloud__Hours__c, 0.25) != 0</errorConditionFormula>
+    <errorDisplayField>project_cloud__Hours__c</errorDisplayField>
+    <errorMessage>Hours must be entered as 15 minute blocks</errorMessage>
+</ValidationRule>

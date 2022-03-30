@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Active__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This field indicates whether or not a Resource Request is Active.  Only Active Resource Requests impact Resource Capacity and Load.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field indicates whether or not a Resource Request is Active.  Only Active Resource Requests impact Resource Capacity and Load.</inlineHelpText>
+    <label>Active</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

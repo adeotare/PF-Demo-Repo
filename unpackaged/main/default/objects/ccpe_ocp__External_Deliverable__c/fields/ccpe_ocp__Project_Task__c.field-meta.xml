@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_ocp__Project_Task__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The Project Task that this External Deliverable is related to.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The Project Task that this External Deliverable is related to.</inlineHelpText>
+    <label>Project Task</label>
+    <referenceTo>project_cloud__Project_Task__c</referenceTo>
+    <relationshipLabel>External Deliverables</relationshipLabel>
+    <relationshipName>External_Deliverables</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

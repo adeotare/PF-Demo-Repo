@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Step_And_Board_Same_Process</fullName>
+    <active>true</active>
+    <description>The Board Process for the Board and the Board Process Step must match</description>
+    <errorConditionFormula>project_cloud__Board__r.project_cloud__Board_Process__c != project_cloud__Board_Process_Step__r.project_cloud__Board_Process__c</errorConditionFormula>
+    <errorDisplayField>project_cloud__Board_Process_Step__c</errorDisplayField>
+    <errorMessage>This Board Process Step does not belong to the Board Process used by the Board</errorMessage>
+</ValidationRule>

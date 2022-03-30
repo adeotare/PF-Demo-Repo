@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Project_Owner__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field is used as part of a Customer&#39;s Time Entry (Work) approval process. (The Id is used instead of the Owners Name as the Id is fixed and not prone to introducing errors by accidental editing)</description>
+    <externalId>false</externalId>
+    <formula>CASESAFEID(project_cloud__Project_CCPE_Ignore__r.OwnerId)</formula>
+    <inlineHelpText>This field is used as part of a Customer&#39;s Time Entry (Work) approval process.</inlineHelpText>
+    <label>Project Owner Id (For Time Approvals)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

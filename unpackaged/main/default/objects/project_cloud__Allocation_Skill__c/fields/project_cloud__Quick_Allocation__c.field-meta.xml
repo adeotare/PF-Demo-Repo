@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Quick_Allocation__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Set when a user is allocated to the project using project level resourcing (Quick Subscribe)</inlineHelpText>
+    <label>Quick Allocation</label>
+    <referenceTo>project_cloud__Quick_Allocation__c</referenceTo>
+    <relationshipLabel>Allocation Skills</relationshipLabel>
+    <relationshipName>Allocation_Skills</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

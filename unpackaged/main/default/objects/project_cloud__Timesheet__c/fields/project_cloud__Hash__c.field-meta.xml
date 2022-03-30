@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Hash__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This is a hash of the OwnerId of the Timesheet and the start date, it is used by the validation rule to enforce unique timesheets</description>
+    <externalId>false</externalId>
+    <formula>CASESAFEID(OwnerId) + TEXT(YEAR(project_cloud__Start__c)) + &#39;-&#39; + TEXT(MONTH(project_cloud__Start__c)) + &#39;-&#39; + TEXT(DAY(project_cloud__Start__c))</formula>
+    <inlineHelpText>This is a system field and should never be visible.</inlineHelpText>
+    <label>Hash</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

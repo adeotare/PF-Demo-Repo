@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Hours_In_Day__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This custom setting has been deprecated. The values are now project/project task specific.</description>
+    <externalId>false</externalId>
+    <label>Deprecated (Hours In Day)</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

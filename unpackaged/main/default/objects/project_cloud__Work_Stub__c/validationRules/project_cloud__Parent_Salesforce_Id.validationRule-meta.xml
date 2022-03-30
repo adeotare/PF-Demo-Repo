@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Parent_Salesforce_Id</fullName>
+    <active>true</active>
+    <description>The Parent field must be a valid Salesforce Id (This is not looked up in the System, only that the format matches a Salesforce Id).</description>
+    <errorConditionFormula>IF(
+	REGEX(project_cloud__Parent__c, &#39;^[a-zA-Z0-9]+$&#39;), /** must be alphanumeric **/
+	IF(
+		 LEN(project_cloud__Parent__c) == 18,
+		 CASESAFEID(LEFT(project_cloud__Parent__c, 15)) !=  project_cloud__Parent__c, /** if its 18 characters, verify that the 3 digit calculated suffix is valid **/
+		 IF (LEN(project_cloud__Parent__c) == 15, /** any 15 digit alphanumeric is valid **/
+			  false,
+			  true
+		  )
+	)
+	, true
+)</errorConditionFormula>
+    <errorDisplayField>project_cloud__Parent__c</errorDisplayField>
+    <errorMessage>The value of the parent field must be an Id</errorMessage>
+</ValidationRule>

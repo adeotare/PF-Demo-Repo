@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__No_Self_Relationships</fullName>
+    <active>true</active>
+    <description>Prevent the creation of a dependency with the same Parent and child</description>
+    <errorConditionFormula>project_cloud__Parent__c = project_cloud__Child__c</errorConditionFormula>
+    <errorMessage>This Dependency cannot be created it will create a circular (self) relationship</errorMessage>
+</ValidationRule>

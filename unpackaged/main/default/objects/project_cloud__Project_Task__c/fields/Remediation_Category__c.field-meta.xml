@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Remediation_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Remediation Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Internal Training</fullName>
+                <default>false</default>
+                <label>Internal Training</label>
+            </value>
+            <value>
+                <fullName>External Training</fullName>
+                <default>false</default>
+                <label>External Training</label>
+            </value>
+            <value>
+                <fullName>Customer Engagement</fullName>
+                <default>false</default>
+                <label>Customer Engagement</label>
+            </value>
+            <value>
+                <fullName>Collateral Correction</fullName>
+                <default>false</default>
+                <label>Collateral Correction</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

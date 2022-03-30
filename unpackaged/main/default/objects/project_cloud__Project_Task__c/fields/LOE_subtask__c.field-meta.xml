@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LOE_subtask__c</fullName>
+    <externalId>false</externalId>
+    <label>LOE subtask</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Documentation Overview</fullName>
+                <default>false</default>
+                <label>Documentation Overview</label>
+            </value>
+            <value>
+                <fullName>Asset Build</fullName>
+                <default>false</default>
+                <label>Asset Build</label>
+            </value>
+            <value>
+                <fullName>Operational Handoff</fullName>
+                <default>false</default>
+                <label>Operational Handoff</label>
+            </value>
+            <value>
+                <fullName>Validation</fullName>
+                <default>false</default>
+                <label>Validation</label>
+            </value>
+            <value>
+                <fullName>Event Mapping</fullName>
+                <default>false</default>
+                <label>Event Mapping</label>
+            </value>
+            <value>
+                <fullName>Historical Backfill</fullName>
+                <default>false</default>
+                <label>Historical Backfill</label>
+            </value>
+            <value>
+                <fullName>Data Connection</fullName>
+                <default>false</default>
+                <label>Data Connection</label>
+            </value>
+            <value>
+                <fullName>Survey Package Upload</fullName>
+                <default>false</default>
+                <label>Survey Package Upload</label>
+            </value>
+            <value>
+                <fullName>Drive O&amp;M Support</fullName>
+                <default>false</default>
+                <label>Drive O&amp;M Support</label>
+            </value>
+            <value>
+                <fullName>Plant Misc. Work</fullName>
+                <default>false</default>
+                <label>Plant Misc. Work</label>
+            </value>
+            <value>
+                <fullName>Pro Validation</fullName>
+                <default>false</default>
+                <label>Pro Validation</label>
+            </value>
+            <value>
+                <fullName>Customer Validation support</fullName>
+                <default>false</default>
+                <label>Customer Validation support</label>
+            </value>
+            <value>
+                <fullName>PI vision Display</fullName>
+                <default>false</default>
+                <label>PI vision Display</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

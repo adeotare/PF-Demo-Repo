@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Hide_Weekly_Assistant__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Hide Weekly Assistant from Timecard</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Selecting this check-box will hide the weekly assistant tab from the timecard</inlineHelpText>
+    <label>Hide the weekly assistant tab</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

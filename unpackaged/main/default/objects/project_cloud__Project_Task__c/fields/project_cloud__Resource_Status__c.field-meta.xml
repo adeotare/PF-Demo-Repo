@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Resource_Status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Image formula field for displaying the resource status  (how much of a project task has been resourced)</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(
+	project_cloud__Resource_Status_Link__c,
+	project_cloud__Resource_Status_Image__c,
+	&#39;_top&#39;
+)</formula>
+    <inlineHelpText>Image formula field for displaying the resource status  (how much of a project task has been resourced)</inlineHelpText>
+    <label>Manage Resources</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

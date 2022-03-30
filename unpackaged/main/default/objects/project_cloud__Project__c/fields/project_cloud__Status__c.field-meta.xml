@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Formula that uses the rolled up status enum values to calculate the status of a project based on the status of all the project tasks</description>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(project_cloud__Methodology__c, &#39;Kanban&#39;),
+    IF(project_cloud__Completed_Percent__c &gt;= 1.0,
+        $Label.project_cloud__project_status_completed,
+        IF (project_cloud__Completed_Percent__c = 0.0,
+            $Label.project_cloud__project_status_not_started,
+            $Label.project_cloud__project_status_in_progress
+        )
+    ),
+    IF(project_cloud__Phase_Status_Maximum__c &lt;= 0,
+        $Label.project_cloud__project_status_completed,
+        IF(ISBLANK(project_cloud__Phase_Status_Minimum__c) || (project_cloud__Phase_Status_Minimum__c = project_cloud__Phase_Status_Maximum__c &amp;&amp; project_cloud__Phase_Status_Minimum__c &gt; 1),
+            $Label.project_cloud__project_status_not_started,
+            $Label.project_cloud__project_status_in_progress
+        )
+    )    
+)</formula>
+    <inlineHelpText>The overall status of the project.</inlineHelpText>
+    <label>Project Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

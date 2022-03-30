@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Policies_Causes__c</fullName>
+    <externalId>false</externalId>
+    <label>Policies Causes</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SOP, Implementation Details, QA Plan</fullName>
+                <default>false</default>
+                <label>SOP, Implementation Details, QA Plan</label>
+            </value>
+            <value>
+                <fullName>Success Plan, Traveler</fullName>
+                <default>false</default>
+                <label>Success Plan, Traveler</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Not caused by policies</fullName>
+                <default>false</default>
+                <label>Not caused by policies</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

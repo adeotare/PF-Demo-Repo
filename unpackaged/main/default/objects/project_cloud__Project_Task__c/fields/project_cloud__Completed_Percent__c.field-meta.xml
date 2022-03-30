@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Completed_Percent__c</fullName>
+    <defaultValue>0</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Value that represents how much of a Project Task has been completed. Used in a few places including the Projected Hours calculation</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The completion percentage of a Project Task as estimated by a project team member or a project manager. (NOTE For a Project Task to move to Completed status the project manager  needs to mark the task as complete via the completed checkbox)</inlineHelpText>
+    <label>Completion (%)</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Hash__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Calculate a hash of the Capability so the configuration trigger can detect and prevent duplicates</description>
+    <externalId>false</externalId>
+    <formula>project_cloud__External_Resource__c + project_cloud__User__c + project_cloud__Project_Task__c + project_cloud__Work_Type__c</formula>
+    <inlineHelpText>This field helps detect and prevent Capability duplicates.</inlineHelpText>
+    <label>Hash</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

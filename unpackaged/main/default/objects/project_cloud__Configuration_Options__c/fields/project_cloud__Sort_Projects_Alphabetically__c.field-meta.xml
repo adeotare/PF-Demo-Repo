@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Sort_Projects_Alphabetically__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>When checked, the Project Phases and Tasks lists will be sorted alphabetically not by start date. This affects the Project Task View, the Project Tree, and the Gantt Chart</inlineHelpText>
+    <label>Sort Projects Alphabetically</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

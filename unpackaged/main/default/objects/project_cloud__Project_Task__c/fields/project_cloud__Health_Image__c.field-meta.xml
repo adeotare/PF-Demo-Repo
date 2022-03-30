@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Health_Image__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IMAGE(
+	CASE(project_cloud__Health__c,
+		&quot;Green&quot;, &quot;/img/samples/light_green.gif&quot;,
+		&quot;Yellow&quot;, &quot;/img/samples/light_yellow.gif&quot;,
+		&quot;Red&quot;, &quot;/img/samples/light_red.gif&quot;,
+		&quot;/s.gif&quot;),
+&quot;Health Status&quot;)</formula>
+    <inlineHelpText>Displays a green, yellow, or red traffic light image based on the color selected from the Health field.</inlineHelpText>
+    <label>Health (Traffic Light)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

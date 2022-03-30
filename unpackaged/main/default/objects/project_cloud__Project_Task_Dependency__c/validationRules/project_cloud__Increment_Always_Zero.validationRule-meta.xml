@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Increment_Always_Zero</fullName>
+    <active>true</active>
+    <description>The increment field is a system field for calculating the parent end date, after calculation it should always be 0 to prevent future calculations being compromised.</description>
+    <errorConditionFormula>ISBLANK(project_cloud__Increment__c) || project_cloud__Increment__c != 0</errorConditionFormula>
+    <errorDisplayField>project_cloud__Increment__c</errorDisplayField>
+    <errorMessage>Increment must always be 0</errorMessage>
+</ValidationRule>

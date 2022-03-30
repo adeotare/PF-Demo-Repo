@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Hours__c</fullName>
+    <defaultValue>null</defaultValue>
+    <deprecated>false</deprecated>
+    <description>How many hours the Project Task was worked on</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Ensure that when entering values. The number is divisible by 0.25 making the hours entered 15 minute blocks. e.g 1.75 is 1 hour 45 minutes</inlineHelpText>
+    <label>Hours</label>
+    <precision>4</precision>
+    <required>true</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

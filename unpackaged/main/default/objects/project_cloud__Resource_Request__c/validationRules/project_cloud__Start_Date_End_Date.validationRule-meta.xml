@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Start_Date_End_Date</fullName>
+    <active>true</active>
+    <errorConditionFormula>project_cloud__Start__c &gt; project_cloud__End__c</errorConditionFormula>
+    <errorMessage>End Date must be greater than or equal to Start Date</errorMessage>
+</ValidationRule>

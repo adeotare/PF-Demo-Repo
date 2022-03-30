@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Weight__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(project_cloud__Board_Process_Step__c), 0, BLANKVALUE(project_cloud__Board_Process_Step__r.project_cloud__Completed_Percent__c, CASE(project_cloud__Completion_Category__c, &#39;Completed&#39;, 1, &#39;In Progress&#39;, 0.01, 0)))</formula>
+    <inlineHelpText>The weight of the Card from the parent Board Process step</inlineHelpText>
+    <label>Weight</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

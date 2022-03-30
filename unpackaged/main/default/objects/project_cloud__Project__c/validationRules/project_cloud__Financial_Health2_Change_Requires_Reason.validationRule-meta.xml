@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Financial_Health2_Change_Requires_Reason</fullName>
+    <active>true</active>
+    <description>If the Financial Health of a Project is changed, the reason field must be changed to explain why.</description>
+    <errorConditionFormula>ISCHANGED(project_cloud__Financial_Health2__c)
+ &amp;&amp; (
+	NOT(ISCHANGED(project_cloud__Financial_Health2_Reason__c)) ||
+	ISBLANK(project_cloud__Financial_Health2_Reason__c)
+)</errorConditionFormula>
+    <errorDisplayField>project_cloud__Financial_Health2__c</errorDisplayField>
+    <errorMessage>When the Financial Health is changed a reason must be given</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__pulse</fullName>
+    <availability>online</availability>
+    <description>Shows project pulse for multiple projects in a list view</description>
+    <displayType>massActionButton</displayType>
+    <linkType>page</linkType>
+    <masterLabel>Show Pulse</masterLabel>
+    <openType>replace</openType>
+    <page>project_cloud__project_pulse</page>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+</WebLink>

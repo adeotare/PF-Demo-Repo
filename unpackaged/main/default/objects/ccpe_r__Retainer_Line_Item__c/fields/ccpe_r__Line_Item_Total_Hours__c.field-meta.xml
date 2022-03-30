@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__Line_Item_Total_Hours__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The total amount of retainer hours available for the time period including any rolled over hours</description>
+    <externalId>false</externalId>
+    <formula>ccpe_r__Hours_From_Criteria__c + ccpe_r__Rolled_Over_Hours__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Line Item Total Hours</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

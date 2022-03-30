@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__isActive__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>ccpe_r__Start_Date__c &lt;= TODAY() &amp;&amp; (ISBLANK(ccpe_r__End_Date__c) || ccpe_r__End_Date__c &gt; TODAY())</formula>
+    <label>isActive</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

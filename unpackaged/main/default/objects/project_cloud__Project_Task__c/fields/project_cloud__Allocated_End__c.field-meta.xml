@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Allocated_End__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This is the end date of the last allocation for all users allocated to a task</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The end date of the last allocation of users to the Project Task</inlineHelpText>
+    <label>Allocated End</label>
+    <summarizedField>project_cloud__Total_Allocation__c.project_cloud__End__c</summarizedField>
+    <summaryForeignKey>project_cloud__Total_Allocation__c.project_cloud__Project_Task__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

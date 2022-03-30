@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Tax__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Subtotal * Tax Rate (%)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The calculated tax at the individual line item level</inlineHelpText>
+    <label>Tax</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

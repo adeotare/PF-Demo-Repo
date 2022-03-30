@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__Use_Capability_Rates__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Modifies how Rates are calculated.  With this setting work types are ignored on project tasks when calculating the rate of a user.  Instead the rate is calculated based on whether any rate cards on the project match the capabilities of the user tracking time.  If multiple capabilities match a blended rate is created.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Work types are ignored on project tasks when calculating the rate of a user.  The rate is calculated based on whether any rate cards on the project match the capabilities of the user tracking time.  If multiple matches exist a blended rate is created.</inlineHelpText>
+    <label>Use Capability Rates</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

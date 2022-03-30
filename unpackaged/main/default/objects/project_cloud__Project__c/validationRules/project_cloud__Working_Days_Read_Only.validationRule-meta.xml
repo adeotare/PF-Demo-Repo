@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Working_Days_Read_Only</fullName>
+    <active>true</active>
+    <description>The working days checkboxes are read only, once they are set when the project is created they cannot be modified.</description>
+    <errorConditionFormula>ISCHANGED(project_cloud__IsWorking_Monday__c) ||
+ISCHANGED(project_cloud__IsWorking_Tuesday__c) ||
+ISCHANGED(project_cloud__IsWorking_Wednesday__c) ||
+ISCHANGED(project_cloud__IsWorking_Thursday__c) ||
+ISCHANGED(project_cloud__IsWorking_Friday__c) ||
+ISCHANGED(project_cloud__IsWorking_Saturday__c) ||
+ISCHANGED(project_cloud__IsWorking_Sunday__c)</errorConditionFormula>
+    <errorMessage>The Working Days cannot be changed. Once set they are read only</errorMessage>
+</ValidationRule>

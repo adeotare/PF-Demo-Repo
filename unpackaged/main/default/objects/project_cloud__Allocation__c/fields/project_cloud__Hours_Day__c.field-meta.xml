@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Hours_Day__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>BLANKVALUE(
+        project_cloud__Hours_Override__c / project_cloud__Working_Days__c,
+        IF(project_cloud__Allocation_Group__r.project_cloud__Resourcing_Mode__c == &#39;timeBased&#39;,
+          project_cloud__Load_Override__c * BLANKVALUE(project_cloud__User__r.project_cloud__Hours_Day__c, 8),
+          BLANKVALUE(
+            project_cloud__Load_Override__c * project_cloud__Allocation_Group__r.project_cloud__Hours_Day__c,
+            IF(
+              AND(project_cloud__Allocation_Group__r.project_cloud__Balanced_Hours_Day__c &gt; 0.0, project_cloud__Allocation_Group__r.project_cloud__Total_Subscriptions__c &gt; 0),
+              project_cloud__Allocation_Group__r.project_cloud__Balanced_Hours_Day__c / project_cloud__Allocation_Group__r.project_cloud__Total_Subscriptions__c, 0
+            )
+          )
+        )
+      )</formula>
+    <inlineHelpText>The calculated hours per day based upon the assigned load % and the number of estimated hours on the related Project Task</inlineHelpText>
+    <label>Hours Per Day (Calculated)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

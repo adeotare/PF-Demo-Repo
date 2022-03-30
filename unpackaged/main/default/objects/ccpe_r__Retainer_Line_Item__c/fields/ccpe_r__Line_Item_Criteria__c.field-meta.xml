@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__Line_Item_Criteria__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The line item criteria record this line item was generated from</description>
+    <externalId>false</externalId>
+    <label>Line Item Criteria</label>
+    <referenceTo>ccpe_r__Line_Item_Criteria__c</referenceTo>
+    <relationshipLabel>Retainer Line Items</relationshipLabel>
+    <relationshipName>Retainer_Line_Items</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

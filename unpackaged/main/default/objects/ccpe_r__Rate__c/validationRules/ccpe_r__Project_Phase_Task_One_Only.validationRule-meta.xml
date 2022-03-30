@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__Project_Phase_Task_One_Only</fullName>
+    <active>true</active>
+    <description>Only one of the Project/Project Phase/Project Task lookups should be selected</description>
+    <errorConditionFormula>IF(ISBLANK(ccpe_r__Project__c), 0, 1) +
+IF(ISBLANK(ccpe_r__Project_Phase__c), 0, 1) +
+IF(ISBLANK(ccpe_r__Project_Task__c), 0, 1)
+!= 1</errorConditionFormula>
+    <errorMessage>Exactly one Project, Project Phase or Project Task should be selected</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Hours_Worked__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>A rollup of the hours entered against the Project Task by all users within the Work Type</inlineHelpText>
+    <label>Hours Worked</label>
+    <summarizedField>project_cloud__Allocation__c.project_cloud__Hours_Worked__c</summarizedField>
+    <summaryForeignKey>project_cloud__Allocation__c.project_cloud__Allocation_Group__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

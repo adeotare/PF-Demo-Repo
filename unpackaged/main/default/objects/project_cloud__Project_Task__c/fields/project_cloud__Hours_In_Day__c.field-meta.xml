@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Hours_In_Day__c</fullName>
+    <defaultValue>8</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This is the value used for the calculation of an Estimated Hours Project Task&#39;s end date. The value of this field is copied from the value of the Project when the task is created (by the ProjectTaskConfiguration trigger) and once set is read only. This is a system field and should never be visible.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is a system field and should never be visible.</inlineHelpText>
+    <label>Hours In Day</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

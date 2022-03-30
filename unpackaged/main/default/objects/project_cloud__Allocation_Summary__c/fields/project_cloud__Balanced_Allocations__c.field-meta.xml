@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Balanced_Allocations__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Number of allocation groups that do not have a load override</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Number of allocation groups that do not have a load override</inlineHelpText>
+    <label>Balanced Allocations</label>
+    <summaryFilterItems>
+        <field>project_cloud__Allocation_Group__c.project_cloud__Load_Override__c</field>
+        <operation>equals</operation>
+        <value></value>
+    </summaryFilterItems>
+    <summaryForeignKey>project_cloud__Allocation_Group__c.project_cloud__Allocation_Summary__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Hour_Valid_Blocks</fullName>
+    <active>false</active>
+    <description>Ensure that the hours entered are a multiple of Custom Setting Working_Hours.Units value. This ensures time is entered in valid time unit blocks</description>
+    <errorConditionFormula>project_cloud__Hours__c &lt;= 0 || project_cloud__Hours__c &gt;= 24</errorConditionFormula>
+    <errorDisplayField>project_cloud__Hours__c</errorDisplayField>
+    <errorMessage>Hours must be greater than 0 and less than 24 hours</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Color_Tag_Set__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Color Tag Set</label>
+    <referenceTo>project_cloud__Color_Tag_Set__c</referenceTo>
+    <relationshipLabel>Color Tag Set Overrides</relationshipLabel>
+    <relationshipName>Color_Tag_Set_Overrides</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

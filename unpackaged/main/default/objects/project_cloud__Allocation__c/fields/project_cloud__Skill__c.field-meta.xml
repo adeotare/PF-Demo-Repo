@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Skill__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>This field specifies a &quot;Skill&quot; Work Type for the Allocation and impacts the Project Tasks returned on the My Day page. This field only impacts &quot;Time-Based&quot; allocations</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field specifies a Work Type for the Allocation.</inlineHelpText>
+    <label>Skill</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>project_cloud__Work_Type__c.project_cloud__Type__c</field>
+            <operation>equals</operation>
+            <value>Skill</value>
+        </filterItems>
+        <filterItems>
+            <field>project_cloud__Work_Type__c.project_cloud__Parent__c</field>
+            <operation>equals</operation>
+            <value></value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>project_cloud__Work_Type__c</referenceTo>
+    <relationshipLabel>Allocations</relationshipLabel>
+    <relationshipName>Allocations</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

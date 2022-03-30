@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Allocations_Must_Have_Date</fullName>
+    <active>true</active>
+    <description>Allocations require a Date to be selected</description>
+    <errorConditionFormula>$RecordType.DeveloperName == &#39;Allocation&#39; &amp;&amp; ISBLANK(project_cloud__Date__c)</errorConditionFormula>
+    <errorDisplayField>project_cloud__Date__c</errorDisplayField>
+    <errorMessage>Allocations require a Date</errorMessage>
+</ValidationRule>

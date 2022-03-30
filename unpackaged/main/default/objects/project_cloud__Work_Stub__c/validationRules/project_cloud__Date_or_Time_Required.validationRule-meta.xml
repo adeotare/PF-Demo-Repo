@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Date_or_Time_Required</fullName>
+    <active>true</active>
+    <description>Exactly one of the fields Date or Time must be populated on the stub.</description>
+    <errorConditionFormula>IF(ISBLANK(project_cloud__Date__c), 0, 1) + IF(ISBLANK(project_cloud__Time__c), 0, 1) != 1</errorConditionFormula>
+    <errorMessage>Exactly one of the fields Date or Time must be populated.</errorMessage>
+</ValidationRule>

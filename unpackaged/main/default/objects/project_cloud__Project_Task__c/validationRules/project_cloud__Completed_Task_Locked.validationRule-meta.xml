@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Completed_Task_Locked</fullName>
+    <active>true</active>
+    <description>Once a Project Task has been marked as completed, the input fields on the task cannot be changed, unless the Project Task is marked as &#39;On Hold&#39;. i.e the dates on the task as finalised</description>
+    <errorConditionFormula>NOT(ISCHANGED(project_cloud__IsComplete__c)) 
+		&amp;&amp; NOT(ISCHANGED(project_cloud__IsOn_Hold__c))
+		&amp;&amp; project_cloud__IsComplete__c 
+		&amp;&amp; (
+			ISCHANGED(project_cloud__Estimated_Hours__c) 
+			|| ISCHANGED(project_cloud__Completed_Percent__c) 
+			|| ISCHANGED(project_cloud__Autonomous_Start__c) 
+			|| ISCHANGED(project_cloud__Minimum_End__c) 
+			|| ISCHANGED(project_cloud__Hours_In_Day__c) 
+			|| ISCHANGED(project_cloud__Hours_Block__c)
+		)</errorConditionFormula>
+    <errorMessage>This Project Task has been marked as Completed, dates can no longer be changed unless the Project Task is marked as &#39;On Hold&#39;</errorMessage>
+</ValidationRule>

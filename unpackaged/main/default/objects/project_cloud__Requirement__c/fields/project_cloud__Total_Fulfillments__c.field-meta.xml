@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Total_Fulfillments__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>This field will total up all of the Requirement Fulfillments related to the Requirement.</inlineHelpText>
+    <label>Total Fulfillments</label>
+    <summaryForeignKey>project_cloud__Requirement_Fulfillment__c.project_cloud__Requirement__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

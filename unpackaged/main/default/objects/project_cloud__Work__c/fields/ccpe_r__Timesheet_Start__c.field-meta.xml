@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__Timesheet_Start__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field is required to calculate the Utilization Hash. It is a convenience field that is used to save 2 queries in the trigger by having the value available on the Time Entry object.</description>
+    <externalId>false</externalId>
+    <formula>project_cloud__Timesheet__r.project_cloud__Start__c</formula>
+    <inlineHelpText>This is a System field and Should not be visible.</inlineHelpText>
+    <label>Timesheet Start</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

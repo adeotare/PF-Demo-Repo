@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__End__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The End Date of the Resource Request is used in Resource Capacity and Load calculations to distribute requested hours across a date range.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field indicates the End Date of the Date Range for which a Resource Request is being generated.</inlineHelpText>
+    <label>End Date</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

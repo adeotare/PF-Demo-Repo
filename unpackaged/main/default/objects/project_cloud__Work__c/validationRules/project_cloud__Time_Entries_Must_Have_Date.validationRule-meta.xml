@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Time_Entries_Must_Have_Date</fullName>
+    <active>true</active>
+    <description>Time Entries require a Date to be selected. And that date must be in the range of the timesheet. And Can&#39;t be changed once set.</description>
+    <errorConditionFormula>$RecordType.DeveloperName == &#39;Time_Entry&#39; &amp;&amp; OR(
+	ISBLANK(project_cloud__Date__c),
+	project_cloud__Date__c &lt; project_cloud__Timesheet__r.project_cloud__Start__c,
+	project_cloud__Date__c &gt; project_cloud__Timesheet__r.project_cloud__End__c
+)</errorConditionFormula>
+    <errorDisplayField>project_cloud__Date__c</errorDisplayField>
+    <errorMessage>Time Entries require a Date which is between the date range of the Timesheet.</errorMessage>
+</ValidationRule>

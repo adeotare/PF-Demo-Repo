@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__Retainer_Must_Be_Parent_Of_Criteria</fullName>
+    <active>true</active>
+    <description>The referenced Retainer must be the parent of the referenced Line Item Criteria</description>
+    <errorConditionFormula>ccpe_r__Retainer__c != null &amp;&amp; (ccpe_r__Retainer__c != ccpe_r__Line_Item_Criteria__r.ccpe_r__Retainer__c)</errorConditionFormula>
+    <errorDisplayField>ccpe_r__Retainer__c</errorDisplayField>
+    <errorMessage>Only the parent Retainer of the Line Item Criteria may be selected</errorMessage>
+</ValidationRule>

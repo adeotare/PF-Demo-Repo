@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__All</fullName>
+    <columns>NAME</columns>
+    <columns>project_cloud__Opportunity__c</columns>
+    <columns>project_cloud__Project__c</columns>
+    <columns>project_cloud__Approval_Status__c</columns>
+    <columns>project_cloud__Location__c</columns>
+    <columns>project_cloud__Work_Type__c</columns>
+    <columns>project_cloud__Start__c</columns>
+    <columns>project_cloud__End__c</columns>
+    <columns>project_cloud__Number_People__c</columns>
+    <columns>project_cloud__Hours_Person__c</columns>
+    <columns>project_cloud__Hours__c</columns>
+    <columns>project_cloud__Percentage_of_Work_Day__c</columns>
+    <columns>project_cloud__Working_Days__c</columns>
+    <columns>project_cloud__Hours_Day__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

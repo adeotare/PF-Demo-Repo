@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Protected_EPV__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Is the External Project View protected. (Requires and email that matches one of the project&#39;s Stakeholder Contacts</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When checked, enables protection for the External Project View.</inlineHelpText>
+    <label>Protected External Project View</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

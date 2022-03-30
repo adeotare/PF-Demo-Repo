@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Duration_Required</fullName>
+    <active>true</active>
+    <description>When the Project Units are &quot;Duration&quot; the Duration field is required</description>
+    <errorConditionFormula>/*Unless the Units value is &quot;Duration&quot; the Duration is required*/
+ISPICKVAL(project_cloud__Units__c, &quot;Duration&quot;) &amp;&amp; (ISBLANK(project_cloud__Duration__c) || project_cloud__Duration__c &lt; 0)</errorConditionFormula>
+    <errorDisplayField>project_cloud__Duration__c</errorDisplayField>
+    <errorMessage>The Units for this Project Task require a Duration value to be defined</errorMessage>
+</ValidationRule>

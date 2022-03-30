@@ -16,5 +16,5 @@
         <operation>equals</operation>
         <value>00 - MQL</value>
     </filters>
-    <label>Opportunities Pending Sales  Qualificati</label>
+    <label>Opptys Pending Sales Qualification</label>
 </ListView>

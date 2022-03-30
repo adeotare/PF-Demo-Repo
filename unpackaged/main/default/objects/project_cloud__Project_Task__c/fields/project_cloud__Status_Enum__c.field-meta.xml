@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Status_Enum__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This is a hidden field used by the Project Phase rollup summary to determine the status of all the tasks in the Project Phase. This is a system field and must not be visible.</description>
+    <externalId>false</externalId>
+    <formula>/*This is s hidden field used by the Project Phase rollup summary to determine the status of all the tasks in the Project Phase*/
+/*If the Status of the picklist is &#39;Completed&#39; the value is 0, If the status is &#39;In Progress&#39; the value is 1 and for all other picklist values including &#39;Not Started&#39; the result is 2*/
+IF(project_cloud__IsComplete__c,
+	0
+    ,
+    IF(project_cloud__IsOn_Hold__c, -1,
+        IF(project_cloud__Worked_Hours__c &gt; 0 || project_cloud__Completed_Percent__c &gt; 0,
+            1
+        ,
+            2
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This is a system field and must not be visible.</inlineHelpText>
+    <label>Status Enum</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

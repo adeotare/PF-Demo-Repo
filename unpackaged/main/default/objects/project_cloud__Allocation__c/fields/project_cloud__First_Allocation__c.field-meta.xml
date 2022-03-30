@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__First_Allocation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This field is set to true if it&#39;s the first time a given user has been allocated on the project, used for automation purposes</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field is set to true if it&#39;s the first time a given user has been allocated on the project</inlineHelpText>
+    <label>First Allocation</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

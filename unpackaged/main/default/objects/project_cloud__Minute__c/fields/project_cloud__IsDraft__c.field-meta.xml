@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__IsDraft__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>For internal use only.  Defines whether or not the record is a draft and allows tracking for editing across multiple clients (incorrect use of this field may result in deletion of a record).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field should remain a &#39;Read Only&#39; field. Defines whether or not the record is a draft and allows tracking for editing across multiple clients (incorrect use of this field may result in deletion of a record).</inlineHelpText>
+    <label>Is Draft</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

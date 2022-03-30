@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Completed_Estimation_is_between_0_100</fullName>
+    <active>false</active>
+    <description>Make sure the Estimation percentage is between 0 and 100</description>
+    <errorConditionFormula>project_cloud__Completed__c &lt; 0 || project_cloud__Completed__c &gt; 100</errorConditionFormula>
+    <errorDisplayField>project_cloud__Completed__c</errorDisplayField>
+    <errorMessage>Value must be between 0 and 100</errorMessage>
+</ValidationRule>

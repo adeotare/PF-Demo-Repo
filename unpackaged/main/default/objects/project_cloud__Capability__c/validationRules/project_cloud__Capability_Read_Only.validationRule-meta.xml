@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Capability_Read_Only</fullName>
+    <active>true</active>
+    <description>Capabilities are joining objects that should never be modfied. Prevent the lookups or owner from changing</description>
+    <errorConditionFormula>ISCHANGED(project_cloud__External_Resource__c) ||
+ISCHANGED(project_cloud__User__c) ||
+ISCHANGED(project_cloud__Project_Task__c)</errorConditionFormula>
+    <errorMessage>Please do not modify Capabilities, to make changes delete and/or create new records.</errorMessage>
+</ValidationRule>

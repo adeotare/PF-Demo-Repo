@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Percentage_of_Work_Day__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field indicates the percentage of one or more resource&#39;s day requested, based on the standard 8 hour work day.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field indicates the percentage of one or more resource&#39;s day requested, based on the standard 8 hour work day.</inlineHelpText>
+    <label>Percentage of Work Day</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

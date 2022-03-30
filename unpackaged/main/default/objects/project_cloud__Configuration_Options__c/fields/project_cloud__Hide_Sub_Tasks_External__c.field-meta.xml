@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Hide_Sub_Tasks_External__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Hides all Sub Tasks in the External Project View</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Hides all Sub Tasks in the External Project View</inlineHelpText>
+    <label>Hide Sub Tasks in External View</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

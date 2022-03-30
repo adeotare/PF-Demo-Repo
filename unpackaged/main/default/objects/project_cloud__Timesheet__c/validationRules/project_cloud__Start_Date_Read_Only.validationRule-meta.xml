@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Start_Date_Read_Only</fullName>
+    <active>true</active>
+    <description>The Start Date on a Timesheet is required and once set can not be changed.</description>
+    <errorConditionFormula>ISBLANK(project_cloud__Start__c) || ISCHANGED(project_cloud__Start__c)</errorConditionFormula>
+    <errorDisplayField>project_cloud__Start__c</errorDisplayField>
+    <errorMessage>The Start Date on a Timesheet is required and once set can not be changed.</errorMessage>
+</ValidationRule>

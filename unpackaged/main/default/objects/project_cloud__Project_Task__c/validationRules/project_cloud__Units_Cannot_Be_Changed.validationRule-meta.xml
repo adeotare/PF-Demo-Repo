@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Units_Cannot_Be_Changed</fullName>
+    <active>true</active>
+    <description>Once the Project Units have been defined they are not able to be changed. This is to prevent massive recalculations on all tasks when the value is changed</description>
+    <errorConditionFormula>(
+	ISPICKVAL(project_cloud__Units__c, &#39;&#39;) ||
+	ISCHANGED(project_cloud__Units__c)
+) &amp;&amp; (
+	/*Special Cases for when the migration helper updates the values*/
+	NOT(ISPICKVAL(PRIORVALUE(project_cloud__Units__c), &quot;Fixed Duration&quot;)) ||
+	NOT(ISPICKVAL(PRIORVALUE(project_cloud__Units__c), &quot;Fixed Work&quot;))
+)</errorConditionFormula>
+    <errorDisplayField>project_cloud__Units__c</errorDisplayField>
+    <errorMessage>This value is set at the time of project creation and cannot be changed. If you wish to change units you will need to clone the project and set the units to what you require at the time of project creation.</errorMessage>
+</ValidationRule>

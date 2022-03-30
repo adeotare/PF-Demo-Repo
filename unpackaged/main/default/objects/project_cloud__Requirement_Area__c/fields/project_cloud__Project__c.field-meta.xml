@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Project__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>The Project that this Requirement Area is associated with</inlineHelpText>
+    <label>Project</label>
+    <referenceTo>project_cloud__Project__c</referenceTo>
+    <relationshipLabel>Requirement Areas</relationshipLabel>
+    <relationshipName>Requirement_Areas</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

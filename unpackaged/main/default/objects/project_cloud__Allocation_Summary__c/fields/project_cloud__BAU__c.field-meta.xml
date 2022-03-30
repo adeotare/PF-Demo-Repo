@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__BAU__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>The BAU that the Allocation Summary is related to</inlineHelpText>
+    <label>Business As Usual</label>
+    <referenceTo>project_cloud__BAU__c</referenceTo>
+    <relationshipLabel>Allocation Summaries</relationshipLabel>
+    <relationshipName>Allocation_Summaries</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

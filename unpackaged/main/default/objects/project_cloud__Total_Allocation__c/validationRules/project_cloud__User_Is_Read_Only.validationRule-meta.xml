@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__User_Is_Read_Only</fullName>
+    <active>true</active>
+    <description>Once set the user lookup is read only.</description>
+    <errorConditionFormula>ISBLANK(project_cloud__User__c) || ISCHANGED(project_cloud__User__c)</errorConditionFormula>
+    <errorDisplayField>project_cloud__User__c</errorDisplayField>
+    <errorMessage>The User field is compulsory and once set read only</errorMessage>
+</ValidationRule>

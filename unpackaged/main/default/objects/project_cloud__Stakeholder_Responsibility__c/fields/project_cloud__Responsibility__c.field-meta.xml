@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Responsibility__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field will allow a Stakeholder to be assigned to multiple responsibilities for an activity.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>RACI is an acronym derived from the four key responsibilities most typically used in Stakeholder management, select one or more from the following for matching Stakeholders &amp; Activities: R = Responsible, A = Accountable, C = Consulted, I = Informed</inlineHelpText>
+    <label>Responsibility</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>R</fullName>
+                <default>false</default>
+                <label>R</label>
+            </value>
+            <value>
+                <fullName>A</fullName>
+                <default>false</default>
+                <label>A</label>
+            </value>
+            <value>
+                <fullName>C</fullName>
+                <default>false</default>
+                <label>C</label>
+            </value>
+            <value>
+                <fullName>I</fullName>
+                <default>false</default>
+                <label>I</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

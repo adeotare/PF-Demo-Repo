@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Financial_Snapshot__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>This field shows the Financial Snapshot that the Financial Snapshot Unit is related too.</inlineHelpText>
+    <label>Financial Snapshot</label>
+    <referenceTo>project_cloud__Financial_Snapshot__c</referenceTo>
+    <relationshipLabel>Financial Snapshot Units</relationshipLabel>
+    <relationshipName>Financial_Snapshot_Units</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

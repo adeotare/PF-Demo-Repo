@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Project_Task__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The Project Task the Time Entry is for</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The Project Task the Time Entry is for</inlineHelpText>
+    <label>Project Task</label>
+    <referenceTo>project_cloud__Project_Task__c</referenceTo>
+    <relationshipLabel>Deprecated(Time Entries)</relationshipLabel>
+    <relationshipName>Time_Entries</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>true</writeRequiresMasterRead>
+</CustomField>

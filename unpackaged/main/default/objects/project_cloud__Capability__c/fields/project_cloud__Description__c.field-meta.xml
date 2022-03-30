@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Description__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Depending on what type of resource is selected Display a description from the relevant object</description>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(project_cloud__User__c)),
+	project_cloud__User__r.FirstName &amp; &#39; &#39; &amp; project_cloud__User__r.LastName,
+/*ELSE*/IF(NOT(ISBLANK(project_cloud__Project_Task__c)),
+	project_cloud__Project_Task__r.Name,
+/*ELSE*/IF(NOT(ISBLANK(project_cloud__External_Resource__c)),
+	project_cloud__External_Resource__r.Name,
+/*ELSE*/
+	&#39;Orphan Capability&#39;
+)))</formula>
+    <label>Resource or Project Task</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Attendee_Required</fullName>
+    <active>true</active>
+    <description>A Meeting Attendee requires a person t o be selected, either a Contact or User</description>
+    <errorConditionFormula>IF(ISBLANK(project_cloud__User__c), 0, 1) + IF(ISBLANK(project_cloud__Contact__c), 0, 1) != 1</errorConditionFormula>
+    <errorMessage>A Meeting Attendee requires a single User or Contact to be specified.</errorMessage>
+</ValidationRule>

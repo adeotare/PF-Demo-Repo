@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Type_Is_Required</fullName>
+    <active>false</active>
+    <description>Check if the Type__c field has any value</description>
+    <errorConditionFormula>ISBLANK(TEXT(project_cloud__Type__c))</errorConditionFormula>
+    <errorDisplayField>project_cloud__Type__c</errorDisplayField>
+    <errorMessage>You must enter an issue type</errorMessage>
+</ValidationRule>

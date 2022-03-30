@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_ocp__Card__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The Card that this External Deliverable is related to.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The Card that this External Deliverable is related to.</inlineHelpText>
+    <label>Card</label>
+    <referenceTo>project_cloud__Card__c</referenceTo>
+    <relationshipLabel>External Deliverables</relationshipLabel>
+    <relationshipName>External_Deliverables</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

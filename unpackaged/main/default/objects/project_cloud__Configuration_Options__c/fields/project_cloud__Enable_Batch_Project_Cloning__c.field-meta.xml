@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Enable_Batch_Project_Cloning__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Enables project cloning from the wizard to execute as a batch job. Enable this setting if you are receiving Apex CPU Limit exceptions when cloning complex projects and templates.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enables project cloning from the wizard to execute as a batch job. Enable this setting if you are receiving Apex CPU Limit exceptions when cloning complex projects and templates.</inlineHelpText>
+    <label>Enable Batch Project Cloning</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

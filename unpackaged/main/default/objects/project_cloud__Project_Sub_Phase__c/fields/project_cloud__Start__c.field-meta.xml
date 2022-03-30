@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Start__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Rollup summary of the earliest start date of the all the Project Tasks in this Project Sub-Phase</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The calculated start date of the project phase based on the start date of the earliest project task within the project sub-phase</inlineHelpText>
+    <label>Start (Rollup)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

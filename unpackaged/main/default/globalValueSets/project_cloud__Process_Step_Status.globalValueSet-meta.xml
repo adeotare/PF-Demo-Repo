@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Active</fullName>
+        <default>true</default>
+        <label>Active</label>
+    </customValue>
+    <customValue>
+        <fullName>Archived - All</fullName>
+        <default>false</default>
+        <label>Archived - All</label>
+    </customValue>
+    <customValue>
+        <fullName>Archived - New Only</fullName>
+        <default>false</default>
+        <label>Archived - New Only</label>
+    </customValue>
+    <description>Process step statuses used by the Cloud Coach application. These values should not be changed.</description>
+    <masterLabel>Process Step Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

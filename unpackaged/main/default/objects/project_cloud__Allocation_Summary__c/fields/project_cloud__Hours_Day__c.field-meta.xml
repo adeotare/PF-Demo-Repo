@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Hours_Day__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>project_cloud__Project_Task__r.project_cloud__Estimated_Hours__c / project_cloud__Project_Task__r.project_cloud__Working_Total__c /*(Project_Task__r.Length__c - Project_Task__r.Non_Working__c)*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Project Task estimated hours / Project Task working days</inlineHelpText>
+    <label>Hours Per Day (Calculated)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__ActivityId__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <deprecated>false</deprecated>
+    <description>Lookup relationships against activities (tasks and events) don&#39;t exist.
+A reference to the allocation that spawned this Time Entry is required to adjust the time entry when the allocation is modified</description>
+    <externalId>true</externalId>
+    <inlineHelpText>This is a system field and should never be visible.</inlineHelpText>
+    <label>Deprecated (ActivityId)</label>
+    <length>18</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

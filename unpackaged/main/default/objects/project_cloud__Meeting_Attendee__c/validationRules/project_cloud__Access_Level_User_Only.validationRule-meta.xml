@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Access_Level_User_Only</fullName>
+    <active>true</active>
+    <description>When the attendee is a user an access level is required. If the attendee is a contact the access level must be blank.</description>
+    <errorConditionFormula>IF(ISBLANK(project_cloud__User__c),
+	NOT(ISBLANK(project_cloud__Access_Level__c)),
+/*ELSE*/
+	ISBLANK(project_cloud__Access_Level__c)
+)</errorConditionFormula>
+    <errorDisplayField>project_cloud__Access_Level__c</errorDisplayField>
+    <errorMessage>User attendees require an access level. Contact attendees must not have an access level defined.</errorMessage>
+</ValidationRule>

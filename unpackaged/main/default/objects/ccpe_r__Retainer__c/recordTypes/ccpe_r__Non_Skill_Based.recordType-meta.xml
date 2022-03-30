@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__Non_Skill_Based</fullName>
+    <active>true</active>
+    <description>A non-skill based Retainer</description>
+    <label>Non-Skill Based</label>
+    <picklistValues>
+        <picklist>ccpe_r__Time_Period__c</picklist>
+        <values>
+            <fullName>Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Week</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

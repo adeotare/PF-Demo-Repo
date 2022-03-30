@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Child_Start_Driving_Date__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This is the key field in the calculations of the cascading dependency updates. This field should never be updated by the user it is updated by the triggers. At all times it will be the same value as Parent Project Task&#39;s Calculated Start/End Date + Lead/Lag</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is a system field and should never be visible or modified.</inlineHelpText>
+    <label>Child Start Driving Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

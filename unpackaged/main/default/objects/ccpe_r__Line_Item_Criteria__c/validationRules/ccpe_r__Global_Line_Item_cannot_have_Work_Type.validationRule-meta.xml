@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__Global_Line_Item_cannot_have_Work_Type</fullName>
+    <active>true</active>
+    <errorConditionFormula>(ccpe_r__Global_Line_Item__c &amp;&amp; NOT(ISBLANK( ccpe_r__Work_Type__c ))) ||  (ccpe_r__Retainer__r.ccpe_r__Type__c == &#39;Global&#39; &amp;&amp; NOT(ISBLANK( ccpe_r__Work_Type__c )))</errorConditionFormula>
+    <errorMessage>Global Line Items cannot have a Work Type</errorMessage>
+</ValidationRule>

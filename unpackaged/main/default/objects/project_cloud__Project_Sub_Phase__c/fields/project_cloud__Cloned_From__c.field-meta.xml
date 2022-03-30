@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Cloned_From__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>This is a system field indicating which sub phase this sub phase was cloned from</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Shows the Name of a sub phase that the sub phase was cloned from.</inlineHelpText>
+    <label>Cloned From</label>
+    <referenceTo>project_cloud__Project_Sub_Phase__c</referenceTo>
+    <relationshipLabel>Cloned Project Sub Phases</relationshipLabel>
+    <relationshipName>Cloned_Project_Sub_Phases</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

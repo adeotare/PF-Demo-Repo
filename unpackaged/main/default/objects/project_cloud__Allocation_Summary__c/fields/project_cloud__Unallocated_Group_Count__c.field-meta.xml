@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Unallocated_Group_Count__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>A count of the number of Allocation Groups that have not been Allocated</inlineHelpText>
+    <label>Unallocated Group Count</label>
+    <summaryFilterItems>
+        <field>project_cloud__Allocation_Group__c.project_cloud__Allocated_Override_Load__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>project_cloud__Allocation_Group__c.project_cloud__Total_Subscriptions__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </summaryFilterItems>
+    <summaryForeignKey>project_cloud__Allocation_Group__c.project_cloud__Allocation_Summary__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

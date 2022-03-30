@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Create_Snapshot</fullName>
+    <availability>online</availability>
+    <description>Create a snapshot of the current project (replace it if it already exists)</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create Snapshot</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/28.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/28.0/apex.js&quot;)}
+var message = sforce.apex.execute(&quot;{!IF(ISBLANK($Setup.project_cloud__Configuration_Options__c.project_cloud__Namespace__c), &#39;&#39;, $Setup.project_cloud__Configuration_Options__c.project_cloud__Namespace__c &amp; &#39;__&#39;)}GanttGenerator&quot;, &quot;upsertSnapshot&quot;, {
+projectId: &quot;{!project_cloud__Project__c.Id}&quot;,
+snapshotDate: new Date({!YEAR(TODAY())}, {!MONTH(TODAY()) - 1}, {!DAY(TODAY())})
+});
+window.alert(message);</url>
+</WebLink>

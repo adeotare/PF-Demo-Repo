@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>loadBased</fullName>
+        <default>false</default>
+        <label>Load Based</label>
+    </customValue>
+    <customValue>
+        <fullName>quickAssign</fullName>
+        <default>true</default>
+        <label>Quick Assign</label>
+    </customValue>
+    <customValue>
+        <fullName>timeBased</fullName>
+        <default>false</default>
+        <label>Time Based</label>
+    </customValue>
+    <description>Resourcing Modes used by the Cloud Coach application. These values should not be changed.</description>
+    <masterLabel>Resourcing Mode</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

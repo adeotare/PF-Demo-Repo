@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__IsDuplicate__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field is used to overcome the shortcoming of SOQL, which is that the clauses cannot compare fields. The primary use for this field is to find capabilities that are duplicates of the primary work type on a project task.</description>
+    <externalId>false</externalId>
+    <formula>NOT(ISBLANK(project_cloud__Project_Task__c)) &amp;&amp; project_cloud__Work_Type__c = project_cloud__Project_Task__r.project_cloud__Work_Type__c</formula>
+    <inlineHelpText>If the Primary Work Type on the Project Task this Capability is related to is the same as this capability. The formula evaluates to true.</inlineHelpText>
+    <label>Duplicates Primary Work Type?</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

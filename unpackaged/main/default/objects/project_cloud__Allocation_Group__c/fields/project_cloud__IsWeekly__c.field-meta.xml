@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__IsWeekly__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>If(ISBLANK(project_cloud__Allocation_Summary__r.project_cloud__Project__c), false, project_cloud__Allocation_Summary__r.project_cloud__Project__r.project_cloud__IsWeekly_Assignments__c)</formula>
+    <inlineHelpText>When true, time based assignments can only be a single week (Sun - Sat)</inlineHelpText>
+    <label>Are Assignments Weekly</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

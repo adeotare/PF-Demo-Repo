@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Issues_Risk_Deprecated</fullName>
+    <active>true</active>
+    <description>The Issues &amp; Risk object has been deprecated, to create a Issues &amp; Risk use the Ticket Object</description>
+    <errorConditionFormula>ISNEW()</errorConditionFormula>
+    <errorMessage>The Issues &amp; Risk object has been deprecated, to create a Issues &amp; Risk use the Ticket Object</errorMessage>
+</ValidationRule>

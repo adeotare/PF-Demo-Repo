@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Parent__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>L/U Relationship representing the parent Project Task. Would have been preferable to have a second M/D but this is prevented by Salesforce. The help text on this field is used by the new project wizard</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Input the row numbers of any preceding project tasks that you wish to make this task dependent upon. (Note these numbers will be recalculated automatically as the project tasks are resorted into date order)</inlineHelpText>
+    <label>Dependent Upon</label>
+    <referenceTo>project_cloud__Project_Task__c</referenceTo>
+    <relationshipLabel>Child Dependencies</relationshipLabel>
+    <relationshipName>Child_Dependencies</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

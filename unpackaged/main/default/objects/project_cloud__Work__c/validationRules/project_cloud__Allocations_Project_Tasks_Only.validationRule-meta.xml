@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Allocations_Project_Tasks_Only</fullName>
+    <active>true</active>
+    <description>Calendar Allocations can only be created against Project Tasks</description>
+    <errorConditionFormula>$RecordType.DeveloperName == &#39;Allocation&#39; &amp;&amp; ISBLANK(project_cloud__Project_Task__c)</errorConditionFormula>
+    <errorMessage>Allocations can only be created for Project Tasks</errorMessage>
+</ValidationRule>

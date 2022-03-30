@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Subtotal__c</fullName>
+    <deprecated>false</deprecated>
+    <description>If Discount = Unit Discount then:
+Subtotal = QTR * (Rate - Unit Discount) 
+Else If Discount = Discount (%) then
+Subtotal = QTR * (Rate * (1 - Discount (%))</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The calculated subtotal (minus tax) at the individual line item level</inlineHelpText>
+    <label>Subtotal</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

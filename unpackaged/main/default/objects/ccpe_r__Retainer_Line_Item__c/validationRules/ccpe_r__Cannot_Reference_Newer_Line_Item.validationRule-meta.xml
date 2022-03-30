@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__Cannot_Reference_Newer_Line_Item</fullName>
+    <active>true</active>
+    <description>The Previous Line Item must have started at an earlier date than this Line Item</description>
+    <errorConditionFormula>ccpe_r__Previous_Line_Item__r.ccpe_r__Start_Date__c &gt;= ccpe_r__Start_Date__c</errorConditionFormula>
+    <errorDisplayField>ccpe_r__Previous_Line_Item__c</errorDisplayField>
+    <errorMessage>Cannot reference a newer Line Item</errorMessage>
+</ValidationRule>

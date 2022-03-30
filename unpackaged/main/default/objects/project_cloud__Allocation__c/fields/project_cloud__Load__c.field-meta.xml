@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Load__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(project_cloud__Load_Override__c), IF(
+        project_cloud__Allocation_Group__r.project_cloud__Resourcing_Mode__c == &#39;timeBased&#39;,
+        IF(ISBLANK(project_cloud__Hours_Override__c), 1, project_cloud__Hours_Override__c / (BLANKVALUE(project_cloud__User__r.project_cloud__Hours_Day__c, 8) * project_cloud__Working_Days__c)),
+        (1 - project_cloud__Allocation_Group__r.project_cloud__Allocated_Override_Load__c) /  project_cloud__Allocation_Group__r.project_cloud__Total_Subscriptions__c
+    ), project_cloud__Load_Override__c)</formula>
+    <inlineHelpText>The load % of the allocation, calculated from the percent of total allocations per allocation group that the allocation represents. Will use the Load (Override) field if that has been manually populated.</inlineHelpText>
+    <label>Load (Calculated)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

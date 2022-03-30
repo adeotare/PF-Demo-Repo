@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Ensure_Timesheet_Owner_is_User</fullName>
+    <active>false</active>
+    <description>Make sure that the owner of the Timesheet selected is the user creating the entry unless the Profile of the User is a project manager</description>
+    <errorConditionFormula>$User.Id != project_cloud__Timesheet__r.OwnerId &amp;&amp; $Profile.Name != &#39;Project Manager&#39; &amp;&amp; $Profile.Name != &#39;System Administrator&#39;</errorConditionFormula>
+    <errorDisplayField>project_cloud__Timesheet__c</errorDisplayField>
+    <errorMessage>Time entries cannot be added to a timesheet that is not your own</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__IsMoveMultiple__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>To enable updating of the length or dates of more than one task, this option can be checked. For more complex projects this might introduce dependency sync errors.</description>
+    <externalId>false</externalId>
+    <label>Move Multiple</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

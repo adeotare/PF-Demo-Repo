@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Completed_Date__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This date is populated by the trigger when the completion % is set to 100</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The date the Project Task is marked as 100% complete. The status of the Project Task will not be &#39;Completed&#39; until the project manager checks the completed checkbox</inlineHelpText>
+    <label>Completed Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

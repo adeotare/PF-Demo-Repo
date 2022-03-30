@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__One_Project_Phase_or_Task</fullName>
+    <active>true</active>
+    <description>Only one of the lookups to the Project Objects can be selected</description>
+    <errorConditionFormula>IF(ISBLANK(project_cloud__Project__c), 0, 1) + IF(ISBLANK(project_cloud__Project_Phase__c), 0, 1) + IF(ISBLANK(project_cloud__Project_Task__c), 0, 1) &gt; 1</errorConditionFormula>
+    <errorMessage>Please select only one of: Project, Phase or Task</errorMessage>
+</ValidationRule>

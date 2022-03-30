@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__Weekly</fullName>
+    <active>true</active>
+    <description>Utilization calculations for a week of utilization</description>
+    <label>Weekly</label>
+</RecordType>

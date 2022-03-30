@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Suggest_Include_Existing__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Should suggested entries be shown for records that already have a time entry?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Selecting this check-box will show any records returned by the Timecard Genius regardless of if there is already a time entry for the week for the same record. (It is recommended to leave this check-box unchecked).</inlineHelpText>
+    <label>Suggest Include Existing</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

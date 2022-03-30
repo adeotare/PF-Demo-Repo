@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Status_Is_Required</fullName>
+    <active>false</active>
+    <description>Check if Status__c field has any value.</description>
+    <errorConditionFormula>ISBLANK(TEXT(project_cloud__Status__c))</errorConditionFormula>
+    <errorDisplayField>project_cloud__Status__c</errorDisplayField>
+    <errorMessage>You must enter an issue status</errorMessage>
+</ValidationRule>

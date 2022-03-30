@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Work_Type_Name_Unique</fullName>
+    <active>false</active>
+    <description>Enforce the uniqueness of work type names</description>
+    <errorConditionFormula>LOWER(Name) = LOWER(VLOOKUP($ObjectType.project_cloud__Work_Type__c.Fields.Name, $ObjectType.project_cloud__Work_Type__c.Fields.Name, Name)) &amp;&amp;
+Id &lt;&gt; VLOOKUP($ObjectType.project_cloud__Work_Type__c.Fields.Id, $ObjectType.project_cloud__Work_Type__c.Fields.Name, Name)</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Work Types must be unique</errorMessage>
+</ValidationRule>

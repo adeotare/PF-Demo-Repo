@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Allocated_Override_Load__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>A rollup of the sum total of Load (Override) fields from the Allocation Group object</inlineHelpText>
+    <label>Allocated Override Load</label>
+    <summarizedField>project_cloud__Allocation_Group__c.project_cloud__Load_Override__c</summarizedField>
+    <summaryForeignKey>project_cloud__Allocation_Group__c.project_cloud__Allocation_Summary__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

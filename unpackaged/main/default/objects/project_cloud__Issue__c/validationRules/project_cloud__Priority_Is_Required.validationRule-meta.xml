@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Priority_Is_Required</fullName>
+    <active>false</active>
+    <description>Check if Priority field is filled.</description>
+    <errorConditionFormula>ISBLANK(TEXT(project_cloud__Priority__c))</errorConditionFormula>
+    <errorDisplayField>project_cloud__Priority__c</errorDisplayField>
+    <errorMessage>You must enter an issue priority</errorMessage>
+</ValidationRule>

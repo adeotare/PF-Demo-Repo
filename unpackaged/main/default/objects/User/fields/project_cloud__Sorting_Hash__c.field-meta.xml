@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Sorting_Hash__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field is a concatenation of the First Name + Last Name + Username to create a sortable key that can find the next alphabetical user. This is currently only used by the Capabilities Tab</description>
+    <externalId>false</externalId>
+    <formula>LastName &amp; FirstName &amp; Username</formula>
+    <inlineHelpText>This field is a concatenation of the First Name + Last Name + Username to create a sortable key that can find the next alphabetical user.</inlineHelpText>
+    <label>Last, First &amp; User Name</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

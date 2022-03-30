@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__Hours_From_Criteria__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The retainer hours taken from the client account at the start of the time period</description>
+    <externalId>false</externalId>
+    <label>Hours From Criteria</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

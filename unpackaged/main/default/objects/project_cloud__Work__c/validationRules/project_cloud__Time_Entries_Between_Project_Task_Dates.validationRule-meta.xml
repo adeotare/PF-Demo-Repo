@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Time_Entries_Between_Project_Task_Dates</fullName>
+    <active>false</active>
+    <description>Only allow time entries to be recorded between a Project Task Start and End date</description>
+    <errorConditionFormula>$RecordType.DeveloperName == &#39;Time_Entry&#39; &amp;&amp;
+NOT(ISBLANK(project_cloud__Project_Task__c)) &amp;&amp; (
+	project_cloud__Date__c &lt; project_cloud__Project_Task__r.project_cloud__Start__c
+	|| project_cloud__Date__c &gt; project_cloud__Project_Task__r.project_cloud__End__c
+)</errorConditionFormula>
+    <errorDisplayField>project_cloud__Date__c</errorDisplayField>
+    <errorMessage>Date must be between the Start and End date of the Project Task</errorMessage>
+</ValidationRule>

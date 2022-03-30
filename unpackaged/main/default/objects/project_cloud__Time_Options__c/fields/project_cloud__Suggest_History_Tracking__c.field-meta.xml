@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Suggest_History_Tracking__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Should Field History Tracking changes be used to populate the suggested time entries section</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Selecting this check-box will show any records a user has modified where the field is tracked in field history tracking, in the users Timecard Genius</inlineHelpText>
+    <label>Suggest Field History Tracking</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_r__Budgeted_Labor_Cost__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>project_cloud__Work_Type__r.ccpe_r__Default_Skill_Cost__c * project_cloud__Estimated_Hours__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Budgeted Labor Cost</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

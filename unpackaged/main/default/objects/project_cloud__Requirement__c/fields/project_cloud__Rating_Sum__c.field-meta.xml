@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Rating_Sum__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Sum of Requirement Ratings</inlineHelpText>
+    <label>Rating Sum</label>
+    <summarizedField>project_cloud__Requirement_Rating__c.project_cloud__Rating__c</summarizedField>
+    <summaryForeignKey>project_cloud__Requirement_Rating__c.project_cloud__Requirement__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

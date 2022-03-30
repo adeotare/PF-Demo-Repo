@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Gate_Performance__c</fullName>
+    <deprecated>false</deprecated>
+    <description>How many days early or late the Stage Gate was completed (minus numbers indicate early completion)</description>
+    <externalId>false</externalId>
+    <formula>project_cloud__Checklist_Completed_Date__c - project_cloud__Due_Date__c</formula>
+    <label>Gate Performance</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
