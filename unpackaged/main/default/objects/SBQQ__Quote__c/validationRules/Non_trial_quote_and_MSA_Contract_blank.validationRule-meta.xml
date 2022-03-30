@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_trial_quote_and_MSA_Contract_blank</fullName>
+    <active>false</active>
+    <description>REQ-2384 - If Opportunity MSA Contract is blank and Quote trial checkbox is not checked.</description>
+    <errorConditionFormula>AND( ISBLANK(SBQQ__Opportunity2__r.MSA_Contract__c),
+Trial__c = false )</errorConditionFormula>
+    <errorMessage>Quote cannot be saved without MSA Contract.</errorMessage>
+</ValidationRule>
