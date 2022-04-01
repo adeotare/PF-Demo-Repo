@@ -381,11 +381,6 @@
             <sortOrder>24</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>NewTaskQS</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>25</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>0</sortOrder>
