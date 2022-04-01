@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage_can_not_be_skipped</fullName>
+    <active>true</active>
+    <description>Sales Reps cannot leapfrog (skip over) Opportunity Stages for any Opportunity record types.</description>
+    <errorConditionFormula>OR(
+ISCHANGED(StageName)
+&amp;&amp; CASE(StageName, &quot;00 - MQL&quot;,1,
+&quot;0 - Identified Prospect Account&quot;,2,
+&quot;1 - Account Exploration&quot;,3,
+&quot;2 - Account Qualification&quot;,4,
+&quot;3 - Consideration&quot;,5,
+&quot;4 - Evaluation&quot;,6,
+&quot;5 - Verbal Commit/LOI&quot;,7,
+&quot;6 - Negotiations&quot;,8,
+&quot;7-Execution&quot;,9,
+&quot;Close Pending&quot;,10,
+&quot;Closed Won&quot;,11,
+&quot;Closed Lost&quot;,0, 0)
+&gt;
+CASE(PRIORVALUE(StageName),
+&quot;00 - MQL&quot;,1,
+&quot;0 - Identified Prospect Account&quot;,2,
+&quot;1 - Account Exploration&quot;,3,
+&quot;2 - Account Qualification&quot;,4,
+&quot;3 - Consideration&quot;,5,
+&quot;4 - Evaluation&quot;,6,
+&quot;5 - Verbal Commit/LOI&quot;,7,
+&quot;6 - Negotiations&quot;,8,
+&quot;7-Execution&quot;,9,
+&quot;Close Pending&quot;,10,
+&quot;Closed Won&quot;,11,
+&quot;Closed Lost&quot;,0, 0)+1,
+AND( ISBLANK( CreatedDate ),
+NOT( ISPICKVAL(StageName, &quot;4 - Evaluation&quot;)),
+OR (RecordType.DeveloperName = &quot;Amendment&quot;,
+RecordType.DeveloperName = &quot;Renewal&quot;)
+),
+AND( ISBLANK( CreatedDate ),
+NOT( ISPICKVAL(StageName, &quot;00 - MQL&quot;) ),
+NOT( ISPICKVAL(StageName, &quot;0 - Identified Prospect Account&quot;)),
+OR (RecordType.DeveloperName = &quot;Products_Services&quot;,
+RecordType.DeveloperName = &quot;Services_Only&quot;)
+)
+
+)</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>Stage can not be skipped</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Stage_Validation</fullName>
+    <active>true</active>
+    <description>User can not change the status to closed won, unless the approval is approved by the approver.</description>
+    <errorConditionFormula>AND( 
+NOT(ISPICKVAL(Finance_Review__c ,&#39;Approved&#39;)),
+
+ISPICKVAL(StageName, &#39;Closed Won&#39;)
+)</errorConditionFormula>
+    <errorMessage>Stage can not be changed to Closed Won without approval.</errorMessage>
+</ValidationRule>

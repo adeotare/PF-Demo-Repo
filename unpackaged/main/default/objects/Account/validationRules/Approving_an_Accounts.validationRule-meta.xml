@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approving_an_Accounts</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+ISPICKVAL( Account_Status__c , &#39;approved&#39;),
+OR(
+ISBLANK( TEXT( Legal_Entity__c  ) ),
+ISBLANK( TEXT( Theater__c ) ),
+ISBLANK( Compliance_Designations__c ),
+ISBLANK( BillingStreet ),
+ISBLANK( BillingCity ) ,
+ISBLANK( BillingPostalCode ),
+ISBLANK( BillingState ) ,
+ISBLANK( ShippingStreet ),
+ISBLANK( ShippingCity ) ,
+ISBLANK( ShippingState ) ,
+ISBLANK( ShippingState ),
+ISBLANK(  Uses_MSA_of__c )
+)
+)</errorConditionFormula>
+    <errorMessage>Approving an Account, these additional Legal Entity ,Theater,Bill To and Ship To primaryaddresses ,Compliance Designation,Uses MSA of:must be confirmed</errorMessage>
+</ValidationRule>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Subtype__c</fullName>
+    <externalId>false</externalId>
+    <label>Account Subtype</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Account_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Passive Investor</fullName>
+                <default>false</default>
+                <label>Passive Investor</label>
+            </value>
+            <value>
+                <fullName>Active Investor</fullName>
+                <default>false</default>
+                <label>Active Investor</label>
+            </value>
+            <value>
+                <fullName>Utility</fullName>
+                <default>false</default>
+                <label>Utility</label>
+            </value>
+            <value>
+                <fullName>Oil &amp; Gas Major</fullName>
+                <default>false</default>
+                <label>Oil &amp; Gas Major</label>
+            </value>
+            <value>
+                <fullName>IPP</fullName>
+                <default>false</default>
+                <label>IPP</label>
+            </value>
+            <value>
+                <fullName>O&amp;M Service Provider</fullName>
+                <default>false</default>
+                <label>O&amp;M Service Provider</label>
+            </value>
+            <value>
+                <fullName>AM Service Provider</fullName>
+                <default>false</default>
+                <label>AM Service Provider</label>
+            </value>
+            <value>
+                <fullName>Developer</fullName>
+                <default>false</default>
+                <label>Developer</label>
+            </value>
+            <value>
+                <fullName>Partner</fullName>
+                <default>false</default>
+                <label>Partner</label>
+            </value>
+            <value>
+                <fullName>Reseller</fullName>
+                <default>false</default>
+                <label>Reseller</label>
+            </value>
+            <value>
+                <fullName>System Integrator</fullName>
+                <default>false</default>
+                <label>System Integrator</label>
+            </value>
+            <value>
+                <fullName>Consultancy</fullName>
+                <default>false</default>
+                <label>Consultancy</label>
+            </value>
+            <value>
+                <fullName>Cybersecurity</fullName>
+                <default>false</default>
+                <label>Cybersecurity</label>
+            </value>
+            <value>
+                <fullName>Auditor</fullName>
+                <default>false</default>
+                <label>Auditor</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>Vendor</fullName>
+                <default>false</default>
+                <label>Vendor</label>
+            </value>
+            <value>
+                <fullName>EPC</fullName>
+                <default>false</default>
+                <label>EPC</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <valueName>Passive Investor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <valueName>Active Investor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <valueName>Utility</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <valueName>Oil &amp; Gas Major</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <valueName>IPP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <valueName>O&amp;M Service Provider</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <valueName>AM Service Provider</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <valueName>Developer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3rd Party</controllingFieldValue>
+            <valueName>Partner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3rd Party</controllingFieldValue>
+            <valueName>Reseller</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3rd Party</controllingFieldValue>
+            <valueName>System Integrator</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3rd Party</controllingFieldValue>
+            <valueName>Consultancy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3rd Party</controllingFieldValue>
+            <valueName>Cybersecurity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3rd Party</controllingFieldValue>
+            <valueName>Auditor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Competitor</controllingFieldValue>
+            <valueName>N/A</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

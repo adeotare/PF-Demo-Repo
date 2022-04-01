@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Prospect</fullName>
+        <default>false</default>
+        <label>Prospect</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Customer</fullName>
+        <default>false</default>
+        <label>Customer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Former Customer</fullName>
+        <default>false</default>
+        <label>Former Customer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>3rd Party</fullName>
+        <default>false</default>
+        <label>3rd Party</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Competitor</fullName>
+        <default>false</default>
+        <label>Competitor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Billing Account Only</fullName>
+        <default>false</default>
+        <label>Billing Account Only</label>
+    </standardValue>
+</StandardValueSet>

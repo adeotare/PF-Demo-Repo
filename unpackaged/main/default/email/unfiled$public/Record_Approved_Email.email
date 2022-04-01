@@ -1,0 +1,13 @@
+<messaging:emailTemplate subject="Approval Approved" recipientType="User" relatedToType="sbaa__Approval__c">
+<messaging:htmlEmailBody >
+
+      <html>
+          <body>
+            <p>Dear {!recipient.name},</p>
+            <p>Quote &nbsp;<apex:outputLink value="/{!relatedTo.Quote__r.id}">{!relatedTo.Quote__r.name}</apex:outputLink> has been Approved.</p>
+            <p>Opportunity : &nbsp;<apex:outputLink value="/{!relatedTo.Quote__r.SBQQ__Opportunity2__r.id}">{!relatedTo.Quote__r.SBQQ__Opportunity2__r.name}</apex:outputLink></p>          
+          </body>
+      </html>
+      
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

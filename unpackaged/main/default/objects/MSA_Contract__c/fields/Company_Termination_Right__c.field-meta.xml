@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company_Termination_Right__c</fullName>
+    <externalId>false</externalId>
+    <label>Company Termination Right</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No right</fullName>
+                <default>false</default>
+                <label>No right</label>
+            </value>
+            <value>
+                <fullName>Terminate for cause</fullName>
+                <default>false</default>
+                <label>Terminate for cause</label>
+            </value>
+            <value>
+                <fullName>Terminate for convenience</fullName>
+                <default>true</default>
+                <label>Terminate for convenience</label>
+            </value>
+            <value>
+                <fullName>Silent</fullName>
+                <default>false</default>
+                <label>Silent</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

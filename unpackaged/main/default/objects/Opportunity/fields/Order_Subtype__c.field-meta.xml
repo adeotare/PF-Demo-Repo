@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Subtype__c</fullName>
+    <externalId>false</externalId>
+    <label>Order Subtype</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Order_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>Reduction</fullName>
+                <default>false</default>
+                <label>Reduction</label>
+            </value>
+            <value>
+                <fullName>Full Cancellation</fullName>
+                <default>false</default>
+                <label>Full Cancellation</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>New</controllingFieldValue>
+            <controllingFieldValue>New Product Line (Cross-Sell)</controllingFieldValue>
+            <controllingFieldValue>Additional Products &amp; Services (Upsell)</controllingFieldValue>
+            <controllingFieldValue>Winback</controllingFieldValue>
+            <controllingFieldValue>Services Only</controllingFieldValue>
+            <controllingFieldValue>Change Order</controllingFieldValue>
+            <controllingFieldValue>Renewal</controllingFieldValue>
+            <valueName>N/A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Downsell</controllingFieldValue>
+            <valueName>Reduction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Downsell</controllingFieldValue>
+            <valueName>Full Cancellation</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

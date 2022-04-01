@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Ekhosoft</fullName>
+        <default>false</default>
+        <label>Ekhosoft</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Drive</fullName>
+        <default>false</default>
+        <label>Drive</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Greenbyte</fullName>
+        <default>false</default>
+        <label>Greenbyte</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BluePoint</fullName>
+        <default>false</default>
+        <label>BluePoint</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Squid</fullName>
+        <default>false</default>
+        <label>Squid</label>
+    </standardValue>
+    <standardValue>
+        <fullName>3megawatt</fullName>
+        <default>false</default>
+        <label>3megawatt</label>
+    </standardValue>
+</StandardValueSet>

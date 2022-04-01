@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compliance_Designations__c</fullName>
+    <externalId>false</externalId>
+    <label>Compliance Designations</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>NERC/CIP</fullName>
+                <default>false</default>
+                <label>NERC/CIP</label>
+            </value>
+            <value>
+                <fullName>Data Storage Location</fullName>
+                <default>false</default>
+                <label>Data Storage Location</label>
+            </value>
+            <value>
+                <fullName>SOC Certification</fullName>
+                <default>false</default>
+                <label>SOC Certification</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

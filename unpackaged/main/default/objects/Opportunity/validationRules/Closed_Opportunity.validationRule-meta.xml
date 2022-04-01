@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Opportunity</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+
+OR (
+ISPICKVAL( StageName , &quot;Close Pending&quot;),
+ISPICKVAL( StageName , &quot;Closed Won&quot;)
+),
+
+$Profile.Name &lt;&gt; &quot;PF Ops&quot;,
+$Profile.Name &lt;&gt; &quot;PF Legal&quot;,
+$Profile.Name &lt;&gt; &quot;PF Finance&quot;,
+$Profile.Name &lt;&gt; &quot;PF Super User&quot;,
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;
+
+
+
+
+)</errorConditionFormula>
+    <errorMessage>Only certain profiles can edit a closed opportunity</errorMessage>
+</ValidationRule>

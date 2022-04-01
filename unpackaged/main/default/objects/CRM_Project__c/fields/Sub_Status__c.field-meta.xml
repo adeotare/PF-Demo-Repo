@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Project_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>false</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>Inbox</fullName>
+                <default>false</default>
+                <label>Inbox</label>
+            </value>
+            <value>
+                <fullName>Info collection</fullName>
+                <default>false</default>
+                <label>Info collection</label>
+            </value>
+            <value>
+                <fullName>Under construction / backlogged</fullName>
+                <default>false</default>
+                <label>Under construction / backlogged</label>
+            </value>
+            <value>
+                <fullName>To Do</fullName>
+                <default>false</default>
+                <label>To Do</label>
+            </value>
+            <value>
+                <fullName>In progress</fullName>
+                <default>false</default>
+                <label>In progress</label>
+            </value>
+            <value>
+                <fullName>Blocked - Internal</fullName>
+                <default>false</default>
+                <label>Blocked - Internal</label>
+            </value>
+            <value>
+                <fullName>Blocked - Customer</fullName>
+                <default>false</default>
+                <label>Blocked - Customer</label>
+            </value>
+            <value>
+                <fullName>Blocked - 3rd party</fullName>
+                <default>false</default>
+                <label>Blocked - 3rd party</label>
+            </value>
+            <value>
+                <fullName>Quality Checking</fullName>
+                <default>false</default>
+                <label>Quality Checking</label>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <label>Completed</label>
+            </value>
+            <value>
+                <fullName>Completed - work open</fullName>
+                <default>false</default>
+                <label>Completed - work open</label>
+            </value>
+            <value>
+                <fullName>Completed - historical data import</fullName>
+                <default>false</default>
+                <label>Completed - historical data import</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+            <value>
+                <fullName>Blocked</fullName>
+                <default>false</default>
+                <label>Blocked</label>
+            </value>
+            <value>
+                <fullName>Selected for Development</fullName>
+                <default>false</default>
+                <label>Selected for Development</label>
+            </value>
+            <value>
+                <fullName>Under Spec</fullName>
+                <default>false</default>
+                <label>Under Spec</label>
+            </value>
+            <value>
+                <fullName>Waiting</fullName>
+                <default>false</default>
+                <label>Waiting</label>
+            </value>
+            <value>
+                <fullName>Done</fullName>
+                <default>false</default>
+                <label>Done</label>
+            </value>
+            <value>
+                <fullName>Won&#39;t do</fullName>
+                <default>false</default>
+                <label>Won&#39;t do</label>
+            </value>
+            <value>
+                <fullName>Backlog</fullName>
+                <default>false</default>
+                <label>Backlog</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Monitoring Implementation</controllingFieldValue>
+            <controllingFieldValue>Monitoring Decommissioning</controllingFieldValue>
+            <controllingFieldValue>T&amp;M</controllingFieldValue>
+            <valueName>Inbox</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Monitoring Implementation</controllingFieldValue>
+            <valueName>Info collection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Monitoring Implementation</controllingFieldValue>
+            <valueName>Under construction / backlogged</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Monitoring Implementation</controllingFieldValue>
+            <controllingFieldValue>Monitoring Decommissioning</controllingFieldValue>
+            <controllingFieldValue>T&amp;M</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <controllingFieldValue>Internal Projects</controllingFieldValue>
+            <valueName>To Do</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Monitoring Implementation</controllingFieldValue>
+            <controllingFieldValue>Monitoring Decommissioning</controllingFieldValue>
+            <controllingFieldValue>T&amp;M</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Internal Projects</controllingFieldValue>
+            <valueName>In progress</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Monitoring Implementation</controllingFieldValue>
+            <valueName>Blocked - Internal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Monitoring Implementation</controllingFieldValue>
+            <valueName>Blocked - Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Monitoring Implementation</controllingFieldValue>
+            <valueName>Blocked - 3rd party</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Monitoring Implementation</controllingFieldValue>
+            <valueName>Quality Checking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Monitoring Implementation</controllingFieldValue>
+            <controllingFieldValue>Monitoring Decommissioning</controllingFieldValue>
+            <controllingFieldValue>T&amp;M</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Internal Projects</controllingFieldValue>
+            <valueName>Completed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Monitoring Implementation</controllingFieldValue>
+            <valueName>Completed - work open</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Monitoring Implementation</controllingFieldValue>
+            <valueName>Completed - historical data import</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Monitoring Implementation</controllingFieldValue>
+            <controllingFieldValue>Monitoring Decommissioning</controllingFieldValue>
+            <controllingFieldValue>T&amp;M</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Internal Projects</controllingFieldValue>
+            <valueName>Cancelled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Monitoring Decommissioning</controllingFieldValue>
+            <controllingFieldValue>T&amp;M</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Internal Projects</controllingFieldValue>
+            <valueName>Blocked</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <controllingFieldValue>Internal Projects</controllingFieldValue>
+            <valueName>New</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <valueName>Selected for Development</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <valueName>Under Spec</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <controllingFieldValue>Internal Projects</controllingFieldValue>
+            <valueName>Waiting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <valueName>Done</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <valueName>Won&#39;t do</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
+            <valueName>Backlog</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

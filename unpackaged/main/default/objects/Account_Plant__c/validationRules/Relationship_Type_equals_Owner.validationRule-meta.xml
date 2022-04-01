@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relationship_Type_equals_Owner</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISPICKVAL(Relationship_Type__c, &#39;Owner&#39;),
+ISBLANK(TEXT( Ownership_Percentage__c )))</errorConditionFormula>
+    <errorDisplayField>Ownership_Percentage__c</errorDisplayField>
+    <errorMessage>Please add value in Ownership Percentage if you are the Owner</errorMessage>
+</ValidationRule>

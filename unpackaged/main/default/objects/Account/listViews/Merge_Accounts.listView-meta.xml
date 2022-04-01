@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Merge_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>Request_Note__c</columns>
+    <columns>Merge_into_del__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>To_Be_Merged__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>To Be Merged Account</label>
+</ListView>

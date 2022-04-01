@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_cannot_progress_past_Stage_2</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(  ISPICKVAL(  Account.Account_Status__c  , &#39;unapproved&#39;),
+  NOT( ISPICKVAL( StageName , &#39;00 - MQL&#39;)),
+   NOT( ISPICKVAL( StageName , &#39;0 - Identified Prospect Account&#39;)
+ ) ,
+NOT (ISPICKVAL(StageName , &#39;1 - Account Exploration&#39;)),
+NOT(ISPICKVAL(StageName  ,&#39;2 - Account Qualification&#39;))
+)</errorConditionFormula>
+    <errorMessage>The Account is Unapproved.so Opportunity cannot progress</errorMessage>
+</ValidationRule>

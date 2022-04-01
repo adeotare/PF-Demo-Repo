@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <description>REQ - 1703</description>
+    <interviewLabel>Update Product Type on Quote Line Object {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Product Type on Quote Line Object</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Product_Type_on_Quote_Line</name>
+        <label>Update Product Type on Quote Line</label>
+        <locationX>372</locationX>
+        <locationY>365</locationY>
+        <inputAssignments>
+            <field>Product_Type__c</field>
+            <value>
+                <elementReference>$Record.SBQQ__Product__r.Product_Type__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>296</locationX>
+        <locationY>28</locationY>
+        <connector>
+            <targetReference>Update_Product_Type_on_Quote_Line</targetReference>
+        </connector>
+        <object>SBQQ__QuoteLine__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

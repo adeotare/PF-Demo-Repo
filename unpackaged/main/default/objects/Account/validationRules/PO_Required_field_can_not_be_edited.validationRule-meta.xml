@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PO_Required_field_can_not_be_edited</fullName>
+    <active>true</active>
+    <description>This field is only editable by System Administrators and Finance for Customer and Former Customer and Partner Customer records.</description>
+    <errorConditionFormula>AND(
+ $Profile.Name &lt;&gt;&quot;System Administrator&quot;,
+ $Profile.Name &lt;&gt;&quot;PF Finance&quot;,
+ ISCHANGED( PO_Required__c ) ,
+
+ OR( TEXT( Type )=&quot;Former Customer&quot;,
+TEXT( Type )=&quot;Customer&quot;,
+TEXT(  Subtype__c  )=&quot;Partner&quot;
+ ) 
+)</errorConditionFormula>
+    <errorDisplayField>PO_Required__c</errorDisplayField>
+    <errorMessage>PO Required field is only editable by System Administrators and Finance for Customer and Former Customer  Account Type and Partner  subtype</errorMessage>
+</ValidationRule>

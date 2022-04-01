@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TPM_Task</fullName>
+    <columns>SUBJECT</columns>
+    <columns>STATUS</columns>
+    <columns>TASK_SUBTYPE</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>WHAT_NAME</columns>
+    <columns>DUE_DATE</columns>
+    <columns>Estimated_Completion_Date__c</columns>
+    <columns>Comments__c</columns>
+    <columns>Duration__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>STATUS</field>
+        <operation>notEqual</operation>
+        <value>Completed</value>
+    </filters>
+    <filters>
+        <field>Detail__c</field>
+        <operation>equals</operation>
+        <value>TPM Task</value>
+    </filters>
+    <label>TPM</label>
+    <queue>TPM</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

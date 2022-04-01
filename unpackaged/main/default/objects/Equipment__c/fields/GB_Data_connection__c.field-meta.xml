@@ -1,0 +1,2287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GB_Data_connection__c</fullName>
+    <externalId>false</externalId>
+    <label>GB Data connection</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>GB_OEM__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ABB Aurora Vision Cloud API</fullName>
+                <default>false</default>
+                <label>ABB Aurora Vision Cloud API</label>
+            </value>
+            <value>
+                <fullName>ABB HMI500 ODBC via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>ABB HMI500 ODBC via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>ABB MicroSCADA IEC104 via IPSEC</fullName>
+                <default>false</default>
+                <label>ABB MicroSCADA IEC104 via IPSEC</label>
+            </value>
+            <value>
+                <fullName>ABB RTU IEC104 via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>ABB RTU IEC104 via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Acciona ODBC via IPSEC</fullName>
+                <default>false</default>
+                <label>Acciona ODBC via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Acciona OPC DA via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Acciona OPC DA via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Acciona OPC UA via IPSEC</fullName>
+                <default>false</default>
+                <label>Acciona OPC UA via IPSEC</label>
+            </value>
+            <value>
+                <fullName>ACEnergy/AcaciaSoft Amber Google Pub/Sub dispatch data</fullName>
+                <default>false</default>
+                <label>ACEnergy/AcaciaSoft Amber Google Pub/Sub dispatch data</label>
+            </value>
+            <value>
+                <fullName>AlsoEnergy Production Data API over HTTPS</fullName>
+                <default>false</default>
+                <label>AlsoEnergy Production Data API over HTTPS</label>
+            </value>
+            <value>
+                <fullName>Alstom ODBC via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Alstom ODBC via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Alstom OPC DA via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Alstom OPC DA via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>AP Sensing DTS ODBC via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>AP Sensing DTS ODBC via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Ardexa API</fullName>
+                <default>false</default>
+                <label>Ardexa API</label>
+            </value>
+            <value>
+                <fullName>Beckhoff TwinCAT OPC UA via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Beckhoff TwinCAT OPC UA via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>CapeBox SQL server push via OpenVPN</fullName>
+                <default>false</default>
+                <label>CapeBox SQL server push via OpenVPN</label>
+            </value>
+            <value>
+                <fullName>CapFile Grid Meter connection via FTP Push</fullName>
+                <default>false</default>
+                <label>CapFile Grid Meter connection via FTP Push</label>
+            </value>
+            <value>
+                <fullName>Centrica/NEAS Grid Meter data API</fullName>
+                <default>false</default>
+                <label>Centrica/NEAS Grid Meter data API</label>
+            </value>
+            <value>
+                <fullName>Centrica/NEAS Production Forecast API</fullName>
+                <default>false</default>
+                <label>Centrica/NEAS Production Forecast API</label>
+            </value>
+            <value>
+                <fullName>Centrica DataPush, CSV over sFTP</fullName>
+                <default>false</default>
+                <label>Centrica DataPush, CSV over sFTP</label>
+            </value>
+            <value>
+                <fullName>Centrica Grid Meter data csv via FTP</fullName>
+                <default>false</default>
+                <label>Centrica Grid Meter data csv via FTP</label>
+            </value>
+            <value>
+                <fullName>Circutor OPCDA Server PS/PSS for PowerStudio SCADA via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Circutor OPCDA Server PS/PSS for PowerStudio SCADA via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Creos Grid Meter Excel files via EMail</fullName>
+                <default>false</default>
+                <label>Creos Grid Meter Excel files via EMail</label>
+            </value>
+            <value>
+                <fullName>Discovergy Grid Meter data API</fullName>
+                <default>false</default>
+                <label>Discovergy Grid Meter data API</label>
+            </value>
+            <value>
+                <fullName>DLMS meter data via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>DLMS meter data via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>DLMS meter data via Modem</fullName>
+                <default>false</default>
+                <label>DLMS meter data via Modem</label>
+            </value>
+            <value>
+                <fullName>DNP3 via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>DNP3 via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>DNVGL DataPush, CSV over sFTP</fullName>
+                <default>false</default>
+                <label>DNVGL DataPush, CSV over sFTP</label>
+            </value>
+            <value>
+                <fullName>Dongfang OPCXML via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Dongfang OPCXML via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Dongfang OPCXML via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Dongfang OPCXML via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Draker API</fullName>
+                <default>false</default>
+                <label>Draker API</label>
+            </value>
+            <value>
+                <fullName>DXT DataPush, XML over FTP</fullName>
+                <default>false</default>
+                <label>DXT DataPush, XML over FTP</label>
+            </value>
+            <value>
+                <fullName>E.ON/Suboperator Eisman RSS via HTTPS</fullName>
+                <default>false</default>
+                <label>E.ON/Suboperator Eisman RSS via HTTPS</label>
+            </value>
+            <value>
+                <fullName>E.ON Energidata Grid Meter data API</fullName>
+                <default>false</default>
+                <label>E.ON Energidata Grid Meter data API</label>
+            </value>
+            <value>
+                <fullName>eBO e-Wind shareholder ODBC API via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>eBO e-Wind shareholder ODBC API via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>EDF PI CSV for JPEE Nordex</fullName>
+                <default>false</default>
+                <label>EDF PI CSV for JPEE Nordex</label>
+            </value>
+            <value>
+                <fullName>EDPR ODBC via IPSEC</fullName>
+                <default>false</default>
+                <label>EDPR ODBC via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Elipse Power DNP3 via IPSEC</fullName>
+                <default>false</default>
+                <label>Elipse Power DNP3 via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Elspec G4400 DNP3 via IPSEC</fullName>
+                <default>false</default>
+                <label>Elspec G4400 DNP3 via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Elspec G4400 Modbus TCP via IPSEC</fullName>
+                <default>false</default>
+                <label>Elspec G4400 Modbus TCP via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Email (Breeze development)</fullName>
+                <default>false</default>
+                <label>Email (Breeze development)</label>
+            </value>
+            <value>
+                <fullName>Empower EMSData web services API over HTTPS</fullName>
+                <default>false</default>
+                <label>Empower EMSData web services API over HTTPS</label>
+            </value>
+            <value>
+                <fullName>Encavis eGECKO ERP Meter data API over HTTPS</fullName>
+                <default>false</default>
+                <label>Encavis eGECKO ERP Meter data API over HTTPS</label>
+            </value>
+            <value>
+                <fullName>Enedis Grid Meter TXT file connection via Email</fullName>
+                <default>false</default>
+                <label>Enedis Grid Meter TXT file connection via Email</label>
+            </value>
+            <value>
+                <fullName>Enedis Grid Meter TXT file connection via FTP Push</fullName>
+                <default>false</default>
+                <label>Enedis Grid Meter TXT file connection via FTP Push</label>
+            </value>
+            <value>
+                <fullName>Enercon OPC XML via Enercon AnyConnect</fullName>
+                <default>false</default>
+                <label>Enercon OPC XML via Enercon AnyConnect</label>
+            </value>
+            <value>
+                <fullName>Enercon OPC XML via Enercon SCADA Secondary NIC</fullName>
+                <default>false</default>
+                <label>Enercon OPC XML via Enercon SCADA Secondary NIC</label>
+            </value>
+            <value>
+                <fullName>Enercon OPC XML via Enercon VPN</fullName>
+                <default>false</default>
+                <label>Enercon OPC XML via Enercon VPN</label>
+            </value>
+            <value>
+                <fullName>Enercon OPC XML via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Enercon OPC XML via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Engie PI datalink Grid Meter Excel via FTP push</fullName>
+                <default>false</default>
+                <label>Engie PI datalink Grid Meter Excel via FTP push</label>
+            </value>
+            <value>
+                <fullName>Engie Solar API via HTTPS</fullName>
+                <default>false</default>
+                <label>Engie Solar API via HTTPS</label>
+            </value>
+            <value>
+                <fullName>Eoly/e-BO OPC UA via IPSEC</fullName>
+                <default>false</default>
+                <label>Eoly/e-BO OPC UA via IPSEC</label>
+            </value>
+            <value>
+                <fullName>ERCOT EIP Web Services API over HTTPS</fullName>
+                <default>false</default>
+                <label>ERCOT EIP Web Services API over HTTPS</label>
+            </value>
+            <value>
+                <fullName>ES Power Kenersys CSV via FTP push</fullName>
+                <default>false</default>
+                <label>ES Power Kenersys CSV via FTP push</label>
+            </value>
+            <value>
+                <fullName>ESS WebRTU Grid Meter data via FTP push</fullName>
+                <default>false</default>
+                <label>ESS WebRTU Grid Meter data via FTP push</label>
+            </value>
+            <value>
+                <fullName>Eveler Grid Meter API v3.0 over HTTPS</fullName>
+                <default>false</default>
+                <label>Eveler Grid Meter API v3.0 over HTTPS</label>
+            </value>
+            <value>
+                <fullName>EWE Netz Eisman RSS via HTTPS</fullName>
+                <default>false</default>
+                <label>EWE Netz Eisman RSS via HTTPS</label>
+            </value>
+            <value>
+                <fullName>Ewon Flexy Gateway OPC UA via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Ewon Flexy Gateway OPC UA via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>EWT OPC DA via OPCBuffer</fullName>
+                <default>false</default>
+                <label>EWT OPC DA via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Fenway ODBC</fullName>
+                <default>false</default>
+                <label>Fenway ODBC</label>
+            </value>
+            <value>
+                <fullName>Ferroamp CloudAPI via HTTPS</fullName>
+                <default>false</default>
+                <label>Ferroamp CloudAPI via HTTPS</label>
+            </value>
+            <value>
+                <fullName>Fleximaus web services API over HTTPS</fullName>
+                <default>false</default>
+                <label>Fleximaus web services API over HTTPS</label>
+            </value>
+            <value>
+                <fullName>Fluvius Grid Meter data CSV via Email</fullName>
+                <default>false</default>
+                <label>Fluvius Grid Meter data CSV via Email</label>
+            </value>
+            <value>
+                <fullName>Fortum Norway EDIFACT/MSCONS Grid Meter data via EMail</fullName>
+                <default>false</default>
+                <label>Fortum Norway EDIFACT/MSCONS Grid Meter data via EMail</label>
+            </value>
+            <value>
+                <fullName>Fronius Solar API (JSON)</fullName>
+                <default>false</default>
+                <label>Fronius Solar API (JSON)</label>
+            </value>
+            <value>
+                <fullName>FTP/SFTP (Breeze development)</fullName>
+                <default>false</default>
+                <label>FTP/SFTP (Breeze development)</label>
+            </value>
+            <value>
+                <fullName>Gamesa Cogent via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Gamesa Cogent via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Gamesa ODBC via IPSEC</fullName>
+                <default>false</default>
+                <label>Gamesa ODBC via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Gamesa OPC DA via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Gamesa OPC DA via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Gamesa OPC UA via IPSEC</fullName>
+                <default>false</default>
+                <label>Gamesa OPC UA via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Gamma Solutions XML file over FTP Push</fullName>
+                <default>false</default>
+                <label>Gamma Solutions XML file over FTP Push</label>
+            </value>
+            <value>
+                <fullName>Gantner Q.Reader CSV file connection via FTP Push</fullName>
+                <default>false</default>
+                <label>Gantner Q.Reader CSV file connection via FTP Push</label>
+            </value>
+            <value>
+                <fullName>GarradHassan/DNVGL WindHelm ODBC API via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>GarradHassan/DNVGL WindHelm ODBC API via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>GE Cimplicity CSV via FTP Push</fullName>
+                <default>false</default>
+                <label>GE Cimplicity CSV via FTP Push</label>
+            </value>
+            <value>
+                <fullName>GE Cimplicity OPC DA via OPCBuffer</fullName>
+                <default>false</default>
+                <label>GE Cimplicity OPC DA via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>GE Cimplicity OPC UA via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>GE Cimplicity OPC UA via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Generic CSV via FTP</fullName>
+                <default>false</default>
+                <label>Generic CSV via FTP</label>
+            </value>
+            <value>
+                <fullName>Generic EDIEL/UTILTS Grid Meter data via EMail</fullName>
+                <default>false</default>
+                <label>Generic EDIEL/UTILTS Grid Meter data via EMail</label>
+            </value>
+            <value>
+                <fullName>Generic EDIEL/UTILTS Power Forecast via EMail</fullName>
+                <default>false</default>
+                <label>Generic EDIEL/UTILTS Power Forecast via EMail</label>
+            </value>
+            <value>
+                <fullName>Generic EDIFACT/MSCONS Grid Meter data via EMail</fullName>
+                <default>false</default>
+                <label>Generic EDIFACT/MSCONS Grid Meter data via EMail</label>
+            </value>
+            <value>
+                <fullName>Generic IEC61850/MMS via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Generic IEC61850/MMS via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Generic NEM12 Meter Data via Email</fullName>
+                <default>false</default>
+                <label>Generic NEM12 Meter Data via Email</label>
+            </value>
+            <value>
+                <fullName>Generic OPC UA via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Generic OPC UA via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>GE ODBC via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>GE ODBC via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>GE OPC DA via OPCBuffer</fullName>
+                <default>false</default>
+                <label>GE OPC DA via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>GE OPC UA via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>GE OPC UA via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Ginglong Open API</fullName>
+                <default>false</default>
+                <label>Ginglong Open API</label>
+            </value>
+            <value>
+                <fullName>GNERA Power Forecast CSV via FTP Pull</fullName>
+                <default>false</default>
+                <label>GNERA Power Forecast CSV via FTP Pull</label>
+            </value>
+            <value>
+                <fullName>Goldwind OPC XML</fullName>
+                <default>false</default>
+                <label>Goldwind OPC XML</label>
+            </value>
+            <value>
+                <fullName>Greenbyte Meteologica Power Forecast API</fullName>
+                <default>false</default>
+                <label>Greenbyte Meteologica Power Forecast API</label>
+            </value>
+            <value>
+                <fullName>Greenbyte Mirror</fullName>
+                <default>false</default>
+                <label>Greenbyte Mirror</label>
+            </value>
+            <value>
+                <fullName>Green Power Monitor CSV over FTP</fullName>
+                <default>false</default>
+                <label>Green Power Monitor CSV over FTP</label>
+            </value>
+            <value>
+                <fullName>GreenPowerMonitor GPM+ API over HTTPS</fullName>
+                <default>false</default>
+                <label>GreenPowerMonitor GPM+ API over HTTPS</label>
+            </value>
+            <value>
+                <fullName>GSE Availability data push WebServices API via HTTPS</fullName>
+                <default>false</default>
+                <label>GSE Availability data push WebServices API via HTTPS</label>
+            </value>
+            <value>
+                <fullName>GSE Meteological data push WebServices API via HTTPS</fullName>
+                <default>false</default>
+                <label>GSE Meteological data push WebServices API via HTTPS</label>
+            </value>
+            <value>
+                <fullName>HiQ API</fullName>
+                <default>false</default>
+                <label>HiQ API</label>
+            </value>
+            <value>
+                <fullName>Huawei NetEco Open API</fullName>
+                <default>false</default>
+                <label>Huawei NetEco Open API</label>
+            </value>
+            <value>
+                <fullName>Huawei SmartLogger CSV file connection via FTP Push</fullName>
+                <default>false</default>
+                <label>Huawei SmartLogger CSV file connection via FTP Push</label>
+            </value>
+            <value>
+                <fullName>IEC102 meter data via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>IEC102 meter data via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>IEC102 meter data via Modem</fullName>
+                <default>false</default>
+                <label>IEC102 meter data via Modem</label>
+            </value>
+            <value>
+                <fullName>IEC104 via IPSEC</fullName>
+                <default>false</default>
+                <label>IEC104 via IPSEC</label>
+            </value>
+            <value>
+                <fullName>IEC 62056-21 meter data via IPSEC or NAT for Elster Meters</fullName>
+                <default>false</default>
+                <label>IEC 62056-21 meter data via IPSEC or NAT for Elster Meters</label>
+            </value>
+            <value>
+                <fullName>IMServ EDV MPAN grid meter data CSV over FTP</fullName>
+                <default>false</default>
+                <label>IMServ EDV MPAN grid meter data CSV over FTP</label>
+            </value>
+            <value>
+                <fullName>InAccess CSV over sFTP</fullName>
+                <default>false</default>
+                <label>InAccess CSV over sFTP</label>
+            </value>
+            <value>
+                <fullName>InAccess CSV via FTP</fullName>
+                <default>false</default>
+                <label>InAccess CSV via FTP</label>
+            </value>
+            <value>
+                <fullName>InAccess IFMS REST API via HTTPS</fullName>
+                <default>false</default>
+                <label>InAccess IFMS REST API via HTTPS</label>
+            </value>
+            <value>
+                <fullName>Inductive Automation Ignition ODBC via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Inductive Automation Ignition ODBC via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Inductive Automation Ignition OPC UA via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Inductive Automation Ignition OPC UA via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Infinis/Ventient MPAN ODBC via IPSEC</fullName>
+                <default>false</default>
+                <label>Infinis/Ventient MPAN ODBC via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Ingka/IKEA Azure Parquet Storage</fullName>
+                <default>false</default>
+                <label>Ingka/IKEA Azure Parquet Storage</label>
+            </value>
+            <value>
+                <fullName>Innax Grid Meter DataService API over HTTPS</fullName>
+                <default>false</default>
+                <label>Innax Grid Meter DataService API over HTTPS</label>
+            </value>
+            <value>
+                <fullName>iPLON iGATE IEC104 via OpenVPN</fullName>
+                <default>false</default>
+                <label>iPLON iGATE IEC104 via OpenVPN</label>
+            </value>
+            <value>
+                <fullName>Isotrol Bluence IEC104 via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Isotrol Bluence IEC104 via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Isotrol Bluence REST API via HTTPS</fullName>
+                <default>false</default>
+                <label>Isotrol Bluence REST API via HTTPS</label>
+            </value>
+            <value>
+                <fullName>Kepware Historian ODBC via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Kepware Historian ODBC via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Kepware IoT Gateway MQTT push via HTTP/SSL</fullName>
+                <default>false</default>
+                <label>Kepware IoT Gateway MQTT push via HTTP/SSL</label>
+            </value>
+            <value>
+                <fullName>Kepware OPC DA via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Kepware OPC DA via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Kepware OPC UA via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Kepware OPC UA via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Lagerwey OPC UA via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Lagerwey OPC UA via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Livewire Web Service API over HTTPS</fullName>
+                <default>false</default>
+                <label>Livewire Web Service API over HTTPS</label>
+            </value>
+            <value>
+                <fullName>Meier-NT ADL CSV via FTP Push</fullName>
+                <default>false</default>
+                <label>Meier-NT ADL CSV via FTP Push</label>
+            </value>
+            <value>
+                <fullName>meteo*swift Forecast CSV via FTP Push</fullName>
+                <default>false</default>
+                <label>meteo*swift Forecast CSV via FTP Push</label>
+            </value>
+            <value>
+                <fullName>Meteocontrol blue&#39;Log CSV via FTP</fullName>
+                <default>false</default>
+                <label>Meteocontrol blue&#39;Log CSV via FTP</label>
+            </value>
+            <value>
+                <fullName>Meteocontrol VCOM Cloud API</fullName>
+                <default>false</default>
+                <label>Meteocontrol VCOM Cloud API</label>
+            </value>
+            <value>
+                <fullName>Meteocontrol WEB&#39;log CSV via FTP</fullName>
+                <default>false</default>
+                <label>Meteocontrol WEB&#39;log CSV via FTP</label>
+            </value>
+            <value>
+                <fullName>Meteologica Power Forecast API</fullName>
+                <default>false</default>
+                <label>Meteologica Power Forecast API</label>
+            </value>
+            <value>
+                <fullName>Mikronika SYNDIS IEC104 via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Mikronika SYNDIS IEC104 via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Mikronika SYNDIS OPC DA via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Mikronika SYNDIS OPC DA via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Mirage SCADA ODBC via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Mirage SCADA ODBC via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Mita-Teknik OPC DA Gateway via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Mita-Teknik OPC DA Gateway via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Mitsubishi OPC DA via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Mitsubishi OPC DA via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Modbus/TCP over IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Modbus/TCP over IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Modem</fullName>
+                <default>false</default>
+                <label>Modem</label>
+            </value>
+            <value>
+                <fullName>N3uron ODBC via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>N3uron ODBC via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Nordex CIF-IEC104 via IPSEC</fullName>
+                <default>false</default>
+                <label>Nordex CIF-IEC104 via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Nordex CSV files via Email</fullName>
+                <default>false</default>
+                <label>Nordex CSV files via Email</label>
+            </value>
+            <value>
+                <fullName>Nordex ODBC via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Nordex ODBC via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Nordex OPC UA via IPSEC</fullName>
+                <default>false</default>
+                <label>Nordex OPC UA via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Nordex OPC XML via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Nordex OPC XML via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Nordex OPC XML via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Nordex OPC XML via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Nordtank Leineweber EFI via OPCDA</fullName>
+                <default>false</default>
+                <label>Nordtank Leineweber EFI via OPCDA</label>
+            </value>
+            <value>
+                <fullName>NYISO Operator data push WebServices via HTTPS</fullName>
+                <default>false</default>
+                <label>NYISO Operator data push WebServices via HTTPS</label>
+            </value>
+            <value>
+                <fullName>Orion Historian ODBC via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Orion Historian ODBC via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Orsted Siemens ODBC CSV files via FTP pull</fullName>
+                <default>false</default>
+                <label>Orsted Siemens ODBC CSV files via FTP pull</label>
+            </value>
+            <value>
+                <fullName>OSISoft PI Web API via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>OSISoft PI Web API via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Osthessen Netz Eisman RSS via HTTPS</fullName>
+                <default>false</default>
+                <label>Osthessen Netz Eisman RSS via HTTPS</label>
+            </value>
+            <value>
+                <fullName>Padcon CSV files via FTP push</fullName>
+                <default>false</default>
+                <label>Padcon CSV files via FTP push</label>
+            </value>
+            <value>
+                <fullName>Papendorf SOL.Connect Center 3 CSV via FTP push</fullName>
+                <default>false</default>
+                <label>Papendorf SOL.Connect Center 3 CSV via FTP push</label>
+            </value>
+            <value>
+                <fullName>Pexapark CSV over FTP</fullName>
+                <default>false</default>
+                <label>Pexapark CSV over FTP</label>
+            </value>
+            <value>
+                <fullName>Phoenix Contact ILC191 ME/AN CSV via FTP</fullName>
+                <default>false</default>
+                <label>Phoenix Contact ILC191 ME/AN CSV via FTP</label>
+            </value>
+            <value>
+                <fullName>PLN DataPush, CSV over FTP</fullName>
+                <default>false</default>
+                <label>PLN DataPush, CSV over FTP</label>
+            </value>
+            <value>
+                <fullName>Powerwind OPC DA via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Powerwind OPC DA via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Quantec ODBC</fullName>
+                <default>false</default>
+                <label>Quantec ODBC</label>
+            </value>
+            <value>
+                <fullName>Renforce API over HTTPS</fullName>
+                <default>false</default>
+                <label>Renforce API over HTTPS</label>
+            </value>
+            <value>
+                <fullName>Renovagy ODBC via IPSEC</fullName>
+                <default>false</default>
+                <label>Renovagy ODBC via IPSEC</label>
+            </value>
+            <value>
+                <fullName>RIOS SCADA CSV over FTP</fullName>
+                <default>false</default>
+                <label>RIOS SCADA CSV over FTP</label>
+            </value>
+            <value>
+                <fullName>RWE Cogent OPC UA via IPSEC</fullName>
+                <default>false</default>
+                <label>RWE Cogent OPC UA via IPSEC</label>
+            </value>
+            <value>
+                <fullName>RWS hy3m Meteo data via sFTP Pull</fullName>
+                <default>false</default>
+                <label>RWS hy3m Meteo data via sFTP Pull</label>
+            </value>
+            <value>
+                <fullName>Saitim ODBC via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Saitim ODBC via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Satel SenNet Datalogger CSV via FTP</fullName>
+                <default>false</default>
+                <label>Satel SenNet Datalogger CSV via FTP</label>
+            </value>
+            <value>
+                <fullName>Schneider Electric Conext Gateway CSV push via FTP</fullName>
+                <default>false</default>
+                <label>Schneider Electric Conext Gateway CSV push via FTP</label>
+            </value>
+            <value>
+                <fullName>Scottish Power DataPush, CSV over sFTP</fullName>
+                <default>false</default>
+                <label>Scottish Power DataPush, CSV over sFTP</label>
+            </value>
+            <value>
+                <fullName>SEL RTAC 3530 IEC61850 via IPSEC</fullName>
+                <default>false</default>
+                <label>SEL RTAC 3530 IEC61850 via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Senvion CSV files via Email</fullName>
+                <default>false</default>
+                <label>Senvion CSV files via Email</label>
+            </value>
+            <value>
+                <fullName>Senvion IEC61400-25 via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Senvion IEC61400-25 via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Senvion IEC61400-25 via Senvion AnyConnect VPN</fullName>
+                <default>false</default>
+                <label>Senvion IEC61400-25 via Senvion AnyConnect VPN</label>
+            </value>
+            <value>
+                <fullName>Senvion ODBC via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Senvion ODBC via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Senvion OPC DA via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Senvion OPC DA via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Servelec Technologies TBOX CSV via FTP</fullName>
+                <default>false</default>
+                <label>Servelec Technologies TBOX CSV via FTP</label>
+            </value>
+            <value>
+                <fullName>Siemens EnergyIP Grid Meter data xls via FTP</fullName>
+                <default>false</default>
+                <label>Siemens EnergyIP Grid Meter data xls via FTP</label>
+            </value>
+            <value>
+                <fullName>Siemens ODBC via IPSEC</fullName>
+                <default>false</default>
+                <label>Siemens ODBC via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Siemens OPC UA via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Siemens OPC UA via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Siemens OPC XML via IPSEC</fullName>
+                <default>false</default>
+                <label>Siemens OPC XML via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Siemens OPC XML via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Siemens OPC XML via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Siemens WinCC IEC104 via IPSEC</fullName>
+                <default>false</default>
+                <label>Siemens WinCC IEC104 via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Siemens WinCC OPC DA via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Siemens WinCC OPC DA via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Sinapsi data logger CSV over FTP</fullName>
+                <default>false</default>
+                <label>Sinapsi data logger CSV over FTP</label>
+            </value>
+            <value>
+                <fullName>Skytron skylog data logger CSV files over FTP push</fullName>
+                <default>false</default>
+                <label>Skytron skylog data logger CSV files over FTP push</label>
+            </value>
+            <value>
+                <fullName>SMA Cluster Controller CSV/XML push via FTP</fullName>
+                <default>false</default>
+                <label>SMA Cluster Controller CSV/XML push via FTP</label>
+            </value>
+            <value>
+                <fullName>SMA CSV/XML push via FTP</fullName>
+                <default>false</default>
+                <label>SMA CSV/XML push via FTP</label>
+            </value>
+            <value>
+                <fullName>SMA Data Manager CSV/XML push via FTP</fullName>
+                <default>false</default>
+                <label>SMA Data Manager CSV/XML push via FTP</label>
+            </value>
+            <value>
+                <fullName>SMTeknik ParkPC</fullName>
+                <default>false</default>
+                <label>SMTeknik ParkPC</label>
+            </value>
+            <value>
+                <fullName>SoDa HELIOCLIM-3 Current Day API</fullName>
+                <default>false</default>
+                <label>SoDa HELIOCLIM-3 Current Day API</label>
+            </value>
+            <value>
+                <fullName>SolarEdge Monitoring Server API</fullName>
+                <default>false</default>
+                <label>SolarEdge Monitoring Server API</label>
+            </value>
+            <value>
+                <fullName>SolarGIS DataDelivery WebServices API</fullName>
+                <default>false</default>
+                <label>SolarGIS DataDelivery WebServices API</label>
+            </value>
+            <value>
+                <fullName>Solar-Log JS file connection via FTP Push</fullName>
+                <default>false</default>
+                <label>Solar-Log JS file connection via FTP Push</label>
+            </value>
+            <value>
+                <fullName>Solar-Ops ODBC via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Solar-Ops ODBC via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Solar-Ops OPC UA via IPSEC</fullName>
+                <default>false</default>
+                <label>Solar-Ops OPC UA via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Spin Action.NET SCADA DNP3 via IPSEC</fullName>
+                <default>false</default>
+                <label>Spin Action.NET SCADA DNP3 via IPSEC</label>
+            </value>
+            <value>
+                <fullName>SRD Grid Meter data connection via Email</fullName>
+                <default>false</default>
+                <label>SRD Grid Meter data connection via Email</label>
+            </value>
+            <value>
+                <fullName>StarkID Grid Meter data csv via FTP</fullName>
+                <default>false</default>
+                <label>StarkID Grid Meter data csv via FTP</label>
+            </value>
+            <value>
+                <fullName>Statkraft Aura API via HTTPS</fullName>
+                <default>false</default>
+                <label>Statkraft Aura API via HTTPS</label>
+            </value>
+            <value>
+                <fullName>Statkraft DataPush, CSV over FTP</fullName>
+                <default>false</default>
+                <label>Statkraft DataPush, CSV over FTP</label>
+            </value>
+            <value>
+                <fullName>Statkraft EDIFACT/MSCONS Grid Meter data via EMail</fullName>
+                <default>false</default>
+                <label>Statkraft EDIFACT/MSCONS Grid Meter data via EMail</label>
+            </value>
+            <value>
+                <fullName>Statkraft grid meter Excel file over FTP Push</fullName>
+                <default>false</default>
+                <label>Statkraft grid meter Excel file over FTP Push</label>
+            </value>
+            <value>
+                <fullName>SunEdison SEEDS Gateway via XMPP</fullName>
+                <default>false</default>
+                <label>SunEdison SEEDS Gateway via XMPP</label>
+            </value>
+            <value>
+                <fullName>Suzlon DataMart ODBC via Cisco AnyConnect VPN</fullName>
+                <default>false</default>
+                <label>Suzlon DataMart ODBC via Cisco AnyConnect VPN</label>
+            </value>
+            <value>
+                <fullName>Suzlon OPC DA via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Suzlon OPC DA via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Tarsys ODBC Grid Meter data via IPSEC</fullName>
+                <default>false</default>
+                <label>Tarsys ODBC Grid Meter data via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Tilt Renewables Fiscal Meter ODBC via IPSEC</fullName>
+                <default>false</default>
+                <label>Tilt Renewables Fiscal Meter ODBC via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Topwind ODBC via IPSEC</fullName>
+                <default>false</default>
+                <label>Topwind ODBC via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Topwind OPC DA via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Topwind OPC DA via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Total Group JSON data via Azure Event Bus</fullName>
+                <default>false</default>
+                <label>Total Group JSON data via Azure Event Bus</label>
+            </value>
+            <value>
+                <fullName>TozziGreen ODBC via IPSEC</fullName>
+                <default>false</default>
+                <label>TozziGreen ODBC via IPSEC</label>
+            </value>
+            <value>
+                <fullName>UtilityAPI Meter API</fullName>
+                <default>false</default>
+                <label>UtilityAPI Meter API</label>
+            </value>
+            <value>
+                <fullName>Vensys CSV over FTP via OpenVPN</fullName>
+                <default>false</default>
+                <label>Vensys CSV over FTP via OpenVPN</label>
+            </value>
+            <value>
+                <fullName>Vestas CSV via FTP</fullName>
+                <default>false</default>
+                <label>Vestas CSV via FTP</label>
+            </value>
+            <value>
+                <fullName>Vestas ODBC via IPSEC</fullName>
+                <default>false</default>
+                <label>Vestas ODBC via IPSEC</label>
+            </value>
+            <value>
+                <fullName>Vestas OPC DA via OPCBuffer</fullName>
+                <default>false</default>
+                <label>Vestas OPC DA via OPCBuffer</label>
+            </value>
+            <value>
+                <fullName>Vestas OPC DA via xGate</fullName>
+                <default>false</default>
+                <label>Vestas OPC DA via xGate</label>
+            </value>
+            <value>
+                <fullName>Vestas OPC UA HA via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Vestas OPC UA HA via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Vestas OPC UA via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Vestas OPC UA via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Vestas Service Schedule API</fullName>
+                <default>false</default>
+                <label>Vestas Service Schedule API</label>
+            </value>
+            <value>
+                <fullName>WAGO PFC200 IEC104 via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>WAGO PFC200 IEC104 via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>WAGO PFC200 MQTT</fullName>
+                <default>false</default>
+                <label>WAGO PFC200 MQTT</label>
+            </value>
+            <value>
+                <fullName>Wärtsilä PowerPlant automation system CSV via FTP</fullName>
+                <default>false</default>
+                <label>Wärtsilä PowerPlant automation system CSV via FTP</label>
+            </value>
+            <value>
+                <fullName>WeatherSentry by DTN Lightning Alerts via Email</fullName>
+                <default>false</default>
+                <label>WeatherSentry by DTN Lightning Alerts via Email</label>
+            </value>
+            <value>
+                <fullName>Weather Underground API</fullName>
+                <default>false</default>
+                <label>Weather Underground API</label>
+            </value>
+            <value>
+                <fullName>WebdynSun CSV via FTP pull</fullName>
+                <default>false</default>
+                <label>WebdynSun CSV via FTP pull</label>
+            </value>
+            <value>
+                <fullName>Weser Netz Eisman Excel via Email</fullName>
+                <default>false</default>
+                <label>Weser Netz Eisman Excel via Email</label>
+            </value>
+            <value>
+                <fullName>WiCo WinWind CSV files over FTP</fullName>
+                <default>false</default>
+                <label>WiCo WinWind CSV files over FTP</label>
+            </value>
+            <value>
+                <fullName>Wien Energie CSV over FTP</fullName>
+                <default>false</default>
+                <label>Wien Energie CSV over FTP</label>
+            </value>
+            <value>
+                <fullName>WinWinD IEC104 via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>WinWinD IEC104 via IPSEC or NAT</label>
+            </value>
+            <value>
+                <fullName>Wonderware InTouch Historian ODBC via IPSEC or NAT</fullName>
+                <default>false</default>
+                <label>Wonderware InTouch Historian ODBC via IPSEC or NAT</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Solis</controllingFieldValue>
+            <controllingFieldValue>SunEdison</controllingFieldValue>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <controllingFieldValue>SunTechnics</controllingFieldValue>
+            <controllingFieldValue>Sunways</controllingFieldValue>
+            <controllingFieldValue>Suzlon</controllingFieldValue>
+            <controllingFieldValue>Topwind</controllingFieldValue>
+            <controllingFieldValue>Toshiba Mitsubishi (TMEIC)</controllingFieldValue>
+            <controllingFieldValue>TransData</controllingFieldValue>
+            <controllingFieldValue>Tripower</controllingFieldValue>
+            <controllingFieldValue>AROS</controllingFieldValue>
+            <controllingFieldValue>Vensys</controllingFieldValue>
+            <controllingFieldValue>Bonfiglioli</controllingFieldValue>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <controllingFieldValue>Bonus</controllingFieldValue>
+            <controllingFieldValue>Campbell</controllingFieldValue>
+            <controllingFieldValue>Chint Solar</controllingFieldValue>
+            <controllingFieldValue>Clipper</controllingFieldValue>
+            <controllingFieldValue>Concentrix Solar</controllingFieldValue>
+            <controllingFieldValue>Conergy</controllingFieldValue>
+            <controllingFieldValue>Danfoss</controllingFieldValue>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <controllingFieldValue>Acciona</controllingFieldValue>
+            <controllingFieldValue>Advanced Energy</controllingFieldValue>
+            <controllingFieldValue>AllEarth</controllingFieldValue>
+            <controllingFieldValue>Alstom</controllingFieldValue>
+            <controllingFieldValue>Ammonit</controllingFieldValue>
+            <controllingFieldValue>Answer Drives</controllingFieldValue>
+            <controllingFieldValue>AP Sensing</controllingFieldValue>
+            <controllingFieldValue>Delta</controllingFieldValue>
+            <controllingFieldValue>Dongfang</controllingFieldValue>
+            <controllingFieldValue>Eaton</controllingFieldValue>
+            <controllingFieldValue>Elster</controllingFieldValue>
+            <controllingFieldValue>Emerson</controllingFieldValue>
+            <controllingFieldValue>eMS</controllingFieldValue>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <controllingFieldValue>Enerdis</controllingFieldValue>
+            <controllingFieldValue>Envision</controllingFieldValue>
+            <controllingFieldValue>EWT</controllingFieldValue>
+            <controllingFieldValue>ferroamp</controllingFieldValue>
+            <controllingFieldValue>Fleximaus</controllingFieldValue>
+            <controllingFieldValue>Fronius</controllingFieldValue>
+            <controllingFieldValue>Fuhrländer</controllingFieldValue>
+            <controllingFieldValue>Gamesa</controllingFieldValue>
+            <controllingFieldValue>Gamesa/Enertron</controllingFieldValue>
+            <controllingFieldValue>Gamesa/Made</controllingFieldValue>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <controllingFieldValue>Ginglong</controllingFieldValue>
+            <controllingFieldValue>Goldwind</controllingFieldValue>
+            <controllingFieldValue>GPTech</controllingFieldValue>
+            <controllingFieldValue>Helios Systems</controllingFieldValue>
+            <controllingFieldValue>HiQ</controllingFieldValue>
+            <controllingFieldValue>Hitatchi</controllingFieldValue>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <controllingFieldValue>iPLON</controllingFieldValue>
+            <controllingFieldValue>JEMA</controllingFieldValue>
+            <controllingFieldValue>Kaco</controllingFieldValue>
+            <controllingFieldValue>Kintech</controllingFieldValue>
+            <controllingFieldValue>KSTAR</controllingFieldValue>
+            <controllingFieldValue>Lagerwey</controllingFieldValue>
+            <controllingFieldValue>Landis+Gyr</controllingFieldValue>
+            <controllingFieldValue>Landys+Gyr</controllingFieldValue>
+            <controllingFieldValue>Mastervolt</controllingFieldValue>
+            <controllingFieldValue>Mitsubishi</controllingFieldValue>
+            <controllingFieldValue>NEG Micon</controllingFieldValue>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <controllingFieldValue>Nordtank</controllingFieldValue>
+            <controllingFieldValue>Northern Power Systems</controllingFieldValue>
+            <controllingFieldValue>NorthTec</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Power Electronics</controllingFieldValue>
+            <controllingFieldValue>Power-One</controllingFieldValue>
+            <controllingFieldValue>Powerwind</controllingFieldValue>
+            <controllingFieldValue>PV Powered</controllingFieldValue>
+            <controllingFieldValue>REFUsol</controllingFieldValue>
+            <controllingFieldValue>Riello</controllingFieldValue>
+            <controllingFieldValue>Santerno</controllingFieldValue>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <controllingFieldValue>Satec</controllingFieldValue>
+            <controllingFieldValue>Schneider Electric</controllingFieldValue>
+            <controllingFieldValue>Wilmers</controllingFieldValue>
+            <controllingFieldValue>WinWindD</controllingFieldValue>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <controllingFieldValue>SIAC Soleil</controllingFieldValue>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <controllingFieldValue>SolarEdge</controllingFieldValue>
+            <controllingFieldValue>SolarMax</controllingFieldValue>
+            <controllingFieldValue>Solectria</controllingFieldValue>
+            <valueName>Greenbyte Mirror</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Solis</controllingFieldValue>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <controllingFieldValue>SunTechnics</controllingFieldValue>
+            <controllingFieldValue>Sunways</controllingFieldValue>
+            <controllingFieldValue>Toshiba Mitsubishi (TMEIC)</controllingFieldValue>
+            <controllingFieldValue>TransData</controllingFieldValue>
+            <controllingFieldValue>Tripower</controllingFieldValue>
+            <controllingFieldValue>AROS</controllingFieldValue>
+            <controllingFieldValue>Bonfiglioli</controllingFieldValue>
+            <controllingFieldValue>Chint Solar</controllingFieldValue>
+            <controllingFieldValue>Concentrix Solar</controllingFieldValue>
+            <controllingFieldValue>Conergy</controllingFieldValue>
+            <controllingFieldValue>Danfoss</controllingFieldValue>
+            <controllingFieldValue>Answer Drives</controllingFieldValue>
+            <controllingFieldValue>Delta</controllingFieldValue>
+            <controllingFieldValue>Eaton</controllingFieldValue>
+            <controllingFieldValue>Elster</controllingFieldValue>
+            <controllingFieldValue>Emerson</controllingFieldValue>
+            <controllingFieldValue>Gamesa/Enertron</controllingFieldValue>
+            <controllingFieldValue>Ginglong</controllingFieldValue>
+            <controllingFieldValue>GPTech</controllingFieldValue>
+            <controllingFieldValue>Helios Systems</controllingFieldValue>
+            <controllingFieldValue>HiQ</controllingFieldValue>
+            <controllingFieldValue>Hitatchi</controllingFieldValue>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <controllingFieldValue>JEMA</controllingFieldValue>
+            <controllingFieldValue>Kaco</controllingFieldValue>
+            <controllingFieldValue>Kintech</controllingFieldValue>
+            <controllingFieldValue>KSTAR</controllingFieldValue>
+            <controllingFieldValue>Mastervolt</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Power Electronics</controllingFieldValue>
+            <controllingFieldValue>Power-One</controllingFieldValue>
+            <controllingFieldValue>PV Powered</controllingFieldValue>
+            <controllingFieldValue>REFUsol</controllingFieldValue>
+            <controllingFieldValue>Riello</controllingFieldValue>
+            <controllingFieldValue>Santerno</controllingFieldValue>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <controllingFieldValue>Satec</controllingFieldValue>
+            <controllingFieldValue>Schneider Electric</controllingFieldValue>
+            <controllingFieldValue>Wilmers</controllingFieldValue>
+            <controllingFieldValue>Xantrex</controllingFieldValue>
+            <controllingFieldValue>Zigor</controllingFieldValue>
+            <controllingFieldValue>SIAC Soleil</controllingFieldValue>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <controllingFieldValue>SolarEdge</controllingFieldValue>
+            <controllingFieldValue>SolarMax</controllingFieldValue>
+            <controllingFieldValue>Solectria</controllingFieldValue>
+            <valueName>Inductive Automation Ignition ODBC via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Solis</controllingFieldValue>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <controllingFieldValue>SunTechnics</controllingFieldValue>
+            <controllingFieldValue>Sunways</controllingFieldValue>
+            <controllingFieldValue>Toshiba Mitsubishi (TMEIC)</controllingFieldValue>
+            <controllingFieldValue>TransData</controllingFieldValue>
+            <controllingFieldValue>Tripower</controllingFieldValue>
+            <controllingFieldValue>AROS</controllingFieldValue>
+            <controllingFieldValue>Bonfiglioli</controllingFieldValue>
+            <controllingFieldValue>Chint Solar</controllingFieldValue>
+            <controllingFieldValue>Concentrix Solar</controllingFieldValue>
+            <controllingFieldValue>Conergy</controllingFieldValue>
+            <controllingFieldValue>Danfoss</controllingFieldValue>
+            <controllingFieldValue>Answer Drives</controllingFieldValue>
+            <controllingFieldValue>Delta</controllingFieldValue>
+            <controllingFieldValue>Eaton</controllingFieldValue>
+            <controllingFieldValue>Elster</controllingFieldValue>
+            <controllingFieldValue>Emerson</controllingFieldValue>
+            <controllingFieldValue>Gamesa/Enertron</controllingFieldValue>
+            <controllingFieldValue>Ginglong</controllingFieldValue>
+            <controllingFieldValue>GPTech</controllingFieldValue>
+            <controllingFieldValue>Helios Systems</controllingFieldValue>
+            <controllingFieldValue>HiQ</controllingFieldValue>
+            <controllingFieldValue>Hitatchi</controllingFieldValue>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <controllingFieldValue>JEMA</controllingFieldValue>
+            <controllingFieldValue>Kaco</controllingFieldValue>
+            <controllingFieldValue>Kintech</controllingFieldValue>
+            <controllingFieldValue>KSTAR</controllingFieldValue>
+            <controllingFieldValue>Mastervolt</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Power Electronics</controllingFieldValue>
+            <controllingFieldValue>Power-One</controllingFieldValue>
+            <controllingFieldValue>PV Powered</controllingFieldValue>
+            <controllingFieldValue>REFUsol</controllingFieldValue>
+            <controllingFieldValue>Riello</controllingFieldValue>
+            <controllingFieldValue>Santerno</controllingFieldValue>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <controllingFieldValue>Satec</controllingFieldValue>
+            <controllingFieldValue>Schneider Electric</controllingFieldValue>
+            <controllingFieldValue>Wilmers</controllingFieldValue>
+            <controllingFieldValue>Xantrex</controllingFieldValue>
+            <controllingFieldValue>Zigor</controllingFieldValue>
+            <controllingFieldValue>SIAC Soleil</controllingFieldValue>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <controllingFieldValue>SolarEdge</controllingFieldValue>
+            <controllingFieldValue>SolarMax</controllingFieldValue>
+            <controllingFieldValue>Solectria</controllingFieldValue>
+            <valueName>Inductive Automation Ignition OPC UA via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>InAccess IFMS REST API via HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Kepware IoT Gateway MQTT push via HTTP/SSL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <controllingFieldValue>eMS</controllingFieldValue>
+            <controllingFieldValue>Fluence</controllingFieldValue>
+            <controllingFieldValue>NorthTec</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Santerno</controllingFieldValue>
+            <valueName>Modbus/TCP over IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Suzlon</controllingFieldValue>
+            <valueName>Suzlon DataMart ODBC via Cisco AnyConnect VPN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Suzlon</controllingFieldValue>
+            <valueName>Suzlon OPC DA via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Topwind</controllingFieldValue>
+            <valueName>Topwind ODBC via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Topwind</controllingFieldValue>
+            <valueName>Topwind OPC DA via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba Mitsubishi (TMEIC)</controllingFieldValue>
+            <controllingFieldValue>Clipper</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Fenway ODBC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vensys</controllingFieldValue>
+            <valueName>Vensys CSV over FTP via OpenVPN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <controllingFieldValue>Fuhrländer</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Ardexa API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Eoly/e-BO OPC UA via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Ingka/IKEA Azure Parquet Storage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <controllingFieldValue>Fuhrländer</controllingFieldValue>
+            <controllingFieldValue>Gamesa</controllingFieldValue>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Quantec ODBC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <controllingFieldValue>NEG Micon</controllingFieldValue>
+            <valueName>Vestas CSV via FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <controllingFieldValue>NEG Micon</controllingFieldValue>
+            <valueName>Vestas ODBC via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <controllingFieldValue>NEG Micon</controllingFieldValue>
+            <valueName>Vestas OPC DA via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas OPC DA via xGate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas OPC UA HA via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas OPC UA via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bonus</controllingFieldValue>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens ODBC via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bonus</controllingFieldValue>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens OPC UA via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bonus</controllingFieldValue>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens OPC XML via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bonus</controllingFieldValue>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens OPC XML via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DataPush</controllingFieldValue>
+            <valueName>Centrica DataPush, CSV over sFTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DataPush</controllingFieldValue>
+            <valueName>DNVGL DataPush, CSV over sFTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DataPush</controllingFieldValue>
+            <valueName>DXT DataPush, XML over FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DataPush</controllingFieldValue>
+            <valueName>GSE Availability data push WebServices API via HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DataPush</controllingFieldValue>
+            <valueName>GSE Meteological data push WebServices API via HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DataPush</controllingFieldValue>
+            <valueName>NYISO Operator data push WebServices via HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DataPush</controllingFieldValue>
+            <valueName>PLN DataPush, CSV over FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DataPush</controllingFieldValue>
+            <valueName>Scottish Power DataPush, CSV over sFTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DataPush</controllingFieldValue>
+            <valueName>Statkraft DataPush, CSV over FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>ABB HMI500 ODBC via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <valueName>ABB MicroSCADA IEC104 via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>ABB RTU IEC104 via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>AlsoEnergy Production Data API over HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Gantner Q.Reader CSV file connection via FTP Push</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Generic CSV via FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Power Electronics</controllingFieldValue>
+            <valueName>Green Power Monitor CSV over FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Power Electronics</controllingFieldValue>
+            <valueName>GreenPowerMonitor GPM+ API over HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Kepware Historian ODBC via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Kepware OPC UA via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Power-One</controllingFieldValue>
+            <valueName>Meteocontrol blue&#39;Log CSV via FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Power-One</controllingFieldValue>
+            <valueName>Meteocontrol VCOM Cloud API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Power-One</controllingFieldValue>
+            <valueName>Meteocontrol WEB&#39;log CSV via FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Siemens WinCC OPC DA via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Skytron skylog data logger CSV files over FTP push</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Solar-Ops ODBC via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Wärtsilä PowerPlant automation system CSV via FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acciona</controllingFieldValue>
+            <valueName>Acciona ODBC via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acciona</controllingFieldValue>
+            <valueName>Acciona OPC DA via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acciona</controllingFieldValue>
+            <valueName>Acciona OPC UA via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advanced Energy</controllingFieldValue>
+            <controllingFieldValue>Eaton</controllingFieldValue>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>Solar-Ops OPC UA via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alstom</controllingFieldValue>
+            <valueName>Alstom ODBC via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alstom</controllingFieldValue>
+            <valueName>Alstom OPC DA via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AP Sensing</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>AP Sensing DTS ODBC via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dongfang</controllingFieldValue>
+            <valueName>Dongfang OPCXML via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dongfang</controllingFieldValue>
+            <valueName>Dongfang OPCXML via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eisman</controllingFieldValue>
+            <valueName>E.ON/Suboperator Eisman RSS via HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eisman</controllingFieldValue>
+            <valueName>EWE Netz Eisman RSS via HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eisman</controllingFieldValue>
+            <valueName>Osthessen Netz Eisman RSS via HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eisman</controllingFieldValue>
+            <valueName>Weser Netz Eisman Excel via Email</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <controllingFieldValue>Lagerwey</controllingFieldValue>
+            <valueName>Enercon OPC XML via Enercon AnyConnect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <controllingFieldValue>Lagerwey</controllingFieldValue>
+            <valueName>Enercon OPC XML via Enercon SCADA Secondary NIC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <controllingFieldValue>Lagerwey</controllingFieldValue>
+            <valueName>Enercon OPC XML via Enercon VPN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <controllingFieldValue>Lagerwey</controllingFieldValue>
+            <valueName>Enercon OPC XML via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enerdis</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Enedis Grid Meter TXT file connection via Email</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enerdis</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Enedis Grid Meter TXT file connection via FTP Push</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Engie  Solar</controllingFieldValue>
+            <valueName>Engie Solar API via HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EWT</controllingFieldValue>
+            <valueName>EWT OPC DA via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ferroamp</controllingFieldValue>
+            <valueName>Ferroamp CloudAPI via HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fleximaus</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Fleximaus web services API over HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fronius</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Fronius Solar API (JSON)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fuhrländer</controllingFieldValue>
+            <valueName>Gamesa Cogent via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fuhrländer</controllingFieldValue>
+            <valueName>Gamesa ODBC via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fuhrländer</controllingFieldValue>
+            <valueName>Gamesa OPC DA via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fuhrländer</controllingFieldValue>
+            <valueName>Gamesa OPC UA via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE ODBC via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE OPC DA via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE OPC UA via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GPTech</controllingFieldValue>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <valueName>Circutor OPCDA Server PS/PSS for PowerStudio SCADA via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Huawei NetEco Open API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Huawei SmartLogger CSV file connection via FTP Push</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <controllingFieldValue>iPLON</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Renforce API over HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Spin Action.NET SCADA DNP3 via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>WAGO PFC200 IEC104 via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>WAGO PFC200 MQTT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>iPLON</controllingFieldValue>
+            <valueName>iPLON iGATE IEC104 via OpenVPN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>iPLON</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Isotrol Bluence IEC104 via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>iPLON</controllingFieldValue>
+            <controllingFieldValue>Power Electronics</controllingFieldValue>
+            <valueName>Renovagy ODBC via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jacobs</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Orion Historian ODBC via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kenersys</controllingFieldValue>
+            <valueName>ES Power Kenersys CSV via FTP push</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lagerwey</controllingFieldValue>
+            <valueName>Lagerwey OPC UA via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mitsubishi</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Mitsubishi OPC DA via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex CIF-IEC104 via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex CSV files via Email</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex ODBC via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex OPC UA via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex OPC XML via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex OPC XML via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>ABB Aurora Vision Cloud API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>ACEnergy/AcaciaSoft Amber Google Pub/Sub dispatch data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Beckhoff TwinCAT OPC UA via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>CapeBox SQL server push via OpenVPN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>CapFile Grid Meter connection via FTP Push</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Centrica/NEAS Grid Meter data API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Centrica/NEAS Production Forecast API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Centrica Grid Meter data csv via FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Creos Grid Meter Excel files via EMail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Discovergy Grid Meter data API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>DLMS meter data via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>DLMS meter data via Modem</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>DNP3 via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Draker API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>E.ON Energidata Grid Meter data API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>eBO e-Wind shareholder ODBC API via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>EDF PI CSV for JPEE Nordex</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>EDPR ODBC via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Elipse Power DNP3 via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Elspec G4400 DNP3 via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Elspec G4400 Modbus TCP via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Email (Breeze development)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Empower EMSData web services API over HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Encavis eGECKO ERP Meter data API over HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Engie PI datalink Grid Meter Excel via FTP push</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>ERCOT EIP Web Services API over HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>ESS WebRTU Grid Meter data via FTP push</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Eveler Grid Meter API v3.0 over HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Ewon Flexy Gateway OPC UA via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Fluvius Grid Meter data CSV via Email</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Fortum Norway EDIFACT/MSCONS Grid Meter data via EMail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>FTP/SFTP (Breeze development)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Gamma Solutions XML file over FTP Push</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>GarradHassan/DNVGL WindHelm ODBC API via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>GE Cimplicity CSV via FTP Push</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>GE Cimplicity OPC DA via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>GE Cimplicity OPC UA via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Generic EDIEL/UTILTS Grid Meter data via EMail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Generic EDIEL/UTILTS Power Forecast via EMail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Generic EDIFACT/MSCONS Grid Meter data via EMail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Generic IEC61850/MMS via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Generic NEM12 Meter Data via Email</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Generic OPC UA via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Ginglong Open API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>GNERA Power Forecast CSV via FTP Pull</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Goldwind OPC XML</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Greenbyte Meteologica Power Forecast API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>HiQ API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>IEC102 meter data via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>IEC102 meter data via Modem</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>IEC104 via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>IMServ EDV MPAN grid meter data CSV over FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>InAccess CSV over sFTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>InAccess CSV via FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Infinis/Ventient MPAN ODBC via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Innax Grid Meter DataService API over HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Isotrol Bluence REST API via HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Livewire Web Service API over HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Meier-NT ADL CSV via FTP Push</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>meteo*swift Forecast CSV via FTP Push</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Meteologica Power Forecast API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Mikronika SYNDIS IEC104 via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Mikronika SYNDIS OPC DA via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Mirage SCADA ODBC via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Modem</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>N3uron ODBC via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Nordtank Leineweber EFI via OPCDA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Orsted Siemens ODBC CSV files via FTP pull</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>OSISoft PI Web API via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Padcon CSV files via FTP push</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Papendorf SOL.Connect Center 3 CSV via FTP push</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Pexapark CSV over FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Phoenix Contact ILC191 ME/AN CSV via FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>RIOS SCADA CSV over FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>RWS hy3m Meteo data via sFTP Pull</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Saitim ODBC via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Satel SenNet Datalogger CSV via FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Schneider Electric Conext Gateway CSV push via FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>SEL RTAC 3530 IEC61850 via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Servelec Technologies TBOX CSV via FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Siemens EnergyIP Grid Meter data xls via FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Siemens WinCC IEC104 via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Sinapsi data logger CSV over FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Cluster Controller CSV/XML push via FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA CSV/XML push via FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>SoDa HELIOCLIM-3 Current Day API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>SolarEdge</controllingFieldValue>
+            <valueName>SolarEdge Monitoring Server API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>SolarGIS DataDelivery WebServices API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Solar-Log JS file connection via FTP Push</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>SRD Grid Meter data connection via Email</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>StarkID Grid Meter data csv via FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Statkraft Aura API via HTTPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Statkraft EDIFACT/MSCONS Grid Meter data via EMail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Statkraft grid meter Excel file over FTP Push</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>SunEdison SEEDS Gateway via XMPP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Tarsys ODBC Grid Meter data via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Tilt Renewables Fiscal Meter ODBC via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Total Group JSON data via Azure Event Bus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>UtilityAPI Meter API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Vestas Service Schedule API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Weather Underground API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>WebdynSun CSV via FTP pull</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Wien Energie CSV over FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>Wonderware InTouch Historian ODBC via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Powerwind</controllingFieldValue>
+            <valueName>Powerwind OPC DA via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RWE</controllingFieldValue>
+            <valueName>RWE Cogent OPC UA via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Santerno</controllingFieldValue>
+            <valueName>TozziGreen ODBC via IPSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WeatherSentry</controllingFieldValue>
+            <valueName>WeatherSentry by DTN Lightning Alerts via Email</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WinWindD</controllingFieldValue>
+            <valueName>WiCo WinWind CSV files over FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WinWindD</controllingFieldValue>
+            <valueName>WinWinD IEC104 via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Kepware OPC DA via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Mita-Teknik OPC DA Gateway via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion CSV files via Email</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion IEC61400-25 via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion IEC61400-25 via Senvion AnyConnect VPN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion ODBC via IPSEC or NAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion OPC DA via OPCBuffer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Data Manager CSV/XML push via FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMTeknik</controllingFieldValue>
+            <valueName>SMTeknik ParkPC</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Indemnification__c</fullName>
+    <externalId>false</externalId>
+    <label>Indemnification</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Expansive - covers gross negligence</fullName>
+                <default>false</default>
+                <label>Expansive - covers gross negligence</label>
+            </value>
+            <value>
+                <fullName>Expansive - IP Indemnification outside US, Canada or Europe</fullName>
+                <default>false</default>
+                <label>Expansive - IP Indemnification outside US, Canada or Europe</label>
+            </value>
+            <value>
+                <fullName>Expansive - Covers gross negligence and IP outside US, Canada or Europe</fullName>
+                <default>false</default>
+                <label>Expansive - Covers gross negligence and IP outside US, Canada or Europe</label>
+            </value>
+            <value>
+                <fullName>Standard Language - Limited</fullName>
+                <default>false</default>
+                <label>Standard Language - Limited</label>
+            </value>
+            <value>
+                <fullName>Silent</fullName>
+                <default>false</default>
+                <label>Silent</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

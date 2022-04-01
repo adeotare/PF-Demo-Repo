@@ -1,0 +1,4547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Model__c</fullName>
+    <externalId>false</externalId>
+    <label>Model</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>GB_OEM__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ABB Aurora Trio-27.6-TL</fullName>
+                <default>false</default>
+                <label>ABB Aurora Trio-27.6-TL</label>
+            </value>
+            <value>
+                <fullName>ABB PVI 10.0-OUTD</fullName>
+                <default>false</default>
+                <label>ABB PVI 10.0-OUTD</label>
+            </value>
+            <value>
+                <fullName>ABB PVI 12.0-OUTD</fullName>
+                <default>false</default>
+                <label>ABB PVI 12.0-OUTD</label>
+            </value>
+            <value>
+                <fullName>ABB PVS 100-TL</fullName>
+                <default>false</default>
+                <label>ABB PVS 100-TL</label>
+            </value>
+            <value>
+                <fullName>ABB PVS 175-TL</fullName>
+                <default>false</default>
+                <label>ABB PVS 175-TL</label>
+            </value>
+            <value>
+                <fullName>ABB PVS980</fullName>
+                <default>false</default>
+                <label>ABB PVS980</label>
+            </value>
+            <value>
+                <fullName>Acciona AW132-3300</fullName>
+                <default>false</default>
+                <label>Acciona AW132-3300</label>
+            </value>
+            <value>
+                <fullName>Acciona AW140-3000</fullName>
+                <default>false</default>
+                <label>Acciona AW140-3000</label>
+            </value>
+            <value>
+                <fullName>Acciona AW1500</fullName>
+                <default>false</default>
+                <label>Acciona AW1500</label>
+            </value>
+            <value>
+                <fullName>Acciona AW77-1500</fullName>
+                <default>false</default>
+                <label>Acciona AW77-1500</label>
+            </value>
+            <value>
+                <fullName>Acciona AW82</fullName>
+                <default>false</default>
+                <label>Acciona AW82</label>
+            </value>
+            <value>
+                <fullName>Advanced Energy AE 260TX</fullName>
+                <default>false</default>
+                <label>Advanced Energy AE 260TX</label>
+            </value>
+            <value>
+                <fullName>Advanced Energy AE 500TX</fullName>
+                <default>false</default>
+                <label>Advanced Energy AE 500TX</label>
+            </value>
+            <value>
+                <fullName>Advanced Energy Solaron 333</fullName>
+                <default>false</default>
+                <label>Advanced Energy Solaron 333</label>
+            </value>
+            <value>
+                <fullName>Advanced Energy Solaron 500</fullName>
+                <default>false</default>
+                <label>Advanced Energy Solaron 500</label>
+            </value>
+            <value>
+                <fullName>AEG Protect PV 690</fullName>
+                <default>false</default>
+                <label>AEG Protect PV 690</label>
+            </value>
+            <value>
+                <fullName>Alstom ECO100</fullName>
+                <default>false</default>
+                <label>Alstom ECO100</label>
+            </value>
+            <value>
+                <fullName>Alstom ECO110</fullName>
+                <default>false</default>
+                <label>Alstom ECO110</label>
+            </value>
+            <value>
+                <fullName>Alstom ECO122</fullName>
+                <default>false</default>
+                <label>Alstom ECO122</label>
+            </value>
+            <value>
+                <fullName>Alstom ECO74</fullName>
+                <default>false</default>
+                <label>Alstom ECO74</label>
+            </value>
+            <value>
+                <fullName>Alstom ECO80</fullName>
+                <default>false</default>
+                <label>Alstom ECO80</label>
+            </value>
+            <value>
+                <fullName>Ammonit METEO-40</fullName>
+                <default>false</default>
+                <label>Ammonit METEO-40</label>
+            </value>
+            <value>
+                <fullName>AROS Sirio 250K HV-MT</fullName>
+                <default>false</default>
+                <label>AROS Sirio 250K HV-MT</label>
+            </value>
+            <value>
+                <fullName>Battery Inverter</fullName>
+                <default>false</default>
+                <label>Battery Inverter</label>
+            </value>
+            <value>
+                <fullName>BDB Index</fullName>
+                <default>false</default>
+                <label>BDB Index</label>
+            </value>
+            <value>
+                <fullName>BESS</fullName>
+                <default>false</default>
+                <label>BESS</label>
+            </value>
+            <value>
+                <fullName>BESS Container</fullName>
+                <default>false</default>
+                <label>BESS Container</label>
+            </value>
+            <value>
+                <fullName>Bonifiglioli RPS450 Compact 120</fullName>
+                <default>false</default>
+                <label>Bonifiglioli RPS450 Compact 120</label>
+            </value>
+            <value>
+                <fullName>Bonifiglioli RPS450 Compact 170</fullName>
+                <default>false</default>
+                <label>Bonifiglioli RPS450 Compact 170</label>
+            </value>
+            <value>
+                <fullName>Bonus/Siemens B37/450</fullName>
+                <default>false</default>
+                <label>Bonus/Siemens B37/450</label>
+            </value>
+            <value>
+                <fullName>Bonus/Siemens B44/600</fullName>
+                <default>false</default>
+                <label>Bonus/Siemens B44/600</label>
+            </value>
+            <value>
+                <fullName>Bonus/Siemens B500</fullName>
+                <default>false</default>
+                <label>Bonus/Siemens B500</label>
+            </value>
+            <value>
+                <fullName>Bonus/Siemens B62/1300</fullName>
+                <default>false</default>
+                <label>Bonus/Siemens B62/1300</label>
+            </value>
+            <value>
+                <fullName>Bonus/Simens B82/2300</fullName>
+                <default>false</default>
+                <label>Bonus/Simens B82/2300</label>
+            </value>
+            <value>
+                <fullName>Campbell CR1000</fullName>
+                <default>false</default>
+                <label>Campbell CR1000</label>
+            </value>
+            <value>
+                <fullName>Chint Solar CPS SC20KTL-DO/US-480</fullName>
+                <default>false</default>
+                <label>Chint Solar CPS SC20KTL-DO/US-480</label>
+            </value>
+            <value>
+                <fullName>Clipper Liberty C99</fullName>
+                <default>false</default>
+                <label>Clipper Liberty C99</label>
+            </value>
+            <value>
+                <fullName>Conergy IPG 110K</fullName>
+                <default>false</default>
+                <label>Conergy IPG 110K</label>
+            </value>
+            <value>
+                <fullName>Conergy IPG 250C</fullName>
+                <default>false</default>
+                <label>Conergy IPG 250C</label>
+            </value>
+            <value>
+                <fullName>Conergy IPG 280K</fullName>
+                <default>false</default>
+                <label>Conergy IPG 280K</label>
+            </value>
+            <value>
+                <fullName>Conergy IPG 300K</fullName>
+                <default>false</default>
+                <label>Conergy IPG 300K</label>
+            </value>
+            <value>
+                <fullName>Danfoss TLX 12.5k</fullName>
+                <default>false</default>
+                <label>Danfoss TLX 12.5k</label>
+            </value>
+            <value>
+                <fullName>Danfoss ULX 3000</fullName>
+                <default>false</default>
+                <label>Danfoss ULX 3000</label>
+            </value>
+            <value>
+                <fullName>Delta M50A</fullName>
+                <default>false</default>
+                <label>Delta M50A</label>
+            </value>
+            <value>
+                <fullName>Delta M60U</fullName>
+                <default>false</default>
+                <label>Delta M60U</label>
+            </value>
+            <value>
+                <fullName>Delta M80U</fullName>
+                <default>false</default>
+                <label>Delta M80U</label>
+            </value>
+            <value>
+                <fullName>Dongfang DF110-2500</fullName>
+                <default>false</default>
+                <label>Dongfang DF110-2500</label>
+            </value>
+            <value>
+                <fullName>Eaton Power Xpert Solar 1500</fullName>
+                <default>false</default>
+                <label>Eaton Power Xpert Solar 1500</label>
+            </value>
+            <value>
+                <fullName>Eaton Power Xpert Solar 1650</fullName>
+                <default>false</default>
+                <label>Eaton Power Xpert Solar 1650</label>
+            </value>
+            <value>
+                <fullName>Eaton Power Xpert Solar 1670</fullName>
+                <default>false</default>
+                <label>Eaton Power Xpert Solar 1670</label>
+            </value>
+            <value>
+                <fullName>Eaton Power Xpert Solar 2000</fullName>
+                <default>false</default>
+                <label>Eaton Power Xpert Solar 2000</label>
+            </value>
+            <value>
+                <fullName>Eaton Power Xpert Solar 2200</fullName>
+                <default>false</default>
+                <label>Eaton Power Xpert Solar 2200</label>
+            </value>
+            <value>
+                <fullName>Elster A1700</fullName>
+                <default>false</default>
+                <label>Elster A1700</label>
+            </value>
+            <value>
+                <fullName>Emerson SPV1800</fullName>
+                <default>false</default>
+                <label>Emerson SPV1800</label>
+            </value>
+            <value>
+                <fullName>eMS sub.net PQM</fullName>
+                <default>false</default>
+                <label>eMS sub.net PQM</label>
+            </value>
+            <value>
+                <fullName>Enercon CLC</fullName>
+                <default>false</default>
+                <label>Enercon CLC</label>
+            </value>
+            <value>
+                <fullName>Enercon E-101</fullName>
+                <default>false</default>
+                <label>Enercon E-101</label>
+            </value>
+            <value>
+                <fullName>Enercon E-103</fullName>
+                <default>false</default>
+                <label>Enercon E-103</label>
+            </value>
+            <value>
+                <fullName>Enercon E-115</fullName>
+                <default>false</default>
+                <label>Enercon E-115</label>
+            </value>
+            <value>
+                <fullName>Enercon E-126</fullName>
+                <default>false</default>
+                <label>Enercon E-126</label>
+            </value>
+            <value>
+                <fullName>Enercon E-136</fullName>
+                <default>false</default>
+                <label>Enercon E-136</label>
+            </value>
+            <value>
+                <fullName>Enercon E-138</fullName>
+                <default>false</default>
+                <label>Enercon E-138</label>
+            </value>
+            <value>
+                <fullName>Enercon E-141</fullName>
+                <default>false</default>
+                <label>Enercon E-141</label>
+            </value>
+            <value>
+                <fullName>Enercon E-40</fullName>
+                <default>false</default>
+                <label>Enercon E-40</label>
+            </value>
+            <value>
+                <fullName>Enercon E-44</fullName>
+                <default>false</default>
+                <label>Enercon E-44</label>
+            </value>
+            <value>
+                <fullName>Enercon E-48</fullName>
+                <default>false</default>
+                <label>Enercon E-48</label>
+            </value>
+            <value>
+                <fullName>Enercon E-53</fullName>
+                <default>false</default>
+                <label>Enercon E-53</label>
+            </value>
+            <value>
+                <fullName>Enercon E-66</fullName>
+                <default>false</default>
+                <label>Enercon E-66</label>
+            </value>
+            <value>
+                <fullName>Enercon E-70</fullName>
+                <default>false</default>
+                <label>Enercon E-70</label>
+            </value>
+            <value>
+                <fullName>Enercon E-82</fullName>
+                <default>false</default>
+                <label>Enercon E-82</label>
+            </value>
+            <value>
+                <fullName>Enercon E-92</fullName>
+                <default>false</default>
+                <label>Enercon E-92</label>
+            </value>
+            <value>
+                <fullName>Enercon FCU</fullName>
+                <default>false</default>
+                <label>Enercon FCU</label>
+            </value>
+            <value>
+                <fullName>Enercon MET</fullName>
+                <default>false</default>
+                <label>Enercon MET</label>
+            </value>
+            <value>
+                <fullName>Enercon PDI</fullName>
+                <default>false</default>
+                <label>Enercon PDI</label>
+            </value>
+            <value>
+                <fullName>Enercon RTU</fullName>
+                <default>false</default>
+                <label>Enercon RTU</label>
+            </value>
+            <value>
+                <fullName>Enerdis Trimaran 2M Q4</fullName>
+                <default>false</default>
+                <label>Enerdis Trimaran 2M Q4</label>
+            </value>
+            <value>
+                <fullName>EWT DW 52</fullName>
+                <default>false</default>
+                <label>EWT DW 52</label>
+            </value>
+            <value>
+                <fullName>EWT DW52/54</fullName>
+                <default>false</default>
+                <label>EWT DW52/54</label>
+            </value>
+            <value>
+                <fullName>EWT DW 54</fullName>
+                <default>false</default>
+                <label>EWT DW 54</label>
+            </value>
+            <value>
+                <fullName>EWT DW 61</fullName>
+                <default>false</default>
+                <label>EWT DW 61</label>
+            </value>
+            <value>
+                <fullName>ferroamp XL28</fullName>
+                <default>false</default>
+                <label>ferroamp XL28</label>
+            </value>
+            <value>
+                <fullName>Fleximaus 2.0</fullName>
+                <default>false</default>
+                <label>Fleximaus 2.0</label>
+            </value>
+            <value>
+                <fullName>Fluence BESS</fullName>
+                <default>false</default>
+                <label>Fluence BESS</label>
+            </value>
+            <value>
+                <fullName>Fronius Eco 27.0-3-S</fullName>
+                <default>false</default>
+                <label>Fronius Eco 27.0-3-S</label>
+            </value>
+            <value>
+                <fullName>Fronius Symo 12.5-3-M</fullName>
+                <default>false</default>
+                <label>Fronius Symo 12.5-3-M</label>
+            </value>
+            <value>
+                <fullName>Fronius Symo 15.0-3-M</fullName>
+                <default>false</default>
+                <label>Fronius Symo 15.0-3-M</label>
+            </value>
+            <value>
+                <fullName>Fronius Symo 17.5-3-M</fullName>
+                <default>false</default>
+                <label>Fronius Symo 17.5-3-M</label>
+            </value>
+            <value>
+                <fullName>Fronius Symo 20.0-3-M</fullName>
+                <default>false</default>
+                <label>Fronius Symo 20.0-3-M</label>
+            </value>
+            <value>
+                <fullName>Fronius Symo 22.0-3-M</fullName>
+                <default>false</default>
+                <label>Fronius Symo 22.0-3-M</label>
+            </value>
+            <value>
+                <fullName>Fuhrländer FL 2500/90</fullName>
+                <default>false</default>
+                <label>Fuhrländer FL 2500/90</label>
+            </value>
+            <value>
+                <fullName>Gamesa/Enertron 100kW PLUS</fullName>
+                <default>false</default>
+                <label>Gamesa/Enertron 100kW PLUS</label>
+            </value>
+            <value>
+                <fullName>Gamesa/Enertron 100kW PLUS TL</fullName>
+                <default>false</default>
+                <label>Gamesa/Enertron 100kW PLUS TL</label>
+            </value>
+            <value>
+                <fullName>Gamesa/Enertron 630kW PLUS TL</fullName>
+                <default>false</default>
+                <label>Gamesa/Enertron 630kW PLUS TL</label>
+            </value>
+            <value>
+                <fullName>Gamesa/Made AE-52</fullName>
+                <default>false</default>
+                <label>Gamesa/Made AE-52</label>
+            </value>
+            <value>
+                <fullName>Gamesa/Made AE-59</fullName>
+                <default>false</default>
+                <label>Gamesa/Made AE-59</label>
+            </value>
+            <value>
+                <fullName>Gamesa/Siemens Gamesa 4.5-145</fullName>
+                <default>false</default>
+                <label>Gamesa/Siemens Gamesa 4.5-145</label>
+            </value>
+            <value>
+                <fullName>Gamesa/Siemens Gamesa 5.0-145</fullName>
+                <default>false</default>
+                <label>Gamesa/Siemens Gamesa 5.0-145</label>
+            </value>
+            <value>
+                <fullName>Gamesa AC Regulator</fullName>
+                <default>false</default>
+                <label>Gamesa AC Regulator</label>
+            </value>
+            <value>
+                <fullName>Gamesa E-1.25</fullName>
+                <default>false</default>
+                <label>Gamesa E-1.25</label>
+            </value>
+            <value>
+                <fullName>Gamesa G114</fullName>
+                <default>false</default>
+                <label>Gamesa G114</label>
+            </value>
+            <value>
+                <fullName>Gamesa G128-4.5</fullName>
+                <default>false</default>
+                <label>Gamesa G128-4.5</label>
+            </value>
+            <value>
+                <fullName>Gamesa G132</fullName>
+                <default>false</default>
+                <label>Gamesa G132</label>
+            </value>
+            <value>
+                <fullName>Gamesa G52</fullName>
+                <default>false</default>
+                <label>Gamesa G52</label>
+            </value>
+            <value>
+                <fullName>Gamesa G58</fullName>
+                <default>false</default>
+                <label>Gamesa G58</label>
+            </value>
+            <value>
+                <fullName>Gamesa G80</fullName>
+                <default>false</default>
+                <label>Gamesa G80</label>
+            </value>
+            <value>
+                <fullName>Gamesa G87</fullName>
+                <default>false</default>
+                <label>Gamesa G87</label>
+            </value>
+            <value>
+                <fullName>Gamesa G90</fullName>
+                <default>false</default>
+                <label>Gamesa G90</label>
+            </value>
+            <value>
+                <fullName>Gamesa G97</fullName>
+                <default>false</default>
+                <label>Gamesa G97</label>
+            </value>
+            <value>
+                <fullName>Gamesa Power Meter</fullName>
+                <default>false</default>
+                <label>Gamesa Power Meter</label>
+            </value>
+            <value>
+                <fullName>Gamesa RE Regulator</fullName>
+                <default>false</default>
+                <label>Gamesa RE Regulator</label>
+            </value>
+            <value>
+                <fullName>GE/Alstom Haliade 150</fullName>
+                <default>false</default>
+                <label>GE/Alstom Haliade 150</label>
+            </value>
+            <value>
+                <fullName>GE/Alstom XANEM</fullName>
+                <default>false</default>
+                <label>GE/Alstom XANEM</label>
+            </value>
+            <value>
+                <fullName>GE 1.5ess</fullName>
+                <default>false</default>
+                <label>GE 1.5ess</label>
+            </value>
+            <value>
+                <fullName>GE 1.5s</fullName>
+                <default>false</default>
+                <label>GE 1.5s</label>
+            </value>
+            <value>
+                <fullName>GE 1.5sl</fullName>
+                <default>false</default>
+                <label>GE 1.5sl</label>
+            </value>
+            <value>
+                <fullName>GE 1.5sle</fullName>
+                <default>false</default>
+                <label>GE 1.5sle</label>
+            </value>
+            <value>
+                <fullName>GE 1.5xl</fullName>
+                <default>false</default>
+                <label>GE 1.5xl</label>
+            </value>
+            <value>
+                <fullName>GE 1.5xle</fullName>
+                <default>false</default>
+                <label>GE 1.5xle</label>
+            </value>
+            <value>
+                <fullName>GE 1.6-100</fullName>
+                <default>false</default>
+                <label>GE 1.6-100</label>
+            </value>
+            <value>
+                <fullName>GE 1.6xle</fullName>
+                <default>false</default>
+                <label>GE 1.6xle</label>
+            </value>
+            <value>
+                <fullName>GE 1.79-100</fullName>
+                <default>false</default>
+                <label>GE 1.79-100</label>
+            </value>
+            <value>
+                <fullName>GE-100</fullName>
+                <default>false</default>
+                <label>GE-100</label>
+            </value>
+            <value>
+                <fullName>GE-103</fullName>
+                <default>false</default>
+                <label>GE-103</label>
+            </value>
+            <value>
+                <fullName>GE-120</fullName>
+                <default>false</default>
+                <label>GE-120</label>
+            </value>
+            <value>
+                <fullName>GE 2.2-107</fullName>
+                <default>false</default>
+                <label>GE 2.2-107</label>
+            </value>
+            <value>
+                <fullName>GE 2.3-107</fullName>
+                <default>false</default>
+                <label>GE 2.3-107</label>
+            </value>
+            <value>
+                <fullName>GE 2.3-116</fullName>
+                <default>false</default>
+                <label>GE 2.3-116</label>
+            </value>
+            <value>
+                <fullName>GE 2.5-100</fullName>
+                <default>false</default>
+                <label>GE 2.5-100</label>
+            </value>
+            <value>
+                <fullName>GE 2.5-116</fullName>
+                <default>false</default>
+                <label>GE 2.5-116</label>
+            </value>
+            <value>
+                <fullName>GE 2.5-120</fullName>
+                <default>false</default>
+                <label>GE 2.5-120</label>
+            </value>
+            <value>
+                <fullName>GE 2.5xl</fullName>
+                <default>false</default>
+                <label>GE 2.5xl</label>
+            </value>
+            <value>
+                <fullName>GE 2.7-116</fullName>
+                <default>false</default>
+                <label>GE 2.7-116</label>
+            </value>
+            <value>
+                <fullName>GE 2.75-103</fullName>
+                <default>false</default>
+                <label>GE 2.75-103</label>
+            </value>
+            <value>
+                <fullName>GE 2.75-120</fullName>
+                <default>false</default>
+                <label>GE 2.75-120</label>
+            </value>
+            <value>
+                <fullName>GE 2.85-103</fullName>
+                <default>false</default>
+                <label>GE 2.85-103</label>
+            </value>
+            <value>
+                <fullName>GE 3.0-137</fullName>
+                <default>false</default>
+                <label>GE 3.0-137</label>
+            </value>
+            <value>
+                <fullName>GE 3.2-103</fullName>
+                <default>false</default>
+                <label>GE 3.2-103</label>
+            </value>
+            <value>
+                <fullName>GE 3.2-130</fullName>
+                <default>false</default>
+                <label>GE 3.2-130</label>
+            </value>
+            <value>
+                <fullName>GE 3.4-130</fullName>
+                <default>false</default>
+                <label>GE 3.4-130</label>
+            </value>
+            <value>
+                <fullName>GE 3.6-137</fullName>
+                <default>false</default>
+                <label>GE 3.6-137</label>
+            </value>
+            <value>
+                <fullName>GE 3.8-130</fullName>
+                <default>false</default>
+                <label>GE 3.8-130</label>
+            </value>
+            <value>
+                <fullName>GE 5.3-158</fullName>
+                <default>false</default>
+                <label>GE 5.3-158</label>
+            </value>
+            <value>
+                <fullName>GE 5.5-158</fullName>
+                <default>false</default>
+                <label>GE 5.5-158</label>
+            </value>
+            <value>
+                <fullName>GE-82.5</fullName>
+                <default>false</default>
+                <label>GE-82.5</label>
+            </value>
+            <value>
+                <fullName>GE-87</fullName>
+                <default>false</default>
+                <label>GE-87</label>
+            </value>
+            <value>
+                <fullName>GE LV5-1510-SLR</fullName>
+                <default>false</default>
+                <label>GE LV5-1510-SLR</label>
+            </value>
+            <value>
+                <fullName>GE MET</fullName>
+                <default>false</default>
+                <label>GE MET</label>
+            </value>
+            <value>
+                <fullName>Generic Breaker</fullName>
+                <default>false</default>
+                <label>Generic Breaker</label>
+            </value>
+            <value>
+                <fullName>Generic Market Pricing data device</fullName>
+                <default>false</default>
+                <label>Generic Market Pricing data device</label>
+            </value>
+            <value>
+                <fullName>Generic Shadow Curtailment System</fullName>
+                <default>false</default>
+                <label>Generic Shadow Curtailment System</label>
+            </value>
+            <value>
+                <fullName>GE WCS</fullName>
+                <default>false</default>
+                <label>GE WCS</label>
+            </value>
+            <value>
+                <fullName>Goldwind GW100</fullName>
+                <default>false</default>
+                <label>Goldwind GW100</label>
+            </value>
+            <value>
+                <fullName>Goldwind GW109</fullName>
+                <default>false</default>
+                <label>Goldwind GW109</label>
+            </value>
+            <value>
+                <fullName>Goldwind GW82</fullName>
+                <default>false</default>
+                <label>Goldwind GW82</label>
+            </value>
+            <value>
+                <fullName>GPTech PV100</fullName>
+                <default>false</default>
+                <label>GPTech PV100</label>
+            </value>
+            <value>
+                <fullName>GPTech PV20</fullName>
+                <default>false</default>
+                <label>GPTech PV20</label>
+            </value>
+            <value>
+                <fullName>GPTech PV30</fullName>
+                <default>false</default>
+                <label>GPTech PV30</label>
+            </value>
+            <value>
+                <fullName>GPTech PV400 WD</fullName>
+                <default>false</default>
+                <label>GPTech PV400 WD</label>
+            </value>
+            <value>
+                <fullName>GPTech PV50</fullName>
+                <default>false</default>
+                <label>GPTech PV50</label>
+            </value>
+            <value>
+                <fullName>GPTech PV500 WD</fullName>
+                <default>false</default>
+                <label>GPTech PV500 WD</label>
+            </value>
+            <value>
+                <fullName>GPTech PV625 WD</fullName>
+                <default>false</default>
+                <label>GPTech PV625 WD</label>
+            </value>
+            <value>
+                <fullName>GPTech PV630 WD</fullName>
+                <default>false</default>
+                <label>GPTech PV630 WD</label>
+            </value>
+            <value>
+                <fullName>GPTech PV750 WD</fullName>
+                <default>false</default>
+                <label>GPTech PV750 WD</label>
+            </value>
+            <value>
+                <fullName>Grid Meter</fullName>
+                <default>false</default>
+                <label>Grid Meter</label>
+            </value>
+            <value>
+                <fullName>Helios Systems HS100</fullName>
+                <default>false</default>
+                <label>Helios Systems HS100</label>
+            </value>
+            <value>
+                <fullName>Helios Systems HS120</fullName>
+                <default>false</default>
+                <label>Helios Systems HS120</label>
+            </value>
+            <value>
+                <fullName>Helios Systems HS80</fullName>
+                <default>false</default>
+                <label>Helios Systems HS80</label>
+            </value>
+            <value>
+                <fullName>Helios Systems HSI500</fullName>
+                <default>false</default>
+                <label>Helios Systems HSI500</label>
+            </value>
+            <value>
+                <fullName>HiQ 1S480-10k</fullName>
+                <default>false</default>
+                <label>HiQ 1S480-10k</label>
+            </value>
+            <value>
+                <fullName>HiQ TS480-8k</fullName>
+                <default>false</default>
+                <label>HiQ TS480-8k</label>
+            </value>
+            <value>
+                <fullName>Hitachi HIVERTER-NP201i</fullName>
+                <default>false</default>
+                <label>Hitachi HIVERTER-NP201i</label>
+            </value>
+            <value>
+                <fullName>Hitachi HIVERTER-NP203i</fullName>
+                <default>false</default>
+                <label>Hitachi HIVERTER-NP203i</label>
+            </value>
+            <value>
+                <fullName>Huawei Sun 2000-100KTL</fullName>
+                <default>false</default>
+                <label>Huawei Sun 2000-100KTL</label>
+            </value>
+            <value>
+                <fullName>Huawei Sun 2000-105KTL</fullName>
+                <default>false</default>
+                <label>Huawei Sun 2000-105KTL</label>
+            </value>
+            <value>
+                <fullName>Huawei Sun 2000-12KTL</fullName>
+                <default>false</default>
+                <label>Huawei Sun 2000-12KTL</label>
+            </value>
+            <value>
+                <fullName>Huawei Sun 2000-17KTL</fullName>
+                <default>false</default>
+                <label>Huawei Sun 2000-17KTL</label>
+            </value>
+            <value>
+                <fullName>Huawei Sun 2000-185KTL</fullName>
+                <default>false</default>
+                <label>Huawei Sun 2000-185KTL</label>
+            </value>
+            <value>
+                <fullName>Huawei Sun 2000-20KTL</fullName>
+                <default>false</default>
+                <label>Huawei Sun 2000-20KTL</label>
+            </value>
+            <value>
+                <fullName>Huawei Sun 2000-215KTL</fullName>
+                <default>false</default>
+                <label>Huawei Sun 2000-215KTL</label>
+            </value>
+            <value>
+                <fullName>Huawei Sun 2000-23KTL</fullName>
+                <default>false</default>
+                <label>Huawei Sun 2000-23KTL</label>
+            </value>
+            <value>
+                <fullName>Huawei Sun 2000-25KTL</fullName>
+                <default>false</default>
+                <label>Huawei Sun 2000-25KTL</label>
+            </value>
+            <value>
+                <fullName>Huawei Sun 2000-30KTL</fullName>
+                <default>false</default>
+                <label>Huawei Sun 2000-30KTL</label>
+            </value>
+            <value>
+                <fullName>Huawei Sun 2000-33KTL</fullName>
+                <default>false</default>
+                <label>Huawei Sun 2000-33KTL</label>
+            </value>
+            <value>
+                <fullName>Huawei Sun 2000-36KTL</fullName>
+                <default>false</default>
+                <label>Huawei Sun 2000-36KTL</label>
+            </value>
+            <value>
+                <fullName>Huawei Sun 2000-40KTL</fullName>
+                <default>false</default>
+                <label>Huawei Sun 2000-40KTL</label>
+            </value>
+            <value>
+                <fullName>Huawei Sun 2000-45KTL</fullName>
+                <default>false</default>
+                <label>Huawei Sun 2000-45KTL</label>
+            </value>
+            <value>
+                <fullName>Huawei Sun 2000-60KTL</fullName>
+                <default>false</default>
+                <label>Huawei Sun 2000-60KTL</label>
+            </value>
+            <value>
+                <fullName>Ice detection</fullName>
+                <default>false</default>
+                <label>Ice detection</label>
+            </value>
+            <value>
+                <fullName>Ingeteam Ingecon Sun 100</fullName>
+                <default>false</default>
+                <label>Ingeteam Ingecon Sun 100</label>
+            </value>
+            <value>
+                <fullName>Ingeteam Ingecon Sun 11</fullName>
+                <default>false</default>
+                <label>Ingeteam Ingecon Sun 11</label>
+            </value>
+            <value>
+                <fullName>Ingeteam Ingecon Sun 1110 TL UB400</fullName>
+                <default>false</default>
+                <label>Ingeteam Ingecon Sun 1110 TL UB400</label>
+            </value>
+            <value>
+                <fullName>Ingeteam Ingecon Sun 12.5</fullName>
+                <default>false</default>
+                <label>Ingeteam Ingecon Sun 12.5</label>
+            </value>
+            <value>
+                <fullName>Ingeteam Ingecon Sun 1500TL</fullName>
+                <default>false</default>
+                <label>Ingeteam Ingecon Sun 1500TL</label>
+            </value>
+            <value>
+                <fullName>Ingeteam Ingecon Sun 1600TL B615</fullName>
+                <default>false</default>
+                <label>Ingeteam Ingecon Sun 1600TL B615</label>
+            </value>
+            <value>
+                <fullName>Ingeteam Ingecon Sun 1640TL B630</fullName>
+                <default>false</default>
+                <label>Ingeteam Ingecon Sun 1640TL B630</label>
+            </value>
+            <value>
+                <fullName>Ingeteam Ingecon Sun 20</fullName>
+                <default>false</default>
+                <label>Ingeteam Ingecon Sun 20</label>
+            </value>
+            <value>
+                <fullName>Ingeteam Ingecon Sun 60</fullName>
+                <default>false</default>
+                <label>Ingeteam Ingecon Sun 60</label>
+            </value>
+            <value>
+                <fullName>Ingeteam Ingecon Sun 630 TL</fullName>
+                <default>false</default>
+                <label>Ingeteam Ingecon Sun 630 TL</label>
+            </value>
+            <value>
+                <fullName>Ingeteam Ingecon Sun 70</fullName>
+                <default>false</default>
+                <label>Ingeteam Ingecon Sun 70</label>
+            </value>
+            <value>
+                <fullName>Ingeteam Ingecon Sun 880TL X345</fullName>
+                <default>false</default>
+                <label>Ingeteam Ingecon Sun 880TL X345</label>
+            </value>
+            <value>
+                <fullName>Ingeteam Ingecon Sun 880TL X360</fullName>
+                <default>false</default>
+                <label>Ingeteam Ingecon Sun 880TL X360</label>
+            </value>
+            <value>
+                <fullName>Ingeteam Ingecon Sun B1500</fullName>
+                <default>false</default>
+                <label>Ingeteam Ingecon Sun B1500</label>
+            </value>
+            <value>
+                <fullName>Ingeteam IS 3play TL M</fullName>
+                <default>false</default>
+                <label>Ingeteam IS 3play TL M</label>
+            </value>
+            <value>
+                <fullName>iPLON Ice Throw Warning Sign</fullName>
+                <default>false</default>
+                <label>iPLON Ice Throw Warning Sign</label>
+            </value>
+            <value>
+                <fullName>Jacobs J43/600</fullName>
+                <default>false</default>
+                <label>Jacobs J43/600</label>
+            </value>
+            <value>
+                <fullName>Jema IF 500</fullName>
+                <default>false</default>
+                <label>Jema IF 500</label>
+            </value>
+            <value>
+                <fullName>Kaco Blueplanet 50.0 TL3</fullName>
+                <default>false</default>
+                <label>Kaco Blueplanet 50.0 TL3</label>
+            </value>
+            <value>
+                <fullName>Kaco Powador 25000xi Park</fullName>
+                <default>false</default>
+                <label>Kaco Powador 25000xi Park</label>
+            </value>
+            <value>
+                <fullName>Kaco Powador 30000xi Park</fullName>
+                <default>false</default>
+                <label>Kaco Powador 30000xi Park</label>
+            </value>
+            <value>
+                <fullName>Kaco Powador 33000xi Park</fullName>
+                <default>false</default>
+                <label>Kaco Powador 33000xi Park</label>
+            </value>
+            <value>
+                <fullName>Kaco Powador 72.0 TL3 Park</fullName>
+                <default>false</default>
+                <label>Kaco Powador 72.0 TL3 Park</label>
+            </value>
+            <value>
+                <fullName>Kaco Powador XP550-HV TL</fullName>
+                <default>false</default>
+                <label>Kaco Powador XP550-HV TL</label>
+            </value>
+            <value>
+                <fullName>Kenersys K82</fullName>
+                <default>false</default>
+                <label>Kenersys K82</label>
+            </value>
+            <value>
+                <fullName>Kintech EOL Zenith</fullName>
+                <default>false</default>
+                <label>Kintech EOL Zenith</label>
+            </value>
+            <value>
+                <fullName>KSTAR GSL1250</fullName>
+                <default>false</default>
+                <label>KSTAR GSL1250</label>
+            </value>
+            <value>
+                <fullName>KSTAR GSM1250</fullName>
+                <default>false</default>
+                <label>KSTAR GSM1250</label>
+            </value>
+            <value>
+                <fullName>Lagerwey L100</fullName>
+                <default>false</default>
+                <label>Lagerwey L100</label>
+            </value>
+            <value>
+                <fullName>Lagerwey L136</fullName>
+                <default>false</default>
+                <label>Lagerwey L136</label>
+            </value>
+            <value>
+                <fullName>Lagerwey L147</fullName>
+                <default>false</default>
+                <label>Lagerwey L147</label>
+            </value>
+            <value>
+                <fullName>Lagerwey L82</fullName>
+                <default>false</default>
+                <label>Lagerwey L82</label>
+            </value>
+            <value>
+                <fullName>Lagerwey L93</fullName>
+                <default>false</default>
+                <label>Lagerwey L93</label>
+            </value>
+            <value>
+                <fullName>Landys+Gyr E650</fullName>
+                <default>false</default>
+                <label>Landys+Gyr E650</label>
+            </value>
+            <value>
+                <fullName>Landys+Gyr E650 ZMD402</fullName>
+                <default>false</default>
+                <label>Landys+Gyr E650 ZMD402</label>
+            </value>
+            <value>
+                <fullName>Landys+Gyr ZMD410CTSBT</fullName>
+                <default>false</default>
+                <label>Landys+Gyr ZMD410CTSBT</label>
+            </value>
+            <value>
+                <fullName>Landys+Gyr ZMQ 202</fullName>
+                <default>false</default>
+                <label>Landys+Gyr ZMQ 202</label>
+            </value>
+            <value>
+                <fullName>LIDAR</fullName>
+                <default>false</default>
+                <label>LIDAR</label>
+            </value>
+            <value>
+                <fullName>Mastervolt Soladin 1000 WEB</fullName>
+                <default>false</default>
+                <label>Mastervolt Soladin 1000 WEB</label>
+            </value>
+            <value>
+                <fullName>Mastervolt Soladin 1500 WEB</fullName>
+                <default>false</default>
+                <label>Mastervolt Soladin 1500 WEB</label>
+            </value>
+            <value>
+                <fullName>Mastervolt Soladin 2200 WEB</fullName>
+                <default>false</default>
+                <label>Mastervolt Soladin 2200 WEB</label>
+            </value>
+            <value>
+                <fullName>Mastervolt Soladin 3000 WEB</fullName>
+                <default>false</default>
+                <label>Mastervolt Soladin 3000 WEB</label>
+            </value>
+            <value>
+                <fullName>Met mast</fullName>
+                <default>false</default>
+                <label>Met mast</label>
+            </value>
+            <value>
+                <fullName>Mitsubishi MWT-102-2.4</fullName>
+                <default>false</default>
+                <label>Mitsubishi MWT-102-2.4</label>
+            </value>
+            <value>
+                <fullName>NEG Micon M1500/500</fullName>
+                <default>false</default>
+                <label>NEG Micon M1500/500</label>
+            </value>
+            <value>
+                <fullName>NEG Micon NM 48/750</fullName>
+                <default>false</default>
+                <label>NEG Micon NM 48/750</label>
+            </value>
+            <value>
+                <fullName>NEG Micon NM 52/900</fullName>
+                <default>false</default>
+                <label>NEG Micon NM 52/900</label>
+            </value>
+            <value>
+                <fullName>NEG Micon NM 60/1000</fullName>
+                <default>false</default>
+                <label>NEG Micon NM 60/1000</label>
+            </value>
+            <value>
+                <fullName>NEG Micon NM 64/1500</fullName>
+                <default>false</default>
+                <label>NEG Micon NM 64/1500</label>
+            </value>
+            <value>
+                <fullName>NEG Micon NM 72C/1500</fullName>
+                <default>false</default>
+                <label>NEG Micon NM 72C/1500</label>
+            </value>
+            <value>
+                <fullName>NEG Micon NM 80/2750</fullName>
+                <default>false</default>
+                <label>NEG Micon NM 80/2750</label>
+            </value>
+            <value>
+                <fullName>NEG Micon NM 80/2875</fullName>
+                <default>false</default>
+                <label>NEG Micon NM 80/2875</label>
+            </value>
+            <value>
+                <fullName>NEG Micon NM 82/1650</fullName>
+                <default>false</default>
+                <label>NEG Micon NM 82/1650</label>
+            </value>
+            <value>
+                <fullName>Nordex CWE</fullName>
+                <default>false</default>
+                <label>Nordex CWE</label>
+            </value>
+            <value>
+                <fullName>Nordex MET</fullName>
+                <default>false</default>
+                <label>Nordex MET</label>
+            </value>
+            <value>
+                <fullName>Nordex N100</fullName>
+                <default>false</default>
+                <label>Nordex N100</label>
+            </value>
+            <value>
+                <fullName>Nordex N117</fullName>
+                <default>false</default>
+                <label>Nordex N117</label>
+            </value>
+            <value>
+                <fullName>Nordex N131</fullName>
+                <default>false</default>
+                <label>Nordex N131</label>
+            </value>
+            <value>
+                <fullName>Nordex N149</fullName>
+                <default>false</default>
+                <label>Nordex N149</label>
+            </value>
+            <value>
+                <fullName>Nordex N50</fullName>
+                <default>false</default>
+                <label>Nordex N50</label>
+            </value>
+            <value>
+                <fullName>Nordex N60</fullName>
+                <default>false</default>
+                <label>Nordex N60</label>
+            </value>
+            <value>
+                <fullName>Nordex N80</fullName>
+                <default>false</default>
+                <label>Nordex N80</label>
+            </value>
+            <value>
+                <fullName>Nordex N90</fullName>
+                <default>false</default>
+                <label>Nordex N90</label>
+            </value>
+            <value>
+                <fullName>Nordex S70</fullName>
+                <default>false</default>
+                <label>Nordex S70</label>
+            </value>
+            <value>
+                <fullName>Nordex S77</fullName>
+                <default>false</default>
+                <label>Nordex S77</label>
+            </value>
+            <value>
+                <fullName>Nordtank NTK 500/37</fullName>
+                <default>false</default>
+                <label>Nordtank NTK 500/37</label>
+            </value>
+            <value>
+                <fullName>Northern Power Systems NPS 100</fullName>
+                <default>false</default>
+                <label>Northern Power Systems NPS 100</label>
+            </value>
+            <value>
+                <fullName>NorthTec ShadowMaster</fullName>
+                <default>false</default>
+                <label>NorthTec ShadowMaster</label>
+            </value>
+            <value>
+                <fullName>Power Electronics FS1800CH</fullName>
+                <default>false</default>
+                <label>Power Electronics FS1800CH</label>
+            </value>
+            <value>
+                <fullName>Power Electronics HEC PLUS</fullName>
+                <default>false</default>
+                <label>Power Electronics HEC PLUS</label>
+            </value>
+            <value>
+                <fullName>Power Electronics HEC V1500</fullName>
+                <default>false</default>
+                <label>Power Electronics HEC V1500</label>
+            </value>
+            <value>
+                <fullName>Power Electronics HEM FS3350M</fullName>
+                <default>false</default>
+                <label>Power Electronics HEM FS3350M</label>
+            </value>
+            <value>
+                <fullName>Power Electronics HEM FS3430M</fullName>
+                <default>false</default>
+                <label>Power Electronics HEM FS3430M</label>
+            </value>
+            <value>
+                <fullName>Power Electronics HEMK FS2000K</fullName>
+                <default>false</default>
+                <label>Power Electronics HEMK FS2000K</label>
+            </value>
+            <value>
+                <fullName>Power Electronics HEMK FS3000K</fullName>
+                <default>false</default>
+                <label>Power Electronics HEMK FS3000K</label>
+            </value>
+            <value>
+                <fullName>Power Electronics HE PLUS</fullName>
+                <default>false</default>
+                <label>Power Electronics HE PLUS</label>
+            </value>
+            <value>
+                <fullName>Power forecast</fullName>
+                <default>false</default>
+                <label>Power forecast</label>
+            </value>
+            <value>
+                <fullName>Power Meter</fullName>
+                <default>false</default>
+                <label>Power Meter</label>
+            </value>
+            <value>
+                <fullName>Power-One PVI-10.0-I-OUTD-US-480</fullName>
+                <default>false</default>
+                <label>Power-One PVI-10.0-I-OUTD-US-480</label>
+            </value>
+            <value>
+                <fullName>Power-One PVI-12.0-I-OUTD-S2-US-480-NG</fullName>
+                <default>false</default>
+                <label>Power-One PVI-12.0-I-OUTD-S2-US-480-NG</label>
+            </value>
+            <value>
+                <fullName>Power-One PVI-330.0-TL-EN</fullName>
+                <default>false</default>
+                <label>Power-One PVI-330.0-TL-EN</label>
+            </value>
+            <value>
+                <fullName>Power-One PVI-CENTRAL-110.0-TL-IT</fullName>
+                <default>false</default>
+                <label>Power-One PVI-CENTRAL-110.0-TL-IT</label>
+            </value>
+            <value>
+                <fullName>Power Plant Controller</fullName>
+                <default>false</default>
+                <label>Power Plant Controller</label>
+            </value>
+            <value>
+                <fullName>PowerWind PW 500</fullName>
+                <default>false</default>
+                <label>PowerWind PW 500</label>
+            </value>
+            <value>
+                <fullName>PowerWind PW 56</fullName>
+                <default>false</default>
+                <label>PowerWind PW 56</label>
+            </value>
+            <value>
+                <fullName>PV Powered PVP 100kW (208V)</fullName>
+                <default>false</default>
+                <label>PV Powered PVP 100kW (208V)</label>
+            </value>
+            <value>
+                <fullName>PV Powered PVP 100kW (480V)</fullName>
+                <default>false</default>
+                <label>PV Powered PVP 100kW (480V)</label>
+            </value>
+            <value>
+                <fullName>PV Powered PVP 260kW</fullName>
+                <default>false</default>
+                <label>PV Powered PVP 260kW</label>
+            </value>
+            <value>
+                <fullName>PV Powered PVP 30kW-LV (208V)</fullName>
+                <default>false</default>
+                <label>PV Powered PVP 30kW-LV (208V)</label>
+            </value>
+            <value>
+                <fullName>PV Powered PVP 30kW-LV (480V)</fullName>
+                <default>false</default>
+                <label>PV Powered PVP 30kW-LV (480V)</label>
+            </value>
+            <value>
+                <fullName>PV Powered PVP 50kW (480V)</fullName>
+                <default>false</default>
+                <label>PV Powered PVP 50kW (480V)</label>
+            </value>
+            <value>
+                <fullName>PV Powered PVP 75kW (208V)</fullName>
+                <default>false</default>
+                <label>PV Powered PVP 75kW (208V)</label>
+            </value>
+            <value>
+                <fullName>PV Powered PVP 75kW (480V)</fullName>
+                <default>false</default>
+                <label>PV Powered PVP 75kW (480V)</label>
+            </value>
+            <value>
+                <fullName>REFUsol 008K</fullName>
+                <default>false</default>
+                <label>REFUsol 008K</label>
+            </value>
+            <value>
+                <fullName>REFUsol 010K</fullName>
+                <default>false</default>
+                <label>REFUsol 010K</label>
+            </value>
+            <value>
+                <fullName>REFUsol 013K</fullName>
+                <default>false</default>
+                <label>REFUsol 013K</label>
+            </value>
+            <value>
+                <fullName>REFUsol 017K</fullName>
+                <default>false</default>
+                <label>REFUsol 017K</label>
+            </value>
+            <value>
+                <fullName>REFUsol 020K</fullName>
+                <default>false</default>
+                <label>REFUsol 020K</label>
+            </value>
+            <value>
+                <fullName>REFUsol 023K</fullName>
+                <default>false</default>
+                <label>REFUsol 023K</label>
+            </value>
+            <value>
+                <fullName>REFUsol 333K</fullName>
+                <default>false</default>
+                <label>REFUsol 333K</label>
+            </value>
+            <value>
+                <fullName>REFUsol 500K</fullName>
+                <default>false</default>
+                <label>REFUsol 500K</label>
+            </value>
+            <value>
+                <fullName>REFUsol 630K</fullName>
+                <default>false</default>
+                <label>REFUsol 630K</label>
+            </value>
+            <value>
+                <fullName>Riello Helios Power HP 100</fullName>
+                <default>false</default>
+                <label>Riello Helios Power HP 100</label>
+            </value>
+            <value>
+                <fullName>Santerno Sunway TG 1200 TE</fullName>
+                <default>false</default>
+                <label>Santerno Sunway TG 1200 TE</label>
+            </value>
+            <value>
+                <fullName>Santerno Sunway TG290 600V MT</fullName>
+                <default>false</default>
+                <label>Santerno Sunway TG290 600V MT</label>
+            </value>
+            <value>
+                <fullName>Santerno Sunway TG 750 1000V TE</fullName>
+                <default>false</default>
+                <label>Santerno Sunway TG 750 1000V TE</label>
+            </value>
+            <value>
+                <fullName>Santerno Sunway TG 760 TE</fullName>
+                <default>false</default>
+                <label>Santerno Sunway TG 760 TE</label>
+            </value>
+            <value>
+                <fullName>SatCon AE-100-60-PV-A</fullName>
+                <default>false</default>
+                <label>SatCon AE-100-60-PV-A</label>
+            </value>
+            <value>
+                <fullName>SatCon AE-135-60-PV-A</fullName>
+                <default>false</default>
+                <label>SatCon AE-135-60-PV-A</label>
+            </value>
+            <value>
+                <fullName>SatCon AE-135-60-PV-D</fullName>
+                <default>false</default>
+                <label>SatCon AE-135-60-PV-D</label>
+            </value>
+            <value>
+                <fullName>SatCon AE-225-60-PV-A</fullName>
+                <default>false</default>
+                <label>SatCon AE-225-60-PV-A</label>
+            </value>
+            <value>
+                <fullName>SatCon AE-500-60-PV-A</fullName>
+                <default>false</default>
+                <label>SatCon AE-500-60-PV-A</label>
+            </value>
+            <value>
+                <fullName>SatCon AE-50-60-PV-A</fullName>
+                <default>false</default>
+                <label>SatCon AE-50-60-PV-A</label>
+            </value>
+            <value>
+                <fullName>SatCon AE-50-60-PV-D</fullName>
+                <default>false</default>
+                <label>SatCon AE-50-60-PV-D</label>
+            </value>
+            <value>
+                <fullName>SatCon AE-75-60-PV-A</fullName>
+                <default>false</default>
+                <label>SatCon AE-75-60-PV-A</label>
+            </value>
+            <value>
+                <fullName>SatCon AE-75-60-PV-D</fullName>
+                <default>false</default>
+                <label>SatCon AE-75-60-PV-D</label>
+            </value>
+            <value>
+                <fullName>SatCon PVS-100 (208V)</fullName>
+                <default>false</default>
+                <label>SatCon PVS-100 (208V)</label>
+            </value>
+            <value>
+                <fullName>SatCon PVS-100 (480V)</fullName>
+                <default>false</default>
+                <label>SatCon PVS-100 (480V)</label>
+            </value>
+            <value>
+                <fullName>SatCon PVS-135 (480V)</fullName>
+                <default>false</default>
+                <label>SatCon PVS-135 (480V)</label>
+            </value>
+            <value>
+                <fullName>SatCon PVS-250 (480V)</fullName>
+                <default>false</default>
+                <label>SatCon PVS-250 (480V)</label>
+            </value>
+            <value>
+                <fullName>SatCon PVS-375 (480V)</fullName>
+                <default>false</default>
+                <label>SatCon PVS-375 (480V)</label>
+            </value>
+            <value>
+                <fullName>SatCon PVS-50 (200V)</fullName>
+                <default>false</default>
+                <label>SatCon PVS-50 (200V)</label>
+            </value>
+            <value>
+                <fullName>SatCon PVS-50 (480V)</fullName>
+                <default>false</default>
+                <label>SatCon PVS-50 (480V)</label>
+            </value>
+            <value>
+                <fullName>SatCon PVS-500 (200V)</fullName>
+                <default>false</default>
+                <label>SatCon PVS-500 (200V)</label>
+            </value>
+            <value>
+                <fullName>SatCon PVS-500 (480V)</fullName>
+                <default>false</default>
+                <label>SatCon PVS-500 (480V)</label>
+            </value>
+            <value>
+                <fullName>SatCon PVS-75 (480V)</fullName>
+                <default>false</default>
+                <label>SatCon PVS-75 (480V)</label>
+            </value>
+            <value>
+                <fullName>Satec EM133</fullName>
+                <default>false</default>
+                <label>Satec EM133</label>
+            </value>
+            <value>
+                <fullName>Schneider Electric Conext Core XC 680</fullName>
+                <default>false</default>
+                <label>Schneider Electric Conext Core XC 680</label>
+            </value>
+            <value>
+                <fullName>Schneider Electric Conext SmartGen CS1800</fullName>
+                <default>false</default>
+                <label>Schneider Electric Conext SmartGen CS1800</label>
+            </value>
+            <value>
+                <fullName>Schneider Electric Conext SmartGen CS2000</fullName>
+                <default>false</default>
+                <label>Schneider Electric Conext SmartGen CS2000</label>
+            </value>
+            <value>
+                <fullName>Schneider Electric Conext SmartGen CS2200</fullName>
+                <default>false</default>
+                <label>Schneider Electric Conext SmartGen CS2200</label>
+            </value>
+            <value>
+                <fullName>Schneider Electric Conext SmartGen CS2400</fullName>
+                <default>false</default>
+                <label>Schneider Electric Conext SmartGen CS2400</label>
+            </value>
+            <value>
+                <fullName>Schneider Electric ION6200</fullName>
+                <default>false</default>
+                <label>Schneider Electric ION6200</label>
+            </value>
+            <value>
+                <fullName>Schneider Electric ION8600</fullName>
+                <default>false</default>
+                <label>Schneider Electric ION8600</label>
+            </value>
+            <value>
+                <fullName>Schneider Electric PM820</fullName>
+                <default>false</default>
+                <label>Schneider Electric PM820</label>
+            </value>
+            <value>
+                <fullName>Senvion/RePower MD77</fullName>
+                <default>false</default>
+                <label>Senvion/RePower MD77</label>
+            </value>
+            <value>
+                <fullName>Senvion 3.0 M122</fullName>
+                <default>false</default>
+                <label>Senvion 3.0 M122</label>
+            </value>
+            <value>
+                <fullName>Senvion 3.2 M114</fullName>
+                <default>false</default>
+                <label>Senvion 3.2 M114</label>
+            </value>
+            <value>
+                <fullName>Senvion 3.4 M104</fullName>
+                <default>false</default>
+                <label>Senvion 3.4 M104</label>
+            </value>
+            <value>
+                <fullName>Senvion 3.4 M114</fullName>
+                <default>false</default>
+                <label>Senvion 3.4 M114</label>
+            </value>
+            <value>
+                <fullName>Senvion 3.6 M140</fullName>
+                <default>false</default>
+                <label>Senvion 3.6 M140</label>
+            </value>
+            <value>
+                <fullName>Senvion 5.1 M126</fullName>
+                <default>false</default>
+                <label>Senvion 5.1 M126</label>
+            </value>
+            <value>
+                <fullName>Senvion 6.2 M126</fullName>
+                <default>false</default>
+                <label>Senvion 6.2 M126</label>
+            </value>
+            <value>
+                <fullName>Senvion METEO</fullName>
+                <default>false</default>
+                <label>Senvion METEO</label>
+            </value>
+            <value>
+                <fullName>Senvion MM100</fullName>
+                <default>false</default>
+                <label>Senvion MM100</label>
+            </value>
+            <value>
+                <fullName>Senvion MM114</fullName>
+                <default>false</default>
+                <label>Senvion MM114</label>
+            </value>
+            <value>
+                <fullName>Senvion MM70</fullName>
+                <default>false</default>
+                <label>Senvion MM70</label>
+            </value>
+            <value>
+                <fullName>Senvion MM82</fullName>
+                <default>false</default>
+                <label>Senvion MM82</label>
+            </value>
+            <value>
+                <fullName>Senvion MM92</fullName>
+                <default>false</default>
+                <label>Senvion MM92</label>
+            </value>
+            <value>
+                <fullName>Senvion PMU</fullName>
+                <default>false</default>
+                <label>Senvion PMU</label>
+            </value>
+            <value>
+                <fullName>SIAC Soleil DSPX TRH 112.50</fullName>
+                <default>false</default>
+                <label>SIAC Soleil DSPX TRH 112.50</label>
+            </value>
+            <value>
+                <fullName>SIAC Soleil DSPX TRH 220</fullName>
+                <default>false</default>
+                <label>SIAC Soleil DSPX TRH 220</label>
+            </value>
+            <value>
+                <fullName>SIAC Soleil DSPX TRH 250</fullName>
+                <default>false</default>
+                <label>SIAC Soleil DSPX TRH 250</label>
+            </value>
+            <value>
+                <fullName>SIAC Soleil DSPX TRH 72</fullName>
+                <default>false</default>
+                <label>SIAC Soleil DSPX TRH 72</label>
+            </value>
+            <value>
+                <fullName>SIAC Soleil DSPX TRH 90</fullName>
+                <default>false</default>
+                <label>SIAC Soleil DSPX TRH 90</label>
+            </value>
+            <value>
+                <fullName>SIAC Soleil DSPX TRL 250</fullName>
+                <default>false</default>
+                <label>SIAC Soleil DSPX TRL 250</label>
+            </value>
+            <value>
+                <fullName>Siemens 1.3/68</fullName>
+                <default>false</default>
+                <label>Siemens 1.3/68</label>
+            </value>
+            <value>
+                <fullName>Siemens GMS</fullName>
+                <default>false</default>
+                <label>Siemens GMS</label>
+            </value>
+            <value>
+                <fullName>Siemens HPPP</fullName>
+                <default>false</default>
+                <label>Siemens HPPP</label>
+            </value>
+            <value>
+                <fullName>Siemens MET</fullName>
+                <default>false</default>
+                <label>Siemens MET</label>
+            </value>
+            <value>
+                <fullName>Siemens SINACON PV</fullName>
+                <default>false</default>
+                <label>Siemens SINACON PV</label>
+            </value>
+            <value>
+                <fullName>Siemens SINVERT PVS 1000</fullName>
+                <default>false</default>
+                <label>Siemens SINVERT PVS 1000</label>
+            </value>
+            <value>
+                <fullName>Siemens SITE</fullName>
+                <default>false</default>
+                <label>Siemens SITE</label>
+            </value>
+            <value>
+                <fullName>Siemens SWT-2.3</fullName>
+                <default>false</default>
+                <label>Siemens SWT-2.3</label>
+            </value>
+            <value>
+                <fullName>Siemens SWT-2.3-101</fullName>
+                <default>false</default>
+                <label>Siemens SWT-2.3-101</label>
+            </value>
+            <value>
+                <fullName>Siemens SWT-2.3-82</fullName>
+                <default>false</default>
+                <label>Siemens SWT-2.3-82</label>
+            </value>
+            <value>
+                <fullName>Siemens SWT-2.3-93</fullName>
+                <default>false</default>
+                <label>Siemens SWT-2.3-93</label>
+            </value>
+            <value>
+                <fullName>Siemens SWT-3.0</fullName>
+                <default>false</default>
+                <label>Siemens SWT-3.0</label>
+            </value>
+            <value>
+                <fullName>Siemens SWT-3.0-101</fullName>
+                <default>false</default>
+                <label>Siemens SWT-3.0-101</label>
+            </value>
+            <value>
+                <fullName>Siemens SWT-3.0-108</fullName>
+                <default>false</default>
+                <label>Siemens SWT-3.0-108</label>
+            </value>
+            <value>
+                <fullName>Siemens SWT-3.2</fullName>
+                <default>false</default>
+                <label>Siemens SWT-3.2</label>
+            </value>
+            <value>
+                <fullName>Siemens SWT-3.4-101</fullName>
+                <default>false</default>
+                <label>Siemens SWT-3.4-101</label>
+            </value>
+            <value>
+                <fullName>Siemens SWT-3.6</fullName>
+                <default>false</default>
+                <label>Siemens SWT-3.6</label>
+            </value>
+            <value>
+                <fullName>Siemens SWT-4.1-142</fullName>
+                <default>false</default>
+                <label>Siemens SWT-4.1-142</label>
+            </value>
+            <value>
+                <fullName>Siemens SWT-4.3-130</fullName>
+                <default>false</default>
+                <label>Siemens SWT-4.3-130</label>
+            </value>
+            <value>
+                <fullName>Siemens SWT-6.0-154</fullName>
+                <default>false</default>
+                <label>Siemens SWT-6.0-154</label>
+            </value>
+            <value>
+                <fullName>Siemens SWT-7.0-154</fullName>
+                <default>false</default>
+                <label>Siemens SWT-7.0-154</label>
+            </value>
+            <value>
+                <fullName>Siemens SWT-DD-130</fullName>
+                <default>false</default>
+                <label>Siemens SWT-DD-130</label>
+            </value>
+            <value>
+                <fullName>Siemens SWT-DD-142</fullName>
+                <default>false</default>
+                <label>Siemens SWT-DD-142</label>
+            </value>
+            <value>
+                <fullName>SMA Core1 50kW</fullName>
+                <default>false</default>
+                <label>SMA Core1 50kW</label>
+            </value>
+            <value>
+                <fullName>SMA SOLID-Q 50</fullName>
+                <default>false</default>
+                <label>SMA SOLID-Q 50</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Boy 3000TL</fullName>
+                <default>false</default>
+                <label>SMA Sunny Boy 3000TL</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Boy 4000TL</fullName>
+                <default>false</default>
+                <label>SMA Sunny Boy 4000TL</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Boy 5000US</fullName>
+                <default>false</default>
+                <label>SMA Sunny Boy 5000US</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Boy 6000US</fullName>
+                <default>false</default>
+                <label>SMA Sunny Boy 6000US</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Boy 7000US</fullName>
+                <default>false</default>
+                <label>SMA Sunny Boy 7000US</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Boy 8000US</fullName>
+                <default>false</default>
+                <label>SMA Sunny Boy 8000US</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 1000CP XT</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 1000CP XT</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 1850</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 1850</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 2200</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 2200</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 2475</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 2475</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 250</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 250</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 2500</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 2500</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 2750</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 2750</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 3000</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 3000</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 4000 UP-US</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 4000 UP-US</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 400HE</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 400HE</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 4200 UP-US</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 4200 UP-US</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 4400 UP-US</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 4400 UP-US</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 4600 UP-US</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 4600 UP-US</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 500CP-US</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 500CP-US</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 500HE</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 500HE</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 500HE-US</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 500HE-US</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 500U</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 500U</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 630CP</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 630CP</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 630HE</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 630HE</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 720CP</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 720CP</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 760CP</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 760CP</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 800CP</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 800CP</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 800CP-US</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 800CP-US</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 850CP XT</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 850CP XT</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 900CP XT</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 900CP XT</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Central 900SC</fullName>
+                <default>false</default>
+                <label>SMA Sunny Central 900SC</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Mini Central 10000TL</fullName>
+                <default>false</default>
+                <label>SMA Sunny Mini Central 10000TL</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Mini Central 11000TL</fullName>
+                <default>false</default>
+                <label>SMA Sunny Mini Central 11000TL</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Mini Central 6000TL</fullName>
+                <default>false</default>
+                <label>SMA Sunny Mini Central 6000TL</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Mini Central 7000TL</fullName>
+                <default>false</default>
+                <label>SMA Sunny Mini Central 7000TL</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Mini Central 8000TL</fullName>
+                <default>false</default>
+                <label>SMA Sunny Mini Central 8000TL</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Mini Central 9000TL</fullName>
+                <default>false</default>
+                <label>SMA Sunny Mini Central 9000TL</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Tripower 11000TL</fullName>
+                <default>false</default>
+                <label>SMA Sunny Tripower 11000TL</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Tripower 15000TL</fullName>
+                <default>false</default>
+                <label>SMA Sunny Tripower 15000TL</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Tripower 17000TL</fullName>
+                <default>false</default>
+                <label>SMA Sunny Tripower 17000TL</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Tripower 20000TL</fullName>
+                <default>false</default>
+                <label>SMA Sunny Tripower 20000TL</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Tripower 24000TL</fullName>
+                <default>false</default>
+                <label>SMA Sunny Tripower 24000TL</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Tripower 25000TL</fullName>
+                <default>false</default>
+                <label>SMA Sunny Tripower 25000TL</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Tripower 60</fullName>
+                <default>false</default>
+                <label>SMA Sunny Tripower 60</label>
+            </value>
+            <value>
+                <fullName>SMA Sunny Tripower CORE1 (STP 50-40)</fullName>
+                <default>false</default>
+                <label>SMA Sunny Tripower CORE1 (STP 50-40)</label>
+            </value>
+            <value>
+                <fullName>SODAR</fullName>
+                <default>false</default>
+                <label>SODAR</label>
+            </value>
+            <value>
+                <fullName>SolarEdge SE10K</fullName>
+                <default>false</default>
+                <label>SolarEdge SE10K</label>
+            </value>
+            <value>
+                <fullName>SolarEdge SE25K</fullName>
+                <default>false</default>
+                <label>SolarEdge SE25K</label>
+            </value>
+            <value>
+                <fullName>SolarEdge SE27.6K</fullName>
+                <default>false</default>
+                <label>SolarEdge SE27.6K</label>
+            </value>
+            <value>
+                <fullName>SolarEdge SE30K</fullName>
+                <default>false</default>
+                <label>SolarEdge SE30K</label>
+            </value>
+            <value>
+                <fullName>SolarEdge SE33.3K</fullName>
+                <default>false</default>
+                <label>SolarEdge SE33.3K</label>
+            </value>
+            <value>
+                <fullName>SolarEdge SE3K</fullName>
+                <default>false</default>
+                <label>SolarEdge SE3K</label>
+            </value>
+            <value>
+                <fullName>SolarMax 100C</fullName>
+                <default>false</default>
+                <label>SolarMax 100C</label>
+            </value>
+            <value>
+                <fullName>SolarMax 300C</fullName>
+                <default>false</default>
+                <label>SolarMax 300C</label>
+            </value>
+            <value>
+                <fullName>SolarMax 330TS-SV</fullName>
+                <default>false</default>
+                <label>SolarMax 330TS-SV</label>
+            </value>
+            <value>
+                <fullName>SolarMax 50C</fullName>
+                <default>false</default>
+                <label>SolarMax 50C</label>
+            </value>
+            <value>
+                <fullName>SolarMax 80C</fullName>
+                <default>false</default>
+                <label>SolarMax 80C</label>
+            </value>
+            <value>
+                <fullName>Solectria SGI 500XTM</fullName>
+                <default>false</default>
+                <label>Solectria SGI 500XTM</label>
+            </value>
+            <value>
+                <fullName>Solectria SGI 750XTM</fullName>
+                <default>false</default>
+                <label>Solectria SGI 750XTM</label>
+            </value>
+            <value>
+                <fullName>Solis 15K 3 Phase Quad MPPT</fullName>
+                <default>false</default>
+                <label>Solis 15K 3 Phase Quad MPPT</label>
+            </value>
+            <value>
+                <fullName>Solis 20.0 3 Phase Quad MPPT</fullName>
+                <default>false</default>
+                <label>Solis 20.0 3 Phase Quad MPPT</label>
+            </value>
+            <value>
+                <fullName>Substation Breaker</fullName>
+                <default>false</default>
+                <label>Substation Breaker</label>
+            </value>
+            <value>
+                <fullName>Substation Transformer</fullName>
+                <default>false</default>
+                <label>Substation Transformer</label>
+            </value>
+            <value>
+                <fullName>Substation UPS</fullName>
+                <default>false</default>
+                <label>Substation UPS</label>
+            </value>
+            <value>
+                <fullName>SunGrow SG10 KTL</fullName>
+                <default>false</default>
+                <label>SunGrow SG10 KTL</label>
+            </value>
+            <value>
+                <fullName>Sungrow SG110CX</fullName>
+                <default>false</default>
+                <label>Sungrow SG110CX</label>
+            </value>
+            <value>
+                <fullName>Sungrow SG2000</fullName>
+                <default>false</default>
+                <label>Sungrow SG2000</label>
+            </value>
+            <value>
+                <fullName>Sungrow SG2500HV-MV-20</fullName>
+                <default>false</default>
+                <label>Sungrow SG2500HV-MV-20</label>
+            </value>
+            <value>
+                <fullName>Sungrow SG250CX</fullName>
+                <default>false</default>
+                <label>Sungrow SG250CX</label>
+            </value>
+            <value>
+                <fullName>Sungrow SG250HX</fullName>
+                <default>false</default>
+                <label>Sungrow SG250HX</label>
+            </value>
+            <value>
+                <fullName>Sungrow SG3125HV-MV-20</fullName>
+                <default>false</default>
+                <label>Sungrow SG3125HV-MV-20</label>
+            </value>
+            <value>
+                <fullName>Sungrow SG3150U</fullName>
+                <default>false</default>
+                <label>Sungrow SG3150U</label>
+            </value>
+            <value>
+                <fullName>Sungrow SG3400HV-MV</fullName>
+                <default>false</default>
+                <label>Sungrow SG3400HV-MV</label>
+            </value>
+            <value>
+                <fullName>Sungrow SG500MX</fullName>
+                <default>false</default>
+                <label>Sungrow SG500MX</label>
+            </value>
+            <value>
+                <fullName>SunGrow SG60 KTL</fullName>
+                <default>false</default>
+                <label>SunGrow SG60 KTL</label>
+            </value>
+            <value>
+                <fullName>Sungrow SG60KU</fullName>
+                <default>false</default>
+                <label>Sungrow SG60KU</label>
+            </value>
+            <value>
+                <fullName>Sungrow SG630MX</fullName>
+                <default>false</default>
+                <label>Sungrow SG630MX</label>
+            </value>
+            <value>
+                <fullName>Sungrow SG6800HV-MV</fullName>
+                <default>false</default>
+                <label>Sungrow SG6800HV-MV</label>
+            </value>
+            <value>
+                <fullName>SunTechnics STZ 100</fullName>
+                <default>false</default>
+                <label>SunTechnics STZ 100</label>
+            </value>
+            <value>
+                <fullName>SunTechnics STZ 110</fullName>
+                <default>false</default>
+                <label>SunTechnics STZ 110</label>
+            </value>
+            <value>
+                <fullName>SunTechnics STZ 280</fullName>
+                <default>false</default>
+                <label>SunTechnics STZ 280</label>
+            </value>
+            <value>
+                <fullName>SunTechnics STZ 40</fullName>
+                <default>false</default>
+                <label>SunTechnics STZ 40</label>
+            </value>
+            <value>
+                <fullName>SunTechnics STZ 60</fullName>
+                <default>false</default>
+                <label>SunTechnics STZ 60</label>
+            </value>
+            <value>
+                <fullName>SunTechnics STZ 80</fullName>
+                <default>false</default>
+                <label>SunTechnics STZ 80</label>
+            </value>
+            <value>
+                <fullName>Sunways NT10000</fullName>
+                <default>false</default>
+                <label>Sunways NT10000</label>
+            </value>
+            <value>
+                <fullName>Sunways NT4000</fullName>
+                <default>false</default>
+                <label>Sunways NT4000</label>
+            </value>
+            <value>
+                <fullName>Sunways NT5000</fullName>
+                <default>false</default>
+                <label>Sunways NT5000</label>
+            </value>
+            <value>
+                <fullName>Sunways NT6000</fullName>
+                <default>false</default>
+                <label>Sunways NT6000</label>
+            </value>
+            <value>
+                <fullName>Suzlon METEO</fullName>
+                <default>false</default>
+                <label>Suzlon METEO</label>
+            </value>
+            <value>
+                <fullName>Suzlon S64</fullName>
+                <default>false</default>
+                <label>Suzlon S64</label>
+            </value>
+            <value>
+                <fullName>Suzlon S82</fullName>
+                <default>false</default>
+                <label>Suzlon S82</label>
+            </value>
+            <value>
+                <fullName>Suzlon S88</fullName>
+                <default>false</default>
+                <label>Suzlon S88</label>
+            </value>
+            <value>
+                <fullName>Suzlon S95</fullName>
+                <default>false</default>
+                <label>Suzlon S95</label>
+            </value>
+            <value>
+                <fullName>Suzlon S97</fullName>
+                <default>false</default>
+                <label>Suzlon S97</label>
+            </value>
+            <value>
+                <fullName>Suzlon SCS</fullName>
+                <default>false</default>
+                <label>Suzlon SCS</label>
+            </value>
+            <value>
+                <fullName>Topwind IPS</fullName>
+                <default>false</default>
+                <label>Topwind IPS</label>
+            </value>
+            <value>
+                <fullName>Toshiba Mitsubishi (TMEIC) Ninja 4200</fullName>
+                <default>false</default>
+                <label>Toshiba Mitsubishi (TMEIC) Ninja 4200</label>
+            </value>
+            <value>
+                <fullName>Toshiba Mitsubishi (TMEIC) PVL-L0630E</fullName>
+                <default>false</default>
+                <label>Toshiba Mitsubishi (TMEIC) PVL-L0630E</label>
+            </value>
+            <value>
+                <fullName>Toshiba Mitsubishi (TMEIC) PVL-L1667ER (J)</fullName>
+                <default>false</default>
+                <label>Toshiba Mitsubishi (TMEIC) PVL-L1667ER (J)</label>
+            </value>
+            <value>
+                <fullName>Toshiba Mitsubishi (TMEIC) PVL-L1833GRM</fullName>
+                <default>false</default>
+                <label>Toshiba Mitsubishi (TMEIC) PVL-L1833GRM</label>
+            </value>
+            <value>
+                <fullName>Toshiba Mitsubishi (TMEIC) PVL-L1833GRQ</fullName>
+                <default>false</default>
+                <label>Toshiba Mitsubishi (TMEIC) PVL-L1833GRQ</label>
+            </value>
+            <value>
+                <fullName>Toshiba Mitsubishi (TMEIC) PVL-L2500GR</fullName>
+                <default>false</default>
+                <label>Toshiba Mitsubishi (TMEIC) PVL-L2500GR</label>
+            </value>
+            <value>
+                <fullName>Toshiba Mitsubishi (TMEIC) PVL-L2700GR</fullName>
+                <default>false</default>
+                <label>Toshiba Mitsubishi (TMEIC) PVL-L2700GR</label>
+            </value>
+            <value>
+                <fullName>Toshiba Mitsubishi (TMEIC) PVU-L0840GR</fullName>
+                <default>false</default>
+                <label>Toshiba Mitsubishi (TMEIC) PVU-L0840GR</label>
+            </value>
+            <value>
+                <fullName>TransData MARK-V</fullName>
+                <default>false</default>
+                <label>TransData MARK-V</label>
+            </value>
+            <value>
+                <fullName>Transformer</fullName>
+                <default>false</default>
+                <label>Transformer</label>
+            </value>
+            <value>
+                <fullName>Transmission cable monitoring</fullName>
+                <default>false</default>
+                <label>Transmission cable monitoring</label>
+            </value>
+            <value>
+                <fullName>Vensys VEN 112</fullName>
+                <default>false</default>
+                <label>Vensys VEN 112</label>
+            </value>
+            <value>
+                <fullName>Vensys VEN 120</fullName>
+                <default>false</default>
+                <label>Vensys VEN 120</label>
+            </value>
+            <value>
+                <fullName>Vensys VEN 82</fullName>
+                <default>false</default>
+                <label>Vensys VEN 82</label>
+            </value>
+            <value>
+                <fullName>Vensys VEN 87</fullName>
+                <default>false</default>
+                <label>Vensys VEN 87</label>
+            </value>
+            <value>
+                <fullName>Vestas GRID</fullName>
+                <default>false</default>
+                <label>Vestas GRID</label>
+            </value>
+            <value>
+                <fullName>Vestas MET</fullName>
+                <default>false</default>
+                <label>Vestas MET</label>
+            </value>
+            <value>
+                <fullName>Vestas PPC</fullName>
+                <default>false</default>
+                <label>Vestas PPC</label>
+            </value>
+            <value>
+                <fullName>Vestas V100</fullName>
+                <default>false</default>
+                <label>Vestas V100</label>
+            </value>
+            <value>
+                <fullName>Vestas V110</fullName>
+                <default>false</default>
+                <label>Vestas V110</label>
+            </value>
+            <value>
+                <fullName>Vestas V112</fullName>
+                <default>false</default>
+                <label>Vestas V112</label>
+            </value>
+            <value>
+                <fullName>Vestas V117</fullName>
+                <default>false</default>
+                <label>Vestas V117</label>
+            </value>
+            <value>
+                <fullName>Vestas V120</fullName>
+                <default>false</default>
+                <label>Vestas V120</label>
+            </value>
+            <value>
+                <fullName>Vestas V126</fullName>
+                <default>false</default>
+                <label>Vestas V126</label>
+            </value>
+            <value>
+                <fullName>Vestas V136</fullName>
+                <default>false</default>
+                <label>Vestas V136</label>
+            </value>
+            <value>
+                <fullName>Vestas V150</fullName>
+                <default>false</default>
+                <label>Vestas V150</label>
+            </value>
+            <value>
+                <fullName>Vestas V152</fullName>
+                <default>false</default>
+                <label>Vestas V152</label>
+            </value>
+            <value>
+                <fullName>Vestas V162</fullName>
+                <default>false</default>
+                <label>Vestas V162</label>
+            </value>
+            <value>
+                <fullName>Vestas V164</fullName>
+                <default>false</default>
+                <label>Vestas V164</label>
+            </value>
+            <value>
+                <fullName>Vestas V174</fullName>
+                <default>false</default>
+                <label>Vestas V174</label>
+            </value>
+            <value>
+                <fullName>Vestas V34</fullName>
+                <default>false</default>
+                <label>Vestas V34</label>
+            </value>
+            <value>
+                <fullName>Vestas V44</fullName>
+                <default>false</default>
+                <label>Vestas V44</label>
+            </value>
+            <value>
+                <fullName>Vestas V47</fullName>
+                <default>false</default>
+                <label>Vestas V47</label>
+            </value>
+            <value>
+                <fullName>Vestas V52</fullName>
+                <default>false</default>
+                <label>Vestas V52</label>
+            </value>
+            <value>
+                <fullName>Vestas V66</fullName>
+                <default>false</default>
+                <label>Vestas V66</label>
+            </value>
+            <value>
+                <fullName>Vestas V80</fullName>
+                <default>false</default>
+                <label>Vestas V80</label>
+            </value>
+            <value>
+                <fullName>Vestas V90</fullName>
+                <default>false</default>
+                <label>Vestas V90</label>
+            </value>
+            <value>
+                <fullName>Wilmers NDL 485</fullName>
+                <default>false</default>
+                <label>Wilmers NDL 485</label>
+            </value>
+            <value>
+                <fullName>WinWinD WWD-3-E100</fullName>
+                <default>false</default>
+                <label>WinWinD WWD-3-E100</label>
+            </value>
+            <value>
+                <fullName>WinWinD WWD-3-S103</fullName>
+                <default>false</default>
+                <label>WinWinD WWD-3-S103</label>
+            </value>
+            <value>
+                <fullName>Xantrex/Schneider Electric GT100-480</fullName>
+                <default>false</default>
+                <label>Xantrex/Schneider Electric GT100-480</label>
+            </value>
+            <value>
+                <fullName>Xantrex/Schneider Electric GT250-480</fullName>
+                <default>false</default>
+                <label>Xantrex/Schneider Electric GT250-480</label>
+            </value>
+            <value>
+                <fullName>Xantrex/Schneider Electric GT500</fullName>
+                <default>false</default>
+                <label>Xantrex/Schneider Electric GT500</label>
+            </value>
+            <value>
+                <fullName>Xantrex/Schneider Electric GT630E</fullName>
+                <default>false</default>
+                <label>Xantrex/Schneider Electric GT630E</label>
+            </value>
+            <value>
+                <fullName>Xantrex PV225S-480</fullName>
+                <default>false</default>
+                <label>Xantrex PV225S-480</label>
+            </value>
+            <value>
+                <fullName>Zigor Sun Zet 100</fullName>
+                <default>false</default>
+                <label>Zigor Sun Zet 100</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Solis</controllingFieldValue>
+            <valueName>Solis 15K 3 Phase Quad MPPT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Solis</controllingFieldValue>
+            <valueName>Solis 20.0 3 Phase Quad MPPT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>SunGrow SG10 KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG110CX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG2000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG2500HV-MV-20</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG250CX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG250HX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG3125HV-MV-20</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG3150U</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG3400HV-MV</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG500MX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>SunGrow SG60 KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG60KU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG630MX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG6800HV-MV</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SunTechnics</controllingFieldValue>
+            <valueName>SunTechnics STZ 100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SunTechnics</controllingFieldValue>
+            <valueName>SunTechnics STZ 110</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SunTechnics</controllingFieldValue>
+            <valueName>SunTechnics STZ 280</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SunTechnics</controllingFieldValue>
+            <valueName>SunTechnics STZ 40</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SunTechnics</controllingFieldValue>
+            <valueName>SunTechnics STZ 60</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SunTechnics</controllingFieldValue>
+            <valueName>SunTechnics STZ 80</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sunways</controllingFieldValue>
+            <valueName>Sunways NT10000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sunways</controllingFieldValue>
+            <valueName>Sunways NT4000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sunways</controllingFieldValue>
+            <valueName>Sunways NT5000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sunways</controllingFieldValue>
+            <valueName>Sunways NT6000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Suzlon</controllingFieldValue>
+            <valueName>Suzlon METEO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Suzlon</controllingFieldValue>
+            <valueName>Suzlon S64</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Suzlon</controllingFieldValue>
+            <valueName>Suzlon S82</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Suzlon</controllingFieldValue>
+            <valueName>Suzlon S88</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Suzlon</controllingFieldValue>
+            <valueName>Suzlon S95</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Suzlon</controllingFieldValue>
+            <valueName>Suzlon S97</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Suzlon</controllingFieldValue>
+            <valueName>Suzlon SCS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Topwind</controllingFieldValue>
+            <valueName>Topwind IPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba Mitsubishi (TMEIC)</controllingFieldValue>
+            <valueName>Toshiba Mitsubishi (TMEIC) Ninja 4200</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba Mitsubishi (TMEIC)</controllingFieldValue>
+            <valueName>Toshiba Mitsubishi (TMEIC) PVL-L0630E</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba Mitsubishi (TMEIC)</controllingFieldValue>
+            <valueName>Toshiba Mitsubishi (TMEIC) PVL-L1667ER (J)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba Mitsubishi (TMEIC)</controllingFieldValue>
+            <valueName>Toshiba Mitsubishi (TMEIC) PVL-L1833GRM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba Mitsubishi (TMEIC)</controllingFieldValue>
+            <valueName>Toshiba Mitsubishi (TMEIC) PVL-L1833GRQ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba Mitsubishi (TMEIC)</controllingFieldValue>
+            <valueName>Toshiba Mitsubishi (TMEIC) PVL-L2500GR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba Mitsubishi (TMEIC)</controllingFieldValue>
+            <valueName>Toshiba Mitsubishi (TMEIC) PVL-L2700GR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba Mitsubishi (TMEIC)</controllingFieldValue>
+            <valueName>Toshiba Mitsubishi (TMEIC) PVU-L0840GR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TransData</controllingFieldValue>
+            <valueName>TransData MARK-V</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AROS</controllingFieldValue>
+            <valueName>AROS Sirio 250K HV-MT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vensys</controllingFieldValue>
+            <valueName>Vensys VEN 112</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vensys</controllingFieldValue>
+            <valueName>Vensys VEN 120</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vensys</controllingFieldValue>
+            <valueName>Vensys VEN 82</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vensys</controllingFieldValue>
+            <valueName>Vensys VEN 87</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bonfiglioli</controllingFieldValue>
+            <valueName>Bonifiglioli RPS450 Compact 120</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bonfiglioli</controllingFieldValue>
+            <valueName>Bonifiglioli RPS450 Compact 170</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas GRID</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas MET</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas PPC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V110</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V112</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V117</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V120</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V126</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V136</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V150</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V152</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V162</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V164</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V174</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V34</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V44</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V47</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V52</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V66</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V80</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vestas</controllingFieldValue>
+            <valueName>Vestas V90</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bonus</controllingFieldValue>
+            <valueName>Bonus/Siemens B37/450</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bonus</controllingFieldValue>
+            <valueName>Bonus/Siemens B44/600</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bonus</controllingFieldValue>
+            <valueName>Bonus/Siemens B500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bonus</controllingFieldValue>
+            <valueName>Bonus/Siemens B62/1300</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bonus</controllingFieldValue>
+            <valueName>Bonus/Simens B82/2300</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campbell</controllingFieldValue>
+            <valueName>Campbell CR1000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Chint Solar</controllingFieldValue>
+            <valueName>Chint Solar CPS SC20KTL-DO/US-480</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Clipper</controllingFieldValue>
+            <valueName>Clipper Liberty C99</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Conergy</controllingFieldValue>
+            <valueName>Conergy IPG 110K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Conergy</controllingFieldValue>
+            <valueName>Conergy IPG 250C</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Conergy</controllingFieldValue>
+            <valueName>Conergy IPG 280K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Conergy</controllingFieldValue>
+            <valueName>Conergy IPG 300K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Danfoss</controllingFieldValue>
+            <valueName>Danfoss TLX 12.5k</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Danfoss</controllingFieldValue>
+            <valueName>Danfoss ULX 3000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <valueName>ABB Aurora Trio-27.6-TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <valueName>ABB PVI 10.0-OUTD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <valueName>ABB PVI 12.0-OUTD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <valueName>ABB PVS 100-TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <valueName>ABB PVS 175-TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ABB</controllingFieldValue>
+            <valueName>ABB PVS980</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acciona</controllingFieldValue>
+            <valueName>Acciona AW132-3300</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acciona</controllingFieldValue>
+            <valueName>Acciona AW140-3000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acciona</controllingFieldValue>
+            <valueName>Acciona AW1500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acciona</controllingFieldValue>
+            <valueName>Acciona AW77-1500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acciona</controllingFieldValue>
+            <valueName>Acciona AW82</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advanced Energy</controllingFieldValue>
+            <valueName>Advanced Energy AE 260TX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advanced Energy</controllingFieldValue>
+            <valueName>Advanced Energy AE 500TX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advanced Energy</controllingFieldValue>
+            <valueName>Advanced Energy Solaron 333</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advanced Energy</controllingFieldValue>
+            <valueName>Advanced Energy Solaron 500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AEG</controllingFieldValue>
+            <valueName>AEG Protect PV 690</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alstom</controllingFieldValue>
+            <valueName>Alstom ECO100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alstom</controllingFieldValue>
+            <valueName>Alstom ECO110</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alstom</controllingFieldValue>
+            <valueName>Alstom ECO122</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alstom</controllingFieldValue>
+            <valueName>Alstom ECO74</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alstom</controllingFieldValue>
+            <valueName>Alstom ECO80</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alstom</controllingFieldValue>
+            <valueName>GE/Alstom Haliade 150</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alstom</controllingFieldValue>
+            <valueName>GE/Alstom XANEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ammonit</controllingFieldValue>
+            <valueName>Ammonit METEO-40</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AP Sensing</controllingFieldValue>
+            <valueName>Transmission cable monitoring</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Delta</controllingFieldValue>
+            <valueName>Delta M50A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Delta</controllingFieldValue>
+            <valueName>Delta M60U</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Delta</controllingFieldValue>
+            <valueName>Delta M80U</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dongfang</controllingFieldValue>
+            <valueName>Dongfang DF110-2500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eaton</controllingFieldValue>
+            <valueName>Eaton Power Xpert Solar 1500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eaton</controllingFieldValue>
+            <valueName>Eaton Power Xpert Solar 1650</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eaton</controllingFieldValue>
+            <valueName>Eaton Power Xpert Solar 1670</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eaton</controllingFieldValue>
+            <valueName>Eaton Power Xpert Solar 2000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eaton</controllingFieldValue>
+            <valueName>Eaton Power Xpert Solar 2200</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Elster</controllingFieldValue>
+            <valueName>Elster A1700</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Emerson</controllingFieldValue>
+            <valueName>Emerson SPV1800</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>eMS</controllingFieldValue>
+            <valueName>eMS sub.net PQM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon CLC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon E-101</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon E-103</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon E-115</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon E-126</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon E-136</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon E-138</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon E-141</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon E-40</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon E-44</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon E-48</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon E-53</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon E-66</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon E-70</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon E-82</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon E-92</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon FCU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon MET</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon PDI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enercon</controllingFieldValue>
+            <valueName>Enercon RTU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enerdis</controllingFieldValue>
+            <valueName>Enerdis Trimaran 2M Q4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EWT</controllingFieldValue>
+            <valueName>EWT DW 52</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EWT</controllingFieldValue>
+            <valueName>EWT DW52/54</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EWT</controllingFieldValue>
+            <valueName>EWT DW 54</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EWT</controllingFieldValue>
+            <valueName>EWT DW 61</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ferroamp</controllingFieldValue>
+            <valueName>ferroamp XL28</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fleximaus</controllingFieldValue>
+            <valueName>Fleximaus 2.0</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fluence</controllingFieldValue>
+            <valueName>Fluence BESS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fronius</controllingFieldValue>
+            <valueName>Fronius Eco 27.0-3-S</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fronius</controllingFieldValue>
+            <valueName>Fronius Symo 12.5-3-M</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fronius</controllingFieldValue>
+            <valueName>Fronius Symo 15.0-3-M</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fronius</controllingFieldValue>
+            <valueName>Fronius Symo 17.5-3-M</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fronius</controllingFieldValue>
+            <valueName>Fronius Symo 20.0-3-M</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fronius</controllingFieldValue>
+            <valueName>Fronius Symo 22.0-3-M</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fuhrländer</controllingFieldValue>
+            <valueName>Fuhrländer FL 2500/90</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa</controllingFieldValue>
+            <valueName>Gamesa/Siemens Gamesa 4.5-145</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa</controllingFieldValue>
+            <valueName>Gamesa/Siemens Gamesa 5.0-145</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa</controllingFieldValue>
+            <valueName>Gamesa AC Regulator</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa</controllingFieldValue>
+            <valueName>Gamesa E-1.25</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa</controllingFieldValue>
+            <valueName>Gamesa G114</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa</controllingFieldValue>
+            <valueName>Gamesa G128-4.5</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa</controllingFieldValue>
+            <valueName>Gamesa G132</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa</controllingFieldValue>
+            <valueName>Gamesa G52</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa</controllingFieldValue>
+            <valueName>Gamesa G58</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa</controllingFieldValue>
+            <valueName>Gamesa G80</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa</controllingFieldValue>
+            <valueName>Gamesa G87</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa</controllingFieldValue>
+            <valueName>Gamesa G90</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa</controllingFieldValue>
+            <valueName>Gamesa G97</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa</controllingFieldValue>
+            <valueName>Gamesa Power Meter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa</controllingFieldValue>
+            <valueName>Gamesa RE Regulator</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa/Enertron</controllingFieldValue>
+            <valueName>Gamesa/Enertron 100kW PLUS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa/Enertron</controllingFieldValue>
+            <valueName>Gamesa/Enertron 100kW PLUS TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa/Enertron</controllingFieldValue>
+            <valueName>Gamesa/Enertron 630kW PLUS TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa/Made</controllingFieldValue>
+            <valueName>Gamesa/Made AE-52</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gamesa/Made</controllingFieldValue>
+            <valueName>Gamesa/Made AE-59</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 1.5ess</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 1.5s</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 1.5sl</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 1.5sle</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 1.5xl</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 1.5xle</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 1.6-100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 1.6xle</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 1.79-100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE-100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE-103</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE-120</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 2.2-107</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 2.3-107</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 2.3-116</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 2.5-100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 2.5-116</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 2.5-120</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 2.5xl</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 2.7-116</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 2.75-103</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 2.75-120</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 2.85-103</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 3.0-137</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 3.2-103</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 3.2-130</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 3.4-130</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 3.6-137</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 3.8-130</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 5.3-158</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE 5.5-158</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE-82.5</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE-87</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE LV5-1510-SLR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE</controllingFieldValue>
+            <valueName>GE MET</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Goldwind</controllingFieldValue>
+            <valueName>Goldwind GW100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Goldwind</controllingFieldValue>
+            <valueName>Goldwind GW109</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Goldwind</controllingFieldValue>
+            <valueName>Goldwind GW82</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GPTech</controllingFieldValue>
+            <valueName>GPTech PV100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GPTech</controllingFieldValue>
+            <valueName>GPTech PV20</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GPTech</controllingFieldValue>
+            <valueName>GPTech PV30</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GPTech</controllingFieldValue>
+            <valueName>GPTech PV400 WD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GPTech</controllingFieldValue>
+            <valueName>GPTech PV50</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GPTech</controllingFieldValue>
+            <valueName>GPTech PV500 WD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GPTech</controllingFieldValue>
+            <valueName>GPTech PV625 WD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GPTech</controllingFieldValue>
+            <valueName>GPTech PV630 WD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GPTech</controllingFieldValue>
+            <valueName>GPTech PV750 WD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Helios Systems</controllingFieldValue>
+            <valueName>Helios Systems HS100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Helios Systems</controllingFieldValue>
+            <valueName>Helios Systems HS120</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Helios Systems</controllingFieldValue>
+            <valueName>Helios Systems HS80</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Helios Systems</controllingFieldValue>
+            <valueName>Helios Systems HSI500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HiQ</controllingFieldValue>
+            <valueName>HiQ 1S480-10k</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HiQ</controllingFieldValue>
+            <valueName>HiQ TS480-8k</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hitatchi</controllingFieldValue>
+            <valueName>Hitachi HIVERTER-NP201i</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hitatchi</controllingFieldValue>
+            <valueName>Hitachi HIVERTER-NP203i</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Huawei Sun 2000-100KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Huawei Sun 2000-105KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Huawei Sun 2000-12KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Huawei Sun 2000-17KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Huawei Sun 2000-185KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Huawei Sun 2000-20KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Huawei Sun 2000-215KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Huawei Sun 2000-23KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Huawei Sun 2000-25KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Huawei Sun 2000-30KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Huawei Sun 2000-33KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Huawei Sun 2000-36KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Huawei Sun 2000-40KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Huawei Sun 2000-45KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Huawei Sun 2000-60KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <valueName>Ingeteam Ingecon Sun 100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <valueName>Ingeteam Ingecon Sun 11</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <valueName>Ingeteam Ingecon Sun 1110 TL UB400</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <valueName>Ingeteam Ingecon Sun 12.5</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <valueName>Ingeteam Ingecon Sun 1500TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <valueName>Ingeteam Ingecon Sun 1600TL B615</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <valueName>Ingeteam Ingecon Sun 1640TL B630</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <valueName>Ingeteam Ingecon Sun 20</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <valueName>Ingeteam Ingecon Sun 60</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <valueName>Ingeteam Ingecon Sun 630 TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <valueName>Ingeteam Ingecon Sun 70</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <valueName>Ingeteam Ingecon Sun 880TL X345</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <valueName>Ingeteam Ingecon Sun 880TL X360</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <valueName>Ingeteam Ingecon Sun B1500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingeteam</controllingFieldValue>
+            <valueName>Ingeteam IS 3play TL M</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>iPLON</controllingFieldValue>
+            <valueName>iPLON Ice Throw Warning Sign</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jacobs</controllingFieldValue>
+            <valueName>Jacobs J43/600</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>JEMA</controllingFieldValue>
+            <valueName>Jema IF 500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kaco</controllingFieldValue>
+            <valueName>Kaco Blueplanet 50.0 TL3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kaco</controllingFieldValue>
+            <valueName>Kaco Powador 25000xi Park</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kaco</controllingFieldValue>
+            <valueName>Kaco Powador 30000xi Park</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kaco</controllingFieldValue>
+            <valueName>Kaco Powador 33000xi Park</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kaco</controllingFieldValue>
+            <valueName>Kaco Powador 72.0 TL3 Park</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kaco</controllingFieldValue>
+            <valueName>Kaco Powador XP550-HV TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kenersys</controllingFieldValue>
+            <valueName>Kenersys K82</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kintech</controllingFieldValue>
+            <valueName>Kintech EOL Zenith</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>KSTAR</controllingFieldValue>
+            <valueName>KSTAR GSL1250</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>KSTAR</controllingFieldValue>
+            <valueName>KSTAR GSM1250</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lagerwey</controllingFieldValue>
+            <valueName>Lagerwey L100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lagerwey</controllingFieldValue>
+            <valueName>Lagerwey L136</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lagerwey</controllingFieldValue>
+            <valueName>Lagerwey L147</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lagerwey</controllingFieldValue>
+            <valueName>Lagerwey L82</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lagerwey</controllingFieldValue>
+            <valueName>Lagerwey L93</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Landis+Gyr</controllingFieldValue>
+            <controllingFieldValue>Landys+Gyr</controllingFieldValue>
+            <valueName>Landys+Gyr E650</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Landis+Gyr</controllingFieldValue>
+            <valueName>Landys+Gyr E650 ZMD402</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Landis+Gyr</controllingFieldValue>
+            <valueName>Landys+Gyr ZMD410CTSBT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Landis+Gyr</controllingFieldValue>
+            <controllingFieldValue>Landys+Gyr</controllingFieldValue>
+            <valueName>Landys+Gyr ZMQ 202</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mastervolt</controllingFieldValue>
+            <valueName>Mastervolt Soladin 1000 WEB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mastervolt</controllingFieldValue>
+            <valueName>Mastervolt Soladin 1500 WEB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mastervolt</controllingFieldValue>
+            <valueName>Mastervolt Soladin 2200 WEB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mastervolt</controllingFieldValue>
+            <valueName>Mastervolt Soladin 3000 WEB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mitsubishi</controllingFieldValue>
+            <valueName>Mitsubishi MWT-102-2.4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NEG Micon</controllingFieldValue>
+            <valueName>NEG Micon M1500/500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NEG Micon</controllingFieldValue>
+            <valueName>NEG Micon NM 48/750</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NEG Micon</controllingFieldValue>
+            <valueName>NEG Micon NM 52/900</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NEG Micon</controllingFieldValue>
+            <valueName>NEG Micon NM 60/1000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NEG Micon</controllingFieldValue>
+            <valueName>NEG Micon NM 64/1500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NEG Micon</controllingFieldValue>
+            <valueName>NEG Micon NM 72C/1500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NEG Micon</controllingFieldValue>
+            <valueName>NEG Micon NM 80/2750</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NEG Micon</controllingFieldValue>
+            <valueName>NEG Micon NM 80/2875</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NEG Micon</controllingFieldValue>
+            <valueName>NEG Micon NM 82/1650</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex CWE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex MET</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex N100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex N117</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex N131</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex N149</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex N50</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex N60</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex N80</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex N90</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex S70</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordex</controllingFieldValue>
+            <valueName>Nordex S77</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nordtank</controllingFieldValue>
+            <valueName>Nordtank NTK 500/37</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northern Power Systems</controllingFieldValue>
+            <valueName>Northern Power Systems NPS 100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NorthTec</controllingFieldValue>
+            <valueName>NorthTec ShadowMaster</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Power Electronics</controllingFieldValue>
+            <valueName>Power Electronics FS1800CH</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Power Electronics</controllingFieldValue>
+            <valueName>Power Electronics HEC PLUS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Power Electronics</controllingFieldValue>
+            <valueName>Power Electronics HEC V1500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Power Electronics</controllingFieldValue>
+            <valueName>Power Electronics HEM FS3350M</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Power Electronics</controllingFieldValue>
+            <valueName>Power Electronics HEM FS3430M</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Power Electronics</controllingFieldValue>
+            <valueName>Power Electronics HEMK FS2000K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Power Electronics</controllingFieldValue>
+            <valueName>Power Electronics HEMK FS3000K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Power Electronics</controllingFieldValue>
+            <valueName>Power Electronics HE PLUS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Power-One</controllingFieldValue>
+            <valueName>Power-One PVI-10.0-I-OUTD-US-480</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Power-One</controllingFieldValue>
+            <valueName>Power-One PVI-12.0-I-OUTD-S2-US-480-NG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Power-One</controllingFieldValue>
+            <valueName>Power-One PVI-330.0-TL-EN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Power-One</controllingFieldValue>
+            <valueName>Power-One PVI-CENTRAL-110.0-TL-IT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Powerwind</controllingFieldValue>
+            <valueName>PowerWind PW 500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Powerwind</controllingFieldValue>
+            <valueName>PowerWind PW 56</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PV Powered</controllingFieldValue>
+            <valueName>PV Powered PVP 100kW (208V)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PV Powered</controllingFieldValue>
+            <valueName>PV Powered PVP 100kW (480V)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PV Powered</controllingFieldValue>
+            <valueName>PV Powered PVP 260kW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PV Powered</controllingFieldValue>
+            <valueName>PV Powered PVP 30kW-LV (208V)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PV Powered</controllingFieldValue>
+            <valueName>PV Powered PVP 30kW-LV (480V)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PV Powered</controllingFieldValue>
+            <valueName>PV Powered PVP 50kW (480V)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PV Powered</controllingFieldValue>
+            <valueName>PV Powered PVP 75kW (208V)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PV Powered</controllingFieldValue>
+            <valueName>PV Powered PVP 75kW (480V)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>REFUsol</controllingFieldValue>
+            <valueName>REFUsol 008K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>REFUsol</controllingFieldValue>
+            <valueName>REFUsol 010K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>REFUsol</controllingFieldValue>
+            <valueName>REFUsol 013K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>REFUsol</controllingFieldValue>
+            <valueName>REFUsol 017K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>REFUsol</controllingFieldValue>
+            <valueName>REFUsol 020K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>REFUsol</controllingFieldValue>
+            <valueName>REFUsol 023K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>REFUsol</controllingFieldValue>
+            <valueName>REFUsol 333K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>REFUsol</controllingFieldValue>
+            <valueName>REFUsol 500K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>REFUsol</controllingFieldValue>
+            <valueName>REFUsol 630K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Riello</controllingFieldValue>
+            <valueName>Riello Helios Power HP 100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Santerno</controllingFieldValue>
+            <valueName>Santerno Sunway TG 1200 TE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Santerno</controllingFieldValue>
+            <valueName>Santerno Sunway TG290 600V MT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Santerno</controllingFieldValue>
+            <valueName>Santerno Sunway TG 750 1000V TE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Santerno</controllingFieldValue>
+            <valueName>Santerno Sunway TG 760 TE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon AE-100-60-PV-A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon AE-135-60-PV-A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon AE-135-60-PV-D</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon AE-225-60-PV-A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon AE-500-60-PV-A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon AE-50-60-PV-A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon AE-50-60-PV-D</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon AE-75-60-PV-A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon AE-75-60-PV-D</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon PVS-100 (208V)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon PVS-100 (480V)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon PVS-135 (480V)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon PVS-250 (480V)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon PVS-375 (480V)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon PVS-50 (200V)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon PVS-50 (480V)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon PVS-500 (200V)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon PVS-500 (480V)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SatCon</controllingFieldValue>
+            <valueName>SatCon PVS-75 (480V)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Satec</controllingFieldValue>
+            <valueName>Satec EM133</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Schneider Electric</controllingFieldValue>
+            <valueName>Schneider Electric Conext Core XC 680</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Schneider Electric</controllingFieldValue>
+            <valueName>Schneider Electric Conext SmartGen CS1800</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Schneider Electric</controllingFieldValue>
+            <valueName>Schneider Electric Conext SmartGen CS2000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Schneider Electric</controllingFieldValue>
+            <valueName>Schneider Electric Conext SmartGen CS2200</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Schneider Electric</controllingFieldValue>
+            <valueName>Schneider Electric Conext SmartGen CS2400</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Schneider Electric</controllingFieldValue>
+            <valueName>Schneider Electric ION6200</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Schneider Electric</controllingFieldValue>
+            <valueName>Schneider Electric ION8600</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Schneider Electric</controllingFieldValue>
+            <valueName>Schneider Electric PM820</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wilmers</controllingFieldValue>
+            <valueName>Wilmers NDL 485</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WinWindD</controllingFieldValue>
+            <valueName>WinWinD WWD-3-E100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WinWindD</controllingFieldValue>
+            <valueName>WinWinD WWD-3-S103</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xantrex</controllingFieldValue>
+            <valueName>Xantrex/Schneider Electric GT100-480</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xantrex</controllingFieldValue>
+            <valueName>Xantrex/Schneider Electric GT250-480</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xantrex</controllingFieldValue>
+            <valueName>Xantrex/Schneider Electric GT500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xantrex</controllingFieldValue>
+            <valueName>Xantrex/Schneider Electric GT630E</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xantrex</controllingFieldValue>
+            <valueName>Xantrex PV225S-480</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Zigor</controllingFieldValue>
+            <valueName>Zigor Sun Zet 100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion/RePower MD77</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion 3.0 M122</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion 3.2 M114</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion 3.4 M104</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion 3.4 M114</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion 3.6 M140</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion 5.1 M126</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion 6.2 M126</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion METEO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion MM100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion MM114</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion MM70</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion MM82</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion MM92</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Senvion</controllingFieldValue>
+            <valueName>Senvion PMU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SIAC Soleil</controllingFieldValue>
+            <valueName>SIAC Soleil DSPX TRH 112.50</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SIAC Soleil</controllingFieldValue>
+            <valueName>SIAC Soleil DSPX TRH 220</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SIAC Soleil</controllingFieldValue>
+            <valueName>SIAC Soleil DSPX TRH 250</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SIAC Soleil</controllingFieldValue>
+            <valueName>SIAC Soleil DSPX TRH 72</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SIAC Soleil</controllingFieldValue>
+            <valueName>SIAC Soleil DSPX TRH 90</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SIAC Soleil</controllingFieldValue>
+            <valueName>SIAC Soleil DSPX TRL 250</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens 1.3/68</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens GMS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens HPPP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens MET</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SINACON PV</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SINVERT PVS 1000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SITE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SWT-2.3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SWT-2.3-101</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SWT-2.3-82</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SWT-2.3-93</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SWT-3.0</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SWT-3.0-101</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SWT-3.0-108</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SWT-3.2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SWT-3.4-101</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SWT-3.6</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SWT-4.1-142</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SWT-4.3-130</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SWT-6.0-154</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SWT-7.0-154</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SWT-DD-130</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Siemens</controllingFieldValue>
+            <valueName>Siemens SWT-DD-142</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Core1 50kW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA SOLID-Q 50</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Boy 3000TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Boy 4000TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Boy 5000US</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Boy 6000US</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Boy 7000US</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Boy 8000US</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 1000CP XT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 1850</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 2200</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 2475</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 250</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 2500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 2750</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 3000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 4000 UP-US</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 400HE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 4200 UP-US</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 4400 UP-US</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 4600 UP-US</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 500CP-US</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 500HE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 500HE-US</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 500U</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 630CP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 630HE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 720CP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 760CP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 800CP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 800CP-US</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 850CP XT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 900CP XT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Central 900SC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Mini Central 10000TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Mini Central 11000TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Mini Central 6000TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Mini Central 7000TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Mini Central 8000TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Mini Central 9000TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Tripower 11000TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Tripower 15000TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Tripower 17000TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Tripower 20000TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Tripower 24000TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Tripower 25000TL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Tripower 60</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMA</controllingFieldValue>
+            <valueName>SMA Sunny Tripower CORE1 (STP 50-40)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SolarEdge</controllingFieldValue>
+            <valueName>SolarEdge SE10K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SolarEdge</controllingFieldValue>
+            <valueName>SolarEdge SE25K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SolarEdge</controllingFieldValue>
+            <valueName>SolarEdge SE27.6K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SolarEdge</controllingFieldValue>
+            <valueName>SolarEdge SE30K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SolarEdge</controllingFieldValue>
+            <valueName>SolarEdge SE33.3K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SolarEdge</controllingFieldValue>
+            <valueName>SolarEdge SE3K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SolarMax</controllingFieldValue>
+            <valueName>SolarMax 100C</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SolarMax</controllingFieldValue>
+            <valueName>SolarMax 300C</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SolarMax</controllingFieldValue>
+            <valueName>SolarMax 330TS-SV</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SolarMax</controllingFieldValue>
+            <valueName>SolarMax 50C</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SolarMax</controllingFieldValue>
+            <valueName>SolarMax 80C</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Solectria</controllingFieldValue>
+            <valueName>Solectria SGI 500XTM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Solectria</controllingFieldValue>
+            <valueName>Solectria SGI 750XTM</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

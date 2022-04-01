@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Site</fullName>
+        <default>false</default>
+        <label>Site</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MWp</fullName>
+        <default>false</default>
+        <label>MWp</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Finite Count</fullName>
+        <default>false</default>
+        <label>Finite Count</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Fixed Fee</fullName>
+        <default>false</default>
+        <label>Fixed Fee</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hours</fullName>
+        <default>false</default>
+        <label>Hours</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Cost+</fullName>
+        <default>false</default>
+        <label>Cost+</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MWh (EnCap)</fullName>
+        <default>false</default>
+        <label>MWh (EnCap)</label>
+    </standardValue>
+</StandardValueSet>

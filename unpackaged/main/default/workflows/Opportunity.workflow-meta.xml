@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Opportunity_Owner</fullName>
+        <description>Opportunity Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_Owner_Changes</template>
+    </alerts>
+    <alerts>
+        <fullName>Prior_Opportunity_Owner</fullName>
+        <description>Prior Opportunity Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Prior_Owner_s_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Prior_Opportunity_Owner</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Review_Approved</fullName>
+        <field>Finance_Review__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Review Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Review_Blank</fullName>
+        <field>Finance_Review__c</field>
+        <name>Review Blank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Review_Needed_Update1</fullName>
+        <field>Finance_Review__c</field>
+        <literalValue>Review Needed</literalValue>
+        <name>Review Needed Update1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Review_Rejected</fullName>
+        <field>Finance_Review__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Review Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Closed_Date</fullName>
+        <field>CloseDate</field>
+        <formula>TODAY()</formula>
+        <name>Update Closed Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_opportunity_stage</fullName>
+        <field>StageName</field>
+        <literalValue>Closed Won</literalValue>
+        <name>Update opportunity stage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

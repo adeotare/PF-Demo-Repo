@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracting_Entity__c</fullName>
+    <externalId>false</externalId>
+    <label>Contracting Entity</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EK: PF Canada Inc.</fullName>
+                <default>false</default>
+                <label>EK: PF Canada Inc.</label>
+            </value>
+            <value>
+                <fullName>PF: PF LLC</fullName>
+                <default>false</default>
+                <label>PF: PF LLC</label>
+            </value>
+            <value>
+                <fullName>GB US: GB Inc</fullName>
+                <default>false</default>
+                <label>GB US: GB Inc</label>
+            </value>
+            <value>
+                <fullName>GB RoW: GB AB</fullName>
+                <default>false</default>
+                <label>GB RoW: GB AB</label>
+            </value>
+            <value>
+                <fullName>3MW US: 3MW LLC</fullName>
+                <default>false</default>
+                <label>3MW US: 3MW LLC</label>
+            </value>
+            <value>
+                <fullName>3MW RoW: 3MW GmbH</fullName>
+                <default>false</default>
+                <label>3MW RoW: 3MW GmbH</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

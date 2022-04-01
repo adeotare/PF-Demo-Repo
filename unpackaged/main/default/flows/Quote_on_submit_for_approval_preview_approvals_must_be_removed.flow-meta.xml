@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <decisions>
+        <name>Change_quote_status_on_the_basis_of_approval_status</name>
+        <label>Change quote status on the basis of approval status</label>
+        <locationX>662</locationX>
+        <locationY>187</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>When_quote_is_sent_for_approval</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ApprovalStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>status_changed_to_in_progress</targetReference>
+            </connector>
+            <label>When quote is sent for approval</label>
+        </rules>
+        <rules>
+            <name>When_approval_is_recalled</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ApprovalStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Recalled</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>status_changed_to_draft_for_recall</targetReference>
+            </connector>
+            <label>When approval is recalled</label>
+        </rules>
+        <rules>
+            <name>When_approval_is_rejected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ApprovalStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Rejected</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>status_changed_to_draft_for_rejection</targetReference>
+            </connector>
+            <label>When approval is rejected</label>
+        </rules>
+        <rules>
+            <name>When_approval_is_approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ApprovalStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>status_changed_for_approved</targetReference>
+            </connector>
+            <label>When approval is approved</label>
+        </rules>
+    </decisions>
+    <description>REQ - 1770</description>
+    <interviewLabel>Quote : on submit for approval preview approvals must be removed {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Quote : on submit for approval preview approvals must be removed</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>status_changed_for_approved</name>
+        <label>status changed for approved</label>
+        <locationX>846</locationX>
+        <locationY>280</locationY>
+        <inputAssignments>
+            <field>SBQQ__Status__c</field>
+            <value>
+                <stringValue>Approved</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>status_changed_to_draft_for_recall</name>
+        <label>status changed to draft for recall</label>
+        <locationX>834</locationX>
+        <locationY>86</locationY>
+        <inputAssignments>
+            <field>SBQQ__Status__c</field>
+            <value>
+                <stringValue>Draft</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>status_changed_to_draft_for_rejection</name>
+        <label>status changed to draft for rejection</label>
+        <locationX>665</locationX>
+        <locationY>18</locationY>
+        <inputAssignments>
+            <field>SBQQ__Status__c</field>
+            <value>
+                <stringValue>Draft</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>status_changed_to_in_progress</name>
+        <label>status changed to in progress</label>
+        <locationX>662</locationX>
+        <locationY>343</locationY>
+        <inputAssignments>
+            <field>SBQQ__Status__c</field>
+            <value>
+                <stringValue>Approval In Progress</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>59</locationX>
+        <locationY>93</locationY>
+        <connector>
+            <targetReference>Change_quote_status_on_the_basis_of_approval_status</targetReference>
+        </connector>
+        <object>SBQQ__Quote__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
