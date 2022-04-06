@@ -155,10 +155,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>GB_Customer_Id__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>GB_Customer_Name__c</field>
             </layoutItems>
             <layoutItems>
