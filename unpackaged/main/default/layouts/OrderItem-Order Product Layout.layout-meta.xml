@@ -32,13 +32,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Account_Plant__c</field>
+                <field>Annual_Recurring_Revenue__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>TotalPrice</field>
+                <behavior>Edit</behavior>
+                <field>Non_Recurring_Revenue__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -48,13 +46,23 @@
                 <behavior>Readonly</behavior>
                 <field>Additional_Disc_Amt__c</field>
             </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Annual_Recurring_Revenue__c</field>
+                <behavior>Readonly</behavior>
+                <field>TotalPrice</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Non_Recurring_Revenue__c</field>
+                <field>ServiceDate</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>EndDate</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SBQQ__SubscriptionTerm__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -102,13 +110,57 @@
     </layoutSections>
     <multilineLayoutFields>OrderId</multilineLayoutFields>
     <multilineLayoutFields>Product2Id</multilineLayoutFields>
+    <multilineLayoutFields>ListPrice</multilineLayoutFields>
     <multilineLayoutFields>UnitPrice</multilineLayoutFields>
     <multilineLayoutFields>Quantity</multilineLayoutFields>
-    <multilineLayoutFields>ListPrice</multilineLayoutFields>
     <multilineLayoutFields>Description</multilineLayoutFields>
+    <multilineLayoutFields>TotalPrice</multilineLayoutFields>
+    <relatedLists>
+        <fields>Product2</fields>
+        <fields>Quantity</fields>
+        <fields>UnitPrice</fields>
+        <fields>ListPrice</fields>
+        <fields>TotalPrice</fields>
+        <fields>ODER_ITEM.START_DATE</fields>
+        <fields>ODER_ITEM.END_DATE</fields>
+        <fields>QUOTE_LI</fields>
+        <fields>OriginalOrderItem</fields>
+        <relatedList>OrderItem.SBQQ__RequiredBy__c</relatedList>
+    </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>Plant_Product_Transaction__c.Order_Product__c</relatedList>
+        <relatedList>SBQQ__Subscription__c.SBQQ__OrderProduct__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>SBQQ__OrderItemConsumptionSchedule__c.SBQQ__OrderItem__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>SBQQ__Description__c</fields>
+        <fields>UPDATEDBY_USER</fields>
+        <relatedList>SBQQ__PriceSchedule__c.SBQQ__OrderProduct__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>ASSET.NAME</fields>
+        <fields>ASSET.SERIAL_NUMBER</fields>
+        <fields>ASSET.INSTALL_DATE</fields>
+        <fields>ACCOUNT.NAME</fields>
+        <fields>CONTACT.NAME</fields>
+        <fields>PRODUCT2.NAME</fields>
+        <relatedList>Asset.SBQQ__OrderProduct__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>Product2</fields>
+        <fields>Quantity</fields>
+        <fields>UnitPrice</fields>
+        <fields>ListPrice</fields>
+        <fields>TotalPrice</fields>
+        <fields>ODER_ITEM.START_DATE</fields>
+        <fields>ODER_ITEM.END_DATE</fields>
+        <fields>QUOTE_LI</fields>
+        <fields>OriginalOrderItem</fields>
+        <relatedList>OrderItem.SBQQ__RevisedOrderProduct__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>

@@ -53,6 +53,10 @@
                 <field>Description</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Contracting_Entity__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Trial__c</field>
             </layoutItems>
@@ -65,12 +69,16 @@
                 <field>Primary_Risk_Reason__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>PO_Number__c</field>
+                <behavior>Readonly</behavior>
+                <field>Age_of_record__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Finance_Reviewed_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>PO_Number__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -92,11 +100,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>ExpectedRevenue</field>
+                <field>Payment_Terms__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Payment_Terms__c</field>
+                <field>ExpectedRevenue</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
@@ -166,8 +174,41 @@
                 <behavior>Edit</behavior>
                 <field>Pricebook2Id</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SBQQ__PrimaryQuote__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SBQQ__Contracted__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SBQQ__Ordered__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SBQQ__CreateContractedPrices__c</field>
+            </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SBQQ__QuotePricebookId__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SBQQ__Renewal__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SBQQ__RenewedContract__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SBQQ__AmendedContract__c</field>
+            </layoutItems>
+        </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
@@ -301,33 +342,46 @@
         <fields>Product2</fields>
         <fields>Quantity</fields>
         <fields>UnitPrice</fields>
-        <fields>Annual_Recurring_Revenue__c</fields>
-        <fields>Non_Recurring_Revenue__c</fields>
-        <fields>Start_Date__c</fields>
-        <fields>End_Date__c</fields>
+        <fields>ServiceDate</fields>
         <fields>Description</fields>
+        <fields>ListPrice</fields>
         <relatedList>RelatedLineItemList</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>NAME</fields>
-        <fields>Checklist_Signed_off_by__c</fields>
-        <fields>Checklist_Signed_off_date__c</fields>
-        <relatedList>Finance_Checklist__c.Opportunity__c</relatedList>
+        <fields>QUOTE.QUOTENUMBER</fields>
+        <fields>QUOTE.NAME</fields>
+        <fields>QUOTE.ISSYNCING</fields>
+        <fields>QUOTE.EXPIRATIONDATE</fields>
+        <fields>QUOTE.SUBTOTAL</fields>
+        <fields>QUOTE.TOTALPRICE</fields>
+        <fields>CreatedBy</fields>
+        <relatedList>RelatedQuoteList</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>ACCOUNT.NAME</fields>
-        <fields>PARTNER.ROLE</fields>
-        <fields>PARTNER.PRIMARY</fields>
-        <relatedList>RelatedPartnerList</relatedList>
+        <fields>NAME</fields>
+        <relatedList>SBQQ__QuoteDocument__c.SBQQ__Opportunity__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>CONTRACT.CONTRACT_NUMBER</fields>
+        <fields>CONTRACT.NAME</fields>
+        <fields>SALES.ACCOUNT.NAME</fields>
+        <fields>CONTRACT.STATUS</fields>
+        <relatedList>Contract.SBQQ__Opportunity__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>CONTRACT.CONTRACT_NUMBER</fields>
+        <fields>CONTRACT.NAME</fields>
+        <fields>SALES.ACCOUNT.NAME</fields>
+        <fields>CONTRACT.STATUS</fields>
+        <relatedList>Contract.SBQQ__RenewalOpportunity__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>ContactName</fields>
-        <fields>Role</fields>
-        <fields>ContactTitle</fields>
         <fields>ContactAccountName</fields>
-        <fields>Disposition__c</fields>
+        <fields>Role</fields>
         <fields>Decision_Power_Level__c</fields>
-        <fields>Persona__c</fields>
+        <fields>ContactTitle</fields>
+        <fields>Disposition__c</fields>
         <fields>IsPrimary</fields>
         <relatedList>RelatedContactRoleList</relatedList>
     </relatedLists>
@@ -340,8 +394,7 @@
         <relatedList>RelatedOpportunitySalesTeam</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>Competitor_Differentiation_Assessment__c.Opportunity__c</relatedList>
+        <relatedList>RelatedNoteList</relatedList>
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
@@ -360,6 +413,10 @@
         <fields>Document_Notes__c</fields>
         <relatedList>Document_Link__c.Opportunity__c</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Competitor_Differentiation_Assessment__c.Opportunity__c</relatedList>
+    </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
@@ -367,7 +424,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8F000000IgDw</masterLabel>
+        <masterLabel>00h7j000000ZTjU</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
