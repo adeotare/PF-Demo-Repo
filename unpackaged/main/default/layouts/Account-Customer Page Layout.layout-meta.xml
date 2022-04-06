@@ -73,11 +73,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>IsCustomerPortal__c</field>
+                <field>Invoice_Requires_PO_No__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Invoice_Requires_PO_No__c</field>
+                <field>IsCustomerPortal__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>

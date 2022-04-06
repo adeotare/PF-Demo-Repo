@@ -30,10 +30,6 @@
                 <behavior>Required</behavior>
                 <field>Quantity</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Account_Plant__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
