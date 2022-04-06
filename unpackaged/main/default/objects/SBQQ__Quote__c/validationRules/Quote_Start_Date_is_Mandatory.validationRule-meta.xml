@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Start_Date_is_Mandatory</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISBLANK( SBQQ__StartDate__c )</errorConditionFormula>
+    <errorDisplayField>SBQQ__StartDate__c</errorDisplayField>
+    <errorMessage>Start Date is Required</errorMessage>
+</ValidationRule>
