@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Functional_Area__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>The &#39;Functional Area&#39; of the business that this project is related to</inlineHelpText>
+    <label>Functional Area</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>The functional area selected is not a child functional area, please select a functional area which belongs to a parent functional area</errorMessage>
+        <filterItems>
+            <field>project_cloud__Functional_Area__c.project_cloud__Parent__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </filterItems>
+        <infoMessage>Search for a child functional which belongs to a parent functional area</infoMessage>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>project_cloud__Functional_Area__c</referenceTo>
+    <relationshipLabel>Projects</relationshipLabel>
+    <relationshipName>Projects</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Project_Duration__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The number of days between the start and end date of the Project. When the project doesn&#39;t have a start end end date the value is 0, when just an End date is missing use today as the end date</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(project_cloud__Calculated_End__c),
+	IF(ISBLANK(project_cloud__Calculated_Start__c),
+		/*When there is no start or end the length of the project is 0*/
+		0
+	,/*ELSE*/
+		/*When there is a start date but no end date (not theoretically possible) use todays date as the end*/
+		TODAY() -  project_cloud__Calculated_Start__c
+	)
+,/*ELSE*/
+	project_cloud__Calculated_End__c -  project_cloud__Calculated_Start__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The duration of the project in days, calculated from the start and end dates of the project</inlineHelpText>
+    <label>Length</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

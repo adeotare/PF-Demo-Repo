@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Calculated_Start__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This is the calculated start date for the project. It is the earlier of the start date of the earliest task and the desired start date of the project</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(project_cloud__Start__c), project_cloud__Autonomous_Start__c, IF(project_cloud__Autonomous_Start__c &lt; project_cloud__Start__c, project_cloud__Autonomous_Start__c, project_cloud__Start__c))</formula>
+    <inlineHelpText>The calculated start date of the Project, derived from the Desired Start Date and the Calculated Start Date of the earliest Project Task.</inlineHelpText>
+    <label>Calculated Start Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

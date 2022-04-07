@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Phase_Status_Minimum__c</fullName>
+    <deprecated>false</deprecated>
+    <description>System calculated field used to derive the overall project status. This is a system field and should not be visible. The status field is what should be used.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>A rollup from Task Status&#39; used to drive overall project status.</inlineHelpText>
+    <label>Phase Status Minimum</label>
+    <summarizedField>project_cloud__Project_Phase__c.project_cloud__Task_Status_Minimum__c</summarizedField>
+    <summaryForeignKey>project_cloud__Project_Phase__c.project_cloud__Project__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

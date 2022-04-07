@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Timeline_Health2_Reason__c</fullName>
+    <deprecated>false</deprecated>
+    <description>When the Timeline Health of a Project is changed a reason is required.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>A plain text area with a 255 character limit allows users to provide details about timeline health.</inlineHelpText>
+    <label>Timeline Health Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

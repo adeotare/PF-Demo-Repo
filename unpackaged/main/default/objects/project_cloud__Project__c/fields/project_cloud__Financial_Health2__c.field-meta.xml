@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Financial_Health2__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Determines the Financial Health of the project</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Manually select a color choice to change the display of the Financial Health Traffic Light. Users are required to make an entry to the Financial Health Reason to save changes to this field.</inlineHelpText>
+    <label>Financial Health</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>project_cloud__Health</valueSetName>
+    </valueSet>
+</CustomField>

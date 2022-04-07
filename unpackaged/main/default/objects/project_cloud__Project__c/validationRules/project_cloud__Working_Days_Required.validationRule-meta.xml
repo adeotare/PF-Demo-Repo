@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Working_Days_Required</fullName>
+    <active>true</active>
+    <description>At least one working day needs to be selected or by definition the project will never be completed</description>
+    <errorConditionFormula>NOT(project_cloud__IsWorking_Monday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Tuesday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Wednesday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Thursday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Friday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Saturday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Sunday__c)</errorConditionFormula>
+    <errorMessage>Please select at least one Working Day</errorMessage>
+</ValidationRule>

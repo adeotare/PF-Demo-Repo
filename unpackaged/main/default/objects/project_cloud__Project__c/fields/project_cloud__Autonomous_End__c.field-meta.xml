@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Autonomous_End__c</fullName>
+    <deprecated>false</deprecated>
+    <description>User entered value indicating the desired end date of the Project.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The end date desired for the Project.</inlineHelpText>
+    <label>Desired End Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>
