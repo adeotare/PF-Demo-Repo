@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Start_Date_Is_Working_Day</fullName>
+    <active>true</active>
+    <description>The start date of a project task cannot be a Non Working day</description>
+    <errorConditionFormula>(MOD(project_cloud__Autonomous_Start__c - DATE(1900, 1, 7), 7) = 0 &amp;&amp; NOT(project_cloud__IsWorking_Sunday__c)) ||
+(MOD(project_cloud__Autonomous_Start__c - DATE(1900, 1, 7), 7) = 1 &amp;&amp; NOT(project_cloud__IsWorking_Monday__c)) ||
+(MOD(project_cloud__Autonomous_Start__c - DATE(1900, 1, 7), 7) = 2 &amp;&amp; NOT(project_cloud__IsWorking_Tuesday__c)) ||
+(MOD(project_cloud__Autonomous_Start__c - DATE(1900, 1, 7), 7) = 3 &amp;&amp; NOT(project_cloud__IsWorking_Wednesday__c)) ||
+(MOD(project_cloud__Autonomous_Start__c - DATE(1900, 1, 7), 7) = 4 &amp;&amp; NOT(project_cloud__IsWorking_Thursday__c)) ||
+(MOD(project_cloud__Autonomous_Start__c - DATE(1900, 1, 7), 7) = 5 &amp;&amp; NOT(project_cloud__IsWorking_Friday__c)) ||
+(MOD(project_cloud__Autonomous_Start__c - DATE(1900, 1, 7), 7) = 6 &amp;&amp; NOT(project_cloud__IsWorking_Saturday__c))</errorConditionFormula>
+    <errorDisplayField>project_cloud__Autonomous_Start__c</errorDisplayField>
+    <errorMessage>Cannot Start Before Date must be a Working Day</errorMessage>
+</ValidationRule>

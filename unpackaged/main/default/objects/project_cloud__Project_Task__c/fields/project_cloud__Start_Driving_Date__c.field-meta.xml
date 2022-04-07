@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Start_Driving_Date__c</fullName>
+    <deprecated>false</deprecated>
+    <description>A rollup of the start drivers on all the parent Project Tasks. Rollups are not allowed on cross object formulas. So the Child Start Driver value on the Dependency is a date field not a formula making this possible.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The earliest the task can start while still satisfying all dependencies.</inlineHelpText>
+    <label>Start Driving Date</label>
+    <summarizedField>project_cloud__Project_Task_Dependency__c.project_cloud__Child_Start_Driving_Date__c</summarizedField>
+    <summaryForeignKey>project_cloud__Project_Task_Dependency__c.project_cloud__Child__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

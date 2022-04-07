@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__IsAllocated__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Boolean value calculating whether the Project Task has been fully allocated. It is used by other formula fields for better readability. This is a system field and should never be visible.</description>
+    <externalId>false</externalId>
+    <formula>/*When the Length measurement unit is Calendar Allocation and the task has been fully allocated return true*/
+ISPICKVAL(project_cloud__Units__c, &#39;Calendar Allocation&#39;) &amp;&amp; project_cloud__Allocated_Hours__c &gt;= project_cloud__Estimated_Hours__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This is a system field and should never be visible.</inlineHelpText>
+    <label>Calendar Allocating Completed</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

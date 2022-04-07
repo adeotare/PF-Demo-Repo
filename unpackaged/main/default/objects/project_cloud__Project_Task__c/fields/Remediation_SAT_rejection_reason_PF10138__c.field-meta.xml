@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Remediation_SAT_rejection_reason_PF10138__c</fullName>
+    <externalId>false</externalId>
+    <label>Remediation SAT rejection reason-PF10138</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Typo -Out</fullName>
+                <default>false</default>
+                <label>Typo -Out</label>
+            </value>
+            <value>
+                <fullName>Performance issue - weather data -Out</fullName>
+                <default>false</default>
+                <label>Performance issue - weather data -Out</label>
+            </value>
+            <value>
+                <fullName>Non-communicating devices -Out</fullName>
+                <default>false</default>
+                <label>Non-communicating devices -Out</label>
+            </value>
+            <value>
+                <fullName>Asset Performance -Out</fullName>
+                <default>false</default>
+                <label>Asset Performance -Out</label>
+            </value>
+            <value>
+                <fullName>Asset Performance - PF config -In</fullName>
+                <default>false</default>
+                <label>Asset Performance - PF config -In</label>
+            </value>
+            <value>
+                <fullName>Fault codes creating bad events -Out</fullName>
+                <default>false</default>
+                <label>Fault codes creating bad events -Out</label>
+            </value>
+            <value>
+                <fullName>Predictive model - inaccurate info -Out</fullName>
+                <default>false</default>
+                <label>Predictive model - inaccurate info -Out</label>
+            </value>
+            <value>
+                <fullName>Predictive model -In</fullName>
+                <default>false</default>
+                <label>Predictive model -In</label>
+            </value>
+            <value>
+                <fullName>Degraded events - curtailment -Out</fullName>
+                <default>false</default>
+                <label>Degraded events - curtailment -Out</label>
+            </value>
+            <value>
+                <fullName>Degraded events - PF config -In</fullName>
+                <default>false</default>
+                <label>Degraded events - PF config -In</label>
+            </value>
+            <value>
+                <fullName>KPIs - multi orientation and GCR -Out</fullName>
+                <default>false</default>
+                <label>KPIs - multi orientation and GCR -Out</label>
+            </value>
+            <value>
+                <fullName>KPIs - inaccurate info -Out</fullName>
+                <default>false</default>
+                <label>KPIs - inaccurate info -Out</label>
+            </value>
+            <value>
+                <fullName>KPIs - PF config -In</fullName>
+                <default>false</default>
+                <label>KPIs - PF config -In</label>
+            </value>
+            <value>
+                <fullName>Missing devices - EPC -Out</fullName>
+                <default>false</default>
+                <label>Missing devices - EPC -Out</label>
+            </value>
+            <value>
+                <fullName>Missing devices - PF config -In</fullName>
+                <default>false</default>
+                <label>Missing devices - PF config -In</label>
+            </value>
+            <value>
+                <fullName>Scaling - PF config -In</fullName>
+                <default>false</default>
+                <label>Scaling - PF config -In</label>
+            </value>
+            <value>
+                <fullName>Scaling - misrepresented data -Out</fullName>
+                <default>false</default>
+                <label>Scaling - misrepresented data -Out</label>
+            </value>
+            <value>
+                <fullName>Device swaps - PF config -In</fullName>
+                <default>false</default>
+                <label>Device swaps - PF config -In</label>
+            </value>
+            <value>
+                <fullName>Device swaps - inaccurate info -In</fullName>
+                <default>false</default>
+                <label>Device swaps - inaccurate info -In</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

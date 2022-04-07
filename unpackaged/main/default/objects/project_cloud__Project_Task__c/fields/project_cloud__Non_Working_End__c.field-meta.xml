@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Non_Working_End__c</fullName>
+    <defaultValue>0</defaultValue>
+    <deprecated>false</deprecated>
+    <description>When the Project Task finishes at the end of the day (hours offset 0), a day before a Non Working day, this value is the number of non working days before a child task can start. This is a system field and should never be visible.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is a system field and should never be visible.</inlineHelpText>
+    <label>Non Working End</label>
+    <precision>1</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Minimum_End__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Override the end date of Project Task using this field. If this date is before the calculated end the calculated end will still be used</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The earliest possible date that this Project Task can finish. The Project Task can still finish after this date but not before. (You might select a value here where you want task to span a week even though there is only 1 days work involved).</inlineHelpText>
+    <label>Cannot End Before</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

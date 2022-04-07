@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Autonomous_Start__c</fullName>
+    <defaultValue>TODAY()</defaultValue>
+    <deprecated>false</deprecated>
+    <description>User entered value indicating the desired start date when there are no dependencies.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The start date desired for the Project Task. (NOTE If the task is dependent upon other tasks, the actual start date will be immediately after the preceding task completes, and not the cannot start before date).</inlineHelpText>
+    <label>Cannot Start Before</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

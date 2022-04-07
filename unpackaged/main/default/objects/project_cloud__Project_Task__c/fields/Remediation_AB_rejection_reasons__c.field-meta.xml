@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Remediation_AB_rejection_reasons__c</fullName>
+    <externalId>false</externalId>
+    <label>Remediation AB rejection reasons</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Wrong labeling</fullName>
+                <default>false</default>
+                <label>Wrong labeling</label>
+            </value>
+            <value>
+                <fullName>Hierarchy</fullName>
+                <default>false</default>
+                <label>Hierarchy</label>
+            </value>
+            <value>
+                <fullName>Missing Assets</fullName>
+                <default>false</default>
+                <label>Missing Assets</label>
+            </value>
+            <value>
+                <fullName>unmonitored assets</fullName>
+                <default>false</default>
+                <label>unmonitored assets</label>
+            </value>
+            <value>
+                <fullName>QC was not done</fullName>
+                <default>false</default>
+                <label>QC was not done</label>
+            </value>
+            <value>
+                <fullName>IE review was not done</fullName>
+                <default>false</default>
+                <label>IE review was not done</label>
+            </value>
+            <value>
+                <fullName>Customer requirements unclear</fullName>
+                <default>false</default>
+                <label>Customer requirements unclear</label>
+            </value>
+            <value>
+                <fullName>Customer requirements change</fullName>
+                <default>false</default>
+                <label>Customer requirements change</label>
+            </value>
+            <value>
+                <fullName>Multiple conflicting data source</fullName>
+                <default>false</default>
+                <label>Multiple conflicting data source</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

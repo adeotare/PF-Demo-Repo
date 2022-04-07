@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Hours_Offset__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Determine the number of hours used by the last day of the project e.g a 12 hour task will have an offset of 4 (if the hours in the day is 8). This is a system field and should never be visible.</description>
+    <externalId>false</externalId>
+    <formula>IF((project_cloud__IsComplete__c || project_cloud__Completed_Percent__c == 1) ||
+		project_cloud__Minimum_End__c == project_cloud__End__c ||
+		ISPICKVAL(project_cloud__Units__c, &quot;Duration&quot;) ||
+		project_cloud__IsAllocated__c,
+	/*Any of the above scenarios mean there is no hours offset*/
+	0,
+/*ELSE*/
+	/*Using the Estimated Hours calculate the hours offset*/
+	MOD(project_cloud__Estimated_Hours__c + project_cloud__Parents_Hours_Offset__c, project_cloud__Hours_In_Day__c)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This is a system field and should never be visible.</inlineHelpText>
+    <label>Hours Offset</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

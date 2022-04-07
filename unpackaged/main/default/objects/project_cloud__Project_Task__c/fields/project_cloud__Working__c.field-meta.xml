@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Working__c</fullName>
+    <deprecated>false</deprecated>
+    <description>A count of all the working days making it easier to calculate the non working days in code. And saving script statements getting the count for each task. This is a system field and should never be visible.</description>
+    <externalId>false</externalId>
+    <formula>/*count of all the working days making it easier to calculate the non working days in code.*/
+/*Is also for saving script statements getting the count for each task in code*/
+IF(project_cloud__IsWorking_Monday__c, 1, 0) +
+IF(project_cloud__IsWorking_Tuesday__c, 1, 0) +
+IF(project_cloud__IsWorking_Wednesday__c, 1, 0) +
+IF(project_cloud__IsWorking_Thursday__c, 1, 0) +
+IF(project_cloud__IsWorking_Friday__c, 1, 0) +
+IF(project_cloud__IsWorking_Saturday__c, 1, 0) +
+IF(project_cloud__IsWorking_Sunday__c, 1, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This is a system field and should never be visible.</inlineHelpText>
+    <label>Working Days in a Week</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

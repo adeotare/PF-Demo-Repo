@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Task_Number__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Auto Number field for uniquely identifying Project Tasks. This value is also appended to the Project Task Name for searching.</description>
+    <displayFormat>T-{00000000}</displayFormat>
+    <externalId>true</externalId>
+    <inlineHelpText>Auto number for the Project Task that is appending to the Project Task name to make it unique</inlineHelpText>
+    <label>Project Task Number</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>AutoNumber</type>
+</CustomField>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Remediation_Assets__c</fullName>
+    <externalId>false</externalId>
+    <label>Remediation Assets</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Inverters</fullName>
+                <default>false</default>
+                <label>Inverters</label>
+            </value>
+            <value>
+                <fullName>String inverters</fullName>
+                <default>false</default>
+                <label>String inverters</label>
+            </value>
+            <value>
+                <fullName>Combiners</fullName>
+                <default>false</default>
+                <label>Combiners</label>
+            </value>
+            <value>
+                <fullName>Modules</fullName>
+                <default>false</default>
+                <label>Modules</label>
+            </value>
+            <value>
+                <fullName>Bi-facial modules</fullName>
+                <default>false</default>
+                <label>Bi-facial modules</label>
+            </value>
+            <value>
+                <fullName>Strings</fullName>
+                <default>false</default>
+                <label>Strings</label>
+            </value>
+            <value>
+                <fullName>Substation</fullName>
+                <default>false</default>
+                <label>Substation</label>
+            </value>
+            <value>
+                <fullName>Trackers</fullName>
+                <default>false</default>
+                <label>Trackers</label>
+            </value>
+            <value>
+                <fullName>Meters</fullName>
+                <default>false</default>
+                <label>Meters</label>
+            </value>
+            <value>
+                <fullName>Met/Weather station</fullName>
+                <default>false</default>
+                <label>Met/Weather station</label>
+            </value>
+            <value>
+                <fullName>Wind turbines</fullName>
+                <default>false</default>
+                <label>Wind turbines</label>
+            </value>
+            <value>
+                <fullName>Protective devices</fullName>
+                <default>false</default>
+                <label>Protective devices</label>
+            </value>
+            <value>
+                <fullName>other(s)</fullName>
+                <default>false</default>
+                <label>other(s)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

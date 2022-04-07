@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Units__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The unit type of the Project Task.
+The value of this field is copied from the value of the Project when the task is created (by the ProjectTaskConfiguration trigger) and once set is read only. This is a system field and should never be visible.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is a system field and should never be visible.</inlineHelpText>
+    <label>Project Task Units</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Duration</fullName>
+                <default>true</default>
+                <label>Duration</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

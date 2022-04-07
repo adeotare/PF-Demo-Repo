@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Projected_Hours__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The number of projected hours this Project Task will take to complete based on inputed time entries and the current Project Task completion percentage</description>
+    <externalId>false</externalId>
+    <formula>IF(project_cloud__Worked_Hours__c = 0 || project_cloud__Completed_Percent__c = 0,
+	project_cloud__Estimated_Hours__c,
+	project_cloud__Worked_Hours__c / project_cloud__Completed_Percent__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The number of projected hours this Project Task will take to complete based on inputed time entries and the current Project Task completion percentage</inlineHelpText>
+    <label>Projected Hours</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

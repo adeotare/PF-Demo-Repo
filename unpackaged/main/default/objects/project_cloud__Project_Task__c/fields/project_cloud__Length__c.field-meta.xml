@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Length__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Return the length of the project task as number of days.
+When the estimated hours is larger than the hours in day subtract 1 day from the length, this is because the length includes the Start Date.
+The scale was set to 4 in a previous release, but should be 0.</description>
+    <externalId>false</externalId>
+    <formula>IF(project_cloud__IsComplete__c || project_cloud__Completed_Percent__c == 100,
+	/*When the task has been marked completed it defines the length*/
+	MAX(project_cloud__Completed_Date__c - project_cloud__Start__c, 0),
+/*ELSE*/
+	/*Check the Units and determine the length or use Minimum End Date if its larger*/
+	MAX(
+
+		/*Depending on the Units Type get the length*/
+		IF(ISPICKVAL(project_cloud__Units__c, &quot;Duration&quot;),
+			BLANKVALUE(project_cloud__Duration__c + IF(project_cloud__Duration_IsWorking__c, project_cloud__Non_Working__c, 0) - 1, 0),
+		/*ELSE*/
+			IF(project_cloud__IsAllocated__c,
+				BLANKVALUE(project_cloud__Allocated_End__c - project_cloud__Start__c, 0),
+			/*ELSE*/
+				CEILING((project_cloud__Estimated_Hours__c + project_cloud__Parents_Hours_Offset__c) / project_cloud__Hours_In_Day__c) + project_cloud__Non_Working__c - 1
+			)
+		),
+
+		/*Minimum End Date trumps everything*/
+		BLANKVALUE(project_cloud__Minimum_End__c - project_cloud__Start__c, 0),
+
+		/*Catch all in case the largest value is negative.*/
+		0
+
+	)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>System calculation of the number of days of the Project Task based on the estimated hours, and the system settings for hours in a day</inlineHelpText>
+    <label>Length</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

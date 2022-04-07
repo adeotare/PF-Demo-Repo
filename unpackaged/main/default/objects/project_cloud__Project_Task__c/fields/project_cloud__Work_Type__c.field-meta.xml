@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Work_Type__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>L/U Relationship to the Work Type of this Project Task</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The primary &#39;Work Type&#39; that this task is related to. This value is used for the base capability in resource search and allocation.</inlineHelpText>
+    <label>Work Type</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>project_cloud__Work_Type__c.project_cloud__Parent__c</field>
+            <operation>equals</operation>
+            <value></value>
+        </filterItems>
+        <filterItems>
+            <field>project_cloud__Work_Type__c.project_cloud__Type__c</field>
+            <operation>notEqual</operation>
+            <value>Location,Expertise</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>project_cloud__Work_Type__c</referenceTo>
+    <relationshipLabel>Project Tasks</relationshipLabel>
+    <relationshipName>Estimates</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

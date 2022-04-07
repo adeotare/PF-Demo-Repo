@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Hour_Valid_Blocks</fullName>
+    <active>true</active>
+    <description>Ensure that the hours entered are a multiple of Hours_Block__c value. This ensures time is entered in valid time blocks</description>
+    <errorConditionFormula>(
+project_cloud__Estimated_Hours__c &lt;= 0 ||
+MOD(project_cloud__Estimated_Hours__c, project_cloud__Hours_Block__c) != 0
+)
+/*This validation rule only applies to Estimated Hours and Calendar Allocation Project Tasks*/
+ &amp;&amp; NOT(ISPICKVAL(project_cloud__Units__c, &quot;Duration&quot;))</errorConditionFormula>
+    <errorDisplayField>project_cloud__Estimated_Hours__c</errorDisplayField>
+    <errorMessage>Estimated Hours must be a minimum of 1 and a whole number</errorMessage>
+</ValidationRule>

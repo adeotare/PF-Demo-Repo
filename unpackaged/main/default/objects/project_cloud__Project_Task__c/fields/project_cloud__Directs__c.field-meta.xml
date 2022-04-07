@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Directs__c</fullName>
+    <deprecated>false</deprecated>
+    <description>A count of the number of direct parent relationships the task has</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Represents the number of parent predecessors that the Project Task has</inlineHelpText>
+    <label>Predecessors</label>
+    <summaryForeignKey>project_cloud__Project_Task_Dependency__c.project_cloud__Child__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

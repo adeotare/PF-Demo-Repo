@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Completion_Status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Status of task at the time of completion</description>
+    <externalId>false</externalId>
+    <formula>IF(ISNULL(project_cloud__Completed_Date__c), &#39;Incomplete&#39;,
+    CASE(MAX(project_cloud__Completed_Date__c - project_cloud__Start__c - MAX(
+        /*Perform Length calculation as if Task was not completed*/
+        IF(ISPICKVAL(project_cloud__Units__c, &quot;Duration&quot;),
+            BLANKVALUE(project_cloud__Duration__c + IF(project_cloud__Duration_IsWorking__c, project_cloud__Non_Working__c, 0) - 1, 0),
+            /*ELSE*/
+            IF(project_cloud__IsAllocated__c,
+                BLANKVALUE(project_cloud__Allocated_End__c - project_cloud__Start__c, 0),
+                /*ELSE*/
+                CEILING((project_cloud__Estimated_Hours__c + project_cloud__Parents_Hours_Offset__c) / project_cloud__Hours_In_Day__c) + project_cloud__Non_Working__c - 1
+            )
+        ),
+        BLANKVALUE(project_cloud__Minimum_End__c - project_cloud__Start__c, 0),
+        0
+    ), -1),
+       -1 , &#39;Early&#39;,
+        0, &#39;On Time&#39;,
+        &#39;Late&#39;
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Status of task at the time of completion</inlineHelpText>
+    <label>Completion Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__End__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Calculate the end date of the Task using the estimations and resources.</description>
+    <externalId>false</externalId>
+    <formula>BLANKVALUE(project_cloud__Completed_Date__c, project_cloud__Start__c + project_cloud__Length__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The calculated end date of the Project Task based on the number of resources allocated to the task and the estimated hours of the task</inlineHelpText>
+    <label>Calculated End Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>
