@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_Cmpn_Req_If_Email_Opt_Tick_Contac</fullName>
+    <active>true</active>
+    <description>REQ-2361</description>
+    <errorConditionFormula>IF( Email_Opt_In__c = True , ( Source_Campaign__c = NULL ),
+False)</errorConditionFormula>
+    <errorDisplayField>Source_Campaign__c</errorDisplayField>
+    <errorMessage>Source Campaign field is mandatory.</errorMessage>
+</ValidationRule>

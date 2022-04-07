@@ -32,6 +32,10 @@
             <outputField>pi__score__c</outputField>
         </mappingFields>
         <mappingFields>
+            <inputField>Source_Campaign__c</inputField>
+            <outputField>Source_Campaign__c</outputField>
+        </mappingFields>
+        <mappingFields>
             <inputField>Type__c</inputField>
             <outputField>Type__c</outputField>
         </mappingFields>
