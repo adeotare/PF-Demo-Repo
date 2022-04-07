@@ -2,8 +2,10 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Schedule_Performance_Index__c</fullName>
     <externalId>false</externalId>
-    <formula>(ccpe_r__Budgeted_Labor_Cost__c * project_cloud__Completed_Percent__c) /
-(ccpe_r__Budgeted_Labor_Cost__c * ( project_cloud__Worked_Hours__c / project_cloud__Estimated_Hours__c))</formula>
+    <formula>/* (ccpe_r__Budgeted_Labor_Cost__c * project_cloud__Completed_Percent__c) /
+(ccpe_r__Budgeted_Labor_Cost__c * ( project_cloud__Worked_Hours__c / project_cloud__Estimated_Hours__c)) */
+
+ (  Earned_Value__c  /  Planned_Value__c )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Schedule Performance Index</label>
     <precision>18</precision>

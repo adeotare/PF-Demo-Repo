@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <decisions>
+        <name>Planned_Value_Decision</name>
+        <label>Planned Value Decision</label>
+        <locationX>314</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>When_Task_Due_Date_Smaller</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Due_Date__c</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDateTime</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_PV_Hours</targetReference>
+            </connector>
+            <label>When Task Due Date Smaller</label>
+        </rules>
+        <rules>
+            <name>When_Task_Due_Date_Greater</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Due_Date__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDateTime</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_PV_Hours_to_null</targetReference>
+            </connector>
+            <label>When Task Due Date Greater</label>
+        </rules>
+    </decisions>
+    <description>Populate Planned Value field With Estimate Value when due date is smaller than current date. This flow will trigger on daily basis, current date should compare with due date.</description>
+    <interviewLabel>Project Task - Calculate Planned Value {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Project Task - Calculate Planned Value from estimate hours</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>When due date is smaller from current date, then update PV hours field with Estimate hours.</description>
+        <name>Update_PV_Hours</name>
+        <label>Update PV Hours</label>
+        <locationX>50</locationX>
+        <locationY>396</locationY>
+        <inputAssignments>
+            <field>PV_Hours__c</field>
+            <value>
+                <elementReference>$Record.project_cloud__Estimated_Hours__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>When due date is greater then current date, set PV hours to null.</description>
+        <name>Update_PV_Hours_to_null</name>
+        <label>Update PV Hours to null</label>
+        <locationX>314</locationX>
+        <locationY>396</locationY>
+        <inputAssignments>
+            <field>PV_Hours__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Planned_Value_Decision</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Due_Date__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>project_cloud__Project_Task__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2022-04-04</startDate>
+            <startTime>03:15:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

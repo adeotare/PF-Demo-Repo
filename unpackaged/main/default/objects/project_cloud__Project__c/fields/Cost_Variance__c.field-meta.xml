@@ -2,7 +2,9 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Cost_Variance__c</fullName>
     <externalId>false</externalId>
-    <formula>Earned_Value_Depricate__c -  ccpe_r__Total_Actual_Costs__c</formula>
+    <formula>/*Earned_Value__c -  ccpe_r__Total_Actual_Costs__c*/
+
+ Earned_Value__c  -  project_cloud__Worked_Hours__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Cost Variance</label>
     <precision>18</precision>
