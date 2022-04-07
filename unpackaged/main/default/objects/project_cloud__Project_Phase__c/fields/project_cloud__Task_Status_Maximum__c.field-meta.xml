@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Task_Status_Maximum__c</fullName>
+    <deprecated>false</deprecated>
+    <description>System calculated field used to derive the project phase status. This is a system field and should not be visible. The status field is what should be used.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>A rollup from Task Status&#39; used to drive overall phase status.</inlineHelpText>
+    <label>Task Status Maximum</label>
+    <summarizedField>project_cloud__Project_Task__c.project_cloud__Status_Enum__c</summarizedField>
+    <summaryForeignKey>project_cloud__Project_Task__c.project_cloud__Project_Phase__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>
