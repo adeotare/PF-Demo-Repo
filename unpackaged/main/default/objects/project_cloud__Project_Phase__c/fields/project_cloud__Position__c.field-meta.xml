@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Cost_Performance_Index__c</fullName>
+    <fullName>project_cloud__Position__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <formula>/*Earned_Value_Depricate__c / ccpe_r__Total_Actual_Costs__c*/
-
- (  Earned_Value__c  /  project_cloud__Worked_Hours__c  )</formula>
-    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>Cost Performance Index</label>
+    <inlineHelpText>Determines the position in the current phases</inlineHelpText>
+    <label>Position</label>
     <precision>18</precision>
     <required>false</required>
-    <scale>2</scale>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Number</type>

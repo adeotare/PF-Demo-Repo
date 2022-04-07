@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Create_Time_Entry</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Create Time Entry</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/apex/{!$Setup.project_cloud__Configuration_Options__c.project_cloud__Namespace__c &amp; IF(ISBLANK($Setup.project_cloud__Configuration_Options__c.project_cloud__Namespace__c), &#39;&#39;, &#39;__&#39;)}timecard_tab?workParentId={!project_cloud__Project_Phase__c.Id}&amp;retURL={!URLENCODE(&#39;/&#39; &amp; project_cloud__Project_Phase__c.Id)}</url>
+</WebLink>

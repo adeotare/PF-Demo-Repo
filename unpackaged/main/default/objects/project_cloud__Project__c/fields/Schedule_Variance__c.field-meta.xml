@@ -2,7 +2,9 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Schedule_Variance__c</fullName>
     <externalId>false</externalId>
-    <formula>Earned_Value_Depricate__c -  Planned_Value_Depricate__c</formula>
+    <formula>/*Earned_Value__c -  Planned_Value__c*/
+
+( Earned_Value__c  -  Planned_Value__c )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Schedule Variance</label>
     <precision>18</precision>

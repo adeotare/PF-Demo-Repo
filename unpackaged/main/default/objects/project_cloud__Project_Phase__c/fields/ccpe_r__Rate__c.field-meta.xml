@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Cost_Variance__c</fullName>
+    <fullName>ccpe_r__Rate__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <formula>/*Earned_Value__c -  ccpe_r__Total_Actual_Costs__c*/
-
- Earned_Value__c  -  project_cloud__Worked_Hours__c</formula>
-    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>Cost Variance</label>
+    <label>Calculated Rate</label>
     <precision>18</precision>
     <required>false</required>
     <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Currency</type>
