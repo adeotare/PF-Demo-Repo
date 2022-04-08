@@ -34,17 +34,6 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>force:detailPanel</componentName>
-                <identifier>force_detailPanel</identifier>
-            </componentInstance>
-        </itemInstances>
-        <mode>Replace</mode>
-        <name>detailTabContent</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>
@@ -68,24 +57,39 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>runtime_sales_activities:activityPanel</componentName>
-                <identifier>runtime_sales_activities_activityPanel</identifier>
+                <componentName>force:detailPanel</componentName>
+                <identifier>force_detailPanel</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-a1e4ce78-d258-4ac3-bc14-0a9aa11aaa6b</name>
+        <mode>Replace</mode>
+        <name>detailTabContent</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>forceChatter:recordFeedContainer</componentName>
-                <identifier>forceChatter_recordFeedContainer</identifier>
+                <componentName>runtime_sales_activities:activityPanel</componentName>
+                <identifier>runtime_sales_activities_activityPanel</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-164tcoupw0h</name>
+        <name>Facet-7f16857e-14a3-4a05-8556-2ac1575d1039</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>relatedTabContent</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Standard.Tab.relatedLists</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>relatedListsTab</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -108,21 +112,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>relatedTabContent</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Standard.Tab.relatedLists</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>relatedListsTab</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-a1e4ce78-d258-4ac3-bc14-0a9aa11aaa6b</value>
+                    <value>Facet-7f16857e-14a3-4a05-8556-2ac1575d1039</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
@@ -130,20 +120,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab1</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-164tcoupw0h</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Standard.Tab.collaborate</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab2</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -174,7 +150,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>lookupFieldName</name>
-                    <value>project_cloud__Project__c.ccpe_ocp__Account__c</value>
+                    <value>CRM_Project__c.Account__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>titleFieldName</name>
@@ -185,14 +161,14 @@
                     <value>Account.Update_Account_Action</value>
                 </componentInstanceProperties>
                 <componentName>console:relatedRecord</componentName>
-                <identifier>console_relatedRecord2</identifier>
+                <identifier>console_relatedRecord1</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>lookupFieldName</name>
-                    <value>project_cloud__Project__c.Account_Plant__c</value>
+                    <value>CRM_Project__c.Account_Plant_relationship_Name__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>titleFieldName</name>
@@ -203,14 +179,14 @@
                     <value>Account_Plant__c.Update_Plant</value>
                 </componentInstanceProperties>
                 <componentName>console:relatedRecord</componentName>
-                <identifier>console_relatedRecord1</identifier>
+                <identifier>console_relatedRecord2</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>project_cloud__Project__c.Account_Plant__c</value>
+                    <value>CRM_Project__c.Account_Plant_relationship_Name__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
@@ -236,9 +212,9 @@
         <name>sidebar</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>Project Record Page</masterLabel>
+    <masterLabel>CRM Project Record Page</masterLabel>
     <parentFlexiPage>flexipage__default_rec_L</parentFlexiPage>
-    <sobjectType>project_cloud__Project__c</sobjectType>
+    <sobjectType>CRM_Project__c</sobjectType>
     <template>
         <name>flexipage:recordHomeTemplateDesktop</name>
     </template>

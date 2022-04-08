@@ -13,11 +13,11 @@
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Project_Status__c</field>
+                <behavior>Readonly</behavior>
+                <field>project_cloud__Status__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Sub_Status__c</field>
             </layoutItems>
             <layoutItems>
@@ -47,7 +47,7 @@
                 <field>Customer_Contact__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>project_cloud__Type__c</field>
             </layoutItems>
             <layoutItems>
@@ -84,7 +84,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Other Information</label>
+        <label>other Information</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -92,7 +92,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Related_Projects__c</field>
+                <field>Related_Project__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -102,11 +102,11 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Case__c</field>
+                <field>Ticket_Link__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Bug_Link__c</field>
+                <field>Jira_Link__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -134,6 +134,9 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>project_cloud__Health_Image__c</field>
+            </layoutItems>
+            <layoutItems>
+                <emptySpace>true</emptySpace>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -163,6 +166,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>project_cloud__Worked_Hours__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Baseline_hours__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -201,7 +208,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Earned_Value__c</field>
+                <field>Earned_Value_Depricate__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -344,13 +351,37 @@
         <relatedList>RelatedEntityHistoryList</relatedList>
     </relatedLists>
     <relatedLists>
-        <relatedList>RelatedFileList</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>NAME</fields>
         <fields>project_cloud__Start__c</fields>
         <fields>project_cloud__End__c</fields>
-        <relatedList>project_cloud__Project__c.Related_Projects__c</relatedList>
+        <relatedList>project_cloud__Project__c.Related_Project__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>CRM_Project__c.Related_Projects__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>ACCOUNT.NAME</fields>
+        <fields>Asset_Class_Managed_Account__c</fields>
+        <fields>Drive_Customer_Id__c</fields>
+        <fields>ACCOUNT.IS_PARNTER</fields>
+        <fields>Portfolio_Size_Account__c</fields>
+        <fields>Total_ARR__c</fields>
+        <fields>ACCOUNT.TYPE</fields>
+        <relatedList>Account.Project__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Account__c</fields>
+        <fields>Plant__c</fields>
+        <fields>CREATEDBY_USER.ALIAS</fields>
+        <fields>Customer_Plant_Name__c</fields>
+        <fields>Relationship_Type__c</fields>
+        <relatedList>Account_Plant__c.Project__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>RAID__c.Cloud_Coach_Project__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
@@ -358,7 +389,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8F000000Ifu5</masterLabel>
+        <masterLabel>00h7j000000ZVdb</masterLabel>
         <sizeX>1</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
