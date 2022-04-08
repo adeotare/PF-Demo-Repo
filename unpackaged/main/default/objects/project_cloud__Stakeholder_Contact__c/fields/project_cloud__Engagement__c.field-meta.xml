@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Engagement__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(
+  ISPICKVAL(project_cloud__Power__c, &#39;High&#39;),
+  IF(
+    ISPICKVAL(project_cloud__Interest__c, &#39;High&#39;),
+    &#39;Manage Closely&#39;,
+    IF(
+      ISPICKVAL(project_cloud__Interest__c, &#39;Low&#39;),
+      &#39;Keep Satisfied&#39;,
+      &#39;&#39;
+    )
+  ),
+  IF(
+    ISPICKVAL(project_cloud__Power__c, &#39;Low&#39;),
+    IF(ISPICKVAL(project_cloud__Interest__c, &#39;High&#39;),
+      &#39;Keep Informed&#39;,
+      IF(
+        ISPICKVAL(project_cloud__Interest__c, &#39;Low&#39;),
+        &#39;Monitor&#39;,
+        &#39;&#39;
+      )
+    ), &#39;&#39;
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Engagement</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

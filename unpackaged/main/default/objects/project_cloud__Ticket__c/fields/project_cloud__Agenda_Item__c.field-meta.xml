@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Agenda_Item__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Agenda Item that this ticket is related to.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Agenda Item that this ticket is related to.</inlineHelpText>
+    <label>Agenda Item</label>
+    <referenceTo>project_cloud__Agenda_Item__c</referenceTo>
+    <relationshipLabel>Tickets</relationshipLabel>
+    <relationshipName>Tickets</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

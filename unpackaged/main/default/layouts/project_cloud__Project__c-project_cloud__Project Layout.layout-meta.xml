@@ -357,31 +357,7 @@
         <relatedList>project_cloud__Project__c.Related_Projects__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>CRM_Project__c.Related_Projects__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>ACCOUNT.NAME</fields>
-        <fields>Asset_Class_Managed_Account__c</fields>
-        <fields>Drive_Customer_Id__c</fields>
-        <fields>ACCOUNT.IS_PARNTER</fields>
-        <fields>Portfolio_Size_Account__c</fields>
-        <fields>Total_ARR__c</fields>
-        <fields>ACCOUNT.TYPE</fields>
-        <relatedList>Account.Project__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>Account__c</fields>
-        <fields>Plant__c</fields>
-        <fields>CREATEDBY_USER.ALIAS</fields>
-        <fields>Customer_Plant_Name__c</fields>
-        <fields>Relationship_Type__c</fields>
-        <relatedList>Account_Plant__c.Project__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>RAID__c.Cloud_Coach_Project__c</relatedList>
+        <relatedList>RelatedFileList</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

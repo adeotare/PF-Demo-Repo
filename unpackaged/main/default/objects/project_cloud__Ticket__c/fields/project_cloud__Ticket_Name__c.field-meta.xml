@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Ticket_Name__c</fullName>
+    <deprecated>false</deprecated>
+    <description>A brief explanation of the ticket. Not to be confused with the description, which is a more detailed explanation of the problem and possible suggestions for a solution</description>
+    <externalId>false</externalId>
+    <inlineHelpText>A brief explanation of the ticket. See the description for more detail</inlineHelpText>
+    <label>Name</label>
+    <length>255</length>
+    <required>true</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

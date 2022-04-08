@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Cloned_From__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>This is a system field indicating which tickt this ticket was cloned from</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Shows the Name of a ticket that the Ticket was cloned from.</inlineHelpText>
+    <label>Cloned From</label>
+    <referenceTo>project_cloud__Ticket__c</referenceTo>
+    <relationshipLabel>Cloned Tickets</relationshipLabel>
+    <relationshipName>Cloned_Tickets</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
