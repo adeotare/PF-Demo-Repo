@@ -3998,6 +3998,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>SBQQ__Quote__c.DocuSign_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Task.ActivityDate</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4059,6 +4064,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Task.project_cloud__Hours__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>dsfs__DocuSign_Status__c.Quote__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
