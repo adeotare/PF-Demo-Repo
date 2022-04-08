@@ -548,18 +548,6 @@
         <sortOrder>Asc</sortOrder>
     </relatedLists>
     <relatedLists>
-        <customButtons>Calculate</customButtons>
-        <excludeButtons>MassChangeOwner</excludeButtons>
-        <fields>NAME</fields>
-        <fields>Product__c</fields>
-        <fields>Initial_Mega_Watt_Quantity__c</fields>
-        <fields>Cumulative_Qty__c</fields>
-        <fields>Running_Cumulative__c</fields>
-        <fields>Amend_Quote_Qty__c</fields>
-        <fields>Amend_Quote_Date__c</fields>
-        <relatedList>Plant_Product_Transaction__c.Quote__c</relatedList>
-    </relatedLists>
-    <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>SBQQ__Number__c</fields>
