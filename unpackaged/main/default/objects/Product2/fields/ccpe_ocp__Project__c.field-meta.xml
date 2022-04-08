@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccpe_ocp__Project__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Project</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>The selected Project is not a Project Template.</errorMessage>
+        <filterItems>
+            <field>project_cloud__Project__c.project_cloud__IsTemplate__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>project_cloud__Project__c</referenceTo>
+    <relationshipLabel>Products</relationshipLabel>
+    <relationshipName>Products</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

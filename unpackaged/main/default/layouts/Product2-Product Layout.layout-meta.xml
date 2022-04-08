@@ -346,8 +346,24 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <relatedList>SBQQ__ProductFeature__c.SBQQ__ConfiguredSKU__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>SBQQ__ProductOption__c.SBQQ__ConfiguredSKU__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>SBQQ__OptionConstraint__c.SBQQ__ConfiguredSKU__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
         <fields>SBQQ__Active__c</fields>
         <relatedList>SBQQ__ConfigurationRule__c.SBQQ__Product__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>SBQQ__Cost__c.SBQQ__Product__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

@@ -273,6 +273,10 @@
         <relatedList>Asset.SBQQ__OrderProduct__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>SBQQ__OrderItemConsumptionSchedule__c.SBQQ__OrderItem__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>Product2</fields>
         <fields>Quantity</fields>
         <fields>UnitPrice</fields>
@@ -284,7 +288,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8F000000If8P</masterLabel>
+        <masterLabel>00h7j000000ZU9F</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
