@@ -5,7 +5,7 @@
     <label>Customer Priority</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
-    <trackHistory>true</trackHistory>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
@@ -18,9 +18,9 @@
                 <label>Low</label>
             </value>
             <value>
-                <fullName>Med</fullName>
+                <fullName>Medium</fullName>
                 <default>false</default>
-                <label>Med</label>
+                <label>Medium</label>
             </value>
             <value>
                 <fullName>High</fullName>
