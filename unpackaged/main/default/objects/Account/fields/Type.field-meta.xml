@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Type</fullName>
+    <description>Indicates the broadest category of Account. Is the controlling picklist for Subtype. Set by record type chosen. Updates to Customer/Former Customer automaticaly based on purchased products.</description>
     <trackFeedHistory>true</trackFeedHistory>
     <trackHistory>true</trackHistory>
     <type>Picklist</type>

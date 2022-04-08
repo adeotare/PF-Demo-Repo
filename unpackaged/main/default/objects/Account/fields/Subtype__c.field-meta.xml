@@ -28,24 +28,9 @@
                 <label>Utility</label>
             </value>
             <value>
-                <fullName>Oil &amp; Gas Major</fullName>
-                <default>false</default>
-                <label>Oil &amp; Gas Major</label>
-            </value>
-            <value>
                 <fullName>IPP</fullName>
                 <default>false</default>
                 <label>IPP</label>
-            </value>
-            <value>
-                <fullName>O&amp;M Service Provider</fullName>
-                <default>false</default>
-                <label>O&amp;M Service Provider</label>
-            </value>
-            <value>
-                <fullName>AM Service Provider</fullName>
-                <default>false</default>
-                <label>AM Service Provider</label>
             </value>
             <value>
                 <fullName>Developer</fullName>
@@ -56,11 +41,6 @@
                 <fullName>Partner</fullName>
                 <default>false</default>
                 <label>Partner</label>
-            </value>
-            <value>
-                <fullName>N/A</fullName>
-                <default>false</default>
-                <label>N/A</label>
             </value>
             <value>
                 <fullName>Reseller</fullName>
@@ -88,26 +68,111 @@
                 <label>Auditor</label>
             </value>
             <value>
-                <fullName>EPC</fullName>
-                <default>false</default>
-                <label>EPC</label>
-            </value>
-            <value>
                 <fullName>Vendor</fullName>
                 <default>false</default>
                 <label>Vendor</label>
             </value>
             <value>
-                <fullName>Education, Media, &amp; Misc.</fullName>
+                <fullName>Independent Service Provider (ISP)</fullName>
                 <default>false</default>
-                <label>Education, Media, &amp; Misc.</label>
+                <label>Independent Service Provider (ISP)</label>
+            </value>
+            <value>
+                <fullName>EPC</fullName>
+                <default>false</default>
+                <label>EPC</label>
+            </value>
+            <value>
+                <fullName>OEM</fullName>
+                <default>false</default>
+                <label>OEM</label>
+            </value>
+            <value>
+                <fullName>System Integrator &amp; Technology Service Provider</fullName>
+                <default>false</default>
+                <label>System Integrator &amp; Technology Service Provider</label>
+            </value>
+            <value>
+                <fullName>Education, Media, &amp; Misc. Consultant</fullName>
+                <default>false</default>
+                <label>Education, Media, &amp; Misc. Consultant</label>
+            </value>
+            <value>
+                <fullName>AM Service Provider</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>AM Service Provider</label>
             </value>
             <value>
                 <fullName>Consultant</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Consultant</label>
             </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>O&amp;M Service Provider</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>O&amp;M Service Provider</label>
+            </value>
+            <value>
+                <fullName>Oil &amp; Gas Major</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Oil &amp; Gas Major</label>
+            </value>
         </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <controllingFieldValue>Customer</controllingFieldValue>
+            <valueName>Passive Investor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <controllingFieldValue>Customer</controllingFieldValue>
+            <valueName>Active Investor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <controllingFieldValue>Customer</controllingFieldValue>
+            <valueName>Utility</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <controllingFieldValue>Customer</controllingFieldValue>
+            <valueName>IPP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <controllingFieldValue>Customer</controllingFieldValue>
+            <valueName>Developer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <controllingFieldValue>Customer</controllingFieldValue>
+            <valueName>Independent Service Provider (ISP)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <controllingFieldValue>Customer</controllingFieldValue>
+            <valueName>EPC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <controllingFieldValue>Customer</controllingFieldValue>
+            <valueName>OEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <controllingFieldValue>Customer</controllingFieldValue>
+            <valueName>System Integrator &amp; Technology Service Provider</valueName>
+        </valueSettings>
         <valueSettings>
             <controllingFieldValue>3rd Party</controllingFieldValue>
             <valueName>Partner</valueName>
@@ -138,60 +203,7 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>3rd Party</controllingFieldValue>
-            <valueName>Education, Media, &amp; Misc.</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>3rd Party</controllingFieldValue>
-            <valueName>Consultant</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Competitor</controllingFieldValue>
-            <valueName>N/A</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Prospect</controllingFieldValue>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>Passive Investor</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Prospect</controllingFieldValue>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>Active Investor</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Prospect</controllingFieldValue>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>Utility</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Prospect</controllingFieldValue>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>Oil &amp; Gas Major</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Prospect</controllingFieldValue>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>IPP</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Prospect</controllingFieldValue>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>O&amp;M Service Provider</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Prospect</controllingFieldValue>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>AM Service Provider</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Prospect</controllingFieldValue>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>Developer</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Prospect</controllingFieldValue>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>EPC</valueName>
+            <valueName>Education, Media, &amp; Misc. Consultant</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>
