@@ -378,6 +378,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account_Plant__c.Assigned_Customer_Contact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account_Plant__c.City__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account_Plant__c.Customer_Plant_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -407,6 +417,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account_Plant__c.Latitude__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account_Plant__c.Longitude__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account_Plant__c.Ownership_Percentage__c</field>
         <readable>true</readable>
@@ -414,6 +434,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account_Plant__c.PF_Legacy_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Plant__c.Partner_Account_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Plant__c.Partner_Account__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -434,6 +464,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account_Plant__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Plant__c.X3MW_Legacy_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
