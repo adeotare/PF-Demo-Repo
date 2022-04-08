@@ -197,11 +197,11 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Planned_Value_Depricate__c</field>
+                <field>Planned_Value__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Earned_Value_Depricate__c</field>
+                <field>Earned_Value__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
