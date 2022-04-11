@@ -100,6 +100,10 @@
                 <behavior>Readonly</behavior>
                 <field>Non_Recurring_Revenue__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>SBQQ__ContractingMethod__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
@@ -423,29 +427,34 @@
             <sortOrder>1</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>SBQQ__IncludeDocument</actionName>
+            <actionName>Conga_Composer_Generate_Order_Form</actionName>
             <actionType>CustomButton</actionType>
             <sortOrder>2</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>SBQQ__PreviewDocument</actionName>
+            <actionName>SBQQ__IncludeDocument</actionName>
             <actionType>CustomButton</actionType>
             <sortOrder>3</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
+            <actionName>SBQQ__PreviewDocument</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>4</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>Delete</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>4</sortOrder>
+            <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Submit_for_Approval</actionName>
             <actionType>CustomButton</actionType>
-            <sortOrder>5</sortOrder>
+            <sortOrder>6</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Recall_Approval</actionName>
             <actionType>CustomButton</actionType>
-            <sortOrder>6</sortOrder>
+            <sortOrder>7</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
@@ -500,6 +509,20 @@
         <relatedList>SBQQ__QuoteLineGroup__c.SBQQ__Quote__c</relatedList>
         <sortField>SBQQ__Number__c</sortField>
         <sortOrder>Asc</sortOrder>
+    </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedFileList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>dsfs__Envelope_Status__c</fields>
+        <fields>dsfs__Sender__c</fields>
+        <fields>dsfs__Subject__c</fields>
+        <fields>dsfs__Sent_Date_Time__c</fields>
+        <fields>dsfs__Sent_Age__c</fields>
+        <fields>dsfs__Completed_Date_Time__c</fields>
+        <fields>dsfs__Time_to_Complete__c</fields>
+        <relatedList>dsfs__DocuSign_Status__c.Quote__c</relatedList>
     </relatedLists>
     <relatedLists>
         <excludeButtons>New</excludeButtons>
@@ -559,7 +582,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h7j000000ZYmd</masterLabel>
+        <masterLabel>00h8F000000IiBA</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

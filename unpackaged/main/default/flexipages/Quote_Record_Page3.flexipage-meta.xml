@@ -89,6 +89,9 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
+                            <value>CustomButton.SBQQ__Quote__c.Conga_Composer_Generate_Order_Form</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>CustomButton.SBQQ__Quote__c.Recall_Approval</value>
                             <visibilityRule>
                                 <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6</booleanFilter>
