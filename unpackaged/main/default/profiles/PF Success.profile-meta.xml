@@ -3613,6 +3613,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Program__c.Customer_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Purchased_Product_Transaction__c.ARR_Growth__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3769,6 +3774,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>dsfs__DocuSign_Status__c.Quote__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>project_cloud__Project_Task__c.Assigned_To__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
