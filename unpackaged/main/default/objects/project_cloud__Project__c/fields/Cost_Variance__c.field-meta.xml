@@ -5,12 +5,12 @@
     <formula>/*Earned_Value__c -  ccpe_r__Total_Actual_Costs__c*/
 
  Earned_Value__c  -  project_cloud__Worked_Hours__c</formula>
-    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Cost Variance</label>
     <precision>18</precision>
     <required>false</required>
     <scale>2</scale>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Currency</type>
+    <type>Number</type>
+    <unique>false</unique>
 </CustomField>

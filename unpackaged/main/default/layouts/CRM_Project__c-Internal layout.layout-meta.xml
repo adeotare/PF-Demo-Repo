@@ -144,7 +144,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Entered_Hours__c</field>
+                <field>Entered_hours__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -273,6 +273,14 @@
         <relatedList>RelatedEntityHistoryList</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>NAME</fields>
+        <fields>Internal_Owner__c</fields>
+        <fields>Priority__c</fields>
+        <fields>Status__c</fields>
+        <fields>RECORDTYPE</fields>
+        <relatedList>RAID__c.CRM_Project__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
         <fields>ACTIVITY.TASK</fields>
@@ -297,7 +305,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8F000000Ihg7</masterLabel>
+        <masterLabel>00h7j000000ZXg0</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

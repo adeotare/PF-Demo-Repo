@@ -216,10 +216,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Earned_Value_Depricate__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
                 <field>Estimate_at_Completion__c</field>
             </layoutItems>
             <layoutItems>
@@ -338,6 +334,14 @@
         <sortOrder>Asc</sortOrder>
     </relatedLists>
     <relatedLists>
+        <fields>NAME</fields>
+        <fields>Internal_Owner__c</fields>
+        <fields>Priority__c</fields>
+        <fields>Status__c</fields>
+        <fields>RECORDTYPE</fields>
+        <relatedList>RAID__c.Cloud_Coach_Project__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>project_cloud__Name__c</fields>
         <fields>project_cloud__Role__c</fields>
         <fields>project_cloud__Engagement__c</fields>
@@ -373,7 +377,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8F000000Ifu5</masterLabel>
+        <masterLabel>00h7j000000ZVdb</masterLabel>
         <sizeX>1</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
