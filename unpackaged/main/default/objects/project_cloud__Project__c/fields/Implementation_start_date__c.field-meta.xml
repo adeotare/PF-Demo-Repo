@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Assigned_To__c</fullName>
-    <deleteConstraint>SetNull</deleteConstraint>
+    <fullName>Implementation_start_date__c</fullName>
     <externalId>false</externalId>
-    <label>Assigned To</label>
-    <referenceTo>User</referenceTo>
-    <relationshipName>Project_Tasks1</relationshipName>
+    <label>Implementation start date</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Lookup</type>
+    <type>DateTime</type>
 </CustomField>

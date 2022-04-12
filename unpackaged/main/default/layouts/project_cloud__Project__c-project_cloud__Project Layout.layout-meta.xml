@@ -13,6 +13,10 @@
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Account_Plant__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>project_cloud__Status__c</field>
             </layoutItems>
@@ -58,6 +62,10 @@
                 <behavior>Edit</behavior>
                 <field>project_cloud__Completed_Percent__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Project_Visibility__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -98,6 +106,10 @@
                 <behavior>Edit</behavior>
                 <field>Labels__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Product__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -111,6 +123,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Customer_s_Integrator__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Program_Name__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -171,6 +187,10 @@
                 <behavior>Edit</behavior>
                 <field>project_cloud__Worked_Hours__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Implementation_start_date__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -196,6 +216,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Baseline_hours__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Installation_Commencement_Date__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>

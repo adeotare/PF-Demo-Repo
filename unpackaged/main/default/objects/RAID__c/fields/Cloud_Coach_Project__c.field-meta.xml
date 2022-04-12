@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Assigned_To__c</fullName>
+    <fullName>Cloud_Coach_Project__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
+    <description>Linked relationships to Cloud Coach projects (internal only)</description>
     <externalId>false</externalId>
-    <label>Assigned To</label>
-    <referenceTo>User</referenceTo>
-    <relationshipName>Project_Tasks1</relationshipName>
+    <label>Cloud Coach Project</label>
+    <referenceTo>project_cloud__Project__c</referenceTo>
+    <relationshipLabel>RAIDS</relationshipLabel>
+    <relationshipName>RAIDS</relationshipName>
     <required>false</required>
-    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Lookup</type>
