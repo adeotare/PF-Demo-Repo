@@ -148,6 +148,10 @@
         <label>Project Duration and Hours</label>
         <layoutColumns>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>project_cloud__Autonomous_Start__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>project_cloud__Calculated_Start__c</field>
             </layoutItems>
@@ -166,10 +170,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>project_cloud__Worked_Hours__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Baseline_hours__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -193,6 +193,10 @@
                 <behavior>Readonly</behavior>
                 <field>Estimate_to_Complete__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Baseline_hours__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -205,6 +209,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Planned_Value__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Earned_Value__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -365,7 +373,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h7j000000ZVdb</masterLabel>
+        <masterLabel>00h8F000000Ifu5</masterLabel>
         <sizeX>1</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
