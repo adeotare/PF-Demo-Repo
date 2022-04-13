@@ -2,28 +2,16 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>54.0</apiVersion>
     <assignments>
+        <description>For all non-renewal opportunities, the close date should be TODAY.</description>
         <name>Update_Close_Date_as_TODAY</name>
         <label>Update Close Date as TODAY</label>
-        <locationX>296</locationX>
-        <locationY>676</locationY>
+        <locationX>278</locationX>
+        <locationY>742</locationY>
         <assignmentItems>
             <assignToReference>$Record.CloseDate</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </assignmentItems>
-    </assignments>
-    <assignments>
-        <name>Update_Close_Date_to_Created_Date</name>
-        <label>Update Close Date to Created Date</label>
-        <locationX>703</locationX>
-        <locationY>712</locationY>
-        <assignmentItems>
-            <assignToReference>$Record.CloseDate</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.CreatedDate</elementReference>
             </value>
         </assignmentItems>
     </assignments>
@@ -52,8 +40,8 @@
     <decisions>
         <name>For_all_non_renewal_opportunities</name>
         <label>For all non-renewal opportunities</label>
-        <locationX>503</locationX>
-        <locationY>592</locationY>
+        <locationX>474</locationX>
+        <locationY>591</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>When_the_record_type_is_services_only</name>
@@ -84,24 +72,9 @@
             </connector>
             <label>When the record type is services only</label>
         </rules>
-        <rules>
-            <name>When_the_Record_Type_is_Renewal</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Renewal</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_Close_Date_to_Created_Date</targetReference>
-            </connector>
-            <label>When the Record Type is Renewal</label>
-        </rules>
     </decisions>
     <interviewLabel>When stage is close-pending then close date updated to today {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Opportunity:Update close date as per record type.</label>
+    <label>Opportunity: Change Close Date as per Record type.</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
