@@ -51,10 +51,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>CurrencyIsoCode</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Expected_Resolution_Date__c</field>
             </layoutItems>
             <layoutItems>
