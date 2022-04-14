@@ -3,15 +3,18 @@
     <fullName>Cannot_edit_Account_field</fullName>
     <active>true</active>
     <description>Compliance Designations &amp; Compliance Notes cannot be edited if account is approved</description>
-    <errorConditionFormula>AND( ISPICKVAL( Account_Status__c , &#39;Approved&#39;),
+    <errorConditionFormula>AND( 
+ ISCHANGED( Compliance_Designations__c ),
+ ISCHANGED( Compliance_Notes__c ),  
+ISPICKVAL( Account_Status__c , &#39;Approved&#39;),
 OR(
 
- NOT( INCLUDES( Compliance_Designations__c , &#39;None&#39;) ),
- NOT( INCLUDES( Compliance_Designations__c , &#39;NERC/CIP	&#39;) ),
- NOT( INCLUDES( Compliance_Designations__c , &#39;Data Storage Location	&#39;) ),
- NOT( INCLUDES( Compliance_Designations__c , &#39;SOC Certification	&#39;) ),
+NOT( INCLUDES( Compliance_Designations__c , &#39;None&#39;) ),
+NOT( INCLUDES( Compliance_Designations__c , &#39;NERC/CIP &#39;) ),
+NOT( INCLUDES( Compliance_Designations__c , &#39;Data Storage Location &#39;) ),
+NOT( INCLUDES( Compliance_Designations__c , &#39;SOC Certification &#39;) ),
 
- NOT( INCLUDES( Compliance_Designations__c , &#39;Other&#39;) ),
+NOT( INCLUDES( Compliance_Designations__c , &#39;Other&#39;) ),
 ISBLANK(Compliance_Notes__c )
 
 
