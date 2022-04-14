@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Health_Change_Requires_Reason</fullName>
+    <active>true</active>
+    <description>If the Health of a Project Task is changed, the reason field must be changed to explain why.</description>
+    <errorConditionFormula>ISCHANGED( Project_Health__c )
+ &amp;&amp; (
+	NOT(ISCHANGED( Health_Reason__c )) ||
+	ISBLANK(Health_Reason__c)
+)</errorConditionFormula>
+    <errorDisplayField>Health_Reason__c</errorDisplayField>
+    <errorMessage>When the Health is changed a reason must be given</errorMessage>
+</ValidationRule>

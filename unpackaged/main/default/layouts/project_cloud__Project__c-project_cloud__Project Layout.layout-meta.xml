@@ -204,6 +204,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
+                <field>Estimate_to_Complete__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
                 <field>project_cloud__Estimated_Hours__c</field>
             </layoutItems>
             <layoutItems>

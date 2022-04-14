@@ -498,6 +498,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>CRM_Project__c.Calculated_End_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CRM_Project__c.Calculated_Start_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>CRM_Project__c.Case__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -573,12 +583,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>CRM_Project__c.Health_Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>CRM_Project__c.Health_Traffic_Light__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>CRM_Project__c.Internal_Priority__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>CRM_Project__c.Labels__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CRM_Project__c.Length__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
