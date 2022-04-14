@@ -4141,6 +4141,16 @@
         <field>project_cloud__Project_Task__c.Assigned_To__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>project_cloud__Project_Task__c.Earned_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>project_cloud__Project_Task__c.Planned_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Competitor Page Layout</layout>
         <recordType>Account.Competitor</recordType>
