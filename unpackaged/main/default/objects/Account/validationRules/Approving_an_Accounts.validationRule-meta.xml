@@ -3,6 +3,7 @@
     <fullName>Approving_an_Accounts</fullName>
     <active>true</active>
     <errorConditionFormula>AND( 
+ ISCHANGED( Account_Status__c ),
 ISPICKVAL( Account_Status__c , &#39;approved&#39;),
 OR(
 ISBLANK( TEXT( Legal_Entity__c  ) ),
@@ -15,9 +16,9 @@ ISBLANK( BillingState ) ,
 ISBLANK( ShippingStreet ),
 ISBLANK( ShippingCity ) ,
 ISBLANK( ShippingState ) ,
-ISBLANK( ShippingState ),
 ISBLANK(  Uses_MSA_of__c )
 )
 )</errorConditionFormula>
-    <errorMessage>Approving an Account, these additional Legal Entity ,Theater,Bill To and Ship To primaryaddresses ,Compliance Designation,Uses MSA of:must be confirmed</errorMessage>
+    <errorMessage>Following fields are required to approve an Account.
+Legal Entity, Theater, Compliance Designations, Billing Street, Billing City, Billing Postal Code, Billing State, Shipping Street, Shipping City, Shipping State and Uses MSA of.</errorMessage>
 </ValidationRule>

@@ -14,7 +14,7 @@
     <filters>
         <field>OPPORTUNITY.STAGE_NAME</field>
         <operation>equals</operation>
-        <value>00 - MQL</value>
+        <value>0 - Identified Prospect Account</value>
     </filters>
     <label>Opptys Pending Sales Qualification</label>
 </ListView>

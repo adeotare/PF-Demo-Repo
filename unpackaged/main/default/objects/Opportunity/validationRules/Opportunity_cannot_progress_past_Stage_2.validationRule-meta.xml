@@ -6,8 +6,9 @@
   NOT( ISPICKVAL( StageName , &#39;00 - MQL&#39;)),
    NOT( ISPICKVAL( StageName , &#39;0 - Identified Prospect Account&#39;)
  ) ,
+NOT (ISPICKVAL(StageName , &#39;Closed Lost&#39;)),
 NOT (ISPICKVAL(StageName , &#39;1 - Account Exploration&#39;)),
 NOT(ISPICKVAL(StageName  ,&#39;2 - Account Qualification&#39;))
 )</errorConditionFormula>
-    <errorMessage>The Account is Unapproved.so Opportunity cannot progress</errorMessage>
+    <errorMessage>Please approve the Account before moving the Opportunity to next stage.</errorMessage>
 </ValidationRule>

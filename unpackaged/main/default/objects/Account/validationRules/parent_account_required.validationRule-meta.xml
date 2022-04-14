@@ -9,5 +9,5 @@ ISPICKVAL( Legal_Entity__c , &#39;Yes&#39;),
 ISBLANK( ParentId )  
 )</errorConditionFormula>
     <errorDisplayField>Legal_Entity__c</errorDisplayField>
-    <errorMessage>Please update parent account</errorMessage>
+    <errorMessage>Please update Parent Account to approve an Account.</errorMessage>
 </ValidationRule>
