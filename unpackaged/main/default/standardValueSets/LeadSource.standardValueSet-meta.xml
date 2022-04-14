@@ -8,7 +8,7 @@
     </standardValue>
     <standardValue>
         <fullName>Employee Referral</fullName>
-        <default>false</default>
+        <default>true</default>
         <label>Employee Referral</label>
     </standardValue>
     <standardValue>
