@@ -4,8 +4,8 @@
     <decisions>
         <name>Regions_to_update_Theatre</name>
         <label>Regions to update Theatre</label>
-        <locationX>953</locationX>
-        <locationY>318</locationY>
+        <locationX>894</locationX>
+        <locationY>411</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Regions_for_Americas</name>
@@ -119,8 +119,8 @@
     <recordUpdates>
         <name>Update_theatre_to_Americas</name>
         <label>Update theatre to Americas</label>
-        <locationX>757</locationX>
-        <locationY>515</locationY>
+        <locationX>660</locationX>
+        <locationY>352</locationY>
         <inputAssignments>
             <field>Theater__c</field>
             <value>
@@ -132,8 +132,8 @@
     <recordUpdates>
         <name>Update_theatre_to_APAC</name>
         <label>Update theatre to APAC</label>
-        <locationX>1123</locationX>
-        <locationY>509</locationY>
+        <locationX>1162</locationX>
+        <locationY>368</locationY>
         <inputAssignments>
             <field>Theater__c</field>
             <value>
@@ -145,8 +145,8 @@
     <recordUpdates>
         <name>Update_theatre_to_EMEA</name>
         <label>Update theatre to EMEA</label>
-        <locationX>931</locationX>
-        <locationY>509</locationY>
+        <locationX>911</locationX>
+        <locationY>571</locationY>
         <inputAssignments>
             <field>Theater__c</field>
             <value>
