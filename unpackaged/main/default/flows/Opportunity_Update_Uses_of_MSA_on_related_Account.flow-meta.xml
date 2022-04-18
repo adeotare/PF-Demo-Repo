@@ -4,8 +4,8 @@
     <decisions>
         <name>Check_Account_and_MSA_Contract</name>
         <label>Check Account and MSA Contract</label>
-        <locationX>477</locationX>
-        <locationY>399</locationY>
+        <locationX>476</locationX>
+        <locationY>398</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Account_and_MSA_Contract</name>
@@ -36,6 +36,21 @@
             </connector>
             <label>Account and MSA Contract</label>
         </rules>
+        <rules>
+            <name>Check_Account_and_MSA_Account_are_same</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AccountId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.MSA_Contract__r.Account_Name__r.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account_on_Uses_of_MSA</targetReference>
+            </connector>
+            <label>Check Account and MSA Account are same</label>
+        </rules>
     </decisions>
     <description>REQ - 2279 and REQ - 2384 
 
@@ -64,8 +79,8 @@ When opportunity is created with valid MSA contract than it should update the MS
     <recordUpdates>
         <name>Update_Account_on_Uses_of_MSA</name>
         <label>Update Account on Uses of MSA</label>
-        <locationX>574</locationX>
-        <locationY>608</locationY>
+        <locationX>216</locationX>
+        <locationY>698</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -77,7 +92,7 @@ When opportunity is created with valid MSA contract than it should update the MS
         <inputAssignments>
             <field>Uses_MSA_of__c</field>
             <value>
-                <elementReference>$Record.MSA_Contract__r.Account_Name__r.Id</elementReference>
+                <elementReference>$Record.MSA_Contract__c</elementReference>
             </value>
         </inputAssignments>
         <object>Account</object>

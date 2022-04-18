@@ -4,9 +4,9 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
     <label>Uses MSA of</label>
-    <referenceTo>Account</referenceTo>
-    <relationshipLabel>Accounts (Uses MSA of)</relationshipLabel>
-    <relationshipName>Accounts1</relationshipName>
+    <referenceTo>MSA_Contract__c</referenceTo>
+    <relationshipLabel>Accounts</relationshipLabel>
+    <relationshipName>Accounts</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

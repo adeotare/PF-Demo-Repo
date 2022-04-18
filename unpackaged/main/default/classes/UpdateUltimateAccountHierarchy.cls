@@ -11,7 +11,7 @@ public class UpdateUltimateAccountHierarchy {
 				if(childAccounts.size()>0){
 					for (Account childRecord : childAccounts){
 						childRecord.Ultimate_Parent_Account__c = accIds[0];
-                        childRecord.Uses_MSA_of__c = accIds[0];
+                        //childRecord.Uses_MSA_of__c = accIds[0];
 						childRecord.Ultimate_Parent__c = false;					
 						acctsToUpdates.add(childRecord);
 					}
@@ -32,7 +32,7 @@ public class UpdateUltimateAccountHierarchy {
 				if(childAccounts.size()>0){
 					for (Account childRecord : childAccounts){
 						childRecord.Ultimate_Parent_Account__c = ultimateAccountId;
-                        childRecord.Uses_MSA_of__c = ultimateAccountId;
+                        //childRecord.Uses_MSA_of__c = ultimateAccountId;
 						childRecord.Ultimate_Parent__c = false;					
 						acctsToUpdates.add(childRecord);
 					}
