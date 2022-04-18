@@ -645,8 +645,8 @@
     <tabs>project_cloud__Gameplan</tabs>
     <tabs>project_cloud__Resourcing</tabs>
     <tabs>project_cloud__Admin</tabs>
-    <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
+    <tabs>standard-report</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>project_cloud__Cloud_Coach_UtilityBar</utilityBar>
 </CustomApplication>
