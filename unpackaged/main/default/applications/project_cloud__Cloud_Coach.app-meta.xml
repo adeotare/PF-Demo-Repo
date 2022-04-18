@@ -638,6 +638,7 @@
         <type>Flexipage</type>
         <profile>Admin</profile>
     </profileActionOverrides>
+    <subscriberTabs>standard-report</subscriberTabs>
     <subscriberTabs>project_cloud__Project_Task__c</subscriberTabs>
     <subscriberTabs>Program__c</subscriberTabs>
     <tabs>standard-home</tabs>
