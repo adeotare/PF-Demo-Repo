@@ -34,7 +34,6 @@
         <field>FULL_NAME</field>
     </columns>
     <currency>USD</currency>
-    <description>REQ-2395 : Late Renewals (Opportunities that are open when Close Date is in the past)</description>
     <filter>
         <criteriaItems>
             <column>CLOSE_DATE</column>

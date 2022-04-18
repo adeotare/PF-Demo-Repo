@@ -34,7 +34,6 @@
         <field>FULL_NAME</field>
     </columns>
     <currency>USD</currency>
-    <description>REQ-2395</description>
     <filter>
         <criteriaItems>
             <column>RECORDTYPE</column>

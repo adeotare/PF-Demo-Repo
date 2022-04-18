@@ -31,7 +31,6 @@
         <field>FULL_NAME</field>
     </columns>
     <currency>USD</currency>
-    <description>REQ-2395 :- Open Renewal Opportunities by Stage</description>
     <filter>
         <criteriaItems>
             <column>RECORDTYPE</column>
