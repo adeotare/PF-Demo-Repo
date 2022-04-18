@@ -3,7 +3,7 @@
     <fullName>Planned_Value__c</fullName>
     <externalId>false</externalId>
     <label>Planned Value</label>
-    <summarizedField>project_cloud__Project_Phase__c.PV_Hours__c</summarizedField>
+    <summarizedField>project_cloud__Project_Phase__c.Plan_Value__c</summarizedField>
     <summaryForeignKey>project_cloud__Project_Phase__c.project_cloud__Project__c</summaryForeignKey>
     <summaryOperation>sum</summaryOperation>
     <trackHistory>false</trackHistory>
