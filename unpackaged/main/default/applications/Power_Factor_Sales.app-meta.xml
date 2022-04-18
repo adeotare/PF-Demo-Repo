@@ -648,7 +648,9 @@
     <tabs>Plant__c</tabs>
     <tabs>Account_Plant__c</tabs>
     <tabs>Equipment__c</tabs>
-    <tabs>MSA_Implementation_Bracket_Price__c</tabs>
+    <tabs>MSA_Implementation_Bracket_Price__c</tabs>    
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Power_Factor_Sales_UtilityBar</utilityBar>
 </CustomApplication>
