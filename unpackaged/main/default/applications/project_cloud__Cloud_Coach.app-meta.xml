@@ -1,18 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
     <brand>
-        <headerColor>#0070D2</headerColor>
-        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+        <headerColor>#F7941D</headerColor>
+        <logo>project_cloud__Cloud_Coach_Logo</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
     </brand>
+    <description>Manage, collaborate, and track your projects</description>
     <formFactors>Small</formFactors>
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
-    <label>Power Factors Sales</label>
+    <label>Cloud Coach</label>
     <navType>Standard</navType>
     <profileActionOverrides>
         <actionName>View</actionName>
+        <content>Project_Record_Page2</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Record_Page2</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Record_Page2</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Third Party User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Third Party User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Third Party User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Super User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Super User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Success</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Success</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Services/Onboarding</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
         <content>Project_Task_Record_Page</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
@@ -149,63 +248,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Task_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Third Party User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Third Party User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Third Party User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -213,7 +256,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -221,7 +264,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -229,7 +272,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -237,7 +280,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -245,7 +288,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -253,7 +296,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -261,7 +304,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -269,7 +312,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -277,7 +320,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -285,7 +328,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -293,7 +336,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -301,7 +344,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -309,7 +352,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -317,7 +360,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -325,47 +368,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Task_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Super User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Super User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Success</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Success</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Services/Onboarding</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -373,7 +376,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -381,7 +384,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -389,7 +392,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -397,7 +400,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -405,7 +408,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -413,7 +416,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -421,7 +424,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Project_Record_Page</content>
+        <content>Project_Record_Page2</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
@@ -635,20 +638,14 @@
         <type>Flexipage</type>
         <profile>Admin</profile>
     </profileActionOverrides>
+    <subscriberTabs>project_cloud__Project_Task__c</subscriberTabs>
+    <subscriberTabs>Program__c</subscriberTabs>
     <tabs>standard-home</tabs>
-    <tabs>standard-Lead</tabs>
-    <tabs>standard-Account</tabs>
-    <tabs>standard-Contact</tabs>
-    <tabs>standard-Opportunity</tabs>
-    <tabs>SBQQ__Quote__c</tabs>
-    <tabs>MSA_Contract__c</tabs>
-    <tabs>Document_Link__c</tabs>
-    <tabs>CRM_Project__c</tabs>
-    <tabs>standard-Product2</tabs>
-    <tabs>Plant__c</tabs>
-    <tabs>Account_Plant__c</tabs>
-    <tabs>Equipment__c</tabs>
-    <tabs>MSA_Implementation_Bracket_Price__c</tabs>
+    <tabs>project_cloud__Project__c</tabs>
+    <tabs>project_cloud__Gameplan</tabs>
+    <tabs>project_cloud__Resourcing</tabs>
+    <tabs>project_cloud__Admin</tabs>
+    <tabs>standard-Dashboard</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>Power_Factor_Sales_UtilityBar</utilityBar>
+    <utilityBar>project_cloud__Cloud_Coach_UtilityBar</utilityBar>
 </CustomApplication>
