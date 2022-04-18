@@ -17,8 +17,8 @@
                 <field>Account_Plant__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>project_cloud__Status__c</field>
+                <behavior>Edit</behavior>
+                <field>Project_Status__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -62,6 +62,10 @@
                 <behavior>Edit</behavior>
                 <field>project_cloud__Completed_Percent__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Program_Name__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -88,7 +92,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>other Information</label>
+        <label>Other Information</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -119,10 +123,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Customer_s_Integrator__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Program_Name__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -182,10 +182,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Installation_Commencement_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Implementation_start_date__c</field>
             </layoutItems>
         </layoutColumns>
@@ -201,10 +197,6 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>project_cloud__Project_Duration__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Estimate_to_Complete__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
