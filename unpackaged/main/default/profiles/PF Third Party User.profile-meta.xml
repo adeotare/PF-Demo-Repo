@@ -3801,6 +3801,16 @@
         <field>dsfs__DocuSign_Status__c.Quote__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>project_cloud__Project_Phase__c.Earned_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>project_cloud__Project_Phase__c.Plan_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Competitor Page Layout</layout>
         <recordType>Account.Competitor</recordType>
