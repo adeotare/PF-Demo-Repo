@@ -4108,6 +4108,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>SBQQ__Quote__c.Approval_Justification__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>SBQQ__Quote__c.DocuSign_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
