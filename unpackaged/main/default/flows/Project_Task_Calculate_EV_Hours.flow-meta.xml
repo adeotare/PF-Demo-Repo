@@ -80,7 +80,7 @@
         <locationX>314</locationX>
         <locationY>455</locationY>
         <inputAssignments>
-            <field>EV_Hours__c</field>
+            <field>Earned_Value__c</field>
             <value>
                 <numberValue>0.0</numberValue>
             </value>
@@ -93,7 +93,7 @@
         <locationX>50</locationX>
         <locationY>455</locationY>
         <inputAssignments>
-            <field>EV_Hours__c</field>
+            <field>Earned_Value__c</field>
             <value>
                 <elementReference>$Record.project_cloud__Estimated_Hours__c</elementReference>
             </value>

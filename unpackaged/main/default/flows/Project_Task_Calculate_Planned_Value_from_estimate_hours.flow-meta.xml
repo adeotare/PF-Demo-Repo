@@ -67,7 +67,7 @@
         <locationX>50</locationX>
         <locationY>396</locationY>
         <inputAssignments>
-            <field>PV_Hours__c</field>
+            <field>Plan_Value__c</field>
             <value>
                 <elementReference>$Record.project_cloud__Estimated_Hours__c</elementReference>
             </value>
@@ -81,7 +81,7 @@
         <locationX>314</locationX>
         <locationY>396</locationY>
         <inputAssignments>
-            <field>PV_Hours__c</field>
+            <field>Plan_Value__c</field>
             <value>
                 <numberValue>0.0</numberValue>
             </value>
