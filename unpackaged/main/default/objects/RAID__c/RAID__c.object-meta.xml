@@ -162,8 +162,12 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>RAIDS</pluralLabel>
+    <profileSearchLayouts>
+        <fields>NAME</fields>
+        <profileName>PF Services/Onboarding</profileName>
+    </profileSearchLayouts>
     <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <searchLayouts />
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Private</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
