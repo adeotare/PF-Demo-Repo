@@ -13,12 +13,6 @@
         <field>TYPE</field>
     </columns>
     <columns>
-        <field>LEAD_SOURCE</field>
-    </columns>
-    <columns>
-        <field>EXP_AMOUNT</field>
-    </columns>
-    <columns>
         <field>PROBABILITY</field>
     </columns>
     <columns>
@@ -51,7 +45,7 @@
         </criteriaItems>
     </filter>
     <format>Tabular</format>
-    <name>Closed Renewal Opportunities by Stage</name>
+    <name>Closed Renewals</name>
     <params>
         <name>open</name>
         <value>all</value>

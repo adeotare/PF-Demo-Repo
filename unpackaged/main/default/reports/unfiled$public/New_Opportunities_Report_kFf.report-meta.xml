@@ -4,16 +4,13 @@
         <field>OPPORTUNITY_NAME</field>
     </columns>
     <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
         <field>ACCOUNT_NAME</field>
     </columns>
     <columns>
         <field>TYPE</field>
-    </columns>
-    <columns>
-        <field>LEAD_SOURCE</field>
-    </columns>
-    <columns>
-        <field>EXP_AMOUNT</field>
     </columns>
     <columns>
         <field>AMOUNT</field>
