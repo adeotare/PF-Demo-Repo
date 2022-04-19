@@ -4,7 +4,7 @@
     <description>Details about the approach to manage a realized risk</description>
     <externalId>false</externalId>
     <label>Risk Contingency plan</label>
-    <length>131072</length>
+    <length>1000</length>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>LongTextArea</type>
