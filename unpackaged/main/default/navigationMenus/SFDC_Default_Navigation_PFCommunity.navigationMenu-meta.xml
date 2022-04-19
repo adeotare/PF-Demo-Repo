@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NavigationMenu xmlns="http://soap.sforce.com/2006/04/metadata">
+    <container>PFCommunity</container>
+    <containerType>Network</containerType>
+    <label>Default Navigation</label>
+    <navigationMenuItem>
+        <label>Topics</label>
+        <position>1</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>ShowMoreTopics</target>
+        <type>NavigationalTopic</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>CRM Project</label>
+        <position>2</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>CRM_Project__c</target>
+        <type>SalesforceObject</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Purchase Product</label>
+        <position>3</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>Purchased_Product__c</target>
+        <type>SalesforceObject</type>
+    </navigationMenuItem>
+</NavigationMenu>

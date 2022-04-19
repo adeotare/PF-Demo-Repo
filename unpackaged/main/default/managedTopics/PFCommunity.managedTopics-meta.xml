@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedTopics xmlns="http://soap.sforce.com/2006/04/metadata">
+    <managedTopic>
+        <fullName>PFCommunity.Featured:Knowledge Support</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Knowledge Support</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>PFCommunity.Navigational:Knowledge Support</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Knowledge Support</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+</ManagedTopics>
