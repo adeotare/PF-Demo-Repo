@@ -171,6 +171,7 @@
         <customTabListAdditionalFields>project_cloud__Completed_Percent__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>project_cloud__Start__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>project_cloud__End__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
         <listViewButtons>project_cloud__Show_Gantt</listViewButtons>
         <lookupDialogsAdditionalFields>project_cloud__Project__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>project_cloud__Project_Phase__c</lookupDialogsAdditionalFields>
