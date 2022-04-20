@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_can_not_be_created</fullName>
+    <active>true</active>
+    <description>REQ-2326 :- User cannot create an Opportunity if the Account is on Credit Hold.</description>
+    <errorConditionFormula>OR(
+
+AND(
+
+ ISNEW(),
+
+ OR(
+ ISPICKVAL( Account.Credit_Status__c ,&quot;No - Denied&quot;),
+ISPICKVAL( Account.Credit_Status__c ,&quot;On Hold&quot;),
+ISPICKVAL( Account.Credit_Status__c ,&quot;Pending&quot;),
+ISPICKVAL( Account.Credit_Status__c ,&quot;Revoke&quot;) ),
+
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+$Profile.Name &lt;&gt; &quot;PF Super User&quot;, 
+$Profile.Name &lt;&gt; &quot;PF Ops&quot;
+),
+AND(
+
+ OR(
+ ISPICKVAL( Account.Credit_Status__c ,&quot;No - Denied&quot;),
+ISPICKVAL( Account.Credit_Status__c ,&quot;On Hold&quot;),
+ISPICKVAL( Account.Credit_Status__c ,&quot;Pending&quot;),
+ISPICKVAL( Account.Credit_Status__c ,&quot;Revoke&quot;) ),
+
+ ISPICKVAL( StageName ,&quot;Close Pending&quot;),
+
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+$Profile.Name &lt;&gt; &quot;PF Super User&quot;, 
+$Profile.Name &lt;&gt; &quot;PF Ops&quot; 
+
+
+))</errorConditionFormula>
+    <errorMessage>User cannot create an Opportunity if the Account is on Credit Hold.</errorMessage>
+</ValidationRule>

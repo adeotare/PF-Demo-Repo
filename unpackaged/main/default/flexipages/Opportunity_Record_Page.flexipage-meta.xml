@@ -166,6 +166,35 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>CreditStatus</componentName>
+                <identifier>c_CreditStatus2</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.Account.Credit_Status__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>No - Denied</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Account.Credit_Status__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>On Hold</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Account.Credit_Status__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Pending</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Account.Credit_Status__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Revoke</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentName>runtime_sales_activities:activityPanel</componentName>
                 <identifier>runtime_sales_activities_activityPanel1</identifier>
             </componentInstance>
