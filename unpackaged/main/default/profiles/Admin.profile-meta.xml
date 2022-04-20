@@ -628,6 +628,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>CRM_Project__c.External_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>CRM_Project__c.GB_Jira_Legacy_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -644,6 +649,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>CRM_Project__c.Internal_Priority__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CRM_Project__c.Internal_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4239,6 +4249,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>project_cloud__Project__c.External_Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>project_cloud__Project__c.External_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>project_cloud__Project__c.Internal_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
