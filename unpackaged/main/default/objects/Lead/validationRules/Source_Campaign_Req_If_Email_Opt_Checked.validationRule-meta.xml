@@ -5,5 +5,5 @@
     <description>REQ-2361</description>
     <errorConditionFormula>AND( Email_Opt_In__c = True,  ISBLANK(pi__campaign__c) , ISBLANK(Source_Campaign__c ))</errorConditionFormula>
     <errorDisplayField>Source_Campaign__c</errorDisplayField>
-    <errorMessage>Source Campaign field is mandatory.</errorMessage>
+    <errorMessage>Source Campaign field is mandatory while checking Email Opt In.</errorMessage>
 </ValidationRule>
