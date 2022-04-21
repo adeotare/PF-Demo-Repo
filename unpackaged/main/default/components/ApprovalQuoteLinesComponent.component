@@ -1,0 +1,23 @@
+<apex:component controller="ApprovalQuoteLinesController" access="global">
+  <apex:attribute name="quote_Id" description="Quote Id" type="Id" assignTo="{!quoteId}"/>
+    <table border="1">
+            <tr>
+                <th> Product Code </th> 
+                <th> Product Name </th> 
+                <th> Quantity </th> 
+                <th> List Price </th> 
+                <th> Discount </th> 
+                <th> Net Total </th> 
+            </tr>
+            <apex:repeat var="li" value="{!quotelines}">
+                 <tr>
+                    <td> {!li.SBQQ__ProductCode__c} </td>
+                    <td> {!li.SBQQ__ProductName__c} </td>
+                    <td> {!li.SBQQ__Quantity__c} </td> 
+                    <td> {!li.CurrencyIsoCode} {!li.SBQQ__ListPrice__c} </td>
+                    <td> {!li.SBQQ__Discount__c}% </td>
+                    <td> {!li.CurrencyIsoCode} {!li.SBQQ__NetTotal__c} </td>            
+                </tr>
+            </apex:repeat>
+        </table>
+</apex:component>

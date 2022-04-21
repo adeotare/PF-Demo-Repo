@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>URL_for_Salesforce_Org_Domain</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>URL for Salesforce Org Domain</shortDescription>
+        <value>https://pwrfactors--pfdev.lightning.force.com</value>
+    </labels>
+</CustomLabels>

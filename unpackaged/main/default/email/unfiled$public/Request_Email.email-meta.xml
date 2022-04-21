@@ -7,6 +7,11 @@
     <packageVersions>
         <majorNumber>236</majorNumber>
         <minorNumber>1</minorNumber>
+        <namespace>SBQQ</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>236</majorNumber>
+        <minorNumber>1</minorNumber>
         <namespace>sbaa</namespace>
     </packageVersions>
     <style>none</style>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Plant_Report</fullName>
+    <availability>online</availability>
+    <description>Plant Report</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Plant Report</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/lightning/r/Report/00O7j000000ZYneEAG/view?fv0={!Plant__c.Id}</url>
+</WebLink>
