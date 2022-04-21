@@ -10,7 +10,7 @@
             <assignToReference>recordCounter</assignToReference>
             <operator>Add</operator>
             <value>
-                <numberValue>0.0</numberValue>
+                <numberValue>1.0</numberValue>
             </value>
         </assignmentItems>
         <connector>
@@ -119,7 +119,7 @@
         <scale>2</scale>
     </formulas>
     <interviewLabel>Project:UpdateProgramComplitionStatus {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Project:UpdateProgramComplitionStatus V3</label>
+    <label>Project:UpdateProgramComplitionStatus V7</label>
     <loops>
         <name>get_program_name</name>
         <label>get program name</label>
