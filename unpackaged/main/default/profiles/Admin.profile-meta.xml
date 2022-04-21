@@ -3313,12 +3313,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Plant_Product_Transaction__c.Net_Price__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Plant_Product_Transaction__c.Order_Product__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Plant_Product_Transaction__c.Order__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Plant_Product_Transaction__c.PPT_ARR__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3364,6 +3374,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Plant_Product_Transaction__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Plant_Product_Transaction__c.Subscription_End_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Plant_Product_Transaction__c.Subscription_Start_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
