@@ -3322,6 +3322,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Plant_Product_Transaction__c.Customer_Provided_Priority__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Plant_Product_Transaction__c.Discount_Percentage__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3348,6 +3353,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Plant_Product_Transaction__c.Initial_Mega_Watt_Quantity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Plant_Product_Transaction__c.Installation_Commencement_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3408,6 +3418,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Plant_Product_Transaction__c.S_No__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Plant_Product_Transaction__c.Scope_Definition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Plant_Product_Transaction__c.Scope_Title__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
