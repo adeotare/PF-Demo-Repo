@@ -1977,6 +1977,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.Legacy_GB_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Lead.Legacy_PF_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
