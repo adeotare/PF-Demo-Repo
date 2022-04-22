@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <assignments>
+        <name>update_external_status_based_on_project_type_value</name>
+        <label>update external status based on project type value</label>
+        <locationX>615</locationX>
+        <locationY>390</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.External_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not Applicable</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <interviewLabel>CRM Project: update external status based on project type value {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CRM Project: update external status based on project type value V4</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>490</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>update_external_status_based_on_project_type_value</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Project_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Internal Projects</stringValue>
+            </value>
+        </filters>
+        <object>CRM_Project__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

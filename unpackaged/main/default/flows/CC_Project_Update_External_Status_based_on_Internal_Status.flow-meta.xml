@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <assignments>
+        <name>CC_Update_External_Status_Blocked</name>
+        <label>CC Update External Status - Blocked</label>
+        <locationX>321</locationX>
+        <locationY>520</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.External_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Blocked</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>CC_Update_External_Status_Cancelled</name>
+        <label>CC Update External Status - Cancelled</label>
+        <locationX>790</locationX>
+        <locationY>481</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.External_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Cancelled</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>CC_Update_External_Status_Completed</name>
+        <label>CC Update External Status - Completed</label>
+        <locationX>539</locationX>
+        <locationY>534</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.External_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>CC_Update_External_Status_In_Progress</name>
+        <label>CC Update External Status - In Progress</label>
+        <locationX>134</locationX>
+        <locationY>366</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.External_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>In progress</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>CC_Update_External_Status_info_collection</name>
+        <label>CC Update External Status - info collection</label>
+        <locationX>143</locationX>
+        <locationY>169</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.External_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Info collection</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>update_CC_project_external_status_base_on_internal_status</name>
+        <label>update CC project external status base on internal status</label>
+        <locationX>543</locationX>
+        <locationY>327</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CC_Status_inbox_info_collection_under_construction</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Inbox</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Info collection</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Under construction / backlogged</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CC_Update_External_Status_info_collection</targetReference>
+            </connector>
+            <label>CC Status: inbox/info collection/under construction</label>
+        </rules>
+        <rules>
+            <name>CC_Status_todo_inprogress_blocked_quality</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>To Do</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Blocked - Internal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Blocked - 3rd party</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Quality Checking</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CC_Update_External_Status_In_Progress</targetReference>
+            </connector>
+            <label>CC Status: todo/inprogress/blocked/quality</label>
+        </rules>
+        <rules>
+            <name>CC_Status_blocked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Blocked - Customer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CC_Update_External_Status_Blocked</targetReference>
+            </connector>
+            <label>CC Status: blocked</label>
+        </rules>
+        <rules>
+            <name>CC_Status_completed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed - work open</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed - historical data import</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CC_Update_External_Status_Completed</targetReference>
+            </connector>
+            <label>CC Status: completed</label>
+        </rules>
+        <rules>
+            <name>CC_Status_Cancelled</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancelled</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CC_Update_External_Status_Cancelled</targetReference>
+            </connector>
+            <label>CC Status:Cancelled</label>
+        </rules>
+    </decisions>
+    <interviewLabel>CC Project: {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CC Project: Update External Status based on Internal Status V4</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>430</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>update_CC_project_external_status_base_on_internal_status</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Internal_Status__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>project_cloud__Project__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

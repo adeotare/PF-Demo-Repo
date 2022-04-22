@@ -607,7 +607,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>CRM_Project__c.External_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <assignments>
+        <name>Update_External_Status_Blocked</name>
+        <label>Update External Status - Blocked</label>
+        <locationX>576</locationX>
+        <locationY>633</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.External_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Blocked</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Update_External_Status_Cancelled</name>
+        <label>Update External Status - Cancelled</label>
+        <locationX>874</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.External_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Cancelled</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Update_External_Status_Completed</name>
+        <label>Update External Status - Completed</label>
+        <locationX>750</locationX>
+        <locationY>661</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.External_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Update_External_Status_In_Progress</name>
+        <label>Update External Status - In Progress</label>
+        <locationX>435</locationX>
+        <locationY>659</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.External_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>In progress</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Update_External_Status_info_collection</name>
+        <label>Update External Status - info collection</label>
+        <locationX>361</locationX>
+        <locationY>357</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.External_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Info collection</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>update_external_status_base_on_internal_status</name>
+        <label>update external status base on internal status</label>
+        <locationX>611</locationX>
+        <locationY>353</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_inbox_info_collection_under_construction</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Inbox</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Info collection</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Under construction / backlogged</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_External_Status_info_collection</targetReference>
+            </connector>
+            <label>Status: inbox/info collection/under construction</label>
+        </rules>
+        <rules>
+            <name>Status_todo_inprogress_blocked_quality</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>To Do</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Blocked - Internal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Blocked - 3rd party</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Quality Checking</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_External_Status_In_Progress</targetReference>
+            </connector>
+            <label>Status: todo/inprogress/blocked/quality</label>
+        </rules>
+        <rules>
+            <name>Status_blocked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Blocked - Customer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_External_Status_Blocked</targetReference>
+            </connector>
+            <label>Status: blocked</label>
+        </rules>
+        <rules>
+            <name>Sttaus_completed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed - work open</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed - historical data import</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_External_Status_Completed</targetReference>
+            </connector>
+            <label>Sttaus: completed</label>
+        </rules>
+        <rules>
+            <name>Status_Cancelled</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancelled</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_External_Status_Cancelled</targetReference>
+            </connector>
+            <label>Status:Cancelled</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Update External Status based on Project type {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CRM Project: Update External Status based on Internal Status V6</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>491</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>update_external_status_base_on_internal_status</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Internal_Status__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>CRM_Project__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
