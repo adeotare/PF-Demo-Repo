@@ -142,6 +142,37 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Credit_Status__c</picklist>
+        <values>
+            <fullName>No - Denied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revoke</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes - Fully Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes - Management Override</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes - Prepay Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Industry</picklist>
         <values>
             <fullName>Chemicals</fullName>
@@ -286,45 +317,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Regions__c</picklist>
-        <values>
-            <fullName>ASEAN</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Africa %26 MENA %28Middle East North Africa%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>China</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Europe</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>India</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Japan%2FKorea</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>LATAM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>North America</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Oceania %28Australia%2C New Zealand%29</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>SBQQ__CoTerminationEvent__c</picklist>
         <values>
             <fullName>Add-on</fullName>
@@ -390,10 +382,6 @@
     <picklistValues>
         <picklist>Subtype__c</picklist>
         <values>
-            <fullName>AM Service Provider</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Active Investor</fullName>
             <default>false</default>
         </values>
@@ -403,10 +391,6 @@
         </values>
         <values>
             <fullName>Consultancy</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Consultant</fullName>
             <default>false</default>
         </values>
         <values>
@@ -422,23 +406,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Education%2C Media%2C %26 Misc%2E</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>IPP</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>N%2FA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>O%26M Service Provider</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Oil %26 Gas Major</fullName>
             <default>false</default>
         </values>
         <values>
