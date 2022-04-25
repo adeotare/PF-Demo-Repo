@@ -180,11 +180,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Order__c</field>
-            <table>Account_Plant__c.Plant_Product_Transactions__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Owner</field>
             <table>Account_Plant__c.Plant_Product_Transactions__r</table>
         </columns>
@@ -211,11 +206,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Product__c</field>
-            <table>Account_Plant__c.Plant_Product_Transactions__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Quote__c</field>
             <table>Account_Plant__c.Plant_Product_Transactions__r</table>
         </columns>
         <columns>
