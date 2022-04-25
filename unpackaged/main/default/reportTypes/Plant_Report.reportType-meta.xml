@@ -210,17 +210,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Subscription_End_Date__c</field>
-            <table>Account_Plant__c.Plant_Product_Transactions__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Quote_Line__c</field>
-            <table>Account_Plant__c.Plant_Product_Transactions__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Subscription_Start_Date__c</field>
             <table>Account_Plant__c.Plant_Product_Transactions__r</table>
         </columns>
         <columns>
