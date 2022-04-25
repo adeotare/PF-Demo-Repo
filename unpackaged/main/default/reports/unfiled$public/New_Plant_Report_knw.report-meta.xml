@@ -13,12 +13,6 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Account_Plant__c.Plant_Product_Transactions__r$PPT_ARR__c</field>
     </columns>
-    <columns>
-        <field>Account_Plant__c.Plant_Product_Transactions__r$Subscription_Start_Date__c</field>
-    </columns>
-    <columns>
-        <field>Account_Plant__c.Plant_Product_Transactions__r$Subscription_End_Date__c</field>
-    </columns>
     <currency>USD</currency>
     <format>Summary</format>
     <groupingsDown>
@@ -26,7 +20,7 @@
         <field>Account_Plant__c$Plant__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Plant Report</name>
+    <name>Plant ARR</name>
     <params>
         <name>co</name>
         <value>1</value>

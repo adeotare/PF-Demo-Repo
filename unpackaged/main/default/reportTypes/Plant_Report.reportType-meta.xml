@@ -218,6 +218,16 @@
             <field>Status__c</field>
             <table>Account_Plant__c.Plant_Product_Transactions__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Effective_Date__c</field>
+            <table>Account_Plant__c.Plant_Product_Transactions__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>End_Date__c</field>
+            <table>Account_Plant__c.Plant_Product_Transactions__r</table>
+        </columns>
         <masterLabel>Plant Product Transactions</masterLabel>
     </sections>
 </ReportType>
