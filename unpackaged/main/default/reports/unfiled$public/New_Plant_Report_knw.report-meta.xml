@@ -13,6 +13,12 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Account_Plant__c.Plant_Product_Transactions__r$PPT_ARR__c</field>
     </columns>
+    <columns>
+        <field>Account_Plant__c.Plant_Product_Transactions__r$Effective_Date__c</field>
+    </columns>
+    <columns>
+        <field>Account_Plant__c.Plant_Product_Transactions__r$End_Date__c</field>
+    </columns>
     <currency>USD</currency>
     <format>Summary</format>
     <groupingsDown>
