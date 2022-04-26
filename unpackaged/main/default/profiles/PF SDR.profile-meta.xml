@@ -947,6 +947,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Contact_Profile__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Contact_Status__c</field>
         <readable>true</readable>
@@ -1607,6 +1612,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Lead.Lead_Profile__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Lead.Lead_Status_AQL_Time__c</field>
         <readable>true</readable>
@@ -2104,6 +2114,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Non_Recurring_Revenue__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Opportunity_Profile__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

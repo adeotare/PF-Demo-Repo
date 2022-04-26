@@ -25,8 +25,19 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Lead.Lead_Duration__c</field>
     </columns>
+    <columns>
+        <field>Lead.Lead_Profile__c</field>
+    </columns>
     <currency>USD</currency>
-    <description>REQ-2254</description>
+    <filter>
+        <criteriaItems>
+            <column>Lead.Lead_Profile__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>PF SDR</value>
+        </criteriaItems>
+    </filter>
     <format>Tabular</format>
     <name>Marketing Leads Report</name>
     <params>

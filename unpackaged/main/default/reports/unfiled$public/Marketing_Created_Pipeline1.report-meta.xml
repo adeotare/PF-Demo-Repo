@@ -1,67 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>CONTACT_OWNER</field>
+        <field>OPPORTUNITY_NAME</field>
     </columns>
     <columns>
-        <field>FIRST_NAME</field>
+        <field>STAGE_NAME</field>
     </columns>
     <columns>
-        <field>LAST_NAME</field>
+        <field>ACCOUNT_NAME</field>
     </columns>
     <columns>
-        <field>EMAIL</field>
+        <field>TYPE</field>
     </columns>
     <columns>
-        <field>Contact.Contact_Status__c</field>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AMOUNT</field>
     </columns>
     <columns>
-        <field>Contact.Contact_Source__c</field>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>PROBABILITY</field>
     </columns>
     <columns>
-        <field>Contact.Source_Campaign__c</field>
+        <field>CLOSE_DATE</field>
     </columns>
     <columns>
-        <field>TASK_TYPE</field>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opportunity_Profile__c</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
     </columns>
     <currency>USD</currency>
     <filter>
         <criteriaItems>
-            <column>Contact.Contact_Status__c</column>
+            <column>STAGE_NAME</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
-            <value>MQL</value>
+            <value>Close Pending,Closed Won,Closed Lost</value>
         </criteriaItems>
         <criteriaItems>
-            <column>TASK_TYPE</column>
+            <column>Opportunity.Opportunity_Profile__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Call,Email</value>
+            <value>PF SDR</value>
         </criteriaItems>
     </filter>
     <format>Tabular</format>
-    <name>Contacts Activities</name>
+    <name>Marketing Created Pipeline</name>
     <params>
-        <name>closed</name>
+        <name>open</name>
         <value>all</value>
     </params>
     <params>
-        <name>type</name>
-        <value>t</value>
+        <name>probability</name>
+        <value>&gt;0</value>
     </params>
     <params>
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>ContactActivity</reportType>
+    <reportType>Opportunity</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>DUE_DATE</dateColumn>
-        <interval>INTERVAL_CUSTOM</interval>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
     </timeFrameFilter>
 </Report>

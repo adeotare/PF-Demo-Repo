@@ -1,52 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>FIRST_NAME</field>
+        <field>OPP.NAME</field>
     </columns>
     <columns>
-        <field>LAST_NAME</field>
+        <field>CAMPAIGN.NAME</field>
     </columns>
     <columns>
-        <field>CONTACT_CREATED</field>
+        <field>OPP.STAGE_NAME</field>
     </columns>
     <columns>
-        <field>EMAIL</field>
+        <field>OPP.LEAD_SOURCE</field>
     </columns>
     <columns>
-        <field>LEAD_SOURCE</field>
+        <field>CAMPAIGN.CREATED_DATE</field>
     </columns>
     <columns>
-        <field>Contact.Source_Campaign__c</field>
-    </columns>
-    <columns>
-        <field>Contact.Contact_Status__c</field>
-    </columns>
-    <columns>
-        <field>Contact.Contact_Profile__c</field>
+        <field>CAMPAIGN.CREATED_BY</field>
     </columns>
     <currency>USD</currency>
     <filter>
         <criteriaItems>
-            <column>Contact.Contact_Profile__c</column>
+            <column>OPP.STAGE_NAME</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>PF SDR</value>
+            <value>Close Pending,Closed Won,Closed Lost</value>
         </criteriaItems>
     </filter>
     <format>Tabular</format>
-    <name>Marketing Contact Report</name>
+    <name>Marketing Campaign Influence Booking</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
     <params>
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>ContactList</reportType>
+    <reportType>CustomizableCampaignInfluence</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
-    <timeFrameFilter>
-        <dateColumn>CREATED_DATE</dateColumn>
-        <interval>INTERVAL_CUSTOM</interval>
-    </timeFrameFilter>
 </Report>
