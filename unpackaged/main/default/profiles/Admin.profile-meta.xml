@@ -2042,6 +2042,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>MSA_Contract__c.Subsidiary__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>MSA_Contract__c.Support_First_Response_Time__c</field>
         <readable>true</readable>
     </fieldPermissions>
