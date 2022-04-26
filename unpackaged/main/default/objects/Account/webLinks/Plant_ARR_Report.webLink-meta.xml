@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Plant_ARR_Report</fullName>
+    <availability>online</availability>
+    <description>REQ-2425 :- Dynamic report link(s) shows plants associated to the Account with ARR.</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Plant ARR Report</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/lightning/r/Report/00O7j000000ZYrvEAG/view?fv0={!Account.Id}</url>
+</WebLink>

@@ -331,7 +331,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Account.Total_ARR__c</field>
         <readable>true</readable>
     </fieldPermissions>
