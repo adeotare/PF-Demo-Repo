@@ -14,7 +14,7 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Account$Total_ARR__c</field>
+        <field>Account.Account_Plant__r.Plant_Product_Transactions__r$PPT_ARR__c</field>
     </columns>
     <currency>USD</currency>
     <filter>
@@ -30,7 +30,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>greaterThan</operator>
-            <value>0</value>
+            <value>USD 0</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
