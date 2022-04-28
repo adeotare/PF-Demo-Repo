@@ -1,8 +1,15 @@
-public class ApprovalQuoteLinesController
+/**
+*@description Class ApprovalQuoteLinesController
+*/
+public with sharing class ApprovalQuoteLinesController
 { 
-    public String quoteId {get; set;} 
+/**
+*@param quoteId 
+*@param quotelines 
+*/
+    public static String quoteId {get; set;} 
     
-    public List<SBQQ__QuoteLine__c> quotelines {
+    public static List<SBQQ__QuoteLine__c> quotelines {
         get
         {
             return [select Id,
@@ -17,5 +24,4 @@ public class ApprovalQuoteLinesController
                     where SBQQ__Quote__c= : quoteId ];
         }
     }      
- 
 }
