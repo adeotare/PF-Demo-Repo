@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Lower_Bound__c</fullName>
+    <fullName>Fixed_Price__c</fullName>
     <externalId>false</externalId>
-    <label>Lower Bound</label>
-    <precision>16</precision>
+    <label>Fixed Price</label>
+    <precision>12</precision>
     <required>false</required>
-    <scale>4</scale>
+    <scale>0</scale>
     <trackTrending>false</trackTrending>
-    <type>Number</type>
-    <unique>false</unique>
+    <type>Currency</type>
 </CustomField>
