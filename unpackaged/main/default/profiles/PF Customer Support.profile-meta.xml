@@ -2593,16 +2593,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Plant_Product_Transaction__c.Subscription_End_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Plant_Product_Transaction__c.Subscription_Start_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Plant_Product_Transaction__c.Subscription__c</field>
         <readable>true</readable>
     </fieldPermissions>
