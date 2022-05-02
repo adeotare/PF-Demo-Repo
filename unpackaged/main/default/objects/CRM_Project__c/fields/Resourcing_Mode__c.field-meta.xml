@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Project_Health__c</fullName>
+    <fullName>Resourcing_Mode__c</fullName>
     <externalId>false</externalId>
-    <label>Health</label>
+    <label>Resourcing Mode</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
@@ -12,19 +12,19 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Green</fullName>
-                <default>true</default>
-                <label>Green</label>
+                <fullName>Load Based</fullName>
+                <default>false</default>
+                <label>Load Based</label>
             </value>
             <value>
-                <fullName>Yellow</fullName>
+                <fullName>Quick Assign</fullName>
                 <default>false</default>
-                <label>Yellow</label>
+                <label>Quick Assign</label>
             </value>
             <value>
-                <fullName>Red</fullName>
+                <fullName>Time Based</fullName>
                 <default>false</default>
-                <label>Red</label>
+                <label>Time Based</label>
             </value>
         </valueSetDefinition>
     </valueSet>
