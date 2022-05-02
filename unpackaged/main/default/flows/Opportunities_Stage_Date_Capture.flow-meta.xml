@@ -2,12 +2,12 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>54.0</apiVersion>
     <assignments>
-        <name>Assignment_AQL</name>
-        <label>Assignment AQL</label>
+        <name>Assignment_SAL</name>
+        <label>Assignment SAL</label>
         <locationX>314</locationX>
         <locationY>431</locationY>
         <assignmentItems>
-            <assignToReference>$Record.Lead_Status_AQL_Time__c</assignToReference>
+            <assignToReference>$Record.SAL_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDateTime</elementReference>
@@ -15,12 +15,12 @@
         </assignmentItems>
     </assignments>
     <assignments>
-        <name>Assignment_AQL1</name>
-        <label>Assignment_AQL</label>
+        <name>Assignment_SQL</name>
+        <label>Assignment SQL</label>
         <locationX>578</locationX>
         <locationY>431</locationY>
         <assignmentItems>
-            <assignToReference>$Record.Lead_Status_TAL_Time__c</assignToReference>
+            <assignToReference>$Record.SQL_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDateTime</elementReference>
@@ -28,12 +28,12 @@
         </assignmentItems>
     </assignments>
     <assignments>
-        <name>Assignment_MQL</name>
-        <label>Assignment MQL</label>
+        <name>AssignmentFinanceReview</name>
+        <label>Assignment Finance Review</label>
         <locationX>50</locationX>
         <locationY>431</locationY>
         <assignmentItems>
-            <assignToReference>$Record.Lead_Status_MQL_Time__c</assignToReference>
+            <assignToReference>$Record.Finance_Reviewed_Complete_Date__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDateTime</elementReference>
@@ -41,81 +41,81 @@
         </assignmentItems>
     </assignments>
     <decisions>
-        <name>Lead_Assignment</name>
-        <label>Lead Assignment</label>
+        <name>Oppernity_Assignment</name>
+        <label>Opportunity Assignment</label>
         <locationX>446</locationX>
         <locationY>311</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>MQL</name>
+            <name>Finance_Review</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Status</leftValueReference>
+                <leftValueReference>$Record.Finance_Review__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>MQL</stringValue>
+                    <stringValue>Approved</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Status</leftValueReference>
+                <leftValueReference>$Record.Finance_Review__c</leftValueReference>
                 <operator>IsChanged</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Assignment_MQL</targetReference>
+                <targetReference>AssignmentFinanceReview</targetReference>
             </connector>
-            <label>MQL</label>
+            <label>Finance Review</label>
         </rules>
         <rules>
-            <name>AQL</name>
+            <name>SAL</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Status</leftValueReference>
+                <leftValueReference>$Record.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>AQL</stringValue>
+                    <stringValue>0 - Identified Prospect Account</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Status</leftValueReference>
+                <leftValueReference>$Record.StageName</leftValueReference>
                 <operator>IsChanged</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Assignment_AQL</targetReference>
+                <targetReference>Assignment_SAL</targetReference>
             </connector>
-            <label>AQL</label>
+            <label>SAL</label>
         </rules>
         <rules>
-            <name>TAL</name>
+            <name>SQL</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Status</leftValueReference>
+                <leftValueReference>$Record.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>TAL</stringValue>
+                    <stringValue>1 - Account Exploration</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Status</leftValueReference>
+                <leftValueReference>$Record.StageName</leftValueReference>
                 <operator>IsChanged</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Assignment_AQL1</targetReference>
+                <targetReference>Assignment_SQL</targetReference>
             </connector>
-            <label>TAL</label>
+            <label>SQL</label>
         </rules>
     </decisions>
-    <description>REQ: 2254</description>
-    <interviewLabel>Lead Status Duration {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>LEAD: Update Lead Status Duration</label>
+    <description>REQ: 2379</description>
+    <interviewLabel>Opportunities: Stage Date Capture {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunities: Stage Date Capture</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -139,9 +139,9 @@
         <locationX>320</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Lead_Assignment</targetReference>
+            <targetReference>Oppernity_Assignment</targetReference>
         </connector>
-        <object>Lead</object>
+        <object>Opportunity</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
