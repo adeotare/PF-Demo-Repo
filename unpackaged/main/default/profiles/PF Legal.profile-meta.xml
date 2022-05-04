@@ -503,6 +503,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>CRM_Project__c.CRM_Reference_Project__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>CRM_Project__c.Calculated_End_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>

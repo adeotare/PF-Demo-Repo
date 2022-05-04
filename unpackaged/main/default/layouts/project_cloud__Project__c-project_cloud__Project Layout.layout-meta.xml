@@ -18,11 +18,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Internal_Status__c</field>
+                <field>External_Status__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>External_Status__c</field>
+                <field>Internal_Status__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -137,8 +137,17 @@
                 <behavior>Edit</behavior>
                 <field>project_cloud__Health__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>project_cloud__Health_Reason__c</field>
+            </layoutItems>
         </layoutColumns>
-        <layoutColumns />
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>project_cloud__Health_Image__c</field>
+            </layoutItems>
+        </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
@@ -413,6 +422,10 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <relatedList>CRM_Project__c.Related_Projects__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
         <fields>Internal_Owner__c</fields>
         <fields>Priority__c</fields>
         <fields>Status__c</fields>
@@ -452,6 +465,10 @@
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>CRM_Project__c.CRM_Reference_Project__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

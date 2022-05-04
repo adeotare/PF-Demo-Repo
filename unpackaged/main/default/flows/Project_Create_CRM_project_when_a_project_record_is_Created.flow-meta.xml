@@ -229,7 +229,7 @@
             <assignToReference>varCRMRecord.Related_Projects__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>$Record.Id</elementReference>
+                <elementReference>$Record.Related_Projects__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -379,6 +379,13 @@
                 <elementReference>$Record.project_cloud__Project_Duration__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.CRM_Reference_Project__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Assign_CRM_Records_to_Collection</targetReference>
         </connector>
@@ -450,6 +457,12 @@
         <locationX>917</locationX>
         <locationY>455</locationY>
         <inputAssignments>
+            <field>CRM_Reference_Project__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>External_Status__c</field>
             <value>
                 <elementReference>$Record.External_Status__c</elementReference>
@@ -473,12 +486,6 @@
                 <elementReference>$Record.project_cloud__Type__c</elementReference>
             </value>
         </inputAssignments>
-        <inputAssignments>
-            <field>Related_Projects__c</field>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputAssignments>
         <object>CRM_Project__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
@@ -493,7 +500,7 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Related_Projects__c</field>
+            <field>CRM_Reference_Project__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>$Record.Id</elementReference>

@@ -17,11 +17,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Internal_Status__c</field>
+                <field>External_Status__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>External_Status__c</field>
+                <field>Internal_Status__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -136,8 +136,17 @@
                 <behavior>Edit</behavior>
                 <field>Project_Health__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Health_Reason__c</field>
+            </layoutItems>
         </layoutColumns>
-        <layoutColumns />
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Health_Traffic_Light__c</field>
+            </layoutItems>
+        </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
