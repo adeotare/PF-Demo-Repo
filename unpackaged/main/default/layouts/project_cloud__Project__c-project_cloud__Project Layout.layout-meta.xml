@@ -177,6 +177,10 @@
                 <behavior>Edit</behavior>
                 <field>Implementation_start_date__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>project_cloud__Project_Duration__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -189,15 +193,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>project_cloud__Project_Duration__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
                 <field>project_cloud__Estimated_Hours__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Estimate_to_Complete__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Baseline_hours__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -426,7 +430,6 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>Internal_Owner__c</fields>
         <fields>Priority__c</fields>
         <fields>Status__c</fields>
         <fields>RECORDTYPE</fields>

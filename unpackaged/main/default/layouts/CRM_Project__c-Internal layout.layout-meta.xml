@@ -334,7 +334,6 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>Internal_Owner__c</fields>
         <fields>Priority__c</fields>
         <fields>Status__c</fields>
         <fields>RECORDTYPE</fields>

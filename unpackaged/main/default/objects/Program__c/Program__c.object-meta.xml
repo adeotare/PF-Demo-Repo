@@ -155,9 +155,10 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Program</label>
     <nameField>
-        <label>Program Name</label>
+        <displayFormat>{000000}</displayFormat>
+        <label>Program ID</label>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Program</pluralLabel>
     <searchLayouts />

@@ -3632,6 +3632,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Program__c.Latest_Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Purchased_Product_Transaction__c.ARR_Growth__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3732,12 +3737,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>RAID__c.Details__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>RAID__c.External_Owner__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>RAID__c.Internal_Owner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RAID__c.Risk_Contingency_plan__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RAID__c.Risk_Management_plan__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
