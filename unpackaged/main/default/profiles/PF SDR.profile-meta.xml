@@ -1268,6 +1268,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Equipment__c.Bluepoint_site_identifier__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Equipment__c.DAS_SCADA_Provider__c</field>
         <readable>true</readable>
     </fieldPermissions>

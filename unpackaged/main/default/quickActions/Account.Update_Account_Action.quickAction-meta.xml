@@ -18,7 +18,7 @@
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
                 <field>Total_ARR__c</field>
-                <uiBehavior>Edit</uiBehavior>
+                <uiBehavior>Readonly</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
