@@ -29,6 +29,10 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
+        <field>Lead.Duration_AQL_to_TAL__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
         <field>Lead.Lead_Working__c</field>
     </columns>
     <currency>USD</currency>
