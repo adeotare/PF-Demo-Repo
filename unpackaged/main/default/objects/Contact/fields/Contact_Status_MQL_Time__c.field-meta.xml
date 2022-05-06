@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Email_Opt_In__c</fullName>
-    <defaultValue>false</defaultValue>
+    <fullName>Contact_Status_MQL_Time__c</fullName>
     <externalId>false</externalId>
-    <label>Email Opt In</label>
+    <label>Contact Status MQL Time</label>
+    <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
-    <type>Checkbox</type>
+    <type>DateTime</type>
 </CustomField>

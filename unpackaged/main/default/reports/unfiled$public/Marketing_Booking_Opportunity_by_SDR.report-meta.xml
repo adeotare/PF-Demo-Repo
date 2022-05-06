@@ -10,9 +10,6 @@
         <field>ACCOUNT_NAME</field>
     </columns>
     <columns>
-        <field>TYPE</field>
-    </columns>
-    <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>AMOUNT</field>
     </columns>
@@ -27,9 +24,6 @@
         <field>CREATED_DATE</field>
     </columns>
     <columns>
-        <field>Opportunity.Opportunity_Profile__c</field>
-    </columns>
-    <columns>
         <field>LEAD_SOURCE</field>
     </columns>
     <currency>USD</currency>
@@ -39,7 +33,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Close Pending,Closed Won,Closed Lost</value>
+            <value>Closed Won</value>
         </criteriaItems>
         <criteriaItems>
             <column>Opportunity.Opportunity_Profile__c</column>
@@ -49,8 +43,17 @@
             <value>PF SDR</value>
         </criteriaItems>
     </filter>
-    <format>Tabular</format>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.Opportunity_Profile__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>Marketing Booking Opportunity by SDR</name>
+    <params>
+        <name>terr</name>
+        <value>all</value>
+    </params>
     <params>
         <name>open</name>
         <value>all</value>

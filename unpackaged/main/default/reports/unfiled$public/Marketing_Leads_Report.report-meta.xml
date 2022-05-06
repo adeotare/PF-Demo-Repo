@@ -16,29 +16,19 @@
         <field>Lead.Source_Campaign__c</field>
     </columns>
     <columns>
-        <field>STATUS</field>
-    </columns>
-    <columns>
         <field>Lead.Lead_Status_Time__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Lead.Lead_Duration__c</field>
     </columns>
-    <columns>
-        <field>Lead.Lead_Profile__c</field>
-    </columns>
     <currency>USD</currency>
-    <filter>
-        <criteriaItems>
-            <column>Lead.Lead_Profile__c</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>PF SDR</value>
-        </criteriaItems>
-    </filter>
-    <format>Tabular</format>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>STATUS</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>Marketing Leads Report</name>
     <params>
         <name>co</name>

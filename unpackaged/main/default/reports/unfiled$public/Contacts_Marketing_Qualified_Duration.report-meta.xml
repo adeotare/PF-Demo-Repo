@@ -7,31 +7,43 @@
         <field>LAST_NAME</field>
     </columns>
     <columns>
-        <field>CONTACT_CREATED</field>
-    </columns>
-    <columns>
         <field>EMAIL</field>
     </columns>
     <columns>
-        <field>LEAD_SOURCE</field>
+        <field>Contact.Contact_Source__c</field>
     </columns>
     <columns>
         <field>Contact.Source_Campaign__c</field>
     </columns>
-    <currency>USD</currency>
-    <format>Summary</format>
-    <groupingsDown>
-        <dateGranularity>Day</dateGranularity>
+    <columns>
         <field>Contact.Contact_Status__c</field>
-        <sortOrder>Asc</sortOrder>
-    </groupingsDown>
-    <name>Marketing Contact Report</name>
+    </columns>
+    <columns>
+        <field>Contact.Contact_Status_Time__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Contact_Status_AQL_Time__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Contact_Status_TAL_Time__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Contact.Duration_AQL_to_TAL__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Contact.Contact_Working__c</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Tabular</format>
+    <name>Contacts: Marketing Qualified Duration</name>
     <params>
         <name>co</name>
         <value>1</value>
     </params>
     <reportType>ContactList</reportType>
-    <scope>organization</scope>
+    <scope>my</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>

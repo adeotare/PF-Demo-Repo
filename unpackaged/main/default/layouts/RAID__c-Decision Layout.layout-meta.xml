@@ -17,6 +17,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Additional_Decision_Makers__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>External_Owner__c</field>
             </layoutItems>
             <layoutItems>
@@ -37,11 +41,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Additional_Decision_Makers__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Details__c</field>
+                <field>Risk_Management_plan__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -64,6 +64,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>RecordTypeId</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Details__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Risk_Details__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>

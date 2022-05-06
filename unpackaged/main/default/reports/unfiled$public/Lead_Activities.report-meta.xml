@@ -31,7 +31,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
-            <value>MQL</value>
+            <value>,INQ</value>
         </criteriaItems>
         <criteriaItems>
             <column>Activity.Type__c</column>
@@ -62,6 +62,6 @@
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
         <dateColumn>DUE_DATE</dateColumn>
-        <interval>INTERVAL_CUSTOM</interval>
+        <interval>INTERVAL_CURPREVQ</interval>
     </timeFrameFilter>
 </Report>

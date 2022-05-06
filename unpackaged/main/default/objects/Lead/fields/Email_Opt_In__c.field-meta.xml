@@ -3,7 +3,7 @@
     <fullName>Email_Opt_In__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <label>Email_Opt_In</label>
+    <label>Email Opt In</label>
     <trackFeedHistory>false</trackFeedHistory>
     <type>Checkbox</type>
 </CustomField>

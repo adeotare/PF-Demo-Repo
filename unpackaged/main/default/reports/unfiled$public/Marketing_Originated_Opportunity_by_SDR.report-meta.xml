@@ -10,9 +10,6 @@
         <field>ACCOUNT_NAME</field>
     </columns>
     <columns>
-        <field>TYPE</field>
-    </columns>
-    <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>AMOUNT</field>
     </columns>
@@ -25,9 +22,6 @@
     </columns>
     <columns>
         <field>CREATED_DATE</field>
-    </columns>
-    <columns>
-        <field>Opportunity.Opportunity_Profile__c</field>
     </columns>
     <columns>
         <field>LEAD_SOURCE</field>
@@ -49,8 +43,17 @@
             <value>PF SDR</value>
         </criteriaItems>
     </filter>
-    <format>Tabular</format>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.Opportunity_Profile__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>Marketing Originated Opportunity by SDR</name>
+    <params>
+        <name>terr</name>
+        <value>all</value>
+    </params>
     <params>
         <name>open</name>
         <value>all</value>
