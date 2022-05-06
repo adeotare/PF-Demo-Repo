@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Model__c</fullName>
     <externalId>false</externalId>
-    <label>Model</label>
+    <label>GB Model</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
@@ -2574,70 +2574,6 @@
             </value>
         </valueSetDefinition>
         <valueSettings>
-            <controllingFieldValue>Solis</controllingFieldValue>
-            <valueName>Solis 15K 3 Phase Quad MPPT</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Solis</controllingFieldValue>
-            <valueName>Solis 20.0 3 Phase Quad MPPT</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Sungrow</controllingFieldValue>
-            <valueName>SunGrow SG10 KTL</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Sungrow</controllingFieldValue>
-            <valueName>Sungrow SG110CX</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Sungrow</controllingFieldValue>
-            <valueName>Sungrow SG2000</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Sungrow</controllingFieldValue>
-            <valueName>Sungrow SG2500HV-MV-20</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Sungrow</controllingFieldValue>
-            <valueName>Sungrow SG250CX</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Sungrow</controllingFieldValue>
-            <valueName>Sungrow SG250HX</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Sungrow</controllingFieldValue>
-            <valueName>Sungrow SG3125HV-MV-20</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Sungrow</controllingFieldValue>
-            <valueName>Sungrow SG3150U</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Sungrow</controllingFieldValue>
-            <valueName>Sungrow SG3400HV-MV</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Sungrow</controllingFieldValue>
-            <valueName>Sungrow SG500MX</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Sungrow</controllingFieldValue>
-            <valueName>SunGrow SG60 KTL</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Sungrow</controllingFieldValue>
-            <valueName>Sungrow SG60KU</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Sungrow</controllingFieldValue>
-            <valueName>Sungrow SG630MX</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Sungrow</controllingFieldValue>
-            <valueName>Sungrow SG6800HV-MV</valueName>
-        </valueSettings>
-        <valueSettings>
             <controllingFieldValue>SunTechnics</controllingFieldValue>
             <valueName>SunTechnics STZ 100</valueName>
         </valueSettings>
@@ -2746,10 +2682,6 @@
             <valueName>TransData MARK-V</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>AROS</controllingFieldValue>
-            <valueName>AROS Sirio 250K HV-MT</valueName>
-        </valueSettings>
-        <valueSettings>
             <controllingFieldValue>Vensys</controllingFieldValue>
             <valueName>Vensys VEN 112</valueName>
         </valueSettings>
@@ -2764,14 +2696,6 @@
         <valueSettings>
             <controllingFieldValue>Vensys</controllingFieldValue>
             <valueName>Vensys VEN 87</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Bonfiglioli</controllingFieldValue>
-            <valueName>Bonifiglioli RPS450 Compact 120</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Bonfiglioli</controllingFieldValue>
-            <valueName>Bonifiglioli RPS450 Compact 170</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Vestas</controllingFieldValue>
@@ -2860,6 +2784,50 @@
         <valueSettings>
             <controllingFieldValue>Vestas</controllingFieldValue>
             <valueName>Vestas V90</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wilmers</controllingFieldValue>
+            <valueName>Wilmers NDL 485</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AROS</controllingFieldValue>
+            <valueName>AROS Sirio 250K HV-MT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WinWindD</controllingFieldValue>
+            <valueName>WinWinD WWD-3-E100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WinWindD</controllingFieldValue>
+            <valueName>WinWinD WWD-3-S103</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bonfiglioli</controllingFieldValue>
+            <valueName>Bonifiglioli RPS450 Compact 120</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bonfiglioli</controllingFieldValue>
+            <valueName>Bonifiglioli RPS450 Compact 170</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xantrex</controllingFieldValue>
+            <valueName>Xantrex/Schneider Electric GT100-480</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xantrex</controllingFieldValue>
+            <valueName>Xantrex/Schneider Electric GT250-480</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xantrex</controllingFieldValue>
+            <valueName>Xantrex/Schneider Electric GT500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xantrex</controllingFieldValue>
+            <valueName>Xantrex/Schneider Electric GT630E</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xantrex</controllingFieldValue>
+            <valueName>Xantrex PV225S-480</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Bonus</controllingFieldValue>
@@ -4088,42 +4056,6 @@
             <valueName>Schneider Electric PM820</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>Wilmers</controllingFieldValue>
-            <valueName>Wilmers NDL 485</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>WinWindD</controllingFieldValue>
-            <valueName>WinWinD WWD-3-E100</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>WinWindD</controllingFieldValue>
-            <valueName>WinWinD WWD-3-S103</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Xantrex</controllingFieldValue>
-            <valueName>Xantrex/Schneider Electric GT100-480</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Xantrex</controllingFieldValue>
-            <valueName>Xantrex/Schneider Electric GT250-480</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Xantrex</controllingFieldValue>
-            <valueName>Xantrex/Schneider Electric GT500</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Xantrex</controllingFieldValue>
-            <valueName>Xantrex/Schneider Electric GT630E</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Xantrex</controllingFieldValue>
-            <valueName>Xantrex PV225S-480</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Zigor</controllingFieldValue>
-            <valueName>Zigor Sun Zet 100</valueName>
-        </valueSettings>
-        <valueSettings>
             <controllingFieldValue>Senvion</controllingFieldValue>
             <valueName>Senvion/RePower MD77</valueName>
         </valueSettings>
@@ -4206,6 +4138,10 @@
         <valueSettings>
             <controllingFieldValue>SIAC Soleil</controllingFieldValue>
             <valueName>SIAC Soleil DSPX TRL 250</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Zigor</controllingFieldValue>
+            <valueName>Zigor Sun Zet 100</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Siemens</controllingFieldValue>
@@ -4542,6 +4478,70 @@
         <valueSettings>
             <controllingFieldValue>Solectria</controllingFieldValue>
             <valueName>Solectria SGI 750XTM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Solis</controllingFieldValue>
+            <valueName>Solis 15K 3 Phase Quad MPPT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Solis</controllingFieldValue>
+            <valueName>Solis 20.0 3 Phase Quad MPPT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>SunGrow SG10 KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG110CX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG2000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG2500HV-MV-20</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG250CX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG250HX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG3125HV-MV-20</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG3150U</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG3400HV-MV</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG500MX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>SunGrow SG60 KTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG60KU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG630MX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sungrow</controllingFieldValue>
+            <valueName>Sungrow SG6800HV-MV</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>
