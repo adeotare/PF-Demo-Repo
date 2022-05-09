@@ -5,6 +5,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>PlantProductController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PlantProductControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>QuoteExtController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -458,6 +466,21 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account_Plant__c.Partner_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account_Plant__c.Plant_Country__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account_Plant__c.Plant_MWH__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account_Plant__c.Plant_MWP__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
