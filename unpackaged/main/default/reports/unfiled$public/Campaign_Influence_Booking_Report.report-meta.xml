@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>CAMPAIGN.NAME</field>
-    </columns>
-    <columns>
         <field>OPP.NAME</field>
     </columns>
     <columns>
@@ -16,14 +13,21 @@
         <field>OPP.AMOUNT</field>
     </columns>
     <columns>
-        <field>MODEL.NAME</field>
-    </columns>
-    <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Opportunity.Annual_Recurring_Revenue__c</field>
     </columns>
     <currency>USD</currency>
-    <format>Tabular</format>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CAMPAIGN.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>MODEL.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>Campaign Influence Booking Report</name>
     <params>
         <name>scopeid</name>

@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>FIRST_NAME</field>
-    </columns>
-    <columns>
         <field>LAST_NAME</field>
     </columns>
     <columns>
@@ -11,9 +8,6 @@
     </columns>
     <columns>
         <field>Contact.Contact_Source__c</field>
-    </columns>
-    <columns>
-        <field>Contact.Source_Campaign__c</field>
     </columns>
     <columns>
         <field>Contact.Contact_Status__c</field>
@@ -36,14 +30,28 @@
         <field>Contact.Contact_Working__c</field>
     </columns>
     <currency>USD</currency>
-    <format>Tabular</format>
+    <filter>
+        <criteriaItems>
+            <column>Contact.Contact_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>INQ</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FIRST_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>Contacts: Marketing Qualified Duration</name>
     <params>
         <name>co</name>
         <value>1</value>
     </params>
     <reportType>ContactList</reportType>
-    <scope>my</scope>
+    <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
