@@ -2,17 +2,24 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>MWp__c</fullName>
     <externalId>false</externalId>
-    <formula>IF( ISPICKVAL( Asset_Class__c , &#39;Solar PV&#39;) , &#39;DC&#39;,
-IF( ISPICKVAL( Asset_Class__c , &#39;Wind&#39;) , &#39;AC&#39;,
-IF( ISPICKVAL( Asset_Class__c , &#39;Hydro&#39;) , &#39;AC&#39;,
-IF( ISPICKVAL( Asset_Class__c , &#39;Storage&#39;) , &#39;DC&#39;,
-IF( ISPICKVAL( Asset_Class__c , &#39;Other Renewable&#39;) , &#39;AC&#39;,
-IF( ISPICKVAL( Asset_Class__c , &#39;Industrial&#39; ) , &#39; &#39;, null
-))))))</formula>
+    <formula>CASE(Asset_Class__c,
+&quot;Solar&quot;,
+	IF(ISBLANK( Megawatt_DC__c ), DC_Capacity_Quoted__c , Megawatt_DC__c),
+&quot;Wind&quot;,
+	IF(ISBLANK( Megawatt_AC__c ), AC_Capacity_Quoted__c , Megawatt_AC__c),
+&quot;Hydro&quot;,
+	IF(ISBLANK( Megawatt_AC__c ), AC_Capacity_Quoted__c , Megawatt_AC__c),
+&quot;Storage&quot;,
+	IF(ISBLANK( Megawatt_DC__c ), DC_Capacity_Quoted__c , Megawatt_DC__c),
+&quot;Other Renewable&quot;,
+	IF(ISBLANK( Megawatt_AC__c ), AC_Capacity_Quoted__c , Megawatt_AC__c),
+NULL)</formula>
     <label>MWp</label>
+    <precision>18</precision>
     <required>false</required>
+    <scale>3</scale>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Text</type>
+    <type>Number</type>
     <unique>false</unique>
 </CustomField>
