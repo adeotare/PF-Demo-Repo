@@ -71,10 +71,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Initial_Mega_Watt_Quantity__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Account__c</field>
             </layoutItems>
             <layoutItems>
