@@ -4,9 +4,6 @@
         <field>LEAD_OWNER</field>
     </columns>
     <columns>
-        <field>FIRST_NAME</field>
-    </columns>
-    <columns>
         <field>LAST_NAME</field>
     </columns>
     <columns>
@@ -19,10 +16,19 @@
         <field>Lead.Lead_Source__c</field>
     </columns>
     <columns>
-        <field>Lead.Source_Campaign__c</field>
+        <field>Activity.Type__c</field>
     </columns>
     <columns>
-        <field>Activity.Type__c</field>
+        <field>Activity.Detail__c</field>
+    </columns>
+    <columns>
+        <field>DESCRIPTION</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>END_DATE_TIME</field>
     </columns>
     <currency>USD</currency>
     <filter>
@@ -41,7 +47,17 @@
             <value>Call,Email</value>
         </criteriaItems>
     </filter>
-    <format>Tabular</format>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ASSIGNED</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FIRST_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>Lead Activities</name>
     <params>
         <name>closed</name>

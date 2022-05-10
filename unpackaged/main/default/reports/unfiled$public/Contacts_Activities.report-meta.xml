@@ -4,9 +4,6 @@
         <field>CONTACT_OWNER</field>
     </columns>
     <columns>
-        <field>FIRST_NAME</field>
-    </columns>
-    <columns>
         <field>LAST_NAME</field>
     </columns>
     <columns>
@@ -16,13 +13,16 @@
         <field>Contact.Contact_Status__c</field>
     </columns>
     <columns>
-        <field>Contact.Contact_Source__c</field>
-    </columns>
-    <columns>
-        <field>Contact.Source_Campaign__c</field>
-    </columns>
-    <columns>
         <field>Activity.Type__c</field>
+    </columns>
+    <columns>
+        <field>Activity.Detail__c</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>END_DATE_TIME</field>
     </columns>
     <currency>USD</currency>
     <filter>
@@ -41,7 +41,17 @@
             <value>Call,Email</value>
         </criteriaItems>
     </filter>
-    <format>Tabular</format>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ASSIGNED</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FIRST_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>Contacts Activities</name>
     <params>
         <name>closed</name>
