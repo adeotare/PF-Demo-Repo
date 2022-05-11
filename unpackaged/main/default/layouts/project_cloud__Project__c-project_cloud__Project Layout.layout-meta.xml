@@ -428,12 +428,9 @@
         <fields>NAME</fields>
         <fields>Account__c</fields>
         <fields>Account_Plant_relationship_Name__c</fields>
-        <fields>Completion__c</fields>
-        <fields>CREATED_DATE</fields>
-        <fields>Program_Name__c</fields>
         <fields>External_Status__c</fields>
         <fields>Project_Type__c</fields>
-        <relatedList>CRM_Project__c.Related_Projects__c</relatedList>
+        <relatedList>CRM_Project__c.CRM_Reference_Project__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -475,10 +472,6 @@
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>CRM_Project__c.CRM_Reference_Project__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
