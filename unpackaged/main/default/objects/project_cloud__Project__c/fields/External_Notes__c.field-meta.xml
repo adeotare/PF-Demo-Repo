@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>External_Notes__c</fullName>
     <externalId>false</externalId>
-    <label>External Notes</label>
+    <label>Internal Notes</label>
     <length>131072</length>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

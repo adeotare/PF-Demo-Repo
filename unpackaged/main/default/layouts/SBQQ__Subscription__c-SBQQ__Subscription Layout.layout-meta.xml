@@ -37,10 +37,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Change_in_ARR__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>UoM__c</field>
             </layoutItems>
         </layoutColumns>
@@ -52,6 +48,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>SBQQ__Contract__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SBQQ__ChargeType__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -68,10 +68,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>SBQQ__SubscriptionType__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>CA_Quantity__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
