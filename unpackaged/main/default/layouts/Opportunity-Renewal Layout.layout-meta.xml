@@ -72,6 +72,10 @@
                 <behavior>Edit</behavior>
                 <field>Finance_Reviewed_Date__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Auto_Renewal__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

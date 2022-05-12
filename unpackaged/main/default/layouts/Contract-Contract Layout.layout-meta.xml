@@ -311,6 +311,11 @@
     </relatedContent>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>SBQQ__Product__c</fields>
+        <fields>SBQQ__Quantity__c</fields>
+        <fields>Annual_Recurring_Revenue__c</fields>
+        <fields>SBQQ__StartDate__c</fields>
+        <fields>SBQQ__EndDate__c</fields>
         <relatedList>SBQQ__Subscription__c.SBQQ__Contract__c</relatedList>
     </relatedLists>
     <relatedLists>

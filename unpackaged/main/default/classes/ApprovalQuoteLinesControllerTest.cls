@@ -4,7 +4,9 @@ public class ApprovalQuoteLinesControllerTest {
      @testSetup 
     static void generatedata() {
         Account Acnt = new Account(name='Test11 Account1');
+        Test.startTest();
         insert Acnt;
+        Test.stopTest();
         
         Contact cont = new Contact();
         cont.FirstName='Test';

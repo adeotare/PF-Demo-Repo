@@ -111,6 +111,10 @@
                 <behavior>Edit</behavior>
                 <field>Pricebook2Id</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Auto_Renewal__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
