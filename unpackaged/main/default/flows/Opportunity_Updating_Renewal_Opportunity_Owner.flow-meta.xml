@@ -4,8 +4,8 @@
     <assignments>
         <name>Update_Opportunity</name>
         <label>Update Opportunity</label>
-        <locationX>176</locationX>
-        <locationY>455</locationY>
+        <locationX>423</locationX>
+        <locationY>719</locationY>
         <assignmentItems>
             <assignToReference>Owner.Id</assignToReference>
             <operator>Assign</operator>
@@ -24,6 +24,31 @@
             <targetReference>Update_Opportunity_Owner</targetReference>
         </connector>
     </assignments>
+    <decisions>
+        <name>Opportunity_Owner_Desicion</name>
+        <label>Opportunity Owner Desicion</label>
+        <locationX>576</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>Get_Account_Owner</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Assign Account Owner on Opportunity</defaultConnectorLabel>
+        <rules>
+            <name>If_Customer_Success_Manager_is_Present</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Account_Team_Member.TeamMemberRole</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Customer Success Manager</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Opportunity</targetReference>
+            </connector>
+            <label>If Customer Success Manager is Present</label>
+        </rules>
+    </decisions>
     <description>REQ 1890</description>
     <interviewLabel>Opportunity- Updating Renewal Opportunity Owner {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opportunity- Updating Renewal Opportunity Owner</label>
@@ -36,7 +61,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -47,13 +72,34 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get_Account_Team_Member</name>
-        <label>Get Account Team Member</label>
-        <locationX>176</locationX>
-        <locationY>335</locationY>
+        <name>Get_Account_Owner</name>
+        <label>Get Account Owner</label>
+        <locationX>778</locationX>
+        <locationY>727</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Update_Opportunity</targetReference>
+            <targetReference>Update_Opportunity_Owner_From_Account</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Account_Team_Member</name>
+        <label>Get Account Team Member</label>
+        <locationX>575</locationX>
+        <locationY>383</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Opportunity_Owner_Desicion</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -77,8 +123,8 @@
     <recordUpdates>
         <name>Update_Opportunity_Owner</name>
         <label>Update Opportunity Owner</label>
-        <locationX>176</locationX>
-        <locationY>575</locationY>
+        <locationX>440</locationX>
+        <locationY>890</locationY>
         <inputAssignments>
             <field>OwnerId</field>
             <value>
@@ -87,12 +133,26 @@
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opportunity_Owner_From_Account</name>
+        <label>Update Opportunity Owner From Account</label>
+        <locationX>790</locationX>
+        <locationY>894</locationY>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_Account_Owner.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <start>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
+        <locationX>449</locationX>
+        <locationY>48</locationY>
         <connector>
             <targetReference>Get_Account_Team_Member</targetReference>
         </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
             <field>SBQQ__Renewal__c</field>
