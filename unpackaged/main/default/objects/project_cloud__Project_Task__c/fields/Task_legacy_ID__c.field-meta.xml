@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Task_legacy_ID__c</fullName>
     <externalId>false</externalId>
-    <label>Task legacy ID</label>
+    <label>Task legacy Id</label>
     <length>255</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

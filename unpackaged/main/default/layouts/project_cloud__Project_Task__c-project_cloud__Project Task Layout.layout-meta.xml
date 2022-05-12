@@ -23,15 +23,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Status__c</field>
+                <field>New_S__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Task_Description__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>project_cloud__Work_Type__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
