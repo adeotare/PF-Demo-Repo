@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>DataDotComAccountInsights</excludeButtons>
-    <excludeButtons>DataDotComClean</excludeButtons>
-    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -478,7 +475,17 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>SBQQ__Product__c</fields>
+        <fields>CURRENCY_ISO_CODE</fields>
         <relatedList>SBQQ__ContractedPrice__c.SBQQ__Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Product__c</fields>
+        <fields>Pricing_Tier__c</fields>
+        <fields>CURRENCY_ISO_CODE</fields>
+        <fields>Discount_Amount__c</fields>
+        <relatedList>MSA_Software_Discount_Tier_Price__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>ASSET.NAME</fields>
@@ -547,7 +554,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8F000000Ig9R</masterLabel>
+        <masterLabel>00h7j000000ZTEH</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
