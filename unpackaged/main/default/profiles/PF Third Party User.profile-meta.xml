@@ -2597,6 +2597,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>OrderItem.Plant_Product_Transaction__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>OrderItem.ProductCode</field>
         <readable>true</readable>
@@ -2854,6 +2859,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Plant_Product_Transaction__c.Net_Price__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Plant_Product_Transaction__c.Order_Item__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3678,6 +3688,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>SBQQ__QuoteLine__c.Plant_Product_Transaction__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>SBQQ__QuoteLine__c.Quantity_Unit_Of_Measure__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3689,6 +3704,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>SBQQ__Quote__c.DocuSign_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>SBQQ__Subscription__c.Plant_Product_Transaction__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

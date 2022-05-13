@@ -13,6 +13,11 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
+                <fullName>Competitors</fullName>
+                <default>false</default>
+                <label>Competitor</label>
+            </value>
+            <value>
                 <fullName>Person not responsive</fullName>
                 <default>false</default>
                 <label>Person not responsive</label>
@@ -42,25 +47,11 @@
                 <default>false</default>
                 <label>Opportunity open w/ other contact</label>
             </value>
-            <value>
-                <fullName>X</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>X</label>
-            </value>
-            <value>
-                <fullName>Y</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Y</label>
-            </value>
-            <value>
-                <fullName>Z</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Z</label>
-            </value>
         </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Disqualified</controllingFieldValue>
+            <valueName>Competitors</valueName>
+        </valueSettings>
         <valueSettings>
             <controllingFieldValue>Disqualified</controllingFieldValue>
             <valueName>Person not responsive</valueName>
