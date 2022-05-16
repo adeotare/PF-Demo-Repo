@@ -13,6 +13,214 @@
     <navType>Standard</navType>
     <profileActionOverrides>
         <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Customer Support</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Customer Support</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Finance</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Finance</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Legal</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Legal</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Ops</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Ops</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Read-only</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Read-only</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Sales Rep/Engineers</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Sales Rep/Engineers</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF SDR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF SDR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Services/Onboarding</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Services/Onboarding</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Success</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Success</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Super User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Super User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Third Party User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>PF Third Party User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CRM_Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
         <content>Project_Task_Record_Page</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>project_cloud__Project_Task__c</pageOrSobjectType>
@@ -426,231 +634,27 @@
         <pageOrSobjectType>project_cloud__Project__c</pageOrSobjectType>
         <type>Flexipage</type>
         <profile>PF Customer Support</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Customer Support</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Customer Support</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Finance</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Finance</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Legal</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Legal</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Ops</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Ops</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Read-only</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Read-only</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Sales Rep/Engineers</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Sales Rep/Engineers</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF SDR</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF SDR</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Services/Onboarding</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Services/Onboarding</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Success</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Success</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Super User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Super User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Third Party User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>PF Third Party User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CRM_Project_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CRM_Project__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
     </profileActionOverrides>
     <tabs>standard-home</tabs>
+    <tabs>standard-Campaign</tabs>
     <tabs>standard-Lead</tabs>
-    <tabs>standard-Account</tabs>
     <tabs>standard-Contact</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>Plant__c</tabs>
+    <tabs>Plant_Product_Transaction__c</tabs>
     <tabs>standard-Opportunity</tabs>
     <tabs>SBQQ__Quote__c</tabs>
+    <tabs>standard-Contract</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-Feed</tabs>
     <tabs>MSA_Contract__c</tabs>
     <tabs>Document_Link__c</tabs>
     <tabs>CRM_Project__c</tabs>
     <tabs>standard-Product2</tabs>
-    <tabs>Plant__c</tabs>
     <tabs>Account_Plant__c</tabs>
     <tabs>Equipment__c</tabs>
-    <tabs>MSA_Implementation_Bracket_Price__c</tabs>    
-    <tabs>standard-report</tabs>
-    <tabs>standard-Dashboard</tabs>
+    <tabs>MSA_Implementation_Bracket_Price__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Power_Factor_Sales_UtilityBar</utilityBar>
 </CustomApplication>
