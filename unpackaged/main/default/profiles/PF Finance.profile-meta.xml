@@ -1888,6 +1888,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>MSA_Contract__c.Invoice_Requires_PO_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>MSA_Contract__c.Invoicing_Frequency_SaaS__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2029,6 +2034,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>MSA_Contract__c.SAT_Approval_Required__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MSA_Contract__c.SaaS_Minimum_Pricing__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
