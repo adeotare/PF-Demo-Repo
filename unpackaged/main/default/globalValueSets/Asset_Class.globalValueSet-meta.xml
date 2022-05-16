@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <customValue>
-        <fullName>All Renewables (Agnostic)</fullName>
+        <fullName>Hydro</fullName>
         <default>false</default>
-        <label>All Renewables (Agnostic)</label>
+        <label>Hydro</label>
     </customValue>
     <customValue>
-        <fullName>Wind</fullName>
+        <fullName>Industrial</fullName>
         <default>false</default>
-        <label>Wind</label>
+        <label>Industrial</label>
+    </customValue>
+    <customValue>
+        <fullName>Other Renewable</fullName>
+        <default>false</default>
+        <label>Other Renewable</label>
     </customValue>
     <customValue>
         <fullName>Solar</fullName>
@@ -21,19 +26,14 @@
         <label>Storage</label>
     </customValue>
     <customValue>
-        <fullName>Hydro</fullName>
+        <fullName>Wind</fullName>
         <default>false</default>
-        <label>Hydro</label>
+        <label>Wind</label>
     </customValue>
     <customValue>
-        <fullName>Other Renewable</fullName>
+        <fullName>All Renewables (Agnostic)</fullName>
         <default>false</default>
-        <label>Other Renewable</label>
-    </customValue>
-    <customValue>
-        <fullName>Industrial</fullName>
-        <default>false</default>
-        <label>Industrial</label>
+        <label>All Renewables (Agnostic)</label>
     </customValue>
     <masterLabel>Asset Class</masterLabel>
     <sorted>false</sorted>

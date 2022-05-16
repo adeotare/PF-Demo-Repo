@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Core</fullName>
+        <default>false</default>
+        <label>Core</label>
+    </customValue>
+    <customValue>
+        <fullName>Pro</fullName>
+        <default>false</default>
+        <label>Pro</label>
+    </customValue>
+    <customValue>
+        <fullName>O&amp;M</fullName>
+        <default>false</default>
+        <label>O&amp;M</label>
+    </customValue>
+    <customValue>
+        <fullName>Bluepoint</fullName>
+        <default>false</default>
+        <label>Bluepoint</label>
+    </customValue>
+    <customValue>
+        <fullName>Add-ons</fullName>
+        <default>false</default>
+        <label>Add-ons</label>
+    </customValue>
+    <customValue>
+        <fullName>Breeze Development</fullName>
+        <default>false</default>
+        <label>Breeze Development</label>
+    </customValue>
+    <customValue>
+        <fullName>Core Lite</fullName>
+        <default>false</default>
+        <label>Core Lite</label>
+    </customValue>
+    <customValue>
+        <fullName>Ekho</fullName>
+        <default>false</default>
+        <label>Ekho</label>
+    </customValue>
+    <customValue>
+        <fullName>Edge Services</fullName>
+        <default>false</default>
+        <label>Edge Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Customer Success</fullName>
+        <default>false</default>
+        <label>Customer Success</label>
+    </customValue>
+    <customValue>
+        <fullName>Enterprise</fullName>
+        <default>false</default>
+        <label>Enterprise</label>
+    </customValue>
+    <masterLabel>Product Line</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
