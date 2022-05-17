@@ -3,7 +3,7 @@
     <fullName>Related_Projects__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>Related Projects</label>
+    <label>Parent Project</label>
     <referenceTo>project_cloud__Project__c</referenceTo>
     <relationshipLabel>Projects (Related Projects)</relationshipLabel>
     <relationshipName>Projects</relationshipName>

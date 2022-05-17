@@ -1943,6 +1943,26 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>MSA_Implementation_Bracket_Price__c.Product_Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MSA_Implementation_Bracket_Price__c.Product_Family__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MSA_Implementation_Bracket_Price__c.Product_Line__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MSA_Implementation_Bracket_Price__c.Product_Services__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>MSA_Software_Discount_Tier_Price__c.Asset_Class__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3263,6 +3283,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>SBQQ__ContractedPrice__c.Product_List_Price__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>SBQQ__QuoteLine__c.Plant_Product_Transaction__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3374,6 +3399,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>project_cloud__Project__c.Internal_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>project_cloud__Project__c.Related_Projects__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
