@@ -63,6 +63,10 @@
                 <behavior>Edit</behavior>
                 <field>First_Delivered_Timestamp__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Annual_Recurring_Revenue__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

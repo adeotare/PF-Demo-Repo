@@ -115,5 +115,5 @@ When opportunity is created with valid MSA contract than it should update the MS
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
 </Flow>

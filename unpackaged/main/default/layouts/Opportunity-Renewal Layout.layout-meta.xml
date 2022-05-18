@@ -76,6 +76,10 @@
                 <behavior>Readonly</behavior>
                 <field>Auto_Renewal__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Subsidiary__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
