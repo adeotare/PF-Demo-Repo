@@ -1247,6 +1247,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>project_cloud__Project__c.ARR__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>project_cloud__Project__c.External_Notes__c</field>
         <readable>true</readable>
@@ -1254,6 +1259,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>project_cloud__Project__c.External_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>project_cloud__Project__c.Installation_Fee__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

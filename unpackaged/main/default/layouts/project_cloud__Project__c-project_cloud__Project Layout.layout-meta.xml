@@ -232,6 +232,10 @@
                 <behavior>Readonly</behavior>
                 <field>Schedule_Performance_Index__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Installation_Fee__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -249,6 +253,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>To_Complete_Performance_Index__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>ARR__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>

@@ -3923,6 +3923,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>project_cloud__Project__c.ARR__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>project_cloud__Project__c.Due_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3939,6 +3944,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>project_cloud__Project__c.Implementation_start_date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>project_cloud__Project__c.Installation_Fee__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
