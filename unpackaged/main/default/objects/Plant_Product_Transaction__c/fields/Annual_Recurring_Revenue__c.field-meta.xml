@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Annual_Recurring_Revenue__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(TEXT( Product__r.SBQQ__SubscriptionPricing__c  ) = &#39;&#39;,0,( Quote_Line__r.SBQQ__NetTotal__c  /  Quote_Line__r.SBQQ__ProrateMultiplier__c )/( Quote_Line__r.SBQQ__DefaultSubscriptionTerm__c  / 12))</formula>
+    <formula>IF(TEXT(  Quote_Line__r.SBQQ__Product__r.SBQQ__SubscriptionPricing__c   ) = &#39;&#39;,0,(  (Net_Price__c* Quote_Line_Quantity__c )   /  Quote_Line__r.SBQQ__ProrateMultiplier__c )/( Quote_Line__r.SBQQ__DefaultSubscriptionTerm__c  / 12))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Annual Recurring Revenue</label>
     <precision>18</precision>

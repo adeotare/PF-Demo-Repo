@@ -3,7 +3,7 @@
     <fullName>Uses_MSA_of__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>Uses MSA of</label>
+    <label>Uses MSA</label>
     <referenceTo>MSA_Contract__c</referenceTo>
     <relationshipLabel>Accounts</relationshipLabel>
     <relationshipName>Accounts</relationshipName>
