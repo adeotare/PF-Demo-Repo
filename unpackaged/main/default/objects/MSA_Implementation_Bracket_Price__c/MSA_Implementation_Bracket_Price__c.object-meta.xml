@@ -155,9 +155,8 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>MSA Implementation Bracket Price</label>
     <nameField>
-        <displayFormat>IP-{0000}</displayFormat>
         <label>MSA Implementation Bracket Price Name</label>
-        <type>AutoNumber</type>
+        <type>Text</type>
     </nameField>
     <pluralLabel>MSA Implementation Bracket Prices</pluralLabel>
     <searchLayouts />
