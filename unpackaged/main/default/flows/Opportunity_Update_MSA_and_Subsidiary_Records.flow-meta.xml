@@ -102,7 +102,7 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Type</field>
+            <field>AccountId</field>
             <operator>IsNull</operator>
             <value>
                 <booleanValue>false</booleanValue>
@@ -112,5 +112,5 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
 </Flow>
