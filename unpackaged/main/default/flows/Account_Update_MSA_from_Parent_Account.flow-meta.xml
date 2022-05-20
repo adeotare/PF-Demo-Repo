@@ -236,6 +236,32 @@
             <label>MSA Contract  is available ?</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>MSA_on_Account</name>
+        <label>MSA on Account</label>
+        <locationX>596</locationX>
+        <locationY>47</locationY>
+        <defaultConnector>
+            <targetReference>getAccount</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>MSA_found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Account_from_MSA.Account_Name__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_MSA_First</targetReference>
+            </connector>
+            <label>MSA found</label>
+        </rules>
+    </decisions>
+    <description>Executed : if MSA Contract is available for Account it will be updated, Else it will go to Parent Account to Update the MSA from Parent and So on.</description>
     <interviewLabel>Account : Update MSA from Parent Account {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Account : Update MSA from Parent Account</label>
     <processMetadataValues>
@@ -258,10 +284,31 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
+        <name>Get_Account_from_MSA</name>
+        <label>Get Account from MSA</label>
+        <locationX>461</locationX>
+        <locationY>131</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>MSA_on_Account</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Account_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>MSA_Contract__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>getAccount</name>
         <label>getAccount</label>
-        <locationX>628</locationX>
-        <locationY>141</locationY>
+        <locationX>782</locationX>
+        <locationY>138</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_MSA_Exis</targetReference>
@@ -461,11 +508,24 @@
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_MSA_First</name>
+        <label>Update MSA First</label>
+        <locationX>603</locationX>
+        <locationY>199</locationY>
+        <inputAssignments>
+            <field>Uses_MSA_of__c</field>
+            <value>
+                <elementReference>Get_Account_from_MSA.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <start>
-        <locationX>118</locationX>
-        <locationY>38</locationY>
+        <locationX>28</locationX>
+        <locationY>26</locationY>
         <connector>
-            <targetReference>getAccount</targetReference>
+            <targetReference>Get_Account_from_MSA</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
