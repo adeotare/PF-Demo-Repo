@@ -4583,4 +4583,8 @@
         <enabled>true</enabled>
         <name>ViewTrustMeasures</name>
     </userPermissions>
+    <classAccesses>
+        <apexClass>ProgramController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
 </Profile>

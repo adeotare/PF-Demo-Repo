@@ -1591,5 +1591,9 @@
         <tab>standard-WorkOrder</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
+    <classAccesses>
+        <apexClass>ProgramController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <userLicense>Customer Community Plus</userLicense>
 </Profile>
