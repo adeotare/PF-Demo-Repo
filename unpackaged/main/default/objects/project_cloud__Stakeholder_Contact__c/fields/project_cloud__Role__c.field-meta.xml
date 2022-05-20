@@ -26,6 +26,21 @@
                 <default>false</default>
                 <label>Stakeholder</label>
             </value>
+            <value>
+                <fullName>Technical Project Manager</fullName>
+                <default>false</default>
+                <label>Technical Project Manager</label>
+            </value>
+            <value>
+                <fullName>Customer Success Manager</fullName>
+                <default>false</default>
+                <label>Customer Success Manager</label>
+            </value>
+            <value>
+                <fullName>Implementation Lead</fullName>
+                <default>false</default>
+                <label>Implementation Lead</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
     <visibleLines>4</visibleLines>
