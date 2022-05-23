@@ -43,6 +43,10 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>UserToStakeholder.Name</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
         <connector>
             <targetReference>Collection_of_All_User</targetReference>
         </connector>
@@ -138,7 +142,7 @@
             <targetReference>Getting_Account_Related_to_Project</targetReference>
         </connector>
         <object>project_cloud__Project__c</object>
-        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>

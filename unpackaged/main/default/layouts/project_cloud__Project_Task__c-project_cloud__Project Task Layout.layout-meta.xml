@@ -44,8 +44,8 @@
                 <field>CreatedById</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Assigned_To__c</field>
+                <behavior>Readonly</behavior>
+                <field>Assigned_Users__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -379,6 +379,9 @@
             <sortOrder>19</sortOrder>
         </platformActionListItems>
     </platformActionList>
+    <relatedLists>
+        <relatedList>RelatedGroupsListOnRecord</relatedList>
+    </relatedLists>
     <relatedLists>
         <customButtons>project_cloud__Quick_Entry</customButtons>
         <fields>NAME</fields>

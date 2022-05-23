@@ -493,6 +493,121 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Active_Megawatts__c.Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Child_MW_Agnostic__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Child_MW_Hydro__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Child_MW_Industrial__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Child_MW_Other__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Child_MW_Solar__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Child_MW_Storage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Child_MW_Wind__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.MW_Agnostic__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.MW_Hydro__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.MW_Industrial__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.MW_Other_Renewable__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.MW_Other__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.MW_Solar__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.MW_Storage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.MW_Wind__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Total_Agnostic__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Total_MW_Hydro__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Total_MW_Other_Renewable__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Total_MW_Other__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Total_MW_Solar__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Total_MW_Storage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Total_MW_Wind__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>CRM_Project__c.Account_Plant_relationship_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3893,6 +4008,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>project_cloud__Project_Task__c.Assigned_Users__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>project_cloud__Project_Task__c.Earned_Value__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3981,6 +4101,9 @@
     <layoutAssignments>
         <layout>Account-Third Party Page Layout</layout>
         <recordType>Account.Third_Party</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Active_Megawatts__c-Past Purchased Quantity Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>CRM_Project__c-Internal layout</layout>

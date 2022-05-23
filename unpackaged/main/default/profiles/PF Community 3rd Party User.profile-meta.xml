@@ -1223,6 +1223,9 @@
         <layout>Account_Plant__c-Account Plant Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Active_Megawatts__c-Past Purchased Quantity Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Asset-Asset Layout</layout>
     </layoutAssignments>
     <layoutAssignments>

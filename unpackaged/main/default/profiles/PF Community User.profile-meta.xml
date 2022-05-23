@@ -1595,5 +1595,8 @@
         <apexClass>ProgramController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <layoutAssignments>
+        <layout>Active_Megawatts__c-Past Purchased Quantity Layout</layout>
+    </layoutAssignments>
     <userLicense>Customer Community Plus</userLicense>
 </Profile>
