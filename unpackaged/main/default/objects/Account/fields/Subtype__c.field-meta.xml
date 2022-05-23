@@ -98,9 +98,13 @@
                 <label>Education, Media, &amp; Misc. Consultant</label>
             </value>
             <value>
+                <fullName>O&amp;M Service Provider</fullName>
+                <default>false</default>
+                <label>O&amp;M Service Provider</label>
+            </value>
+            <value>
                 <fullName>AM Service Provider</fullName>
                 <default>false</default>
-                <isActive>false</isActive>
                 <label>AM Service Provider</label>
             </value>
             <value>
@@ -114,12 +118,6 @@
                 <default>false</default>
                 <isActive>false</isActive>
                 <label>N/A</label>
-            </value>
-            <value>
-                <fullName>O&amp;M Service Provider</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>O&amp;M Service Provider</label>
             </value>
             <value>
                 <fullName>Oil &amp; Gas Major</fullName>
@@ -187,6 +185,7 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>3rd Party</controllingFieldValue>
+            <controllingFieldValue>Customer</controllingFieldValue>
             <valueName>Consultancy</valueName>
         </valueSettings>
         <valueSettings>
@@ -204,6 +203,14 @@
         <valueSettings>
             <controllingFieldValue>3rd Party</controllingFieldValue>
             <valueName>Education, Media, &amp; Misc. Consultant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer</controllingFieldValue>
+            <valueName>O&amp;M Service Provider</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer</controllingFieldValue>
+            <valueName>AM Service Provider</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>
