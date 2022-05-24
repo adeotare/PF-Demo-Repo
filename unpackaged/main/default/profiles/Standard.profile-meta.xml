@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <custom>false</custom>
     <pageAccesses>
@@ -6019,12 +6019,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>AssetRelationship-Asset Relationship Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Bill_to_Account__c-MSA Account Junction Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Bill_to_Contact__c-Bill to Contact Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>CRM_Project__c-Internal layout</layout>

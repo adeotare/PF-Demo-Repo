@@ -155,9 +155,10 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Active Megawatts</label>
     <nameField>
-        <label>Active Megawatts Name</label>
+        <displayFormat>AM-{0000}</displayFormat>
+        <label>Active Megawatts No</label>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Active Megawatts</pluralLabel>
     <searchLayouts />
