@@ -6,7 +6,7 @@
     <label>Account-Plant</label>
     <referenceTo>Account_Plant__c</referenceTo>
     <relationshipLabel>Equipments</relationshipLabel>
-    <relationshipName>Equipments1</relationshipName>
+    <relationshipName>Equipments</relationshipName>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

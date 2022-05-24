@@ -2,9 +2,21 @@
 <SharingSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <accessMappings>
         <accessLevel>Read</accessLevel>
+        <object>Account_Plant__c</object>
+        <objectField>Account__c</objectField>
+        <userField>Contact.Account</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Read</accessLevel>
         <object>CRM_Project__c</object>
         <objectField>Account__c</objectField>
         <userField>Account</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Read</accessLevel>
+        <object>Equipment__c</object>
+        <objectField>Account_Plant__c.Account__c</objectField>
+        <userField>Contact.Account</userField>
     </accessMappings>
     <accessMappings>
         <accessLevel>Read</accessLevel>
@@ -13,5 +25,7 @@
         <userField>Contact.Account</userField>
     </accessMappings>
     <name>CRM Project Rule</name>
-    <profiles>Customer Community Plus User</profiles>
+    <profiles>PF Community User</profiles>
+    <profiles>customer community plus user</profiles>
+    <profiles>partner community user</profiles>
 </SharingSet>

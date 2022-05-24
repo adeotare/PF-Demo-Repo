@@ -29,8 +29,12 @@
     <gatherCustomerSentimentData>false</gatherCustomerSentimentData>
     <networkMemberGroups>
         <permissionSet>Community_Admin_Privileges</permissionSet>
-        <profile>admin</profile>
+        <permissionSet>Community_Access</permissionSet>
         <profile>customer community plus user</profile>
+        <profile>PF Services%2FOnboarding</profile>
+        <profile>Admin</profile>
+        <profile>PF Community 3rd Party User</profile>
+        <profile>PF Community User</profile>
     </networkMemberGroups>
     <networkPageOverrides>
         <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>

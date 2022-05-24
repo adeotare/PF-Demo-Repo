@@ -29,6 +29,20 @@
                 <stringValue>Contracted</stringValue>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Subscription__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Order_Item__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.SBQQ__OrderProduct__c</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Add_to_PPT</targetReference>
         </connector>
