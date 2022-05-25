@@ -4405,6 +4405,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>Active_Megawatts__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>CRM_Project__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>

@@ -1471,6 +1471,10 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
+        <tab>Active_Megawatts__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-Account</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
@@ -1610,6 +1614,9 @@
         <apexClass>ProgramController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <layoutAssignments>
+        <layout>Account_Plant__c-Community Page Layout</layout>
+    </layoutAssignments>
     <layoutAssignments>
         <layout>Active_Megawatts__c-Past Purchased Quantity Layout</layout>
     </layoutAssignments>

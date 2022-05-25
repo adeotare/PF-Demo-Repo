@@ -77,8 +77,9 @@ private class PlantProductControllerTest {
 
     @isTest static void fetchPlantProductListTest() {
             
-            // PlantProductController ppc = new PlantProductController(); 
-            // List<Plant_Product_Transaction__c> = ppc.fetchPlantProductList (String.valueOf(quoteLineItem.Id));
+            //PlantProductController ppc = new PlantProductController(); 
+            //List<Plant_Product_Transaction__c> lppt = new List <Plant_Product_Transaction__c>());
+            //ppc.fetchPlantProductList (quoteLineItems[0].Id);
 
     }
 

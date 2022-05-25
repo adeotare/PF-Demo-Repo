@@ -12,7 +12,8 @@ const COLS=[
     // {label:'Name',fieldName:'Name', type:'text'}, 
     {label:'Name',fieldName:'PlantName', type:'text'},  
     {label:'Country',fieldName:'PlantCountry', type:'text', cellAttributes: { alignment: 'center' }},
-    {label:'Renewable Type',fieldName:'PlantRenewableType', type:'text', cellAttributes: { alignment: 'center' }},
+   // {label:'Renewable',fieldName:'PlantRenewableType', type:'text', cellAttributes: { alignment: 'center' }},
+    {label:'Asset Class',fieldName:'AssetClass', type:'text', cellAttributes: { alignment: 'center' }},
   /*   {label:'Account',fieldName:'AccountName', type:'text'},  
     {label:'Account Plant',fieldName:'AccountPlantName', type:'text'},
 	{label:'Plant',fieldName:'PlantName', type:'text'}, */
@@ -29,7 +30,8 @@ const AccountPlantCOLS=[
    /*  {label:'Account',fieldName:'AccountName', type:'text'},  
     {label:'Plant',fieldName:'PlantName', type:'text'}, */
 	{label:'Country',fieldName:'PlantCountry', type:'text', cellAttributes: { alignment: 'center' }},
-  {label:'Renewable',fieldName:'PlantRenewableType', type:'text', cellAttributes: { alignment: 'center' }},
+  // {label:'Renewable',fieldName:'PlantRenewableType', type:'text', cellAttributes: { alignment: 'center' }},
+  {label:'Asset Class',fieldName:'AssetClass', type:'text', cellAttributes: { alignment: 'center' }},
   {label:'MWh',fieldName:'PlantMWH', type:'text', cellAttributes: { alignment: 'center' }},
 	{label:'MWp',fieldName:'PlantMWP', type:'text', cellAttributes: { alignment: 'center' }},
 	{label:'# of Turbines',fieldName:'NumberofTurbines', type:'text', cellAttributes: { alignment: 'center' }},
@@ -86,7 +88,8 @@ export default class PlatProductDataTable extends LightningElement {
 				  PlantMWP : row.Plant__r.Plant_MWP__c,
 				  PlantCountry : row.Plant__r.Plant_Country__c,
 				  PlantNoOfDevices : row.Plant__r.Number_of_Turbines__c,
-				  PlantRenewableType : row.Plant__r.Renewable_Type__c
+				  // PlantRenewableType : row.Plant__r.Renewable_Type__c
+          AssetClass : row.Plant__r.Asset_Class__c
                 
                 }));
 			//this.data = currentData;
@@ -109,8 +112,8 @@ export default class PlatProductDataTable extends LightningElement {
 		  PlantMWP : row.Plant__r.MWp__c,
 		  PlantMWH : row.Plant__r.MW_Energy_Capacity_MWh__c,
 		  PlantDevices : row.Plant__r.Number_of_Turbines__c,
-		  PlantAssetClass : row.Plant__r.Asset_Class__c,
-      PlantRenewableType : row.Renewable_Type__c    
+		  AssetClass : row.Plant__r.Asset_Class__c,
+      // PlantRenewableType : row.Renewable_Type__c    
       }));
       }
     }
