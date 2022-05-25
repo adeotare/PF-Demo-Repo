@@ -17,14 +17,14 @@
             <assignToReference>AddNetPrice</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>$Record.Net_Price__c</elementReference>
+                <elementReference>$Record.Net_Total_Price__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>AddNetPrice</assignToReference>
             <operator>Subtract</operator>
             <value>
-                <elementReference>$Record__Prior.Net_Price__c</elementReference>
+                <elementReference>$Record__Prior.Net_Total_Price__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -47,14 +47,14 @@
             <assignToReference>AddNetPrice</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>$Record.Net_Price__c</elementReference>
+                <elementReference>$Record.Net_Total_Price__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>AddNetPrice</assignToReference>
             <operator>Subtract</operator>
             <value>
-                <elementReference>$Record__Prior.Net_Price__c</elementReference>
+                <elementReference>$Record__Prior.Net_Total_Price__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -219,7 +219,7 @@
             </value>
         </filters>
         <filters>
-            <field>Net_Price__c</field>
+            <field>Net_Total_Price__c</field>
             <operator>IsNull</operator>
             <value>
                 <booleanValue>false</booleanValue>
