@@ -1,0 +1,73 @@
+<template>
+    <lightning-card title="Approval History">
+        <div slot="actions">
+            <lightning-button 
+                name="Approve"
+                label="Approve"
+                title="Approve"
+                onclick={handleApprove} 
+                variant="success"
+                icon-name="action:approval"
+                if:false={showApproveReject} > 
+            </lightning-button>
+            <lightning-button 
+                name="Reject"
+                label="Reject"
+                title="Reject"
+                icon-name="action:reject"
+                onclick={handleReject} 
+                variant="destructive"
+                if:false={showApproveReject}> 
+            </lightning-button>
+            <lightning-button 
+                name="Open Chatter"
+                label="Open Chatter"
+                title="Open Chatter"
+                icon-name="utility:feed"
+                onclick={openChatter} 
+                variant="brand"
+                if:true={showChatterButton}> 
+            </lightning-button>
+        </div>
+
+        <lightning-accordion allow-multiple-sections-open
+            active-section-name={activeSections}>
+            <lightning-accordion-section name="A" label="New Approval History">
+                <div style="height: 300px" if:true={showDataTableNew}>
+                    <lightning-datatable
+                        key-field="id"
+                        data={approvalHistoryNew.approvalSteps}
+                        columns={columns}
+                        hide-checkbox-column
+                    ></lightning-datatable>
+                </div>
+                <div if:false={showDataTableNew}>
+                    No approval history
+                </div>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="B" label="Old Approval History">
+                <div style="height: 300px" if:true={showDataTable}>
+                    <lightning-datatable
+                        key-field="id"
+                        data={approvalHistory.approvalSteps}
+                        columns={columns}
+                        hide-checkbox-column
+                    ></lightning-datatable>
+                </div>
+                <div if:false={showDataTable}>
+                    No approval history
+                </div>
+            </lightning-accordion-section>
+        </lightning-accordion>
+    </lightning-card>
+
+    <c-approval-process-comments-pop-up
+        onconfirm={handleApproval}
+        selected-plant-asset-id={selectedPlantAssetId}
+        selected-plant-asset-aba-id={selectedPlantAssetIdABAId}
+        show-approve-btn={showApproveBtn}
+        show-reject-btn={showRejectBtn}
+        title={title}
+        if:true={isApprovalSubmitted}>
+    </c-approval-process-comments-pop-up>
+</template>

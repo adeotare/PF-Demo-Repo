@@ -1,0 +1,7 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:appHostable">
+    <aura:attribute name="recordId" type="String" /> 
+    <aura:if isTrue="{!v.recordId}" >
+        <forceChatter:publisher context="RECORD" recordId="{!v.recordId}"/> <br/>
+        <forceChatter:feed type="Record" subjectId="{!v.recordId}"/>
+    </aura:if>
+</aura:component>

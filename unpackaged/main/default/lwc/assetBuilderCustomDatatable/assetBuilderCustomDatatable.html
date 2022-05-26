@@ -1,0 +1,144 @@
+<template>
+    <!--Attribute Requirement Radio Button-->
+    <div class = "radioButton">
+      <label> <b> Attribute Requirement Highlighter: </b> </label> 
+      <label class ="radioBtnLabel"><input type="radio" class="radioBtn" value="None"  onclick={handleChange}/>None</label>
+      <template for:each={attrReq} for:item="attrReqIns">
+        <label key={attrReqIns.key} class ="radioBtnLabel"><input type="radio" class="radioBtn" value={attrReqIns.value} onclick={handleChange}/>{attrReqIns.key}</label>
+      </template>
+    </div>
+    <!--Spinner for Drive and Drive Plus Highlights-->
+    <div class="spinner spinnerLoad">
+      <template if:true={isSpinner}>
+        <div class="loaderSpinner">
+          <lightning-spinner variant="brand" size="large" alternative-text="Loading...">
+          </lightning-spinner>
+        </div>
+      </template>
+    </div>
+    <!-- Horizantal Table -->
+    <div class="tableDiv disabledCol" if:false={isVertical}>
+      <table class={cssClassCellBuffer} if:false={isVertical}>
+        <tbody>
+          <!--This Function in HTML will render the Headers  Dynamically based on the JS File-->
+          <tr class="lineHeightreset">
+            <template for:each={tableHeaders} for:item="headers">
+              <th key={headers.label} class={headers.className}>
+                <div class="headerMain">
+                  <span class="headerCell">{headers.label}                
+                  </span>
+                    <lightning-helptext class="helpTextIcon" if:true={headers.customerFacingNotes} content={headers.customerFacingNotes}></lightning-helptext>
+                </div>
+              </th>
+            </template>
+          </tr>
+  
+          <!--This method is used to render the column Values based on the column Values-->
+          <template for:each={dataTableOutput} for:item="siteMetadataRecord" >
+            <tr key={siteMetadataRecord.siteMetadataRecordId} class="lineHeightreset ColWidth">
+              <template for:each={siteMetadataRecord.attrMetadata} for:item="attribute">
+                <td key={attribute.cellIndex} class={attribute.attrMetadataObj.colClassName}>
+                  
+                  <!--This method will show table without piclist in the Horizantal Data Table Component-->
+                  <template if:false={attribute.attrMetadataObj.isPicklist}>
+                    <input type={attribute.attrMetadataObj.attributeDataType} name={attribute.attrMetadataObj.attributeHeader} 
+                      class={attribute.attrMetadataObj.className} pattern="\d{4}-\d{2}-\d{2}"
+                      key={attribute.cellIndex} value={attribute.attrMetadataObj.attributeValue} title={attribute.attrMetadataObj.attributeValue} checked={attribute.attrMetadataObj.attributeValue}
+                      onchange={inputChangeHandler} min="0" disabled={attribute.attrMetadataObj.cellIsDisabled}
+                      data-rowindex={siteMetadataRecord.rowIndex} data-attrid={attribute.attrMetadataObj.attributeHeader}
+                      data-cellindex={attribute.cellIndex} data-sitemetadataid={siteMetadataRecord.siteMetadataRecordId}
+                      data-date="" data-date-format="MM-DD-YYYY" data-isbifacial={attribute.attrMetadataObj.attrInfo.Is_Related_Subarray_Bifacial__c}/>
+                      <p if:true={attribute.attrMetadataObj.showClearDate} 
+                        title="Clear Date Value" class="pDateClear">
+                          <lightning-button-icon icon-name="utility:clear" 
+                          variant="bare" alternative-text="Clear Date Value" class="slds-m-left_xx-small slds-m-bottom_xx-large" 
+                          title="Clear Date Value" data-rowindex={siteMetadataRecord.rowIndex} data-cellindex={attribute.cellIndex}
+                          onclick={clearDate} >
+                        </lightning-button-icon>
+                    </p>
+                  </template>
+  
+                  <!--This method is used to show the picklist options for the respective attributes in the Horizantal Data Table Component-->
+                  <template if:true={attribute.attrMetadataObj.isPicklist}>
+                    <select size="1" name={attribute.attrMetadataObj.attributeHeader} data-rowindex={siteMetadataRecord.rowIndex} 
+                      data-attrid={attribute.attrMetadataObj.attributeHeader} data-cellindex={attribute.cellIndex} data-isbifacial={attribute.attrMetadataObj.attrInfo.Is_Related_Subarray_Bifacial__c}
+                      onchange={inputChangeHandler} class={attribute.attrMetadataObj.className} disabled={attribute.attrMetadataObj.cellIsDisabled}
+                      data-sitemetadataid={siteMetadataRecord.siteMetadataRecordId}>
+                    <option>--None--</option>
+                      <template for:each={attribute.attrMetadataObj.picklistValues} for:item="attributePickValues">
+                        <option key={attribute.cellIndex} value={attributePickValues.picklistVal} 
+                          selected={attributePickValues.picklistValSelected}>{attributePickValues.picklistLabel}</option>
+                      </template>
+                    </select>
+                  </template>
+  
+                </td>
+              </template>
+            </tr>
+          </template>
+  
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Vertical Table -->
+    <div class="tableDiv disabledCol VerticalTable" if:true={isVertical}>
+      <table if:true={isVertical} class="slds-table tableCellbuffer slds-table_bordered" >
+        <template for:each={dataTableOutput} for:item="siteMetadataRecord">
+            <template for:each={siteMetadataRecord.attrMetadata} for:item="attribute">
+              <tr key={attribute.key} class="lineHeightreset">
+                <th key={attribute.attrMetadataObj.attributeHeader} class={attribute.attrMetadataObj.headerClassNameVertical}>
+                  <div class="headerMain">
+                    <span class="headerCell">{attribute.attrMetadataObj.attributeHeaderAndUOM}                
+                    </span>
+                      <lightning-helptext class="helpTextIcon" if:true={attribute.attrMetadataObj.customerFacingNotes} content={attribute.attrMetadataObj.customerFacingNotes}></lightning-helptext>
+                  </div>
+                </th>
+                <!--<th key={attribute.key}>{attribute.attrMetadataObj.attributeHeader}</th>-->
+                <td key={attribute.key}>
+                  
+                  <!--This method will show table without piclist in the Vertical Data Table Component-->
+                  <template if:false={attribute.attrMetadataObj.isPicklist}>
+                    <input type={attribute.attrMetadataObj.attributeDataType} name={attribute.attrMetadataObj.attributeHeader} 
+                      class={attribute.attrMetadataObj.className} pattern="\d{4}-\d{2}-\d{2}"
+                      key={attribute.attrMetadataObj.key} value={attribute.attrMetadataObj.attributeValue} title={attribute.attrMetadataObj.attributeValue} checked={attribute.attrMetadataObj.attributeValue}
+                      onchange={inputChangeHandler} min="0" disabled={attribute.attrMetadataObj.cellIsDisabled}
+                      data-rowindex={siteMetadataRecord.rowIndex} data-attrid={attribute.attrMetadataObj.attributeHeader}
+                      data-cellindex={attribute.cellIndex}
+                      data-date="" data-date-format="MM-DD-YYYY"/>
+                      <p if:true={attribute.attrMetadataObj.showClearDate} 
+                        title="Clear Date Value" class="pDateClear">
+                        <lightning-button-icon icon-name="utility:clear" 
+                          variant="bare" alternative-text="Clear Date Value" class="slds-m-left_xx-small slds-m-bottom_xx-large" 
+                          title="Clear Date Value" data-rowindex={siteMetadataRecord.rowIndex} data-cellindex={attribute.cellIndex}
+                          onclick={clearDate} >
+                        </lightning-button-icon>
+                      </p>
+                  </template>
+  
+                  <!--This method is used to show the picklist options for the respective attributes in the Vertical Data Table Component-->
+                  <template if:true={attribute.attrMetadataObj.isPicklist}>
+                    <select size="1" name={attribute.attrMetadataObj.attributeHeader} data-rowindex={siteMetadataRecord.rowIndex} 
+                      data-attrid={attribute.attrMetadataObj.attributeHeader} data-cellindex={attribute.cellIndex}
+                      onchange={inputChangeHandler} class={attribute.attrMetadataObj.className}
+                      disabled={attribute.attrMetadataObj.cellIsDisabled}>
+                    <option>--None--</option>
+                      <template for:each={attribute.attrMetadataObj.picklistValues} for:item="attributePickValues">
+                        <option key={attribute.attrMetadataObj.key} value={attributePickValues.picklistVal}
+                          selected={attributePickValues.picklistValSelected}>{attributePickValues.picklistVal}</option>
+                      </template>
+                    </select>
+                  </template>
+                </td>
+              </tr>
+            </template>
+        </template>
+      </table>
+    </div>
+    <div class="slds-m-around_medium" if:true={countOfRecords}>
+      <p class="slds-m-vertical_medium content">
+               Displaying {startingRecord} to {endingRecord} of {totalRecountCount} records.
+               Page {page} of {totalPage}. </p>
+      <c-paginator onprevious={previousHandler} onnext={nextHandler}></c-paginator>
+  </div>
+  </template>

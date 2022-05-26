@@ -1,0 +1,99 @@
+<template>
+    <lightning-card >
+    <div class="slds-container_small">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Weighted Average RollUp Calculation</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div class="tableDiv disabledCol VerticalTable" if:true={isVertical}>
+                        <table if:true={isVertical} class="slds-table tableCellbuffer slds-table_bordered">
+                            <template for:each={dataTableOutput} for:item="siteMetadataRecord">
+                                <template for:each={siteMetadataRecord.attrMetadata} for:item="attribute">
+                                    <tr key={attribute.key} class="lineHeightreset">
+                                        <th key={attribute.attrMetadataObj.attributeHeader}
+                                            class={attribute.attrMetadataObj.headerClassNameVertical}>
+                                            <div class="headerMain">
+                                                <span class="headerCell">{attribute.attrMetadataObj.attributeHeaderAndUOM}
+                                                </span>
+                                                <lightning-helptext class="helpTextIcon"
+                                                    if:true={attribute.attrMetadataObj.customerFacingNotes}
+                                                    content={attribute.attrMetadataObj.customerFacingNotes}>
+                                                </lightning-helptext>
+                                            </div>
+                                        </th>
+                                        <!--<th key={attribute.key}>{attribute.attrMetadataObj.attributeHeader}</th>-->
+                                        <td key={attribute.key}>
+    
+                                            <!--This method will show table without piclist in the Vertical Data Table Component-->
+                                            <template if:false={attribute.attrMetadataObj.isPicklist}>
+                                                <input type={attribute.attrMetadataObj.attributeDataType}
+                                                    name={attribute.attrMetadataObj.attributeHeader}
+                                                    class={attribute.attrMetadataObj.className} pattern="\d{4}-\d{2}-\d{2}"
+                                                    key={attribute.attrMetadataObj.key}
+                                                    value={attribute.attrMetadataObj.attributeValue}
+                                                    title={attribute.attrMetadataObj.attributeValue}
+                                                    checked={attribute.attrMetadataObj.attributeValue}
+                                                    onchange={inputChangeHandler} min="0"
+                                                    disabled={attribute.attrMetadataObj.cellIsDisabled}
+                                                    data-rowindex={siteMetadataRecord.rowIndex}
+                                                    data-attrid={attribute.attrMetadataObj.attributeHeader}
+                                                    data-cellindex={attribute.cellIndex} data-date=""
+                                                    data-date-format="MM-DD-YYYY" />
+                                                <p if:true={attribute.attrMetadataObj.showClearDate}
+                                                    title="Clear Date Value" class="pDateClear">
+                                                    <lightning-button-icon icon-name="utility:clear" variant="bare"
+                                                        alternative-text="Clear Date Value"
+                                                        class="slds-m-left_xx-small slds-m-bottom_xx-large"
+                                                        title="Clear Date Value" data-rowindex={siteMetadataRecord.rowIndex}
+                                                        data-cellindex={attribute.cellIndex} onclick={clearDate}>
+                                                    </lightning-button-icon>
+                                                </p>
+                                            </template>
+    
+                                            <!--This method is used to show the picklist options for the respective attributes in the Vertical Data Table Component-->
+                                            <template if:true={attribute.attrMetadataObj.isPicklist}>
+                                                <select size="1" name={attribute.attrMetadataObj.attributeHeader}
+                                                    data-rowindex={siteMetadataRecord.rowIndex}
+                                                    data-attrid={attribute.attrMetadataObj.attributeHeader}
+                                                    data-cellindex={attribute.cellIndex} onchange={inputChangeHandler}
+                                                    class={attribute.attrMetadataObj.className}
+                                                    disabled={attribute.attrMetadataObj.cellIsDisabled}>
+                                                    <option>--None--</option>
+                                                    <template for:each={attribute.attrMetadataObj.picklistValues}
+                                                        for:item="attributePickValues">
+                                                        <option key={attribute.attrMetadataObj.key}
+                                                            value={attributePickValues.picklistVal}
+                                                            selected={attributePickValues.picklistValSelected}>
+                                                            {attributePickValues.picklistVal}</option>
+                                                    </template>
+                                                </select>
+                                            </template>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </template>
+                        </table>
+                    </div>
+                </div>
+
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral"
+                      name="cancel"
+                      label="Cancel"
+                      title="Cancel"
+                      onclick={handleCancel}></lightning-button>
+    
+                    <lightning-button variant="brand"
+                      name="Save"
+                      label="Save"
+                      title="Save"
+                      onclick={handleOk}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+    </lightning-card>
+</template>

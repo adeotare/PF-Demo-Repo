@@ -1,0 +1,253 @@
+<template>
+    <div class="slds-m-bottom_small slds-page-header">
+        <div class="slds-media">
+            <div class="slds-media__figure">
+                <lightning-icon icon-name="standard:maintenance_asset" size="medium" variant="slds-icon-inverse"></lightning-icon>
+            </div>
+            <div class="slds-media__body">
+                <div class="slds-page-header__title slds-text-heading_large">
+                    {labels.impWizTitle}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <lightning-card if:false={impWizAccessToCommunityUsers}>
+        <c-imp-wiz-info-message 
+            title={title} 
+            class-name={className} 
+            icon-name={iconName} 
+            message={accessDeniedMessage}>
+        </c-imp-wiz-info-message>
+    </lightning-card>
+
+    <div class="c-container" if:true={impWizAccessToCommunityUsers}>
+        <lightning-layout vertical-align="stretch" >
+            <lightning-layout-item flexibility="auto" size="3" padding="horizontal-small">
+                <lightning-card variant="Narrow" class="card"
+                    title={labels.apiRequestForm} icon-name="utility:edit_form">
+                    <div class="slds-m-around_small">
+                        <c-generic-dependent-picklist 
+                            object-api-name="Implementation_Wizard_Form_Detail__c"
+                            controlling-picklist-api-name="Data_Interface__c"
+                            controlling-picklist-label="Data Interface"
+                            dependent-picklist-api-name="API_Type__c"
+                            dependent-picklist-label="API Type"
+                            onselectedpicklists={handlePicklist}
+                            is-required="true">
+                        </c-generic-dependent-picklist>
+                        <div class="slds-form-element slds-form-element_edit slds-p-around_xxx-small">
+                            <label class="slds-form-element__label" for="-MTAki4otNyayQ8QjUPn">
+                                Plant Id API <span aria-hidden="true" class="required" if:true={plantIdApiRequired}>*</span> 
+                            </label>
+                            <div class="slds-form-element__control">
+                                <input class="slds-input" type="text" onchange={inputHandler}>
+                            </div>
+                        </div>
+                        <div class="slds-form-element slds-form-element_edit slds-p-around_xxx-small">
+                            <span class="slds-form-element__label">Plant Id PF
+                                <span aria-hidden="true" class="required">*</span>
+                            </span>
+                            <c-lookup-with-dynamic-field-filter label="Plant Id PF"
+                                place-holder-text="Search Eg: 9999.99.999"
+                                selectedsobject="Plant_Asset__c"
+                                recordlimit="10"
+                                onlookupselect={handlePlantIdSelected}
+                                fields-to-return="['Id','Name','Asset_SubClass__c','Plant_Name__c', 'Customer_Plant_Asset_ID__c']"
+                                selected-name=""
+                                filter-field-api-name="Customer_Plant_Asset_ID__c"
+                                onsearchstring={handleSearchString}
+                                onplantassetonblur={plantassetonblur}>
+                            </c-lookup-with-dynamic-field-filter>
+                        </div>
+                        
+                        <div class="slds-form-element slds-form-element_edit slds-p-around_xxx-small">
+                            <label class="slds-form-element__label" for="-MTAkeIwbllfXhyVQjY1">
+                            <span>Pre-SAT</span></label>
+                            <div class="slds-form-element__control">
+                                <lightning-input type="checkbox" onclick={showDatePickerFun} class="cursorPoint"
+                                    field-level-help={labels.preSATHelpText}>
+                                </lightning-input>
+                                <div class="pTagCls" if:true={showDatePicker}>
+                                    <p class="mariginCss">
+                                        <lightning-icon icon-name="utility:info" alternative-text="info" title="info" size="small"></lightning-icon>
+                                        <strong> Info </strong> 
+                                        <span> {labels.preSATInfoMessage} </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-form-element slds-form-element_edit slds-p-around_xxx-small" if:true={showDatePicker}>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <span>
+                                        <lightning-input type="date" name="from" class="from" onchange={dateValueChange}
+                                            label="From" value={fromDateDefaultValue}
+                                            field-level-help={labels.DateRangeErrorMessage}>
+                                        </lightning-input>
+                                    </span>
+                                </div>
+
+                                <div class="slds-col">
+                                    <span>
+                                        <lightning-input type="date" name="to" class="to" onchange={dateValueChange}
+                                            label="To" value={toDateDefaultValue}
+                                            field-level-help={labels.DateRangeErrorMessage}>
+                                        </lightning-input>
+                                    </span>
+                                </div>
+                            </div>
+                            <div id="error-message-80" data-error-message="" aria-live="assertive" 
+                                class="erroMessage">{dateErrorMessage}
+                            </div>
+                        </div>
+                        
+                        <div class="slds-form-element slds-form-element_edit slds-p-around_xxx-small">
+                            <div class="slds-form-element">
+                                <span class="slds-form-element__label" id="file-selector-primary-label">
+                                    Upload Config File <span if:true={isRequiredFileUpload} aria-hidden="true" class="required">*</span>
+                                </span>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-file-selector slds-file-selector_files">
+                                        <div class="slds-file-selector__dropzone">
+                                            
+                                            <input type="file" class="slds-file-selector__input slds-assistive-text" 
+                                            disabled={disableFileUpload} 
+                                            accept={acceptableFormats}
+                                            onchange={handleUploadFinished} title="Upload Config File" 
+                                            id="file-upload-input-01"
+                                            aria-labelledby="file-selector-primary-label file-selector-secondary-label"/>
+                                            
+                                            <label class="slds-file-selector__body" for="file-upload-input-01" id="file-selector-secondary-label">
+                                                <span class="slds-file-selector__button slds-button slds-button_neutral">
+                                                    <span style="margin-right: 1em">
+                                                        <lightning-icon icon-name="utility:upload" size="xx-small" variant="slds-icon-inverse">
+                                                        </lightning-icon>
+                                                    </span>
+                                                    Upload Files
+                                                </span>
+                                                <span class="slds-file-selector__text slds-medium-show">or Drop Files</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="slds-truncate margin-p-tag" title={uploadedFileName}>{uploadedFileName}</p>
+                        </div>
+
+                        <div class="slds-form-element slds-form-element_edit slds-p-around_xxx-small">
+                            <div class="slds-form-element">
+                                <span class="slds-form-element__label" id="file-selector-primary-label-01">
+                                    Upload Revised File <!--<span if:true={isRequiredFileUpload} aria-hidden="true" class="required">*</span>-->
+                                </span>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-file-selector slds-file-selector_files">
+                                        <div class="slds-file-selector__dropzone">
+                                            
+                                            <input type="file" class="slds-file-selector__input slds-assistive-text" 
+                                            disabled={disabledRevisedFileUpload}
+                                            accept={acceptedFormats}
+                                            onchange={handleRevisedFileUpload} title="Upload Revised File" 
+                                            id="file-upload-input-02"
+                                            aria-labelledby="file-selector-primary-label file-selector-secondary-label"/>
+                                            
+                                            <label class="slds-file-selector__body" for="file-upload-input-02" id="file-selector-secondary-label-01">
+                                                <span class="slds-file-selector__button slds-button slds-button_neutral">
+                                                    <span style="margin-right: 1em">
+                                                        <lightning-icon icon-name="utility:upload" size="xx-small" variant="slds-icon-inverse">
+                                                        </lightning-icon>
+                                                    </span>
+                                                    Upload Files
+                                                </span>
+                                                <span class="slds-file-selector__text slds-medium-show">or Drop Files</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="slds-truncate margin-p-tag" title={revisedUploadedFileName}>{revisedUploadedFileName}</p>
+                        </div>
+                    </div>
+                    <div slot="footer">
+                        <span class="import-export-main">
+                            <lightning-button class="slds-theme_brand" icon-position="left" name="Request" variant="brand" 
+                                title="Request" type="submit" label="Request" icon-name="utility:send" onclick={sendRequest}
+                                disabled={disableRequestBtn}>
+                            </lightning-button>
+                        </span>
+                        <span class="import-export-main">
+                            <a class="downloadBtn" if:true={disableDownloadBtn} href={documentDownloadLink} target="_blank"
+                            title="download file" download> Download </a>                            
+                        </span>
+                        <span class="import-export-main">
+                            <lightning-button class="slds-theme_brand" icon-position="left" name="NavigateAB" variant="brand"
+                                              title="Navigate to AB" type="submit" label="Navigate to AB" icon-name="utility:forward_up"
+                                              onclick={navigateToAB} disabled={disabledRevisedFileUpload}>
+                            </lightning-button>
+                        </span>
+                        <span class="import-export-main">
+                            <lightning-button class="slds-theme_brand" icon-position="left" name="generateNeuron" variant="brand"
+                                              title="Generate Neuron Template" type="submit" label="Generate N3uron Template" icon-name="utility:forward_up"
+                                              onclick={generateNeuron} disabled={disableGenerateNeuronTemplate}>
+                            </lightning-button>
+                        </span>
+                        <span class="import-export-main">
+                            <lightning-button class="slds-theme_brand" icon-position="left" name="Upload Revised File" variant="brand" 
+                                title="Upload Revised File" type="submit" label="Upload Revised File" icon-name="utility:upload"
+                                onclick={uploadRevisedFile} disabled={disabledRevisedFileUpload}>
+                            </lightning-button>
+                        </span>        
+                    </div>
+                </lightning-card>
+            </lightning-layout-item>
+
+
+        <lightning-layout-item flexibility="auto" size="9" padding="horizontal-small">
+            <div if:true= {isShowImpWizBanner}>
+                <c-imp-wiz-banner banner-title={bannerTitle}
+                                  banner-content={bannerContent} >
+                </c-imp-wiz-banner></br>
+            </div>
+                <lightning-card title={apiHistoryTitle} icon-name="standard:action_list_component" variant="base">
+                    <div class={divClassName}>
+                        <lightning-datatable
+                            key-field="id"
+                            data={historyTableData}
+                            columns={columns}
+                            hide-checkbox-column
+                            wrap-text-max-lines="3"
+                            if:true={showTable}>
+                        </lightning-datatable>
+                        <div class="tableDivText" if:false={showTable}>{labels.noItemsToDisplayImpWiz}</div>
+                        <div class="tableDivText" if:true={showMessageNoValidId}>{labels.enterValidIdInPlantIdAPI}</div>
+                    </div>
+                    <div class="slds-m-around_medium" if:true={countOfRecords}>
+                        <p class="slds-m-vertical_medium content">
+                                 Displaying {startingRecord} to {endingRecord} of {totalRecountCount} records.
+                                 Page {page} of {totalPage}. </p>
+                        <c-paginator-imp-wiz onprevious={previousHandler} onnext={nextHandler}></c-paginator-imp-wiz>
+                    </div>
+                </lightning-card>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <c-navigate-to-a-b-modal
+                title="Override Asset Builder Data"
+                pop-up-message={isOverrideABDataMessage}
+                is-show-navigate-modal={isShowNavigateModal}
+                is-no-a-b-data={isNoABData}
+                plant-asset-id={plantAssetId}
+                onnavigateab={navigateToModalAB}
+                name="confirmModal"
+                if:true={isShowNavigateModal}>
+        </c-navigate-to-a-b-modal>
+        <c-generate-neurontemplate-modal
+                is-show-generate-neuron-modal={isShowGenerateNeuronModal}
+                file-u-r-l={fileURL}
+                pop-up-message={popUpMessage}
+                if:true={isShowGenerateNeuronModal}
+        ></c-generate-neurontemplate-modal>
+    </div>
+
+    <c-xlsx-main onhandleconvertcsv={handleconvertcsv}></c-xlsx-main>
+</template>

@@ -1,0 +1,126 @@
+.tableDiv { 
+    max-height: 500px;
+    width: calc(100% - 17px);
+    margin: 10px;
+    border: thin solid #ffffff; 
+    overflow: scroll; 
+  }
+  
+  .tblCr {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .tblCr td, th {
+    border: 1px solid #ddd;
+    padding: 4px;
+  }
+  
+  .tblCr tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .tblCr tr:nth-child(1) td:nth-child(3) {
+    background-color: None !important;
+    font-weight : bold !important;
+    text-align : center !important;
+  }
+  
+  .tblCr tr:nth-child(1) td:nth-child(4) {
+      background-color: #ccf1fd !important;
+    font-weight : bold !important;
+    text-align : center !important;
+  }
+  .tblCr tr:nth-child(1) td:nth-child(5) {
+      background-color: #fdd7d7 !important;
+    font-weight : bold !important;
+    text-align : center !important;
+  }
+  
+  .tblCr tr:nth-child(2) {
+      background-color: #d1d1d1 !important;
+    font-weight : bold !important;
+  }
+  
+  .tblCr td:nth-child(1) {
+    width: auto;
+    }
+  
+  .tblCr tr:nth-child(1) td:nth-child(1) { 
+    background-color: #ffffff !important;
+    border-right-color: #ffffff !important; 
+  }
+  
+  .tblCr tr:nth-child(1) td:nth-child(2) { 
+    background-color: #ffffff !important; 
+    border-right-color: #ffffff !important; 
+  }
+  
+  .tblCr tr:nth-child(1) td:nth-child(3) { 
+    background-color: #ffffff !important; 
+  }
+  
+  .tblCr tr:last-child {
+      background-color: #cacaca;
+    font-weight : bold;
+    color : #000000;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  
+  .tblCr tr:last-child td:nth-child(1) {
+      background-color: #525151 !important;
+    font-weight : bold;
+    color : #ffffff;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  
+  .tblCr tr:hover {background-color: #ddd;}
+  
+  .loaderSpinner{
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255,.5);
+    z-index: 7000;
+    min-height: 101vh;
+  }
+  
+  .promptName {
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: left !important;
+  }
+  
+  .batName {
+    text-align: left !important;
+  }
+  .assetCountVal{
+    text-align: right !important; 
+  }
+  
+  .cellVal {
+    text-align: right !important;
+  }
+  
+  .totalHeaderCell {
+    text-align: center !important;
+  }
+  
+  .typeCls {
+    text-align: center !important;
+  }
+  
+  .promptHeaderName {
+    text-align: center !important;
+  }
+  
+  .batHeaderName {
+    text-align: center !important;
+  }
+  
+  .assetCount {
+    text-align: center !important;
+    width: 100px;
+  }

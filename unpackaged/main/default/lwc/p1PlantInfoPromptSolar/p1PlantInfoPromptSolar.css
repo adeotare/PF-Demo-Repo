@@ -1,0 +1,53 @@
+input {
+    border: 1px solid rgb(128, 128, 128);
+    margin: 0;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(8, 7, 7);
+    width: 50%;
+  }
+  
+  input:focus,
+  input:active,
+  input:hover {
+    outline-color: rgb(128, 128, 128);
+    border: 1px solid rgb(87, 98, 248);
+    background-color: rgb(236, 233, 233);
+    /*box-shadow: 2px 3px #888888;*/
+  }
+  
+  table {
+    width: 50%;
+    table-layout: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  table td select {
+    border: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(8, 7, 7);
+  }
+  
+  table td select:focus,
+  table td select:active,
+  table td select:hover {
+    border: 1px solid rgb(128, 128, 128);
+    background-color: rgb(236, 233, 233);
+  }
+  
+  table td {
+    padding: 2px 2px 2px 5px;
+    color: rgb(8, 7, 7);
+    margin: 0;
+  }
+  
+  table th {
+    padding: 2px 0px 2px 0px;
+    text-align: left;
+    color: rgb(8, 7, 7);
+    width: 50%;
+  }

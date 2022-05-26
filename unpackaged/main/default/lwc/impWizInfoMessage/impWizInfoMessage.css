@@ -1,0 +1,34 @@
+.infoBox {
+    padding: 10px;
+    background-color: #a09f9e;
+    color: white;
+    border-radius : 20px;
+}
+
+.successBox {
+    padding: 10px;
+    background-color: #b6cae6;
+    color: black;
+    border-radius : 20px;
+}
+
+.msgDiv { 
+    max-height: 500px;
+    width: calc(100% - 17px);
+    margin: 10px;
+    border: thin solid #ffffff;  
+}
+
+.strongMargin {
+    margin: 10px; 
+}
+  
+.pTagCls {
+    font-size: 14px;
+}
+  
+.infoBoxBlack {
+    padding: 10px;
+    background-color: #d6d5d3;
+    color: rgb(8, 0, 0);
+}

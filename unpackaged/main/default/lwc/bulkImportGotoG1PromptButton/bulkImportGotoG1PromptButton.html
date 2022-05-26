@@ -1,0 +1,15 @@
+<template>
+    <lightning-button
+      class="slds-m-left_small"
+      variant="brand"
+      label="Goto G1 Prompt"
+      title="Goto G1 Prompt"
+      onclick={gotoG1Prompt}>
+    </lightning-button> 
+    <c-confirmation-modal
+      title={label.plantAssetPromptDetailUpdateTitle}
+      pop-up-message={label.plantAssetPromptDetailUpdateMsg}
+      if:true={showConfirmationPopup} 
+      onconfirm={goToG1OnConfirm}> 
+    </c-confirmation-modal>
+  </template>

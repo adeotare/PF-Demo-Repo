@@ -1,0 +1,41 @@
+<template>
+    <div class="slds-grid slds-wrap"  if:true={isError}>
+        <div class="slds-p-horizontal--small slds-size--1-of-1" style="padding-top: 12px;">
+            <div class="slds-form-element slds-hint-parent">
+                <div class="slds-form-element__control">
+                    <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert" >
+                        <span class="slds-assistive-text">error</span>
+                            <p class="slds-align_absolute-center">{errorMessage}</p>                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div if:false={isError}>
+        <div class="slds-form-element slds-form-element_edit slds-p-around_xxx-small">
+            <lightning-combobox 
+                label={controllingPicklistLabel}
+                name="Controlling Picklist" 
+                options={optionValues.controlling}
+                onchange={handleControllingChange}
+                placeholder="None" 
+                value={selectedValues.controlling}
+                required={isRequired}
+            >
+            </lightning-combobox>
+        </div>
+        <div class="slds-form-element slds-form-element_edit slds-p-around_xxx-small">
+            <lightning-combobox 
+                label={dependentPicklistLabel}
+                name="Dependent Picklist"
+                options={optionValues.dependent} 
+                placeholder="None" 
+                onchange={handleDependentChange} 
+                disabled={isDisabled}
+                value={selectedValues.dependent}
+                required={isRequired}
+            >
+            </lightning-combobox> 
+        </div>
+    </div>
+</template>

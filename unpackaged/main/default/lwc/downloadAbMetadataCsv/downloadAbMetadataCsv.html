@@ -1,0 +1,16 @@
+<template>
+    <div class="spinner1" if:true={isLoading} >
+        <div class="slds-spinner_container ">
+            <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+                <div class="custom-loading-text">
+                    Fetching Data, Please wait...
+                    {noOfRecordProcessed} / 
+                    {totalNoOfRecords} 
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

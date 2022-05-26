@@ -1,0 +1,39 @@
+<!-- Upload File Dialog -->
+<template>
+    
+    <div class="slds-container_small">
+      <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_small" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+          <div class="slds-modal__container">
+            <header class="slds-modal__header">
+              <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate"><b>Upload File</b></h2>
+            </header>
+            
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <h1> Please upload file for Import.</h1>
+
+                <!--This info box is to show Bulk Import for Single BAT or Multiple BAT-->
+                  <c-report-info-message title = {title} 
+                  if:true={showInfoMessage}
+                  class-name={className} 
+                  icon-name={iconName} 
+                  message={bulkImportInfoMessage}>
+                </c-report-info-message>
+                
+                <lightning-input type="file"  name="fileUploader" accept ={acceptedFormats} record-id={plantAssetId} onchange={handleFileChange}></lightning-input>
+              </div>
+              <footer class="slds-modal__footer">
+                <lightning-button variant="neutral"
+                  name="Cancel"
+                  label="Cancel"
+                  title="Cancel"
+                  onclick={handleCancel} >
+                </lightning-button>
+              </footer>
+          </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+    <!--xlsxMain component calling-->
+    <c-xlsx-main onhanldeuploadcsv={handleUploadCSV}></c-xlsx-main>
+  
+</template>

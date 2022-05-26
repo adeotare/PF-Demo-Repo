@@ -1,0 +1,161 @@
+/**
+**/
+@istest
+public with sharing class P2BlockInfoAndPadCountsTest {
+    @testSetup
+    public static void testDataSetup() {
+        TEM_Version__c newTemVersion = TestDataFactory.createTemVersion(Constants.DRAFT);
+        insert newTemVersion;
+
+        Account_Plant__c newPlantAsset = TestDataFactory.createPlantAsset(Constants.SOLAR,'Drive','7777.77.777',newTemVersion.Id);
+        insert newPlantAsset;
+        
+        Base_Asset_Template__c newBaseAssetTemplateG1 = TestDataFactory.createBaseAssetTemplate(Constants.BASE_INVERTER, newTemVersion.Id);
+        insert newBaseAssetTemplateG1;
+
+        Prompt_Information__c g1PromptInfo = TestDataFactory.createPromptInformation(Constants.G1_G2_PLANT_INFO_AND_RENEWABLE_TYPE_PROMPT,
+                                                                                        newBaseAssetTemplateG1.Id, newTemVersion.Id);
+        insert g1PromptInfo ;
+
+        Plant_Asset_Prompt_Detail__c g1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
+        g1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ g1PromptInfo.Name;
+        g1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
+        g1PlantAssetPromptDetail.Prompt_Information__c = g1PromptInfo.Id;
+        g1PlantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplateG1.Id;
+        insert g1PlantAssetPromptDetail;
+
+        Site_Metadata__c newG1SiteMetadata = TestDataFactory.createG1SiteMetadata(newPlantAsset.Id);
+        newG1SiteMetadata.Plant_Asset_Prompt_Detail__c = g1PlantAssetPromptDetail.Id;
+        insert newG1SiteMetadata;
+
+        List<Base_Asset_Template__c> newBaseAssetTemplate = new List<Base_Asset_Template__c>();
+        newBaseAssetTemplate.add(TestDataFactory.createBaseAssetTemplate(Constants.BASE_BLOCK, newTemVersion.Id));
+        newBaseAssetTemplate.add(TestDataFactory.createBaseAssetTemplate(Constants.BASE_PV_PLANT, newTemVersion.Id));
+        insert newBaseAssetTemplate;
+        
+        Prompt_Information__c newPromptInfo = TestDataFactory.createPromptInformation(Constants.P2_BLOCK_INFO_AND_PAD_COUNTS, newBaseAssetTemplate[0].Id, newTemVersion.Id);
+        newPromptInfo.Type__c = Constants.SOLAR;
+        insert newPromptInfo;
+        
+        Prompt_Information__c previousPromptInfo = TestDataFactory.createPromptInformation(Constants.P1_PLANT_INFO_PROMPT_SOLAR, newBaseAssetTemplate[0].Id, newTemVersion.Id);
+        insert previousPromptInfo;
+        
+        Prompt_Information__c nextPromptInfo = TestDataFactory.createPromptInformation(Constants.P3_PAD_BUILDS_AND_COUNTS,
+                                                                                        newBaseAssetTemplate[0].Id, newTemVersion.Id);
+        nextPromptInfo.Prompt_Id__c='prompt3';                                                                                      
+        insert nextPromptInfo;
+        
+        Picklist_Master__c newPicklistMaster = TestDataFactory.createPicklistMaster('Test Master', newTemVersion.Id);
+        insert newPicklistMaster;
+        
+        Picklist_Detail__c picklistDetailValue = TestDataFactory.createPicklistValue(newPicklistMaster.Id, newTemVersion.Id);
+        insert picklistDetailValue;
+
+        Id coreAttrRTId = Utils.getRecordTypeInfo('Core_Attribute__c','Core_Attribute').getRecordTypeId();
+        Id promptCoreAttrRTId = Utils.getRecordTypeInfo('Core_Attribute__c','Prompt_Specific_Attribute').getRecordTypeId();
+
+        //for core attribute records
+        List<Core_Attribute__c> coreAttrLst  = new List<Core_Attribute__c> ();
+        list<String>datatypeLst = new list<String>{'Text','Number','Text','Text'};
+        list<String>coreAttrNameLst = new list<String>{'Manufacturer','AC Capacity','Tracker','Serial Number'};
+        for(integer i = 0; i < 4; i++){
+            Core_Attribute__c coreAttr = TestDataFactory.createCoreAttribute(coreAttrNameLst[i],
+                                                                                'Metadata',
+                                                                                datatypeLst[i],
+                                                                                coreAttrRTId,
+                                                                                (datatypeLst[i] == 'Picklist')? newPicklistMaster.Id : null,
+                                                                                newBaseAssetTemplate[0].Id, newTemVersion.Id);
+            coreAttr.Plant_Asset_Field_Name__c = 'Plant Name';
+            coreAttrLst.add(coreAttr);
+        }
+        insert coreAttrLst;
+
+        //for Prompt Specific records
+        List<Core_Attribute__c> promptSpecificAttrLst  = new List<Core_Attribute__c> ();
+        list<String>promptSpecificAttrNameLst = new list<String>{Constants.PAD_COUNT, Constants.BLOCK_NAME};
+        list<String>promptSpecificAttrDataTypeLst = new list<String>{'Number', 'Text'};
+        
+        for(integer i = 0; i < 2; i++){
+            Core_Attribute__c promptSpecificAttr = TestDataFactory.createPromptSpecificAttr(promptSpecificAttrNameLst[i],
+                                                                                'Prompt Specific',
+                                                                                promptSpecificAttrDataTypeLst[i],
+                                                                                promptCoreAttrRTId,
+                                                                                (datatypeLst[i] == 'Picklist')? newPicklistMaster.Id : null,
+                                                                                newPromptInfo.Id, newTemVersion.Id);
+            promptSpecificAttrLst.add(promptSpecificAttr);
+        }
+        insert promptSpecificAttrLst;
+
+        List<Attribute_Requirement__c> attrReqLst  = new List<Attribute_Requirement__c> ();
+        for(integer i = 0; i < 4; i++){
+            Attribute_Requirement__c attrReq = TestDataFactory.createAttributeRequirement('Drive', 'Yes', coreAttrLst[i].Id, newTemVersion.Id);
+            attrReqLst.add(attrReq);
+        }
+        insert attrReqLst;
+        
+        //update TemVersion status to Active
+        newTemVersion.Status__c = 'Active';
+        update newTemVersion;
+
+        Plant_Asset_Prompt_Detail__c plantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
+        plantAssetPromptDetail.Name = newPlantAsset.Name +'-'+previousPromptInfo.Name;
+        plantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
+        plantAssetPromptDetail.Prompt_Information__c = previousPromptInfo.Id;
+        plantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplate[0].Id;
+        insert plantAssetPromptDetail;
+
+        Site_Metadata__c p1SiteMetaData = new Site_Metadata__c(); 
+        p1SiteMetaData.Name = Constants.P1_PLANT_INFO_PROMPT_SOLAR;
+        p1SiteMetaData.Prompt_Specific_Info__c = '{"No of Blocks":"3","flat Hierarchy":"false","drivePlus":"true"}';
+        p1SiteMetaData.Attribute_Info__c = '{{\"Tracker_Controller\":\"4\",\"Tracker_Motor\":\"8\"}}';
+        p1SiteMetaData.Base_Asset_Template__c = newBaseAssetTemplate[1].Id;
+        p1SiteMetaData.Account_Plant__c = newPlantAsset.id;
+        p1SiteMetaData.Plant_Asset_Prompt_Detail__c = plantAssetPromptDetail.Id;
+        insert p1SiteMetaData;
+    }
+    public static testMethod void p2BlockTest(){
+        //query Plant Asset
+        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'].Id;
+        Id plantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name = 'Test Plant-P.1.0 Plant Info Prompt - Solar'].Id;
+        map<String, String> jsonInputParametersAndValuesMap = new Map<String, String>{'isBulkUpload' => 'true','isBulkUploadMultipleBAT' => 'false', 'isImpWizUpLoad' => 'false', 'isOverride' => 'false'};
+        map<String, String> additionalParmsForFindNextPromptMap= new Map<String, String>{'isReadOnly' => 'false'};
+        String additionalParamsForFindNextPrompt = JSON.serialize(additionalParmsForFindNextPromptMap);
+
+        //Calling P2 getCustomDatatableCompInput
+        String currentPromptName = Constants.P2_BLOCK_INFO_AND_PAD_COUNTS;
+        String previousPromptName = Constants.P1_PLANT_INFO_PROMPT_SOLAR;
+        String dataTableInput = P2BlockInfoAndPadCounts.getCustomDatatableCompInput(plantAsset, plantAssetPromptDetail,JSON.serialize(jsonInputParametersAndValuesMap));
+        List<Site_Metadata__c> currentPromptSiteMetadata = Utils.querySiteMetadata(currentPromptName, plantAsset);
+        System.assertEquals(3, currentPromptSiteMetadata.size());
+
+        //Save Site MeteData check
+        String blockNameAttrName = Constants.BLOCK_NAME;
+        Boolean isKeyToGenerateRows = false;
+        map<String,String> promptSpecificInfoMap = 
+            (Map<String, String>) System.JSON.deserialize(currentPromptSiteMetadata[0].Prompt_Specific_Info__c,Map<String, String>.class);
+        promptSpecificInfoMap.put(blockNameAttrName, 'Block Name Test');
+        currentPromptSiteMetadata[0].Prompt_Specific_Info__c = JSON.serialize(promptSpecificInfoMap);
+        String siteMetadataRecordSaveCheck = JSON.serialize(currentPromptSiteMetadata);
+        Boolean saveDataCheck = P2BlockInfoAndPadCounts.saveSiteMetadataRecords(siteMetadataRecordSaveCheck, plantAsset, isKeyToGenerateRows, true, true);
+        List<Site_Metadata__c> savedPromptSiteMetadata = Utils.querySiteMetadata(currentPromptName, plantAsset);
+        map<String,String> promptSpecificInfoMapSaveCheck = 
+            (Map<String, String>) System.JSON.deserialize(currentPromptSiteMetadata[0].Prompt_Specific_Info__c,Map<String, String>.class);
+        String updatedMeterName = promptSpecificInfoMapSaveCheck.containsKey(blockNameAttrName)?promptSpecificInfoMapSaveCheck.get(blockNameAttrName):'';
+        System.assertEquals('Block Name Test', updatedMeterName);
+
+        //next PromptId check
+        String siteMetadataRecords = JSON.serialize(currentPromptSiteMetadata);
+        String nextPromptResFinder = P2BlockInfoAndPadCounts.findNextPromptId(siteMetadataRecords, plantAsset, isKeyToGenerateRows, true, additionalParamsForFindNextPrompt, true);
+        Map<String,String> nextPromptResponse = 
+            (Map<String,String>) JSON.deserialize(nextPromptResFinder, Map<String,String>.class);
+        String nextPromptId = (String)nextPromptResponse.get('nextPromptId');
+        System.assertEquals(PromptNavigationHelper.findPromptId(Constants.P3_PAD_BUILDS_AND_COUNTS), nextPromptId); 
+        
+        //clear Site MetaData Check
+        String clearDataCheck = P2BlockInfoAndPadCounts.clearPromptInfo(plantAsset, plantAssetPromptDetail);
+        map<String,String> promptSpecificInfoMapClearCheck = 
+            (Map<String, String>) System.JSON.deserialize(currentPromptSiteMetadata[0].Prompt_Specific_Info__c,Map<String, String>.class);
+        String clearedMeterNameCheck = promptSpecificInfoMapClearCheck.containsKey(blockNameAttrName)?promptSpecificInfoMapClearCheck.get(blockNameAttrName):'';
+        System.assertEquals('Block Name Test', clearedMeterNameCheck );
+    }
+}

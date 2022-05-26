@@ -1,0 +1,17 @@
+.slds-truncate {
+    max-height: 37px !important;
+    height: 100%;
+  }
+  .slds-text-heading_medium {
+    position: relative;
+    top: 4px;
+  }
+  .prompt-info-name {
+    float: left;
+  }
+  .import-export-btn {
+    float: right;
+    position: relative;
+    top: -17px;
+    height: 40px;
+  }

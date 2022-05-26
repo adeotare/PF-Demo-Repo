@@ -1,0 +1,154 @@
+<template>
+	<lightning-button-group>
+		<lightning-button 
+				label="Goto Reports"
+				title="Goto Reports"
+				onclick={viewReportEventPub} 
+				icon-name="standard:dashboard_ea"
+				if:true={hideGotoButton}> 
+		</lightning-button>
+		<lightning-button 
+				label="Download CSV"
+				title="Download CSV"
+				onclick={csvGeneration} 
+				icon-name="action:download"
+				if:true ={showDownloadCSV}> 
+		</lightning-button>
+		<lightning-button 
+				label="Download Metadata"
+				title="Download Metadata"
+				onclick={downloadAbMetadataCsv} 
+				icon-name="action:download"
+				if:true ={showUpdateMetadataCSV}> 
+		</lightning-button>
+		<lightning-button 
+				label="Upload Metadata"
+				title="Upload Metadata"
+				onclick={uploadAbMetadataCsv} 
+				icon-name="action:upload"
+				if:true ={showUpdateMetadataCSV}> 
+		</lightning-button>
+		<lightning-button 
+				label="Generate RFI"
+				title="Generate RFI"
+				onclick={rfiGeneration} 
+				icon-name="custom:custom55"
+				if:true ={showRFIBtn}> 
+		</lightning-button>
+		<lightning-button-menu alternative-text="Show menu"  menu-alignment="right" if:true={showBtnDropdown}>
+			<lightning-menu-item name="Refresh"
+				label="Refresh"
+				title="Refresh"
+				onclick={handleRefreshBtnClick} 
+				icon-name="action:refresh"
+				if:true ={showRefresh}>
+			</lightning-menu-item>
+			<lightning-menu-item  
+				name="Bulk Import"
+				label="Bulk Import"
+				title="Bulk Import"
+				icon-name="action:upload"
+				onclick={handleImportButton} > 
+			</lightning-menu-item >
+			<lightning-menu-item
+				name="Export Template"
+				label="Export Template"
+				title="Export Template"
+				onclick={handleUpdateCheck} 
+				icon-name="action:download"
+				if:true ={hideExportButton}> 
+			</lightning-menu-item>
+			<lightning-menu-item
+				name="Submit For Approval"
+				label="Submit For Approval"
+				title="Submit For Approval"
+				icon-name = "action:submit_for_approval"
+				onclick={submitApprovalHandler} 
+				if:true ={showSubmitForApprovalBtn}> 
+			</lightning-menu-item>
+			<lightning-menu-item
+				name="Recall Approval"
+				label="Recall Approval"
+				title="Recall Approval"
+				icon-name = "action:recall"
+				onclick={recallApprovalHandler} 
+				if:true ={showRecallApprovalBtn}> 
+			</lightning-menu-item>
+			<lightning-menu-item
+				name="View Hierarchy"
+				label="View Hierarchy"
+				title="View Hierarchy"
+				icon-name="standard:hierarchy" 
+				onclick={handleHierarchyBtnClick} 
+				if:true={showHierarchyButton}> 
+			</lightning-menu-item>
+			<lightning-menu-item
+					name="Fetch Location"
+					label="Fetch Location"
+					title="Fetch Location"
+					icon-name="utility:location"
+					onclick={fetchLocation}
+					if:true={showHierarchyButton}>
+			</lightning-menu-item>
+			<lightning-menu-item
+					name="Weighted Average RollUp"
+					label="Weighted Average RollUp"
+					title="Weighted Average RollUp"
+					icon-name="standard:record_update"
+					onclick={fetchplantAssetStatus}
+					if:true={showWeightedAvgRollUpButton}>
+			</lightning-menu-item>
+		</lightning-button-menu>
+	</lightning-button-group>
+
+	<c-c-s-v-generation ></c-c-s-v-generation>
+	<c-download-ab-metadata-csv></c-download-ab-metadata-csv>
+
+	<c-confirmation-modal
+      	title={label.g1InitialPlantInfoPromptRefreshTitle}
+      	pop-up-message={label.g1InitialPlantInfoPromptRefreshPopupMsg}
+      	if:true={showConfirmPopupMsg} 
+      	onconfirm={handleConfirm}> 
+	</c-confirmation-modal>
+	<c-confirmation-modal
+		title={abTemplatetitle}
+		pop-up-message={popUpMessage}
+		if:true={showExportConfirmPopupMsg} 
+		onconfirm={handleExportConfirm}> 
+	</c-confirmation-modal>
+	<c-xlsx-main
+		header-list={xlsHeader}
+		filename={filename}
+		worksheet-name-list={workSheetNameList}
+		sheet-data={xlsData}
+		save-file={saveFile}
+		onsuccess={handleFileSuccess}
+		if:true={loadXlsxMain}>
+	</c-xlsx-main>
+	<c-upload-file-component
+		onconfirm={handleConfirm}
+		plant-asset-id={selectedPlantAssetId}
+		if:true={showUpload}>
+	</c-upload-file-component>
+	<c-upload-ab-metadata
+		onconfirm={handleConfirm}
+		plant-asset-id={selectedPlantAssetId}
+		parent-comp={parentComp}
+		if:true={showUploadMetadata}>
+	</c-upload-ab-metadata>
+	<c-approval-process-comments-pop-up
+		onconfirm={handleSubmitConfirm}
+		selected-plant-asset-id={selectedPlantAssetId}
+		selected-plant-asset-aba-id={selectedPlantAssetIdABAId}
+		show-submit-btn={showSubmitBtn}
+		show-recall-btn={showRecallBtn}
+		title={title}
+		if:true={isApprovalSubmitted}>
+	</c-approval-process-comments-pop-up>
+	<c-weighted-average-roll-up-modal-pop-up
+		onconfirm={closeweightedAvgModaPopUp}
+		oncancel={closeweightedAvgModaPopUp}
+		plant-asset-id={selectedPlantAssetId}
+		if:true={showWeightedAvgModalPopUp}
+	></c-weighted-average-roll-up-modal-pop-up>
+</template>

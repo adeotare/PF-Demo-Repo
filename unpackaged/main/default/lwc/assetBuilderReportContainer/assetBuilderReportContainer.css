@@ -1,0 +1,6 @@
+.tableDiv { 
+    max-height: 500px;
+    width: calc(100% - 17px);
+    margin: 10px;
+    border: thin solid #ffffff;  
+  }

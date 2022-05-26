@@ -1,0 +1,111 @@
+.custom-box1 {
+    width:400px;
+}
+
+.custom-box2 {
+    width:100%;
+}
+
+.divWidthTable {
+    width: 70% !important;
+}
+
+.import-export-main{
+	display: inline-block;
+	font-size: 13px;
+	padding: 2px;
+}
+
+.required {
+    color: red;
+}
+
+.margin-p-tag{
+    margin-left: 2px;
+}
+
+.margin-span-tag{
+    margin-left: 2px;
+    float: left;
+}
+
+.msgDiv { 
+    width: calc(100% - 17px);
+    margin-top: 1px;
+    border: thin solid #ffffff;  
+}
+
+.strongMargin {
+    margin: 2px; 
+    padding-left: 2px;
+}
+
+.pTagCls {
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.infoBox {
+    padding: 5px;
+    background-color: #fc9593;
+    color: white;
+    border-radius : 20px;
+    width : 75px;
+}
+
+.infoBox:hover { background-color:#fb6a65; }
+
+.aTagAsbutton {
+    display: block;
+    width: 90px;
+    height: 20px;
+    background: #1b5297;
+    padding: 2px;
+    text-align: center;
+    border-radius: 20px;
+    color: white;
+}
+
+.downloadBtn{
+    display: block;
+    width: 102px;
+    height: 32px;
+    background: #0176d3;
+    padding: 6px;
+    text-align: center;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.tableDiv{
+    height: 250px;
+}
+
+.tableDivText{
+    text-align: center;
+}
+
+.noHeight{
+    height: 50px;
+}
+
+.erroMessage{
+    color : #ea001e;
+}
+
+.pTagCls {
+    font-size: 14px;
+    display: inline-block;
+    background-color: wheat;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: context-menu;
+}
+
+.mariginCss{
+    margin: 5px;
+}
+
+.cursorPoint {
+    cursor: pointer;
+}

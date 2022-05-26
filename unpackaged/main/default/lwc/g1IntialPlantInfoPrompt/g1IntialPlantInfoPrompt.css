@@ -1,0 +1,215 @@
+input {
+    border: 1px solid #ddd;
+    margin: 0;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(8, 7, 7);;
+    width: 50%;
+  }
+  
+  input:focus,
+  input:active,
+  input:hover {
+    outline-color: #ddd;
+    border: 1px solid #ddd;
+    background-color: #eee;
+    /*box-shadow: 2px 3px #888888;*/
+  }
+  
+  table {
+    width: 50%;
+    table-layout: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:thin solid #ddd;
+    margin-left: 26px;
+  }
+  
+  table td select {
+    border: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(8, 7, 7);;
+  }
+  
+  table td select:focus,
+  table td select:active,
+  table td select:hover {
+    border: 1px solid #ddd;
+    background-color: #eee;
+  }
+  
+  table td {
+    padding: 2px 2px 2px 5px;
+    color: rgb(8, 7, 7);;
+    margin: 0;
+  }
+  
+  table th {
+    padding: 2px 0px 2px 10px;
+    text-align: left;
+    color: rgb(8, 7, 7);
+    width: 50%;
+   
+    
+  }
+  
+  .tableBorder th{
+    background-color: #eee;
+  }
+  
+  .tableBorder select{
+    width:100%;
+  }
+  
+  .PlantAssetTable table th{
+    border-bottom:thin solid #ddd;
+    background-color: #eee;
+    padding-top: 2px 5px;
+  }
+  .PlantAssetTable table td{
+    border-bottom:thin solid #ddd;
+     padding: 2px 2px 2px 5px;
+  }
+  
+  .PlantAssetTable input{
+    width :100%;
+  }
+  
+  .PlantAssetTable table{
+    border-top:none;
+  }
+  
+  .PlantAssetTable td input{
+    border:none;
+  }
+  
+  .prompt-info-name {
+      float: left;
+  }
+  
+  .actionBtn {
+      float: right;
+      position: relative;
+      top: 3px;
+      height: 40px;
+  }
+  
+  .headerMain{
+    display: table;
+  }
+  
+  .headerCell{
+    font-weight: 700;
+    color: #514f4d;
+    line-height: 150%;
+    border: none !important;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    display: table-cell;
+  }
+  
+  .helpTextIcon {
+    display: table-cell;
+    padding-left: 4px !important;
+    position: absolute !important;
+    right: 0;
+    top:-3px;
+  }
+  
+  .infoBox {
+    padding: 10px;
+    background-color: #a09f9e;
+    color: white;
+    border-radius : 20px;
+  }
+  
+  .pTagCls {
+    font-size: 14px;
+  }
+  
+  .msgDiv { 
+    max-height: 500px;
+    width: 50%;
+    margin: 10px;
+    border: thin solid #ffffff;  
+  }
+  
+  .strongMargin {
+    margin: 10px; 
+  }
+  
+  .msgDiv { 
+    max-height: 500px;
+    width: calc(100% - 17px);
+    margin: 10px;
+    border: thin solid #ffffff;  
+  }
+  
+  .warningBox {
+    padding: 10px;
+    background-color: #fbffa3;
+    color: black;
+    border-radius : 20px;
+  }
+  
+  .pTagCls {
+    font-size: 14px;
+  }
+  
+  .strongMargin {
+    margin: 10px; 
+  }
+  
+  .shake-true{
+    animation: shake-true 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  .shake-false{
+    animation: shake-false 0.92s cubic-bezier(.46,.17,.29,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  @keyframes shake-true {
+    10%, 90% {
+      transform: translate3d(-6px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(10px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-20px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(20px, 0, 0);
+    }
+  }
+  
+  @keyframes shake-false {
+    10%, 90% {
+      transform: translate3d(-4px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(20px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-15px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(15px, 0, 0);
+    }
+  }

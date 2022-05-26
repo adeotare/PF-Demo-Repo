@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable,forceCommunity:availableForAllPageTypes">
+    <c:assetBuilderApp></c:assetBuilderApp>
+    <c:abChatterModal></c:abChatterModal>
+</aura:component>

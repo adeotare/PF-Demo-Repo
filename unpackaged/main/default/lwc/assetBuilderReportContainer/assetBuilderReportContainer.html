@@ -1,0 +1,27 @@
+<template>
+    <lightning-tabset variant="scoped">
+      <lightning-tab icon-name="standard:report" icon-assistive-text="Completeness report insights" 
+        label="Completeness Report" value="2">
+        <div class="tableDiv">
+          <lightning-button onclick={runReport} label={runReportButtonLabel}
+            variant="Brand" disabled={disableRunReportButton}></lightning-button>
+        </div>
+        <c-completeness-report-parent plant-asset-id={plantAssetId}></c-completeness-report-parent>
+      </lightning-tab>
+  
+      <lightning-tab icon-name="standard:insights" icon-assistive-text="Capability report insights" 
+        label="Capability Report" value="1">
+        <c-capability-report-parent plant-asset-id={plantAssetId}></c-capability-report-parent>
+      </lightning-tab>
+  
+      <lightning-tab icon-name="utility:summarydetail" icon-assistive-text="Report Details insights" 
+        label="Report Details" value="3">
+        <c-asset-builder-report-details plant-asset-id={plantAssetId}></c-asset-builder-report-details>
+      </lightning-tab>
+  
+      <lightning-tab icon-name="standard:approval" icon-assistive-text="Approvals" 
+        label="Approvals " value="4">
+        <c-plant-asset-related-approval-container selected-plant-asset-id={plantAssetId}></c-plant-asset-related-approval-container>
+      </lightning-tab>
+    </lightning-tabset>
+  </template>

@@ -1,0 +1,31 @@
+<aura:component implements="force:appHostable,forceCommunity:availableForAllPageTypes">
+    <aura:attribute name="isShowAB" type="Boolean" default="false"/>
+    <aura:attribute name="plantAssetId" type="String" default=""/>
+    <aura:attribute name="isImpWizUpLoad" type="Boolean" default="false"/>
+    <aura:attribute name="isOverride" type="Boolean" default="false"/>
+    <aura:attribute name="isHideIWFD" type="Boolean" default="false"/>
+
+
+    <lightning:messageChannel type="IWFDNavigationChannel__c"
+        onMessage="{!c.handleIWFDNavigation}"/>
+    
+    <lightning:messageChannel type="ABNavigationChannel__c"
+        onMessage="{!c.handleABNavigation}"/>
+    
+    <c:spinnerWithMessageContainer></c:spinnerWithMessageContainer>
+
+    <aura:if isTrue="{!v.isHideIWFD}">
+        <aura:set attribute="else">
+            <c:implementationWizardFormContainer/>
+        </aura:set>
+    </aura:if>
+    
+    <aura:if isTrue="{!v.isShowAB}">
+        <c:assetBuilderApp 
+            plantAssetRecordId="{!v.plantAssetId}"
+            isImpWizUpLoad="{!v.isImpWizUpLoad}"
+            isOverride="{!v.isOverride}"
+        ></c:assetBuilderApp>
+        <c:abChatterModal></c:abChatterModal> 
+    </aura:if>
+</aura:component>

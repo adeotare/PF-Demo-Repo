@@ -1,0 +1,111 @@
+.mainTable  tr th, .mainTable  tr td:nth-child(1){
+    border: 1px solid #ddd;
+        padding: 4px;
+        
+        width: 40%;
+        text-align: left;
+    
+    }
+    .mainTable  tr td{
+        padding: 4px;    
+    }
+    
+    .mainTable tr th, .mainTable  tr td:nth-child(2) {
+        border: 1px solid #ddd;
+        padding: 4px;
+        
+        width: 12.5%;
+        text-align: left;
+    }
+    
+    .mainTable tr th, .mainTable  tr td:nth-child(4) {
+        border: 1px solid #ddd;
+        padding: 4px;
+        
+        width: 27.5%;
+        text-align: left;
+    }
+    
+    .mainTable tr th, .mainTable  tr td:nth-child(3) {
+        border: 1px solid #ddd;
+        padding: 4px;
+        
+        width: 20%;
+        text-align: left;
+    }
+    
+    .mainTable  tr th{
+     padding: 7px 4px;
+    }
+    .colFooter{
+        font-weight: 700;
+        background-color: #525252;
+        color: #fff;
+        padding: 8px 4px !important;
+    }
+    .colFooter:first-child{
+        border-right:none !important;
+      
+    }
+    .colFooter:nth-child(2){
+        border-left:none!important;
+      
+        
+    }
+    
+    .mainTable .header{
+        background-color: #d1d1d1;
+        font-weight: 700;
+    }
+    .tableBlk{
+        overflow: scroll;
+    }
+    .colHeader{
+        font-weight: 700;
+        background-color: #ddd;
+    }
+    
+    .colValues{
+        padding-left: 0px;
+    }
+    
+    .header{
+        padding-left: 20px;
+    }
+    
+    .whiteBackgroundColumnGroupValues{
+        background-color:White;
+        padding-left: 10px !important;
+    }
+    
+    .whiteBackground{
+        background-color:White;
+    }
+    
+    .greenBackground{
+        background-color:#c4ffc4;
+    }
+    
+    .redBackground{
+        background-color:#faafaf;
+    }
+    
+    .groupingWhiteBackground{
+        background-color:White;
+        font-weight: 1000;
+    }
+    
+    .groupingGreenBackground{
+        background-color:#c4ffc4;
+        font-weight: 700;
+    }
+    
+    .groupingRedBackground{
+        background-color:#faafaf;
+        font-weight: 700;
+    }
+    .aliasName{ 
+        text-decoration: underline;
+        cursor: pointer;
+        text-align: left !important;
+    }

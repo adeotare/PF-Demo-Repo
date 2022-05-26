@@ -1,0 +1,10 @@
+<template>
+    <c-implementation-wizard-form
+        onloadspinner={loadSpinner} >
+    </c-implementation-wizard-form>
+
+    <c-spinner 
+        if:true={isLoading}
+        spinner-loading-message={spinnerLoadingMessage}
+    ></c-spinner>
+</template>

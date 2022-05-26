@@ -1,0 +1,7 @@
+.import-export-main{
+	display: inline-block;
+	font-size: 13px;
+}
+.import-export-main .slds-form-element{
+	top:2px;
+}

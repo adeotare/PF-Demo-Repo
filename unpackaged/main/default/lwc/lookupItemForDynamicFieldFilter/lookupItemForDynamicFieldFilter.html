@@ -1,0 +1,23 @@
+<template>
+    <template if:true={record}>  
+        <li role="presentation" class="slds-listbox__item">
+            <div  class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" 
+                role="option" onclick={handleSelect}> 
+                <span class="slds-p-right_x-small">
+                    <lightning-icon
+                        icon-name="custom:custom58"
+                        size="medium"
+                        alternative-text="Plant Asset">
+                    </lightning-icon>
+                </span>
+                <span class="slds-media__body ">
+                    <span class="slds-listbox__option-text slds-listbox__option-text_entity"><b>{record.Name}</b></span>
+                    <span class="slds-listbox__option-text slds-listbox__option-text_entity"><b>{record.Asset_SubClass__c}</b></span>
+                </span>
+            </div>
+        </li>
+    </template>  
+    <template if:false={record}>  
+        <p>No data available.</p>  
+    </template>   
+</template>

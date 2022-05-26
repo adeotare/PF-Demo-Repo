@@ -1,0 +1,13 @@
+<template>
+    <template if:true={isLoadingForCSVConversion}>
+        <div class="spinner">
+            <lightning-spinner class="isLoadingForCSVConversion" size="medium" variant="brand"></lightning-spinner>
+        </div>
+    </template>
+    
+    <template if:true={isLoadingForDriveMessage}>
+        <div class="spinner">
+            <lightning-spinner class="isLoadingForDriveMessage" size="medium" variant="brand"></lightning-spinner>
+        </div>
+    </template>
+</template>

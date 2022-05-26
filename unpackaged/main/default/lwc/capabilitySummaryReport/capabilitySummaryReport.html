@@ -1,0 +1,55 @@
+<template>
+
+    <!--This will show the Capability Report Info Message-->
+    <div if:true={infoMessage}>
+        <c-report-info-message title={title} 
+            class-name={className} 
+            icon-name={iconName} 
+            message={reportDataInfoMessage}
+            if:false={hideInfo}>
+        </c-report-info-message>
+    </div>
+
+    <!--This div tag will render the Capability Summary Report Table-->
+    <div if:false={infoMessage} >
+        <c-lightning-section>
+            <span slot="title">
+            Capability Summary
+            </span>
+            <span slot="content">
+                <div class="tableBlk">
+
+                <!--This will render the Summary Report Table-->
+                <table  class= "mainTable" >
+                    
+                    <!--This will render the Column Header from JS-->
+                    <thead> 
+                        <tr class="slds-line-height_reset">
+                            <template for:each={colHeader} for:item="header">
+                                <th key={header} scope="col" class="header">
+                                <h4>{header}</h4>
+                                </th>
+                            </template>
+                        </tr>
+                    </thead>
+                    
+                    <!--This will render the Column Values from JS-->
+                    <tbody>
+                    <template for:each={columnValues} for:item="line">
+                        <tr key={line} class="slds-hint-parent">
+                            <template for:each={line} for:item="lineItem">
+                                <td key={lineItem} class={lineItem.colClassName}>
+                                <div title={lineItem.colValues}>
+                                    {lineItem.colValues}
+                                </div>
+                                </td>
+                            </template>
+                        </tr>
+                    </template>
+                    </tbody>
+                </table>
+            </div>
+            </span>
+        </c-lightning-section>
+    </div>
+</template>

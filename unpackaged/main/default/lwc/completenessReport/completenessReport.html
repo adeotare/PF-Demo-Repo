@@ -1,0 +1,29 @@
+<template>
+    <!-- To show the completeness report info message -->
+    <c-report-info-message title={title} 
+      class-name={className} 
+      icon-name={iconName} 
+      message={reportDataInfoMessage}
+      if:false={hideInfo}>
+    </c-report-info-message>
+  
+    <!-- This div render completeness report table -->
+    <div if:false={noData}>
+      <div class="tableDiv">
+        <div>
+          <!-- table body will be dynamically created from JS -->
+          <table class="tblCr" lwc:dom="manual"></table>
+        </div>
+      </div>
+    </div>
+    
+    <!-- lightning spinner while loading report data from server side -->
+    <div class="spinner spinnerLoad">
+      <template if:true={isLoading}>
+        <div class="loaderSpinner">
+        <lightning-spinner variant="brand" size="large" alternative-text="Please wait, we are loading the report.">
+        </lightning-spinner>
+      </div>
+      </template>
+    </div>
+  </template>

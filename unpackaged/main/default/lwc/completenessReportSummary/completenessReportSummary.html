@@ -1,0 +1,26 @@
+<template>
+    <!-- To show report info message -->
+    <c-report-info-message title={title} 
+      class-name={className} 
+      icon-name={iconName} 
+      message={reportDataInfoMessage}
+      if:false={hideInfo}>
+    </c-report-info-message>
+  
+    <!-- To show over all summary report -->
+    <div class="tableDiv" if:false={noData}>
+      <div>
+        <table class="tblCRSummary" lwc:dom="manual"></table>
+      </div>
+    </div>
+  
+    <!-- lightning spinner -->
+    <div class="spinner spinnerLoad">
+      <template if:true={isLoading}>
+        <div class="loaderSpinner">
+        <lightning-spinner variant="brand" size="large" >
+        </lightning-spinner>
+      </div>
+      </template>
+    </div>
+  </template>

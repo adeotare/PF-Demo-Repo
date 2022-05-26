@@ -1,0 +1,27 @@
+<template> 
+    <!--To show Capability Report if the evaluationMap is not empty-->
+    <div if:true={evaluationMap}>
+        <lightning-card>
+            
+            <!--This will render the Capability Summary Report-->
+            <div>
+                <c-capability-summary-report
+                    plant-asset-id={plantAssetId}
+                ></c-capability-summary-report>
+            </div>
+            
+            <!--This will render the Capability Test Report-->
+            <template for:each={evaluationMap} for:item="mapKey">
+                <template for:each={mapKey.value} for:item="name">
+                <c-capability-report-component
+                        key = {name}
+                        plant-asset-id={plantAssetId}
+                        category-name={mapKey.key}
+                        sub-category={name}
+                    ></c-capability-report-component>
+                </template>
+            </template>
+            
+        </lightning-card>
+    </div>
+</template>

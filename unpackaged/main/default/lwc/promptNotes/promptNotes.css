@@ -1,0 +1,22 @@
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding:0;
+    border-radius: 10px;
+}
+.slds-text-heading_small, .slds-text-heading--small {
+    font-size: inherit;
+    line-height: inherit;
+}
+.slds-theme_shade, .slds-theme--shade{
+background-color: inherit;
+}
+.slds-box{
+border: initial;
+}
+.prompt-notes-main{
+  margin: 10px;
+}
+.slds-rich-text-editor__output ol{
+  margin-bottom: 0;
+}

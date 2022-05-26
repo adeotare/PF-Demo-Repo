@@ -1,0 +1,45 @@
+<template>
+    <lightning-card> 
+      <!-- This will create overall rollup of all section wise report -->
+      <c-lightning-section>
+        <span slot="title">
+          Plant Rollup Scoring
+        </span>
+  
+        <span slot="content">
+          <c-completeness-report-summary
+            plant-asset-id={plantAssetId}
+            total-comp-count={totalChildComponent}>
+          </c-completeness-report-summary>
+        </span>
+      </c-lightning-section>
+  
+      <!-- This will create prompt type section wise report -->
+      <template for:each={promptTypeArray} for:item="promptName">
+        <c-lightning-section key={promptName.value}>
+          <span slot="title">
+            {promptName.sectionLabel}
+          </span>
+  
+          <span slot="content">
+            <c-completeness-report
+              plant-asset-id={plantAssetId} 
+              prompt-type={promptName.value}
+              total-comp-count={totalChildComponent}>
+            </c-completeness-report>
+          </span>
+        </c-lightning-section>
+      </template>
+  
+      <!-- lightning spinner -->
+      <div class="spinner spinnerLoad">
+        <template if:true={isLoading}>
+          <div class="loaderSpinner">
+          <lightning-spinner variant="brand" size="large" alternative-text="Please wait, we are loading the report.">
+          </lightning-spinner>
+        </div>
+        </template>
+      </div>
+      
+    </lightning-card> 
+  </template>

@@ -1,0 +1,162 @@
+<template>
+  <lightning-card icon-name="custom:custom37"> 
+    <!-- Card Header -->
+    <h1 slot="title" >
+      <span if:true={promptInfoRecord} class="slds-text-heading_medium">
+        {promptInfoRecord.Alias__c}
+      </span>
+    </h1>
+
+    <div slot="actions">
+      <c-g1-prompt-action-buttons
+        selected-plant-asset-id={plantAssetId}
+        prompt-info={promptInfoRecord}
+        show-refresh={showRefresh}
+        ong1recordcreation={savePlantAssetHandler}
+        onshowandhidesaveandnextbutton={showandhidesaveandnextbutton}>
+      </c-g1-prompt-action-buttons>
+    </div>
+
+    <c-report-info-message title = {title} 
+      class-name={className} 
+      icon-name={iconName} 
+      message={assetBuilderInfoMessage}
+      if:true={buttonVisibled}>
+    </c-report-info-message>
+
+  <div class="msgDiv">
+      <div class="warningBox">
+        <p class="pTagCls">
+          <lightning-icon icon-name="utility:warning" title="Warning" size="small"></lightning-icon>
+          <strong class="strongMargin">Warning</strong> {label.bifacialWarningInfo}
+        </p>
+      </div>
+    </div>
+
+    <div if:true={promptInfoRecord}>
+      <c-prompt-notes 
+        prompt-name={promptInfoRecord.Name}> 
+      </c-prompt-notes>
+    </div>
+    
+    <!-- Card Footer -->
+    <div slot="footer">
+      <lightning-button
+        class="slds-m-left_small"
+        variant="brand"
+        label="Next"
+        title="Next"
+        onclick={goToNext}
+        if:true={showNext}
+      ></lightning-button>
+      <lightning-button
+        class="slds-m-left_small"
+        variant="brand"
+        label="Save"
+        title="Save"
+        onclick={savePlantAssetHandler}
+        if:true={showSave}
+      ></lightning-button>
+    </div>
+
+    <c-confirmation-modal
+      title={label.confirmationPopupTitleOnNext}
+      pop-up-message={onClickNextMessage}
+      if:true={showConfirmPopupOnNext} 
+      onconfirm={hanldeNextOnConfirm}> 
+    </c-confirmation-modal>
+  
+    <!-- Card Body -->
+    <!--<div class="msgDiv" if:true={showTemVerisonName}>
+      <div class="infoBox">
+        <p class="pTagCls">
+          <lightning-icon icon-name="standard:drafts" alternative-text="version" title="Version" size="small"></lightning-icon>
+          <strong class="strongMargin">Info</strong> Selected Plant Asset Version : {temVerisonName}
+        </p>
+      </div>
+    </div>-->
+
+    <div>
+      <table class="tableBorder">
+        <tr data-row="0" >
+            <th>Choose Account Name</th>
+            <td>
+              <select size="1" name="Account Name" onchange={accountNameChangeHandler} >
+                <option value="None">--None--</option>
+                <template for:each={accountList} for:item="account">
+                  <option selected={account.isSelected} key={account.key} value={account.Id}>{account.Name}</option>
+                </template>
+              </select>
+            </td>
+          </tr> 
+          <tr data-row="0" >
+          <th>Choose Plant Name</th>
+          <td>
+            <select size="1" name="Plant Name" onchange={plantNameChangeHandler}>
+              <option value="None">--None--</option>
+              <template for:each={plantAssetList} for:item="plantAsset">
+                <option selected={plantAsset.isSelected} key={plantAsset.plantAssetDet.Id} value={plantAsset.plantAssetDet.Id}>{plantAsset.plantAssetDet.Name}</option>
+              </template>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="PlantAssetTable" if:true={selectedPlantAssetDetails}>
+      <div>
+       
+        <table>
+          <tr>
+            <th>Asset Builder Status</th>
+            <td>{selectedPlantAssetDetails.Asset_Builder_Status__c}</td>
+          </tr>
+          <tr>
+            <th>Asset Builder Approval Status</th>
+            <td>{selectedPlantAssetDetails.AB_Approval_Status__c}</td>
+          </tr>
+          <tr>
+            <th>Plant ID</th>
+            <td>{selectedPlantAssetDetails.Customer_Plant_Asset_ID__c}</td>
+          </tr>
+          <tr>
+            <th>Latitude</th>
+            <td>{selectedPlantAssetDetails.Latitude__c}</td>
+          </tr>
+          <tr>
+            <th>Longitude</th>
+            <td>{selectedPlantAssetDetails.Longitude__c}</td>
+          </tr>
+<!--          <tr>
+            <th>Time Zone</th>
+            <td>{selectedPlantAssetDetails.Time_Zone__c}</td>
+          </tr>-->
+          <tr>
+            <th>Renewable Type</th>
+            <td>{renewableType}</td>
+          </tr>
+          <tr>
+            <th>PF Service Product</th>
+            <td>{pfServiceProduct}</td>
+          </tr>
+          <tr if:true={showBifacialModule}>
+            <th>Bifacial Modules</th>
+            <td><input type="checkbox" name="Bifacial Module" 
+              class="checkbox bifacialHover" checked={bifacialModule} 
+              oninput={inputTagValueChangeHandler}/>
+            </td>
+          </tr>
+          <tr>
+            <th>Met Station Qty</th>
+            <td><input type="Number" name="Met Mast" class="Number" min="0"
+                        value={metMastCount} oninput={inputTagValueChangeHandler} disabled={isInputFieldDisabled}/></td>
+          </tr>
+          <tr>
+            <th>Switchgear / Substation Qty</th>
+            <td><input type="Number" name="Switchgear Substation" class="Number" min="0"
+                        value={switchgearsSubstationCount} oninput={inputTagValueChangeHandler} disabled={isInputFieldDisabled}/></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </lightning-card>
+</template>

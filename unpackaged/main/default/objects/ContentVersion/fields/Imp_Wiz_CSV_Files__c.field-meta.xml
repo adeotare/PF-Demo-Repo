@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Imp_Wiz_CSV_Files__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is to identify the CSV files created via imp wiz</description>
+    <externalId>false</externalId>
+    <label>Imp Wiz CSV Files</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,24 @@
+<template>
+    <div>
+      <span class="import-export-main">
+        <lightning-input type="file" onchange={handleUploadFinished}></lightning-input>
+      </span>
+      &nbsp;
+      <span class="import-export-main">
+        <!--This button is used for the Export of Site Metadata Recod as CSV File-->
+        <lightning-button 
+          icon-name="utility:download" 
+          label="Export as CSV" 
+          title="Export as CSV"
+          onclick={exportCSVFile} 
+          variant="brand">
+        </lightning-button>
+      </span>
+    </div>
+    <c-confirmation-modal
+        title={ConfirmationModalTitle}
+        pop-up-message={popUpDeleteWarnMsg}
+        if:true={showConfirmPopupOnDelete} 
+        onconfirm={handlePreviousOnConfirm}> 
+    </c-confirmation-modal>
+  </template>

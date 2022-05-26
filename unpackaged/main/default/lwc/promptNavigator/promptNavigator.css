@@ -1,0 +1,44 @@
+.spinner {
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255,.5);
+    z-index: 10000;
+    min-height: 101vh;
+  }
+  
+  .custom-loading-text {
+    transform: rotate(-90deg);
+    position: absolute;
+    left: -750%;
+    font-weight: bold;
+    white-space: nowrap
+  }
+  
+  .mainDiv{
+    margin: 10px;
+  }
+  
+  .tabClass{
+    width: 25%;
+  }
+  
+  .isLoadingForAssetCreation::after {
+    position: absolute;
+    content: 'Please wait... asset creation process is running...';
+    width: 100%;
+    text-align: center;
+    top: calc(50% + 3em);
+    font-weight: bold;
+  }
+  
+  .isLoadingForFectchingAssets::after {
+    position: absolute;
+    content: 'Please wait... fetching assets...';
+    width: 100%;
+    text-align: center;
+    top: calc(50% + 3em);
+    font-weight: bold;
+  }

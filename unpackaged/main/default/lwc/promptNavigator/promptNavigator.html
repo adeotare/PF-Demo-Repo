@@ -1,0 +1,472 @@
+<template>
+    <div class="spinner" if:true ={isLoading} >
+      <div class="slds-spinner_container ">
+        <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+            <div class="custom-loading-text" if:true ={totalNoOfRecords}>
+              {messageOnLoad} 
+              {totalNoOfRecords} 
+            </div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="mainDiv">
+      <div class="slds-box slds-box_small slds-theme_shade" if:true={showPlantAssetDetail} >
+          <div class="slds-text-heading_small">    
+              <div class="slds-text-align_left">
+                <b>Selected Plant Asset Name : </b> {plantName}  &nbsp; &nbsp;
+                <b>TEM Version : </b>{plantAssetTEM}
+              </div>
+          </div>        
+      </div>
+    </div>
+  
+    <template if:true={isLoadingForAssetCreation}>
+      <div class="spinner">
+          <lightning-spinner class="isLoadingForAssetCreation" size="large" variant="brand"></lightning-spinner>
+      </div>
+    </template>
+  
+    <template if:true={isLoadingForFectchingAssets}>
+        <div class="spinner">
+            <lightning-spinner class="isLoadingForFectchingAssets" size="large" variant="brand"></lightning-spinner>
+        </div>
+    </template>
+
+    <div if:true={showAssetBuildPrompts}>
+      <c-g1-intial-plant-info-prompt
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        onreadonlyconfirm={handleReadOnlyConfirm}
+        if:true={promptFlow.prompt1}
+        plant-asset-id={plantAssetRecordId}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        g1-open-from-finish-btn={g1OpenFromFinishBtn}
+        >
+      </c-g1-intial-plant-info-prompt>
+  
+      <c-p1-plant-info-prompt-solar 
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt2}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-p1-plant-info-prompt-solar>
+  
+      <c-p2-block-info-and-pad-counts
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt3}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-p2-block-info-and-pad-counts>
+      
+      <c-p3-pad-build-and-counts
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt4}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-p3-pad-build-and-counts>
+  
+      <c-p4-equipment-pad-meters-info
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt5}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-p4-equipment-pad-meters-info>
+  
+      <c-p5-inverters-build-and-counts
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt6}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-p5-inverters-build-and-counts>
+  
+      <c-p6-modular-inverter-module-info
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt7}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-p6-modular-inverter-module-info>
+  
+      <c-p7-inverter-subarray-info 
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt9}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-p7-inverter-subarray-info>
+      
+      <c-p8-a-inverters-recombiner-info
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt10}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-p8-a-inverters-recombiner-info>
+  
+      <c-p8-b-inverters-combiner-info
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt11}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-p8-b-inverters-combiner-info>
+  
+      <c-p9-a-tracker-controller-info
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt12}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-p9-a-tracker-controller-info>
+  
+      <c-p9-b-tracker-motor-info
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt13}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-p9-b-tracker-motor-info>
+  
+      <c-p10-a-other-asset-build
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt14}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-p10-a-other-asset-build>
+      
+      <c-p10-b-other-asset-build-and-info 
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        onrecordcount ={onLoadMessage}
+        if:true={promptFlow.prompt15}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-p10-b-other-asset-build-and-info>
+  
+      <c-w1-plant-info 
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt16}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-w1-plant-info>
+  
+      <c-w2-string-build-info
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt17}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-w2-string-build-info>
+  
+      <c-w3-turbine-build
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt18}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-w3-turbine-build>
+  
+      <c-w4-turbine-build-and-info 
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt19}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-w4-turbine-build-and-info>
+  
+      <c-w5-a-turbine-build-subsystems
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        onrecordcount ={onLoadMessage}
+        if:true={promptFlow.prompt20}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-w5-a-turbine-build-subsystems>
+  
+      <c-w5-b-turbine-build-subsystems 
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        onrecordcount ={onLoadMessage}
+        if:true={promptFlow.prompt21}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-w5-b-turbine-build-subsystems>
+  
+      <c-s1-substation-switchgear-build
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt22}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-s1-substation-switchgear-build>
+  
+      <c-s2-substation-switchgear-build-info
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        onrecordcount ={onLoadMessage}
+        if:true={promptFlow.prompt23}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-s2-substation-switchgear-build-info>
+  
+      <c-m1-met-mast-station-build
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        if:true={promptFlow.prompt24}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-m1-met-mast-station-build>
+      
+      <c-m2-met-mast-station-build 
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+        onshowspinnerwithmessage={handleShowSpinnerWithMessage}
+        onrecordcount ={onLoadMessage}
+        if:true={promptFlow.prompt27}
+        previous-prompt-name={previousPromptName}
+        plant-asset-id={plantAssetRecordId}
+        opened-from-report={openedFromReport}
+        attr-hl-val={attrHLValue}
+        is-bulk-upload={isBulkUpload}
+        is-imp-wiz-up-load={isImpWizUpLoad}
+        is-override={isOverride}
+        is-read-only={isReadOnly}
+        is-bulk-upload-multiple-b-a-t={isBulkUploadMultipleBAT}>
+      </c-m2-met-mast-station-build>
+    </div> 
+  </template>

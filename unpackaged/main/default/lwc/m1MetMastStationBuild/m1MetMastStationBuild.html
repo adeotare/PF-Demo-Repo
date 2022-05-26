@@ -1,0 +1,151 @@
+<template>
+    <lightning-card icon-name="custom:custom37">
+    <!-- Card Header -->
+    <h1 slot="title" >
+      <span if:true={promptInfoRecord} class="slds-text-heading_medium">
+        {promptInfoRecord.Alias__c}
+      </span>
+    </h1>
+  
+    <div slot="actions"> 
+      <div if:true={isBulkUpload}>
+        <c-import-and-export-c-s-v
+          plant-asset-id={plantAssetId}
+          prompt-info={promptInfoRecord}
+          prompt-site-metadata={promptSiteMetadata} 
+          onspinner={spinnerInImport}
+          onrefresh={refreshOnImport}
+          oncallnext={nextForBulkImport}
+          onshowhidebuttons={showOrHideGoToG1AndResumeButton}>
+        </c-import-and-export-c-s-v>
+      </div>
+  
+      <div if:false={isBulkUpload}> 
+        <div if:false={isImpWizUpLoad}>
+          <div if:true={showImportAndExportButton}>
+            <c-import-and-export-c-s-v
+              plant-asset-id={plantAssetId}
+              prompt-info={promptInfoRecord}
+              prompt-site-metadata={promptSiteMetadata} 
+              onspinner={spinnerInImport}
+              onrefresh={refreshOnImport}>
+            </c-import-and-export-c-s-v>
+          </div>
+        </div>
+        <div if:true={isImpWizUpLoad}>
+          <c-import-and-export-c-s-v
+              plant-asset-id={plantAssetId}
+              prompt-info={promptInfoRecord}
+              prompt-site-metadata={promptSiteMetadata}
+              onspinner={spinnerInImport}
+              onrefresh={refreshOnImport}
+              oncallnext={nextForBulkImport}
+              onshowhidebuttons={showOrHideGoToG1AndResumeButton}>
+          </c-import-and-export-c-s-v>
+        </div>
+      </div>
+    </div>
+  
+    <div if:true={promptInfoRecord}>
+      <c-prompt-notes 
+        prompt-name={promptInfoRecord.Name}>
+      </c-prompt-notes>
+    </div>
+    
+    <c-confirmation-modal
+      title={label.confirmationPopupTitleOnClear}
+      pop-up-message={clearMessage}
+      if:true={showConfirmPopupOnClear}
+      name="confirmModal"
+      onconfirm={handleClear}>
+    </c-confirmation-modal>
+  
+    <c-confirmation-modal
+      title={ConfirmationModalTitle}
+      pop-up-message={onClickNextMessage}
+      if:true={showConfirmPopupOnNext} 
+      onconfirm={hanldeNextOnConfirm}> 
+    </c-confirmation-modal>
+    
+    <c-confirmation-modal
+      title={ConfirmationModalTitle}
+      pop-up-message={onClickNextMessage}
+      if:true={showConfirmPopupOnDelete} 
+      onconfirm={handlePreviousOnConfirm}> 
+    </c-confirmation-modal>
+  
+    <c-finish-confirmation
+      title={label.confirmationPopupTitleOnFinish}
+      pop-up-message={onClickFinishMessage}
+      if:true={showConfirmPopupOnFinish} 
+      onconfirm={hanldeFinishOnConfirm}
+      plant-asset-id={plantAssetId}>
+    </c-finish-confirmation>
+    
+    <c-report-info-message title={title} 
+      class-name="infoBox" 
+      icon-name="utility:info_alt" 
+      message={reportRelatedFinishButtonInfoMessage}
+      if:true={showReCalcReportButtonInfoMessage}>
+    </c-report-info-message>
+    
+    <c-asset-builder-custom-datatable 
+      inputs-to-form-datatable={customDatatableInput} 
+      onattrvaluechange={handleAttrValueChange}
+      if:true={customDatatableInput}
+      selected-attr-val={attrHlVal}
+      is-read-only={isReadOnly}>
+    </c-asset-builder-custom-datatable>
+  
+    <!-- Card Footer -->
+    <div slot="footer">
+      <lightning-button
+        class="slds-m-left_small"
+        if:true={showPreviousButton}
+        variant="brand-outline"
+        label="Previous"
+        title="Previous"
+        onclick={goToPrevious}
+        disabled={isDisableButton}
+      ></lightning-button>
+      <lightning-button
+        class="slds-m-left_small"
+        variant="brand"
+        label={buttonLabel}
+        title={buttonLabel}
+        onclick={goToNext}
+        disabled={isDisableButton}>
+      </lightning-button>
+      <lightning-button
+        class="slds-m-left_small"
+        if:true={showSaveButton}
+        variant="brand"
+        label="Save"
+        title="Save"
+        onclick={handleSave}
+        disabled={isDisableButton}
+      ></lightning-button>
+      <lightning-button
+        class="slds-m-left_small"
+        if:true={showClearButton}
+        variant="brand"
+        label="Clear"
+        title="Clear"
+        onclick={clearSiteMetadata}
+      ></lightning-button>
+      <lightning-button
+        class="slds-m-left_small"
+        if:true={showReCalcReportButton} 
+        variant="brand"
+        label="Finish"
+        title="Finish"
+        onclick={goToFinish}
+        disabled={isDisableButton}>
+      </lightning-button>
+      <c-bulk-import-goto-g1-prompt-button
+        if:true={goToG1PromptButton}
+        plant-asset-id={plantAssetId}>
+      </c-bulk-import-goto-g1-prompt-button>
+    </div>
+    </lightning-card>
+  </template>

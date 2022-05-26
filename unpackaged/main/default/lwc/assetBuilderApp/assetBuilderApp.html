@@ -1,0 +1,56 @@
+<template>  
+    <article class="slds-card">
+    <lightning-tabset active-tab-value="">
+      <lightning-tab 
+        icon-name="standard:maintenance_asset" 
+        icon-assistive-text="Asset Builder App"
+        value='Asset Builder'
+        label="Asset Builder"> <!--if:true={showHideReports}-->
+          <c-prompt-navigator 
+            plant-asset-record-id={plantAssetRecordId}
+            is-imp-wiz-up-load={isImpWizUpLoad}
+            is-override={isOverride}
+            prompt-id-from-report={openPromptId}
+            previous-prompt-name={previousPromptName}> <!--if:true={showHideAssetBuilder}-->
+          </c-prompt-navigator>
+      </lightning-tab>
+  
+      <lightning-tab 
+        icon-name="standard:service_report" 
+        icon-assistive-text="Asset Builder Reports"
+        value='Reports'
+        label="Asset Builder Reports">
+          <c-asset-builder-report-container 
+            plant-asset-id={selectedPlanAssetIdVal}
+            if:true={showReportContainer}>
+          </c-asset-builder-report-container>
+          <div if:false={showReportContainer}>
+            <c-report-info-message 
+              title='Info'
+              class-name='infoBox' 
+              icon-name='utility:info_alt'
+              message={infoMessage}>
+            </c-report-info-message>
+          </div>
+      </lightning-tab>
+      <lightning-tab 
+        icon-name="standard:hierarchy" 
+        icon-assistive-text="Asset Builder Hierarchy"
+        value='Asset Builder Hierarchy'
+        label="Asset Builder Hierarchy">
+        <c-plant-asset-tree-view 
+          plant-asset-id={selectedPlanAssetIdVal}
+          if:true={showAssetBuilderHierarchy}>
+        </c-plant-asset-tree-view>
+        <div if:false={showAssetBuilderHierarchy}>
+            <c-report-info-message 
+              title='Info'
+              class-name='infoBox' 
+              icon-name='utility:info_alt'
+              message={infoMessage}>
+            </c-report-info-message> 
+         </div>
+      </lightning-tab>
+    </lightning-tabset>
+    </article>
+  </template>

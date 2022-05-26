@@ -1,0 +1,19 @@
+<template>
+    <div class="prompt-notes-main">
+    
+         <lightning-accordion class="example-accordion" onsectiontoggle={handleSectionToggle} allow-multiple-sections-open>		
+            <lightning-accordion-section label="Notes">        
+               <fieldset>
+            
+            <div class="slds-box slds-box_small slds-theme_shade">
+                <div class="slds-text-heading_small">    
+                    <div class="slds-text-align_left">
+                        <lightning-formatted-rich-text value={promptNote}></lightning-formatted-rich-text>
+                    </div>
+                </div>        
+            </div>  
+            </fieldset> 
+            </lightning-accordion-section>
+        </lightning-accordion> 
+    </div> 
+    </template>
