@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Plant_Asset_Filter_Field__c</fullName>
+    <externalId>false</externalId>
+    <label>Plant Asset Filter Field</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Data Connection Scope</fullName>
+                <default>false</default>
+                <label>Data Connection Scope</label>
+            </value>
+            <value>
+                <fullName>Customer Solution</fullName>
+                <default>false</default>
+                <label>Customer Solution</label>
+            </value>
+            <value>
+                <fullName>Add-On-Products</fullName>
+                <default>false</default>
+                <label>Add-On-Products</label>
+            </value>
+            <value>
+                <fullName>Account</fullName>
+                <default>false</default>
+                <label>Account</label>
+            </value>
+            <value>
+                <fullName>PF Service Product</fullName>
+                <default>false</default>
+                <label>PF Service Product</label>
+            </value>
+            <value>
+                <fullName>PF Solution</fullName>
+                <default>false</default>
+                <label>PF Solution</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

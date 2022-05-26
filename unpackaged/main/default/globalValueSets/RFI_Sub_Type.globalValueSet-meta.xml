@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Initial</fullName>
+        <default>false</default>
+        <label>Initial</label>
+    </customValue>
+    <customValue>
+        <fullName>Asset Builder</fullName>
+        <default>false</default>
+        <label>Asset Builder</label>
+    </customValue>
+    <customValue>
+        <fullName>Generic</fullName>
+        <default>false</default>
+        <label>Generic</label>
+    </customValue>
+    <customValue>
+        <fullName>Customer</fullName>
+        <default>false</default>
+        <label>Customer</label>
+    </customValue>
+    <masterLabel>RFI Sub Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

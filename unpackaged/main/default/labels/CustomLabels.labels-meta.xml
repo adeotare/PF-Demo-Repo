@@ -1,10 +1,1601 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
+        <fullName>ABApprovalProcessAPIName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ABApprovalProcessAPIName</shortDescription>
+        <value>AB_Approval_Process</value>
+    </labels>
+    <labels>
+        <fullName>ABLocationAPICustomerId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ABLocationAPICustomerId</shortDescription>
+        <value>345c0035-1bff-4544-91b9-85b4d53a9fcb</value>
+    </labels>
+    <labels>
+        <fullName>ABLocationAPIGroupId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ABLocationAPIGroupId</shortDescription>
+        <value>00000000-0000-0000-0000-000000000000</value>
+    </labels>
+    <labels>
+        <fullName>ABLocationAPINotUpdatedMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ABLocationAPINotUpdatedMessage</shortDescription>
+        <value>CustomLabels.labels-meta.xml</value>
+    </labels>
+    <labels>
+        <fullName>ABLocationAPIUpdatedMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ABLocationAPIUpdatedMessage</shortDescription>
+        <value>Location Updated</value>
+    </labels>
+    <labels>
+        <fullName>AB_AP_ApprovedMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AB_AP_ApprovedMessage</shortDescription>
+        <value>Your approval request is approved</value>
+    </labels>
+    <labels>
+        <fullName>AB_AP_NoApplicableProcessFound</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AB_AP_NoApplicableProcessFound</shortDescription>
+        <value>This Record is not matched with entry criteria.</value>
+    </labels>
+    <labels>
+        <fullName>AB_AP_NoCommentsMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AB_AP_NoCommentsMessage</shortDescription>
+        <value>Please enter comments for rejection.</value>
+    </labels>
+    <labels>
+        <fullName>AB_AP_RecalledMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AB_AP_RecalledMessage</shortDescription>
+        <value>Your request is recalled</value>
+    </labels>
+    <labels>
+        <fullName>AB_AP_RejectedMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AB_AP_RejectedMessage</shortDescription>
+        <value>Unfortunately! Your approval request is Rejected</value>
+    </labels>
+    <labels>
+        <fullName>AB_AP_SubmittedAlreadyForApprovalMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AB_AP_SubmittedAlreadyForApprovalMessage</shortDescription>
+        <value>This record is already submitted for Approval Process.</value>
+    </labels>
+    <labels>
+        <fullName>AB_AP_SubmittedForApprovalMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AB_AP_SubmittedForApprovalMessage</shortDescription>
+        <value>Account Plant is submitted for Approval.</value>
+    </labels>
+    <labels>
+        <fullName>AB_AllPFCommunityQueue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AB_AllPFCommunityQueue</shortDescription>
+        <value>All_PF_Community_Users_Queue_ABA</value>
+    </labels>
+    <labels>
+        <fullName>AB_ProvideAccessToSubmitForApproval</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AB_ProvideAccessToSubmitForApproval</shortDescription>
+        <value>PF Community IE-CS Contractor, PF - Partner</value>
+    </labels>
+    <labels>
+        <fullName>ACCapacityUnitCheckForSubstationRFI</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ACCapacityUnitCheckForSubstationRFI</shortDescription>
+        <value>10000</value>
+    </labels>
+    <labels>
+        <fullName>APIHistoryTableTitle</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APIHistoryTableTitle</shortDescription>
+        <value>API Request History - The table data is based on -</value>
+    </labels>
+    <labels>
+        <fullName>APIIDNotPresentInAPIType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APIIDNotPresentInAPIType</shortDescription>
+        <value>IWFD does not contains AQS in API Type</value>
+    </labels>
+    <labels>
+        <fullName>API_Request_Form</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>API Request Form</shortDescription>
+        <value>API Request Form</value>
+    </labels>
+    <labels>
+        <fullName>Alias</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Alias</shortDescription>
+        <value>Alias</value>
+    </labels>
+    <labels>
+        <fullName>AlternateParentAssetErrMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AlternateParentAssetErrMsg</shortDescription>
+        <value>Alternate Parent Asset is not matching</value>
+    </labels>
+    <labels>
+        <fullName>AssetBuilderClearErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetBuilderClearErrorMessage</shortDescription>
+        <value>Data not cleared</value>
+    </labels>
+    <labels>
+        <fullName>AssetBuilderClearPopupMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetBuilderClearPopupMessage</shortDescription>
+        <value>Clear will delete both saved and unsaved data for this prompt and reload the prompt with empty values</value>
+    </labels>
+    <labels>
+        <fullName>AssetBuilderClearPromptInfoMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetBuilderClearPromptInfoMessage</shortDescription>
+        <value>Data cleared successfully</value>
+    </labels>
+    <labels>
+        <fullName>AssetBuilderDeleteConfirmationMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetBuilderDeleteConfirmationMessage</shortDescription>
+        <value>Decrease in attribute value will have impact on subsequent prompts</value>
+    </labels>
+    <labels>
+        <fullName>AssetBuilderExceptionMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetBuilderExceptionMessage</shortDescription>
+        <value>Please contact your administrator</value>
+    </labels>
+    <labels>
+        <fullName>AssetBuilderFinishConfirmationMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetBuilderFinishConfirmationMessage</shortDescription>
+        <value>Proceed will lead you to the Plant Asset</value>
+    </labels>
+    <labels>
+        <fullName>AssetBuilderNextConfirmationMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetBuilderNextConfirmationMessage</shortDescription>
+        <value>The values enter here are going to define the upcoming prompts, please make sure you enter the correct numbers before proceeding</value>
+    </labels>
+    <labels>
+        <fullName>AssetBuilderNextPromptErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetBuilderNextPromptErrorMessage</shortDescription>
+        <value>Could not find the next prompt. Please contact administrator</value>
+    </labels>
+    <labels>
+        <fullName>AssetBuilderPreviousPromptErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetBuilderPreviousPromptErrorMessage</shortDescription>
+        <value>Could not find the previous prompt. Please contact administrator</value>
+    </labels>
+    <labels>
+        <fullName>AssetBuilderProcessNotStarted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetBuilderProcessNotStarted</shortDescription>
+        <value>Please complete the flow and check the report</value>
+    </labels>
+    <labels>
+        <fullName>AssetBuilderProcessNotStartedForWeightedAvgRollUp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetBuilderProcessNotStartedForWeightedAvgRollUp</shortDescription>
+        <value>Please complete the flow and Try Again</value>
+    </labels>
+    <labels>
+        <fullName>AssetBuilderStatusClosedMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetBuilderStatusClosedMessage</shortDescription>
+        <value>Asset Builder Status is closed. Hence you cannot proceed with this Account Plant</value>
+    </labels>
+    <labels>
+        <fullName>AssetBuilderStatusNeedToComplete</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetBuilderStatusNeedToComplete</shortDescription>
+        <value>Asset Builder Status should be completed, and approved before RFI&#39;s can be generated</value>
+    </labels>
+    <labels>
+        <fullName>AssetBuilderSuccessMessageOnSave</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetBuilderSuccessMessageOnSave</shortDescription>
+        <value>Record saved successfully</value>
+    </labels>
+    <labels>
+        <fullName>AssetCreationProcess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetCreationProcess</shortDescription>
+        <value>Please wait... asset creation process is running...</value>
+    </labels>
+    <labels>
+        <fullName>AssetName</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetName</shortDescription>
+        <value>Asset Name</value>
+    </labels>
+    <labels>
+        <fullName>AssetNameAndAltParentErrMsg</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetNameAndAltParentErrMsg</shortDescription>
+        <value>- These fields should be unique and not blank. Alternate Parent Field Value is Not Valid</value>
+    </labels>
+    <labels>
+        <fullName>AssetNameMissing</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetNameMissing</shortDescription>
+        <value>Asset Name Missing</value>
+    </labels>
+    <labels>
+        <fullName>AttrCountAndBuildNameErrMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttrCountAndBuildNameErrMsg</shortDescription>
+        <value>Please enter the build name and attribute count</value>
+    </labels>
+    <labels>
+        <fullName>AttrCountAndStationErrMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttrCountAndStationErrMsg</shortDescription>
+        <value>Station name and attribute count is required</value>
+    </labels>
+    <labels>
+        <fullName>AttrCountValidationMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttrCountValidationMessage</shortDescription>
+        <value>Please enter the count in attributes</value>
+    </labels>
+    <labels>
+        <fullName>Bifacial_Warning_Info</fullName>
+        <categories>Asset Builder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BifacialWarningInfo</shortDescription>
+        <value>Asset builder data will be deleted if there is a change in &quot;Bifacial Module&quot; from True -&gt; False or False -&gt; True. Please ignore if the plant is not Bifacial.</value>
+    </labels>
+    <labels>
+        <fullName>CSVConversionInProgress</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSVConversionInProgress</shortDescription>
+        <value>CSV conversion is in progress, Please wait...</value>
+    </labels>
+    <labels>
+        <fullName>CSVFileUploadSuccessMessage</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSVFileUploadSuccessMessage</shortDescription>
+        <value>CSV conversion is done and file uploaded successfully</value>
+    </labels>
+    <labels>
+        <fullName>CannotCreateRfiKindlyDeleteOtherRfiItemsRelatedToReports</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CannotCreateRfiKindlyDeleteOtherRfiItemsRelatedToReports</shortDescription>
+        <value>Cannot create RFI, as there is already one existing for this plant asset. kindly delete other RFI Items and click &#39;Revert Asset Builder Status&#39; from plant asset.</value>
+    </labels>
+    <labels>
+        <fullName>Community_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Community Name</shortDescription>
+        <value>Test Community</value>
+    </labels>
+    <labels>
+        <fullName>ConfirmationPopUpTitleOnDelete</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ConfirmationPopUpTitleOnDelete</shortDescription>
+        <value>Confirmation Modal To Proceed Delete</value>
+    </labels>
+    <labels>
+        <fullName>ConfirmationPopupTitleOnClear</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ConfirmationPopupTitleOnClear</shortDescription>
+        <value>Clear Data</value>
+    </labels>
+    <labels>
+        <fullName>ConfirmationPopupTitleOnFinish</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ConfirmationPopupTitleOnFinish</shortDescription>
+        <value>Confirmation Modal to proceed to the plant asset</value>
+    </labels>
+    <labels>
+        <fullName>ConfirmationPopupTitleOnNext</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ConfirmationPopupTitleOnNext</shortDescription>
+        <value>Confirmation Modal To Proceed Next</value>
+    </labels>
+    <labels>
+        <fullName>CountOfRecords</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CountOfRecords</shortDescription>
+        <value>1000</value>
+    </labels>
+    <labels>
+        <fullName>DCCapacityUnitCheckForSubstationRFI</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DCCapacityUnitCheckForSubstationRFI</shortDescription>
+        <value>10000</value>
+    </labels>
+    <labels>
+        <fullName>DataAvailableForCompletenessReportInfoMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DataAvailableForCompletenessReportInfoMsg</shortDescription>
+        <value>Please click run report</value>
+    </labels>
+    <labels>
+        <fullName>DataNotValidErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DataNotValidErrorMessage</shortDescription>
+        <value>Data is not valid, please check the error file.</value>
+    </labels>
+    <labels>
+        <fullName>DatauploadedsuccessfullyandReportGeneration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DatauploadedsuccessfullyandReportGeneration</shortDescription>
+        <value>Data uploaded successfully and Report Generation is In-Progres will be notified via E-Mail</value>
+    </labels>
+    <labels>
+        <fullName>Date_Range_Error_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Date_Range_Error_Message</shortDescription>
+        <value>Date range shoud be 3 - 7 days difference, including From and To date</value>
+    </labels>
+    <labels>
+        <fullName>DefaultValue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DefaultValue</shortDescription>
+        <value>Default Value</value>
+    </labels>
+    <labels>
+        <fullName>DrivePlusCategoryDefaultValue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DrivePlusCategoryDefaultValue</shortDescription>
+        <value>Yes</value>
+    </labels>
+    <labels>
+        <fullName>EnterValidIdInPlantIdAPI</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EnterValidIdInPlantIdAPI</shortDescription>
+        <value>.</value>
+    </labels>
+    <labels>
+        <fullName>EnterValidPlantAPIId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EnterValidPlantAPIId</shortDescription>
+        <value>Plant Id API not found. Enter a valid Id</value>
+    </labels>
+    <labels>
+        <fullName>ErrorInAPIFormRecordCreation</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorInAPIFormRecordCreation</shortDescription>
+        <value>Error in creating API form records, please contact administrator</value>
+    </labels>
+    <labels>
+        <fullName>ErrorInGetingG1PlantAssetPromptDetail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorInGettingG1PlantAssetPromptDetail</shortDescription>
+        <value>Error in getting g1 account plant prompt detail</value>
+    </labels>
+    <labels>
+        <fullName>ErrorInImpWizAPIRequest</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorInImpWizAPIRequest</shortDescription>
+        <value>: Some problem in the request and the information is recorded for reference, please contact administrator for more details.</value>
+    </labels>
+    <labels>
+        <fullName>ErrorInReportGeneration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorInReportGeneration</shortDescription>
+        <value>Error in report generation process, please contact administrator</value>
+    </labels>
+    <labels>
+        <fullName>ErrorWhileDeletingCsvFileInImplementationWizardForm</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorWhileDeletingCsvFileInImplementationWizardForm</shortDescription>
+        <value>Error while deleting csv file in Implementation Wizard Form</value>
+    </labels>
+    <labels>
+        <fullName>ErrorWhileDeletingCsvFileInPlantAssetPromptDetail</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorWhileDeletingCsvFileInPlantAssetPromptDetail</shortDescription>
+        <value>Error while deleting csv file in plant asset prompt detail</value>
+    </labels>
+    <labels>
+        <fullName>ErrorWhileReadingExcel</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorWhileReadingExcel</shortDescription>
+        <value>Error while reading excel</value>
+    </labels>
+    <labels>
+        <fullName>ErrorWhileUploadingCsvFileInImplementationWizardForm</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorWhileUploadingCsvFileInImplementationWizardForm</shortDescription>
+        <value>Error while uploading csv file in Implementation Wizard Form</value>
+    </labels>
+    <labels>
+        <fullName>ErrorWhileUploadingCsvFileInPlantAssetPromptDetail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorWhileUploadingCsvFileInPlantAssetPromptDetail</shortDescription>
+        <value>Error while uploading csv file in plant asset prompt detail</value>
+    </labels>
+    <labels>
+        <fullName>EvaluationNotes</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EvaluationNotes</shortDescription>
+        <value>Evaluation Notes</value>
+    </labels>
+    <labels>
+        <fullName>EvaluationNotesNullValue</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EvaluationNotesNullValue</shortDescription>
+        <value>NA</value>
+    </labels>
+    <labels>
+        <fullName>FailedToLoadFile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FailedToLoadFile</shortDescription>
+        <value>Failed to load file</value>
+    </labels>
+    <labels>
+        <fullName>FetchingAssets</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FetchingAssets</shortDescription>
+        <value>Please wait... fetching assets...</value>
+    </labels>
+    <labels>
+        <fullName>FileReceivedSuccessfullyImpWiz</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FileReceivedSuccessfullyImpWiz</shortDescription>
+        <value>File received successfully and please wait till converting to CSV.</value>
+    </labels>
+    <labels>
+        <fullName>FileUploadSuccessMessage</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FileUploadSuccessMessage</shortDescription>
+        <value>File converted to CSV successfully, click download button to get the file.</value>
+    </labels>
+    <labels>
+        <fullName>G1InitialPlantInfoPromptRefreshPopupMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>G1InitialPlantInfoPromptRefreshPopupMsg</shortDescription>
+        <value>You are about to do Refresh</value>
+    </labels>
+    <labels>
+        <fullName>G1InitialPlantInfoPromptRefreshSuccessMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>G1InitialPlantInfoPromptRefreshSuccessMsg</shortDescription>
+        <value>The Account Plant Prompt details has been refreshed</value>
+    </labels>
+    <labels>
+        <fullName>G1InitialPlantInfoPromptRefreshTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>G1InitialPlantInfoPromptRefreshTitle</shortDescription>
+        <value>Refresh</value>
+    </labels>
+    <labels>
+        <fullName>G1InitialPlntInfoPmtRefreshABNotInProgressMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>G1InitialPlntInfoPmtRefreshABNotInProgressMsg</shortDescription>
+        <value>Sorry! you are not allowed to do this operation due to Asset Builder Status</value>
+    </labels>
+    <labels>
+        <fullName>Group2NullValue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Group2NullValue</shortDescription>
+        <value>NA</value>
+    </labels>
+    <labels>
+        <fullName>ImpWizAccessDenied</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ImpWizAccessDenied</shortDescription>
+        <value>Access denied, please contact administrator.</value>
+    </labels>
+    <labels>
+        <fullName>ImpWizPageLoading</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ImpWizPageLoading</shortDescription>
+        <value>Please wait...</value>
+    </labels>
+    <labels>
+        <fullName>ImpWizSuccessMessage</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ImpWizSuccessMessage</shortDescription>
+        <value>Please click download to get the file.</value>
+    </labels>
+    <labels>
+        <fullName>ImplementationWizFormDetailNoSiteMetaData</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ImplementationWizFormDetailNoSiteMetaData</shortDescription>
+        <value>Site metadata not available</value>
+    </labels>
+    <labels>
+        <fullName>ImplementationWizFormDetailNotCreated</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ImplementationWizFormDetailNotCreated</shortDescription>
+        <value>Implementation Wizard Form Detail record was not created</value>
+    </labels>
+    <labels>
+        <fullName>ImplementationWizFormTitle</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ImplementationWizFormTitle</shortDescription>
+        <value>Metadata Collector</value>
+    </labels>
+    <labels>
+        <fullName>InvalidFileSelectedKindlySelectFileTypeRelateTo</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InvalidFileSelectedKindlySelectFileTypeRelateTo</shortDescription>
+        <value>Invalid file selected, kindly select file type relate to</value>
+    </labels>
+    <labels>
+        <fullName>M1AStationNameIsBlankMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>M1AStationNameIsBlankMsg</shortDescription>
+        <value>Please enter station name</value>
+    </labels>
+    <labels>
+        <fullName>M1AValidCheckMetMast</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>M1AValidCheckMetMast</shortDescription>
+        <value>There are no met mast count in G1 prompt</value>
+    </labels>
+    <labels>
+        <fullName>M1BValidCheckStationName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>M1BValidCheckStationName</shortDescription>
+        <value>There are no Station Name</value>
+    </labels>
+    <labels>
+        <fullName>M2ErrorMessageSubSystemCount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>M2ErrorMessageSubSystemCount</shortDescription>
+        <value>There are no subsystem and switchgear count for prompt specific attributes in m1 prompt</value>
+    </labels>
+    <labels>
+        <fullName>MeessageOnRecordCount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MeessageOnRecordCount</shortDescription>
+        <value>Records are more and hence it takes time to load, total count count of the Records are</value>
+    </labels>
+    <labels>
+        <fullName>MissingAttributes</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MissingAttributes</shortDescription>
+        <value>Missing Attributes</value>
+    </labels>
+    <labels>
+        <fullName>MorethanOneRecordInPAPD</fullName>
+        <categories>Reports, Asset Builde</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MorethanOneRecordInPAPD</shortDescription>
+        <value>More than one record in plant asset prompt details, please contact administrator</value>
+    </labels>
+    <labels>
+        <fullName>NetSuite_Endpoint</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NetSuite Endpoint</shortDescription>
+        <value>test</value>
+    </labels>
+    <labels>
+        <fullName>NetSuite_Production_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NetSuite Production Account</shortDescription>
+        <value>test</value>
+    </labels>
+    <labels>
+        <fullName>NetSuite_Production_Password</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NetSuite Production Password</shortDescription>
+        <value>test</value>
+    </labels>
+    <labels>
+        <fullName>NetSuite_Production_UserName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NetSuite Production UserName</shortDescription>
+        <value>test</value>
+    </labels>
+    <labels>
+        <fullName>NoCustomPermissionMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NoCustomPermissionMessage</shortDescription>
+        <value>Sorry! you do not have permission to do this operation</value>
+    </labels>
+    <labels>
+        <fullName>NoDataForAssetbuilderHierarchy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NoDataForAssetbuilderHierarchy</shortDescription>
+        <value>No Data Available</value>
+    </labels>
+    <labels>
+        <fullName>NoDataForCompletenessReport</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NoDataForCompletenessReport</shortDescription>
+        <value>No report data available</value>
+    </labels>
+    <labels>
+        <fullName>NoItemsToDisplayImpWiz</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NoItemsToDisplayImpWiz</shortDescription>
+        <value>No items to display.</value>
+    </labels>
+    <labels>
+        <fullName>NoRevisedFileUploaded</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NoRevisedFileUploaded</shortDescription>
+        <value>Please upload a revised file and click the button</value>
+    </labels>
+    <labels>
+        <fullName>NoRfiToBeCreated</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NoRfiToBeCreated</shortDescription>
+        <value>Please contact your administrator, No RFI to be created.</value>
+    </labels>
+    <labels>
+        <fullName>NoSiteMetadataForThisPlantAsset</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NoSiteMetadataForThisPlantAsset</shortDescription>
+        <value>There is no SiteMetadata for this Account Plant</value>
+    </labels>
+    <labels>
+        <fullName>P10ANoOtherAssetFound</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P10ANoOtherAssetFound</shortDescription>
+        <value>There is no other asset info found in p3 prompt</value>
+    </labels>
+    <labels>
+        <fullName>P10BErrorMessageSwitchGearAndSubSystemCount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P10BErrorMessageSwitchGearAndSubSystemCount</shortDescription>
+        <value>There are no subsystem and switchgear count for prompt specific attributes in P10A prompt</value>
+    </labels>
+    <labels>
+        <fullName>P10BValidationErrorOnDataSave</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P10BValidationErrorOnDataSave</shortDescription>
+        <value>Please enter device name</value>
+    </labels>
+    <labels>
+        <fullName>P1PlantInfoChooseFlatHierarchy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P1PlantInfoChooseFlatHierarchy</shortDescription>
+        <value>Please choose flat hierarchy</value>
+    </labels>
+    <labels>
+        <fullName>P1PlantInfoEnterNoOfBlocksIfFlatHierarchyIsNo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P1PlantInfoEnterNoOfBlocksIfFlatHierarchyIsNo</shortDescription>
+        <value>Please enter no of blocks value if flat hierarchy - No</value>
+    </labels>
+    <labels>
+        <fullName>P3ValidationErrorMsgOnNext</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P3ValidationErrorMsgOnNext</shortDescription>
+        <value>Prompt should not allow “Next” if Pad Name is empty and total count of inverters is equal to 0 for all the pads put together</value>
+    </labels>
+    <labels>
+        <fullName>P3ValidationErrorMsgOnPrevious</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P3ValidationErrorMsgOnPrevious</shortDescription>
+        <value>Prompt should not allow “Previous” if Pad Name is empty and total count of inverters is equal to 0 for all the pads put together</value>
+    </labels>
+    <labels>
+        <fullName>P3ValidationErrorMsgOnSave</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P3ValidationErrorMsgOnSave</shortDescription>
+        <value>Prompt should not allow “save” if pad name is empty and total count of inverters is equal to 0 for all the pads put together</value>
+    </labels>
+    <labels>
+        <fullName>P3ValidationErrorOnBlockName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P3ValidationErrorOnBlockName</shortDescription>
+        <value>Please enter block name</value>
+    </labels>
+    <labels>
+        <fullName>P3ValidationErrorOnBlockNameAndPadName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P3ValidationErrorOnBlockNameAndPadName</shortDescription>
+        <value>Please enter the block name and pad name</value>
+    </labels>
+    <labels>
+        <fullName>P3ValidationErrorOnInverter</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P3ValidationErrorOnInverter</shortDescription>
+        <value>Prompt should have a minimum of 1 inverter for all the pads put together</value>
+    </labels>
+    <labels>
+        <fullName>P3ValidationErrorOnInverterAndBlockName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P3ValidationErrorOnInverterAndBlockName</shortDescription>
+        <value>Prompt should have a minimum of 1 inverter for all the pads put togerther and block name is required</value>
+    </labels>
+    <labels>
+        <fullName>P3ValidationErrorOnInverterAndPadName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P3ValidationErrorOnInverterAndPadName</shortDescription>
+        <value>Prompt should have a minimum of 1 inverter for all the pads put togerther and pad name is required</value>
+    </labels>
+    <labels>
+        <fullName>P3ValidationErrorOnInverterBlockNameAndPadName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P3ValidationErrorOnInverterBlockNameAndPadName</shortDescription>
+        <value>Prompt should have a minimum of 1 inverter for all the pads put togerther and please enter pad name and block name</value>
+    </labels>
+    <labels>
+        <fullName>P3ValidationErrorOnPadName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P3ValidationErrorOnPadName</shortDescription>
+        <value>Please enter pad name</value>
+    </labels>
+    <labels>
+        <fullName>P5InverterNameIsBlankErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P5InverterNameIsBlankErrorMessage</shortDescription>
+        <value>Inverter name should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>P5SubArrayCountIsBlankErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P5SubArrayCountIsBlankErrorMessage</shortDescription>
+        <value>Sub array count should be greater than 0</value>
+    </labels>
+    <labels>
+        <fullName>P5SubArrayandInverterNameIsBlankErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P5SubArrayandInverterNameIsBlankErrorMessage</shortDescription>
+        <value>Inverter name and subarray should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>P6BValidationErrorMsgForModularInverterCheck</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P6BValidationErrorMsgForModularInverterCheck</shortDescription>
+        <value>There is no modular inverter in P5 inverters build and counts</value>
+    </labels>
+    <labels>
+        <fullName>P6BValidationErrorMsgForUniqueInverterModuleName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P6BValidationErrorMsgForUniqueInverterModuleName</shortDescription>
+        <value>Please enter unique name for inverter module name</value>
+    </labels>
+    <labels>
+        <fullName>P6BValidationErrorMsgOnNext</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P6BValidationErrorMsgOnNext</shortDescription>
+        <value>Prompt should not allow “Next” if inverter module name is empty</value>
+    </labels>
+    <labels>
+        <fullName>P6BValidationErrorMsgOnSave</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P6BValidationErrorMsgOnSave</shortDescription>
+        <value>Prompt should not allow “Save” if Inverter module name is empty</value>
+    </labels>
+    <labels>
+        <fullName>P7ValidationErrorOnDataSave</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P7ValidationErrorOnDataSave</shortDescription>
+        <value>Please enter subarray name</value>
+    </labels>
+    <labels>
+        <fullName>P7ValidationErrorOnInverterInfo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P7ValidationErrorOnInverterInfo</shortDescription>
+        <value>There is no inverter and subarray info found</value>
+    </labels>
+    <labels>
+        <fullName>P8ANoRecombinerCountInP5</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P8ANoRecombinerCountInP5</shortDescription>
+        <value>There are no recombiner(s) in P5 inverters build and counts</value>
+    </labels>
+    <labels>
+        <fullName>P8ARecombinerAndSubArrayIsBlankMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P8ARecombinerAndSubArrayIsBlankMessage</shortDescription>
+        <value>Recombiner and subarray should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>P8ARecombinerIsBlankMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P8ARecombinerIsBlankMessage</shortDescription>
+        <value>Recombiner name should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>P8ASubArrayIsBlankMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P8ASubArrayIsBlankMessage</shortDescription>
+        <value>Subarray should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>P8BCombinerIsBlankMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P8BCombinerIsBlankMsg</shortDescription>
+        <value>Combiner name should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>P8BCombinerRecombinerIsBlankMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P8BCombinerRecombinerIsBlankMsg</shortDescription>
+        <value>Combiner and recombiner name should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>P8BNoCombinerCountInP5Prompt</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P8BNoCombinerCountInP5Prompt</shortDescription>
+        <value>There are no combiner in P5 inverters build and counts</value>
+    </labels>
+    <labels>
+        <fullName>P8BRecombinerIsBlankMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P8BRecombinerIsBlankMsg</shortDescription>
+        <value>Recombiner name should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>P9APadNameCountErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P9APadNameCountErrorMessage</shortDescription>
+        <value>There is no tracker controller count in P3 pad build and count prompt</value>
+    </labels>
+    <labels>
+        <fullName>P9AValidationErrorOnDataSave</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P9AValidationErrorOnDataSave</shortDescription>
+        <value>Please enter tracker controller name</value>
+    </labels>
+    <labels>
+        <fullName>P9BTackerMotorNameIsBlankMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P9BTackerMotorNameIsBlankMessage</shortDescription>
+        <value>Tracker motor name should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>P9BTrackerCountErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>P9BTrackerCountErrorMessage</shortDescription>
+        <value>Recombiner name should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>PageCount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PageCount</shortDescription>
+        <value>100</value>
+    </labels>
+    <labels>
+        <fullName>ParentSiteMetadataErrMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Parent Name mapping is incorrect</shortDescription>
+        <value>Parent Name mapping is incorrect</value>
+    </labels>
+    <labels>
+        <fullName>PfServiceProduct</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PF Service Product</shortDescription>
+        <value>PF Service Product</value>
+    </labels>
+    <labels>
+        <fullName>PlantIdPFNotFound</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PlantIdPFNotFound</shortDescription>
+        <value>Plant Id PF not found. Enter a valid Id</value>
+    </labels>
+    <labels>
+        <fullName>PlantRecordNotFound</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PlantRecordNotFound</shortDescription>
+        <value>There is no plant asset available</value>
+    </labels>
+    <labels>
+        <fullName>PleaseContactAdministrator</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PleaseContactAdministrator</shortDescription>
+        <value>Please contact your administrator,</value>
+    </labels>
+    <labels>
+        <fullName>PleaseWaitRequestSendingImpWiz</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PleaseWaitRequestSendingImpWiz</shortDescription>
+        <value>Please wait, sending request...</value>
+    </labels>
+    <labels>
+        <fullName>PreSATHelpText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PreSATHelpText</shortDescription>
+        <value>Use this checkbox to run Pre-SAT validation</value>
+    </labels>
+    <labels>
+        <fullName>PreSATInfoMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PreSATInfoMessage</shortDescription>
+        <value>Collecting time-series data may take several minutes for large sites</value>
+    </labels>
+    <labels>
+        <fullName>Products</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Products</shortDescription>
+        <value>Products</value>
+    </labels>
+    <labels>
+        <fullName>QS_Console_Master_Label</fullName>
+        <categories>Quickstart</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Console Master Label</shortDescription>
+        <value>Default</value>
+    </labels>
+    <labels>
+        <fullName>ReadOnlyPromptInfoMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReadOnlyPromptInfoMessage</shortDescription>
+        <value>Weighted Average Roll Up not updated for Submitted or Closed Approval Status Account Plant</value>
+    </labels>
+    <labels>
+        <fullName>RecordLimitExcessInfoMessasge</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RecordLimitExcessInfoMessasge</shortDescription>
+        <value>Record limit exceeds for a prompt. Maximum allowed 3000 rows per prompt</value>
+    </labels>
+    <labels>
+        <fullName>ReportExportSuccessMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReportExportSuccessMessage</shortDescription>
+        <value>Report Exported Successfully</value>
+    </labels>
+    <labels>
+        <fullName>ReportGenerationInProgress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReportGenerationInProgress</shortDescription>
+        <value>The report generation is In Progress, you will be notified once the report ready</value>
+    </labels>
+    <labels>
+        <fullName>ReportGenerationNotStarted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReportGenerationNotStarted</shortDescription>
+        <value>Report will be available in next tab once the asset builder process is completed</value>
+    </labels>
+    <labels>
+        <fullName>ReportRelatedFinishButtonInfoMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReportRelatedFinishButtonInfoMessage</shortDescription>
+        <value>As you have changed the key field value which helps to generate subsequent prompts, you have to complete the asset builder process</value>
+    </labels>
+    <labels>
+        <fullName>Result</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Result</shortDescription>
+        <value>Result</value>
+    </labels>
+    <labels>
+        <fullName>S2ErrorMessageSwitchGearAndSubSystemCount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>S2ErrorMessageSwitchGearAndSubSystemCount</shortDescription>
+        <value>There are no subsystem and switchgear count for prompt specific attributes in S1 prompt</value>
+    </labels>
+    <labels>
+        <fullName>S2ValidationErrorOnDataSave</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>S2ValidationErrorOnDataSave</shortDescription>
+        <value>Please enter device name. Device name should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>SMCountGreaterThanRecordCountInCSV</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMCountGreaterThanRecordCountInCSV</shortDescription>
+        <value>Parent Name should not be empty or the count of records in excel file is less then the records present in the prompt</value>
+    </labels>
+    <labels>
+        <fullName>SMCountLesserThanRecordCountInCSV</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMCountLesserThanRecordCountInCSV</shortDescription>
+        <value>Imported Records are having more record count than the record present in the prompt which will have impact in subsequent prompt with Parent Name Referred</value>
+    </labels>
+    <labels>
+        <fullName>SelectPlantAssetFromDropDown</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SelectPlantAssetFromDropDown</shortDescription>
+        <value>Please select a account plant to proceed</value>
+    </labels>
+    <labels>
+        <fullName>SubstationRFICategoryName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SubstationRFICategoryName</shortDescription>
+        <value>Missing Substation and Switchgear</value>
+    </labels>
+    <labels>
+        <fullName>SubstationRFIItemDescription</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SubstationRFIItemDescription</shortDescription>
+        <value>No Substation was configured for this plant. Please provide Substation drawings and/or other supporting documentation to support the implementation</value>
+    </labels>
+    <labels>
+        <fullName>Survey_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Survey Name</shortDescription>
+        <value>Case Closure Survey</value>
+    </labels>
+    <labels>
         <fullName>URL_for_Salesforce_Org_Domain</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>URL for Salesforce Org Domain</shortDescription>
         <value>https://pwrfactors--pfdev.lightning.force.com</value>
+    </labels>
+    <labels>
+        <fullName>UniqueNameValidation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UniqueNameValidation</shortDescription>
+        <value>Please enter unique name</value>
+    </labels>
+    <labels>
+        <fullName>UnsupportedFileFormatImpWiz</fullName>
+        <categories>Imp Wiz Form</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UnsupportedFileFormatImpWiz</shortDescription>
+        <value>Unsupported file type for API Type</value>
+    </labels>
+    <labels>
+        <fullName>UploadedSuccessfully</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UploadedSuccessfully</shortDescription>
+        <value>Uploaded successfully</value>
+    </labels>
+    <labels>
+        <fullName>UploadfileWithErrorMessagecolumn</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UploadfileWithErrorMessagecolumn</shortDescription>
+        <value>Upload the Changed file without Error Message column</value>
+    </labels>
+    <labels>
+        <fullName>W1AttributesNotConfiguredForProductServices</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W1AttributesNotConfiguredForProductServices</shortDescription>
+        <value>Attributes are not configured for product services</value>
+    </labels>
+    <labels>
+        <fullName>W1BasedAssetTemplateIsNotLinked</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W1BasedAssetTemplateIsNotLinked</shortDescription>
+        <value>Base asset template is not mapped in prompt information record</value>
+    </labels>
+    <labels>
+        <fullName>W1NoAttributesFound</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W1NoAttributesFound</shortDescription>
+        <value>No attributes found for this prompt</value>
+    </labels>
+    <labels>
+        <fullName>W1StringAndWindTurbineCountIsBlankMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W1StringAndWindTurbineCountIsBlankMessage</shortDescription>
+        <value>String and wind turbine build count should be greater than 0</value>
+    </labels>
+    <labels>
+        <fullName>W1StringCountIsBlankMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W1StringCountIsBlankMessage</shortDescription>
+        <value>String count should be greater than 0</value>
+    </labels>
+    <labels>
+        <fullName>W1WindTurbineBuildCountIsBlankMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W1WindTurbineBuildCountIsBlankMessage</shortDescription>
+        <value>Wind turbine build count should be greater than 0</value>
+    </labels>
+    <labels>
+        <fullName>W2StringNameAndWindTurbineCountsIsBlankMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W2StringNameAndWindTurbineCountsIsBlankMessage</shortDescription>
+        <value>Wind turbine counts should be greater than 0 and string name should not be blank</value>
+    </labels>
+    <labels>
+        <fullName>W2StringNameIsBlankMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W2StringNameIsBlankMessage</shortDescription>
+        <value>Please enter string name. It should not be blank</value>
+    </labels>
+    <labels>
+        <fullName>W2ValidCheckStringCount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W2ValidCheckStringCount</shortDescription>
+        <value>Wind turbine build count should be greater than 0</value>
+    </labels>
+    <labels>
+        <fullName>W2ValidationErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W2ValidationErrorMessage</shortDescription>
+        <value>Wind Turbine Build Count should be greater than 0</value>
+    </labels>
+    <labels>
+        <fullName>W2WindTurbineCountsIsBlankMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W2WindTurbineCountsIsBlankMessage</shortDescription>
+        <value>Wind turbine counts should be greater than 0</value>
+    </labels>
+    <labels>
+        <fullName>W3TurbineCountErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W3TurbineCountErrorMessage</shortDescription>
+        <value>There is no turbine build count in W.1.0 Plant Info - Wind</value>
+    </labels>
+    <labels>
+        <fullName>W3ValidationErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W3ValidationErrorMessage</shortDescription>
+        <value>Build name should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>W4ValidationErrOnTurbineBuild</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W4ValidationErrOnTurbineBuild</shortDescription>
+        <value>Turbine Build should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>W4ValidationErrOnTurbineName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W4ValidationErrOnTurbineName</shortDescription>
+        <value>Turbine name should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>W4ValidationErrOnTurbineNameAndTurbineBuild</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W4ValidationErrOnTurbineNameAndTurbineBuild</shortDescription>
+        <value>Turbine name and turbine build should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>W5ADeviceNameIsBlank</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W5ADeviceNameIsBlank</shortDescription>
+        <value>Please enter device name, it cannot be blank</value>
+    </labels>
+    <labels>
+        <fullName>W5AErrorMessageSubSystemCount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W5AErrorMessageSubSystemCount</shortDescription>
+        <value>There are no subsystem count for prompt specific attributes in W3 prompt</value>
+    </labels>
+    <labels>
+        <fullName>W5BDeviceNameIsBlank</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W5BDeviceNameIsBlank</shortDescription>
+        <value>Device name should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>W5BErrorMessageWeatherSensorCount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W5BErrorMessageWeatherSensorCount</shortDescription>
+        <value>There is no weather sensor count in W3 prompt</value>
+    </labels>
+    <labels>
+        <fullName>WeightedAverageRollUpInfoMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WeightedAverageRollUpInfoMessage</shortDescription>
+        <value>Weighted Average Roll Up is calculated for Solar Prompts Only</value>
+    </labels>
+    <labels>
+        <fullName>WeightedAverageRollUpNotCalculated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WeightedAverageRollUpNotCalculated</shortDescription>
+        <value>Weighted Average Roll Up calculation is not completed. Please Wait...</value>
+    </labels>
+    <labels>
+        <fullName>alternateParentErrMsg</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AlternateParentErrMsg</shortDescription>
+        <value>Alt Parent Name is not matching</value>
+    </labels>
+    <labels>
+        <fullName>assetBuilderConditionNotMet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>assetBuilderConditionNotMet</shortDescription>
+        <value>The Asset builder status is already completed or closed. Hence it cannot be exported</value>
+    </labels>
+    <labels>
+        <fullName>assetNameErrMsg</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>assetNameErrMsg</shortDescription>
+        <value>- These fields should be unique and not blank.</value>
+    </labels>
+    <labels>
+        <fullName>bulkExportAssetBuilderErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>bulkExportAssetBuilderErrorMessage</shortDescription>
+        <value>Asset builder process already started. If you want to continue, please delete the site metadata record of this plant Asset and come back</value>
+    </labels>
+    <labels>
+        <fullName>bulkExportAssetBuilderSuccessMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>bulkExportAssetBuilderSuccessMessage</shortDescription>
+        <value>You are about to start asset builder export</value>
+    </labels>
+    <labels>
+        <fullName>bulkImportMultipleBATInfoMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>bulkImportMultipleBATInfoMessage</shortDescription>
+        <value>Upload Files Related to Multiple Base Asset Template Prompts</value>
+    </labels>
+    <labels>
+        <fullName>bulkImportSingleBATInfoMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>bulkImportSingleBATInfoMessage</shortDescription>
+        <value>Upload Files Related to Single Base Asset Template Prompts</value>
+    </labels>
+    <labels>
+        <fullName>g1ABProcessstartedMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>g1ABProcessstartedMessage</shortDescription>
+        <value>Delete the current built using &quot;Delete Asset Builder and Import</value>
+    </labels>
+    <labels>
+        <fullName>g1BulkImportNoSiteMetadataMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>g1BulkImportNoSiteMetadataMessage</shortDescription>
+        <value>Please click &quot;Save&quot; button in G1 and Import</value>
+    </labels>
+    <labels>
+        <fullName>importcsvValidation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>importcsvValidation</shortDescription>
+        <value>has duplicate value</value>
+    </labels>
+    <labels>
+        <fullName>m2ValidationErrorOnDataSave</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>m2ValidationErrorOnDataSave</shortDescription>
+        <value>Please enter device name</value>
+    </labels>
+    <labels>
+        <fullName>noAssetBuilderProcessMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>noAssetBuilderProcessMessage</shortDescription>
+        <value>Complete the Asset Builder Process For Report Generation</value>
+    </labels>
+    <labels>
+        <fullName>p2BlockNameValidationMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>p2BlockNameValidationMessage</shortDescription>
+        <value>Pad count should be greater than 0</value>
+    </labels>
+    <labels>
+        <fullName>p2PadCountValidationMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>p2PadCountValidationMessage</shortDescription>
+        <value>Pad count should be greater than 0</value>
+    </labels>
+    <labels>
+        <fullName>p2PadCountandBlockNameValidationMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>p2PadCountandBlockNameValidationMessage</shortDescription>
+        <value>Block name should not be empty and pad count should be greater than 0</value>
+    </labels>
+    <labels>
+        <fullName>plantAssetPromptDetailUpdateMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Goto G1 prompt</shortDescription>
+        <value>You are about to navigate to G1</value>
+    </labels>
+    <labels>
+        <fullName>plantAssetPromptDetailUpdateTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Goto G1</shortDescription>
+        <value>Goto G1</value>
+    </labels>
+    <labels>
+        <fullName>renewableTypeIsNotConfigured</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>renewableTypeIsNotConfigured</shortDescription>
+        <value>Renewable type is not configured</value>
+    </labels>
+    <labels>
+        <fullName>s1SubSwgNameAttrCountValidationMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>s1SubSwgNameAttrCountValidationMessage</shortDescription>
+        <value>SUB/SWG name and attribute count should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>s1SubstationCountErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>s1SubstationCountErrorMessage</shortDescription>
+        <value>There is no substation count in g1 prompt</value>
+    </labels>
+    <labels>
+        <fullName>s1SubstationSwgNameAttrCountValidationMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>s1SubstationSwgNameAttrCountValidationMessage</shortDescription>
+        <value>Substation or switchgear and SUB/SWG name and attribute count should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>s1SubstationSwitchGearEmptyAttrCountValidationMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>s1SubstationSwitchGearEmptyAttrCountValidationMessage</shortDescription>
+        <value>Substation or switchgear and attribute count should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>s1SubstationSwitchgearValidationErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>s1SubstationSwitchgearValidationErrorMessage</shortDescription>
+        <value>Substation or switchgear should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>s1SubstationSwitchgearandSwgNameValidationErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>s1SubstationSwitchgearandSwgNameValidationErrorMessage</shortDescription>
+        <value>Substation or switchgear and SUB/SWG name should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>s1SwgNameValidationErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>s1SwgNameValidationErrorMessage</shortDescription>
+        <value>SUB/SWG name should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>selectPlantAsset</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>selectPlantAsset</shortDescription>
+        <value>Please select Account Plant for which you want to import.</value>
+    </labels>
+    <labels>
+        <fullName>siteMetadataUpdateSuccessMesssge</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>siteMetadataUpdateSuccessMesssge</shortDescription>
+        <value>Site metadata records are updated</value>
+    </labels>
+    <labels>
+        <fullName>titleForABTemplateExport</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>titleForABTemplateExport</shortDescription>
+        <value>Asset builder prompt template export</value>
     </labels>
 </CustomLabels>

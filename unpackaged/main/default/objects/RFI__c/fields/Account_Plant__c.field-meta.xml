@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Plant__c</fullName>
+    <externalId>false</externalId>
+    <label>Account Plant</label>
+    <referenceTo>Account_Plant__c</referenceTo>
+    <relationshipLabel>RFIs</relationshipLabel>
+    <relationshipName>RFIs</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

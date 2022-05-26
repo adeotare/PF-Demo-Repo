@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Solar - PV</fullName>
+        <default>false</default>
+        <label>Solar - PV</label>
+    </customValue>
+    <customValue>
+        <fullName>Hybrid - Solar PV / BESS</fullName>
+        <default>false</default>
+        <label>Hybrid - Solar PV / BESS</label>
+    </customValue>
+    <customValue>
+        <fullName>Wind - Onshore</fullName>
+        <default>false</default>
+        <label>Wind - Onshore</label>
+    </customValue>
+    <customValue>
+        <fullName>Wind - Offshore</fullName>
+        <default>false</default>
+        <label>Wind - Offshore</label>
+    </customValue>
+    <customValue>
+        <fullName>Hydro</fullName>
+        <default>false</default>
+        <label>Hydro</label>
+    </customValue>
+    <customValue>
+        <fullName>BESS</fullName>
+        <default>false</default>
+        <label>BESS</label>
+    </customValue>
+    <customValue>
+        <fullName>Hybrid - Fuel Cell / BESS</fullName>
+        <default>false</default>
+        <label>Hybrid - Fuel Cell / BESS</label>
+    </customValue>
+    <customValue>
+        <fullName>Fuel Cell</fullName>
+        <default>false</default>
+        <label>Fuel Cell</label>
+    </customValue>
+    <customValue>
+        <fullName>Biomass</fullName>
+        <default>false</default>
+        <label>Biomass</label>
+    </customValue>
+    <customValue>
+        <fullName>Not Applicable</fullName>
+        <default>false</default>
+        <label>Not Applicable</label>
+    </customValue>
+    <masterLabel>Renewable Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

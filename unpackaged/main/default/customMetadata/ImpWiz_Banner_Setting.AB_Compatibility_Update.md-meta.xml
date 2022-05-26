@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>AB Compatibility Update</label>
+    <protected>false</protected>
+    <values>
+        <field>Banner_Content__c</field>
+        <value xsi:type="xsd:string">Asset Builds initiated prior to `` will need to be rebuilt for the Implementation Wizard N3uron tab to function properly.</value>
+    </values>
+    <values>
+        <field>Banner_End_Date__c</field>
+        <value xsi:type="xsd:date">2022-05-17</value>
+    </values>
+    <values>
+        <field>Banner_Start_Date__c</field>
+        <value xsi:type="xsd:date">2022-05-18</value>
+    </values>
+    <values>
+        <field>Banner_Title__c</field>
+        <value xsi:type="xsd:string">Asset Build Compatibility Update</value>
+    </values>
+    <values>
+        <field>IsActive__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>

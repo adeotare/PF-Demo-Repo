@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Function_To_On_Screen__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Is_Created_in_CSV_Conversion__c , &#39;Revised File Upload&#39;, 
+      IF(Is_Created_in_Neuron_Update__c,&#39;N3uron Tab Generation&#39;,&#39;API Request&#39;)
+   )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Function To On Screen</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

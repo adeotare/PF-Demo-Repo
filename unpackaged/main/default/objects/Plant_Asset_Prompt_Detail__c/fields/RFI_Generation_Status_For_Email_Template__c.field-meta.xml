@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RFI_Generation_Status_For_Email_Template__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( OR(ISPICKVAL( RFI_Generated_for_CA_Report__c , &#39;Completed - Error&#39;), ISPICKVAL( RFI_Generated_for_CO_Report__c , &#39;Completed - Error&#39;)), &#39;not generated, please contact your administrator&#39;, IF( AND(ISPICKVAL( RFI_Generated_for_CA_Report__c , &#39;Completed&#39;), ISPICKVAL( RFI_Generated_for_CO_Report__c , &#39;Completed&#39;)), &#39;generated successfully, kindly review RFI against Plant Asset&#39;, &#39;&#39;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>RFI Generation Status For Email Template</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

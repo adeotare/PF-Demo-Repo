@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is a channel is used to Navigate from IWFD to AB App</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>This is for Plant AssetId</description>
+        <fieldName>plantAssetId</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>This is for IsImpWizUpload</description>
+        <fieldName>isImpWizUpLoad</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>This is for IsOverride</description>
+        <fieldName>isOverride</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>This is for isShowAB</description>
+        <fieldName>isShowAB</fieldName>
+    </lightningMessageFields>
+    <masterLabel>ABNavigationChannel</masterLabel>
+</LightningMessageChannel>

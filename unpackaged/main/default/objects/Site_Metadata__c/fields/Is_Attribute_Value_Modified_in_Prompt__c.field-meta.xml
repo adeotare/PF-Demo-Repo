@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Attribute_Value_Modified_in_Prompt__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field will get updated only if there is any change in the Prompt</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field will get updated only if there is any change in the Prompt</inlineHelpText>
+    <label>Is Attribute Value Modified in Prompt</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

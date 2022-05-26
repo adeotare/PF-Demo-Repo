@@ -1,0 +1,7 @@
+"use strict"
+
+window.DateFormatToLocaleMap = {
+	"en-IN":"DD-MM-YYYY",
+	"en-US":"MM-DD-YYYY",
+	"en-CA":"MM-DD-YYYY"
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>App_Name__c</fullName>
+    <description>This field values should be in sync with Prompt Information Object - Prompt Type field</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>To get the respective prompt details in report</inlineHelpText>
+    <label>App Name</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Asset Builder</fullName>
+                <default>true</default>
+                <label>Asset Builder</label>
+            </value>
+            <value>
+                <fullName>Interface Builder</fullName>
+                <default>false</default>
+                <label>Interface Builder</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

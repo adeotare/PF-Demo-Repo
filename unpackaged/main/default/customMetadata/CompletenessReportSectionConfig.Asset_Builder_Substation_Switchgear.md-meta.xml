@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Asset Builder - Substation Switchgear</label>
+    <protected>false</protected>
+    <values>
+        <field>App_Name__c</field>
+        <value xsi:type="xsd:string">Asset Builder</value>
+    </values>
+    <values>
+        <field>Prompt_Type__c</field>
+        <value xsi:type="xsd:string">SubstationSwitchgear</value>
+    </values>
+    <values>
+        <field>Report_Display_Order__c</field>
+        <value xsi:type="xsd:double">30.0</value>
+    </values>
+    <values>
+        <field>Section_Label__c</field>
+        <value xsi:type="xsd:string">Detailed Grouping Scores - Substation/Switchgear</value>
+    </values>
+    <values>
+        <field>Summary_Report_First_Column_Label__c</field>
+        <value xsi:type="xsd:string">Substation/Switch Gea</value>
+    </values>
+</CustomMetadata>

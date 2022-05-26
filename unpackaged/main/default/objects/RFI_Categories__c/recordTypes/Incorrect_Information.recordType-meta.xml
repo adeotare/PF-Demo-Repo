@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incorrect_Information</fullName>
+    <active>true</active>
+    <label>Incorrect Information</label>
+    <picklistValues>
+        <picklist>Category_Classification__c</picklist>
+        <values>
+            <fullName>General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wind</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Plant_Asset_Filter_Field__c</picklist>
+        <values>
+            <fullName>Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Add-On-Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Connection Scope</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PF Service Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PF Solution</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RFI_Category_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RFI_Sub_Type_Filter__c</picklist>
+        <values>
+            <fullName>Asset Builder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Generic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Initial</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Renewable_Type_Filter__c</picklist>
+        <values>
+            <fullName>BESS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biomass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fuel Cell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hybrid - Fuel Cell %2F BESS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hybrid - Solar PV %2F BESS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hydro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solar - PV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wind - Offshore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wind - Onshore</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Request_Type__c</picklist>
+        <values>
+            <fullName>Checkbox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Document</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
