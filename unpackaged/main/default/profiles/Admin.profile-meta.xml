@@ -3195,6 +3195,61 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>LID__Error_Log__c.LID__Line_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>LID__Error_Log__c.LID__Message__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>LID__Error_Log__c.LID__Stack_Trace__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>LID__Log__c.LID__Body__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>LID__Log__c.LID__Headers__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>LID__Log__c.LID__Status_Code__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>LID__Log__c.LID__Status_Message__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>LID__Setup_Data__c.LID__Enterprise_Enabled__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>LID__Setup_Data__c.LID__Job_Cron_String__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>LID__Setup_Data__c.LID__Job_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>LID__Setup_Data__c.LID__Steps_Completed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>LID__User_OAuth__c.LID__Access_Expiration__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3236,6 +3291,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>LID__User_OAuth__c.LID__Sales_Access_Token__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>LID__User_OAuth__c.LID__User__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
