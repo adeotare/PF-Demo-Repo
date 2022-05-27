@@ -2544,6 +2544,10 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <classAccesses>
+        <apexClass>CrmProjectListView</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ProgramController</apexClass>
         <enabled>true</enabled>
     </classAccesses>

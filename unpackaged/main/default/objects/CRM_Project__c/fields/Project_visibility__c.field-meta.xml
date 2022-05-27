@@ -18,7 +18,7 @@
             </value>
             <value>
                 <fullName>Not visible to customer</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>Not visible to customer</label>
             </value>
         </valueSetDefinition>

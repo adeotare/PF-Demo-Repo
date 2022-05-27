@@ -2664,6 +2664,10 @@
         <name>SelectFilesFromSalesforce</name>
     </userPermissions>
     <classAccesses>
+        <apexClass>CrmProjectListView</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ProgramController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
