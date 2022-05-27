@@ -295,6 +295,13 @@
         <value>Please enter the count in attributes</value>
     </labels>
     <labels>
+        <fullName>AutoCreateProjectsBatchSize</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AutoCreateProjectsBatchSize</shortDescription>
+        <value>10</value>
+    </labels>
+    <labels>
         <fullName>Bifacial_Warning_Info</fullName>
         <categories>Asset Builder</categories>
         <language>en_US</language>

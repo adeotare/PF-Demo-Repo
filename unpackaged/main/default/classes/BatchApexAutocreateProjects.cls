@@ -1,12 +1,8 @@
 global class BatchApexAutocreateProjects implements Database.Batchable<sObject> {
     global Database.QueryLocator start(Database.BatchableContext BC) {
         // collect the batches of records or objects to be passed to execute
-        //Config_Data__mdt soql = Config_Data__mdt.getInstance('AutoCreateBatchSoql');
         String query = 'select id,Account__c,Account__r.Name, Plant__c,Plant__r.Name,Product__r.Name,Product__r.ProductCode,Product__r.Services_Short_Name__c, Installation_Commencement_Date__c, Product_Category__c, Project_Creation_Status__c,MWp_Quantity__c,Net_Total_Price__c,Status__c from Plant_Product_Transaction__c where Project_Creation_Status__c !=\'Completed\' AND Status__c != \'Quoted\'';
-        
-        //String query = '\''+soql.Value__c+'\'';
 
-        //String query = String.format(soql.Value__c);
         system.debug('==soql.Value__c='+query);
        
        
@@ -63,7 +59,7 @@ global class BatchApexAutocreateProjects implements Database.Batchable<sObject> 
 		List<project_cloud__Project__c> projects = [SELECT Id, Name,ccpe_ocp__Account__c,
                                                         Account_Plant__c,Installation_Commencement_Date__c,Product__c,
                                                         ARR__c,Installation_Fee__c,PPT_Reference__c,project_cloud__Methodology__c,
-                                                        project_cloud__Type__c,Project_Description__c,Notes__c
+                                                        project_cloud__Type__c,Project_Description__c,Notes__c, Project_Visibility__c
                                                         FROM project_cloud__Project__c WHERE 
                                                         project_cloud__IsTemplate__c = true AND Id IN:templateIdSet]; 
 		for(project_cloud__Project__c p : projects){
@@ -104,7 +100,7 @@ global class BatchApexAutocreateProjects implements Database.Batchable<sObject> 
                 toClone.PPT_Reference__c = mapIdVsPPT.get(p.id).id;
             	//toClone.OwnerId = '00G7j000001xugiEAA';
                 
-                /*
+                
                 if(mapIdVsPPT.get(p.id).Product__r.ProductCode.containsIgnoreCase('DR-OM-') && queueNameVsId.get('Services_Drive_O_M') != null){
                     toClone.OwnerId = queueNameVsId.get('Services_Drive_O_M');
                 } else if(mapIdVsPPT.get(p.id).Product__r.ProductCode.containsIgnoreCase('DR-') && queueNameVsId.get('Services_Drive') != null){
@@ -113,7 +109,7 @@ global class BatchApexAutocreateProjects implements Database.Batchable<sObject> 
                     toClone.OwnerId = queueNameVsId.get('Services_Bluepoint');
                 } else if(mapIdVsPPT.get(p.id).Product__r.ProductCode.containsIgnoreCase('GB-') && queueNameVsId.get('Services_Greenbyte') != null){
                     toClone.OwnerId = queueNameVsId.get('Services_Greenbyte');
-                }*/
+                }
             	
                 system.debug('--toClone'+toClone);
 				try {
