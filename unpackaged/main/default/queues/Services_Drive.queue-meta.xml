@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Services-Drive</name>
+    <queueSobject>
+        <sobjectType>CRM_Project__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>project_cloud__Project_Sharing__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>project_cloud__Project__c</sobjectType>
+    </queueSobject>
+</Queue>
