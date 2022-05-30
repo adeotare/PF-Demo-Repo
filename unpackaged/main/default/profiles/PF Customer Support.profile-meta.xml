@@ -3892,6 +3892,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Plant_Product_Transaction__c.Implementation_Start_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Plant_Product_Transaction__c.Initial_Mega_Watt_Quantity__c</field>
         <readable>true</readable>
