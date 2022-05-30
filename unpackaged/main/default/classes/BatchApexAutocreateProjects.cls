@@ -59,7 +59,7 @@ global class BatchApexAutocreateProjects implements Database.Batchable<sObject> 
 		List<project_cloud__Project__c> projects = [SELECT Id, Name,ccpe_ocp__Account__c,
                                                         Account_Plant__c,Installation_Commencement_Date__c,Product__c,
                                                         ARR__c,Installation_Fee__c,PPT_Reference__c,project_cloud__Methodology__c,
-                                                        project_cloud__Type__c,Project_Description__c,Notes__c, Project_Visibility__c
+                                                        project_cloud__Type__c,Project_Description__c,Notes__c, Project_Visibility__c,project_cloud__Project_Duration__c
                                                         FROM project_cloud__Project__c WHERE 
                                                         project_cloud__IsTemplate__c = true AND Id IN:templateIdSet]; 
 		for(project_cloud__Project__c p : projects){
@@ -68,7 +68,11 @@ global class BatchApexAutocreateProjects implements Database.Batchable<sObject> 
 				String projectName = '';
 				
 				if(!string.isBlank(mapIdVsPPT.get(p.id).Account__r.Name)){
-					projectName += mapIdVsPPT.get(p.id).Account__r.Name.substring(0,10);
+                    if(mapIdVsPPT.get(p.id).Account__r.Name.length() > 10){
+						projectName += mapIdVsPPT.get(p.id).Account__r.Name.substring(0,10);
+                    } else {
+                        projectName += mapIdVsPPT.get(p.id).Account__r.Name;
+                    }
 				}
 				projectName +=datetime.now().format('YYMM');
 				if(mapIdVsPPT.get(p.id).MWp_Quantity__c != null){
