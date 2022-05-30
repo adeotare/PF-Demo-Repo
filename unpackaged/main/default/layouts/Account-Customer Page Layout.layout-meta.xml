@@ -531,6 +531,12 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Total_MW_Solar__c</fields>
+        <fields>Total_MW_Other_Renewable__c</fields>
+        <fields>Total_MW_Hydro__c</fields>
+        <fields>Total_MW_Wind__c</fields>
+        <fields>Total_MW_Storage__c</fields>
+        <fields>Total_Agnostic__c</fields>
         <relatedList>Active_Megawatts__c.Account__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>

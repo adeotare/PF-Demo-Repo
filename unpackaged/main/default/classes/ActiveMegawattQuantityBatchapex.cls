@@ -59,31 +59,31 @@ global Database.QueryLocator Start(Database.BatchableContext bc)
           if(pData.Account__c!=null){
              AggregateResult[] groupedResult1 = [SELECT SUM(MWp_Quantity__c)aver FROM Plant_Product_Transaction__c
                                                    where Account__c=:pData.Account__c and 
-                                                    plant__r.Asset_Class__c='Solar'];
+                                                    plant__r.Asset_Class__c='Solar'and Status__c ='Contracted'];
                                                Object a=groupedResult1[0].get('aver');
                 if(a!=null && a!=''){SumSolar = Decimal.valueOf(String.valueOf(a));}
                 
                 AggregateResult[] groupedResult2 = [SELECT SUM(MWp_Quantity__c)aver FROM Plant_Product_Transaction__c
                                                    where Account__c=:pData.Account__c and 
-                                                    plant__r.Asset_Class__c='Other Renewable'];
+                                                    plant__r.Asset_Class__c='Other Renewable'and Status__c ='Contracted'];
                                                Object b=groupedResult2[0].get('aver');
                 if(b!=null && b!=''){SumOtherRenewable = Decimal.valueOf(String.valueOf(b));}
                 
                 
                     
                 AggregateResult[] groupedResult3 = [SELECT SUM(MWp_Quantity__c)aver FROM Plant_Product_Transaction__c
-                                                    where Account__c=:pData.Account__c and plant__r.Asset_Class__c='Wind'];
+                                                    where Account__c=:pData.Account__c and plant__r.Asset_Class__c='Wind'and Status__c ='Contracted'];
                 Object c=groupedResult3[0].get('aver');
                 if(c!=null && c!=''){SumWind = Decimal.valueOf(String.valueOf(c));}
                 
                 AggregateResult[] groupedResult4 = [SELECT SUM(MWp_Quantity__c)aver FROM Plant_Product_Transaction__c
-                                                    where Account__c=:pData.Account__c and plant__r.Asset_Class__c='Hydro'];
+                                                    where Account__c=:pData.Account__c and plant__r.Asset_Class__c='Hydro'and Status__c ='Contracted'];
                 Object d=groupedResult4[0].get('aver');
                 if(d!=null && d!=''){SumWind = Decimal.valueOf(String.valueOf(d));}
              
                     
                 AggregateResult[] groupedResult5 = [SELECT SUM(MWp_Quantity__c)aver FROM Plant_Product_Transaction__c
-                                                    where Account__c=:pData.Account__c and plant__r.Asset_Class__c='Storage'];
+                                                    where Account__c=:pData.Account__c and plant__r.Asset_Class__c='Storage'and Status__c ='Contracted'];
                 object e = groupedResult5[0].get('aver');
                   if(e!=null && e!=''){SumStorage = Decimal.valueOf(String.valueOf(e));}
                 
@@ -91,6 +91,7 @@ global Database.QueryLocator Start(Database.BatchableContext bc)
                     
                 Active_Megawatts__c ae3 = new Active_Megawatts__c(
                     Total_Agnostic__c= SumStorage + SumWind + SumSolar + SumHydro+ SumOtherRenewable,
+                    MW_Agnostic__c=SumStorage + SumWind + SumSolar + SumHydro+ SumOtherRenewable,
                     MW_Storage__c=SumStorage,
                     Total_MW_Storage__c=SumStorage ,
                     MW_Other_Renewable__c=SumOtherRenewable,
@@ -104,7 +105,7 @@ global Database.QueryLocator Start(Database.BatchableContext bc)
                    Account__c=pData.Account__c);
                    mer.put(pData.Account__c,ae3);
              
-           }SumSolar=0;SumHydro=0;SumWind=0;SumOtherRenewable=0;
+           }SumSolar=0;SumHydro=0;SumWind=0;SumOtherRenewable=0;SumStorage=0;
         } 
         insert mer.Values();   
     }
