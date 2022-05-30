@@ -4018,7 +4018,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Plant__c.Capacity__c</field>
+        <field>Plant__c.Asset_Subtype__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4063,11 +4063,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Plant__c.Location__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Plant__c.Longitude__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4079,6 +4074,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Plant__c.MWp__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Plant__c.Majority_Offtake__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4139,11 +4139,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Plant__c.State__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Plant__c.Street_Address__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

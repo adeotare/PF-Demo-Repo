@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asset_Subtype__c</fullName>
+    <externalId>false</externalId>
+    <label>Asset Subtype</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>true</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Onshore</fullName>
+                <default>false</default>
+                <label>Onshore</label>
+            </value>
+            <value>
+                <fullName>Offshore</fullName>
+                <default>false</default>
+                <label>Offshore</label>
+            </value>
+            <value>
+                <fullName>Ground Mount</fullName>
+                <default>false</default>
+                <label>Ground Mount</label>
+            </value>
+            <value>
+                <fullName>Rooftop</fullName>
+                <default>false</default>
+                <label>Rooftop</label>
+            </value>
+            <value>
+                <fullName>Canopy</fullName>
+                <default>false</default>
+                <label>Canopy</label>
+            </value>
+            <value>
+                <fullName>Floating</fullName>
+                <default>false</default>
+                <label>Floating</label>
+            </value>
+            <value>
+                <fullName>Decentralized)</fullName>
+                <default>false</default>
+                <label>Decentralized)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

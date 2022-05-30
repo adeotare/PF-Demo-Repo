@@ -63,6 +63,13 @@
                     <stringValue>Professional Services</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Net_Total_Price__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Net_Total_Price__c</elementReference>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Get_Project_Detail</targetReference>
             </connector>
@@ -76,6 +83,13 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Software</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Net_Total_Price__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Net_Total_Price__c</elementReference>
                 </rightValue>
             </conditions>
             <connector>
