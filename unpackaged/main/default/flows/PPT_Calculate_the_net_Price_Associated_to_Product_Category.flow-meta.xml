@@ -20,13 +20,6 @@
                 <elementReference>$Record.Net_Total_Price__c</elementReference>
             </value>
         </assignmentItems>
-        <assignmentItems>
-            <assignToReference>AddNetPrice</assignToReference>
-            <operator>Subtract</operator>
-            <value>
-                <elementReference>$Record__Prior.Net_Total_Price__c</elementReference>
-            </value>
-        </assignmentItems>
         <connector>
             <targetReference>Update_the_values_to_ARR_Field</targetReference>
         </connector>
@@ -48,13 +41,6 @@
             <operator>Add</operator>
             <value>
                 <elementReference>$Record.Net_Total_Price__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>AddNetPrice</assignToReference>
-            <operator>Subtract</operator>
-            <value>
-                <elementReference>$Record__Prior.Net_Total_Price__c</elementReference>
             </value>
         </assignmentItems>
         <connector>

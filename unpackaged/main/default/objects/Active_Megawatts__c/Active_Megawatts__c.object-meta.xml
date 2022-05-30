@@ -161,7 +161,15 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Active Megawatts</pluralLabel>
-    <searchLayouts />
+    <searchLayouts>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_MW_Solar__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_MW_Hydro__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_MW_Other_Renewable__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_MW_Wind__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_MW_Storage__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_Agnostic__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
