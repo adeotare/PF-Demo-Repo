@@ -2557,5 +2557,16 @@
     <layoutAssignments>
         <layout>Active_Megawatts__c-Past Purchased Quantity Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Core_Attribute__c-Core Attribute Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Core_Attribute__c-Core Attribute Layout</layout>
+        <recordType>Core_Attribute__c.Core_Attribute</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Core_Attribute__c-Core Attribute Layout</layout>
+        <recordType>Core_Attribute__c.Prompt_Specific_Attribute</recordType>
+    </layoutAssignments>
     <userLicense>Customer Community Plus</userLicense>
 </Profile>
