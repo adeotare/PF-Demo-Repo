@@ -247,10 +247,17 @@ public with sharing class PlantProductController {
 
         // check if this Quote is for go-forward pricing i.e. the one using Standard Price book. This is no longer true 
         // as all GB pricing is also per go-forward pricing approach
-        SBQQ__QuoteLine__c quoteLine1 = [SELECT SBQQ__Product__r.ID, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__Product__r.Product_Category__c, SBQQ__SpecialPrice__c, SBQQ__Quote__r.SBQQ__PriceBook__r.Name from SBQQ__QuoteLine__c where Id =: quoteLineId];
-        // Keep the original contract price here
-        Decimal contractPricePerMSA = quoteLine1.SBQQ__SpecialPrice__c;
-
+        SBQQ__QuoteLine__c quoteLine1 = [SELECT CurrencyIsoCode, SBQQ__ListPrice__c, SBQQ__Product__r.ID, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__Product__r.Product_Category__c, SBQQ__SpecialPrice__c, SBQQ__Quote__r.SBQQ__PriceBook__r.Name from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+        // Keep the original contract price here... since we are updating Special Price itself, this will not work
+        // Decimal contractPricePerMSA = quoteLine1.SBQQ__SpecialPrice__c;
+         List <SBQQ__ContractedPrice__c> cPriceList = [Select SBQQ__Price__c, Name from SBQQ__ContractedPrice__c where SBQQ__Product__r.ID =:quoteLine1.SBQQ__Product__r.ID AND SBQQ__Account__r.ID =:quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.ID AND CurrencyIsoCode =:quoteLine1.CurrencyIsoCode WITH SECURITY_ENFORCED LIMIT 1];
+        Decimal contractPricePerMSA = 0;
+        
+        If (cPriceList.size() > 0) 
+            contractPricePerMSA = cPriceList[0].SBQQ__Price__c;
+        else 
+            contractPricePerMSA = quoteLine1.SBQQ__ListPrice__c;
+        
         if(quoteLine1.SBQQ__Product__r.Product_Category__c == 'Software') {
             // check if there are any custom discount tiers for this SW Product
             System.debug ('Checking if the SW Product has Discount Tier pricing');
@@ -439,7 +446,9 @@ public with sharing class PlantProductController {
                     from Plant_Product_Transaction__c 
                     where Quote_Line__c =: quoteLineId WITH SECURITY_ENFORCED];
                 System.debug('Total records from PPT whose Net Price is going to be updated is '+pptList.size());  
-          
+        if (pptList.size() == 0)
+            return;
+
         for (Plant_Product_Transaction__c eachPPT:pptList) {
             
             cumulativeQLQuantity += eachPPT.Quote_Line_Quantity__c;
@@ -457,9 +466,13 @@ public with sharing class PlantProductController {
 
         System.debug('Cumulative QL Net Total Price is = '+cumulativeQLNetTotal);
         System.debug('Cumulative QL Net Total Quantity is = '+cumulativeQLQuantity);
-        System.debug('Cumulative QL Net Unit Price (set to Regular Price on QL) is = '+(cumulativeQLNetTotal/cumulativeQLQuantity));
+        System.debug('Cumulative QL Net Unit Price (set to Special Price on QL) is = '+(cumulativeQLNetTotal/cumulativeQLQuantity));
 
+        
         quoteLine.SBQQ__SpecialPrice__c = (cumulativeQLNetTotal / cumulativeQLQuantity);
+        // quoteLine.SBQQ__RegularPrice__c = 100;
+        // quoteLine.SBQQ__SpecialPrice__c = 100;
+
         update quoteLine;
         System.debug('Updated Quote Line with the value as = '+quoteLine.SBQQ__SpecialPrice__c);
 
