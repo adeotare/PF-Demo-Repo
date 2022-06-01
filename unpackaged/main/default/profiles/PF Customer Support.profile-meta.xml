@@ -4713,6 +4713,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>RAID__c.Additional_Decision_Makers__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>RFI_Categories__c.Default_to_Blocker__c</field>
         <readable>true</readable>
     </fieldPermissions>

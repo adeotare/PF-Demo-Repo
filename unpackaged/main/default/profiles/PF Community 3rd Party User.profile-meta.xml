@@ -1644,6 +1644,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>RAID__c.Additional_Decision_Makers__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>RAID__c.CRM_Project__c</field>
         <readable>true</readable>

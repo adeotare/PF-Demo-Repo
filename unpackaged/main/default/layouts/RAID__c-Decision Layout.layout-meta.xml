@@ -59,6 +59,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Action_done__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>CRM_Project__c</field>
             </layoutItems>
             <layoutItems>
@@ -72,6 +76,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Risk_Details__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Risk_Contingency_plan__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
