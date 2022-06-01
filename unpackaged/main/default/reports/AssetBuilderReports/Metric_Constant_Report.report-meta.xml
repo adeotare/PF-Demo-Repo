@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Metric_Definition__c.Base_Asset_Template__c</field>
+    </columns>
+    <columns>
+        <field>Metric_Definition__c.Modifer_1__c</field>
+    </columns>
+    <columns>
+        <field>Metric_Definition__c.Modifer_2__c</field>
+    </columns>
+    <columns>
+        <field>Metric_Definition__c.Modifer_2_Value__c</field>
+    </columns>
+    <columns>
+        <field>Metric_Definition__c.TEM_Version__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Metric Constant Report with record type equals Constants</description>
+    <filter>
+        <criteriaItems>
+            <column>CUST_RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Metric_Definition__c.Constants</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Metric_Definition__c.TEM_Version__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>VERSION-018</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Metric Constant Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Metric_Definition__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>
