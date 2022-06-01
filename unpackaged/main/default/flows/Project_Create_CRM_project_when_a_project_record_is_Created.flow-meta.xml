@@ -58,20 +58,6 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varCRMRecord.Account__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.ccpe_ocp__Account__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varCRMRecord.Account_Plant_relationship_Name__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Account_Plant__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>varCRMRecord.Wrike_Legacy_ID__c</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -386,6 +372,20 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Project_Health__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.project_cloud__Health__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Health_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.project_cloud__Health_Reason__c</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Assign_CRM_Records_to_Collection</targetReference>
         </connector>
@@ -456,6 +456,18 @@
         <label>Create CRM Record</label>
         <locationX>917</locationX>
         <locationY>455</locationY>
+        <inputAssignments>
+            <field>Account_Plant_relationship_Name__c</field>
+            <value>
+                <elementReference>$Record.Account_Plant__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>$Record.ccpe_ocp__Account__c</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>CRM_Reference_Project__c</field>
             <value>
