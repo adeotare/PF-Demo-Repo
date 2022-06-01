@@ -181,6 +181,12 @@
                 <elementReference>AddNetPrice</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>Product__c</field>
+            <value>
+                <elementReference>$Record.Product__r.Name</elementReference>
+            </value>
+        </inputAssignments>
         <object>project_cloud__Project__c</object>
     </recordUpdates>
     <recordUpdates>
