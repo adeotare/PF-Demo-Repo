@@ -386,6 +386,27 @@
                 <elementReference>$Record.project_cloud__Health_Reason__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Due_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Due_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.ccpe_ocp__Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Account_Plant_relationship_Name__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account_Plant__c</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Assign_CRM_Records_to_Collection</targetReference>
         </connector>
@@ -490,6 +511,12 @@
             <field>Program_Name__c</field>
             <value>
                 <elementReference>$Record.Program_Name__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Health__c</field>
+            <value>
+                <elementReference>$Record.Project_Health__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
