@@ -74,10 +74,6 @@
                 <behavior>Edit</behavior>
                 <field>Program_Name__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>PPT_Reference__c</field>
-            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
