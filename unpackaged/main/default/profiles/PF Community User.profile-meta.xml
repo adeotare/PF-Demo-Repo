@@ -1087,6 +1087,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>MSA_Contract__c.PO_Required__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Metric_Definition__c.Attribute__c</field>
         <readable>true</readable>
