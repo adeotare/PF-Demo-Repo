@@ -2573,5 +2573,8 @@
         <layout>Core_Attribute__c-Core Attribute Layout</layout>
         <recordType>Core_Attribute__c.Prompt_Specific_Attribute</recordType>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Equipment__c-Community Page Layout</layout>
+    </layoutAssignments>
     <userLicense>Customer Community Plus</userLicense>
 </Profile>

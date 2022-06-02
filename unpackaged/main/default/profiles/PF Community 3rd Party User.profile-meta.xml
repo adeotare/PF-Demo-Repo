@@ -2092,7 +2092,7 @@
         <recordType>Core_Attribute__c.Prompt_Specific_Attribute</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Equipment__c-Equipment Layout</layout>
+        <layout>Equipment__c-Community Page Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Finance_Checklist__c-Finance Checklist Layout</layout>
