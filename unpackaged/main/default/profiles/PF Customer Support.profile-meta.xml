@@ -6229,6 +6229,10 @@
         <name>ViewTrustMeasures</name>
     </userPermissions>
     <classAccesses>
+        <apexClass>AddPPTControllerV2</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>PlantProductController</apexClass>
         <enabled>true</enabled>
     </classAccesses>

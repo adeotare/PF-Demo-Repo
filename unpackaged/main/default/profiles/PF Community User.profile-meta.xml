@@ -2549,6 +2549,10 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <classAccesses>
+        <apexClass>AddPPTControllerV2</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>CrmProjectListView</apexClass>
         <enabled>true</enabled>
     </classAccesses>

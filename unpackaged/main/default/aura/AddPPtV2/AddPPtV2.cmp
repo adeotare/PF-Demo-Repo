@@ -1,0 +1,51 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" Controller="AddPPTControllerV2" >
+	 <aura:attribute name="data" type="Map"/>
+    <aura:attribute name="filteredData" type="Map"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="selectedProjects" type="List"/>
+    <aura:handler name="init" value="{!this }" action="{!c.init }"/>
+    <aura:attribute name="recordId" type="String" default="" />
+    <!--Custom Styles for Modal Header and Footer-->
+    <aura:html tag="style">
+    .cuf-content {
+    padding: 0 0rem !important;
+    }
+    .slds-p-around--medium {
+    padding: 0rem !important;
+    }
+    .slds-modal__content{
+    overflow-y:hidden !important;
+    height:unset !important;
+    max-height:unset !important;
+    }
+    .cAddProjects.c-container{
+        border-top-style : none !important;
+        border-bottom-style : none !important;
+     }
+    </aura:html>
+    <!--End Custom Styles for Modal Header and Footer-->
+    <!-- handlers-->
+    <div class="modal-header slds-modal__header slds-size_1-of-1 slds-table--header-fixed">
+        <h4 class="title slds-text-heading--medium">Add PPT </h4>
+    </div>
+    <div class="slds-scrollable_y">
+        <div class="c-container slds-var-p-around_medium">
+            <span>
+                <lightning:input onchange="{!c.searchTable}" type="search" label="Searh" variant="label-hidden" placeholder="Enter PPT Name" aura:id="SearchBox"/>
+            </span>
+            <br/>
+
+            <lightning:datatable
+                columns="{!v.columns}"
+                data="{!v.filteredData}"
+                keyField="id"
+                onrowselection="{! c.handleRowAction }"
+            />
+        </div>
+    </div>
+    <div class="modal-footer slds-modal__footer slds-size_1-of-1">
+        <lightning:button variant="Brand" class="slds-button" label="Add PPT" onclick="{!c.HandleSave}"/>
+        <lightning:button variant="Neutral" class="slds-button" label="Cancel" onclick="{!c.handleClose}"/>
+    </div>
+    
+</aura:component>

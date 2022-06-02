@@ -6909,6 +6909,10 @@
         <name>ViewTrustMeasures</name>
     </userPermissions>
     <classAccesses>
+        <apexClass>AddPPTControllerV2</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AssetBuilderApprovalHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
