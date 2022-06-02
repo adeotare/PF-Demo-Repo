@@ -377,9 +377,6 @@
         <relatedList>Contract.SBQQ__RenewalOpportunity__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <relatedList>RelatedNoteList</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>NAME</fields>
         <relatedList>Competitor_Differentiation_Assessment__c.Opportunity__c</relatedList>
     </relatedLists>
@@ -407,7 +404,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h7j000000ZVma</masterLabel>
+        <masterLabel>00h8F000000IgDx</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
