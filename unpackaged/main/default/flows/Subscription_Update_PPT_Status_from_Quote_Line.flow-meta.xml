@@ -43,6 +43,20 @@
                 <elementReference>$Record.SBQQ__OrderProduct__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Effective_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.SBQQ__StartDate__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.End_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.SBQQ__EndDate__c</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Add_to_PPT</targetReference>
         </connector>

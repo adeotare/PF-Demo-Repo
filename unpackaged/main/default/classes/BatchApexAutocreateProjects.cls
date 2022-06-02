@@ -1,7 +1,7 @@
 global class BatchApexAutocreateProjects implements Database.Batchable<sObject> {
     global Database.QueryLocator start(Database.BatchableContext BC) {
         // collect the batches of records or objects to be passed to execute
-        String query = 'select id,Account__c,Account__r.Name, Plant__c,Plant__r.Name,Product__r.Name,Product__r.ProductCode,Product__r.Services_Short_Name__c, Installation_Commencement_Date__c, Product_Category__c, Project_Creation_Status__c,MWp_Quantity__c,Net_Total_Price__c,Status__c from Plant_Product_Transaction__c where Project_Creation_Status__c !=\'Completed\' AND Status__c != \'Quoted\'';
+        String query = 'select id,Account__c,Account__r.Name, Plant__c,Plant__r.Name,Product__r.Name,Product__r.ProductCode,Product__r.Services_Short_Name__c, Installation_Commencement_Date__c, Product_Category__c, Project_Creation_Status__c,MWp_Quantity__c,Net_Total_Price__c,Status__c,Plant_Name__c from Plant_Product_Transaction__c where Project_Creation_Status__c !=\'Completed\' AND Status__c != \'Quoted\'';
 
         system.debug('==soql.Value__c='+query);
        
@@ -74,7 +74,7 @@ global class BatchApexAutocreateProjects implements Database.Batchable<sObject> 
                         projectName += mapIdVsPPT.get(p.id).Account__r.Name;
                     }
 				}
-				projectName +=datetime.now().format('YYMM');
+				projectName += ' - ' + datetime.now().format('YYMM');
 				if(mapIdVsPPT.get(p.id).MWp_Quantity__c != null){
 					projectName += ' - ' + mapIdVsPPT.get(p.id).MWp_Quantity__c.setScale(2);
 				}
@@ -85,8 +85,8 @@ global class BatchApexAutocreateProjects implements Database.Batchable<sObject> 
 						projectName += ' - ' + mapIdVsPPT.get(p.id).Product__r.Services_Short_Name__c;
 					}
 				}
-				if(!string.isBlank(mapIdVsPPT.get(p.id).Plant__r.Name)){
-					projectName += ' - ' + mapIdVsPPT.get(p.id).Plant__r.Name;
+				if(!string.isBlank(mapIdVsPPT.get(p.id).Plant_Name__c)){
+					projectName += ' - ' + mapIdVsPPT.get(p.id).Plant_Name__c;
 				}
                 toClone.Id = p.Id;
                 system.debug('----toClone--'+toClone);
