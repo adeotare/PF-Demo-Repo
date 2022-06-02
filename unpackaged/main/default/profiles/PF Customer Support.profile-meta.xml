@@ -377,6 +377,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account_Plant__c.Asset_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account_Plant__c.Assigned_Customer_Contact__c</field>
         <readable>true</readable>
@@ -509,6 +514,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account_Plant__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Plant__c.System_Modstamp__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6218,6 +6228,10 @@
         <enabled>true</enabled>
         <name>ViewTrustMeasures</name>
     </userPermissions>
+    <classAccesses>
+        <apexClass>PlantProductController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <classAccesses>
         <apexClass>ProgramController</apexClass>
         <enabled>true</enabled>

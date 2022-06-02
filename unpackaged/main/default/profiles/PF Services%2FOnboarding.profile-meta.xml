@@ -377,6 +377,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account_Plant__c.Asset_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account_Plant__c.Assigned_Customer_Contact__c</field>
         <readable>true</readable>
@@ -524,6 +529,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account_Plant__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Plant__c.System_Modstamp__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6293,7 +6303,7 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>false</allowCreate>
+        <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
@@ -7060,6 +7070,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>PlantAssetABTreeViewHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PlantProductController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
