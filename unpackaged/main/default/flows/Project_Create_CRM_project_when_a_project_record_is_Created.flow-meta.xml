@@ -30,13 +30,6 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varCRMRecord.Project_Name__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Name</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>varCRMRecord.Completion__c</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -407,6 +400,20 @@
                 <elementReference>$Record.Account_Plant__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Name</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Methodology__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.project_cloud__Methodology__c</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Assign_CRM_Records_to_Collection</targetReference>
         </connector>
@@ -502,6 +509,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Methodology__c</field>
+            <value>
+                <elementReference>$Record.project_cloud__Methodology__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Name</field>
             <value>
                 <elementReference>$Record.Name</elementReference>
@@ -511,12 +524,6 @@
             <field>Program_Name__c</field>
             <value>
                 <elementReference>$Record.Program_Name__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Project_Health__c</field>
-            <value>
-                <elementReference>$Record.Project_Health__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
