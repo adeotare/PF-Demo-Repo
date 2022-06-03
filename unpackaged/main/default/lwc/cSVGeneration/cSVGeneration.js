@@ -80,7 +80,7 @@ export default class CSVGenerationController extends LightningElement {
                 }
 
                 let plantId = siteMetadata[0].Account_Plant__r.Customer_Plant_Asset_ID__c;
-                let plantName = siteMetadata[0].Account_Plant__r.Plant_Name__c;
+                let plantName = siteMetadata[0].Account_Plant__r.Customer_Plant_Name__c;
                 var today = new Date();
                 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
                 var time = today.getHours() + ":" + today.getMinutes();
