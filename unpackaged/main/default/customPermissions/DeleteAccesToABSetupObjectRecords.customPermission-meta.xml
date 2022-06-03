@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Access for Deleting Active/Archived Versioned records of following Objects:
+      1. Base Asset Template,  2. Prompt Information, 3. Picklist Master, 4. Picklist Detail, 5. Attribute Master, 6. Core Attributes, 7. Metrics Definition, 8. Evaluation</description>
+    <isLicensed>false</isLicensed>
+    <label>DeleteAccesToABSetupObjectRecords</label>
+</CustomPermission>

@@ -2040,6 +2040,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>project_cloud__Project__c.project_cloud__Methodology__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>project_cloud__Project__c.project_cloud__Type__c</field>
         <readable>true</readable>
     </fieldPermissions>

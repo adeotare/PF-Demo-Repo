@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>AB_GenerateRFICustomPermission</name>
+    </customPermissions>
+    <description>Access to do RFI Generation - Community Plus License</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>AB-GenerateRFIPermissionSet CommunityPlus</label>
+    <license>Customer Community Plus</license>
+</PermissionSet>

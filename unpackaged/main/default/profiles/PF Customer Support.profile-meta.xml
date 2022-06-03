@@ -898,6 +898,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>CRM_Project__c.ARR__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>CRM_Project__c.Account_Plant_relationship_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -998,6 +1003,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>CRM_Project__c.Installation_fee__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>CRM_Project__c.Internal_Priority__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1009,6 +1019,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>CRM_Project__c.Labels__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CRM_Project__c.Methodology__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1459,6 +1474,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.ReportsToId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Source_Campaign__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2524,6 +2544,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Lead.Rating</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Lead.Source_Campaign__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3869,6 +3894,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Plant_Product_Transaction__c.Asset_Class__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Plant_Product_Transaction__c.CRM_Project_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5469,6 +5499,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>project_cloud__Project__c.Sub_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>project_cloud__Project__c.project_cloud__Methodology__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>

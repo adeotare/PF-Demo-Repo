@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>AB_DownloadCSVCustomPermission</name>
+    </customPermissions>
+    <description>Access to Download CSV button for community plus license</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>AB-DownloadCSVPermissionCommunityPlus</label>
+    <license>Customer Community Plus</license>
+</PermissionSet>

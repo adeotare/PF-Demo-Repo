@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>AccessToDeleteAssetBuilderData</name>
+    </customPermissions>
+    <description>Access to delete Asset builder data from quick action in Plant Asset</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Access To Delete AssetBuilder Data</label>
+</PermissionSet>

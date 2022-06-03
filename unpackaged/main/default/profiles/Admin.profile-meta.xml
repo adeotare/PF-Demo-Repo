@@ -1424,6 +1424,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>CRM_Project__c.ARR__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>CRM_Project__c.Account_Plant_relationship_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1570,6 +1575,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>CRM_Project__c.Installation_Commencement_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CRM_Project__c.Installation_fee__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4804,6 +4814,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Plant_Product_Transaction__c.CRM_Project_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Plant_Product_Transaction__c.Classification__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6670,6 +6685,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>project_cloud__Project__c.Sub_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>project_cloud__Project__c.project_cloud__Methodology__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
