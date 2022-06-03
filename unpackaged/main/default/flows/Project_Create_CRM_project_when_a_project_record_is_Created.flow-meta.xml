@@ -177,13 +177,6 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varCRMRecord.Internal_Priority__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Internal_Priority__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>varCRMRecord.Entered_hours__c</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -212,38 +205,10 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varCRMRecord.Estimated_Hours__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.project_cloud__Estimated_Hours__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varCRMRecord.Planned_Value__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Planned_Value__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varCRMRecord.Earned_Value__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Earned_Value__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>varCRMRecord.Cost_Performance_Index__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Record.Cost_Performance_Index__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varCRMRecord.Variance_at_Completion__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Variance_at_Completion__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -254,38 +219,10 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varCRMRecord.Schedule_Variance__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Schedule_Variance__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varCRMRecord.Estimate_at_Completion__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Estimate_at_Completion__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varCRMRecord.Estimate_to_Complete__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Estimate_to_Complete__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>varCRMRecord.To_Complete_Performance_Index__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Record.To_Complete_Performance_Index__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varCRMRecord.Cost_Variance__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Cost_Variance__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -412,6 +349,76 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>$Record.project_cloud__Methodology__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Estimated_Hours__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.project_cloud__Estimated_Hours__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Cost_Variance__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Cost_Variance__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Schedule_Variance__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Schedule_Variance__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Variance_at_Completion__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Variance_at_Completion__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Planned_Value__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Planned_Value__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Earned_Value__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Earned_Value__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Estimate_at_Completion__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Estimate_at_Completion__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.ARR__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.ARR__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Installation_fee__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Installation_Fee__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Internal_Priority__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Internal_Priority__c</elementReference>
             </value>
         </assignmentItems>
         <connector>

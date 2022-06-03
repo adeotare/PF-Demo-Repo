@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>DataDotComAccountInsights</excludeButtons>
-    <excludeButtons>DataDotComClean</excludeButtons>
-    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -338,6 +335,10 @@
         <relatedList>CRM_Project__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>MSA_Contract__c.Account_Name__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>Plant__c</fields>
         <fields>Asset_Class__c</fields>
         <fields>Plant_MWP__c</fields>
@@ -353,6 +354,10 @@
         <fields>CURRENCY_ISO_CODE</fields>
         <fields>Discount_Amount__c</fields>
         <relatedList>MSA_Software_Discount_Tier_Price__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>MSA_Implementation_Bracket_Price__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -404,7 +409,21 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Total_MW_Solar__c</fields>
+        <fields>Total_MW_Other_Renewable__c</fields>
+        <fields>Total_MW_Hydro__c</fields>
+        <fields>Total_MW_Wind__c</fields>
+        <fields>Total_MW_Storage__c</fields>
+        <fields>Total_Agnostic__c</fields>
         <relatedList>Active_Megawatts__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Asset_Class__c</fields>
+        <fields>Shipping_State_Province__c</fields>
+        <fields>MWp__c</fields>
+        <fields>Operational_Status__c</fields>
+        <relatedList>Plant__c.Majority_Offtake__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

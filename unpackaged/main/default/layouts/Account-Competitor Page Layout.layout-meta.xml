@@ -350,12 +350,28 @@
     </relatedLists>
     <relatedLists>
         <fields>Plant__c</fields>
-        <fields>Customer_Plant_Name__c</fields>
-        <fields>Ownership_Percentage__c</fields>
-        <fields>Plant_Megawatt_Capacity__c</fields>
-        <fields>Relationship_Type__c</fields>
         <fields>Asset_Class__c</fields>
+        <fields>Plant_MWP__c</fields>
+        <fields>Plant_MWH__c</fields>
+        <fields>Ownership_Percentage__c</fields>
+        <fields>Relationship_Type__c</fields>
         <relatedList>Account_Plant__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>TERRITORY.NAME</fields>
+        <fields>MODEL.NAME</fields>
+        <fields>MODEL.STATE</fields>
+        <fields>ASSIGNMENT_DATE</fields>
+        <fields>ASSOCIATION_CAUSE</fields>
+        <relatedList>AccountAssignedTerritory2sRelatedList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>FULL_NAME</fields>
+        <fields>CORE.USERS.EMAIL</fields>
+        <fields>ROLE_IN_TERRITORY</fields>
+        <fields>TERRITORY.NAME</fields>
+        <fields>MODEL.NAME</fields>
+        <relatedList>AccountUserTerritory2RelatedList</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -364,6 +380,10 @@
         <fields>CURRENCY_ISO_CODE</fields>
         <fields>Discount_Amount__c</fields>
         <relatedList>MSA_Software_Discount_Tier_Price__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>MSA_Implementation_Bracket_Price__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
@@ -383,6 +403,7 @@
         <relatedList>CRM_Project__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>NAME</fields>
         <fields>SBQQ__Product__c</fields>
         <fields>CURRENCY_ISO_CODE</fields>
         <fields>Product_List_Price__c</fields>
@@ -425,6 +446,24 @@
         <fields>URL__c</fields>
         <fields>Document_Notes__c</fields>
         <relatedList>Document_Link__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Total_MW_Solar__c</fields>
+        <fields>Total_MW_Other_Renewable__c</fields>
+        <fields>Total_MW_Hydro__c</fields>
+        <fields>Total_MW_Wind__c</fields>
+        <fields>Total_MW_Storage__c</fields>
+        <fields>Total_Agnostic__c</fields>
+        <relatedList>Active_Megawatts__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Asset_Class__c</fields>
+        <fields>Shipping_State_Province__c</fields>
+        <fields>MWp__c</fields>
+        <fields>Operational_Status__c</fields>
+        <relatedList>Plant__c.Majority_Offtake__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
