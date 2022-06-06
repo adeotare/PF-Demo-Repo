@@ -40,10 +40,6 @@
     <columns>
         <field>Lead.Lead_Status_Time__c</field>
     </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Lead.Lead_Duration__c</field>
-    </columns>
     <currency>USD</currency>
     <filter>
         <criteriaItems>
