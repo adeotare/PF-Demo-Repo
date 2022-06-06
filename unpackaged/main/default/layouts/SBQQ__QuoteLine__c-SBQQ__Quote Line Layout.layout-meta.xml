@@ -188,7 +188,7 @@
         <label>Subscription Information</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>SBQQ__SubscriptionPricing__c</field>
             </layoutItems>
             <layoutItems>
