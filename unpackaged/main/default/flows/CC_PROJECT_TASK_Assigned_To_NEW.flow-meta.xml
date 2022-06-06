@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <decisions>
+        <name>Check_Allocation_User</name>
+        <label>Check Allocation User</label>
+        <locationX>404</locationX>
+        <locationY>381</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Available</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.project_cloud__Allocation_Summary__r.Owner:User.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Updating_Assigned_User</targetReference>
+            </connector>
+            <label>Is Available</label>
+        </rules>
+    </decisions>
+    <description>REQ-2736.</description>
+    <interviewLabel>CC PROJECT TASK : Assigned To_NEW {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CC Allocation Group : Update Allocated user filed on Project Task</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Updating_Assigned_User</name>
+        <label>Updating Assigned User</label>
+        <locationX>711</locationX>
+        <locationY>377</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.project_cloud__Allocation_Summary__r.project_cloud__Project_Task__r.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Assigned_Users__c</field>
+            <value>
+                <elementReference>$Record.project_cloud__Allocation_Summary__r.Owner:User.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <object>project_cloud__Project_Task__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>282</locationX>
+        <locationY>34</locationY>
+        <connector>
+            <targetReference>Check_Allocation_User</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>project_cloud__Allocation_Summary__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>project_cloud__Allocation_Group__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
