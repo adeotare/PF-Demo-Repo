@@ -182,6 +182,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Product_Family__c</field>
+            <value>
+                <elementReference>$Record.Product_Family__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Product__c</field>
             <value>
                 <elementReference>$Record.Product__r.Name</elementReference>

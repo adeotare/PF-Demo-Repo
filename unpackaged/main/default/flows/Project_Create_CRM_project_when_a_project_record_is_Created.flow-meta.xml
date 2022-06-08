@@ -201,7 +201,7 @@
             <assignToReference>varCRMRecord.Related_Projects__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>$Record.Related_Projects__c</elementReference>
+                <elementReference>$Record.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -421,6 +421,13 @@
                 <elementReference>$Record.Internal_Priority__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Product_Family__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Product_Family__c</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Assign_CRM_Records_to_Collection</targetReference>
         </connector>
@@ -528,6 +535,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Product_Family__c</field>
+            <value>
+                <elementReference>$Record.Product_Family__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Program_Name__c</field>
             <value>
                 <elementReference>$Record.Program_Name__c</elementReference>
@@ -537,6 +550,12 @@
             <field>Project_Type__c</field>
             <value>
                 <elementReference>$Record.project_cloud__Type__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Related_Projects__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
             </value>
         </inputAssignments>
         <object>CRM_Project__c</object>

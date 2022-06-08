@@ -33,12 +33,12 @@
                 <field>Customer_Priority__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Internal_Priority__c</field>
+                <behavior>Readonly</behavior>
+                <field>Product__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Product__c</field>
+                <field>Product_Family__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

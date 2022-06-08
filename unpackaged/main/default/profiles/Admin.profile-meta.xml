@@ -1637,6 +1637,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>CRM_Project__c.Product_Family__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>CRM_Project__c.Program_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6688,6 +6693,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>project_cloud__Project__c.PPT_Reference__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>project_cloud__Project__c.Product_Family__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

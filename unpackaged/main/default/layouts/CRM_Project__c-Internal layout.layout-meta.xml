@@ -43,6 +43,10 @@
                 <behavior>Edit</behavior>
                 <field>Internal_Priority__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Product_Family__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
