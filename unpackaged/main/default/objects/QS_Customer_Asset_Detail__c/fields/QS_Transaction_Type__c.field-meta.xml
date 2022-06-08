@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Transaction_Type__c</fullName>
+    <description>&quot;Indicates the nature of the  transaction when it is first created, based on quantity changes.
+Sale = A positive quantity transaction.
+Reduction = A partial reduction in quantity.
+Decommission = A full reduction in quantity&quot;</description>
+    <externalId>false</externalId>
+    <formula>if( QS_Quantity__c = 0,&#39;Decommission&#39;,
+if( QS_Quantity__c &lt; 0,&#39;Reduction&#39;,
+&#39;Sale&#39;
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>&quot;Indicates the nature of the  transaction when it is first created, based on quantity changes.
+Sale = A positive quantity transaction.
+Reduction = A partial reduction in quantity.
+Decommission = A full reduction in quantity&quot;</inlineHelpText>
+    <label>Transaction Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

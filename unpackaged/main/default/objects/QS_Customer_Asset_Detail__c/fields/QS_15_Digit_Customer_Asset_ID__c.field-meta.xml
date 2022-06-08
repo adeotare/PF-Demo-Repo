@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_15_Digit_Customer_Asset_ID__c</fullName>
+    <description>The Salesforce Id for the Customer Asset this CAT aggregates under.</description>
+    <externalId>false</externalId>
+    <formula>QS_Customer_Asset__r.Id</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The Salesforce Id for the Customer Asset this CAT aggregates under.</inlineHelpText>
+    <label>15 Digit Customer Asset ID</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

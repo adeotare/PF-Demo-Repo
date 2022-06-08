@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Quantity__c</fullName>
+    <description>The total amount of the Product currently owned by this Account.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The total amount of the Product currently owned by this Account.</inlineHelpText>
+    <label>Active Quantity</label>
+    <summarizedField>QS_Customer_Asset_Detail__c.QS_Quantity__c</summarizedField>
+    <summaryFilterItems>
+        <field>QS_Customer_Asset_Detail__c.QS_Currently_Active__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>QS_Customer_Asset_Detail__c.QS_Maintain_Line__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QS_Customer_Asset_Detail__c.QS_Customer_Asset__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

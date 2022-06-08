@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Quantity__c</fullName>
+    <description>The amount of the Product in this CAT from the asset or subscription. Positive quantities originate from a new sale, additions, or renewals. Negative quantities only originate from an amendment. An existing CAT record’s Quantity value never changes.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The amount of the Product in this CAT from the asset or subscription. Positive quantities originate from a new sale, additions, or renewals. Negative quantities only originate from an amendment. An existing CAT record’s Quantity value never changes.</inlineHelpText>
+    <label>Quantity</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

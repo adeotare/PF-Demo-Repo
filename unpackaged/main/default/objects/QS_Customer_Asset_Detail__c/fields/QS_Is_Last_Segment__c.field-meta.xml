@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Is_Last_Segment__c</fullName>
+    <description>True if the Subscription Contract’s End Date is the same as this CAT (therefore the Subscription’s End Date). Relevant for MDQ.</description>
+    <externalId>false</externalId>
+    <formula>QS_Contract__r.EndDate =   QS_End_Date__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>True if the Subscription Contract’s End Date is the same as this CAT (therefore the Subscription’s End Date). Relevant for MDQ.</inlineHelpText>
+    <label>Is Last Segment</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

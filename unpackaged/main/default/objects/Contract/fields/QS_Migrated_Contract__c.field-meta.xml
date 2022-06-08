@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Migrated_Contract__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates that no renewal opportunity will ever be created for this Contract. Used for migrated Contracts with legacy subscription products. Needed to properly update the status of CAT records spawned from the non-renewing Contract upon their End Date.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This formula is set based on a Contract field that indicates there will never be a renewal opportunity on the Contract. When true, the active CATs where the end date has passed will not update to Pending Renewal; instead they will go to Expired.</inlineHelpText>
+    <label>Will not renew</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Annual_Recurring_Revenue__c</fullName>
+    <description>Roll-up field which sums the annual recurring revenue for all CATs where today’s date is between the CATs Start Date and End Date. Currency amounts are converted to the default currency of the User and then rolled up onto the Asset.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Roll-up field which sums the annual recurring revenue for all CATs where today’s date is between the CATs Start Date and End Date. Currency amounts are converted to the default currency of the User and then rolled up onto the Asset.</inlineHelpText>
+    <label>Active Annual Recurring Revenue</label>
+    <summarizedField>QS_Customer_Asset_Detail__c.QS_Annual_Recurring_Revenue__c</summarizedField>
+    <summaryFilterItems>
+        <field>QS_Customer_Asset_Detail__c.QS_Currently_Active__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QS_Customer_Asset_Detail__c.QS_Customer_Asset__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

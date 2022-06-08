@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Previous_Contract__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Reference to the Contract from which the lost renewal opportunity was generated. CAT records are generated for lost renewals. This is blank unless a renewal is lost that contains the source Subscription for this CAT.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Reference to the Contract from which the lost renewal opportunity was generated. CAT records are generated for lost renewals. This is blank unless a renewal is lost that contains the source Subscription for this CAT.</inlineHelpText>
+    <label>Terminated Contract</label>
+    <referenceTo>Contract</referenceTo>
+    <relationshipName>Customer_Asset_Transactions</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Subscription__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Reference to the Subscription record that is the originating source for this CAT.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Reference to the Subscription record that is the originating source for this CAT.</inlineHelpText>
+    <label>Subscription</label>
+    <referenceTo>SBQQ__Subscription__c</referenceTo>
+    <relationshipName>QS_Customer_Asset_Details</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

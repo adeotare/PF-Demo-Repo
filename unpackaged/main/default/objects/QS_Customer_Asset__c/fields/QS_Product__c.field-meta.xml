@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Product__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The product this customer asset represents. Customer asset records are created when the product field Generate Customer Asset = true.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The product this customer asset represents. Customer asset records are created when the product field Generate Customer Asset = true.</inlineHelpText>
+    <label>Product</label>
+    <referenceTo>Product2</referenceTo>
+    <relationshipName>QS_Customer_Assets</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

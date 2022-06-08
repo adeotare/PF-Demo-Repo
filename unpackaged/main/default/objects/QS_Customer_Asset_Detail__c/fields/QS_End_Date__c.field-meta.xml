@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_End_Date__c</fullName>
+    <description>The End Date of the source Subscription. This is blank when the CAP source is an Asset (non-recurring product).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The End Date of the source Subscription. This is blank when the CAP source is an Asset (non-recurring product).</inlineHelpText>
+    <label>End Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

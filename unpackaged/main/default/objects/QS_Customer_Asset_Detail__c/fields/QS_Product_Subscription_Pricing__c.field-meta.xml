@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Product_Subscription_Pricing__c</fullName>
+    <description>Formula = TEXT(QS_Product__r.SBQQ__SubscriptionPricing__c). If this field is populated, the system treats the product as recurring. If blank, the system treats the product as an asset (non-recurring product).</description>
+    <externalId>false</externalId>
+    <formula>TEXT(QS_Product__r.SBQQ__SubscriptionPricing__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Formula = TEXT(QS_Product__r.SBQQ__SubscriptionPricing__c). If this field is populated, the system treats the product as recurring. If blank, the system treats the product as an asset (non-recurring product).</inlineHelpText>
+    <label>Product Subscription Pricing</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

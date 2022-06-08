@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_ARR_Growth__c</fullName>
+    <description>For amendments/renewals, the difference between the Initial ARR value (from the source Quote Line) and this line’s own ARR. The basis for a new or separate sale is $0 b/c there is no “source” Quote Line. Can be a negative number (reduction/cancellation).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For amendments/renewals, the difference between the Initial ARR value (from the source Quote Line) and this line’s own ARR. The basis for a new or separate sale is $0 b/c there is no “source” Quote Line. Can be a negative number (reduction/cancellation).</inlineHelpText>
+    <label>ARR Growth</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

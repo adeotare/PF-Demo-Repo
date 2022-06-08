@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Effective_Decommision_Date__c</fullName>
+    <description>Represents the date the customer cancels the product completely. Populated from the Terminated date on the Subscription (the start date of the last decommission executed (the CAT that results in the complete decommission).</description>
+    <externalId>false</externalId>
+    <label>Effective Decommission Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

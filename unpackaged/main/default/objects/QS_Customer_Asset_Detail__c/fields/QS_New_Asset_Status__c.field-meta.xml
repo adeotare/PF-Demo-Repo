@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_New_Asset_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+			QS_Quantity__c &gt; 0 &amp;&amp; QS_Start_Date__c&gt; QS_Customer_Asset__r.QS_Dynamic_Current_Date__c, &#39;Pending Activation&#39;,
+			IF(
+			QS_Quantity__c &gt; 0 &amp;&amp;
+			QS_Start_Date__c &lt;= QS_Customer_Asset__r.QS_Dynamic_Current_Date__c
+			&amp;&amp; (QS_End_Date__c &gt;= QS_Customer_Asset__r.QS_Dynamic_Current_Date__c||
+			ISBLANK(QS_End_Date__c))
+			, &#39;Active&#39;,
+
+
+
+			IF(
+			(QS_Customer_Asset__r.QS_Dynamic_Current_Date__c  &lt; QS_Terminated_Date__c +1) ||
+			(QS_Quantity__c = 0 &amp;&amp; QS_Customer_Asset__r.QS_Dynamic_Current_Date__c &lt; QS_Start_Date__c)
+
+			, &#39;Pending Decommission&#39;,
+			IF(
+			(QS_Customer_Asset__r.QS_Dynamic_Current_Date__c &gt;= QS_Terminated_Date__c +1) ||
+			(QS_Quantity__c = 0 &amp;&amp; QS_Customer_Asset__r.QS_Dynamic_Current_Date__c &gt;= QS_Start_Date__c),
+			&#39;Decommissioned&#39;,
+			IF(
+			QS_Quantity__c &lt; 0 &amp;&amp; QS_Start_Date__c&gt; QS_Customer_Asset__r.QS_Dynamic_Current_Date__c, &#39;Pending Reduction&#39;,
+			IF(
+			QS_Quantity__c &lt; 0 &amp;&amp; QS_Start_Date__c &lt;= QS_Customer_Asset__r.QS_Dynamic_Current_Date__c, &#39;Reduced&#39;,
+			IF(
+			QS_End_Date__c &lt; QS_Customer_Asset__r.QS_Dynamic_Current_Date__c &amp;&amp; ISBLANK(QS_Renewed_Date__c) &amp;&amp; !QS_Is_Renewal_Closed__c &amp;&amp; !QS_Migrated_No_Renewal__c &amp;&amp; QS_Is_Last_Segment__c, &#39;Pending Renewal&#39;,
+
+			IF(
+			QS_End_Date__c &lt; QS_Customer_Asset__r.QS_Dynamic_Current_Date__c &amp;&amp;
+			(
+			(ISBLANK(QS_Renewed_Date__c) &amp;&amp; QS_Migrated_No_Renewal__c) ||
+			(QS_Is_Renewal_Closed__c &amp;&amp; QS_Is_Last_Segment__c)
+			), &#39;Expired&#39;,
+			IF(QS_End_Date__c &lt; QS_Customer_Asset__r.QS_Dynamic_Current_Date__c &amp;&amp; NOT(QS_Is_Last_Segment__c),&#39;Expired&#39;,
+			&#39;Invalid Status&#39;
+			)))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Asset Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

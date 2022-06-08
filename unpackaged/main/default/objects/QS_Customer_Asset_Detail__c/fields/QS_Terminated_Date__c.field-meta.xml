@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Terminated_Date__c</fullName>
+    <description>Populated when the source Subscription is cancelled or not renewed. CPQ terminated date indicates that a product has been fully decommissioned. The terminated date will always be the day before the renewal subscription&#39;s Start Date (by CPQ design).</description>
+    <externalId>false</externalId>
+    <formula>QS_Subscription__r.SBQQ__TerminatedDate__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Populated when the source Subscription is cancelled or not renewed. CPQ terminated date indicates that a product has been fully decommissioned. The terminated date will always be the day before the renewal subscription&#39;s Start Date (by CPQ design).</inlineHelpText>
+    <label>Terminated Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

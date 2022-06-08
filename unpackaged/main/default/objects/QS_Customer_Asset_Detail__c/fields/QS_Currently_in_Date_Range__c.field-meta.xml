@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Currently_in_Date_Range__c</fullName>
+    <description>True if the Dynamic Current Date is between the Start and End Dates, or if End Date is blank or if the Asset Status equals Pending Renewal.</description>
+    <externalId>false</externalId>
+    <formula>OR(
+			AND
+			(QS_Customer_Asset__r.QS_Dynamic_Current_Date__c &gt;= QS_Start_Date__c ,QS_Customer_Asset__r.QS_Dynamic_Current_Date__c &lt;=  QS_End_Date__c),
+			ISNULL(QS_End_Date__c ),
+			QS_New_Asset_Status__c = &#39;Pending Renewal&#39;
+			)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>True if the Dynamic Current Date is between the Start and End Dates, or if End Date is blank or if the Asset Status equals Pending Renewal.</inlineHelpText>
+    <label>Currently Active - Dynamic</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
