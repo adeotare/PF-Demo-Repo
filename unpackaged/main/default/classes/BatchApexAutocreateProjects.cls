@@ -1,7 +1,7 @@
 global class BatchApexAutocreateProjects implements Database.Batchable<sObject> {
     global Database.QueryLocator start(Database.BatchableContext BC) {
         // collect the batches of records or objects to be passed to execute
-        String query = 'select id,Account__c,Account__r.Name, Plant__c,Plant__r.Name,Product__r.Name,Product__r.ProductCode,Product__r.Services_Short_Name__c, Installation_Commencement_Date__c, Product_Category__c, Project_Creation_Status__c,MWp_Quantity__c,Net_Total_Price__c,Status__c,Plant_Name__c from Plant_Product_Transaction__c where Project_Creation_Status__c !=\'Completed\' AND Status__c != \'Quoted\'';
+        String query = 'select id,Account__c,Account__r.Name, Plant__c,Plant__r.Name,Product__r.Name,Product__r.ProductCode,Product__r.Services_Short_Name__c, Installation_Commencement_Date__c, Product_Category__c, Project_Creation_Status__c,MWp_Quantity__c,Net_Total_Price__c,Status__c,Plant_Name__c,Product_Family__c from Plant_Product_Transaction__c where Project_Creation_Status__c !=\'Completed\' AND Status__c != \'Quoted\'';
 
         system.debug('==soql.Value__c='+query);
        
@@ -96,6 +96,7 @@ global class BatchApexAutocreateProjects implements Database.Batchable<sObject> 
                 toClone.Installation_Commencement_Date__c = mapIdVsPPT.get(p.id).Installation_Commencement_Date__c;
                 if(mapIdVsPPT.get(p.id).Product_Category__c == 'Software'){
                     toClone.Product__c = mapIdVsPPT.get(p.id).Product__r.Name;
+                    toClone.Product_Family__c = mapIdVsPPT.get(p.id).Product_Family__c;
                     toClone.ARR__c = mapIdVsPPT.get(p.id).Net_Total_Price__c;
                 }
                 if(mapIdVsPPT.get(p.id).Product_Category__c == 'Professional Services'){
