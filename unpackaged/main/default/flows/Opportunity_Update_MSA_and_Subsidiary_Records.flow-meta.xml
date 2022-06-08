@@ -26,6 +26,13 @@
                 <elementReference>Get_MSA_from_Account.Uses_MSA_of__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Pricebook2Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_MSA_from_Account.Account_Price_Book__c</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Get_Subsidiary_from_MSA_Contracts</targetReference>
         </connector>
