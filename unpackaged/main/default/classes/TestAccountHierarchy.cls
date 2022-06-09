@@ -21,7 +21,29 @@ private class TestAccountHierarchy {
 		testChildAccount.RecordTypeId = customerRecordTypeId;
 		update testChildAccount;
 		//System.assertEquals(testChildAccount.Account_in_Hierarchy_is_Customer__c,false);
+		//system.assert(testChildAccount.size()>0);
 		Test.StopTest();
-		
+        system.assertNotEquals(null, testChildAccount);
     }
+     @isTest static void testUpdateCustomerType() {
+		Test.StartTest();
+         Id prospectRecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName().get('Prospect').getRecordTypeId();
+		Id customerRecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName().get('Customer').getRecordTypeId();
+		
+		Account testParentAccount = new Account();
+		testParentAccount.Name='Test Parent Account';
+		testParentAccount.RecordTypeId = customerRecordTypeId;
+		insert testParentAccount;
+		
+		Account testChildAccount = new Account();
+		testChildAccount.Name='Test Child Account';
+		testChildAccount.RecordTypeId = prospectRecordTypeId;
+		testChildAccount.ParentId = testParentAccount.id;
+        testChildAccount.Account_in_Hierarchy_is_Customer__c = false;
+		insert testChildAccount;
+        UpdateCustomerAccountHierarchy.updateCustomerTypeInAccountHiereachy(new List<Id>{testParentAccount.id});
+  		
+        Test.StopTest();
+        system.assertNotEquals(null, testChildAccount);
+     }
 }
