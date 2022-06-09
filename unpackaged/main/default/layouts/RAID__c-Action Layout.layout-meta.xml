@@ -54,7 +54,7 @@
                 <field>Cloud_Coach_Project__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>CRM_Project__c</field>
             </layoutItems>
         </layoutColumns>

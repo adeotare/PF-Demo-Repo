@@ -78,6 +78,10 @@
                 <behavior>Edit</behavior>
                 <field>project_cloud__Methodology__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>project_cloud__IsTemplate__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>

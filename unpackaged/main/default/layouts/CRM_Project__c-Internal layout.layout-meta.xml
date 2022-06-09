@@ -469,6 +469,7 @@
         <relatedList>RelatedEntityHistoryList</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>Priority__c</fields>
         <fields>Status__c</fields>
