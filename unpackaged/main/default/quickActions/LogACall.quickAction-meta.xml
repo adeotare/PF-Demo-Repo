@@ -53,5 +53,6 @@
     </quickActionLayout>
     <standardLabel>LogACall</standardLabel>
     <targetObject>Task</targetObject>
+    <targetRecordType>Task.Collaboration_Request_Task</targetRecordType>
     <type>LogACall</type>
 </QuickAction>
