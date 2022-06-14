@@ -3018,6 +3018,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>MSA_Contract__c.SubmittedDate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MSA_Contract__c.SubmittedUser__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>MSA_Contract__c.Subsidiary__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3039,6 +3049,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>MSA_Contract__c.Warranty__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MSA_Implementation_Bracket_Price__c.Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MSA_Implementation_Bracket_Price__c.MSA_Contract__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3109,6 +3129,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>MSA_Software_Discount_Tier_Price__c.Lower_Bound__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MSA_Software_Discount_Tier_Price__c.MSA_Contract__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5893,6 +5918,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>SBQQ__ContractedPrice__c.MSA_Contract__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>SBQQ__ContractedPrice__c.Product_List_Price__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6234,6 +6264,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>project_cloud__Project__c.project_cloud__Methodology__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>sbaa__Approval__c.MSA_Contract__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
@@ -7268,6 +7303,10 @@
         <enabled>true</enabled>
         <name>ViewTrustMeasures</name>
     </userPermissions>
+    <classAccesses>
+        <apexClass>AccountForMSAContractedPrices</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <classAccesses>
         <apexClass>AddPPTControllerV2</apexClass>
         <enabled>true</enabled>

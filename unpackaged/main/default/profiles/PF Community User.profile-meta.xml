@@ -1093,6 +1093,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>MSA_Contract__c.SubmittedDate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MSA_Contract__c.SubmittedUser__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Metric_Definition__c.Attribute__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2136,6 +2146,11 @@
         <field>project_cloud__Project__c.project_cloud__Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>sbaa__Approval__c.MSA_Contract__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
@@ -2578,6 +2593,10 @@
         <tab>standard-WorkOrder</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
+    <classAccesses>
+        <apexClass>AccountForMSAContractedPrices</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <classAccesses>
         <apexClass>AddPPTControllerV2</apexClass>
         <enabled>true</enabled>

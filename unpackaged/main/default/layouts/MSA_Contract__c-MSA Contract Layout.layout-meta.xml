@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customButtons>Submit_for_Approval</customButtons>
+    <customButtons>Preview_Approval</customButtons>
+    <customButtons>Recall_Approval</customButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -38,10 +41,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>MSA_End_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Approval_Status__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -142,6 +141,18 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>PO_Required__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SubmittedDate__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SubmittedUser__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>MSA_Status__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -348,6 +359,21 @@
             <sortOrder>13</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
+            <actionName>Preview_Approval</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>15</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Recall_Approval</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>16</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Submit_for_Approval</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>14</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>ChangeOwnerOne</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>7</sortOrder>
@@ -433,6 +459,22 @@
         <fields>URL__c</fields>
         <fields>Document_Notes__c</fields>
         <relatedList>Document_Link__c.MSA_Contract__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>sbaa__Approval__c.MSA_Contract__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>SBQQ__ContractedPrice__c.MSA_Contract__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>MSA_Implementation_Bracket_Price__c.MSA_Contract__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>MSA_Software_Discount_Tier_Price__c.MSA_Contract__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

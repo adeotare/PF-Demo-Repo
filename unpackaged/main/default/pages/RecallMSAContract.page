@@ -1,0 +1,3 @@
+<apex:page standardController="MSA_Contract__c" extensions="MSA_ContractExtController" action="{!onRecall}">
+<apex:pageMessages />
+</apex:page>

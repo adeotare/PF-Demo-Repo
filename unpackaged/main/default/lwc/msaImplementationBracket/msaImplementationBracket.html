@@ -1,0 +1,35 @@
+<template>
+    <lightning-card>
+      <div class="slds-align_absolute-center slds-text-heading_medium" style="height:5rem">Create MSA Implementation Bracket Price</div>
+      <lightning-layout horizontal-align="space">
+        <lightning-layout-item padding="around-small">
+          <div class="header-column">
+            <p><b>Account :</b> {accountName} </p>
+          </div>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+          <div class="header-column">
+            <p><b>Currency :</b> {currency} </p>
+          </div>
+        </lightning-layout-item>
+      </lightning-layout>
+      <div class="slds-p-around_x-medium" style="height:400px;">
+        <lightning-datatable min-column-width="100" max-column-width="200" data={implementationPriceListdata}
+          columns={cols} key-field="Id" onrowselection={handleSelectContractedPrice}>
+        </lightning-datatable>
+      </div>
+      <div slot="footer">
+        <div class="slds-float_right slds-m-top_small slds-m-bottom_small">
+          <lightning-button variant="brand" label="Close" onclick={closeQuickAction} class="slds-m-right_x-medium">
+          </lightning-button>
+        </div>
+        <div class="slds-float_left slds-m-top_small slds-m-bottom_small">
+          <lightning-button variant="brand" label="Add" onclick={openModal} class="slds-m-left_x-medium">
+          </lightning-button>
+          <lightning-button class="slds-m-left_x-small" variant="brand" label="Delete" onclick={deleteRecord}
+            disabled={deleteButtontrue}>
+          </lightning-button>
+        </div>
+      </div>
+    </lightning-card>
+  </template>
