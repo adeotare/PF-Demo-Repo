@@ -1273,6 +1273,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Order.Bill_To_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Order.BillingAddress</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1554,6 +1559,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Plant_Asset_Prompt_Detail__c.Validate_On_Previous__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Plant_Product_Transaction__c.Bill_To_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Plant_Product_Transaction__c.Bill_To_Contact__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

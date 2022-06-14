@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MSA_Implementation</fullName>
+    <fields>Name</fields>
+    <fields>Account__c</fields>
+    <fields>Product__c</fields>
+    <fields>Pricing_Tier__c</fields>
+    <fields>Lower_Bound__c</fields>
+    <fields>Upper_Bound__c</fields>
+    <fields>Fixed_Price__c</fields>
+    <fields>CurrencyIsoCode</fields>
+    <fields>Asset_Class__c</fields>
+    <label>MSA Implementation</label>
+</CompactLayout>

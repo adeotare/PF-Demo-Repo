@@ -403,6 +403,14 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <relatedList>QS_Customer_Asset__c.QS_Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>QS_Customer_Asset_Detail__c.QS_Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
         <fields>MSA_Title__c</fields>
         <fields>MSA_Start_Date__c</fields>
         <fields>MSA_Term_years__c</fields>
@@ -411,19 +419,27 @@
         <fields>Annual_Uplift_Percentage__c</fields>
         <fields>Annual_Uplift_Based_on_CPI__c</fields>
         <fields>Auto_renewal__c</fields>
-        <fields>Approval_Status__c</fields>
+        <fields>ApprovalStatus__c</fields>
         <relatedList>MSA_Contract__c.Account_Name__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
         <fields>Product__c</fields>
         <fields>Pricing_Tier__c</fields>
-        <fields>CURRENCY_ISO_CODE</fields>
+        <fields>Lower_Bound__c</fields>
+        <fields>Upper_Bound__c</fields>
         <fields>Discount_Amount__c</fields>
+        <fields>Asset_Class__c</fields>
         <relatedList>MSA_Software_Discount_Tier_Price__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Product__c</fields>
+        <fields>Pricing_Tier__c</fields>
+        <fields>Lower_Bound__c</fields>
+        <fields>Upper_Bound__c</fields>
+        <fields>Fixed_Price__c</fields>
+        <fields>Asset_Class__c</fields>
         <relatedList>MSA_Implementation_Bracket_Price__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -568,10 +584,11 @@
         <relatedList>AccountUserTerritory2RelatedList</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
+    <runAssignmentRulesDefault>true</runAssignmentRulesDefault>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
-    <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
+    <showRunAssignmentRulesCheckbox>true</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
         <masterLabel>00h7j000000ZTER</masterLabel>

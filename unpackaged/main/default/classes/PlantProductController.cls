@@ -4,6 +4,29 @@ Apex class to Add/delete Plants to a Product on the Quote Line and create/delete
 
 1. Update Quantity and Update Pricing methods has been kept separate on purpose
 
+Methods:
+// Add Plants, Delete Plants, Fetch current Plants on the Quote line, Fetch Plants to add from the Account-Plant object
+public static List<Plant_Product_Transaction__c> fetchPlantProductList(String qLineItemId)
+public static void deletePlantProduct(List<Plant_Product_Transaction__c> pptList, String quoteLineId)
+public static List<Plant_Product_Transaction__c> addPlantProductList(List<Account_Plant__c> plantList, String quoteLineId)
+public static List<Account_Plant__c> fetchAccountPlant(String qLineItemId)
+
+//Calculate and update Quantity
+public static void updateQuantityOnQuoteLineItem(String quoteLineId)
+
+//Pricing
+public static void updatePricingForQuoteLineInPPT(String quoteLineId)
+public static void doDiscountTierBasedPriceCalculationforSW (String quoteLineId, Decimal contractPricePerMSA, List <MSA_Software_Discount_Tier_Price__c> swDiscountTiersList)
+public static void doImplBracketTierBasedPriceCalculationforImpl (String quoteLineId, Decimal contractPricePerMSA, List <MSA_Implementation_Bracket_Price__c> ImplBracketPriceTiersList)
+public static void updatePricingfromPPTToQuoteline (SBQQ__QuoteLine__c quoteLine1, String quoteLineId)
+
+// When no SW discount tiers or Implementation brackets are applicable to the Account+Product
+public static void UpdateAllPlantRecordsWithSamePrice(String qLineItemId, Decimal contractPricePerMSA)
+
+// TO-DO: Update Pricing on PPT when Additional discount is Applied or Quantity is Updated
+public static void updatePPTWithAdditionalDiscountFromQuoteLine(String qLineItemId, Decimal additionalDiscountPercent)
+public static void updatePPTWithQuantityFromQuoteLine(String qLineItemId, Integer quantityEnteredManuallyOnQuoteline )
+
 */
 
 public with sharing class PlantProductController {
@@ -72,7 +95,8 @@ public with sharing class PlantProductController {
             return null;  // If number of plants to be added is zero, then return
 
         List<Plant_Product_Transaction__c> pList = new List<Plant_Product_Transaction__c>();
-        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__SpecialPrice__c, SBQQ__EndDate__c, SBQQ__Quote__c, SBQQ__Quote__r.CurrencyIsoCode, SBQQ__Quote__r.SBQQ__StartDate__c, SBQQ__Quote__r.SBQQ__EndDate__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__Product__r.ID, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__SpecialPrice__c, SBQQ__EndDate__c, SBQQ__Quote__c, SBQQ__Quote__r.CurrencyIsoCode, SBQQ__Quote__r.SBQQ__StartDate__c, SBQQ__Quote__r.SBQQ__EndDate__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+         
         for(Account_Plant__c ap: plantList){
             // For every new plant that is added, create a record in the PPT table and populate it's fields
             
@@ -116,7 +140,15 @@ public with sharing class PlantProductController {
             }
 
             // This is where we store the original Contracted Price value
-            ppt.Contracted_MW_Unit_List_Price__c = quoteLine.SBQQ__SpecialPrice__c;
+            // ppt.Contracted_MW_Unit_List_Price__c = quoteLine.SBQQ__SpecialPrice__c;
+            List <SBQQ__ContractedPrice__c> cPriceList = [Select SBQQ__Price__c, Name from SBQQ__ContractedPrice__c where SBQQ__Product__r.ID =:quoteLine.SBQQ__Product__r.ID AND SBQQ__Account__r.ID =:quoteLine.SBQQ__Quote__r.SBQQ__Account__r.ID AND CurrencyIsoCode =:quoteLine.SBQQ__Quote__r.CurrencyIsoCode WITH SECURITY_ENFORCED LIMIT 1];
+        
+            System.debug ('While setting the Contracted Price on the PPTLine - found it '+cPriceList.size());
+            If (cPriceList.size() == 1) 
+                ppt.Contracted_MW_Unit_List_Price__c = cPriceList[0].SBQQ__Price__c;
+            else 
+                ppt.Contracted_MW_Unit_List_Price__c = quoteLine.SBQQ__ListPrice__c;
+
             pList.add(ppt);
         }
         if(pList.size()>0){
@@ -150,7 +182,7 @@ public with sharing class PlantProductController {
     public static void updateQuantityOnQuoteLineItem(String quoteLineId){
         Decimal sumOfMWH = 0;
         Decimal sumOfMWp = 0;
-        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED Limit 1 FOR UPDATE];
         // List<Plant_Product_Transaction__c> ppt =[SELECT Plant__r.Plant__c from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId];
         List<Plant_Product_Transaction__c> ppt =[SELECT Plant__r.Plant__r.MWp__c from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId WITH SECURITY_ENFORCED];
         System.debug('Total records from PPT whose quantity we are calculating is '+ppt.size());
@@ -253,7 +285,8 @@ public with sharing class PlantProductController {
          List <SBQQ__ContractedPrice__c> cPriceList = [Select SBQQ__Price__c, Name from SBQQ__ContractedPrice__c where SBQQ__Product__r.ID =:quoteLine1.SBQQ__Product__r.ID AND SBQQ__Account__r.ID =:quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.ID AND CurrencyIsoCode =:quoteLine1.CurrencyIsoCode WITH SECURITY_ENFORCED LIMIT 1];
         Decimal contractPricePerMSA = 0;
         
-        If (cPriceList.size() > 0) 
+        System.debug ('While setting the Contracted Price on the PPTLine - found it '+cPriceList.size());
+        If (cPriceList.size() == 1) 
             contractPricePerMSA = cPriceList[0].SBQQ__Price__c;
         else 
             contractPricePerMSA = quoteLine1.SBQQ__ListPrice__c;
@@ -283,11 +316,11 @@ public with sharing class PlantProductController {
             System.debug ('Checking if the Product has Implementation Services bracket pricing');
             // The Product is a Professional Services Product. check if there are any Implementation tier brackets for it
             // check if there are any Implementation brackets for this Implementation service
-            List <MSA_Implementation_Bracket_Price__c> ImplBracketPriceTiersList =  [SELECT ID 
+            List <MSA_Implementation_Bracket_Price__c> ImplBracketPriceTiersList =  [SELECT ID, Fixed_Price__c, Lower_Bound__c, Upper_Bound__c 
             from MSA_Implementation_Bracket_Price__c 
             where (Product__r.ID = :quoteLine1.SBQQ__Product__r.ID)  
             AND (Account__r.ID = :quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.ID)
-            WITH SECURITY_ENFORCED];
+            WITH SECURITY_ENFORCED];    
             if (ImplBracketPriceTiersList!=null && !ImplBracketPriceTiersList.IsEmpty()) {
                 // Found atleast 1 Implementation braket tier for the Product on the quote line for a given account
                 doImplBracketTierBasedPriceCalculationforImpl (quoteLineId, contractPricePerMSA, ImplBracketPriceTiersList);
@@ -426,6 +459,76 @@ public with sharing class PlantProductController {
     public static void doImplBracketTierBasedPriceCalculationforImpl (String quoteLineId, Decimal contractPricePerMSA, List <MSA_Implementation_Bracket_Price__c> ImplBracketPriceTiersList){
         System.debug('Entered function doImplBracketTierBasedPriceCalculationforImpl');
 
+
+        if (ImplBracketPriceTiersList!=null && !ImplBracketPriceTiersList.IsEmpty()) {
+                System.debug('Found atleast 1 Implementation bracket for the Product on the quote line for a given account');
+                
+                List<Plant_Product_Transaction__c> pptList =[SELECT MWp_Quantity__c, Plant__r.Plant__r.MWp__c, Plant__r.Plant__r.Name, Account__c, Addl_Discount_Percent__c, Contracted_MW_Unit_List_Price__c, List_Unit_Price__c, Net_Unit_Price__c, Unit_Price_After_Volume_Discount__c, Discount_Tier__c  
+                    from Plant_Product_Transaction__c 
+                    where Quote_Line__c =: quoteLineId WITH SECURITY_ENFORCED];
+                System.debug('Total records from PPT whose Implementation prices we are calculating is '+pptList.size());
+                Integer noOfTiers = ImplBracketPriceTiersList.size();     // total number of Implementation brackets
+                Decimal CurrentMWForPricing = 0;
+                for (Plant_Product_Transaction__c eachPPT:pptList) {
+                    Integer currentTier = 0;
+                    CurrentMWForPricing = eachPPT.Plant__r.Plant__r.MWp__c;
+                    System.debug('Current MW for Implementation Bracket Pricing calculation is '+CurrentMWForPricing);
+                    // If MW is not available on the Plant, then take the MW that may have been entered manually on the PPT line
+                    if (CurrentMWForPricing == null) {
+                        System.debug('No MW on Plant record');
+                        CurrentMWForPricing = eachPPT.MWp_Quantity__c;
+                        System.debug('Manually entered MW on PPT record for Implementation Bracket Pricing calculation is '+CurrentMWForPricing);
+                    }
+                    // If no MW is manually entered on the PPT Line, the put the Plant in the first tier
+                    if (CurrentMWForPricing == null){
+                        System.debug('No manually entered MW was found on the PPT record or no MW value was found on the Plant');
+                        System.debug('So we put this Plant in Tier 1 '+eachPPT.Plant__r.Plant__r.Name);
+                        eachPPT.Discount_Tier__c = currentTier+1;
+                        eachPPT.Unit_Price_After_Volume_Discount__c = ImplBracketPriceTiersList[currentTier].Fixed_Price__c;
+                        System.debug('The Unit_Price_After_Volume_Discount__c - '+eachPPT.Unit_Price_After_Volume_Discount__c);
+                        update eachPPT;
+                        currentTier = noOfTiers; // set to this value so as to break out of the while loop
+
+                    }
+                    while (currentTier < noOfTiers) {
+                        System.debug('Checking Tier number - '+currentTier);
+                        if (currentTier == (noOfTiers -1)) {  // this is the final tier, then do not check the limits
+                            System.debug('This plant falls in final Tier number - '+currentTier);
+                            System.debug('This plant name is - '+eachPPT.Plant__r.Plant__r.Name);
+                            eachPPT.Discount_Tier__c = currentTier+1;
+                            eachPPT.Unit_Price_After_Volume_Discount__c = ImplBracketPriceTiersList[currentTier].Fixed_Price__c;
+                            System.debug('The Unit_Price_After_Volume_Discount__c - '+eachPPT.Unit_Price_After_Volume_Discount__c);
+                            update eachPPT;
+                            currentTier = noOfTiers; // set to this value so as to break out of the while loop
+                        }
+                        else {
+                            If ((CurrentMWForPricing >= ImplBracketPriceTiersList[currentTier].Lower_Bound__c) && (CurrentMWForPricing<= ImplBracketPriceTiersList[currentTier].Upper_Bound__c)) {
+                            
+                            System.debug('This plant falls in Implementation Tier number - '+currentTier);
+                            System.debug('This plant name is - '+eachPPT.Plant__r.Plant__r.Name);
+                            eachPPT.Discount_Tier__c = currentTier+1;
+                            eachPPT.Unit_Price_After_Volume_Discount__c = ImplBracketPriceTiersList[currentTier].Fixed_Price__c;
+                            System.debug('The Unit_Price_After_Volume_Discount__c - '+eachPPT.Unit_Price_After_Volume_Discount__c);
+                            update eachPPT;
+                            currentTier = noOfTiers; // set to this value so as to break out of the while loop
+
+                            }
+                        } 
+                            if (currentTier != noOfTiers) {         // till the Tier is not found
+                                ++ currentTier;     // check into the next tier
+                            }
+                    
+                    }               // end of while loop
+
+                }               
+            }
+
+        else{
+            System.debug('No Implementation Brackets were found');
+            updateAllPlantRecordswithSamePrice(quoteLineId, contractPricePerMSA);
+            return;
+        }
+
     }
 
     //@description
@@ -478,36 +581,7 @@ public with sharing class PlantProductController {
 
         }
 
-    //@description
-    // This function is called to update Net price on the PPT records
-    // @param quote line id
-    @AuraEnabled(cacheable=true)  
-    public static void updateNetPriceInPPTRecords (String quoteLineId) {
-/*
-        List<Plant_Product_Transaction__c> pptList =[SELECT Quote_Line_Quantity__c, Plant__r.Plant__r.MWp__c, Plant__r.Plant__r.Name, Account__c, Addl_Discount_Percent__c, Contracted_MW_Unit_List_Price__c, List_Unit_Price__c, Net_Unit_Price__c, Unit_Price_After_Volume_Discount__c, Discount_Tier__c  
-                    from Plant_Product_Transaction__c 
-                    where Quote_Line__c =: quoteLineId WITH SECURITY_ENFORCED];
-                System.debug('Total records from PPT whose Net Price is going to be updated is '+pptList.size());
-        for (Plant_Product_Transaction__c eachPPT:pptList) {
-            
-            System.debug('Entered for loop to calculate Net Price ');
 
-            if (eachPPT.Unit_Price_After_Volume_Discount__c == null || eachPPT.Quote_Line_Quantity__c == null)
-            {
-            System.debug('Cannot calculate Net Price as Unit_Price_After_Volume_Discount__c or Quote_Line_Quantity__c is null');
-            }
-            else {
-                If (eachPPT.Addl_Discount_Percent__c == null)
-                    eachPPT.Net_Price__c = eachPPT.Unit_Price_After_Volume_Discount__c * eachPPT.Quote_Line_Quantity__c;
-                else
-                    eachPPT.Net_Price__c = (eachPPT.Unit_Price_After_Volume_Discount__c * ((100-eachPPT.Addl_Discount_Percent__c)/100)) * eachPPT.Quote_Line_Quantity__c;
-
-                System.debug('Net Price is '+eachPPT.Net_Price__c);
-                update eachPPT;
-            }
-        }               
-*/
-    }
 
 // end of file
 }

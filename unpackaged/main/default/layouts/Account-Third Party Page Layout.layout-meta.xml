@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>DataDotComAccountInsights</excludeButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
+    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -351,12 +354,20 @@
         <fields>NAME</fields>
         <fields>Product__c</fields>
         <fields>Pricing_Tier__c</fields>
-        <fields>CURRENCY_ISO_CODE</fields>
+        <fields>Lower_Bound__c</fields>
+        <fields>Upper_Bound__c</fields>
         <fields>Discount_Amount__c</fields>
+        <fields>Asset_Class__c</fields>
         <relatedList>MSA_Software_Discount_Tier_Price__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Product__c</fields>
+        <fields>Pricing_Tier__c</fields>
+        <fields>Lower_Bound__c</fields>
+        <fields>Upper_Bound__c</fields>
+        <fields>Fixed_Price__c</fields>
+        <fields>Asset_Class__c</fields>
         <relatedList>MSA_Implementation_Bracket_Price__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
