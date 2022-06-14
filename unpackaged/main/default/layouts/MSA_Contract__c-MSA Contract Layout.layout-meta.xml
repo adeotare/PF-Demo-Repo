@@ -170,6 +170,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>ApprovalStatus__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Limit_on_Liability_Multiple__c</field>
             </layoutItems>
             <layoutItems>
