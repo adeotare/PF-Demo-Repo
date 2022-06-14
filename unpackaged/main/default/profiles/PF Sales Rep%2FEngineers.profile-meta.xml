@@ -6173,6 +6173,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>project_cloud__Project__c.Template_Id_Reference__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>project_cloud__Project__c.project_cloud__Methodology__c</field>
         <readable>true</readable>
     </fieldPermissions>

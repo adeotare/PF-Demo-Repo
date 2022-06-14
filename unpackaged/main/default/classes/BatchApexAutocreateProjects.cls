@@ -59,67 +59,69 @@ global class BatchApexAutocreateProjects implements Database.Batchable<sObject> 
 		List<project_cloud__Project__c> projects = [SELECT Id, Name,ccpe_ocp__Account__c,
                                                         Account_Plant__c,Installation_Commencement_Date__c,Product__c,
                                                         ARR__c,Installation_Fee__c,PPT_Reference__c,project_cloud__Methodology__c,
-                                                        project_cloud__Type__c,Project_Description__c,Notes__c, Project_Visibility__c,project_cloud__Project_Duration__c
+                                                        project_cloud__Type__c,Project_Description__c,Notes__c, Project_Visibility__c,project_cloud__Project_Duration__c,OwnerId
+														,project_cloud__Start__c
                                                         FROM project_cloud__Project__c WHERE 
                                                         project_cloud__IsTemplate__c = true AND Id IN:templateIdSet]; 
-		for(project_cloud__Project__c p : projects){
-			project_cloud__Project__c toClone = p.clone(false, true);
+		for(project_cloud__Project__c toClone : projects){
+			//project_cloud__Project__c toClone = p.clone(false, true);
 			
 				String projectName = '';
 				
-				if(!string.isBlank(mapIdVsPPT.get(p.id).Account__r.Name)){
-                    if(mapIdVsPPT.get(p.id).Account__r.Name.length() > 10){
-						projectName += mapIdVsPPT.get(p.id).Account__r.Name.substring(0,10);
+				if(!string.isBlank(mapIdVsPPT.get(toClone.id).Account__r.Name)){
+                    if(mapIdVsPPT.get(toClone.id).Account__r.Name.length() > 10){
+						projectName += mapIdVsPPT.get(toClone.id).Account__r.Name.substring(0,10);
                     } else {
-                        projectName += mapIdVsPPT.get(p.id).Account__r.Name;
+                        projectName += mapIdVsPPT.get(toClone.id).Account__r.Name;
                     }
 				}
 				projectName += ' - ' + datetime.now().format('YYMM');
-				if(mapIdVsPPT.get(p.id).MWp_Quantity__c != null){
-					projectName += ' - ' + mapIdVsPPT.get(p.id).MWp_Quantity__c.setScale(2);
+				if(mapIdVsPPT.get(toClone.id).MWp_Quantity__c != null){
+					projectName += ' - ' + mapIdVsPPT.get(toClone.id).MWp_Quantity__c.setScale(2);
 				}
-				if(!string.isBlank(mapIdVsPPT.get(p.id).Product__r.Services_Short_Name__c)){
-					if(mapIdVsPPT.get(p.id).Product__r.Services_Short_Name__c.length() > 20){
-						projectName += ' - ' + mapIdVsPPT.get(p.id).Product__r.Services_Short_Name__c.substring(0,20);
+				if(!string.isBlank(mapIdVsPPT.get(toClone.id).Product__r.Services_Short_Name__c)){
+					if(mapIdVsPPT.get(toClone.id).Product__r.Services_Short_Name__c.length() > 20){
+						projectName += ' - ' + mapIdVsPPT.get(toClone.id).Product__r.Services_Short_Name__c.substring(0,20);
 					} else {
-						projectName += ' - ' + mapIdVsPPT.get(p.id).Product__r.Services_Short_Name__c;
+						projectName += ' - ' + mapIdVsPPT.get(toClone.id).Product__r.Services_Short_Name__c;
 					}
 				}
-				if(!string.isBlank(mapIdVsPPT.get(p.id).Plant_Name__c)){
-					projectName += ' - ' + mapIdVsPPT.get(p.id).Plant_Name__c;
+				if(!string.isBlank(mapIdVsPPT.get(toClone.id).Plant_Name__c)){
+					projectName += ' - ' + mapIdVsPPT.get(toClone.id).Plant_Name__c;
 				}
-                toClone.Id = p.Id;
+                //toClone.Id = p.Id;
                 system.debug('----toClone--'+toClone);
                 toClone.Name = projectName;
-                toClone.ccpe_ocp__Account__c = mapIdVsPPT.get(p.id).Account__c;
-                toClone.Account_Plant__c = mapIdVsPPT.get(p.id).Plant__c;
-                toClone.Installation_Commencement_Date__c = mapIdVsPPT.get(p.id).Installation_Commencement_Date__c;
-                if(mapIdVsPPT.get(p.id).Product_Category__c == 'Software'){
-                    toClone.Product__c = mapIdVsPPT.get(p.id).Product__r.Name;
-                    toClone.Product_Family__c = mapIdVsPPT.get(p.id).Product_Family__c;
-                    toClone.ARR__c = mapIdVsPPT.get(p.id).Net_Total_Price__c;
+                toClone.ccpe_ocp__Account__c = mapIdVsPPT.get(toClone.id).Account__c;
+                toClone.Account_Plant__c = mapIdVsPPT.get(toClone.id).Plant__c;
+                toClone.Installation_Commencement_Date__c = mapIdVsPPT.get(toClone.id).Installation_Commencement_Date__c;
+                if(mapIdVsPPT.get(toClone.id).Product_Category__c == 'Software'){
+                    toClone.Product__c = mapIdVsPPT.get(toClone.id).Product__r.Name;
+                    toClone.Product_Family__c = mapIdVsPPT.get(toClone.id).Product_Family__c;
+                    toClone.ARR__c = mapIdVsPPT.get(toClone.id).Net_Total_Price__c;
                 }
-                if(mapIdVsPPT.get(p.id).Product_Category__c == 'Professional Services'){
-                    toClone.Installation_Fee__c = mapIdVsPPT.get(p.id).Net_Total_Price__c;
+                if(mapIdVsPPT.get(toClone.id).Product_Category__c == 'Professional Services'){
+                    toClone.Installation_Fee__c = mapIdVsPPT.get(toClone.id).Net_Total_Price__c;
                 }
-                toClone.PPT_Reference__c = mapIdVsPPT.get(p.id).id;
+                toClone.PPT_Reference__c = mapIdVsPPT.get(toClone.id).id;
+            	toClone.Template_Id_Reference__c = toClone.id;
             	//toClone.OwnerId = '00G7j000001xugiEAA';
                 
                 
-                if(mapIdVsPPT.get(p.id).Product__r.ProductCode.containsIgnoreCase('DR-OM-') && queueNameVsId.get('Services_Drive_O_M') != null){
+                if(mapIdVsPPT.get(toClone.id).Product__r.ProductCode.containsIgnoreCase('DR-OM-') && queueNameVsId.get('Services_Drive_O_M') != null){
                     toClone.OwnerId = queueNameVsId.get('Services_Drive_O_M');
-                } else if(mapIdVsPPT.get(p.id).Product__r.ProductCode.containsIgnoreCase('DR-') && queueNameVsId.get('Services_Drive') != null){
+                } else if(mapIdVsPPT.get(toClone.id).Product__r.ProductCode.containsIgnoreCase('DR-') && queueNameVsId.get('Services_Drive') != null){
                     toClone.OwnerId = queueNameVsId.get('Services_Drive');
-                } else if(mapIdVsPPT.get(p.id).Product__r.ProductCode.containsIgnoreCase('BP-') && queueNameVsId.get('Services_Bluepoint') != null){
+                } else if(mapIdVsPPT.get(toClone.id).Product__r.ProductCode.containsIgnoreCase('BP-') && queueNameVsId.get('Services_Bluepoint') != null){
                     toClone.OwnerId = queueNameVsId.get('Services_Bluepoint');
-                } else if(mapIdVsPPT.get(p.id).Product__r.ProductCode.containsIgnoreCase('GB-') && queueNameVsId.get('Services_Greenbyte') != null){
+                } else if(mapIdVsPPT.get(toClone.id).Product__r.ProductCode.containsIgnoreCase('GB-') && queueNameVsId.get('Services_Greenbyte') != null){
                     toClone.OwnerId = queueNameVsId.get('Services_Greenbyte');
                 }
             	
                 system.debug('--toClone'+toClone);
 				try {
 					project_cloud.CloneHelper.cloneProject(toClone, Date.today());
-					lstPPTToUpdate.add(mapIdVsPPT.get(p.id).id);
+					lstPPTToUpdate.add(mapIdVsPPT.get(toClone.id).id);
 				 
 				} catch(Exception e) {
 					System.debug('::BatchApexAutocreateProjects::'+e);
