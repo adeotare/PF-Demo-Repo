@@ -77,6 +77,16 @@
                 <default>false</default>
                 <label>PI vision Display</label>
             </value>
+            <value>
+                <fullName>Quality Check</fullName>
+                <default>false</default>
+                <label>Quality Check</label>
+            </value>
+            <value>
+                <fullName>Remediation</fullName>
+                <default>false</default>
+                <label>Remediation</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

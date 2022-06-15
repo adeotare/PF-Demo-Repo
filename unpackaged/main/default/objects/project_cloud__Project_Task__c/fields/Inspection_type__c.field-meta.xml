@@ -23,8 +23,14 @@
                 <label>Audit requested by stakeholder</label>
             </value>
             <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
                 <fullName>Work done by Inspected IE</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Work done by Inspected IE</label>
             </value>
         </valueSetDefinition>

@@ -38,8 +38,19 @@
                 <label>Validation</label>
             </value>
             <value>
+                <fullName>Quality Check</fullName>
+                <default>false</default>
+                <label>Quality Check</label>
+            </value>
+            <value>
+                <fullName>Adds-on</fullName>
+                <default>false</default>
+                <label>Adds-on</label>
+            </value>
+            <value>
                 <fullName>NA</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>NA</label>
             </value>
         </valueSetDefinition>
