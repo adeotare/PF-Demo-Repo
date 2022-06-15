@@ -6,18 +6,19 @@
 
 OR (
 ISPICKVAL( StageName , &quot;Close Pending&quot;),
+ISPICKVAL( StageName , &quot;Closed Lost&quot;),
 ISPICKVAL( StageName , &quot;Closed Won&quot;)
 ),
 
-$Profile.Name &lt;&gt; &quot;PF Ops&quot;,
-$Profile.Name &lt;&gt; &quot;PF Legal&quot;,
-$Profile.Name &lt;&gt; &quot;PF Finance&quot;,
-$Profile.Name &lt;&gt; &quot;PF Super User&quot;,
-$Profile.Name &lt;&gt; &quot;System Administrator&quot;
+$Profile.Name  &lt;&gt; &quot;PF Ops&quot;,
+$Profile.Name  &lt;&gt; &quot;PF Legal&quot;,
+$Profile.Name  &lt;&gt; &quot;PF Finance&quot;,
+$Profile.Name  &lt;&gt; &quot;PF Super User&quot;,
+$Profile.Name  &lt;&gt; &quot;System Administrator&quot;
 
 
 
 
 )</errorConditionFormula>
-    <errorMessage>Only certain profiles can edit a closed opportunity</errorMessage>
+    <errorMessage>Only certain profiles can edit the closed opportunity</errorMessage>
 </ValidationRule>
