@@ -5733,6 +5733,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>project_cloud__Project_Task__c.New_S__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>project_cloud__Project_Task__c.Plan_Value__c</field>
         <readable>true</readable>
     </fieldPermissions>

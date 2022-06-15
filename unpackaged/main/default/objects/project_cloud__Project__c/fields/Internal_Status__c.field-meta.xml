@@ -14,7 +14,7 @@
             <sorted>false</sorted>
             <value>
                 <fullName>Inbox</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>Inbox</label>
             </value>
             <value>

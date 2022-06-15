@@ -25,6 +25,16 @@
                 <default>false</default>
                 <label>RFP Response</label>
             </value>
+            <value>
+                <fullName>Order Form</fullName>
+                <default>false</default>
+                <label>Order Form</label>
+            </value>
+            <value>
+                <fullName>MSA</fullName>
+                <default>false</default>
+                <label>MSA</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

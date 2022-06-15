@@ -19,7 +19,7 @@
             </value>
             <value>
                 <fullName>Not Ready</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>Not Ready</label>
             </value>
             <value>

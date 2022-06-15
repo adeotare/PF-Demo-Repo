@@ -18,7 +18,7 @@
             </value>
             <value>
                 <fullName>Medium</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>Medium</label>
             </value>
             <value>

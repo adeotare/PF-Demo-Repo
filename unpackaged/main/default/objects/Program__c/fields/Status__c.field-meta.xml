@@ -13,7 +13,7 @@
             <sorted>false</sorted>
             <value>
                 <fullName>Not started</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>Not started</label>
             </value>
             <value>
