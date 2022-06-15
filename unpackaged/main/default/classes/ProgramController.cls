@@ -12,7 +12,7 @@ public with sharing class ProgramController {
         //Query and return list of Projects
         List<project_cloud__Project__c> objRecords = new List<project_cloud__Project__c>();
         if(project_cloud__Project__c.SObjectType.getDescribe().isAccessible()){
-            objRecords = [select Id, Name, project_cloud__Type__c,External_Status__c, Internal_Status__c,project_cloud__Completed_Percent__c  from project_cloud__Project__c  where Program_Name__c = null limit 2000];
+            objRecords = [select Id, Name, project_cloud__Type__c,External_Status__c, Internal_Status__c,Owner.Name,Plant_Name__c,CreatedDate  from project_cloud__Project__c  where Program_Name__c = null limit 2000];
             
         }
         return objRecords;

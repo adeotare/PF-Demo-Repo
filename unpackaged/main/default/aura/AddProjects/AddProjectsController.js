@@ -2,17 +2,21 @@
     init: function (cmp, event, helper) {
         cmp.set('v.columns', [
             { label: 'Project Name', fieldName: 'Name', type: 'text' },
-            { label: 'Project Type', fieldName: 'project_cloud__Type__c', type: 'text' },
-            { label: 'Project Status', fieldName: 'External_Status__c', type: 'text' },
-            { label: 'Internal Status', fieldName: 'Internal_Status__c', type: 'text' },
-            { label: 'Completion (%)', fieldName: 'project_cloud__Completed_Percent__c', type: 'text' }
+            { label: 'Plant Name', fieldName: 'Plant_Name__c', type: 'text' },
+            { label: 'Owner', fieldName: 'Owner', type: 'text' },
+            { label: 'Internal Status', fieldName: 'Internal_Status__c', type: 'text' }
         ]);
         var action = cmp.get("c.fetchData");
         action.setCallback(this, function(response){
             var state = response.getState();
             if (state === "SUCCESS") {
-                cmp.set("v.data", response.getReturnValue());
-                cmp.set("v.filteredData", response.getReturnValue());
+                var listOfProjects = response.getReturnValue();
+                listOfProjects.forEach(function(projectRecord){
+                    //to show the record Owner name 
+                    projectRecord.Owner = projectRecord.Owner.Name;
+                });
+                cmp.set("v.data", listOfProjects);
+                cmp.set("v.filteredData", listOfProjects);
             }
         });
         $A.enqueueAction(action);
@@ -26,7 +30,7 @@
 
         for(i=0; i < allRecords.length; i++){
             if((allRecords[i].Name && allRecords[i].Name.toUpperCase().indexOf(searchFilter) != -1)) //||
-               //(allRecords[i].Account_Plant__r.Name && allRecords[i].Account_Plant__r.Name.toUpperCase().indexOf(searchFilter) != -1 ) || 
+               //(allRecords[i].Plant_Name__c && allRecords[i].Plant_Name__c.containsIgnoreCase(searchFilter) )) //|| 
                //(allRecords[i].External_Status__c && allRecords[i].External_Status__c.toUpperCase().indexOf(searchFilter) != -1 ) )
             {
                 tempArray.push(allRecords[i]);

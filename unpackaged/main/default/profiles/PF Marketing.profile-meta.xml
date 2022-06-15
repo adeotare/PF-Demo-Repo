@@ -6312,6 +6312,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>project_cloud__Project__c.Plant_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>project_cloud__Project__c.Product_Family__c</field>
         <readable>true</readable>
