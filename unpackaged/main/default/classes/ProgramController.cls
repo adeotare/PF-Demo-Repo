@@ -8,12 +8,16 @@ public with sharing class ProgramController {
      * @return :  all projects where program is not associated.
      */
     @AuraEnabled
-    public static List<project_cloud__Project__c> fetchData() {
+    public static List<project_cloud__Project__c> fetchData(String programId) {
         //Query and return list of Projects
         List<project_cloud__Project__c> objRecords = new List<project_cloud__Project__c>();
         if(project_cloud__Project__c.SObjectType.getDescribe().isAccessible()){
-            objRecords = [select Id, Name, project_cloud__Type__c,External_Status__c, Internal_Status__c,Owner.Name,Plant_Name__c,CreatedDate  from project_cloud__Project__c  where Program_Name__c = null limit 2000];
-            
+            if(!String.isBlank(programId)){
+                List<Program__c> lstProgramAccnt = [select Customer_Name__c from Program__c where id=:programId];
+                if(lstProgramAccnt[0].Customer_Name__c != null){
+                    objRecords = [select Id, Name, project_cloud__Type__c,External_Status__c, Internal_Status__c,Owner.Name,Plant_Name__c,CreatedDate  from project_cloud__Project__c  where Program_Name__c = null and ccpe_ocp__Account__c =: lstProgramAccnt[0].Customer_Name__c limit 2000];
+                }
+            } 
         }
         return objRecords;
     }

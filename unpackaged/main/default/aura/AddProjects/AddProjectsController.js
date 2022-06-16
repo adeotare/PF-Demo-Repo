@@ -7,6 +7,9 @@
             { label: 'Internal Status', fieldName: 'Internal_Status__c', type: 'text' }
         ]);
         var action = cmp.get("c.fetchData");
+        action.setParams({
+            "programId" : cmp.get("v.recordId")
+        });
         action.setCallback(this, function(response){
             var state = response.getState();
             if (state === "SUCCESS") {
