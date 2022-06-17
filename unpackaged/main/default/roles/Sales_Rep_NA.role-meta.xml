@@ -5,5 +5,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Sales Rep - NA</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>BDR</parentRole>
+    <parentRole>RVP_NA</parentRole>
 </Role>
