@@ -150,10 +150,6 @@
                 <behavior>Edit</behavior>
                 <field>SubmittedUser__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
-                <field>MSA_Status__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -167,6 +163,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>License_Restriction_Reservation_of_Right__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>MSA_Status__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
