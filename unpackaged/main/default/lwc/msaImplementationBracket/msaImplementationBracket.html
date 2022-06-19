@@ -1,35 +1,89 @@
 <template>
-    <lightning-card>
-      <div class="slds-align_absolute-center slds-text-heading_medium" style="height:5rem">Create MSA Implementation Bracket Price</div>
-      <lightning-layout horizontal-align="space">
-        <lightning-layout-item padding="around-small">
-          <div class="header-column">
-            <p><b>Account :</b> {accountName} </p>
-          </div>
-        </lightning-layout-item>
-        <lightning-layout-item padding="around-small">
-          <div class="header-column">
-            <p><b>Currency :</b> {currency} </p>
-          </div>
-        </lightning-layout-item>
-      </lightning-layout>
-      <div class="slds-p-around_x-medium" style="height:400px;">
-        <lightning-datatable min-column-width="100" max-column-width="200" data={implementationPriceListdata}
-          columns={cols} key-field="Id" onrowselection={handleSelectContractedPrice}>
-        </lightning-datatable>
-      </div>
-      <div slot="footer">
-        <div class="slds-float_right slds-m-top_small slds-m-bottom_small">
-          <lightning-button variant="brand" label="Close" onclick={closeQuickAction} class="slds-m-right_x-medium">
-          </lightning-button>
+  <lightning-card>
+    <div class="slds-align_absolute-center slds-text-heading_medium" style="height:4rem">MSA Implementation
+      Bracket Prices</div>
+    <lightning-layout horizontal-align="space">
+      <lightning-layout-item padding="around-small">
+        <div class="header-column">
+          <p><b>Account :</b> {accountName} </p>
         </div>
-        <div class="slds-float_left slds-m-top_small slds-m-bottom_small">
-          <lightning-button variant="brand" label="Add" onclick={openModal} class="slds-m-left_x-medium">
-          </lightning-button>
-          <lightning-button class="slds-m-left_x-small" variant="brand" label="Delete" onclick={deleteRecord}
-            disabled={deleteButtontrue}>
-          </lightning-button>
+      </lightning-layout-item>
+      <lightning-layout-item padding="around-small">
+        <div class="header-column">
+          <p><b>Currency :</b> {currency} </p>
         </div>
+      </lightning-layout-item>
+    </lightning-layout>
+    <div class="slds-p-around_x-medium" style="height:250px;">
+      <lightning-datatable min-column-width="100" max-column-width="200" data={implementationPriceListdata}
+        columns={cols} key-field="Id" onrowselection={handleSelectImplementationPriceRecord}>
+      </lightning-datatable>
+    </div>
+    <div slot="footer">
+      <div class="slds-float_right slds-m-top_small slds-m-bottom_small">
+        <lightning-button variant="brand" label="Close" onclick={closeQuickAction} class="slds-m-right_x-medium">
+        </lightning-button>
       </div>
-    </lightning-card>
-  </template>
+      <div class="slds-float_left slds-m-top_small slds-m-bottom_small">
+        <lightning-button variant="brand" label="Add" onclick={openModal} class="slds-m-left_x-medium">
+        </lightning-button>
+        <lightning-button class="slds-m-left_x-small" variant="brand" label="Delete" onclick={deleteRecord}
+          disabled={deleteButtontrue}>
+        </lightning-button>
+      </div>
+    </div>
+    <template if:true={isModalOpen}>
+      <!-- Modal/Popup Box LWC starts here -->
+      <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+        aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_large">
+        <div class="slds-modal__container">
+          <!-- Modal/Popup Box LWC header here -->
+          <header class="slds-modal__header">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close"
+              onclick={closeModal}>
+              <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small">
+              </lightning-icon>
+              <span class="slds-assistive-text">Close</span>
+            </button>
+            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Create New Implementation Bracket
+              Prices</h2>
+          </header>
+          <!-- Modal/Popup Box LWC body starts here -->
+          <div class="slds-modal__content slds-p-around_large" id="modal-content-id-1">
+            <lightning-record-edit-form object-api-name="MSA_Implementation_Bracket_Price__c" onsuccess={handleSuccess}
+              density="comfy" layout-type="Full">
+              <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                  <!-- Your lightning-input-field components here -->
+                  <lightning-input-field field-name="Name" required="true"> </lightning-input-field>
+                  <lightning-input-field field-name="Product__c" required="true"> </lightning-input-field>
+                  <lightning-input-field field-name="Pricing_Tier__c" required="true"> </lightning-input-field>
+                  <lightning-input-field field-name="Fixed_Price__c" required="true"> </lightning-input-field>
+                  <lightning-input-field field-name="Description__c" > </lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                  <!-- More lightning-input-field components here -->
+                  <lightning-input-field field-name="Asset_Class__c" required="true"> </lightning-input-field>
+                  <lightning-input-field field-name="Account__c" value={accountId} disabled="true"> </lightning-input-field>
+                  <lightning-input-field field-name="Lower_Bound__c" required="true"> </lightning-input-field>
+                  <lightning-input-field field-name="Upper_Bound__c"> </lightning-input-field>
+                  <lightning-input-field field-name="MSA_Contract__c" value={msaId} disabled="true" class="slds-m-top_large">
+                  </lightning-input-field>
+                </div>
+              </div>
+              <footer class="slds-modal__footer">
+                <div class="slds-grid slds-grid_align-center">
+                  <lightning-button class="slds-m-top_small" type="button" label="Cancel" onclick={closeModal}>
+                  </lightning-button>
+                  <lightning-button class="slds-m-top_small" type="submit" label="Save">
+                  </lightning-button>
+                </div>
+              </footer>
+            </lightning-record-edit-form>
+          </div>
+        </div>
+      </section>
+      <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+  </lightning-card>
+</template>

@@ -3,7 +3,10 @@ import { LightningElement, track, api, wire } from 'lwc';
 import getAccount from '@salesforce/apex/SoftwareDiscountTier.fetchAccountName';
 import getCurrency from '@salesforce/apex/SoftwareDiscountTier.fetchCurrency';
 import getSoftwareDiscountDetails from '@salesforce/apex/SoftwareDiscountTier.fetchSoftwareListPriceData';
+import deleteSoftwarePriceRecord from '@salesforce/apex/SoftwareDiscountTier.deleteSoftwarePriceRecord';
 import { CloseActionScreenEvent } from 'lightning/actions';
+import { refreshApex } from '@salesforce/apex';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class SoftwareDiscountTier extends LightningElement {
 
@@ -23,17 +26,24 @@ export default class SoftwareDiscountTier extends LightningElement {
 
   @track accountName;
   @track currency;
+  @track accountId;
+  @track msaId;
   @track accountListdata;
   @track currencyListdata;
   @api recordId;
   @track softwareDiscountPriceData;
   @track softwareDiscountPriceListdata;
+  @track softwareId;
+  @track isModalOpen = false;
+  @track deleteButtontrue = true;
 
   @wire(getAccount, { RecId: '$recordId' })
   accountList(result) {
     this.accountListdata = result;
     if (result.data) {
       this.accountName = result.data[0].Account_Name__r.Name;
+      this.accountId = result.data[0].Account_Name__c;
+      this.msaId = result.data[0].Id;
 
     } else if (result.error) {
       console.log(result.error);
@@ -57,7 +67,6 @@ export default class SoftwareDiscountTier extends LightningElement {
     if (result.data) {
       this.softwareDiscountPriceListdata = result.data.map((row) => ({
         ...row,
-        Account : row.Account__r.Name,
         Product: row.Product__r.Name,
         PricingTier: row.Pricing_Tier__c,
         ConsiderActiveMW: row.Cross_Orders__c,
@@ -73,7 +82,7 @@ export default class SoftwareDiscountTier extends LightningElement {
   }
 
 
-  @track isModalOpen = false;
+
 
   openModal() {
     // to open modal set isModalOpen tarck value as true
@@ -91,10 +100,69 @@ export default class SoftwareDiscountTier extends LightningElement {
   }
 
 
-  @track softwareId;
-    handleSuccess(event) {
-        this.softwareId = event.detail.id;
+  handleSuccess(event) {
+
+    try {
+      this.softwareId = event.detail.id;
+      //console.log('onsuccess: ', softwareId);
+      this.dispatchEvent(
+        new ShowToastEvent({
+          title: 'Success',
+          message: 'Software Discount Tier Added',
+          variant: 'success'
+        })
+      );
+      this.isModalOpen = false;
+      refreshApex(this.softwareDiscountPriceData);
     }
+    catch (error) {
+      this.dispatchEvent(
+        new ShowToastEvent({
+          title: 'Error updating or refreshing records',
+          message: error.body.message,
+          variant: 'error'
+        })
+      );
+    };
+
+
+
+  }
+
+
+  deleteRecord(){  
+    var selectedRecords = this.template.querySelector("lightning-datatable").getSelectedRows();  
+    console.log('selectedRecords for delete::',selectedRecords);
+    deleteSoftwarePriceRecord({softPriceList: selectedRecords, msaId:this.recordId})  
+    .then(result=>{  
+      const evt = new ShowToastEvent({
+          title: 'Success!',
+          message: 'Successfully Deleted',
+          variant: 'success',
+          mode: 'dismissable'
+      });
+      this.dispatchEvent(evt);
+      return refreshApex(this.softwareDiscountPriceData);  
+    })  
+    .catch(error=>{  
+      alert('Could not delete'+JSON.stringify(error));  
+    })  
+  }
+
+
+  handleSelectSoftwarePriceRecord(event){
+    const selRows = event.detail.selectedRows;
+    console.log( 'Selected Rows are ' + JSON.stringify(selRows));
+    //console.log( 'selRows.length: ' + selRows.length);
+    if(selRows.length>0){
+      this.deleteButtontrue = false;
+    }else{
+      this.deleteButtontrue = true;
+    }
+    
+  }
+
+
 
 
 

@@ -2616,7 +2616,15 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ImplementationBracketPrice</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ProgramController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SoftwareDiscountTier</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <layoutAssignments>

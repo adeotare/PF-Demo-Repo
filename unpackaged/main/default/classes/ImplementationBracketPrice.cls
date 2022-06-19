@@ -3,7 +3,7 @@ public class ImplementationBracketPrice {
     @AuraEnabled(cacheable=true)
     public static List<MSA_Contract__c> fetchAccountName(String RecId){
         System.debug('Implementation Bracket fetchAccountName');
-        return [Select Account_Name__r.Name from MSA_Contract__c where Id = :RecId];
+        return [Select Id, Account_Name__c, Account_Name__r.Name from MSA_Contract__c where Id = :RecId];
     }
     
 
@@ -18,12 +18,33 @@ public class ImplementationBracketPrice {
     public static List<MSA_Implementation_Bracket_Price__c> implementationBracketPriceRecords(String RecId){
         List<MSA_Contract__c> accountId = [Select Account_Name__r.Account_Price_Book__r.name from MSA_Contract__c where Id = :RecId limit 1];
         Id accId = string.valueOf(accountId[0].Account_Name__c);
-        List<MSA_Implementation_Bracket_Price__c> records = [Select Name , Lower_Bound__c, Upper_Bound__c, Pricing_Tier__c, Fixed_Price__c, Asset_Class__c, Description__c 
+        List<MSA_Implementation_Bracket_Price__c> records = [Select Name , Product__r.Name , MSA_Contract__c, Lower_Bound__c, Upper_Bound__c, Pricing_Tier__c, Fixed_Price__c, Asset_Class__c, Description__c 
             from MSA_Implementation_Bracket_Price__c 
             where Account__r.Id = :accId];
         system.debug('Account ID' + accId);
         system.debug('No of records found with contracted price =>' + records.size());
         return records;
     }
+
+
+    @AuraEnabled 
+    public static void deleteImplementationPriceRecord(List<MSA_Implementation_Bracket_Price__c> implementationPriceList, String msaId){  
+        if (implementationPriceList.size() == 0)
+            return; 
+        List<Id> deletedPrices = new List<Id>();
+        for(MSA_Implementation_Bracket_Price__c implementPrice : implementationPriceList ){
+            deletedPrices.add(implementPrice.Id);
+        }
+		 System.debug('deleted records of implementation price '+deletedPrices);
+		 
+		try {
+            delete implementationPriceList;
+        }
+        catch(Exception ex) {
+                System.debug('Exception while deleting the plants from the quote line i.e. deleting PPT records'
+                                +string.valueOf(ex.getLineNumber()) +ex.getTypeName() +string.valueOf(ex.getCause()) +ex.getMessage() +ex.getStackTraceString());
+
+            }
+        }
     
 }

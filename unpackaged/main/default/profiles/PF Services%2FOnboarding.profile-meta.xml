@@ -7416,6 +7416,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ImplementationBracketPrice</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ImplementationWizardForm</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -7537,6 +7541,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SendNeuronTemplateDetail</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SoftwareDiscountTier</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

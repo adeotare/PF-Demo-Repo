@@ -1,7 +1,7 @@
 <template>
   <lightning-card>
-    <div class="slds-align_absolute-center slds-text-heading_medium" style="height:5rem">Create MSA Software Discount
-      Tier Price</div>
+    <div class="slds-align_absolute-center slds-text-heading_medium" style="height:4rem">MSA Software Discount
+      Tier Prices</div>
     <lightning-layout horizontal-align="space">
       <lightning-layout-item padding="around-small">
         <div class="header-column">
@@ -14,9 +14,9 @@
         </div>
       </lightning-layout-item>
     </lightning-layout>
-    <div class="slds-p-around_x-medium" style="height:400px;">
+    <div class="slds-p-around_x-medium" style="height:250px;">
       <lightning-datatable min-column-width="100" max-column-width="200" data={softwareDiscountPriceListdata}
-        columns={cols} key-field="Id" onrowselection={handleSelectContractedPrice}>
+        columns={cols} key-field="Id" onrowselection={handleSelectSoftwarePriceRecord}>
       </lightning-datatable>
     </div>
     <div slot="footer">
@@ -46,53 +46,42 @@
               <span class="slds-assistive-text">Close</span>
             </button>
             <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Create New Software Discount Tier
-              Price</h2>
+              Prices</h2>
           </header>
           <!-- Modal/Popup Box LWC body starts here -->
           <div class="slds-modal__content slds-p-around_large" id="modal-content-id-1">
-            <lightning-record-edit-form object-api-name="MSA_Software_Discount_Tier_Price__c" onsuccess={handleSuccess}>
+            <lightning-record-edit-form object-api-name="MSA_Software_Discount_Tier_Price__c" onsuccess={handleSuccess}
+              density="comfy" layout-type="Full">
               <div class="slds-grid">
                 <div class="slds-col slds-size_1-of-2">
                   <!-- Your lightning-input-field components here -->
-                  <lightning-input-field
-                field-name="Id"
-                value={softwareId}
-            ></lightning-input-field>
                   <lightning-input-field field-name="Name"> </lightning-input-field>
-                  <lightning-input-field field-name="Product__c"> </lightning-input-field>
-                  <lightning-input-field field-name="Pricing_Tier__c"> </lightning-input-field>
-                  <lightning-input-field field-name="Discount_Amount__c"> </lightning-input-field>
+                  <lightning-input-field field-name="Product__c" required="true"> </lightning-input-field>
+                  <lightning-input-field field-name="Pricing_Tier__c" required="true"> </lightning-input-field>
+                  <lightning-input-field field-name="Discount_Amount__c" required="true"> </lightning-input-field>
                   <lightning-input-field field-name="Effective_Start_Date__c"> </lightning-input-field>
                 </div>
                 <div class="slds-col slds-size_1-of-2">
                   <!-- More lightning-input-field components here -->
-                  <lightning-input-field field-name="Cross_Orders__c"> </lightning-input-field>
-                  <lightning-input-field field-name="Account__c"> </lightning-input-field>
-                  <lightning-input-field field-name="Lower_Bound__c"> </lightning-input-field>
+                  <lightning-input-field field-name="Cross_Orders__c" class="slds-m-top_medium">
+                  </lightning-input-field>
+                  <lightning-input-field field-name="Account__c" value={accountId} disabled="true"> </lightning-input-field>
+                  <lightning-input-field field-name="Lower_Bound__c" required="true"> </lightning-input-field>
                   <lightning-input-field field-name="Upper_Bound__c"> </lightning-input-field>
                   <lightning-input-field field-name="Effective_End_Date__c"> </lightning-input-field>
+                  <lightning-input-field field-name="MSA_Contract__c" value={msaId} disabled="true"> </lightning-input-field>
                 </div>
               </div>
-
-                  <lightning-button
-                      class="slds-m-top_small slds-align_absolute-center"
-                      type="button"
-                      label="Cancel"
-                  >
+              <footer class="slds-modal__footer ">
+                <div class="slds-grid slds-grid_align-center">
+                  <lightning-button class="slds-m-top_small" type="button" label="Cancel" onclick={closeModal}>
                   </lightning-button>
-                  <lightning-button
-                      class="slds-m-top_small slds-align_absolute-center"
-                      type="submit"
-                      label="Save"
-                  >
+                  <lightning-button class="slds-m-top_small" type="submit" label="Save">
                   </lightning-button>
+                </div>
+              </footer>
             </lightning-record-edit-form>
           </div>
-          <!-- Modal/Popup Box LWC footer starts here -->
-          <footer class="slds-modal__footer">
-            <!-- <button class="slds-button slds-button_neutral" onclick={} title="Cancel">Cancel</button>-->
-            <!-- <button class="slds-button slds-button_brand" onclick={} title="Save">Save</button>-->
-          </footer>
         </div>
       </section>
       <div class="slds-backdrop slds-backdrop_open"></div>

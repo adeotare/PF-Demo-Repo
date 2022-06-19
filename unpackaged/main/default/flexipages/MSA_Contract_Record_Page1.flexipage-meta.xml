@@ -7,7 +7,7 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>MSA_Contract__c.Create_Contracted_Price</value>
+                            <value>MSA_Contract__c.Create_Contracted_Prices</value>
                             <visibilityRule>
                                 <booleanFilter>1 AND (2 OR 3 OR 4 OR 5)</booleanFilter>
                                 <criteria>
@@ -38,7 +38,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>MSA_Contract__c.Create_MSA_Software_Discount_Tier_Price</value>
+                            <value>MSA_Contract__c.Create_MSA_Software_Discount_Tier_Prices</value>
                             <visibilityRule>
                                 <booleanFilter>1 AND (2 OR 3 OR 4 OR 5)</booleanFilter>
                                 <criteria>
@@ -69,7 +69,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>MSA_Contract__c.Create_MSA_Implementation_Bracket_Price</value>
+                            <value>MSA_Contract__c.Create_MSA_Implementation_Bracket_Prices</value>
                             <visibilityRule>
                                 <booleanFilter>1 AND (2 OR 3 OR 4 OR 5)</booleanFilter>
                                 <criteria>
