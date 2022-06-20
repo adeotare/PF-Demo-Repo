@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <name>Check_Decision_for_Account_Plant_Creation</name>
+        <label>Check Decision for Account Plant Creation</label>
+        <locationX>169</locationX>
+        <locationY>379</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_Decision</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Assigned_Customer_Contact__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Asset_Builder_Approval</targetReference>
+            </connector>
+            <label>Check Decision</label>
+        </rules>
+    </decisions>
+    <description>As per the pffull copy process builder &quot;Plant Asset Creation&quot;.</description>
+    <interviewLabel>Account Plant : Account Plant Creation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account Plant : Account Plant Creation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Asset_Builder_Approval</name>
+        <label>Create Asset Builder Approval</label>
+        <locationX>391</locationX>
+        <locationY>375</locationY>
+        <inputAssignments>
+            <field>Account_Plant__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Customer_Contact_for_Onboarding__c</field>
+            <value>
+                <elementReference>$Record.Assigned_Customer_Contact__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>$Record.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Asset_Builder_Approval__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>47</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Check_Decision_for_Account_Plant_Creation</targetReference>
+        </connector>
+        <object>Account_Plant__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
