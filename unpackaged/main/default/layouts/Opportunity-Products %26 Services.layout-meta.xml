@@ -117,11 +117,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Territory2Id</field>
+                <field>Subsidiary__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Subsidiary__c</field>
+                <field>Territory__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -446,20 +446,20 @@
         <relatedList>Contract.SBQQ__RenewalOpportunity__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <excludeButtons>AddAccTeamMemberOnOpp</excludeButtons>
-        <excludeButtons>AddAccountTeam</excludeButtons>
-        <fields>MemberName</fields>
-        <fields>OppAccessLevel</fields>
-        <fields>TeamMemberRole</fields>
-        <relatedList>RelatedOpportunitySalesTeam</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>CAMPAIGN.NAME</fields>
         <fields>CONTACT.NAME</fields>
         <fields>INFLUENCE</fields>
         <fields>REVENUE_SHARE</fields>
         <fields>OCR.ROLE</fields>
         <relatedList>RelatedCampaignInfluence2List</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <excludeButtons>AddAccTeamMemberOnOpp</excludeButtons>
+        <excludeButtons>AddAccountTeam</excludeButtons>
+        <fields>MemberName</fields>
+        <fields>OppAccessLevel</fields>
+        <fields>TeamMemberRole</fields>
+        <relatedList>RelatedOpportunitySalesTeam</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

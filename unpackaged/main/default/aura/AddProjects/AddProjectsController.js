@@ -5,6 +5,7 @@
             { label: 'Plant Name', fieldName: 'Plant_Name__c', type: 'text' },
             { label: 'Owner', fieldName: 'Owner', type: 'text' },
             { label: 'Internal Status', fieldName: 'Internal_Status__c', type: 'text' }
+            // { label: 'Created Date', fieldName: 'CreatedDate', type: 'Date' }
         ]);
         var action = cmp.get("c.fetchData");
         action.setParams({
@@ -32,8 +33,11 @@
         var i;
 
         for(i=0; i < allRecords.length; i++){
-            if((allRecords[i].Name && allRecords[i].Name.toUpperCase().indexOf(searchFilter) != -1)) //||
-               //(allRecords[i].Plant_Name__c && allRecords[i].Plant_Name__c.containsIgnoreCase(searchFilter) )) //|| 
+            var dateValue  = new Date(allRecords[i].CreatedDate);
+            cmp.set('v.formatedDate',$A.localizationService.formatDate(dateValue,cmp.get('v.format')));
+            var createdDate = cmp.get('v.formatedDate');
+            if((allRecords[i].Name && allRecords[i].Name.toUpperCase().indexOf(searchFilter) != -1) ||
+               ((!$A.util.isUndefinedOrNull(createdDate) && createdDate.toUpperCase().indexOf(searchFilter) != -1) )) //|| 
                //(allRecords[i].External_Status__c && allRecords[i].External_Status__c.toUpperCase().indexOf(searchFilter) != -1 ) )
             {
                 tempArray.push(allRecords[i]);
