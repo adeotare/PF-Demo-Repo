@@ -29,15 +29,15 @@ public class SoftwareDiscountTier {
 
     @AuraEnabled 
     public static void deleteSoftwarePriceRecord(List<MSA_Software_Discount_Tier_Price__c> softPriceList, String msaId){  
-        if (softPriceList.size() == 0)
-            return; 
+       // if (softPriceList.size() == 0){}
+           // return; 
         List<Id> deletedPrices = new List<Id>();
         for(MSA_Software_Discount_Tier_Price__c softPrice : softPriceList ){
             deletedPrices.add(softPrice.Id);
         }
-		 System.debug('accplan::'+deletedPrices);
-		 
-		try {
+         System.debug('accplan::'+deletedPrices);
+         
+        try {
             delete softPriceList;
         }
         catch(Exception ex) {

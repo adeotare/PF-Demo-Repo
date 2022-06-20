@@ -29,15 +29,15 @@ public class ImplementationBracketPrice {
 
     @AuraEnabled 
     public static void deleteImplementationPriceRecord(List<MSA_Implementation_Bracket_Price__c> implementationPriceList, String msaId){  
-        if (implementationPriceList.size() == 0)
-            return; 
+        //if (implementationPriceList.size() == 0)
+         //   return; 
         List<Id> deletedPrices = new List<Id>();
         for(MSA_Implementation_Bracket_Price__c implementPrice : implementationPriceList ){
             deletedPrices.add(implementPrice.Id);
         }
-		 System.debug('deleted records of implementation price '+deletedPrices);
-		 
-		try {
+         System.debug('deleted records of implementation price '+deletedPrices);
+         
+        try {
             delete implementationPriceList;
         }
         catch(Exception ex) {
