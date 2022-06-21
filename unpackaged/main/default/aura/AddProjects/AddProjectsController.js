@@ -4,8 +4,12 @@
             { label: 'Project Name', fieldName: 'Name', type: 'text' },
             { label: 'Plant Name', fieldName: 'Plant_Name__c', type: 'text' },
             { label: 'Owner', fieldName: 'Owner', type: 'text' },
-            { label: 'Internal Status', fieldName: 'Internal_Status__c', type: 'text' }
-            // { label: 'Created Date', fieldName: 'CreatedDate', type: 'Date' }
+            { label: 'Internal Status', fieldName: 'Internal_Status__c', type: 'text' },
+            { label: 'Created Date', fieldName: 'CreatedDate', type: 'date-local', typeAttributes:{
+                                                                                month: "2-digit",
+                                                                                day: "2-digit"
+                                                                                }
+            }
         ]);
         var action = cmp.get("c.fetchData");
         action.setParams({

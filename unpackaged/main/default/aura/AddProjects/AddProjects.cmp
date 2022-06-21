@@ -1,6 +1,6 @@
 <aura:component implements="force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" controller="ProgramController">
     <!-- attributes -->
-    <aura:attribute name="format" type="string" default="MM-DD-YYYY"/>
+    <aura:attribute name="format" type="string" default="MM/DD/YYYY"/>
     <aura:attribute name="formatedDate" type="Date"/>
     <aura:attribute name="recordId" type="String" default="" />
     <aura:attribute name="data" type="Map"/>
@@ -38,7 +38,7 @@
     <div class="slds-scrollable_y">
         <div class="c-container slds-var-p-around_medium">
             <span>
-                <lightning:input onchange="{!c.searchTable}" type="search" label="Searh" variant="label-hidden" placeholder="Enter Project Name OR Created Date in MM-DD-YYYY format" aura:id="SearchBox"/>
+                <lightning:input onchange="{!c.searchTable}" type="search" label="Searh" variant="label-hidden" placeholder="Enter Project Name OR Created Date in MM/DD/YYYY format" aura:id="SearchBox"/>
             </span>
             <br/>
             <lightning:datatable
