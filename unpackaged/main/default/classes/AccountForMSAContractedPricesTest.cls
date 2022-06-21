@@ -110,13 +110,13 @@ private class AccountForMSAContractedPricesTest {
             System.debug('MSA Id : ' + msa);
             List<SBQQ__ContractedPrice__c> cpList = AccountForMSAContractedPrices.contractedPricesRecord(msa);
             Test.startTest();
-            System.runAs(testUser){
-            try {
+            System.runAs(testUser){   
+            try {        
                 String msg = AccountForMSAContractedPrices.updateContractedPrices(cpList);
                 System.debug('Message : '+ msg);
             }
-            catch (Exception e) {
-                
+            catch(DmlException e) {
+                System.debug('Error Message is : '+ e.getMessage());
             }
             Test.stopTest();
             }

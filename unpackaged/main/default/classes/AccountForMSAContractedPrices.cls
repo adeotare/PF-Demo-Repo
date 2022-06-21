@@ -71,7 +71,7 @@ public class AccountForMSAContractedPrices {
                 update contractPriceForUpdate;
                 return 'Success: Contracted Prices updated successfully';
                 }
-            catch (Exception e) {
+            catch (DmlException e) {
                 return 'The following exception has occurred: ' + e.getMessage();
                 }
     }
