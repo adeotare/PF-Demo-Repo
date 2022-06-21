@@ -3,8 +3,7 @@
 @istest
 public with sharing class TestDataFactory {
     public static Account_Plant__c createPlantAsset(String renewableType, String pfServiceProduct, String customerPlantAsset, id temVersionid ){
-        Id customerPlantAssetRT = Utils.getRecordTypeInfo('Account_Plant__c','Child_Asset').getRecordTypeId();
-        Id parentPlantAssetRT = Utils.getRecordTypeInfo('Account_Plant__c','Parent_Asset').getRecordTypeId();
+        
         
         Account_Plant__c parentPlantAsset = new Account_Plant__c();
 //        parentPlantAsset.Name = 'Parent Plant Asset';
@@ -225,4 +224,148 @@ public with sharing class TestDataFactory {
                                                 Total_Attribute_Count__c = 9,
                                                 Total_Completed_Attribute_Count__c = completedAttrCount);
     }
+    //Test Methods added by TCS
+    //Account creation
+    public static List<Account> createAccounts( Integer numberOfAccounts, Id recordTypeId) {
+        List<Account> accounts = new List<Account>();
+        for ( Integer i = 0 ; i < numberOfAccounts ; i++ ) {
+            Account account = new Account( name = 'Test Account' + Math.random(), Phone= '(415) 419-8873',BillingStreet = '5353 W.Test Rd',
+                    BillingCity = 'Testdale', BillingState = 'Alaska', BillingPostalCode = '94803', RecordTypeId=recordTypeId);
+                    accounts.add( account);
+        }
+        return accounts;
+    }
+    /* Create Contact Methods */
+    public static Contact createContact(String accountId) {
+        // Generate a pseudo random contact info
+        String rnd = System.now().getTime()+'-'+
+        String.valueOf(Math.round(Math.random() * 100));
+        String email = rnd +'_newuser@testorg.com';
+        String firstName = 'John'+rnd;
+        String lastName = 'Doe';
+        return new Contact(AccountId=accountId, FirstName=firstName, LastName=lastName,
+        Title='Dude', Department='Things', Email=email);
+    }
+    public static AccountTeamMember createATM(String accountId, String userId, String teamMemberRole ){
+        return new AccountTeamMember(AccountId=accountId, UserId=userId,
+        TeamMemberRole=teamMemberRole);
+    }
+    /* Create Opportunity Methods */
+    public static Opportunity createOpportunity(String accountId) {
+        Opportunity opp = new Opportunity();
+        opp.name = 'Test';
+        opp.AccountId = accountId;
+        opp.StageName = '00 - MQL';
+        opp.CloseDate = date.today();
+        return opp;
+    }
+    
+    /* Create Product Methods */
+    public static Product2 createProduct() {
+        Product2 pr = new Product2();
+        pr.name = 'Service Internet sur Fibre';
+        pr.Product_Category__c = 'Software';
+        pr.Product_Type__c = 'Recurring';
+        pr.Product_Services__c = 'Implementation';
+        pr.Asset_Class__c = 'Hydro';
+        return pr;
+    }
+    /* Create Product with productcode Methods */
+    public static Product2 createProductWithCode(String productCode) {
+        Product2 pr = new Product2();
+        pr.name = 'Service Internet sur Fibre';
+        pr.Product_Category__c = 'Software';
+        pr.Product_Type__c = 'Recurring';
+        pr.Product_Services__c = 'Implementation';
+        pr.Asset_Class__c = 'Hydro';
+        pr.ProductCode = productCode;
+        return pr;
+    }
+    public static Project_Template__c createProjectTemplate(String productId, String templateId, String DecommissionTemplateId){
+        Project_Template__c projTemlate = new Project_Template__c();
+        projTemlate.Product_Code__c = productId;
+        projTemlate.Template__c = templateId;
+        projTemlate.Decommission_Template__c = DecommissionTemplateId;
+        projTemlate.Project_Type__c = 'Monitoring Implementation';
+        return projTemlate;
+    }
+    public static Plant_Product_Transaction__c createPPT(String status, String accId){
+        Plant_Product_Transaction__c ppt = new Plant_Product_Transaction__c();
+        ppt.Status__c = status;
+        ppt.Account__c = accId;
+        ppt.Name = 'Test PPT';
+        return ppt;
+    }
+    public static project_cloud__Project__c createCCProjectTemplate(String type, String accId){
+        project_cloud__Project__c CCTemplate = new project_cloud__Project__c();
+        CCTemplate.project_cloud__IsTemplate__c = true;
+        CCTemplate.ccpe_ocp__Account__c = accId;
+        CCTemplate.Notes__c = 'Test Notes';
+        CCTemplate.External_Notes__c = 'Test project Notes';
+        CCTemplate.Project_Description__c = 'Test project Description';
+        CCTemplate.project_cloud__Type__c = type;
+        return CCTemplate;
+    }
+
+    //Create PriceBook
+    public static Pricebook2 createPriceBook(){
+       Pricebook2 priceBook = new Pricebook2(Name = 'Standard Price Book'); 
+       return priceBook;
+    }
+
+        
+    // Create account
+    public static Account createAccount(Id pricebookId) {
+        Account acc = new Account(Name='TestCP',
+                                Account_Price_Book__c = priceBookId);
+        return acc;
+    }
+
+    // Create MSA
+    public static MSA_Contract__c createMsa(Id accId) {
+        MSA_Contract__c msa = new MSA_Contract__c(Account_Name__c = accId ,
+                                                MSA_Status__c = 'In Negotiation',
+                                                CurrencyIsoCode = 'USD');  
+        return msa;
+    }
+
+    // Create Product
+    public static Product2 createProductAgain() {
+        Product2 product = new Product2(Name = 'Drive O&M', 
+                                    Product_Line__c = 'Core', 
+                                    ProductCode = 'GB-AD-PS-OT-IM-WD-ST-EWT',
+                                    Product_Category__c = 'Software',
+                                    Product_Type__c = 'SaaS',
+                                    Product_Services__c = 'N/A',
+                                    QuantityUnitOfMeasure = 'MWp',
+                                    Asset_Class__c = 'Solar');  
+        return product;
+    }
+
+    // Create Product
+    public static SBQQ__ContractedPrice__c createContractedPrice(Id accId, Id productId){
+        SBQQ__ContractedPrice__c contPrice = new SBQQ__ContractedPrice__c(SBQQ__Account__c = accId,
+                                        SBQQ__Product__c = productId,  
+                                        Product_List_Price__c = 24, 
+                                        SBQQ__Price__c = 25,
+                                        Same_As_List_Price__c = FALSE);
+        return contPrice;
+    }
+
+    // Create User
+    public static User createNewUser(){
+        User user = new User(ProfileId = [SELECT Id FROM Profile WHERE Name = 'PF Marketing'].Id,
+                            LastName = 'Marketing',
+                            Email = 'puser000@amamama.com',
+                            Username = 'puser000@amamama.com' + System.currentTimeMillis(),
+                            CompanyName = 'TEST',
+                            Alias = 'testmark',
+                            TimeZoneSidKey = 'America/Los_Angeles',
+                            EmailEncodingKey = 'UTF-8',
+                            LanguageLocaleKey = 'en_US',
+                            LocaleSidKey = 'en_US');
+
+        return user;                    
+    }
+
 }
