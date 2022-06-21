@@ -417,9 +417,9 @@
     <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
+        <fields>Product_Category__c</fields>
         <fields>Account__c</fields>
         <fields>Plant_Name__c</fields>
-        <fields>Product_Category__c</fields>
         <fields>Plant__c</fields>
         <fields>MWp_Quantity__c</fields>
         <fields>CREATED_DATE</fields>
@@ -476,6 +476,8 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Equipment_Type__c</fields>
+        <fields>Quantity__c</fields>
         <relatedList>Equipment__c.Project__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

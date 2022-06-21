@@ -20,6 +20,10 @@
                 <field>Plant__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Customer_Plant_Asset_ID__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Entity_Type__c</field>
             </layoutItems>
@@ -354,10 +358,8 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>DAS_SCADA_Provider__c</fields>
-        <fields>Drive_OEM__c</fields>
-        <fields>Quantity__c</fields>
         <fields>Equipment_Type__c</fields>
+        <fields>Quantity__c</fields>
         <relatedList>Equipment__c.Account_Plant__c</relatedList>
     </relatedLists>
     <relatedLists>

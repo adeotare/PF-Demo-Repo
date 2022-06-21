@@ -943,6 +943,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>CRM_Project__c.Approval_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>CRM_Project__c.Approval_Submitted_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>CRM_Project__c.Baseline_hours__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1174,6 +1184,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>CRM_Project__c.Trial__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CRM_Project__c.Validation_Report_URL__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
