@@ -95,7 +95,7 @@ public with sharing class PlantProductController {
             return null;  // If number of plants to be added is zero, then return
 
         List<Plant_Product_Transaction__c> pList = new List<Plant_Product_Transaction__c>();
-        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__Product__r.ID, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__SpecialPrice__c, SBQQ__EndDate__c, SBQQ__Quote__c, SBQQ__Quote__r.CurrencyIsoCode, SBQQ__Quote__r.SBQQ__StartDate__c, SBQQ__Quote__r.SBQQ__EndDate__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__Product__r.ID,SBQQ__ListPrice__c, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__SpecialPrice__c, SBQQ__EndDate__c, SBQQ__Quote__c, SBQQ__Quote__r.CurrencyIsoCode, SBQQ__Quote__r.SBQQ__StartDate__c, SBQQ__Quote__r.SBQQ__EndDate__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
          
         for(Account_Plant__c ap: plantList){
             // For every new plant that is added, create a record in the PPT table and populate it's fields
