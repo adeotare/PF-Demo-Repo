@@ -6,7 +6,7 @@
     <label>Partner Account ID</label>
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Opportunities</relationshipLabel>
-    <relationshipName>Opportunities</relationshipName>
+    <relationshipName>Opportunities1</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

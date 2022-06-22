@@ -98,7 +98,7 @@
                 <field>CurrencyIsoCode</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Account_Price_Book__c</field>
             </layoutItems>
             <layoutItems>
@@ -407,6 +407,14 @@
         <relatedList>QS_Customer_Asset__c.QS_Account__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>ORDERS.ORDER_NUMBER</fields>
+        <fields>ORDERS.STATUS</fields>
+        <fields>ORDERS.EFFECTIVE_DATE</fields>
+        <fields>CONTRACT.CONTRACT_NUMBER</fields>
+        <fields>ORDERS.TOTAL_AMOUNT</fields>
+        <relatedList>RelatedOrderList</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>NAME</fields>
         <relatedList>QS_Customer_Asset_Detail__c.QS_Account__c</relatedList>
     </relatedLists>
@@ -568,28 +576,11 @@
         <fields>Operational_Status__c</fields>
         <relatedList>Plant__c.Majority_Offtake__c</relatedList>
     </relatedLists>
-    <relatedLists>
-        <fields>TERRITORY.NAME</fields>
-        <fields>MODEL.NAME</fields>
-        <fields>MODEL.STATE</fields>
-        <fields>ASSIGNMENT_DATE</fields>
-        <fields>ASSOCIATION_CAUSE</fields>
-        <relatedList>AccountAssignedTerritory2sRelatedList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>FULL_NAME</fields>
-        <fields>CORE.USERS.EMAIL</fields>
-        <fields>ROLE_IN_TERRITORY</fields>
-        <fields>TERRITORY.NAME</fields>
-        <fields>MODEL.NAME</fields>
-        <relatedList>AccountUserTerritory2RelatedList</relatedList>
-    </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
-    <runAssignmentRulesDefault>true</runAssignmentRulesDefault>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
-    <showRunAssignmentRulesCheckbox>true</showRunAssignmentRulesCheckbox>
+    <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
         <masterLabel>00h7j000000ZTER</masterLabel>

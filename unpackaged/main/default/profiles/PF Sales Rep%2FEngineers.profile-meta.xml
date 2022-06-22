@@ -7176,6 +7176,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ContractTriggerHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ImplementationBracketPrice</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -7185,6 +7189,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ProgramController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RenewableQuoteProcessHelper</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

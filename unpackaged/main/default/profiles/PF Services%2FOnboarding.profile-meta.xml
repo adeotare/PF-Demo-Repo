@@ -7404,6 +7404,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ContractTriggerHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>CoreAttrRollUpHdlr</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -7541,6 +7545,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ReadExcelAsCSV</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RenewableQuoteProcessHelper</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

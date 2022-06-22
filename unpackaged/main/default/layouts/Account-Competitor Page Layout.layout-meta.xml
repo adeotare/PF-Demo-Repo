@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>DataDotComAccountInsights</excludeButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
+    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -353,6 +356,14 @@
         <relatedList>RelatedOpportunityList</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>ORDERS.ORDER_NUMBER</fields>
+        <fields>ORDERS.STATUS</fields>
+        <fields>ORDERS.EFFECTIVE_DATE</fields>
+        <fields>CONTRACT.CONTRACT_NUMBER</fields>
+        <fields>ORDERS.TOTAL_AMOUNT</fields>
+        <relatedList>RelatedOrderList</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>Plant__c</fields>
         <fields>Asset_Class__c</fields>
         <fields>Plant_MWP__c</fields>
@@ -360,22 +371,6 @@
         <fields>Ownership_Percentage__c</fields>
         <fields>Relationship_Type__c</fields>
         <relatedList>Account_Plant__c.Account__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>TERRITORY.NAME</fields>
-        <fields>MODEL.NAME</fields>
-        <fields>MODEL.STATE</fields>
-        <fields>ASSIGNMENT_DATE</fields>
-        <fields>ASSOCIATION_CAUSE</fields>
-        <relatedList>AccountAssignedTerritory2sRelatedList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>FULL_NAME</fields>
-        <fields>CORE.USERS.EMAIL</fields>
-        <fields>ROLE_IN_TERRITORY</fields>
-        <fields>TERRITORY.NAME</fields>
-        <fields>MODEL.NAME</fields>
-        <relatedList>AccountUserTerritory2RelatedList</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

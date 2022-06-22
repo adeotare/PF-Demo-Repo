@@ -3,8 +3,9 @@
     <fullName>All</fullName>
     <columns>NAME</columns>
     <columns>Account__c</columns>
+    <columns>Plant__c</columns>
     <columns>Product__c</columns>
-    <columns>Initial_Mega_Watt_Quantity__c</columns>
+    <columns>Net_Unit_Price__c</columns>
     <columns>Discount_Tier__c</columns>
     <columns>Quote_Line__c</columns>
     <columns>Subscription__c</columns>
