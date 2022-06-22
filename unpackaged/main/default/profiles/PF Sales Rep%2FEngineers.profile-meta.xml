@@ -7199,4 +7199,8 @@
         <apexClass>SoftwareDiscountTier</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>SubmitApproval</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
 </Profile>

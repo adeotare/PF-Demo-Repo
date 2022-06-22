@@ -7580,6 +7580,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>SubmitApproval</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TemplateGenerationController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
