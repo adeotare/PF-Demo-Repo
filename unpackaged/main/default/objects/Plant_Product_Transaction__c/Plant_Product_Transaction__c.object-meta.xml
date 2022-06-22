@@ -160,8 +160,16 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Plant Product Transaction</pluralLabel>
-    <searchLayouts />
+    <pluralLabel>Plant Product Transactions</pluralLabel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Plant__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Product__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Net_Unit_Price__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Discount_Tier__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Quote_Line__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Subscription__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
