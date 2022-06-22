@@ -60,11 +60,11 @@
         <picklist>SBQQ__ContractingMethod__c</picklist>
         <values>
             <fullName>By Subscription End Date</fullName>
-            <default>true</default>
+            <default>false</default>
         </values>
         <values>
             <fullName>Single Contract</fullName>
-            <default>false</default>
+            <default>true</default>
         </values>
     </picklistValues>
     <picklistValues>
