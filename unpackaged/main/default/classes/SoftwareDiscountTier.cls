@@ -35,12 +35,13 @@ public class SoftwareDiscountTier {
         for(MSA_Software_Discount_Tier_Price__c softPrice : softPriceList ){
             deletedPrices.add(softPrice.Id);
         }
-         System.debug('accplan::'+deletedPrices);
+         System.debug('Deleted Prices::'+deletedPrices);
          
         try {
             delete softPriceList;
+            System.debug('Deleted');
         }
-        catch(Exception ex) {
+        catch(DmlException ex) {
                 System.debug('Exception while deleting the plants from the quote line i.e. deleting PPT records'
                                 +string.valueOf(ex.getLineNumber()) +ex.getTypeName() +string.valueOf(ex.getCause()) +ex.getMessage() +ex.getStackTraceString());
 

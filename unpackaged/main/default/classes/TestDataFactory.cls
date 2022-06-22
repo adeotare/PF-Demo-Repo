@@ -342,7 +342,7 @@ public with sharing class TestDataFactory {
         return product;
     }
 
-    // Create Product
+    // Create Contrated Price
     public static SBQQ__ContractedPrice__c createContractedPrice(Id accId, Id productId){
         SBQQ__ContractedPrice__c contPrice = new SBQQ__ContractedPrice__c(SBQQ__Account__c = accId,
                                         SBQQ__Product__c = productId,  
@@ -354,8 +354,8 @@ public with sharing class TestDataFactory {
 
     // Create User
     public static User createNewUser(){
-        User user = new User(ProfileId = [SELECT Id FROM Profile WHERE Name = 'PF Marketing'].Id,
-                            LastName = 'Marketing',
+        User user = new User(ProfileId = [SELECT Id FROM Profile WHERE Name = 'PF Read-only'].Id,
+                            LastName = 'Readonly',
                             Email = 'puser000@amamama.com',
                             Username = 'puser000@amamama.com' + System.currentTimeMillis(),
                             CompanyName = 'TEST',
@@ -366,6 +366,22 @@ public with sharing class TestDataFactory {
                             LocaleSidKey = 'en_US');
 
         return user;                    
+    }
+
+    // Create software Discount Tier Prices
+    public static MSA_Software_Discount_Tier_Price__c createSoftwareDiscountTier(Id accId, Id productId, Id msaId){
+        MSA_Software_Discount_Tier_Price__c softPrice = new MSA_Software_Discount_Tier_Price__c(Account__c = accId,
+                                        Product__c = productId,  
+                                        MSA_Contract__c = msaId);
+        return softPrice;
+    }
+
+    // Create Implementation Discount Tier Prices
+    public static MSA_Implementation_Bracket_Price__c createImplementationBracketTier(Id accId, Id productId, Id msaId){
+        MSA_Implementation_Bracket_Price__c implPrice = new MSA_Implementation_Bracket_Price__c(Account__c = accId,
+                                        Product__c = productId,  
+                                        MSA_Contract__c = msaId);
+        return implPrice;
     }
 
 }

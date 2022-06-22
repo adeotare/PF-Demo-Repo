@@ -3,44 +3,25 @@ private class ImplementationBracketPriceTest{
 
     @testSetup 
     static void generatedata() {
-    
-        Pricebook2 priceBook= new Pricebook2 (Name = 'Standard Price Book');
-        insert priceBook;
-        
-        Account acc = new Account(Name='TestCP',
-                                Account_Price_Book__c = priceBook.Id);
-        insert acc;
 
+        Pricebook2 pbId = TestDataFactory.createPriceBook();
+        insert pbId ;
         
-        MSA_Contract__c msa = new MSA_Contract__c(Account_Name__c = acc.Id ,
-                                                MSA_Status__c = 'In Negotiation',
-                                                CurrencyIsoCode = 'USD');                               
+        Account acc = TestDataFactory.createAccount(pbId.Id);
+        insert acc;
+        
+        MSA_Contract__c msa = TestDataFactory.createMsa(acc.Id);                             
         insert msa;
         
-        
-        
-        Product2 product = new Product2(Name = 'Drive O&M', 
-                                    Product_Line__c = 'Core', 
-                                    ProductCode = 'GB-AD-PS-OT-IM-WD-ST-EWT',
-                                    Product_Category__c = 'Software',
-                                    Product_Type__c = 'SaaS',
-                                    Product_Services__c = 'N/A',
-                                    QuantityUnitOfMeasure = 'MWp',
-                                    Asset_Class__c = 'Solar'
-                                    );
+        Product2 product = TestDataFactory.createProductAgain();
         insert product;
+
+        MSA_Implementation_Bracket_Price__c implPrice = TestDataFactory.createImplementationBracketTier(acc.Id, product.Id, msa.Id);
+        insert implPrice;
+    
+        User user = TestDataFactory.createNewUser();
+        insert user;
         
-        MSA_Implementation_Bracket_Price__c implementPrice = new MSA_Implementation_Bracket_Price__c(Account__c = acc.Id,
-                                        Product__c = product.Id,  
-                                        MSA_Contract__c = msa.Id);
-                                        //Cross_Orders__c = ,
-                                        //Lower_Bound__c = ,
-                                        //Upper_Bound__c = ,
-                                        //Discount_Amount__c
-                                        //Product_List_Price__c = 24, 
-                                        //SBQQ__Price__c = 25,
-                                        //Same_As_List_Price__c = FALSE);
-        insert implementPrice;
         }
         
         
@@ -90,5 +71,26 @@ private class ImplementationBracketPriceTest{
             ImplementationBracketPrice.deleteImplementationPriceRecord(implementList,msa);
             Test.stopTest();
         }
+
+        @isTest static void deleteImplementationPriceRecordTestCatchException() {
+            User testUser = [SELECT Id FROM User WHERE alias = 'testmark'];
+            List<MSA_Contract__c> msaId = [Select Id from MSA_Contract__c where Account_Name__r.Name = 'TestCP' LIMIT 1];
+            Id msa = string.valueOf(msaId[0].Id);
+            System.debug('MSA Id : ' + msa);
+            List<MSA_Implementation_Bracket_Price__c> implementList = ImplementationBracketPrice.implementationBracketPriceRecords(msa);
+            Test.startTest();
+            System.runAs(testUser){   
+            try {        
+                ImplementationBracketPrice.deleteImplementationPriceRecord(implementList,msa);
+                //System.debug('Message : '+ msg);
+            }
+            catch(DmlException ex) {
+                System.debug('Error Message is : '+ ex.getMessage());
+            }
+            Test.stopTest();
+            }
+            //System.assertEquals('Success: Contracted Prices updated successfully', msg);
+
+        }        
 
 }
