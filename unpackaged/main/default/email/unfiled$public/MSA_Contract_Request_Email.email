@@ -1,0 +1,20 @@
+<messaging:emailTemplate subject="Approval Request Email" recipientType="User" relatedToType="sbaa__Approval__c">
+<messaging:htmlEmailBody >
+<html>
+<body>
+<p>
+Hello {!recipient.name}, 
+</p>
+<p>
+You have been requested to approve &nbsp;MSA Contract &nbsp;<apex:outputLink value="/{!relatedTo.MSA_Contract__r.id}">({!relatedTo.MSA_Contract__r.name})</apex:outputLink> of Account &nbsp;<apex:outputLink value="/{!relatedTo.MSA_Contract__r.Account_Name__r.id}">({!relatedTo.MSA_Contract__r.Account_Name__r.name})</apex:outputLink>
+To Approve/Reject record this record. Click on&nbsp;<apex:outputLink value="/{!relatedTo.id}"> Approve/Reject </apex:outputLink> link.
+</p>
+<p>
+You can also Approve/Reject this record by replying to this mail with one of these words in the first line of the email message: 
+[ Approve, Approved , Yes, Rejected, Reject, No ]<br></br>
+If replying via email, you can also add comments on the second line. Comments will be stores with the approval request in Salesforce org.
+</p>
+</body>
+</html>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>
