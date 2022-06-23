@@ -1,0 +1,7 @@
+Hi	</br>	</br>							
+								
+A new RAID for {!RAID__c.Account_Plant__c} has been created. Please check the requested information against the account plant and provide at your earliest convenience.									</br></br>										
+								
+<a href="{!RAID__c.Link}">{!RAID__c.Link} </a>	</br>	</br>						
+								
+Thanks

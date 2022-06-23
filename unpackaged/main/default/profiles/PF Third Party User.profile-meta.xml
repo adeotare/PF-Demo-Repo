@@ -5443,7 +5443,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>RAID__c.Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>RAID__c.Additional_Decision_Makers__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RAID__c.Assigned_Customer_Contact__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

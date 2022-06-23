@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>new</name>
+        <label>new</label>
+        <locationX>205</locationX>
+        <locationY>435</locationY>
+        <actionName>RAID__c.User_changes_the_Secondary_Contact_in_RAID_object</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <name>Secondary_Contact_Change</name>
+        <label>Secondary Contact Change</label>
+        <locationX>566</locationX>
+        <locationY>414</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Additional_Decision_Maker</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Additional_Decision_Makers__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>new</targetReference>
+            </connector>
+            <label>Additional Decision Maker</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Raid: Email is sent when the Additional Decision is changed {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Raid: Email is sent when the Additional Decision is changed</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>449</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Secondary_Contact_Change</targetReference>
+        </connector>
+        <object>RAID__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

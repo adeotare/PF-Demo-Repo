@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <name>Decision_to_check_if_contact_available</name>
+        <label>Decision to check if contact available</label>
+        <locationX>566</locationX>
+        <locationY>555</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Contact_found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Account_Contact_Relationship_Record.ContactId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Raid_CCFO</targetReference>
+            </connector>
+            <label>Contact found</label>
+        </rules>
+    </decisions>
+    <description>Auto-populated Raid CCFO by default from the AccountContactRelation.</description>
+    <interviewLabel>RAID :  Update CCFO field {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RAID :  Update CCFO field</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Account_Contact_Relationship_Record</name>
+        <label>Get Account Contact Relationship Record</label>
+        <locationX>575</locationX>
+        <locationY>383</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decision_to_check_if_contact_available</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Account__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Roles</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Customer Contact for Onboarding</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>AccountContactRelation</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Raid_CCFO</name>
+        <label>Update Raid CCFO</label>
+        <locationX>565</locationX>
+        <locationY>742</locationY>
+        <inputAssignments>
+            <field>Assigned_Customer_Contact__c</field>
+            <value>
+                <elementReference>Get_Account_Contact_Relationship_Record.ContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>449</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Get_Account_Contact_Relationship_Record</targetReference>
+        </connector>
+        <object>RAID__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
