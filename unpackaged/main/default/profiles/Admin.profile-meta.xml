@@ -986,6 +986,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Plant__c.BluePoint_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account_Plant__c.City__c</field>
         <readable>true</readable>
@@ -1006,8 +1011,18 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Plant__c.Customer_provided_MW_Capacity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account_Plant__c.DC_Capacity_kW__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Plant__c.Data_Connection_Notes__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1018,6 +1033,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account_Plant__c.Effective_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Plant__c.Ekhosoft_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1033,6 +1053,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account_Plant__c.GB_Legacy_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Plant__c.Greenbyte_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

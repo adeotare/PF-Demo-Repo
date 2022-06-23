@@ -24,10 +24,6 @@
                 <field>Customer_Plant_Asset_ID__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Entity_Type__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Status__c</field>
             </layoutItems>
@@ -45,10 +41,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Plant_Name__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
                 <field>Renewable_Type__c</field>
             </layoutItems>
             <layoutItems>
@@ -57,30 +49,14 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>State_Province__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Timezone__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
                 <field>Commercial_Operating_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Zip_Postal_Code__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Asset_Name__c</field>
+                <field>Active_RFI__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Relationship_Type__c</field>
-            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Customer_Plant_Name__c</field>
@@ -106,24 +82,32 @@
                 <field>Longitude__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Partner_Account__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Partner_Account_Name__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Record_Name__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Assigned_Customer_Contact__c</field>
+                <field>System_Modstamp__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>System_Modstamp__c</field>
+                <field>BluePoint_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Ekhosoft_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Greenbyte_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Data_Connection_Notes__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Customer_provided_MW_Capacity__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -136,17 +120,21 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Asset_Class__c</field>
+                <field>Asset_Name__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>AB_Approval_Status__c</field>
+                <behavior>Readonly</behavior>
+                <field>Asset_Class__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Asset_Builder_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>AB_Approval_Status__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -336,6 +324,12 @@
             <quickActionName>FeedItem.ContentNote</quickActionName>
         </quickActionListItems>
     </quickActionList>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RFI_Status__c</fields>
+        <fields>Total_RFI_Details__c</fields>
+        <relatedList>RAID__c.Account_Plant__c</relatedList>
+    </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>Site_Metadata__c.Account_Plant__c</relatedList>
