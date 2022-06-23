@@ -1,0 +1,245 @@
+<!--
+  @description       : 
+  @author            : 
+  @group             : 
+  @last modified on  : 
+  @last modified by  : 
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   ?     
+-->
+<aura:component
+  implements="force:lightningQuickActionWithoutHeader,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes"
+  controller="inlineRfiDetail">
+
+  <!--aura init handler , call js "loadData" function on component load, and display contact data on table-->
+  <aura:handler name="init" value="{!this}" action="{!c.loadData}" />
+
+  <!--declare can edit -->
+  <aura:attribute name="objectNeeded" type="RFI_Detail__c" default="{sobjectType : 'RFI_Detail__c'}" />
+  <aura:attribute name="fieldNeeded" type="String" default="Onsite_Remediation_Required__c" />
+  <aura:attribute name="status" type="String" default="open" />
+  <aura:attribute name="result" type="String" />
+  <aura:attribute name="categoryTypeOptions" type="List" default="[]" />
+  <lightning:navigation aura:id="navService" />
+
+
+  <!--Declare Attributes-->
+  <aura:attribute name="wrapperList" type="object" />
+  <aura:attribute name="wrapperMissingCat" type="List" />
+  <aura:attribute name="wrapperIncorrectCat" type="object" />
+  <aura:attribute name="itemStatusOptions" type="List"
+    default="[{'label': 'Drafting', 'value': 'Drafting'},{'label': 'Requested', 'value': 'Requested'}]" />
+  <aura:attribute name="itemStatus" type="String" default="Requested" />
+
+  <!-- two value -->
+  <aura:attribute name="selectedCategory" type="Map" default="{}" />
+
+  <!--button show -->
+
+  <aura:attribute name="parentOn" type="Boolean" default="false" />
+  <aura:attribute name="showCat" type="Boolean" default="false" />
+  <aura:attribute name="showError" type="Boolean" default="false" />
+  <aura:attribute name="showNotify" type="Boolean" default="false" />
+  <aura:attribute name="loadedSpinner" type="Boolean" default="false" />
+  <aura:attribute name="errorMessages" type="String" />
+  <aura:attribute name="validationError" type="String" />
+
+
+  <!-- dialog box display -->
+  <c:Messages aura:id="notify" />
+  <ltng:require styles="{!$Resource.Dialogbox}" />
+
+  <!--child component attribute -->
+  <aura:attribute name="selectedPlant" type="String[]" default="[]" />
+
+  <!--call parent component attribute -->
+  <aura:attribute name="callParent" type="Boolean" default="false" />
+  <aura:attribute name="showParent" type="Boolean" default="false" />
+
+  <!-- required field-->
+  <aura:attribute name="needRequired" type="Boolean" default="false" />
+
+
+  <section role="dialog" tabindex="3" class="slds-modal slds-fade-in-open slds-modal_large"
+    aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+
+    <div class="slds-modal__container">
+      <aura:if isTrue="{!v.showError == true}">
+        <lightning:layout class="slds-page-header slds-page-header--object-home" multipleRows="true"
+          VerticalAlign="center" horizontalAlign="center">
+          <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
+            {!v.errorMessages}
+          </lightning:layoutItem>
+        </lightning:layout>
+      </aura:if>
+      <aura:if isTrue="{!v.showCat == true}">
+
+        <header class="slds-modal__header">
+          <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Add RFI Items</h2>
+
+          <div class="slds-text-align_left">
+            <lightning:layout>
+              <lightning:layoutItem size="6" padding="around-small">
+                <lightning:input aura:id="category-search" name="category-search" label="Search Categories"
+                  type="search" onkeyup="{!c.searchCategories}" oncommit="{!c.searchCategories}" />
+              </lightning:layoutItem>
+              <lightning:layoutItem size=" 2" padding="around-small">
+                <div class="slds-p-top_medium">
+                  <lightning:input aura:id="show-selected" type="toggle" label="Selected" messageToggleActive="Shown"
+                    messageToggleInactive="Hidden" name="input1" checked="true" onchange="{!c.searchCategories}">
+                  </lightning:input>
+                </div>
+              </lightning:layoutItem>
+            </lightning:layout>
+
+          </div>
+
+          <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-p-around--none slds-m-bottom_none">
+            <thead>
+              <tr class="slds-text-title ">
+                <th class="slds-text-align--right">
+                  <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                      <label class="slds-checkbox">
+                        <!--header checkbox for select all-->
+                        <ui:inputCheckbox aura:id="box3" change="{!c.selectAllMissing}" />
+                        <span class="slds-checkbox--faux"></span>
+                        <span class="slds-form-element__label text"></span>
+                      </label>
+                    </div>
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="slds-text-heading_small slds-align_absolute-center slds-cell-wrap" title="First Name">
+                    RFI Item Name</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-text-heading_small slds-align_absolute-center slds-cell-wrap" title="Request Type">
+                    Request Type
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="slds-text-heading_small slds-align_absolute-center slds-cell-wrap" title="Category Type">
+                    Category Type
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="slds-text-heading_small slds-align_absolute-center slds-cell-wrap"
+                    title="RFI Description">
+                    RFI Item
+                    Description</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-text-heading_small slds-align_absolute-center slds-cell-wrap"
+                    title="Implementation Blocked">
+                    Implementation Blocked</div>
+                </th>
+              </tr>
+            </thead>
+          </table>
+
+        </header>
+        <div class="slds-modal__content slds-p-around--none" id="modal-content-id-1">
+
+          <table
+            class="slds-table slds-table--bordered slds-table_header-hidden slds-table--cell-buffer slds-p-around--none">
+            <tbody>
+              <aura:iteration items="{!v.wrapperMissingCat}" var="con">
+                <aura:if isTrue="{!(con.lstRfiCat.Id != null &amp;&amp; !con.filtered)}">
+                  <tr class="slds-p-around--none">
+                    <td scope="row" class="slds-text-align--right">
+                      <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                          <label class="slds-checkbox">
+                            <ui:inputCheckbox text="{!con.lstRfiCat.Id}" aura:id="boxPackMissing"
+                              change="{!c.onChangePickMissing}" value="{!con.selected}" />
+                            <span class=" slds-checkbox--faux"></span>
+                            <span class="slds-form-element__label text"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </td>
+                    <td scope="row">
+                      <div class="slds-cell-wrap slds-p-around--none" title="{!con.lstRfiCat.Name}">
+                        {!con.lstRfiCat.Name}</div>
+                    </td>
+                    <td scope="row">
+                      <div class="slds-cell-wrap slds-align_absolute-center slds-p-around--none"
+                        title="{!con.lstRfiCat.Request_Type__c}">
+                        {!con.lstRfiCat.Request_Type__c}</div>
+                    </td>
+                    <td scope="row">
+                      <div class="slds-cell-wrap slds-align_absolute-center slds-p-around--none">
+                        <lightning:combobox name="categoryType" label="" onchange="{!c.handleCategoryTypeSelected}"
+                          options="{!v.categoryTypeOptions}" value="{!con.categoryType}" />
+                      </div>
+                    </td>
+                    <td>
+                      <lightning:textarea aura:id="description" onfocus="{!c.handleFocus}" onblur="{!c.handleBlur}"
+                        value="{!con.description}" />
+                    </td>
+                    <td>
+                      <div class="slds-p-around--none slds-align_absolute-center slds-align_absolute-center"
+                        title="{!con.implementationBlock}">
+                        <div class="slds-form-element__control">
+                          <label class="slds-checkbox">
+                            <ui:inputCheckbox text="{!con.lstRfiCat.Id}" value="{!con.implementationBlock}"
+                              aura:id="implementationBlk" change="{!c.doImplementationMissing}" />
+                            <span class="slds-checkbox--faux"></span>
+                            <span class="slds-form-element__label text"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </aura:if>
+              </aura:iteration>
+            </tbody>
+          </table>
+
+        </div>
+
+
+      </aura:if>
+      <footer class="slds-modal__footer">
+        <div class="slds-grid slds-grid_align-end">
+          <div class="slds-col slds-p-right_x-large">
+            <lightning:combobox label="Item Status" variant="label-inline" options="{!v.itemStatusOptions}"
+              value="{!v.itemStatus}">
+            </lightning:combobox>
+          </div>
+          <div class="slds-col">
+            <lightning:button label="Cancel" onclick="{!c.doCancel}" />
+            <aura:if isTrue="{!(v.showError== false)}">
+              <lightning:button label="Add to RFI" onclick="{!c.saveNew}" class="slds-button slds-button--brand" />
+            </aura:if>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </section>
+  <!-- conformation Dialog Box -->
+  <aura:if isTrue="{!v.showNotify == true}">
+    <div role="dialog" class="slds-modal slds-fade-in-open ">
+      <div class="slds-modal__container">
+        <header class="slds-modal__header">
+          <h1 class="slds-text-heading--medium">Confirmation</h1>
+        </header>
+        <div class="slds-modal__content slds-p-around--medium">
+          <center><b>If you wish to view the selected plant asset, the selected category will be unselected.Do you want
+              to continue.?</b></center>
+        </div>
+        <footer class="slds-modal__footer">
+          <lightning:button name='No' label='No, continue.' onclick='{!c.handleConfirmDialogNo}' />
+          <lightning:button variant="brand" name='Yes' label='Yes, I do.' onclick='{!c.handleConfirmDialogYes}' />
+        </footer>
+      </div>
+    </div>
+    <div class="slds-backdrop slds-backdrop--open"></div>
+  </aura:if>
+  <aura:if isTrue="{! v.loadedSpinner }">
+    <lightning:spinner alternativeText="Loading" size="medium" />
+  </aura:if>
+
+</aura:component>

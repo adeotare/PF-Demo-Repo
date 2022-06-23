@@ -1,0 +1,6 @@
+Your plant is implemented! Please review the details of the plant/project from the attached link.</br></br>
+
+Link to CRM Record :</br>
+<a href="{!CRM_Project__c.Link}">{!CRM_Project__c.Name}</a></br></br>
+
+Please note this is an automated email. If you have any questions or concerns please contact your CSM.

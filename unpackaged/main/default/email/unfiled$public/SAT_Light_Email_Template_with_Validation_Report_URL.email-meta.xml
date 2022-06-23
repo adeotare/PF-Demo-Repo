@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>SAT Light Email Template that contains Validation Report URL</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>SAT Light Email Template with Validation Report URL</name>
+    <style>none</style>
+    <subject>Validation Report through Validation Report URL</subject>
+    <textOnly>Your plant is implemented! Please review the Deployment Validation Report for details from our data validation checks.
+
+Link to report :
+{!CRM_Project__c.Validation_Report_URL__c}
+
+Please note this is an automated email. If you have any questions or concerns please contact your Technical Project Manager.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,42 @@
+<aura:component access="global">
+    <!-- attributes needed for the ui:message -->
+  <aura:attribute name="message" type="String" default="" description="Text content of the notification"/>
+  <aura:attribute name="title" type="String" default="" description="Title of the notification"/>
+  <aura:attribute name="show" type="Boolean" default="false" description="show or not"/>
+  <aura:attribute name="severity" type="String" default="info" description="type(confirm, info, warning, error)"/>
+
+  <aura:method name="hide" action="{! c.hideUiMessage }" />
+
+  <aura:method name="showError" action="{! c.showError }">
+    <aura:attribute name="title" type="String" />
+    <aura:attribute name="message" type="String" />
+  </aura:method>
+
+  <aura:method name="showSuccess" action="{! c.showSuccess }">
+    <aura:attribute name="title" type="String" />
+    <aura:attribute name="message" type="String" />
+  </aura:method>
+
+  <aura:method name="showWarning" action="{! c.showWarning }">
+    <aura:attribute name="title" type="String" />
+    <aura:attribute name="message" type="String" />
+  </aura:method>
+
+  <aura:method name="showInfo" action="{! c.showInfo }">
+    <aura:attribute name="title" type="String" />
+    <aura:attribute name="message" type="String" />
+  </aura:method>
+
+  <!-- for callback errors -->
+  <aura:method name="showErrorResponse" action="{! c.showErrorResponse }">
+    <aura:attribute name="response" type="Object" />
+  </aura:method>
+
+  <aura:if isTrue="{! v.show }">
+    <div onclick="{! c.hideUiMessage }">
+      <ui:message title="{! v.title }" severity="{! v.severity }" closable="true">
+        <aura:unescapedHtml value="{! v.message }" />
+      </ui:message>
+    </div>
+  </aura:if>
+</aura:component>

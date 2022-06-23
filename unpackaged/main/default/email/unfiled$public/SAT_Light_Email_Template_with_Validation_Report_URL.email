@@ -1,0 +1,6 @@
+Your plant is implemented! Please review the Deployment Validation Report for details from our data validation checks.</br></br>
+
+Link to report :</br>
+<a href="{!CRM_Project__c.Validation_Report_URL__c}">{!CRM_Project__c.Validation_Report_URL__c}</a></br></br>
+
+Please note this is an automated email. If you have any questions or concerns please contact your Technical Project Manager.

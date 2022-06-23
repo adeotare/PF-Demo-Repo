@@ -1,0 +1,213 @@
+<!--
+  @description       : 
+  @author            : 
+  @group             : 
+  @last modified on  : 
+  @last modified by  : 
+  Modifications Log 
+  Ver   Date         Author                   Modification
+  1.0   09-23-2020   
+-->
+<aura:component
+  implements="force:lightningQuickAction,lightning:isUrlAddressable,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+  access="global" controller="inlineRfiDetail">
+
+  <!--handlers for plant -->
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <lightning:navigation aura:id="navService" />
+
+  <!--Attribute for plant -->
+  <aura:attribute name="showParagraph" type="Boolean" default="false" />
+  <aura:attribute name="showPlantAsset" type="Boolean" default="false" />
+  <aura:attribute name="loadedSpinner" type="Boolean" default="false" />
+  <aura:attribute name="showRFICat" type="Boolean" default="false" />
+  <aura:attribute name="listPlantAsset" type="Account_Plant__c[]" />
+  <aura:attribute name="selectedPlant" type="String[]" default="[]" />
+  <aura:attribute name="showError" type="Boolean" default="false" />
+  <aura:attribute name="accountFilter" type="String" />
+  <aura:attribute name="timer" type="Integer" />
+  <aura:attribute name="rfiSubTypeOptions" type="List" default="[]" />
+  <aura:attribute name="rfiSubType" type="String" />
+  <aura:attribute name="itemStatusOptions" type="List"
+    default="[{'label': 'Drafting', 'value': 'Drafting'},{'label': 'Requested', 'value': 'Requested'}]" />
+  <aura:attribute name="itemStatus" type="String" default="Requested" />
+
+  <!--call parent component attribute -->
+  <aura:attribute name="callParent" type="Boolean" default="false" />
+  <aura:attribute name="showParent" type="Boolean" default="false" />
+  <aura:handler name="change" value="{!v.callParent}" action="{!c.calledPrevious}" />
+  <aura:handler name="change" value="{!v.showParent}" action="{!c.doShowParent}" />
+
+  <!-- size of the container -->
+
+  <div class="slds-page-header">
+    <div class="slds-page-header__row">
+      <div class="slds-page-header__col-title">
+        <div class="slds-media">
+          <div class="slds-media__figure">
+            <span class="slds-icon_container" title="RFI__c">
+              <lightning:icon iconName="custom:custom55" title="custom55" />
+              <span class="slds-assistive-text">RFI</span>
+            </span>
+          </div>
+          <div class="slds-media__body">
+            <div class="slds-page-header__name">
+              <div class="slds-page-header__name-title">
+                <h1>
+                  <span class="slds-page-header__title slds-truncate" title="Mass Create RFIs">Mass Create RFIs</span>
+                </h1>
+              </div>
+            </div>
+            <p class="slds-page-header__name-meta">This is a utility tool to create bulk RFIs. In the Utility once you
+              click the button given below you will be requested to select list of Customer Plant Assets. Once it is
+              chosen then you will be requested to choose list of category.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <aura:if isTrue="{!v.showParagraph}">
+    <div class="slds-card slds-m-vertical--medium">
+      <div class="slds-card__header slds-grid grid--flex-spread">
+        <h2 class="slds-text-heading--small slds-truncate"> Select RFI Sub Type</h2>
+      </div>
+      <div class="slds-card__body slds-p-horizontal--small">
+        <lightning:layout>
+          <lightning:layoutItem size="2" padding="horizontal-medium">
+            <lightning:combobox aura:id="rfiSubType" name="rfiSubType" label="RFI Sub Type" placeholder="Select"
+              options="{!v.rfiSubTypeOptions}" required="true" value="{!v.rfiSubType}">
+            </lightning:combobox>
+          </lightning:layoutItem>
+          <lightning:layoutItem size="2" padding="horizontal-medium">
+            <div class="slds-form-element">
+              <label class="slds-form-element__label">&nbsp;</label>
+              <div class="slds-form-element__control">
+                <lightning:button label="Get Plant Assets" onclick="{!c.doShowPlantAsset}"
+                  class="slds-button slds-button--brand" />
+              </div>
+            </div>
+          </lightning:layoutItem>
+        </lightning:layout>
+      </div>
+    </div>
+  </aura:if>
+
+  <aura:if isTrue="{!v.showError == true}">
+    <lightning:layout class="slds-page-header slds-page-header--object-home" multipleRows="true" VerticalAlign="center"
+      horizontalAlign="center">
+      <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
+        <h4 class="slds-text-heading--small"> No Customer Plant Asset is available for selection.</h4>
+      </lightning:layoutItem><br /><br />
+      <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
+        <lightning:button label="Cancel" onclick="{!c.doCancelParent}" />
+      </lightning:layoutItem>
+    </lightning:layout>
+  </aura:if>
+
+  <aura:if isTrue="{!v.showPlantAsset == true}">
+    <div class="slds-card slds-m-vertical--medium">
+      <div class="slds-card__header slds-grid grid--flex-spread">
+        <h2 class="slds-text-heading--small slds-truncate"> Select Customer Plant Assets</h2>
+      </div>
+      <div class="slds-card__body">
+        <div class="slds-grid">
+          <div class="slds-col slds-size_1-of-4 slds-p-horizontal_small" style="text-align: left;">
+            <lightning:input label="Filter by Account Name" value="{!v.accountFilter}"
+              onchange="{!c.changeAccountFilter}" />
+          </div>
+        </div>
+        <br />
+        <form class="slds-form--stacked">
+          <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table_fixed-layout">
+            <thead>
+              <tr class="slds-text-title">
+                <th style="width:3.25rem;" class="slds-text-align--right">
+                  <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                      <label class="slds-checkbox">
+                        <!--header checkbox for select all-->
+                        <ui:inputCheckbox aura:id="selectAll" change="{!c.selectAll}" />
+                        <span class="slds-checkbox--faux"></span>
+                        <span class="slds-form-element__label text"></span>
+                      </label>
+                    </div>
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="slds-text-heading_small slds-cell-wrap" title="Category Classification">Account Plant Name
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="slds-text-heading_small slds-cell-wrap" title="RFI Description">Account</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-text-heading_small  slds-cell-wrap" title="Plant ">Plant</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-text-heading_small  slds-cell-wrap" title="Customer Plant ">Customer Plant Name</div>
+                </th>
+              </tr>
+            </thead>
+          </table>
+        </form>
+        <form class="slds-form--stacked">
+          <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table_fixed-layout">
+            <tbody>
+              <aura:iteration items="{!v.listPlantAsset}" var="plant">
+                <tr>
+                  <th scope="row" style="width:5rem;" class="slds-text-align--right">
+                    <div class="slds-form-element">
+                      <div class="slds-form-element__control">
+                        <label class="slds-checkbox">
+                          <ui:inputCheckbox text="{!plant.Id}" aura:id="boxPlant" />
+                          <span class="slds-checkbox--faux"></span>
+                          <span class="slds-form-element__label text"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </th>
+                  <th scope="row">
+                    <div class="slds-cell-wrap" title="{!plant.Name}">{!plant.Name}</div>
+                  </th>
+                  <th scope="row">
+                    <div class="slds-cell-wrap" title="{!plant.Account__r.Name}">{!plant.Account__r.Name}</div>
+                  </th>
+                  <th scope="row">
+                    <div class="slds-cell-wrap" title="{!plant.Plant__r.Name}">{!plant.Plant__r.Name}</div>
+                  </th>
+                  <th scope="row">
+                    <div class="slds-cell-wrap" title="{!plant.Customer_Plant_Name__c}">{!plant.Customer_Plant_Name__c}</div>
+                  </th>
+                </tr>
+              </aura:iteration>
+            </tbody>
+          </table>
+        </form>
+      </div>
+      <div class="slds-card__footer">
+        <div class="slds-grid slds-grid_align-end">
+          <div class="slds-col slds-p-right_x-large">
+            <lightning:combobox label="Status" variant="label-inline" options="{!v.itemStatusOptions}"
+              value="{!v.itemStatus}">
+            </lightning:combobox>
+          </div>
+          <div class="slds-col">
+            <lightning:button label="Cancel" onclick="{!c.doCancelParent}" />
+            <lightning:button label="Create RAIDs" onclick="{!c.next}" class="slds-button slds-button--brand" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </aura:if>
+
+  <!--<aura:if isTrue="{!v.showRFICat == true}">
+    <c:AddRfiDetailToMassCreateRfi selectedPlant="{!v.selectedPlant}" callParent="{!v.callParent}"
+      showParent="{!v.showParent}" />
+  </aura:if>-->
+
+
+  <aura:if isTrue="{! v.loadedSpinner }">
+    <lightning:spinner alternativeText="Loading" size="medium" />
+  </aura:if>
+</aura:component>

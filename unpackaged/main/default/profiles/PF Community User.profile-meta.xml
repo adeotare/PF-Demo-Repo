@@ -1763,6 +1763,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>RAID__c.Sub_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>RFI_Categories__c.Default_to_Blocker__c</field>
         <readable>true</readable>
     </fieldPermissions>

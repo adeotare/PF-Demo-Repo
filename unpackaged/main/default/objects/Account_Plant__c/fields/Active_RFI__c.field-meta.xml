@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_RFI__c</fullName>
+    <externalId>false</externalId>
+    <label>Active RFI</label>
+    <summaryFilterItems>
+        <field>RAID__c.RFI_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </summaryFilterItems>
+    <summaryForeignKey>RAID__c.Account_Plant__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

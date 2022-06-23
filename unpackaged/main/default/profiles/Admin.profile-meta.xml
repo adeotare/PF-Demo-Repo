@@ -189,6 +189,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>InlineEditHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>LookupWithDynamicFieldFilterCont</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -362,6 +366,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>QuoteExtControllerTests</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RFIBatchProcess</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -562,6 +570,18 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Wrike_MetadataServiceTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>inlineRfiDetail</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>wrapperClassNew</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>wrapperForChangeMassPF</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <applicationVisibilities>
@@ -6201,6 +6221,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>RAID__c.Closed_RFI_Detail__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>RAID__c.Details__c</field>
         <readable>true</readable>
@@ -6216,6 +6241,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>RAID__c.Percentage_of_closed_RFI_Details__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>RAID__c.Risk_Contingency_plan__c</field>
         <readable>true</readable>
@@ -6223,6 +6253,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>RAID__c.Risk_Management_plan__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RAID__c.Sub_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RAID__c.Total_RFI_Details__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
