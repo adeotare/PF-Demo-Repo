@@ -3732,6 +3732,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Order.Subsidiary__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Order.TotalAmount</field>
         <readable>true</readable>
@@ -6371,6 +6376,12 @@
     <layoutAssignments>
         <layout>Opportunity-Service Only</layout>
         <recordType>Opportunity.Services_Only</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Order-Order Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>OrderItem-Order Product Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Plant_Product_Transaction__c-Plant Product Transaction Layout</layout>

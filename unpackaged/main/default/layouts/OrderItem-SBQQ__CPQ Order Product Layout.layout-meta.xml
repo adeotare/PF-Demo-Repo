@@ -208,7 +208,7 @@
                 <field>SBQQ__QuoteLine__c</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
+        <layoutColumns />
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
@@ -235,8 +235,8 @@
         <detailHeading>false</detailHeading>
         <editHeading>false</editHeading>
         <label>Additional Information</label>
-        <layoutColumns/>
-        <layoutColumns/>
+        <layoutColumns />
+        <layoutColumns />
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <multilineLayoutFields>OrderId</multilineLayoutFields>
@@ -283,6 +283,10 @@
         <fields>ListPrice</fields>
         <fields>TotalPrice</fields>
         <relatedList>OrderItem.SBQQ__RevisedOrderProduct__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Plant_Product_Transaction__c.Order_Item__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>

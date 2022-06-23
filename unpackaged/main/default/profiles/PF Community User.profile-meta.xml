@@ -2661,5 +2661,11 @@
     <layoutAssignments>
         <layout>Equipment__c-Community Page Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Order-Order Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>OrderItem-Order Product Layout</layout>
+    </layoutAssignments>
     <userLicense>Customer Community Plus</userLicense>
 </Profile>
