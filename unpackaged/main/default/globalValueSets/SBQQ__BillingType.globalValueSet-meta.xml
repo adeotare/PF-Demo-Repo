@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>In advance</fullName>
+        <default>false</default>
+        <label>In advance</label>
+    </customValue>
+    <customValue>
+        <fullName>In arrears</fullName>
+        <default>false</default>
+        <label>In arrears</label>
+    </customValue>
+    <customValue>
+        <fullName>50/50</fullName>
+        <default>false</default>
+        <label>50/50</label>
+    </customValue>
+    <customValue>
+        <fullName>Custom</fullName>
+        <default>false</default>
+        <label>Custom</label>
+    </customValue>
+    <description>Billing type</description>
+    <masterLabel>Billing Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
