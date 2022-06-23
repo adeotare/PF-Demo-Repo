@@ -6673,6 +6673,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ApproveCrmProject</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ImplementationBracketPrice</apexClass>
         <enabled>true</enabled>
     </classAccesses>

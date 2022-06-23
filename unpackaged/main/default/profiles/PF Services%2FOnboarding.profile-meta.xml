@@ -7352,6 +7352,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ApproveCrmProject</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AssetBuilderApprovalHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>

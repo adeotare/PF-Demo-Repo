@@ -2777,6 +2777,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ApproveCrmProject</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>CrmProjectListView</apexClass>
         <enabled>true</enabled>
     </classAccesses>

@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"  controller="ApproveCrmProject" access="global" >
+ 
+	<aura:attribute name="recordId" type="Id" />
+     
+    
+    
+    <ui:button aura:id="mybtn" class="slds-button slds-button--success" label="Approve" press="{!c.Handleapprove}"/>
+    <ui:button  class="slds-button slds-button--destructive" label="Reject" press="{!c.HandleReject}"/>
+
+</aura:component>
