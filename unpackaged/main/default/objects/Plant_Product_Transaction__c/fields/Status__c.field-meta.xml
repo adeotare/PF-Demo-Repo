@@ -27,6 +27,16 @@
                 <label>Contracted</label>
             </value>
             <value>
+                <fullName>Amendment Quoted​</fullName>
+                <default>false</default>
+                <label>Amendment Quoted​</label>
+            </value>
+            <value>
+                <fullName>Renewal Quoted</fullName>
+                <default>false</default>
+                <label>Renewal Quoted</label>
+            </value>
+            <value>
                 <fullName>Decommissioned</fullName>
                 <default>false</default>
                 <label>Decommissioned</label>
