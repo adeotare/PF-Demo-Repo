@@ -64,10 +64,6 @@
                 <field>Theater__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Total_ARR__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>of_Open_Deals__c</field>
             </layoutItems>
@@ -82,6 +78,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Credit_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Total_ARR__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Account_ARR_in_USD__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -403,20 +407,12 @@
         <relatedList>RelatedAssetList</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>QS_Customer_Asset__c.QS_Account__c</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>ORDERS.ORDER_NUMBER</fields>
         <fields>ORDERS.STATUS</fields>
         <fields>ORDERS.EFFECTIVE_DATE</fields>
         <fields>CONTRACT.CONTRACT_NUMBER</fields>
         <fields>ORDERS.TOTAL_AMOUNT</fields>
         <relatedList>RelatedOrderList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>QS_Customer_Asset_Detail__c.QS_Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -571,9 +567,10 @@
     <relatedLists>
         <fields>NAME</fields>
         <fields>Asset_Class__c</fields>
-        <fields>Shipping_State_Province__c</fields>
-        <fields>MWp__c</fields>
+        <fields>Plant_Number__c</fields>
         <fields>Operational_Status__c</fields>
+        <fields>OWNER.FIRST_NAME</fields>
+        <fields>Region__c</fields>
         <relatedList>Plant__c.Majority_Offtake__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
