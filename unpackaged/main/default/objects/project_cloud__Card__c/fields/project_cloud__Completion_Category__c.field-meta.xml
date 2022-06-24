@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Completion_Category__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(project_cloud__Board_Process_Step__c), &#39;On Hold&#39;, TEXT(project_cloud__Board_Process_Step__r.project_cloud__Completion_Category__c))</formula>
+    <inlineHelpText>The completion status for the card (determined by Board Process Step)</inlineHelpText>
+    <label>Completion Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_cloud__Card_Name__c</fullName>
+    <deprecated>false</deprecated>
+    <description>A brief explanation of the card. Not to be confused with the description, which is a more detailed explanation of the card</description>
+    <externalId>false</externalId>
+    <inlineHelpText>A brief explanation of the card. See the description for more detail</inlineHelpText>
+    <label>Name</label>
+    <length>255</length>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
