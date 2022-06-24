@@ -6916,6 +6916,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>Create_Mass_RFI</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>Document_Link__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>

@@ -2448,6 +2448,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>Create_Mass_RFI</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>Evaluation_Value__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
