@@ -54,6 +54,10 @@
                 <behavior>Readonly</behavior>
                 <field>Region__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Total_ARR__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -338,6 +342,10 @@
         <relatedList>RelatedOpportunityList</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>QS_Customer_Asset__c.QS_Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>ORDERS.ORDER_NUMBER</fields>
         <fields>ORDERS.STATUS</fields>
         <fields>ORDERS.EFFECTIVE_DATE</fields>
@@ -443,9 +451,10 @@
     <relatedLists>
         <fields>NAME</fields>
         <fields>Asset_Class__c</fields>
-        <fields>Shipping_State_Province__c</fields>
-        <fields>MWp__c</fields>
+        <fields>Plant_Number__c</fields>
         <fields>Operational_Status__c</fields>
+        <fields>OWNER.FIRST_NAME</fields>
+        <fields>Region__c</fields>
         <relatedList>Plant__c.Majority_Offtake__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>

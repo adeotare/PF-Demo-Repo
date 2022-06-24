@@ -4,8 +4,8 @@
     <description>REQ-2425 :- This Field &#39;Annual Recurring Revenue&quot; is the roll-up summary field that summarizes the ARR from all Purchased Products.</description>
     <externalId>false</externalId>
     <label>Total ARR</label>
-    <summarizedField>Purchased_Product__c.Active_Annual_Recurring_Revenue__c</summarizedField>
-    <summaryForeignKey>Purchased_Product__c.Account__c</summaryForeignKey>
+    <summarizedField>QS_Customer_Asset__c.QS_Annual_Recurring_Revenue__c</summarizedField>
+    <summaryForeignKey>QS_Customer_Asset__c.QS_Account__c</summaryForeignKey>
     <summaryOperation>sum</summaryOperation>
     <trackHistory>false</trackHistory>
     <type>Summary</type>
