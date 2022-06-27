@@ -50,7 +50,10 @@ public class RenewableQuoteProcessHelper {
                        pp.Quote__c=ql.SBQQ__Quote__r.id;
                        pp.OwnerId = ql.SBQQ__Quote__r.OwnerId;    
                        pp.OwnerId=ql.SBQQ__Quote__r.OwnerId;
-                       pp.Contracted_MW_Unit_List_Price__c=ql.SBQQ__SpecialPrice__c;
+                       decimal s=ql.SBQQ__SpecialPrice__c;
+                       decimal c=pp.Contracted_MW_Unit_List_Price__c;
+                        c=s;
+                       //pp.Contracted_MW_Unit_List_Price__c=ql.SBQQ__SpecialPrice__c;
                        
                        pp.MWp_Quantity__c=pp.Plant__r.Plant__r.MWp__c;
                        pp.Quote_Line_Quantity__c=pp.Plant__r.Plant__r.MWp__c;
