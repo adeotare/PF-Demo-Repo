@@ -1,12 +1,12 @@
 ({
 doinit : function(cmp, event, helper) {
      
-cmp.set('v.Columns', [  {label: 'Account Name', fieldName: 'linkName', type: 'url', 
+cmp.set('v.Columns', [  {label: 'name', fieldName: 'linkName', type: 'url', 
         typeAttributes: {label: { fieldName: 'Name' }, target: '_blank'}},
 
- { label: 'Project Name', fieldName: 'Project_Name__c ', type: 'text' },
+ //{ label: 'Project Name', fieldName: 'Project_Name__c ', type: 'text' },
 { label: 'Project Type', fieldName: 'Project_Type__c', type: 'text' },
-{ label: 'Project Visibility', fieldName: 'Project_visibility__c', type: 'text' },
+//{ label: 'Project Visibility', fieldName: 'Project_visibility__c', type: 'text' },
 { label: 'Product ', fieldName: 'Product__c ', type: 'text' }
 
 ]);
