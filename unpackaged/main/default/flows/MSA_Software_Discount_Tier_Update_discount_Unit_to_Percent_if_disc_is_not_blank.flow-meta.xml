@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <name>Update_the_discount_unit_to_Percent</name>
+        <label>Update the discount unit to Percent</label>
+        <locationX>750</locationX>
+        <locationY>174</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Discount_Unit__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Percent</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_Discount_type</name>
+        <label>Check Discount type</label>
+        <locationX>526</locationX>
+        <locationY>168</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Discount_is_in_percent</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Discount_Unit__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_the_discount_unit_to_Percent</targetReference>
+            </connector>
+            <label>If Discount is in percent</label>
+        </rules>
+    </decisions>
+    <interviewLabel>MSA Software Discount Tier Price : Update discount Unit to Percent if discount % is not blank {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>MSA Software Discount Tier : Update discount Unit to Percent if disc % is not blank</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>105</locationX>
+        <locationY>28</locationY>
+        <connector>
+            <targetReference>Check_Discount_type</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Discount__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>MSA_Software_Discount_Tier_Price__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

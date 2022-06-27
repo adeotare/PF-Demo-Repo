@@ -3038,6 +3038,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>MSA_Software_Discount_Tier_Price__c.Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Metric_Definition__c.Attribute__c</field>
         <readable>true</readable>
     </fieldPermissions>
