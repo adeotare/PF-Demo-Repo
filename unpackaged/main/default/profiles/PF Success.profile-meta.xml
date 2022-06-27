@@ -6479,6 +6479,9 @@
     <layoutAssignments>
         <layout>Product2-Product Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>RAID__c-Risk Layout</layout>
+    </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>

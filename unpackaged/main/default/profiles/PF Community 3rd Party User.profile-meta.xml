@@ -2204,6 +2204,9 @@
         <layout>Program__c-Program Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>RAID__c-Community Page Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>SBQQ__Quote__c-Approved Layout</layout>
         <recordType>SBQQ__Quote__c.Locked</recordType>
     </layoutAssignments>

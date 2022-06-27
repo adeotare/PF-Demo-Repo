@@ -2686,5 +2686,8 @@
     <layoutAssignments>
         <layout>OrderItem-Order Product Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>RAID__c-Community Page Layout</layout>
+    </layoutAssignments>
     <userLicense>Customer Community Plus</userLicense>
 </Profile>

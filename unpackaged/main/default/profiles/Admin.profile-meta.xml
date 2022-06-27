@@ -7263,6 +7263,9 @@
     <layoutAssignments>
         <layout>Product2-Product Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>RAID__c-Risk Layout</layout>
+    </layoutAssignments>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Competitor</recordType>
