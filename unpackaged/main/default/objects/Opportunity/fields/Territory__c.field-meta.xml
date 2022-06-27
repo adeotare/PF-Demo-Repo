@@ -18,9 +18,9 @@
                 <label>EMEA</label>
             </value>
             <value>
-                <fullName>AMERICAS</fullName>
+                <fullName>Americas</fullName>
                 <default>false</default>
-                <label>AMERICAS</label>
+                <label>Americas</label>
             </value>
             <value>
                 <fullName>APAC</fullName>
