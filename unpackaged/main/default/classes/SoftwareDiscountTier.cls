@@ -18,7 +18,7 @@ public class SoftwareDiscountTier {
     public static List<MSA_Software_Discount_Tier_Price__c> fetchSoftwareListPriceData(String RecId){
         List<MSA_Contract__c> accountId = [Select Account_Name__c from MSA_Contract__c where Id = :RecId limit 1];
         Id accId = string.valueOf(accountId[0].Account_Name__c);
-        List<MSA_Software_Discount_Tier_Price__c> records = [Select Id, MSA_Contract__c, Account__r.Name, Product__r.Name, Pricing_Tier__c, Cross_Orders__c, Lower_Bound__c, Upper_Bound__c, Discount_Amount__c, Effective_Start_Date__c,  Effective_End_Date__c
+        List<MSA_Software_Discount_Tier_Price__c> records = [Select Id, Name, MSA_Contract__c, Account__r.Name, Product__r.Name, Pricing_Tier__c, Cross_Orders__c, Lower_Bound__c, Upper_Bound__c, Discount_Unit__c, Discount__c
         from MSA_Software_Discount_Tier_Price__c
         where Account__r.Id = :accId ];
         system.debug('Account ID' + accId);
@@ -29,19 +29,18 @@ public class SoftwareDiscountTier {
 
     @AuraEnabled 
     public static void deleteSoftwarePriceRecord(List<MSA_Software_Discount_Tier_Price__c> softPriceList, String msaId){  
-       // if (softPriceList.size() == 0){}
-           // return; 
+        if (softPriceList.size() == 0)
+            return; 
         List<Id> deletedPrices = new List<Id>();
         for(MSA_Software_Discount_Tier_Price__c softPrice : softPriceList ){
             deletedPrices.add(softPrice.Id);
         }
-         System.debug('Deleted Prices::'+deletedPrices);
-         
-        try {
+		 System.debug('deleted records of software price '+deletedPrices);
+		 
+		try {
             delete softPriceList;
-            System.debug('Deleted');
         }
-        catch(DmlException ex) {
+        catch(Exception ex) {
                 System.debug('Exception while deleting the plants from the quote line i.e. deleting PPT records'
                                 +string.valueOf(ex.getLineNumber()) +ex.getTypeName() +string.valueOf(ex.getCause()) +ex.getMessage() +ex.getStackTraceString());
 

@@ -11,14 +11,14 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 export default class SoftwareDiscountTier extends LightningElement {
 
   cols = [
+    { label: 'Name', fieldName: 'Name', type: 'text'},
     { label: 'Product', fieldName: 'Product', type: 'text' },
     { label: 'Pricing Tier', fieldName: 'PricingTier', type: 'text', cellAttributes: { alignment: 'center' } },
-    { label: 'Consider Active MW', fieldName: 'ConsiderActiveMW', type: 'boolean', cellAttributes: { alignment: 'center' } },
     { label: 'Lower Bound', fieldName: 'LowerBound', type: 'text', cellAttributes: { alignment: 'center' } },
     { label: 'Upper Bound', fieldName: 'UpperBound', type: 'text', cellAttributes: { alignment: 'center' } },
-    { label: 'Discount Amount', fieldName: 'DiscountAmount', type: 'text', cellAttributes: { alignment: 'center' } },
-    { label: 'Start Date', fieldName: 'StartDate', type: 'text', cellAttributes: { alignment: 'center' } },
-    { label: 'End Date', fieldName: 'EndDate', type: 'text', cellAttributes: { alignment: 'center' } }
+    { label: 'Discount Percent', fieldName: 'DiscountPercent', type: 'text', cellAttributes: { alignment: 'center' } },
+    { label: 'Discount Unit', fieldName: 'DiscountUnit', type: 'text', cellAttributes: { alignment: 'center' } },
+    // { label: 'End Date', fieldName: 'EndDate', type: 'text', cellAttributes: { alignment: 'center' } }
 
   ];
 
@@ -67,14 +67,15 @@ export default class SoftwareDiscountTier extends LightningElement {
     if (result.data) {
       this.softwareDiscountPriceListdata = result.data.map((row) => ({
         ...row,
+        Name: row.Name,
         Product: row.Product__r.Name,
         PricingTier: row.Pricing_Tier__c,
-        ConsiderActiveMW: row.Cross_Orders__c,
         LowerBound: row.Lower_Bound__c,
         UpperBound: row.Upper_Bound__c,
-        DiscountAmount: row.Discount_Amount__c,
-        StartDate: row.Effective_Start_Date__c,
-        EndDate: row.Effective_End_Date__c
+        DiscountPercent: row.Discount__c,
+        DiscountUnit: row.Discount_Unit__c
+        // StartDate: row.Effective_Start_Date__c,
+        // EndDate: row.Effective_End_Date__c
       }));
     } else if (result.error) {
       console.log(result.error);
