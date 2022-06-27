@@ -109,6 +109,14 @@
         <connector>
             <targetReference>Email_send_when_Status_is_completed</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>TaskSubtype</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Email</stringValue>
+            </value>
+        </filters>
         <object>Task</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
