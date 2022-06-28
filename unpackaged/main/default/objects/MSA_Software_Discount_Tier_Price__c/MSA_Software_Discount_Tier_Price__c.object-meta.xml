@@ -141,7 +141,7 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>List_View</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
@@ -160,7 +160,16 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>MSA Software Discount Tier Prices</pluralLabel>
-    <searchLayouts />
+    <searchLayouts>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Product__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Pricing_Tier__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Lower_Bound__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Upper_Bound__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Discount_Amount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Asset_Class__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Cross_Orders__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
