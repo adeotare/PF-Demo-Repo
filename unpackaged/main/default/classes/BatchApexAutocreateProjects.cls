@@ -1,7 +1,13 @@
+/**
+ * The batch class will auto-create projects for PPT records.   
+ * for non-renewal opportunities
+ * @param  :  
+ * @return :  Create Project Records
+ */
 global class BatchApexAutocreateProjects implements Database.Batchable<sObject> {
     global Database.QueryLocator start(Database.BatchableContext BC) {
         // collect the batches of records or objects to be passed to execute
-        String query = 'select id,Account__c,Account__r.Name, Plant__c,Plant__r.Name,Product__r.Name,Product__r.ProductCode,Product__r.Services_Short_Name__c, Installation_Commencement_Date__c, Product_Category__c, Project_Creation_Status__c,MWp_Quantity__c,Net_Total_Price__c,Status__c,Plant_Name__c,Product_Family__c from Plant_Product_Transaction__c where Project_Creation_Status__c !=\'Completed\' AND Status__c != \'Quoted\'';
+        String query = 'select id,Account__c,Account__r.Name, Plant__c,Plant__r.Name,Product__r.Name,Product__r.ProductCode,Product__r.Services_Short_Name__c, Installation_Commencement_Date__c, Product_Category__c, Project_Creation_Status__c,MWp_Quantity__c,Net_Total_Price__c,Status__c,Plant_Name__c,Product_Family__c from Plant_Product_Transaction__c where Project_Creation_Status__c !=\'Completed\' AND Status__c NOT IN(\'Quoted\',\'Amendment Quoted\')';
 
         system.debug('==soql.Value__c='+query);
        
@@ -97,11 +103,11 @@ global class BatchApexAutocreateProjects implements Database.Batchable<sObject> 
                 toClone.Installation_Commencement_Date__c = mapIdVsPPT.get(toClone.id).Installation_Commencement_Date__c;
                 if(mapIdVsPPT.get(toClone.id).Product_Category__c == 'Software'){
                     toClone.Product__c = mapIdVsPPT.get(toClone.id).Product__r.Name;
-                    toClone.Product_Family__c = mapIdVsPPT.get(toClone.id).Product_Family__c;
                     toClone.ARR__c = mapIdVsPPT.get(toClone.id).Net_Total_Price__c;
                 }
                 if(mapIdVsPPT.get(toClone.id).Product_Category__c == 'Professional Services'){
                     toClone.Installation_Fee__c = mapIdVsPPT.get(toClone.id).Net_Total_Price__c;
+                    toClone.Product_Family__c = mapIdVsPPT.get(toClone.id).Product_Family__c;
                 }
                 toClone.PPT_Reference__c = mapIdVsPPT.get(toClone.id).id;
             	toClone.Template_Id_Reference__c = toClone.id;
