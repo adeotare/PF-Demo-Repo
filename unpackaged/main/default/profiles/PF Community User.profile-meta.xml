@@ -2689,5 +2689,25 @@
     <layoutAssignments>
         <layout>RAID__c-Community Page Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>RAID__c-Community Page Layout</layout>
+        <recordType>RAID__c.Action_Item</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>RAID__c-Community Page Layout</layout>
+        <recordType>RAID__c.Decision</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>RAID__c-Community Page Layout</layout>
+        <recordType>RAID__c.Issue</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>RAID__c-Community Page Layout</layout>
+        <recordType>RAID__c.RFI</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>RAID__c-Community Page Layout</layout>
+        <recordType>RAID__c.Risk</recordType>
+    </layoutAssignments>
     <userLicense>Customer Community Plus</userLicense>
 </Profile>
