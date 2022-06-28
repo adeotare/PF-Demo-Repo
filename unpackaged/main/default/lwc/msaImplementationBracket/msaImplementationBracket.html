@@ -58,8 +58,10 @@
                   <lightning-input-field field-name="Name" required="true"> </lightning-input-field>
                   <lightning-input-field field-name="Product__c" required="true"> </lightning-input-field>
                   <lightning-input-field field-name="Pricing_Tier__c" required="true"> </lightning-input-field>
-                  <lightning-input-field field-name="Fixed_Price__c" required="true"> </lightning-input-field>
+                  <lightning-input label="Fixed Price" required="true" type="number" onchange={onEnterFixedPrice} class ="slds-p-left_xx-small slds-p-right_xx-small"></lightning-input>
+                  <lightning-input-field field-name="Fixed_Price__c" class="slds-hide" required="true" value={fixedPriceValue}> </lightning-input-field>
                   <lightning-input-field field-name="Description__c" > </lightning-input-field>
+                  <lightning-input-field field-name="CurrencyIsoCode" value={currency} disabled="true"> </lightning-input-field>
                 </div>
                 <div class="slds-col slds-size_1-of-2">
                   <!-- More lightning-input-field components here -->

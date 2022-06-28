@@ -44,6 +44,7 @@ export default class SoftwareDiscountTier extends LightningElement {
       this.accountName = result.data[0].Account_Name__r.Name;
       this.accountId = result.data[0].Account_Name__c;
       this.msaId = result.data[0].Id;
+      
 
     } else if (result.error) {
       console.log(result.error);
