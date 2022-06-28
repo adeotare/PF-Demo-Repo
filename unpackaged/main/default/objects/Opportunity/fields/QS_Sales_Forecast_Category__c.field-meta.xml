@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Sales_Forecast_Category__c</fullName>
+    <description>Indicates Sales&#39;s estimate of the forecast category and may differ from Manager Forecast Category.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The forecast status of the opportunity as noted by the sales person.</inlineHelpText>
+    <label>Sales Forecast Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>4 - Omitted</fullName>
+                <default>false</default>
+                <label>4 - Omitted</label>
+            </value>
+            <value>
+                <fullName>3 - Pipeline</fullName>
+                <default>false</default>
+                <label>3 - Pipeline</label>
+            </value>
+            <value>
+                <fullName>2 - Best Case</fullName>
+                <default>false</default>
+                <label>2 - Best Case</label>
+            </value>
+            <value>
+                <fullName>1 - Commit</fullName>
+                <default>false</default>
+                <label>1 - Commit</label>
+            </value>
+            <value>
+                <fullName>0 - Closed Won</fullName>
+                <default>false</default>
+                <label>0 - Closed Won</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

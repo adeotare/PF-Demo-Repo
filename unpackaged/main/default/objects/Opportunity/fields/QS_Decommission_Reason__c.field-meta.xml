@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Decommission_Reason__c</fullName>
+    <description>More details around why the customer decommissioned (reduction or cancellation)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>More details around why the customer decommissioned (reduction or cancellation)</inlineHelpText>
+    <label>Decommission Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>QS_Order_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AM Turn-Over/Lack of Follow-Up</fullName>
+                <default>false</default>
+                <label>AM Turn-Over/Lack of Follow-Up</label>
+            </value>
+            <value>
+                <fullName>Associated or Consolidating with Competitor</fullName>
+                <default>false</default>
+                <label>Associated or Consolidating with Competitor</label>
+            </value>
+            <value>
+                <fullName>Bankruptcy or Acquisition</fullName>
+                <default>false</default>
+                <label>Bankruptcy or Acquisition</label>
+            </value>
+            <value>
+                <fullName>Client Non-Responsiveness</fullName>
+                <default>false</default>
+                <label>Client Non-Responsiveness</label>
+            </value>
+            <value>
+                <fullName>Client Personnel Change</fullName>
+                <default>false</default>
+                <label>Client Personnel Change</label>
+            </value>
+            <value>
+                <fullName>Contract Challenges</fullName>
+                <default>false</default>
+                <label>Contract Challenges</label>
+            </value>
+            <value>
+                <fullName>Customer Service &amp; Support</fullName>
+                <default>false</default>
+                <label>Customer Service &amp; Support</label>
+            </value>
+            <value>
+                <fullName>Feature Deficiency/Functionality</fullName>
+                <default>false</default>
+                <label>Feature Deficiency/Functionality</label>
+            </value>
+            <value>
+                <fullName>Implementation or Migration Time &amp; Cost</fullName>
+                <default>false</default>
+                <label>Implementation or Migration Time &amp; Cost</label>
+            </value>
+            <value>
+                <fullName>Internal Business Reasons</fullName>
+                <default>false</default>
+                <label>Internal Business Reasons</label>
+            </value>
+            <value>
+                <fullName>Legacy Product/Version Issues</fullName>
+                <default>false</default>
+                <label>Legacy Product/Version Issues</label>
+            </value>
+            <value>
+                <fullName>Low or Non-Usage</fullName>
+                <default>false</default>
+                <label>Low or Non-Usage</label>
+            </value>
+            <value>
+                <fullName>Migrated to Another Product Line</fullName>
+                <default>false</default>
+                <label>Migrated to Another Product Line</label>
+            </value>
+            <value>
+                <fullName>Older Version/Cost of Ownership or Upgrade</fullName>
+                <default>false</default>
+                <label>Older Version/Cost of Ownership or Upgrade</label>
+            </value>
+            <value>
+                <fullName>Partner/Third-Party Issue</fullName>
+                <default>false</default>
+                <label>Partner/Third-Party Issue</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Product No Longer Supported</fullName>
+                <default>false</default>
+                <label>Product No Longer Supported</label>
+            </value>
+            <value>
+                <fullName>Reduction of Users</fullName>
+                <default>false</default>
+                <label>Reduction of Users</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>AM Turn-Over/Lack of Follow-Up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>Associated or Consolidating with Competitor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>Bankruptcy or Acquisition</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>Client Non-Responsiveness</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>Client Personnel Change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>Contract Challenges</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>Customer Service &amp; Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>Feature Deficiency/Functionality</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>Implementation or Migration Time &amp; Cost</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>Internal Business Reasons</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>Legacy Product/Version Issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>Low or Non-Usage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>Migrated to Another Product Line</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>Older Version/Cost of Ownership or Upgrade</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>Partner/Third-Party Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>Product No Longer Supported</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Decommission</controllingFieldValue>
+            <valueName>Reduction of Users</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

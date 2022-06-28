@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Order_Type__c</fullName>
+    <description>An additional deal type classification. This is where Sales clarifies whether this is New Product, Renewal, Decommission, etc.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>An additional deal type classification. Clarifies whether this is New Product, Renewal, Decommission, etc.</inlineHelpText>
+    <label>Order Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>false</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>AddOn</fullName>
+                <default>false</default>
+                <label>AddOn</label>
+            </value>
+            <value>
+                <fullName>Migration</fullName>
+                <default>false</default>
+                <label>Migration</label>
+            </value>
+            <value>
+                <fullName>Services Only</fullName>
+                <default>false</default>
+                <label>Services Only</label>
+            </value>
+            <value>
+                <fullName>Change Order</fullName>
+                <default>false</default>
+                <label>Change Order</label>
+            </value>
+            <value>
+                <fullName>Subscription Renewal</fullName>
+                <default>false</default>
+                <label>Subscription Renewal</label>
+            </value>
+            <value>
+                <fullName>Decommission</fullName>
+                <default>false</default>
+                <label>Decommission</label>
+            </value>
+            <value>
+                <fullName>Contract Renewal</fullName>
+                <default>false</default>
+                <label>Contract Renewal</label>
+            </value>
+            <value>
+                <fullName>Overage</fullName>
+                <default>false</default>
+                <label>Overage</label>
+            </value>
+            <value>
+                <fullName>Debooking</fullName>
+                <default>false</default>
+                <label>Debooking</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
