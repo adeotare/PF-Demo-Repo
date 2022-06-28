@@ -3,7 +3,7 @@
     <fullName>Account_Plant__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>Account Plant Relationship Name</label>
+    <label>Account Plant Name</label>
     <referenceTo>Account_Plant__c</referenceTo>
     <relationshipLabel>Projects</relationshipLabel>
     <relationshipName>Projects</relationshipName>

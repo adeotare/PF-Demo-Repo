@@ -51,6 +51,10 @@
                 <behavior>Readonly</behavior>
                 <field>Asset_Name__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Active_RFI__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -274,10 +278,8 @@
     </quickActionList>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>DAS_SCADA_Provider__c</fields>
-        <fields>Drive_OEM__c</fields>
-        <fields>Quantity__c</fields>
         <fields>Equipment_Type__c</fields>
+        <fields>Quantity__c</fields>
         <relatedList>Equipment__c.Account_Plant__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

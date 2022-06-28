@@ -3,7 +3,7 @@
     <fullName>Account_Plant_relationship_Name__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>Account-Plant relationship Name</label>
+    <label>Account Plant Name</label>
     <referenceTo>Account_Plant__c</referenceTo>
     <relationshipLabel>CRM Project</relationshipLabel>
     <relationshipName>CRM_Project</relationshipName>

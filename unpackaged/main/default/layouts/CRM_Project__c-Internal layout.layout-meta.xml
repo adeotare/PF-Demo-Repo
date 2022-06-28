@@ -17,14 +17,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Project_Name__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Project_Type__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>External_Status__c</field>
             </layoutItems>
             <layoutItems>
@@ -45,19 +37,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>ARR__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Product__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Product_Family__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Validation_Report_URL__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Approval_Status__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Approval_Submitted_Date__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -75,6 +63,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Project_Type__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Project_Description__c</field>
             </layoutItems>
             <layoutItems>
@@ -87,15 +79,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Product__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>SAT_Approval_Required__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Installation_Commencement_Date__c</field>
+                <field>Installation_fee__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -201,11 +185,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Entered_hours__c</field>
+                <field>Installation_Commencement_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Implementation_start_date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Entered_hours__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -240,6 +228,33 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
+        <label>SAT Approval</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SAT_Approval_Required__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Validation_Report_URL__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Approval_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Approval_Submitted_Date__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
         <label>EVM Metrics</label>
         <layoutColumns>
             <layoutItems>
@@ -262,10 +277,6 @@
                 <behavior>Edit</behavior>
                 <field>Schedule_Performance_Index__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Installation_fee__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -283,10 +294,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>To_Complete_Performance_Index__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>ARR__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
