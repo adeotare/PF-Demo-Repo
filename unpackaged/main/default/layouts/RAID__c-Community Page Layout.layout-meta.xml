@@ -278,6 +278,7 @@
         </quickActionListItems>
     </quickActionList>
     <relatedLists>
+        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <relatedList>RFI_Detail__c.RAID__c</relatedList>
     </relatedLists>
