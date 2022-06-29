@@ -6693,7 +6693,6 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
         <recordType>Account.Prospect</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
@@ -6760,7 +6759,6 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
         <recordType>RAID__c.Decision</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
