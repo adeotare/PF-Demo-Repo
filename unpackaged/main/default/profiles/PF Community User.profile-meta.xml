@@ -2381,6 +2381,11 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
+        <recordType>RAID__c.RFI</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
         <recordType>RAID__c.Risk</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
