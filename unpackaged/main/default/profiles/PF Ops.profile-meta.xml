@@ -178,6 +178,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.NetSuite_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.NumberOfEmployees</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3014,11 +3019,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>MSA_Contract__c.Notice_Required_to_Change_Pricing__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>MSA_Contract__c.PO_Required__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

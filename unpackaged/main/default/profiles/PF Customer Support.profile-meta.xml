@@ -178,6 +178,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.NetSuite_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.NumberOfEmployees</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2869,11 +2874,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>MSA_Contract__c.Notice_Required_to_Change_Pricing__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>MSA_Contract__c.PO_Required__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5579,6 +5579,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>SBQQ__ContractedPrice__c.Product_List_Price__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>SBQQ__QuoteLine__c.Contracted_Price_Percentage__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
