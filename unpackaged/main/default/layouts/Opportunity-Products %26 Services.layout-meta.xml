@@ -386,14 +386,6 @@
         </relatedContentItems>
     </relatedContent>
     <relatedLists>
-        <fields>CAMPAIGN.NAME</fields>
-        <fields>CONTACT.NAME</fields>
-        <fields>INFLUENCE</fields>
-        <fields>REVENUE_SHARE</fields>
-        <fields>OCR.ROLE</fields>
-        <relatedList>RelatedCampaignInfluence2List</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>Product2</fields>
         <fields>Quantity</fields>
         <fields>UnitPrice</fields>
