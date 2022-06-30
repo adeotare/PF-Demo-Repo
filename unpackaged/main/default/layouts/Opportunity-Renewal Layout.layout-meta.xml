@@ -146,6 +146,14 @@
                 <behavior>Edit</behavior>
                 <field>Manager_Forecast_Category__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Finance_Reviewed_Complete_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Age_of_record__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
