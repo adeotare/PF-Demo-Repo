@@ -2,15 +2,47 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>53.0</apiVersion>
     <assignments>
+        <name>Assign_Professional_Services_PPT</name>
+        <label>Assign Professional Services PPT</label>
+        <locationX>921</locationX>
+        <locationY>354</locationY>
+        <assignmentItems>
+            <assignToReference>varTotalImplementationFeesofallPPT</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Iterate_Professional_Services_PPT.Net_Total_Price__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_Professional_Services_PPT</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Software_ARR</name>
+        <label>Assign Software ARR</label>
+        <locationX>645</locationX>
+        <locationY>420</locationY>
+        <assignmentItems>
+            <assignToReference>varTotalARRofallPPT</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Iterate_Software_PPT.Net_Total_Price__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_Software_PPT</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Assign_Value_to_ARR_field</name>
         <label>Assign Value to ARR field</label>
-        <locationX>531</locationX>
-        <locationY>425</locationY>
+        <locationX>476</locationX>
+        <locationY>489</locationY>
         <assignmentItems>
             <assignToReference>AddNetPrice</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>Get_Project_details_for_ARR.ARR__c</elementReference>
+                <elementReference>varTotalARRofallPPT</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -27,13 +59,13 @@
     <assignments>
         <name>Assign_Value_to_Installation_Fee</name>
         <label>Assign Value to Installation Fee</label>
-        <locationX>841</locationX>
-        <locationY>227</locationY>
+        <locationX>785</locationX>
+        <locationY>446</locationY>
         <assignmentItems>
             <assignToReference>AddNetPrice</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>Get_Project_Detail.Installation_Fee__c</elementReference>
+                <elementReference>varTotalImplementationFeesofallPPT</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -50,12 +82,12 @@
     <decisions>
         <name>Assigning_Values_to_respective_Fields</name>
         <label>Assigning Values to respective Fields</label>
-        <locationX>522</locationX>
+        <locationX>624</locationX>
         <locationY>47</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Assigning_value_to_Implementation_Fee</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Product_Category__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -70,14 +102,21 @@
                     <elementReference>$Record.Net_Total_Price__c</elementReference>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Is_Project_Added__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Get_Project_Detail</targetReference>
+                <targetReference>Get_related_Professional_Services_PPT</targetReference>
             </connector>
             <label>Assigning value to Implementation Fee</label>
         </rules>
         <rules>
             <name>Assigning_value_to_ARR</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Product_Category__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -92,8 +131,15 @@
                     <elementReference>$Record.Net_Total_Price__c</elementReference>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Is_Project_Added__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Get_Project_details_for_ARR</targetReference>
+                <targetReference>Get_related_Software_PPT</targetReference>
             </connector>
             <label>Assigning value to ARR</label>
         </rules>
@@ -101,6 +147,34 @@
     <description>As Part of REQ-2780</description>
     <interviewLabel>PPT : Calculate the net Price Associated to Product Category {!$Flow.CurrentDateTime}</interviewLabel>
     <label>PPT : Calculate the net Price Associated to Product Category</label>
+    <loops>
+        <name>Iterate_Professional_Services_PPT</name>
+        <label>Iterate Professional Services PPT</label>
+        <locationX>781</locationX>
+        <locationY>235</locationY>
+        <collectionReference>Get_related_Professional_Services_PPT</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Professional_Services_PPT</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Assign_Value_to_Installation_Fee</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Iterate_Software_PPT</name>
+        <label>Iterate Software PPT</label>
+        <locationX>483</locationX>
+        <locationY>270</locationY>
+        <collectionReference>Get_related_Software_PPT</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Software_ARR</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Assign_Value_to_ARR_field</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -123,12 +197,9 @@
     <recordLookups>
         <name>Get_Project_Detail</name>
         <label>Get Project Detail</label>
-        <locationX>841</locationX>
-        <locationY>44</locationY>
+        <locationX>1126</locationX>
+        <locationY>100</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Assign_Value_to_Installation_Fee</targetReference>
-        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -144,12 +215,9 @@
     <recordLookups>
         <name>Get_Project_details_for_ARR</name>
         <label>Get Project details for ARR</label>
-        <locationX>532</locationX>
-        <locationY>267</locationY>
+        <locationX>50</locationX>
+        <locationY>256</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Assign_Value_to_ARR_field</targetReference>
-        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -162,11 +230,67 @@
         <object>project_cloud__Project__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_related_Professional_Services_PPT</name>
+        <label>Get related Professional Services PPT</label>
+        <locationX>897</locationX>
+        <locationY>125</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Iterate_Professional_Services_PPT</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Project_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Project_Name__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Product_Category__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Professional Services</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Plant_Product_Transaction__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_related_Software_PPT</name>
+        <label>Get related Software PPT</label>
+        <locationX>641</locationX>
+        <locationY>212</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Iterate_Software_PPT</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Project_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Project_Name__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Product_Category__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Software</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Plant_Product_Transaction__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_the_values_to_ARR_Field</name>
         <label>Update the values to ARR Field</label>
-        <locationX>295</locationX>
-        <locationY>425</locationY>
+        <locationX>309</locationX>
+        <locationY>488</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -192,8 +316,8 @@
     <recordUpdates>
         <name>Update_the_values_to_Implementation_Field</name>
         <label>Update the values to Implementation Field</label>
-        <locationX>841</locationX>
-        <locationY>432</locationY>
+        <locationX>982</locationX>
+        <locationY>486</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -217,7 +341,7 @@
         <object>project_cloud__Project__c</object>
     </recordUpdates>
     <start>
-        <locationX>55</locationX>
+        <locationX>157</locationX>
         <locationY>52</locationY>
         <connector>
             <targetReference>Assigning_Values_to_respective_Fields</targetReference>
@@ -244,6 +368,28 @@
     <status>Active</status>
     <variables>
         <name>AddNetPrice</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varTotalARRofallPPT</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varTotalImplementationFeesofallPPT</name>
         <dataType>Currency</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>

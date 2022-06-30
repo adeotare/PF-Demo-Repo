@@ -4398,6 +4398,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Plant_Product_Transaction__c.Is_Project_Added__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Plant_Product_Transaction__c.List_Unit_Price__c</field>
         <readable>true</readable>
     </fieldPermissions>

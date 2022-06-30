@@ -35,6 +35,7 @@ public with sharing class AddPPTControllerV2 {
             if(!string.isblank(projectId) && lstProjectIds.size()>0 ){
                 for(Plant_Product_Transaction__c ppt: [SELECT Id, Name From Plant_Product_Transaction__c where id IN:lstProjectIds]){
                      ppt.Project_Name__c = projectId;
+                    ppt.Is_Project_Added__c = True;
                     lstProjects.add(ppt);
                 }
                 update lstProjects;
