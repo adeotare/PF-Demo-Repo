@@ -19,42 +19,21 @@
     </assignments>
     <assignments>
         <name>Update_Status</name>
-        <label>Update Status</label>
+        <label>Update Order Item</label>
         <locationX>138</locationX>
         <locationY>815</locationY>
         <assignmentItems>
-            <assignToReference>Plant_Product_Transaction_Record_Update.Status__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Contracted</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Plant_Product_Transaction_Record_Update.Subscription__c</assignToReference>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Order_Item__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Record.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>Plant_Product_Transaction_Record_Update.Effective_Date__c</assignToReference>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Order__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>$Record.SBQQ__StartDate__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Plant_Product_Transaction_Record_Update.End_Date__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.SBQQ__EndDate__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Plant_Product_Transaction_Record_Update.Contract__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.SBQQ__Contract__c</elementReference>
+                <elementReference>$Record.OrderId</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -83,9 +62,8 @@
             <label>Plant Product Transaction Record found?</label>
         </rules>
     </decisions>
-    <description>REQ - 3038</description>
-    <interviewLabel>Subscription : Update PPT Status from Quote Line {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Subscription : Update PPT Status from Quote Line</label>
+    <interviewLabel>Order Product : Update PPT Record {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Order Product : Update PPT Record</label>
     <loops>
         <name>Plant_Product_Transaction_Record_Update</name>
         <label>Plant Product Transaction Record Update</label>
@@ -182,7 +160,7 @@
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
-        <object>SBQQ__Subscription__c</object>
+        <object>OrderItem</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
