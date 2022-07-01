@@ -9,38 +9,67 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>EK: PF Canada Inc.</fullName>
+                <fullName>Power Factors Holdings, LLC</fullName>
                 <default>false</default>
-                <label>EK: PF Canada Inc.</label>
+                <label>Power Factors Holdings, LLC</label>
             </value>
             <value>
-                <fullName>PF: PF LLC</fullName>
+                <fullName>1. Elimination Subsidiary</fullName>
                 <default>false</default>
-                <label>PF: PF LLC</label>
+                <label>1. Elimination Subsidiary</label>
             </value>
             <value>
-                <fullName>GB US: GB Inc</fullName>
+                <fullName>Ekhosoft Holdings Inc</fullName>
                 <default>false</default>
-                <label>GB US: GB Inc</label>
+                <label>Ekhosoft Holdings Inc</label>
             </value>
             <value>
-                <fullName>GB RoW: GB AB</fullName>
+                <fullName>Inexcon Technologies Inc</fullName>
                 <default>false</default>
-                <label>GB RoW: GB AB</label>
+                <label>Inexcon Technologies Inc</label>
             </value>
             <value>
-                <fullName>3MW US: 3MW LLC</fullName>
+                <fullName>Goldcup 27434 AB</fullName>
                 <default>false</default>
-                <label>3MW US: 3MW LLC</label>
+                <label>Goldcup 27434 AB</label>
             </value>
             <value>
-                <fullName>3MW RoW: 3MW GmbH</fullName>
+                <fullName>Greenbyte AB</fullName>
                 <default>false</default>
-                <label>3MW RoW: 3MW GmbH</label>
+                <label>Greenbyte AB</label>
+            </value>
+            <value>
+                <fullName>Greenbyte Inc</fullName>
+                <default>false</default>
+                <label>Greenbyte Inc</label>
+            </value>
+            <value>
+                <fullName>Greenbyte SL</fullName>
+                <default>false</default>
+                <label>Greenbyte SL</label>
+            </value>
+            <value>
+                <fullName>Power Factors LLC</fullName>
+                <default>false</default>
+                <label>Power Factors LLC</label>
+            </value>
+            <value>
+                <fullName>3MEGAWATT GmbH</fullName>
+                <default>false</default>
+                <label>3MEGAWATT GmbH</label>
+            </value>
+            <value>
+                <fullName>3 Megawatt, LLC</fullName>
+                <default>false</default>
+                <label>3 Megawatt, LLC</label>
+            </value>
+            <value>
+                <fullName>Power Factors Philippines Operations Inc</fullName>
+                <default>false</default>
+                <label>Power Factors Philippines Operations Inc</label>
             </value>
         </valueSetDefinition>
     </valueSet>
