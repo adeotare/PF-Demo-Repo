@@ -4,15 +4,22 @@ public with sharing  class SubmitApproval {
     public static list<CRM_Project__c> saveRec(string RecId){
         
         system.debug('Id: '+RecId); 
-        list<CRM_Project__c> ListDeatils =New list<CRM_Project__c>();
-            for(CRM_Project__c appRec : [SELECT Id, Name,Approval_Status__c 
-                                        from CRM_Project__c where id =:RecId   ])
+        list<CRM_Project__c> ListDetails =New list<CRM_Project__c>();
+            for(CRM_Project__c appRec : [SELECT Id, Name,Approval_Status__c,Project_visibility__c	
+                                        from CRM_Project__c where id =:RecId  ])
             {
                 appRec.Approval_Status__c='Pending';
-                ListDeatils.add(appRec);
+                ListDetails.add(appRec);
             }
-        update ListDeatils; 
+             
+            
+        try{  
+        update ListDetails; 
+        }catch(exception e){
+            
+            throw new AuraException(e.getMessage());
+        }
         system.debug('Id: '+RecId); 
-        Return ListDeatils;
+        Return ListDetails;
     }
 }

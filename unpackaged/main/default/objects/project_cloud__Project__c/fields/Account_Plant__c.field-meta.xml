@@ -4,6 +4,15 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
     <label>Account Plant Name</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account_Plant__c.Account__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.ccpe_ocp__Account__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
     <referenceTo>Account_Plant__c</referenceTo>
     <relationshipLabel>Projects</relationshipLabel>
     <relationshipName>Projects</relationshipName>

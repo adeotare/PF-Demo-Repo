@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Should_be_visibile</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISCHANGED(Approval_Status__c ), TEXT( PRIORVALUE(Approval_Status__c ) ) =&quot;&quot;   ,ISPICKVAL( Project_visibility__c , &quot;Not Visible to Customer&quot;)   )</errorConditionFormula>
+    <errorMessage>Project visibility should be &quot;Visible to customer&quot; on Cloud coach Project</errorMessage>
+</ValidationRule>

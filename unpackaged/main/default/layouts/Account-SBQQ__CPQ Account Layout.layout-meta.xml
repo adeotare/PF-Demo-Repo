@@ -74,6 +74,14 @@
                 <behavior>Readonly</behavior>
                 <field>Number_of_opportuninties__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>NetSuite_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Total_ARR__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -494,6 +502,7 @@
         
         
         
+        
         <fields>ACTIVITY.TASK</fields>
         <fields>TASK.DUE_DATE</fields>
         <fields>TASK.STATUS</fields>
@@ -504,6 +513,7 @@
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
+        
         
         
         
@@ -529,6 +539,7 @@
         <relatedList>Opportunity.Partner_Account_ID__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>NAME</fields>
         <fields>Plant__c</fields>
         <fields>Asset_Class__c</fields>
         <fields>Plant_MWP__c</fields>
@@ -540,6 +551,7 @@
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
+        
         
         
         
@@ -565,9 +577,10 @@
     <relatedLists>
         <fields>NAME</fields>
         <fields>Asset_Class__c</fields>
-        <fields>Shipping_State_Province__c</fields>
-        <fields>MWp__c</fields>
+        <fields>Plant_Number__c</fields>
         <fields>Operational_Status__c</fields>
+        <fields>OWNER.FIRST_NAME</fields>
+        <fields>Region__c</fields>
         <relatedList>Plant__c.Operator__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -599,9 +612,10 @@
     <relatedLists>
         <fields>NAME</fields>
         <fields>Asset_Class__c</fields>
-        <fields>Shipping_State_Province__c</fields>
-        <fields>MWp__c</fields>
+        <fields>Plant_Number__c</fields>
         <fields>Operational_Status__c</fields>
+        <fields>OWNER.FIRST_NAME</fields>
+        <fields>Region__c</fields>
         <relatedList>Plant__c.Majority_Offtake__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>

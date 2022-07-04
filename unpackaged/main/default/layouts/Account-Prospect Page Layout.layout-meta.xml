@@ -561,6 +561,7 @@
         <relatedList>CRM_Project__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>NAME</fields>
         <fields>Plant__c</fields>
         <fields>Asset_Class__c</fields>
         <fields>Plant_MWP__c</fields>
