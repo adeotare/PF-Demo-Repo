@@ -84,6 +84,10 @@
                 <behavior>Readonly</behavior>
                 <field>Software_Total__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Hardware_Total__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -157,6 +161,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Age_of_record__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Services_Total__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
