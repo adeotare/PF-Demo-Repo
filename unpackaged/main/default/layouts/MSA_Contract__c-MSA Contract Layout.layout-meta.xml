@@ -140,10 +140,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>PO_Required__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>SubmittedDate__c</field>
             </layoutItems>
             <layoutItems>
@@ -472,6 +468,9 @@
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>sbaa__Approval__c.MSA_Contract__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedFileList</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
