@@ -7272,7 +7272,6 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
         <recordType>Core_Attribute__c.Core_Attribute</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
