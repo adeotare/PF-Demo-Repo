@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>Power_Factor_Sales</application>
@@ -2708,6 +2708,9 @@
     <layoutAssignments>
         <layout>RAID__c-Community Page Layout</layout>
         <recordType>RAID__c.Risk</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SBQQ__Quote__c-Quote Layout</layout>
     </layoutAssignments>
     <userLicense>Customer Community Plus</userLicense>
 </Profile>

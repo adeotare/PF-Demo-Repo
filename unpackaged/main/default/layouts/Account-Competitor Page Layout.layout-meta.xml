@@ -54,10 +54,6 @@
                 <behavior>Edit</behavior>
                 <field>Finance_Notes__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Total_ARR__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -89,16 +85,16 @@
                 <field>SicDesc</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Targeted__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Region__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Credit_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>QS_Snowball_Product_Solution__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -168,10 +164,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Drive_Customer_Id__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>GB_Customer_Name__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
