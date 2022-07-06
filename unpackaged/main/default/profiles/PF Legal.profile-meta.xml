@@ -2883,6 +2883,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>MSA_Contract__c.DocuSign_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>MSA_Contract__c.Early_Termination_Rights_Expiration_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6259,6 +6264,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Task.WhoId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>dsfs__DocuSign_Status__c.MSA_Contract__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
