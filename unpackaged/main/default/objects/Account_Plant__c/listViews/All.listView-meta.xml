@@ -3,10 +3,11 @@
     <fullName>All</fullName>
     <columns>NAME</columns>
     <columns>Account__c</columns>
-    <columns>Plant__c</columns>
-    <columns>Status__c</columns>
-    <columns>Customer_Plant_Name__c</columns>
-    <columns>OWNER.FIRST_NAME</columns>
+    <columns>Plant_Name__c</columns>
+    <columns>Asset_Class__c</columns>
+    <columns>DC_Capacity_kW__c</columns>
+    <columns>Plant_MWH__c</columns>
+    <columns>Plant_MWP__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>
