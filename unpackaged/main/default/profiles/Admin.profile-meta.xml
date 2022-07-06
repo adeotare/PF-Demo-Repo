@@ -6766,6 +6766,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>SBQQ__ContractedPrice__c.Contracted_Price_Discount_Percentage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>SBQQ__ContractedPrice__c.Contracted_Price_Reference__c</field>
         <readable>true</readable>

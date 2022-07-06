@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>DataDotComAccountInsights</excludeButtons>
-    <excludeButtons>DataDotComClean</excludeButtons>
-    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -340,54 +337,49 @@
             <sortOrder>8</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>NewContact</actionName>
+            <actionName>NewOpportunity</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>9</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>NewOpportunity</actionName>
+            <actionName>FeedItem.RypplePost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>10</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>FeedItem.RypplePost</actionName>
+            <actionName>FeedItem.ContentPost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>11</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>FeedItem.ContentPost</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>12</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>IncludeOffline</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>13</sortOrder>
+            <sortOrder>12</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>CreateCallList</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>14</sortOrder>
+            <sortOrder>13</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>ChangeOwnerOne</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>15</sortOrder>
+            <sortOrder>14</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Delete</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>16</sortOrder>
+            <sortOrder>15</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>CreateSurveyInvitation</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>17</sortOrder>
+            <sortOrder>16</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>AccountHierarchy</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>18</sortOrder>
+            <sortOrder>17</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>FeedItem.TextPost</actionName>
@@ -397,37 +389,37 @@
         <platformActionListItems>
             <actionName>JigsawSearch</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>19</sortOrder>
+            <sortOrder>18</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>AccountAddToCampaign</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>20</sortOrder>
+            <sortOrder>19</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>PartnerScorecard</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>21</sortOrder>
+            <sortOrder>20</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>CallHighlightAction</actionName>
             <actionType>ProductivityAction</actionType>
-            <sortOrder>22</sortOrder>
+            <sortOrder>21</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>SmsHighlightAction</actionName>
             <actionType>ProductivityAction</actionType>
-            <sortOrder>23</sortOrder>
+            <sortOrder>22</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>EmailHighlightAction</actionName>
             <actionType>ProductivityAction</actionType>
-            <sortOrder>24</sortOrder>
+            <sortOrder>23</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>WebsiteHighlightAction</actionName>
             <actionType>ProductivityAction</actionType>
-            <sortOrder>25</sortOrder>
+            <sortOrder>24</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
@@ -507,6 +499,10 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>QS_New_Asset_Status__c</fields>
+        <fields>QS_Product__c</fields>
+        <fields>QS_Product_Category__c</fields>
+        <fields>CREATEDBY_USER.ALIAS</fields>
         <relatedList>QS_Customer_Asset__c.QS_Account__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -521,6 +517,12 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>CRM_Project__c</fields>
+        <fields>Cloud_Coach_Project__c</fields>
+        <fields>CREATEDBY_USER</fields>
+        <fields>Status__c</fields>
+        <fields>Type__c</fields>
+        <fields>Sub_Type__c</fields>
         <relatedList>RAID__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -529,11 +531,11 @@
         <fields>CURRENCY_ISO_CODE</fields>
         <fields>Product_List_Price__c</fields>
         <fields>SBQQ__Price__c</fields>
+        <fields>Contracted_Price_Discount_Percentage__c</fields>
         <fields>SBQQ__Description__c</fields>
         <fields>SBQQ__EffectiveDate__c</fields>
         <fields>SBQQ__ExpirationDate__c</fields>
         <fields>Same_As_List_Price__c</fields>
-        <fields>Product_Family__c</fields>
         <relatedList>SBQQ__ContractedPrice__c.SBQQ__Account__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -565,6 +567,11 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Project_Name__c</fields>
+        <fields>Account_Plant_relationship_Name__c</fields>
+        <fields>Product__c</fields>
+        <fields>External_Status__c</fields>
+        <fields>OWNER.ALIAS</fields>
         <relatedList>CRM_Project__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -576,12 +583,6 @@
         <fields>Ownership_Percentage__c</fields>
         <fields>Relationship_Type__c</fields>
         <relatedList>Account_Plant__c.Account__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>ACCOUNT.NAME</fields>
-        <fields>OPPORTUNITY.NAME</fields>
-        <fields>PARTNER.ROLE</fields>
-        <relatedList>RelatedPartnerList</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>TASK.SUBJECT</fields>

@@ -432,10 +432,20 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>QS_New_Asset_Status__c</fields>
+        <fields>QS_Product__c</fields>
+        <fields>QS_Product_Category__c</fields>
+        <fields>CREATEDBY_USER.ALIAS</fields>
         <relatedList>QS_Customer_Asset__c.QS_Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>CRM_Project__c</fields>
+        <fields>Cloud_Coach_Project__c</fields>
+        <fields>CREATEDBY_USER</fields>
+        <fields>Status__c</fields>
+        <fields>Type__c</fields>
+        <fields>Sub_Type__c</fields>
         <relatedList>RAID__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -473,6 +483,11 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Project_Name__c</fields>
+        <fields>Account_Plant_relationship_Name__c</fields>
+        <fields>Product__c</fields>
+        <fields>External_Status__c</fields>
+        <fields>OWNER.ALIAS</fields>
         <relatedList>CRM_Project__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -481,11 +496,11 @@
         <fields>CURRENCY_ISO_CODE</fields>
         <fields>Product_List_Price__c</fields>
         <fields>SBQQ__Price__c</fields>
+        <fields>Contracted_Price_Discount_Percentage__c</fields>
         <fields>SBQQ__Description__c</fields>
         <fields>SBQQ__EffectiveDate__c</fields>
         <fields>SBQQ__ExpirationDate__c</fields>
         <fields>Same_As_List_Price__c</fields>
-        <fields>Product_Family__c</fields>
         <relatedList>SBQQ__ContractedPrice__c.SBQQ__Account__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -523,12 +538,6 @@
         <fields>Ownership_Percentage__c</fields>
         <fields>Relationship_Type__c</fields>
         <relatedList>Account_Plant__c.Account__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>ACCOUNT.NAME</fields>
-        <fields>OPPORTUNITY.NAME</fields>
-        <fields>PARTNER.ROLE</fields>
-        <relatedList>RelatedPartnerList</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>CONTACT.FULL_NAME</fields>
