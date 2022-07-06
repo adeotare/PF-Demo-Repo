@@ -66,18 +66,26 @@ trigger ProjectBoard on project_cloud__Project__c (after update, before delete) 
              *  Calculated End Date
              *  Card Created: Lookup field to the Card
              *  OwnerId: to create the Card Member that represents the Project Manager */
-           
+ set<string> ProjectIds =new set<string>(); 
            Map<Id,string> StatusCheck = new Map<Id, string>();
                 // Save projectStatus  Ids
                 for(project_cloud__Project__c p : Trigger.New){
-                        StatusCheck.put(p.Id , p.External_Status__c); 
+                        StatusCheck.put(p.Id , p.Internal_Status__c ); 
+                    ProjectIds.add(p.id);
                 } 
+            boolean isprojectcardExist=false;
+            for(project_cloud__Card__c cm: [select id from project_cloud__Card__c where Card_Created_From_Project_Id__c IN:ProjectIds])
+            {
+                if(cm.id != null){
+                    isprojectcardExist=true;
+                }
+            } 
   
             List<project_cloud__Project__c> newProjects = [SELECT 
                                                                 Id, 
                                                                 Name, 
                                                                 Product_Family__c,
-                                                                External_Status__c,
+                                                                Internal_Status__c ,
                                                                 project_cloud__Type__c,
                                                                 project_cloud__Calculated_Start__c, 
                                                                 project_cloud__Calculated_End__c, 
@@ -94,8 +102,12 @@ trigger ProjectBoard on project_cloud__Project__c (after update, before delete) 
                     // Card creation from the data gather from the project
                     // project_cloud__Board__c: fixed board in the Kanban project
                     // project_cloud__Board_Process_Step__c: step in the fixed board
-                  system.debug('Status... :' +p.External_Status__c);
-                if(StatusCheck.get(p.Id)=='In Progress'  ) {
+                  system.debug('Status... :' +p.Internal_Status__c );
+                if(StatusCheck.get(p.Id)=='To Do' &&  isprojectcardExist == false ) {
+                    if(p.Product_Family__c=='Greenbyte' || p.Product_Family__c=='BluePoint')
+                    {
+                       p.Product_Family__c= 'Greenbyte,BluePoint';
+                    }
                      project_cloud__Card__c newCard = new project_cloud__Card__c(
                          Card_Created_From_Project_Id__c = p.Id,
                          project_cloud__Card_Name__c = p.Name,
@@ -147,7 +159,7 @@ trigger ProjectBoard on project_cloud__Project__c (after update, before delete) 
             System.debug('newCardMemberList--------'+newCardMemberList);
         // If the status is Not In Progress then this if condition will function for Deletion of card
         
-        if(StatusCheck.get(p.Id)!='In Progress' ) {
+        if(StatusCheck.get(p.Id)!='To Do' && isprojectcardExist==True ) {
             system.debug('code for removing card');
             List<project_cloud__Card__c> cardToUpdate = new List<project_cloud__Card__c>();
             List<project_cloud__Project__c> projectList = new List<project_cloud__Project__c>();
@@ -162,7 +174,7 @@ trigger ProjectBoard on project_cloud__Project__c (after update, before delete) 
                             p.project_cloud__Calculated_Start__c != trigger.oldMap.get(p.Id).project_cloud__Calculated_Start__c ||
                             p.project_cloud__Calculated_End__c != trigger.oldMap.get(p.Id).project_cloud__Calculated_End__c ||
                             p.OwnerId != trigger.oldMap.get(p.Id).OwnerId 
-                           || p.External_Status__c!=trigger.oldmap.get(p.id).External_Status__c )
+                           || p.Internal_Status__c !=trigger.oldmap.get(p.id).Internal_Status__c  )
                         {
     
                             project_cloud__Card__c newCard = new project_cloud__Card__c(
@@ -184,7 +196,7 @@ trigger ProjectBoard on project_cloud__Project__c (after update, before delete) 
             }
             System.debug('cardToUpdate-------'+cardToUpdate); 
     
-            if(!cardToUpdate.isEmpty()) //&&
+            if(!cardToUpdate.isEmpty())// &&
             //(projectList[0].OwnerId != trigger.oldMap.get(projectList[0].Id).OwnerId) )
             {
                 List<project_cloud__Card_Member__c> createCardMemberList = new List<project_cloud__Card_Member__c>();
@@ -193,7 +205,7 @@ trigger ProjectBoard on project_cloud__Project__c (after update, before delete) 
                                                                           FROM project_cloud__Card__c
                                                                           WHERE id = :card[0].Id];   
     
-                if(!cardMemberToDelete.isEmpty() && (p.External_Status__c!='In Progress')){
+                if(!cardMemberToDelete.isEmpty() && (p.Internal_Status__c !='To Do')){
                         for(project_cloud__Card__c c: card){
                             project_cloud__Card__c cardMemDel = new project_cloud__Card__c(
                                 Id = cardMemberToDelete[0].Id
