@@ -164,6 +164,7 @@
             <label>Billing Account Only</label>
         </rules>
     </decisions>
+    <description>Updated Purchased Product object reference :- 7/7/22</description>
     <interviewLabel>Update Account Type based on Account Record Type {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Account :- Update Account Type based on Account Record Type</label>
     <processMetadataValues>
@@ -196,21 +197,21 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Account__c</field>
+            <field>QS_Account__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>$Record.Id</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Status__c</field>
+            <field>QS_New_Asset_Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Active</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Purchased_Product__c</object>
+        <object>QS_Customer_Asset__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
