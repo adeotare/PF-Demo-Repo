@@ -4,22 +4,19 @@
 public with sharing class TestDataFactory {
     public static Account_Plant__c createPlantAsset(String renewableType, String pfServiceProduct, String customerPlantAsset, id temVersionid ){
         
-        
-        Account_Plant__c parentPlantAsset = new Account_Plant__c();
-//        parentPlantAsset.Name = 'Parent Plant Asset';
-//        parentPlantAsset.Plant_Name__c = 'Plant Asset';
-//        parentPlantAsset.Renewable_Type__c = renewableType;
-//        parentPlantAsset.RecordTypeId = parentPlantAssetRT;
-        insert parentPlantAsset;
+       Plant__c plant = new Plant__c();
+       plant.Name = 'Test Plant';
+       plant.Renewable_Type__c = renewableType;
+       plant.Timezone__c = 'India Standard Time';
+       plant.Latitude__c = '45.4543';
+       plant.Longitude__c= '70.123';
+       insert plant;
         
         Account_Plant__c plantAsset = new Account_Plant__c();
-//        plantAsset.Name = 'Test Plant';
-//        plantAsset.Renewable_Type__c = renewableType;
-//        plantAsset.PF_Service_Product__c = pfServiceProduct;
-//        plantAsset.Customer_Plant_Asset_ID__c  = customerPlantAsset;
+        plantAsset.PF_Service_Product__c = pfServiceProduct;
+        plantAsset.Customer_Plant_Asset_ID__c  = customerPlantAsset;
         plantAsset.TEM_Version__c = temVersionid;
-//        plantAsset.RecordTypeId = customerPlantAssetRT;
-//        plantAsset.Parent__c = parentPlantAsset.Id;
+		plantAsset.plant__c = plant.id;
         return plantAsset;
     }
 
@@ -278,6 +275,11 @@ public with sharing class TestDataFactory {
         pr.Product_Type__c = 'Recurring';
         pr.Product_Services__c = 'Implementation';
         pr.Asset_Class__c = 'Hydro';
+        pr.Product_Line__c = 'Core';
+        pr.Product_Category__c = 'Professional Services';
+        pr.Family = 'Drive';
+        pr.QuantityUnitOfMeasure = 'Site';
+        pr.Services_Short_Name__c = 'Test Service Name';
         pr.ProductCode = productCode;
         return pr;
     }
@@ -289,11 +291,14 @@ public with sharing class TestDataFactory {
         projTemlate.Project_Type__c = 'Monitoring Implementation';
         return projTemlate;
     }
-    public static Plant_Product_Transaction__c createPPT(String status, String accId){
+    public static Plant_Product_Transaction__c createPPT(String status, String accId, String productId){
         Plant_Product_Transaction__c ppt = new Plant_Product_Transaction__c();
         ppt.Status__c = status;
         ppt.Account__c = accId;
         ppt.Name = 'Test PPT';
+        ppt.Product__c = productId;
+        ppt.Project_Creation_Status__c = '';
+        ppt.MWp_Quantity__c = 10.00;
         return ppt;
     }
     public static project_cloud__Project__c createCCProjectTemplate(String type, String accId){
@@ -316,7 +321,7 @@ public with sharing class TestDataFactory {
         
     // Create account
     public static Account createAccount(Id pricebookId) {
-        Account acc = new Account(Name='TestCP',
+        Account acc = new Account(Name='TestCP Account',
                                 Account_Price_Book__c = priceBookId);
         return acc;
     }

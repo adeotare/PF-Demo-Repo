@@ -302,6 +302,13 @@
         <value>10</value>
     </labels>
     <labels>
+        <fullName>BatchApexAutocreateProjectSoql</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BatchApexAutocreateProjectSoql</shortDescription>
+        <value>AND Status__c NOT IN(&#39;Quoted&#39;, &#39;Amendment Quoted&#39;)</value>
+    </labels>
+    <labels>
         <fullName>Bifacial_Warning_Info</fullName>
         <categories>Asset Builder</categories>
         <language>en_US</language>

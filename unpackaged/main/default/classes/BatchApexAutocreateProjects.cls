@@ -7,7 +7,7 @@
 global class BatchApexAutocreateProjects implements Database.Batchable<sObject> {
     global Database.QueryLocator start(Database.BatchableContext BC) {
         // collect the batches of records or objects to be passed to execute
-        String query = 'select id,Account__c,Account__r.Name, Plant__c,Plant__r.Name,Product__r.Name,Product__r.ProductCode,Product__r.Services_Short_Name__c, Installation_Commencement_Date__c, Product_Category__c, Project_Creation_Status__c,MWp_Quantity__c,Net_Total_Price__c,Status__c,Plant_Name__c,Product_Family__c from Plant_Product_Transaction__c where Project_Creation_Status__c !=\'Completed\' AND Status__c NOT IN(\'Quoted\',\'Amendment Quoted\')';
+        String query = 'select id,Account__c,Account__r.Name, Plant__c,Plant__r.Name,Product__r.Name,Product__r.ProductCode,Product__r.Services_Short_Name__c, Installation_Commencement_Date__c, Product_Category__c, Project_Creation_Status__c,MWp_Quantity__c,Net_Total_Price__c,Status__c,Plant_Name__c,Product_Family__c from Plant_Product_Transaction__c where Project_Creation_Status__c !=\'Completed\' '+System.Label.BatchApexAutocreateProjectSoql;
 
         system.debug('==soql.Value__c='+query);
        
@@ -25,13 +25,16 @@ global class BatchApexAutocreateProjects implements Database.Batchable<sObject> 
 		for(Plant_Product_Transaction__c ppt : pptList) {
 			productIdSet.add(ppt.Product__c);
         }
+        system.debug('::productIdSet::'+productIdSet);
 		list<Project_Template__c>templateList= new list<Project_Template__c>();
         for(Project_Template__c templateRec : [Select id,Template__c,Project_Type__c,Product_Code__c,Decommission_Template__c from Project_Template__c 
                                                 where Product_Code__c IN : productIdSet]){
                    templateList.add(templateRec);
         }
 		
-		map<string,string>accountPlantWithProductmap = new map<string,string>();	
+		map<string,string>accountPlantWithProductmap = new map<string,string>();
+        system.debug('::pptList::'+pptList);
+        system.debug('::templateList::'+templateList);
 		for(Plant_Product_Transaction__c ppt : pptList){
 			for(Project_Template__c template : templateList){
 				string key = ppt.Plant__c +'-'+ ppt.Product__c;
