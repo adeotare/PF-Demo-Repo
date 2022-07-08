@@ -34,6 +34,11 @@
       }, delay);
       component.set("v.timer", timer);
     },
+
+    selectedCheckbox: function (component, event, helper) {
+      var checkboxId = component.find("boxPlant");
+      console.log('----checkboxId---'+checkboxId);
+    },
   
     //for selectAll
     selectAll: function (component, event, helper) {
@@ -170,5 +175,100 @@
       component.set("v.selectedPlant", []);
       component.set("v.showPlantAsset", false);
       component.set("v.showRFICat", false);
-    }
+    },
+
+    handleNext : function(component, event, helper) { 
+      var sObjectList = component.get("v.PaginationList");
+      var end = component.get("v.endPage");
+      var start = component.get("v.startPage");
+      var pageSize = component.get("v.pageSize");
+      var Paginationlist = [];
+      var pageNumber;
+      var counter = 0;
+      for(var i=end+1; i<end+pageSize+1; i++){
+          if(sObjectList.length > i){
+              Paginationlist.push(sObjectList[i]);
+          }
+          counter ++ ;
+      }
+      start = start + counter;
+      end = end + counter;
+      component.set("v.startPage",start);
+      component.set("v.endPage",end);
+      component.set('v.listPlantAsset', Paginationlist);
+      pageNumber = component.get("v.pageNumber");
+      component.set("v.pageNumber", pageNumber+1);
+
+      var checkvalue = [];
+      checkvalue = component.find("boxPlant");
+      var selectedPlant = component.get("v.selectedPlant");
+      var listPlantAsset = component.get("v.listPlantAsset");
+      console.log("checkvalue.length" + checkvalue.length);
+      
+      if (checkvalue.length > 0 && checkvalue.length != undefined) {
+        for (var i = 0; i < checkvalue.length; i++) {
+          console.log('--checkvalue[i]---'+checkvalue[i]);
+          console.log('--next--value---'+checkvalue[i].get("v.value"));
+          if (checkvalue[i].get("v.value") == true && !selectedPlant.includes(checkvalue[i].get("v.text"))) {
+            selectedPlant.push(checkvalue[i].get("v.text"));
+          }
+        }
+        console.log('--selectedPlant---'+selectedPlant);
+      } else if (checkvalue.length == undefined) {
+        var checkboxValue = checkvalue.get("v.value");
+        if (checkboxValue && !selectedPlant.includes(checkvalue.get("v.text"))) {
+          //console.log('hi');
+          selectedPlant.push(checkvalue.get("v.text"));
+        }
+      }
+  },
+  
+  handlePrev : function(component, event, helper) {        
+      var sObjectList = component.get("v.PaginationList");
+      var end = component.get("v.endPage");
+      var start = component.get("v.startPage");
+      var pageSize = component.get("v.pageSize");
+      var Paginationlist = [];
+      var counter = 0;
+      var pageNumber;
+      for(var i= start-pageSize; i < start ; i++){
+          if(i > -1){
+              Paginationlist.push(sObjectList[i]);
+              counter ++;
+          }else{
+              start++;
+          }
+      }
+      start = start - counter;
+      end = end - counter;
+      component.set("v.startPage",start);
+      component.set("v.endPage",end);
+      component.set('v.listPlantAsset', Paginationlist);
+      pageNumber = component.get("v.pageNumber");
+      component.set("v.pageNumber", pageNumber-1);
+
+      var checkvalue = [];
+      checkvalue = component.find("boxPlant");
+      var selectedPlant = component.get("v.selectedPlant");
+      var listPlantAsset = component.get("v.listPlantAsset");
+      console.log("checkvalue.length" + checkvalue.length);
+      
+      if (checkvalue.length > 0 && checkvalue.length != undefined) {
+        for (var i = 0; i < checkvalue.length; i++) {
+          console.log('--checkvalue[i]---'+checkvalue[i]);
+          console.log('--prev--value---'+checkvalue[i].get("v.value"));
+          if (checkvalue[i].get("v.value") == true && !selectedPlant.includes(checkvalue[i].get("v.text"))) {
+            selectedPlant.push(checkvalue[i].get("v.text"));
+          }
+        }
+        console.log('--selectedPlant---'+selectedPlant);
+      } else if (checkvalue.length == undefined) {
+        var checkboxValue = checkvalue.get("v.value");
+        if (checkboxValue && !selectedPlant.includes(checkvalue.get("v.text"))) {
+          //console.log('hi');
+          selectedPlant.push(checkvalue.get("v.text"));
+        }
+      }
+      
+  },
   });

@@ -95,7 +95,7 @@
             <select size="1" name="Plant Name" onchange={plantNameChangeHandler}>
               <option value="None">--None--</option>
               <template for:each={plantAssetList} for:item="plantAsset">
-                <option selected={plantAsset.isSelected} key={plantAsset.plantAssetDet.Id} value={plantAsset.plantAssetDet.Id}>{plantAsset.plantAssetDet.Name}</option>
+                <option selected={plantAsset.isSelected} key={plantAsset.plantAssetDet.Id} value={plantAsset.plantAssetDet.Id}>{plantAsset.plantAssetDet.Plant__r.Name}</option>
               </template>
             </select>
           </td>

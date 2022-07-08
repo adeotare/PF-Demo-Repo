@@ -2,9 +2,9 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Duration_AQL_to_TAL__c</fullName>
     <externalId>false</externalId>
-    <formula>DATETIMEVALUE(Contact_Status_TAL_Time__c) - DATETIMEVALUE(Contact_Status_AQL_Time__c)</formula>
+    <formula>(DATETIMEVALUE(Contact_Status_TAL_Time__c) - DATETIMEVALUE(Contact_Status_AQL_Time__c))*24</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>Duration AQL to TAL</label>
+    <label>Duration AQL to TAL(Hours)</label>
     <precision>18</precision>
     <required>false</required>
     <scale>2</scale>

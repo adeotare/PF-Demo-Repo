@@ -116,7 +116,7 @@ export default class G1IntialPlantInfoPrompt extends LightningElement {
           this.plantAssetList.push({
             key : plantAssetRecords[plantAssetRecKey].Id,
             Id : plantAssetRecords[plantAssetRecKey].Id,
-            Name : plantAssetRecords[plantAssetRecKey].Name,
+            Name : plantAssetRecords[plantAssetRecKey].Plant__r.Name,
             isSelected : (this.plantAssetId === plantAssetRecords[plantAssetRecKey].Id),
             plantAssetDet : plantAssetRecords[plantAssetRecKey]
           });
@@ -246,10 +246,8 @@ export default class G1IntialPlantInfoPrompt extends LightningElement {
   }
   
   goToNext(event, isDataBulkUpload){
-    
     //if there are any validation has to be done in this func, pls execed the below block of code after valition is done
     let isDataFromBulkImportButton = (typeof isDataBulkUpload == 'undefined' || isDataBulkUpload == false) ? false : true;
-    console.log('---isDataFromBulkImportButton-ABC--'+isDataFromBulkImportButton);
     if((typeof this.selectedPlantAssetId === 'undefined' || this.selectedPlantAssetId === 'None' 
       || this.validPlantAsset === 'None' || this.selectedPlantAssetId === '') 
       && isDataFromBulkImportButton == false){
@@ -270,8 +268,6 @@ export default class G1IntialPlantInfoPrompt extends LightningElement {
   hanldeNextOnConfirm(event, executeNextLogic) {
     let allowNextLogic = (executeNextLogic) ? executeNextLogic : event.detail.confirmationOutput;
     let additionalParamsForNext = {isReadOnly: this.isReadOnly, bifacialModules : this.bifacialModule.toString()};
-    
-    console.log('--additionalParamsForNext--ABC-'+additionalParamsForNext+'--allowNextLogic---'+allowNextLogic);
     fireEvent(this.pageRef, 'g1CompChange', false);
 
     if(allowNextLogic){

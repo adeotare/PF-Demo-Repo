@@ -1,6 +1,9 @@
 ({
     getPlantAsset: function (component, event) {
       var action = component.get("c.getListOfPlantAsset");
+      var PaginationList = [];
+        var pageSize = component.get("v.pageSize");
+        var i=0;
       //console.log(component.get("v.rfiSubType"));
       action.setParams({ accountFilter: component.get("v.accountFilter"), subType: component.get("v.rfiSubType") });
       action.setCallback(this, function (response) {
@@ -9,8 +12,17 @@
           var listPA = response.getReturnValue();
           if (listPA.length > 0) {
             component.set("v.loadedSpinner", false);
-            component.set("v.listPlantAsset", response.getReturnValue());
+            component.set("v.PaginationList", response.getReturnValue());
             component.set("v.showError", false);
+
+            component.set("v.totalRecords", component.get("v.PaginationList").length);
+            component.set("v.startPage",0);
+            component.set("v.endPage",pageSize-1);
+            for(i=0; i< pageSize; i++){
+                if(component.get("v.PaginationList").length> i)
+                    PaginationList.push(response.getReturnValue()[i]);    
+            }
+            component.set('v.listPlantAsset', PaginationList);
           } else {
             component.set("v.listPlantAsset", []);
             component.set("v.loadedSpinner", false);

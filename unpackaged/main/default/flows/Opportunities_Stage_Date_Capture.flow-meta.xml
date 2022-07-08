@@ -2,10 +2,75 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>54.0</apiVersion>
     <assignments>
+        <name>Assignment_Account_Qualification</name>
+        <label>Assignment Account Qualification</label>
+        <locationX>873</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Account_Qualification_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assignment_Consideration_Date</name>
+        <label>Assignment Consideration Date</label>
+        <locationX>918</locationX>
+        <locationY>494</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Consideration_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assignment_Evaluation</name>
+        <label>Assignment Evaluation</label>
+        <locationX>893</locationX>
+        <locationY>631</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Evaluation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assignment_Execution</name>
+        <label>Assignment Execution</label>
+        <locationX>628</locationX>
+        <locationY>957</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Execution__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assignment_Negotiations</name>
+        <label>Assignment Negotiations</label>
+        <locationX>730</locationX>
+        <locationY>859</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Negotiations__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
         <name>Assignment_SAL</name>
         <label>Assignment SAL</label>
-        <locationX>314</locationX>
-        <locationY>431</locationY>
+        <locationX>699</locationX>
+        <locationY>110</locationY>
         <assignmentItems>
             <assignToReference>$Record.SAL_Date__c</assignToReference>
             <operator>Assign</operator>
@@ -17,8 +82,8 @@
     <assignments>
         <name>Assignment_SQL</name>
         <label>Assignment SQL</label>
-        <locationX>578</locationX>
-        <locationY>431</locationY>
+        <locationX>576</locationX>
+        <locationY>50</locationY>
         <assignmentItems>
             <assignToReference>$Record.SQL_Date__c</assignToReference>
             <operator>Assign</operator>
@@ -28,10 +93,23 @@
         </assignmentItems>
     </assignments>
     <assignments>
+        <name>Assignment_Verbal_Commit</name>
+        <label>Assignment Verbal Commit</label>
+        <locationX>825</locationX>
+        <locationY>749</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Verbal_Commit__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
         <name>AssignmentFinanceReview</name>
         <label>Assignment Finance Review</label>
-        <locationX>50</locationX>
-        <locationY>431</locationY>
+        <locationX>807</locationX>
+        <locationY>216</locationY>
         <assignmentItems>
             <assignToReference>$Record.Finance_Reviewed_Complete_Date__c</assignToReference>
             <operator>Assign</operator>
@@ -43,8 +121,8 @@
     <decisions>
         <name>Oppernity_Assignment</name>
         <label>Opportunity Assignment</label>
-        <locationX>446</locationX>
-        <locationY>311</locationY>
+        <locationX>445</locationX>
+        <locationY>556</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Finance_Review</name>
@@ -112,6 +190,160 @@
             </connector>
             <label>SQL</label>
         </rules>
+        <rules>
+            <name>Account_Qualification_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2 - Account Qualification</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_Account_Qualification</targetReference>
+            </connector>
+            <label>Account Qualification Date</label>
+        </rules>
+        <rules>
+            <name>Consideration_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3 - Consideration</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_Consideration_Date</targetReference>
+            </connector>
+            <label>Consideration Date</label>
+        </rules>
+        <rules>
+            <name>Evaluation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>4 - Evaluation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_Evaluation</targetReference>
+            </connector>
+            <label>Evaluation</label>
+        </rules>
+        <rules>
+            <name>Verbal_Commit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>5 - Verbal Commit/LOI</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_Verbal_Commit</targetReference>
+            </connector>
+            <label>Verbal Commit</label>
+        </rules>
+        <rules>
+            <name>Negotiations</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>6 - Negotiations</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_Negotiations</targetReference>
+            </connector>
+            <label>Negotiations</label>
+        </rules>
+        <rules>
+            <name>Execution</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>7-Execution</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_Execution</targetReference>
+            </connector>
+            <label>Execution</label>
+        </rules>
+        <rules>
+            <name>Stamp_Contact_AQL_TAL_Date</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Primary_Contact__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Primary_Contact__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Primary_Contact__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Contact_AQL_TAL_Date</targetReference>
+            </connector>
+            <label>Stamp Contact AQL TAL Date</label>
+        </rules>
     </decisions>
     <description>REQ: 2379</description>
     <interviewLabel>Opportunities: Stage Date Capture {!$Flow.CurrentDateTime}</interviewLabel>
@@ -125,7 +357,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -135,9 +367,64 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Contact_AQL_TAL_Date</name>
+        <label>Get Contact AQL TAL Date</label>
+        <locationX>431</locationX>
+        <locationY>802</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_record_only_once</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Primary_Contact__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_record_only_once</name>
+        <label>Update record only once</label>
+        <locationX>326</locationX>
+        <locationY>1051</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AQL_Date1__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>TAL_Date1__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AQL_Date1__c</field>
+            <value>
+                <elementReference>Get_Contact_AQL_TAL_Date.Contact_Status_AQL_Time__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TAL_Date1__c</field>
+            <value>
+                <elementReference>Get_Contact_AQL_TAL_Date.Contact_Status_TAL_Time__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <start>
-        <locationX>320</locationX>
-        <locationY>0</locationY>
+        <locationX>50</locationX>
+        <locationY>408</locationY>
         <connector>
             <targetReference>Oppernity_Assignment</targetReference>
         </connector>

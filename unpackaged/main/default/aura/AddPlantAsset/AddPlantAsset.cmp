@@ -16,6 +16,15 @@
   <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
   <lightning:navigation aura:id="navService" />
 
+  <!--Attribute for Paginator-->
+  <aura:attribute name="contactList" type="List"/>
+  <aura:attribute name="PaginationList" type="List"/>
+  <aura:attribute name="startPage" type="Integer" />
+  <aura:attribute name="endPage" type="Integer"/>
+  <aura:attribute name="totalRecords" type="Integer"/>
+  <aura:attribute name="pageSize" type="Integer" default="2000"/>
+  <aura:attribute name="pageNumber" type="Integer" default="1" />
+
   <!--Attribute for plant -->
   <aura:attribute name="showParagraph" type="Boolean" default="false" />
   <aura:attribute name="showPlantAsset" type="Boolean" default="false" />
@@ -45,7 +54,7 @@
       <div class="slds-page-header__col-title">
         <div class="slds-media">
           <div class="slds-media__figure">
-            <span class="slds-icon_container" title="RFI__c">
+            <span class="slds-icon_container" title="RAID__c">
               <lightning:icon iconName="custom:custom55" title="custom55" />
               <span class="slds-assistive-text">RFI</span>
             </span>
@@ -160,7 +169,7 @@
                     <div class="slds-form-element">
                       <div class="slds-form-element__control">
                         <label class="slds-checkbox">
-                          <ui:inputCheckbox text="{!plant.Id}" aura:id="boxPlant" />
+                          <ui:inputCheckbox text="{!plant.Id}" aura:id="boxPlant" change="{!c.selectedCheckbox}"/>
                           <span class="slds-checkbox--faux"></span>
                           <span class="slds-form-element__label text"></span>
                         </label>
@@ -187,7 +196,7 @@
       </div>
       <div class="slds-card__footer">
         <div class="slds-grid slds-grid_align-end">
-          <div class="slds-col slds-p-right_x-large">
+          <div class="slds-col" style="width: 14%">
             <lightning:combobox label="Status" variant="label-inline" options="{!v.itemStatusOptions}"
               value="{!v.itemStatus}">
             </lightning:combobox>
@@ -197,6 +206,25 @@
             <lightning:button label="Create RAIDs" onclick="{!c.next}" class="slds-button slds-button--brand" />
           </div>
         </div>
+        <div class="slds-clearfix">
+          <div class="slds-page-header" role="banner">
+              <div class="slds-m-top_medium" >
+                  <div class="slds-float_right">
+                      <lightning:buttonGroup >
+                          <lightning:button label="Previous" disabled="{!v.startPage == 0}" 
+                                            onclick="{!c.handlePrev}" variant="brand"
+                                            iconName='utility:back'/>
+                          &nbsp; &nbsp; &nbsp;
+                          <lightning:button label="Next" disabled="{!v.endPage >= v.totalRecords}" 
+                                            onclick="{!c.handleNext}" variant="brand"
+                                            iconName='utility:forward' iconPosition='right'/>
+                      </lightning:buttonGroup>
+                  </div>
+                  <p class="slds-page-header__title">Page {!v.pageNumber} | Showing records from
+                      {!((v.pageNumber-1)*v.pageSize)+' to '+((v.totalRecords))}</p>
+              </div>
+          </div>
+      </div>
       </div>
     </div>
   </aura:if>

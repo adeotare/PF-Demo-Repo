@@ -246,8 +246,11 @@ public class inlineRfiDetail {
     //for Plant asset tag component
     @AuraEnabled
     public static List<Account_Plant__c> getListOfPlantAsset(String accountFilter, String subType) {
+
+      
       List<Account_Plant__c> listOfPlantAsset = new List<Account_Plant__c>();
-      system.debug(subType);
+      
+      system.debug('---subType--'+subType);
   
       String soql = 'SELECT Id, Name,Account__r.Name,Customer_Plant_Name__c,Plant__r.Name,Active_RFI__c FROM Account_Plant__c where ';
 /*  
@@ -266,7 +269,7 @@ public class inlineRfiDetail {
   
       if (!String.isBlank(accountFilter))
         soql += ' AND Account__r.Name like \'%' + String.escapeSingleQuotes(accountFilter) + '%\'';
-      soql += ' ORDER BY NAME ASC';
+      soql += ' ORDER BY NAME ASC ';
       List<Account_Plant__c> plantAssets = (List<Account_Plant__c>) Database.query(soql);
   
       for (Account_Plant__c var : plantAssets) {
@@ -291,15 +294,19 @@ public class inlineRfiDetail {
       String error = '';
       Map<String, String> resultantValue = new Map<String, String>();
   
-      for (String plantVar : selectedPlant) {
+      Id RFI_RT = Utils.getRecordTypeInfo('RAID__c', 'RFI').getRecordTypeId();
+      list<Account_Plant__c>lstAccountPlant = [Select id,Name from Account_Plant__c where id IN: selectedPlant];
+
+      for (Account_Plant__c plantVar : lstAccountPlant) {
+        system.debug('---plantVar---'+plantVar.Name);
         RAID__c rfiVar = new RAID__c();
-        rfiVar.Account_Plant__c = plantVar;
+        rfiVar.Account_Plant__c = plantVar.id;
         rfiVar.Sub_Type__c = subType;        
         rfiVar.RFI_Status__c = status;
 
-        rfiVar.recordtypeId = '0127j000000LBZTAA4';
+        rfiVar.recordtypeId = RFI_RT;
         rfiVar.Priority__c= 'Low';
-        rfiVar.Title__c=plantVar;
+        rfiVar.Title__c=plantVar.Name;
         rfiVar.Status__c= 'In Progress';
         rfiVar.Type__c= 'Process';
         lstRFI.add(rfiVar);

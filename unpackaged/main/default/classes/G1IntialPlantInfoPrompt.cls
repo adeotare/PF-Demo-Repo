@@ -18,14 +18,12 @@ public with sharing class G1IntialPlantInfoPrompt {
     public static string queryPlantAssetList(String recordId, Boolean fromPlantAssetList) {
         List<Account_Plant__c> plantAssets = new List<Account_Plant__c>();
         List<Account> accountList = new List<Account>();
-        accountList = [SELECT id, Name from Account ORDER BY Name ASC];
-
+        accountList = [SELECT id, Name from Account  where OwnerId = :UserInfo.getUserId() ORDER BY Name ASC];
+        
         String plantAssetRecordsQryStr = formPlantAssetQryString();
 
-        if(!string.isBlank(recordId) && fromPlantAssetList) {
-            plantAssetRecordsQryStr += ' AND Id= :recordId';    
-        }
-        plantAssetRecordsQryStr +=' ORDER BY Name ASC';      
+        plantAssetRecordsQryStr +=' ORDER BY Name ASC'; 
+        system.debug('---plantAssetRecordsQryStr----'+plantAssetRecordsQryStr);     
         plantAssets = (List<Account_Plant__c>)Database.query(plantAssetRecordsQryStr);
         
         Map<String, Object> accountAndPlantAssetMap = new Map<String,Object>();
@@ -100,13 +98,13 @@ public with sharing class G1IntialPlantInfoPrompt {
                                         WHERE Account_Plant__c =: plantAssetId AND Prompt_Information__r.Name=: Constants.G1_G2_PLANT_INFO_AND_RENEWABLE_TYPE_PROMPT AND Is_Deleted__c = FALSE LIMIT 1];
             Map<String, String> locationAPImap =  new Map<String, String>();
             Boolean locationFetched = true;
-            if(plantAssetPD.size() > 0 && !plantAssetPD[0].Is_Location_Fetched__c) {
+/*            if(plantAssetPD.size() > 0 && !plantAssetPD[0].Is_Location_Fetched__c) {
                 locationAPImap = AssetBuilderLocationAPI.callLocationAPI(plantAssetId, plantAssetPD[0], false, false);
             } else{
                 Plant_Asset_Prompt_Detail__c plantAssetPrompt = new Plant_Asset_Prompt_Detail__c();
                 locationAPImap = AssetBuilderLocationAPI.callLocationAPI(plantAssetId, plantAssetPrompt, false, false);
             }
-
+*/
             if(locationFetched) {
                 String nextPromptId;
                 Boolean plantAssetUpdateOutput = true;
@@ -120,7 +118,7 @@ public with sharing class G1IntialPlantInfoPrompt {
                     }
                     List<Account_Plant__c> plantAsset = [
                             SELECT Id, Name, Commercial_Operating_Date__c, Latitude__c, Longitude__c,
-                                    Plant_Name__c, Customer_Plant_Asset_ID__c,
+                                    Plant_Name__c, Drive_Id__c,
                                       Renewable_Type__c, TEM_Version__c,
                                     Asset_Builder_Status__c, PF_Service_Product__c
                             FROM Account_Plant__c
@@ -196,7 +194,7 @@ public with sharing class G1IntialPlantInfoPrompt {
             }
 
             List<Account_Plant__c> plantAsset = [SELECT Id, Name, Commercial_Operating_Date__c, Latitude__c, Longitude__c,
-                Plant_Name__c, Customer_Plant_Asset_ID__c,
+                Plant_Name__c, Drive_Id__c,
                  Renewable_Type__c, TEM_Version__c,
                 Asset_Builder_Status__c, PF_Service_Product__c
                 FROM Account_Plant__c WHERE Id =: plantAssetId];
@@ -254,7 +252,7 @@ public with sharing class G1IntialPlantInfoPrompt {
 
                     Site_Metadata__c siteMetadata = Utils.createSiteMetaData(plantAssetId,currentPromptName,promptSpecificInfoJSON,
                                                                             plantAssetPromptCreateInstance.Id,'{}','','',promptInfo.Id,'');
-                    String plantAssetCustomerId = plantAsset[0].Customer_Plant_Asset_ID__c;
+                    String plantAssetCustomerId = plantAsset[0].Drive_Id__c;
                     List<String> customerAssetIdSplitList = plantAssetCustomerId.split('\\.');
                     if(customerAssetIdSplitList.size()>0){
                         siteMetadata.Parent_Asset_Short_Name__c = customerAssetIdSplitList[0]+'\\'+customerAssetIdSplitList[1]+'\\'+
@@ -330,7 +328,7 @@ public with sharing class G1IntialPlantInfoPrompt {
 
 //        String customerAssetRecordTypeId = Utils.getRecordTypeInfo('Account_Plant__c','Child_Asset').getRecordTypeId();
 
-        plantAssetRecordsQryStr += 'SELECT Id, Name,Account__c, Commercial_Operating_Date__c, Latitude__c, Longitude__c,Plant_Name__c, Customer_Plant_Asset_ID__c, TEM_Version__r.Name,';
+        plantAssetRecordsQryStr += 'SELECT Id, Name,Account__c,Plant__r.Name, Commercial_Operating_Date__c, Latitude__c, Longitude__c,Plant_Name__c, Drive_Id__c, TEM_Version__r.Name,';
         plantAssetRecordsQryStr += 'Renewable_Type__c, TEM_Version__c,Asset_Builder_Status__c, AB_Approval_Status__c, Project_Lifecycle_Status__c , PF_Service_Product__c';
         plantAssetRecordsQryStr += ' FROM Account_Plant__c ';
 /*

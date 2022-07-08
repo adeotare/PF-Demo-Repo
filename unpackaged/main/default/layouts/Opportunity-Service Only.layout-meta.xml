@@ -205,10 +205,6 @@
                 <behavior>Edit</behavior>
                 <field>SBQQ__RenewedContract__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>SBQQ__AmendedContract__c</field>
-            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -275,42 +271,42 @@
         <platformActionListItems>
             <actionName>NewEvent</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>2</sortOrder>
+            <sortOrder>3</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Opportunity.New_Quote</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>3</sortOrder>
+            <sortOrder>4</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>RecordShareHierarchy</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>4</sortOrder>
+            <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>StartOutboundConversation</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>5</sortOrder>
+            <sortOrder>6</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>6</sortOrder>
+            <sortOrder>7</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Delete</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>7</sortOrder>
+            <sortOrder>8</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>ChangeOwnerOne</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>8</sortOrder>
+            <sortOrder>9</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Opportunity.Collaboration_Request_Task</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>9</sortOrder>
+            <sortOrder>2</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>oppteamedit__Opportunity_Team_Edit</actionName>
@@ -381,6 +377,10 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>SBQQ__Quote__c</fields>
+        <fields>SBQQ__QuoteTemplate__c</fields>
+        <fields>SBQQ__NetAmount__c</fields>
+        <fields>SBQQ__SignatureStatus__c</fields>
         <relatedList>SBQQ__QuoteDocument__c.SBQQ__Opportunity__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -413,6 +413,15 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>project_cloud__Start__c</fields>
+        <fields>project_cloud__End__c</fields>
+        <relatedList>project_cloud__Project__c.ccpe_ocp__Opportunity__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Competitor_Price_per_MW__c</fields>
+        <fields>Competitor__c</fields>
+        <fields>Opportunity_Winner__c</fields>
         <relatedList>Competitor_Differentiation_Assessment__c.Opportunity__c</relatedList>
     </relatedLists>
     <relatedLists>
