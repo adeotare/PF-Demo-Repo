@@ -155,16 +155,37 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Plant</label>
     <nameField>
-        <label>Plant Name</label>
+        <displayFormat>P-{0000}</displayFormat>
+        <label>Plant Number</label>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Plants</pluralLabel>
+    <profileSearchLayouts>
+        <fields>NAME</fields>
+        <fields>Asset_Class__c</fields>
+        <fields>Plant_Number__c</fields>
+        <fields>Operational_Status__c</fields>
+        <fields>OWNER.FIRST_NAME</fields>
+        <fields>Region__c</fields>
+        <profileName>System Administrator</profileName>
+    </profileSearchLayouts>
+    <profileSearchLayouts>
+        <fields>NAME</fields>
+        <fields>Asset_Class__c</fields>
+        <fields>Plant_Number__c</fields>
+        <fields>Operational_Status__c</fields>
+        <fields>OWNER.FIRST_NAME</fields>
+        <fields>Region__c</fields>
+        <profileName>PF Sales Rep/Engineers</profileName>
+    </profileSearchLayouts>
     <searchLayouts>
         <searchResultsAdditionalFields>Asset_Class__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>MWp__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Plant_Number__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Operational_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.FIRST_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Region__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Read</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

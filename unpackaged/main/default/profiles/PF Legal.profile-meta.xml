@@ -4693,6 +4693,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Plant__c.OEM__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Plant__c.Operational_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>

@@ -1,14 +1,527 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Operator__c</fullName>
-    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Used in Asset Builder</description>
     <externalId>false</externalId>
     <label>Operator</label>
-    <referenceTo>Account</referenceTo>
-    <relationshipLabel>Plants (Operator)</relationshipLabel>
-    <relationshipName>Plants2</relationshipName>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Lookup</type>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Adapture</fullName>
+                <default>false</default>
+                <label>Adapture</label>
+            </value>
+            <value>
+                <fullName>AMEC</fullName>
+                <default>false</default>
+                <label>AMEC</label>
+            </value>
+            <value>
+                <fullName>Bay4</fullName>
+                <default>false</default>
+                <label>Bay4</label>
+            </value>
+            <value>
+                <fullName>Belectric</fullName>
+                <default>false</default>
+                <label>Belectric</label>
+            </value>
+            <value>
+                <fullName>Biosar</fullName>
+                <default>false</default>
+                <label>Biosar</label>
+            </value>
+            <value>
+                <fullName>Blattner Energy</fullName>
+                <default>false</default>
+                <label>Blattner Energy</label>
+            </value>
+            <value>
+                <fullName>Borrego Solar</fullName>
+                <default>false</default>
+                <label>Borrego Solar</label>
+            </value>
+            <value>
+                <fullName>BP</fullName>
+                <default>false</default>
+                <label>BP</label>
+            </value>
+            <value>
+                <fullName>Buenavista Renewables</fullName>
+                <default>false</default>
+                <label>Buenavista Renewables</label>
+            </value>
+            <value>
+                <fullName>CalCom</fullName>
+                <default>false</default>
+                <label>CalCom</label>
+            </value>
+            <value>
+                <fullName>Capital Dynamics Arevon</fullName>
+                <default>false</default>
+                <label>Capital Dynamics Arevon</label>
+            </value>
+            <value>
+                <fullName>Carolina Solar Services, LLC</fullName>
+                <default>false</default>
+                <label>Carolina Solar Services, LLC</label>
+            </value>
+            <value>
+                <fullName>CED OpCo</fullName>
+                <default>false</default>
+                <label>CED OpCo</label>
+            </value>
+            <value>
+                <fullName>Coldwell Solar</fullName>
+                <default>false</default>
+                <label>Coldwell Solar</label>
+            </value>
+            <value>
+                <fullName>Coles Electric</fullName>
+                <default>false</default>
+                <label>Coles Electric</label>
+            </value>
+            <value>
+                <fullName>Cupertino Electric</fullName>
+                <default>false</default>
+                <label>Cupertino Electric</label>
+            </value>
+            <value>
+                <fullName>Cypress Creek Renewables</fullName>
+                <default>false</default>
+                <label>Cypress Creek Renewables</label>
+            </value>
+            <value>
+                <fullName>Depcom</fullName>
+                <default>false</default>
+                <label>Depcom</label>
+            </value>
+            <value>
+                <fullName>DynaSolar</fullName>
+                <default>false</default>
+                <label>DynaSolar</label>
+            </value>
+            <value>
+                <fullName>E.ON</fullName>
+                <default>false</default>
+                <label>E.ON</label>
+            </value>
+            <value>
+                <fullName>Ecoplexus, Inc</fullName>
+                <default>false</default>
+                <label>Ecoplexus, Inc</label>
+            </value>
+            <value>
+                <fullName>EDF</fullName>
+                <default>false</default>
+                <label>EDF</label>
+            </value>
+            <value>
+                <fullName>Elecnor</fullName>
+                <default>false</default>
+                <label>Elecnor</label>
+            </value>
+            <value>
+                <fullName>ESA Renewables, LLC</fullName>
+                <default>false</default>
+                <label>ESA Renewables, LLC</label>
+            </value>
+            <value>
+                <fullName>EV-Assurance Power Systems</fullName>
+                <default>false</default>
+                <label>EV-Assurance Power Systems</label>
+            </value>
+            <value>
+                <fullName>EV-Besco</fullName>
+                <default>false</default>
+                <label>EV-Besco</label>
+            </value>
+            <value>
+                <fullName>EV-Electrical Power and Controls</fullName>
+                <default>false</default>
+                <label>EV-Electrical Power and Controls</label>
+            </value>
+            <value>
+                <fullName>EV-FSGI</fullName>
+                <default>false</default>
+                <label>EV-FSGI</label>
+            </value>
+            <value>
+                <fullName>EV-Gervais Electric</fullName>
+                <default>false</default>
+                <label>EV-Gervais Electric</label>
+            </value>
+            <value>
+                <fullName>EV-JNS Power and Control Systems</fullName>
+                <default>false</default>
+                <label>EV-JNS Power and Control Systems</label>
+            </value>
+            <value>
+                <fullName>EV-K&amp;R Construction Specialties, Inc</fullName>
+                <default>false</default>
+                <label>EV-K&amp;R Construction Specialties, Inc</label>
+            </value>
+            <value>
+                <fullName>EV-Kenmor Electric</fullName>
+                <default>false</default>
+                <label>EV-Kenmor Electric</label>
+            </value>
+            <value>
+                <fullName>EV-Maximum Solar</fullName>
+                <default>false</default>
+                <label>EV-Maximum Solar</label>
+            </value>
+            <value>
+                <fullName>EV-Mona Electrical Group</fullName>
+                <default>false</default>
+                <label>EV-Mona Electrical Group</label>
+            </value>
+            <value>
+                <fullName>EV-Penco Electrical Contractors</fullName>
+                <default>false</default>
+                <label>EV-Penco Electrical Contractors</label>
+            </value>
+            <value>
+                <fullName>EV-Puget Sound Solar</fullName>
+                <default>false</default>
+                <label>EV-Puget Sound Solar</label>
+            </value>
+            <value>
+                <fullName>EV-Smart Charge America</fullName>
+                <default>false</default>
+                <label>EV-Smart Charge America</label>
+            </value>
+            <value>
+                <fullName>EV-Union Electric</fullName>
+                <default>false</default>
+                <label>EV-Union Electric</label>
+            </value>
+            <value>
+                <fullName>First Solar</fullName>
+                <default>false</default>
+                <label>First Solar</label>
+            </value>
+            <value>
+                <fullName>Fluor</fullName>
+                <default>false</default>
+                <label>Fluor</label>
+            </value>
+            <value>
+                <fullName>Full Warranty</fullName>
+                <default>false</default>
+                <label>Full Warranty</label>
+            </value>
+            <value>
+                <fullName>GES</fullName>
+                <default>false</default>
+                <label>GES</label>
+            </value>
+            <value>
+                <fullName>Global Resource Options dba groSolar</fullName>
+                <default>false</default>
+                <label>Global Resource Options dba groSolar</label>
+            </value>
+            <value>
+                <fullName>Goldwind</fullName>
+                <default>false</default>
+                <label>Goldwind</label>
+            </value>
+            <value>
+                <fullName>GPS</fullName>
+                <default>false</default>
+                <label>GPS</label>
+            </value>
+            <value>
+                <fullName>Green Alternatives, Inc.</fullName>
+                <default>false</default>
+                <label>Green Alternatives, Inc.</label>
+            </value>
+            <value>
+                <fullName>Greenbacker Capital</fullName>
+                <default>false</default>
+                <label>Greenbacker Capital</label>
+            </value>
+            <value>
+                <fullName>Green Energy Maintenance</fullName>
+                <default>false</default>
+                <label>Green Energy Maintenance</label>
+            </value>
+            <value>
+                <fullName>GroSolar</fullName>
+                <default>false</default>
+                <label>GroSolar</label>
+            </value>
+            <value>
+                <fullName>groSolar (Global Resources Options, Inc.)</fullName>
+                <default>false</default>
+                <label>groSolar (Global Resources Options, Inc.)</label>
+            </value>
+            <value>
+                <fullName>Hawa</fullName>
+                <default>false</default>
+                <label>Hawa</label>
+            </value>
+            <value>
+                <fullName>HDEC Engineering Ltd</fullName>
+                <default>false</default>
+                <label>HDEC Engineering Ltd</label>
+            </value>
+            <value>
+                <fullName>Heelstone Services, LLC</fullName>
+                <default>false</default>
+                <label>Heelstone Services, LLC</label>
+            </value>
+            <value>
+                <fullName>Helix</fullName>
+                <default>false</default>
+                <label>Helix</label>
+            </value>
+            <value>
+                <fullName>i1energy</fullName>
+                <default>false</default>
+                <label>i1energy</label>
+            </value>
+            <value>
+                <fullName>Immodo</fullName>
+                <default>false</default>
+                <label>Immodo</label>
+            </value>
+            <value>
+                <fullName>Juwi</fullName>
+                <default>false</default>
+                <label>Juwi</label>
+            </value>
+            <value>
+                <fullName>Kana Engineering Group</fullName>
+                <default>false</default>
+                <label>Kana Engineering Group</label>
+            </value>
+            <value>
+                <fullName>LightWave  Solar,  LLC</fullName>
+                <default>false</default>
+                <label>LightWave  Solar,  LLC</label>
+            </value>
+            <value>
+                <fullName>MaxGen</fullName>
+                <default>false</default>
+                <label>MaxGen</label>
+            </value>
+            <value>
+                <fullName>MBL Energy</fullName>
+                <default>false</default>
+                <label>MBL Energy</label>
+            </value>
+            <value>
+                <fullName>Miller Brothers</fullName>
+                <default>false</default>
+                <label>Miller Brothers</label>
+            </value>
+            <value>
+                <fullName>Mortensen</fullName>
+                <default>false</default>
+                <label>Mortensen</label>
+            </value>
+            <value>
+                <fullName>Namaste  Solar  Electric,  Inc.</fullName>
+                <default>false</default>
+                <label>Namaste  Solar  Electric,  Inc.</label>
+            </value>
+            <value>
+                <fullName>NovaSource</fullName>
+                <default>false</default>
+                <label>NovaSource</label>
+            </value>
+            <value>
+                <fullName>O2 Energies</fullName>
+                <default>false</default>
+                <label>O2 Energies</label>
+            </value>
+            <value>
+                <fullName>Omnidian</fullName>
+                <default>false</default>
+                <label>Omnidian</label>
+            </value>
+            <value>
+                <fullName>Origis</fullName>
+                <default>false</default>
+                <label>Origis</label>
+            </value>
+            <value>
+                <fullName>Oswald</fullName>
+                <default>false</default>
+                <label>Oswald</label>
+            </value>
+            <value>
+                <fullName>Power Factors LLC</fullName>
+                <default>false</default>
+                <label>Power Factors LLC</label>
+            </value>
+            <value>
+                <fullName>PVCA (Photovoltaics California).</fullName>
+                <default>false</default>
+                <label>PVCA (Photovoltaics California).</label>
+            </value>
+            <value>
+                <fullName>PV Pros</fullName>
+                <default>false</default>
+                <label>PV Pros</label>
+            </value>
+            <value>
+                <fullName>Q-Cells</fullName>
+                <default>false</default>
+                <label>Q-Cells</label>
+            </value>
+            <value>
+                <fullName>QE Solar</fullName>
+                <default>false</default>
+                <label>QE Solar</label>
+            </value>
+            <value>
+                <fullName>Ray Angelini LLC</fullName>
+                <default>false</default>
+                <label>Ray Angelini LLC</label>
+            </value>
+            <value>
+                <fullName>RCR</fullName>
+                <default>false</default>
+                <label>RCR</label>
+            </value>
+            <value>
+                <fullName>REC Solar, Inc.</fullName>
+                <default>false</default>
+                <label>REC Solar, Inc.</label>
+            </value>
+            <value>
+                <fullName>RES Americas</fullName>
+                <default>false</default>
+                <label>RES Americas</label>
+            </value>
+            <value>
+                <fullName>RESCO</fullName>
+                <default>false</default>
+                <label>RESCO</label>
+            </value>
+            <value>
+                <fullName>Rosendin</fullName>
+                <default>false</default>
+                <label>Rosendin</label>
+            </value>
+            <value>
+                <fullName>Saunders Electricals</fullName>
+                <default>false</default>
+                <label>Saunders Electricals</label>
+            </value>
+            <value>
+                <fullName>Self Perform</fullName>
+                <default>false</default>
+                <label>Self Perform</label>
+            </value>
+            <value>
+                <fullName>Sempra</fullName>
+                <default>false</default>
+                <label>Sempra</label>
+            </value>
+            <value>
+                <fullName>Service Warranty</fullName>
+                <default>false</default>
+                <label>Service Warranty</label>
+            </value>
+            <value>
+                <fullName>Sharp</fullName>
+                <default>false</default>
+                <label>Sharp</label>
+            </value>
+            <value>
+                <fullName>Sol America</fullName>
+                <default>false</default>
+                <label>Sol America</label>
+            </value>
+            <value>
+                <fullName>Soltage, LLC</fullName>
+                <default>false</default>
+                <label>Soltage, LLC</label>
+            </value>
+            <value>
+                <fullName>SOLV</fullName>
+                <default>false</default>
+                <label>SOLV</label>
+            </value>
+            <value>
+                <fullName>Strata</fullName>
+                <default>false</default>
+                <label>Strata</label>
+            </value>
+            <value>
+                <fullName>Stronghold</fullName>
+                <default>false</default>
+                <label>Stronghold</label>
+            </value>
+            <value>
+                <fullName>SunEdison</fullName>
+                <default>false</default>
+                <label>SunEdison</label>
+            </value>
+            <value>
+                <fullName>SunPower</fullName>
+                <default>false</default>
+                <label>SunPower</label>
+            </value>
+            <value>
+                <fullName>Swinerton</fullName>
+                <default>false</default>
+                <label>Swinerton</label>
+            </value>
+            <value>
+                <fullName>Systems Electric</fullName>
+                <default>false</default>
+                <label>Systems Electric</label>
+            </value>
+            <value>
+                <fullName>Tangent Energy</fullName>
+                <default>false</default>
+                <label>Tangent Energy</label>
+            </value>
+            <value>
+                <fullName>TVAEnergy</fullName>
+                <default>false</default>
+                <label>TVAEnergy</label>
+            </value>
+            <value>
+                <fullName>Undefined</fullName>
+                <default>false</default>
+                <label>Undefined</label>
+            </value>
+            <value>
+                <fullName>United</fullName>
+                <default>false</default>
+                <label>United</label>
+            </value>
+            <value>
+                <fullName>WWS</fullName>
+                <default>false</default>
+                <label>WWS</label>
+            </value>
+            <value>
+                <fullName>X-Elio</fullName>
+                <default>false</default>
+                <label>X-Elio</label>
+            </value>
+            <value>
+                <fullName>Nordex</fullName>
+                <default>false</default>
+                <label>Nordex</label>
+            </value>
+            <value>
+                <fullName>Mainstream RP</fullName>
+                <default>false</default>
+                <label>Mainstream RP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
 </CustomField>
