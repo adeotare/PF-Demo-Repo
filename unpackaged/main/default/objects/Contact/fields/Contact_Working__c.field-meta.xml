@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <formula>DATETIMEVALUE(Contact_Status_MQL_Time__c) - DATETIMEVALUE(Contact_Status_TAL_Time__c)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>Contact Working</label>
+    <label>Duration TAL to MQL</label>
     <precision>18</precision>
     <required>false</required>
     <scale>2</scale>

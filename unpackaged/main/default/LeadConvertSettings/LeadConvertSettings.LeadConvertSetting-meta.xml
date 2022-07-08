@@ -41,5 +41,17 @@
         </mappingFields>
         <outputObject>Contact</outputObject>
     </objectMapping>
+    <objectMapping>
+        <inputObject>Lead</inputObject>
+        <mappingFields>
+            <inputField>Lead_Status_AQL_Time__c</inputField>
+            <outputField>AQL_Date1__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Lead_Status_TAL_Time__c</inputField>
+            <outputField>TAL_Date1__c</outputField>
+        </mappingFields>
+        <outputObject>Opportunity</outputObject>
+    </objectMapping>
     <opportunityCreationOptions>VisibleOptional</opportunityCreationOptions>
 </LeadConvertSettings>
