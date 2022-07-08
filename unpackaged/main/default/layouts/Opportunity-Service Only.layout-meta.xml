@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <customButtons>oppteamedit__Opportunity_Team_Edit</customButtons>
+    <customButtons>SBQQ__Amend_Contract</customButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -312,6 +313,11 @@
             <actionName>oppteamedit__Opportunity_Team_Edit</actionName>
             <actionType>CustomButton</actionType>
             <sortOrder>10</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>SBQQ__Amend_Contract</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>11</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedContent>

@@ -2,6 +2,7 @@
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <customButtons>cascade_bill_to_record</customButtons>
     <customButtons>oppteamedit__Opportunity_Team_Edit</customButtons>
+    <customButtons>SBQQ__Amend_Contract</customButtons>
     <excludeButtons>Submit</excludeButtons>
     <feedLayout>
         <autocollapsePublisher>true</autocollapsePublisher>
@@ -365,6 +366,11 @@
             <actionType>CustomButton</actionType>
             <sortOrder>10</sortOrder>
         </platformActionListItems>
+        <platformActionListItems>
+            <actionName>SBQQ__Amend_Contract</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>11</sortOrder>
+        </platformActionListItems>
     </platformActionList>
     <relatedContent>
         <relatedContentItems>
@@ -468,14 +474,6 @@
         <fields>OppAccessLevel</fields>
         <fields>TeamMemberRole</fields>
         <relatedList>RelatedOpportunitySalesTeam</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>CAMPAIGN.NAME</fields>
-        <fields>CONTACT.NAME</fields>
-        <fields>INFLUENCE</fields>
-        <fields>REVENUE_SHARE</fields>
-        <fields>OCR.ROLE</fields>
-        <relatedList>RelatedCampaignInfluence2List</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
