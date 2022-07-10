@@ -2610,6 +2610,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>SBQQ__ContractedPrice__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>Site_Metadata__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
