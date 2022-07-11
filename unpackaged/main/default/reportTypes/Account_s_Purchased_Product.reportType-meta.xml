@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>Account</baseObject>
+    <category>accounts</category>
+    <deployed>false</deployed>
+    <description>Account&#39;s Purchased Product</description>
+    <join>
+        <outerJoin>false</outerJoin>
+        <relationship>QS_Customer_Assets__r</relationship>
+    </join>
+    <label>Account&#39;s Purchased Product</label>
+    <sections>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
+            <table>Account</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Type</field>
+            <table>Account</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Ultimate_Parent_Account__c</field>
+            <table>Account</table>
+        </columns>
+        <masterLabel>Accounts</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
+            <table>Account.QS_Customer_Assets__r</table>
+        </columns>
+        <masterLabel>Purchased Products (Account)</masterLabel>
+    </sections>
+</ReportType>
