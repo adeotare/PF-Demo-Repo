@@ -50,21 +50,16 @@ public with sharing class PlantProductController {
     */
     @AuraEnabled 
     public static void deletePlantProduct(List<Plant_Product_Transaction__c> pptList, String quoteLineId){  
-        //List<Account_Plant__c> aplan =[SELECT Id, Name, Account__r.Name, Plant__r.Plant_Name__c,Plant__r.Country__c, Plant__r.MWp__c, Plant__r.MW_Energy_Capacity_MWh__c, Plant__r.Number_of_Devices__c,Plant__r.Asset_Class__c From Account_Plant__c where Id =:pptList.Plant__c WITH SECURITY_ENFORCED];
-        //System.debug('aplan::'+aplan.size());
+        
         if (pptList.size() == 0)
             return;  // If number of plants to be deleted is zero, then return
         List<Id>  accplan = new List<Id>();
         for(Plant_Product_Transaction__c ppt :pptList ){
             accplan.add(ppt.Plant__c);
         }
-        System.debug('accplan::'+accplan);
-        List<Account_Plant__c> aplan =[SELECT Id, Name, Account__r.Name, Plant__r.Plant_Name__c,Plant__r.Country__c, Plant__r.MWp__c, Plant__r.MW_Energy_Capacity_MWh__c, Plant__r.Number_of_Turbines__c,Plant__r.Asset_Class__c From Account_Plant__c where Id IN :accplan WITH SECURITY_ENFORCED];
-        System.debug('aplan::'+aplan.size());
-        // Integer sumOfMWH = 0;
-        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__AdditionalDiscount__c,  SBQQ__NetPrice__c, SBQQ__NetTotal__c, SBQQ__RegularPrice__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure 
-            from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
-        
+        System.debug('Number of Plants to be deleted are::'+accplan.size());
+        //List<Account_Plant__c> aplan =[SELECT Id, Name, Account__r.Name, Plant__r.Plant_Name__c,Plant__r.Country__c, Plant__r.MWp__c, Plant__r.MW_Energy_Capacity_MWh__c, Plant__r.Number_of_Turbines__c,Plant__r.Asset_Class__c From Account_Plant__c where Id IN :accplan WITH SECURITY_ENFORCED];
+        //System.debug('aplan::'+aplan.size());
         try {
             delete pptList;
         }
@@ -73,10 +68,16 @@ public with sharing class PlantProductController {
                                 +string.valueOf(ex.getLineNumber()) +ex.getTypeName() +string.valueOf(ex.getCause()) +ex.getMessage() +ex.getStackTraceString());
 
             }
+
+        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__AdditionalDiscount__c, SBQQ__NetPrice__c, SBQQ__NetTotal__c, SBQQ__RegularPrice__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure 
+            from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+        
+        // Execute the Quantity and Pricing functions  only if - 
+        if ((quoteLine.SBQQ__Product__r.QuantityUnitOfMeasure == 'MWp') || (quoteLine.SBQQ__Product__r.QuantityUnitOfMeasure == 'Site')) {
         updateQuantityOnQuoteLineItem(quoteLineId);
         updatePricingForQuoteLineInPPT(quoteLineId);
-        // updateNetPriceInPPTRecords (quoteLineId);
         updatePricingfromPPTToQuoteline (quoteLine, quoteLineId);
+        }
     } 
     
     /*
@@ -95,7 +96,7 @@ public with sharing class PlantProductController {
             return null;  // If number of plants to be added is zero, then return
 
         List<Plant_Product_Transaction__c> pList = new List<Plant_Product_Transaction__c>();
-        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__Product__r.ID,SBQQ__ListPrice__c, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__SpecialPrice__c, SBQQ__EndDate__c, SBQQ__Quote__c, SBQQ__Quote__r.CurrencyIsoCode, SBQQ__Quote__r.SBQQ__StartDate__c, SBQQ__Quote__r.SBQQ__EndDate__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__Discount__c, SBQQ__Quote__r.SBQQ__Type__c, SBQQ__Product__r.ID,SBQQ__ListPrice__c, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__SpecialPrice__c, SBQQ__EndDate__c, SBQQ__Quote__c, SBQQ__Quote__r.CurrencyIsoCode, SBQQ__Quote__r.SBQQ__StartDate__c, SBQQ__Quote__r.SBQQ__EndDate__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
          
         for(Account_Plant__c ap: plantList){
             // For every new plant that is added, create a record in the PPT table and populate it's fields
@@ -127,6 +128,8 @@ public with sharing class PlantProductController {
             ppt.MWp_Quantity__c = ap.Plant__r.MWp__c;
             ppt.Product__c = quoteLine.SBQQ__Product__c;
             ppt.Quote__c = quoteLine.SBQQ__Quote__c;
+            // If Additional discount % is already entered on the Quote line, add it on the new Plant record as well
+            ppt.Addl_Discount_Percent__c = quoteLine.SBQQ__Discount__c;
             ppt.Quote_Line__c = quoteLineId;
             ppt.Status__c = 'Quoted';
             if (quoteLine.SBQQ__Product__r.QuantityUnitOfMeasure == 'MWp') {
@@ -164,10 +167,19 @@ public with sharing class PlantProductController {
             }
 
         }
-        updateQuantityOnQuoteLineItem(quoteLineId);
-        updatePricingForQuoteLineInPPT(quoteLineId);
-        updatePricingfromPPTToQuoteline (quoteLine, quoteLineId);
-        // updateNetPriceInPPTRecords (quoteLineId);
+        
+        // Execute the Quantity and Pricing functions  only if - 
+        if ((quoteLine.SBQQ__Product__r.QuantityUnitOfMeasure == 'MWp') || (quoteLine.SBQQ__Product__r.QuantityUnitOfMeasure == 'Site')) {
+            updateQuantityOnQuoteLineItem(quoteLineId);
+        
+            If (quoteLine.SBQQ__Quote__r.SBQQ__Type__c != 'Amendment') {
+
+                System.debug('Quote is not of type Amendment');
+                updatePricingForQuoteLineInPPT(quoteLineId);    
+                updatePricingfromPPTToQuoteline (quoteLine, quoteLineId);
+            }
+        }
+
         return pList;
                  
     }  
@@ -279,7 +291,7 @@ public with sharing class PlantProductController {
 
         // check if this Quote is for go-forward pricing i.e. the one using Standard Price book. This is no longer true 
         // as all GB pricing is also per go-forward pricing approach
-        SBQQ__QuoteLine__c quoteLine1 = [SELECT CurrencyIsoCode, SBQQ__ListPrice__c, SBQQ__Product__r.ID, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__Product__r.Product_Category__c, SBQQ__SpecialPrice__c, SBQQ__Quote__r.SBQQ__PriceBook__r.Name from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+        SBQQ__QuoteLine__c quoteLine1 = [SELECT CurrencyIsoCode, SBQQ__ListPrice__c, SBQQ__Product__r.ID, SBQQ__Quote__r.SBQQ__Type__c, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__Product__r.Product_Category__c, SBQQ__SpecialPrice__c, SBQQ__Quote__r.SBQQ__PriceBook__r.Name from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
         // Keep the original contract price here... since we are updating Special Price itself, this will not work
         // Decimal contractPricePerMSA = quoteLine1.SBQQ__SpecialPrice__c;
          List <SBQQ__ContractedPrice__c> cPriceList = [Select SBQQ__Price__c, Name from SBQQ__ContractedPrice__c where SBQQ__Product__r.ID =:quoteLine1.SBQQ__Product__r.ID AND SBQQ__Account__r.ID =:quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.ID AND CurrencyIsoCode =:quoteLine1.CurrencyIsoCode WITH SECURITY_ENFORCED LIMIT 1];
@@ -301,7 +313,7 @@ public with sharing class PlantProductController {
             WITH SECURITY_ENFORCED Order by Lower_Bound__c ];
             if (swDiscountTiersList!=null && !swDiscountTiersList.IsEmpty()) {
                 // Found atleast 1 discount tier for the Product on the quote line for a given account
-                doDiscountTierBasedPriceCalculationforSW (quoteLineId, contractPricePerMSA, swDiscountTiersList);
+                doDiscountTierBasedPriceCalculationforSW (quoteLineId, contractPricePerMSA, swDiscountTiersList, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c);
     
             }
             else {
@@ -366,14 +378,16 @@ public with sharing class PlantProductController {
     // also the flag - if All Plants rise
     // 
     @AuraEnabled(cacheable=true)  
-    public static void doDiscountTierBasedPriceCalculationforSW (String quoteLineId, Decimal contractPricePerMSA, List <MSA_Software_Discount_Tier_Price__c> swDiscountTiersList){
+    public static void doDiscountTierBasedPriceCalculationforSW (String quoteLineId, Decimal contractPricePerMSA, List <MSA_Software_Discount_Tier_Price__c> swDiscountTiersList, String quoteType){
 
         System.debug('Entered function doDiscountTierBasedPriceCalculationforSW');
+        System.debug('The Quote type is '+quoteType);
         if (swDiscountTiersList!=null && !swDiscountTiersList.IsEmpty()) {
                 System.debug('Found atleast 1 discount tier for the Product on the quote line for a given account');
                 // get past purchased quantity or currently Active MW
                 Decimal ActiveMW = 0;
-                If (swDiscountTiersList[0].Cross_Orders__c == TRUE) {
+                // Don't count ActiveMW when Quote is for Renewal else it will result in double counting
+                If (swDiscountTiersList[0].Cross_Orders__c == TRUE && quoteType !='Renewal') {
                     try {
                             List <Active_Megawatts__c> aMW = [Select ID from Active_Megawatts__c where (Account__r.ID = :swDiscountTiersList[0].Account__r.ID) WITH SECURITY_ENFORCED limit 1];
                             if (aMW.size() > 0) {
