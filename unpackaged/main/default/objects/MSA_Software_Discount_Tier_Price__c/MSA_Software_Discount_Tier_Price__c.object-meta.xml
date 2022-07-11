@@ -170,6 +170,6 @@
         <searchResultsAdditionalFields>Asset_Class__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Cross_Orders__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Read</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

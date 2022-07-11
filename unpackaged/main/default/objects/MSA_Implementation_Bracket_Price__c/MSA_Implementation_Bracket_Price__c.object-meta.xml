@@ -169,6 +169,6 @@
         <searchResultsAdditionalFields>CURRENCY_ISO_CODE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Asset_Class__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Read</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
