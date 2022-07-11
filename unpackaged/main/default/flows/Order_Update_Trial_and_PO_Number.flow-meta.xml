@@ -27,10 +27,17 @@
                 <elementReference>Get_Opportunity.Subsidiary__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.EndDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Quote.SBQQ__EndDate__c</elementReference>
+            </value>
+        </assignmentItems>
     </assignments>
     <description>REQ - 1796 and REQ - 3106</description>
     <interviewLabel>Order : Update Trial and PO Number {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Order : Update Subsidiary, Trial and PO Number</label>
+    <label>Order : Update End Date, Subsidiary, Trial and PO Number</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
