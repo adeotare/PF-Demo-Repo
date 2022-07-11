@@ -27,9 +27,9 @@
                 <label>Contracted</label>
             </value>
             <value>
-                <fullName>Amendment Quoted​</fullName>
+                <fullName>Amendment_Quoted</fullName>
                 <default>false</default>
-                <label>Amendment Quoted​</label>
+                <label>Amendment Quoted</label>
             </value>
             <value>
                 <fullName>Renewal Quoted</fullName>

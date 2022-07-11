@@ -4067,6 +4067,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Plant_Product_Transaction__c.Amendment_Action__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Plant_Product_Transaction__c.Asset_Class__c</field>
         <readable>true</readable>
@@ -4188,6 +4193,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Plant_Product_Transaction__c.Plant_Product__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Plant_Product_Transaction__c.Plant__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4219,6 +4229,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Plant_Product_Transaction__c.Quote__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Plant_Product_Transaction__c.Renewal_Action__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
