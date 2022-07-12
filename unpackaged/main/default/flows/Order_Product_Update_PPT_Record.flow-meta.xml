@@ -36,6 +36,13 @@
                 <elementReference>$Record.OrderId</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Ordered</stringValue>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Add_to_PPT</targetReference>
         </connector>
@@ -62,6 +69,7 @@
             <label>Plant Product Transaction Record found?</label>
         </rules>
     </decisions>
+    <description>To Update PPT with Order</description>
     <interviewLabel>Order Product : Update PPT Record {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Order Product : Update PPT Record</label>
     <loops>
