@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Department__c</fullName>
     <externalId>false</externalId>
-    <label>Department</label>
+    <label>Persona.</label>
     <required>false</required>
     <trackFeedHistory>true</trackFeedHistory>
     <trackHistory>true</trackHistory>
