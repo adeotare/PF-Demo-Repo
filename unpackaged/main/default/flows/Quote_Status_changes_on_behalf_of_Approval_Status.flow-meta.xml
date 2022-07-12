@@ -4,8 +4,8 @@
     <decisions>
         <name>Change_quote_status_on_the_basis_of_approval_status</name>
         <label>Change quote status on the basis of approval status</label>
-        <locationX>662</locationX>
-        <locationY>187</locationY>
+        <locationX>537</locationX>
+        <locationY>295</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>When_quote_is_sent_for_approval</name>
@@ -67,6 +67,18 @@
             </connector>
             <label>When approval is approved</label>
         </rules>
+        <rules>
+            <name>When_quote_has_none_approval_status</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ApprovalStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>status_changed_to_draft_for_recall_0</targetReference>
+            </connector>
+            <label>When quote has none approval status</label>
+        </rules>
     </decisions>
     <interviewLabel>Quote : Status changes on behalf of Approval Status {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Quote : Status changes on behalf of Approval Status</label>
@@ -89,11 +101,154 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Record_Type_of_Locked</name>
+        <label>Get Record Type of Locked</label>
+        <locationX>991</locationX>
+        <locationY>445</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Record_Type_of_Locked</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>SBQQ__Quote__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Locked</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Record_Type_of_Unlocked</name>
+        <label>Get Record Type of Unlocked</label>
+        <locationX>858</locationX>
+        <locationY>580</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Record_Type_of_Unlocked</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>SBQQ__Quote__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Unlocked</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Record_Type_of_Unlocked_0</name>
+        <label>Get Record Type of Unlocked</label>
+        <locationX>1126</locationX>
+        <locationY>298</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Record_Type_of_Unlocked_0</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>SBQQ__Quote__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Unlocked</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Record_Type_of_Unlocked_0_0</name>
+        <label>Get Record Type of Unlocked</label>
+        <locationX>991</locationX>
+        <locationY>160</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Record_Type_of_Unlocked_0_0</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>SBQQ__Quote__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Unlocked</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Record_Type_of_Unlocked_0_0_0</name>
+        <label>Get Record Type of Unlocked</label>
+        <locationX>857</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Record_Type_of_Unlocked_0_0_0</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>SBQQ__Quote__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Unlocked</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>status_changed_for_approved</name>
         <label>status changed for approved</label>
-        <locationX>846</locationX>
-        <locationY>280</locationY>
+        <locationX>745</locationX>
+        <locationY>444</locationY>
+        <connector>
+            <targetReference>Get_Record_Type_of_Locked</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -113,8 +268,35 @@
     <recordUpdates>
         <name>status_changed_to_draft_for_recall</name>
         <label>status changed to draft for recall</label>
-        <locationX>834</locationX>
-        <locationY>86</locationY>
+        <locationX>741</locationX>
+        <locationY>160</locationY>
+        <connector>
+            <targetReference>Get_Record_Type_of_Unlocked_0_0</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>SBQQ__Status__c</field>
+            <value>
+                <stringValue>Draft</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>status_changed_to_draft_for_recall_0</name>
+        <label>status changed to draft for recall</label>
+        <locationX>849</locationX>
+        <locationY>299</locationY>
+        <connector>
+            <targetReference>Get_Record_Type_of_Unlocked_0</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -134,8 +316,11 @@
     <recordUpdates>
         <name>status_changed_to_draft_for_rejection</name>
         <label>status changed to draft for rejection</label>
-        <locationX>665</locationX>
-        <locationY>18</locationY>
+        <locationX>540</locationX>
+        <locationY>52</locationY>
+        <connector>
+            <targetReference>Get_Record_Type_of_Unlocked_0_0_0</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -155,8 +340,11 @@
     <recordUpdates>
         <name>status_changed_to_in_progress</name>
         <label>status changed to in progress</label>
-        <locationX>662</locationX>
-        <locationY>343</locationY>
+        <locationX>544</locationX>
+        <locationY>581</locationY>
+        <connector>
+            <targetReference>Get_Record_Type_of_Unlocked</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -173,15 +361,128 @@
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Record_Type_of_Locked</name>
+        <label>Update Record Type of Locked</label>
+        <locationX>1250</locationX>
+        <locationY>445</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Record_Type_of_Locked.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Record_Type_of_Unlocked</name>
+        <label>Update Record Type of Unlocked</label>
+        <locationX>1146</locationX>
+        <locationY>579</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Record_Type_of_Unlocked.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Record_Type_of_Unlocked_0</name>
+        <label>Update Record Type of Unlocked</label>
+        <locationX>1391</locationX>
+        <locationY>297</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Record_Type_of_Unlocked.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Record_Type_of_Unlocked_0_0</name>
+        <label>Update Record Type of Unlocked</label>
+        <locationX>1233</locationX>
+        <locationY>159</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Record_Type_of_Unlocked.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Record_Type_of_Unlocked_0_0_0</name>
+        <label>Update Record Type of Unlocked</label>
+        <locationX>1129</locationX>
+        <locationY>51</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Record_Type_of_Unlocked.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <start>
-        <locationX>59</locationX>
-        <locationY>93</locationY>
+        <locationX>52</locationX>
+        <locationY>205</locationY>
         <connector>
             <targetReference>Change_quote_status_on_the_basis_of_approval_status</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ApprovalStatus__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <object>SBQQ__Quote__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
-        <triggerType>RecordAfterSave</triggerType>
+        <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>
 </Flow>

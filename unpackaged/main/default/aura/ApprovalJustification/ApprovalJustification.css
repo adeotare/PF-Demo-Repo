@@ -1,0 +1,7 @@
+.THIS.slds-page-header{
+    background-color: white;
+}
+.THIS .slds-page-header__col-title{
+    text-align: center;
+    color: red;
+}
