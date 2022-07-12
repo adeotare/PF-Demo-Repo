@@ -9,7 +9,7 @@
                         <valueListItems>
                             <value>CustomButton.SBQQ__Quote__c.Preview_Approvals</value>
                             <visibilityRule>
-                                <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+                                <booleanFilter>1 AND 2 AND 3</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.ApprovalStatus__c}</leftValue>
                                     <operator>NE</operator>
@@ -24,11 +24,6 @@
                                     <leftValue>{!Record.ApprovalStatus__c}</leftValue>
                                     <operator>NE</operator>
                                     <rightValue>Rejected</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Recalled</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -75,23 +70,10 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>CustomButton.SBQQ__Quote__c.SBQQ__IncludeDocument</value>
-                            <visibilityRule>
-                                <booleanFilter>1 AND 2</booleanFilter>
-                                <criteria>
-                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Rejected</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Recalled</rightValue>
-                                </criteria>
-                            </visibilityRule>
+                            <value>CustomButton.SBQQ__Quote__c.Conga_Composer_Generate_Order_Form</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>CustomButton.SBQQ__Quote__c.SBQQ__PreviewDocument</value>
+                            <value>CustomButton.SBQQ__Quote__c.SBQQ__IncludeDocument</value>
                             <visibilityRule>
                                 <booleanFilter>1 AND 2</booleanFilter>
                                 <criteria>
@@ -117,12 +99,18 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>CustomButton.SBQQ__Quote__c.SBQQ__GenerateDocument</value>
+                            <value>CustomButton.SBQQ__Quote__c.SBQQ__PreviewDocument</value>
                             <visibilityRule>
+                                <booleanFilter>1 AND 2</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.ApprovalStatus__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>Approved</rightValue>
+                                    <operator>NE</operator>
+                                    <rightValue>Rejected</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
+                                    <operator>NE</operator>
+                                    <rightValue>Recalled</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -287,6 +275,40 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>ApprovalJustification</componentName>
+                <identifier>c_ApprovalJustification</identifier>
+                <visibilityRule>
+                    <booleanFilter>(1 OR 2 OR 3 OR 4) AND 5</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.Additional_Discount_from_Quote_LIne__c}</leftValue>
+                        <operator>GT</operator>
+                        <rightValue>0</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opty_Order_Subtype__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>1</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Trial__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.QL_Product_Category__c}</leftValue>
+                        <operator>GT</operator>
+                        <rightValue>1</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.Name}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Locked</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

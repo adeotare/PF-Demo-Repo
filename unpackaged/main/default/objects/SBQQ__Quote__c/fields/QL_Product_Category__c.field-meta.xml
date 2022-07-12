@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QL_Product_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>QL Product Category</label>
+    <summaryFilterItems>
+        <field>SBQQ__QuoteLine__c.Product_Category__c</field>
+        <operation>equals</operation>
+        <value>Professional Services</value>
+    </summaryFilterItems>
+    <summaryForeignKey>SBQQ__QuoteLine__c.SBQQ__Quote__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>
