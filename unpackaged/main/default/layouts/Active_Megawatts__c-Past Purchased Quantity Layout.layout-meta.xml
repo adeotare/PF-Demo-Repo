@@ -92,6 +92,10 @@
                 <behavior>Edit</behavior>
                 <field>Child_MW_Other__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Child_MW_Other_Renewable__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -130,6 +134,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Total_MW_Other__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Total_MW_Industrial__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>

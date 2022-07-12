@@ -623,6 +623,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Active_Megawatts__c.Child_MW_Other_Renewable__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Active_Megawatts__c.Child_MW_Other__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -689,6 +694,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Active_Megawatts__c.Total_MW_Hydro__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Total_MW_Industrial__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1664,6 +1674,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Contract.ActivatedDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contract.Amendment_Quoted__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -7612,6 +7627,10 @@
     </userPermissions>
     <classAccesses>
         <apexClass>AccountForMSAContractedPrices</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AccountHierarchyMW</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

@@ -12,12 +12,19 @@ public class ContractTriggerHandlerTest {
         opp.Name = 'Test Opportunity';
         opp.StageName = '00 - MQL';
         opp.AccountId = act.Id;
-        insert opp;    
+        insert opp;   
+        
+        Opportunity opp2 = new Opportunity();
+        opp2.CloseDate = System.today().addDays(5);
+        opp2.Name = 'Test Opportunity';
+        opp2.StageName = '00 - MQL';
+        opp2.AccountId = act.Id;
+        insert opp2;  
         
         Product2 prd = new Product2();
         prd.SBQQ__SubscriptionPricing__c = 'Fixed Price';
         prd.Name = 'test';
-         prd.Product_Line__c='Core';
+        prd.Product_Line__c='Core';
         prd.Product_Category__c = 'Software';
         prd.Product_Type__c = 'Recurring';
         prd.Product_Services__c = 'Implementation';
@@ -28,13 +35,26 @@ public class ContractTriggerHandlerTest {
         qut.SBQQ__Opportunity2__c = opp.Id;
         insert qut;
         
+       	Contract cnt = new Contract();
+        cnt.AccountId = act.Id;
+        cnt.Status = 'Draft';
+        cnt.StartDate = System.today().adddays(-5);
+        cnt.ContractTerm = 12;
+        cnt.SBQQ__Quote__c = qut.id;
+        insert cnt;
+        
+        SBQQ__Quote__c qut2 = new SBQQ__Quote__c();
+        qut2.SBQQ__Opportunity2__c = opp2.Id;
+        qut2.SBQQ__Type__c = 'Amendment' ;
+        qut2.SBQQ__MasterContract__c = cnt.Id;
+        insert qut2;
+        
         Product2 p = new Product2();
         p.Name = 'Test Product';
         p.Description='Test Product';
         p.productCode = 'ABC';
         p.isActive = true;
         p.Product_Line__c='Core';
-       
         p.Product_Category__c = 'Software';
         p.Product_Type__c = 'Recurring';
         p.Product_Services__c = 'Implementation';
@@ -49,7 +69,8 @@ public class ContractTriggerHandlerTest {
         standardPrice.UseStandardPrice = false;
         insert standardPrice ;
         
-
+		Test.startTest();
+        
         
         Order order = new Order(
             AccountId = act.Id,
@@ -67,36 +88,33 @@ public class ContractTriggerHandlerTest {
         lineItem.PricebookEntryId=standardPrice.id;
         insert lineItem;
         
-        // Now update & Activate the Order
-        order.Status = 'Activated';
+       	order.Status = 'Activated';
         update order;
         
-       
-        
         list<SBQQ__QuoteLine__c> qlList = new List<SBQQ__QuoteLine__c>();
-        for(Integer i = 1 ;  i < 2 ; i++)
-        {
+        for(Integer i = 0 ;  i < 5 ; i++){
             SBQQ__QuoteLine__c ql = new SBQQ__QuoteLine__c();
             ql.SBQQ__Quote__c = qut.Id;
             ql.SBQQ__Product__c = prd.Id;
-           qlList.add(ql);
+            ql.SBQQ__Quantity__c=10;
+            
+            qlList.add(ql);
             
         }
         insert qlList;
         
-        
-        
-        
-        Contract cnt = new Contract();
-        cnt.AccountId = act.Id;
-        cnt.Status = 'Draft';
-        cnt.StartDate = System.today().adddays(-5);
-        cnt.ContractTerm = 12;
-        cnt.SBQQ__Quote__c = qut.id;
-        insert cnt;
-        
-        
-        //update cnt;
+		list<SBQQ__QuoteLine__c> qlList2 = new List<SBQQ__QuoteLine__c>();
+        for(Integer i = 0 ;  i < 5 ; i++){
+            SBQQ__QuoteLine__c ql = new SBQQ__QuoteLine__c();
+            ql.SBQQ__Quote__c = qut2.Id;
+            ql.SBQQ__Product__c = prd.Id;
+            ql.SBQQ__Quantity__c=10;
+             if(qut2!=null){
+            
+            qlList2.add(ql);
+             } 
+        }
+        insert qlList2;
         
         SBQQ__Subscription__c subs = new SBQQ__Subscription__c();
         subs.SBQQ__Quantity__c = 100;
@@ -106,13 +124,13 @@ public class ContractTriggerHandlerTest {
         insert subs;
         
         Plant__c plt = new Plant__c();
-        plt.Name = 'test';
+        //plt.Name = 'test';
         
         insert plt;
         
         Account_Plant__c ap =new Account_Plant__c();
         ap.Status__c = 'Active';
-       
+        //ap.Name = 'test';
         ap.Plant__c = plt.Id;
         ap.Account__c = act.Id;
         insert ap;
@@ -129,19 +147,18 @@ public class ContractTriggerHandlerTest {
                 ppt.Contract__c = cnt.Id;
                 ppt.Subscription__c = subs.Id;
                 ppt.Plant__c = ap.Id;
+                ppt.Account__c = act.Id;
                 pptList.add(ppt);
             }
         }
         
         insert pptList;
         
-        
-        
-                
-        cnt.SBQQ__RenewalQuoted__c = true;
+		cnt.SBQQ__RenewalQuoted__c = true;
+        cnt.Amendment_Quoted__c = true;
         cnt.Status = 'Activated';
         update cnt;
-        
+        Test.stopTest();
     }
     
     @isTest
@@ -156,4 +173,5 @@ public class ContractTriggerHandlerTest {
         RenewableQuoteProcessHelper.updateQuantityOnQuoteLineItem2(qlList);
         Test.stopTest();
     }
+    
 }
