@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rollup_can_be_only_for_number_or_decimal</fullName>
+    <active>true</active>
+    <description>Rollup can be only for number or decimal datatype</description>
+    <errorConditionFormula>AND(Is_Rollup__c == true, NOT( OR( ISPICKVAL(Attribute_Master__r.Data_Type__c, &#39;Decimal&#39;), ISPICKVAL(Attribute_Master__r.Data_Type__c, &#39;Number&#39;))))</errorConditionFormula>
+    <errorMessage>Attributes can use &quot;Is Rollup&quot; option, only if Attribute Master having data type as &quot;Number&quot; or &quot;Decimal&quot;</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Picklist_Field_Matching_Rule</fullName>
+    <active>false</active>
+    <description>Validate the Picklist lookup field is not empty when the Data Type Field value is Picklist</description>
+    <errorConditionFormula>AND(
+ ISPICKVAL( Data_Type__c , &quot;Picklist&quot;),
+ ISBLANK(Picklist_Master__c ) 
+)</errorConditionFormula>
+    <errorMessage>Picklist Value is mandatory when the data type Field Value is Picklist</errorMessage>
+</ValidationRule>

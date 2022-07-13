@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>W3SensorTypeCheck</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(Prompt_Information__r.Name = &#39;W.3.0 Turbine Build&#39;,
+AND(NOT(ISPICKVAL(Sensor_Type__c, &#39;Weather Sensor&#39;)),NOT(ISPICKVAL(Sensor_Type__c, &#39;Subsystem&#39;)),NOT(ISPICKVAL(Sensor_Type__c, &#39;&#39;))))</errorConditionFormula>
+    <errorMessage>W.3.0 Turbine Build Prompt Sensor type can only have &quot;Weather Sensor&quot; or &quot;Subsystem&quot;</errorMessage>
+</ValidationRule>

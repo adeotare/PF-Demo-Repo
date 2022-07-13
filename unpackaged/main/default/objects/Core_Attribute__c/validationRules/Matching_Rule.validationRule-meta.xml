@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Matching_Rule</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR((AND(NOT( ISBLANK(Default_value__c)),(ISPICKVAL( Data_Type__c , &#39;Numeric&#39;)), 
+NOT(ISNUMBER( Default_value__c ) ) )),
+(AND(NOT( ISBLANK(Default_value__c)),(ISPICKVAL( Data_Type__c , &#39;Boolean&#39;)),  
+NOT(Default_value__c = &#39;TRUE&#39;),
+NOT(Default_value__c =  &#39;True&#39;), 
+NOT(Default_value__c =  &#39;true&#39;), 
+NOT(Default_value__c =  &#39;FALSE&#39;),
+NOT(Default_value__c =  &#39;False&#39;), 
+NOT(Default_value__c = &#39;false&#39;))))</errorConditionFormula>
+    <errorMessage>Enter the &quot;Default value&quot; based on the &quot;data type&quot; chosen.</errorMessage>
+</ValidationRule>
