@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_fields_based_on_definition_RT</fullName>
+    <active>true</active>
+    <description>To validate the required field for definition (metric definition) record type</description>
+    <errorConditionFormula>AND(RecordType.DeveloperName == &#39;Definition&#39;,OR( ISBLANK( Base_Asset_Template__c),ISBLANK( Attribute__c),ISPICKVAL( Modifer_1__c , &quot;&quot;) ))</errorConditionFormula>
+    <errorMessage>The fields or columns Base Asset Template, Attribute and Modifier 1 are mandatory for definition record type</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onsite_Remediation_Required_Rule</fullName>
+    <active>true</active>
+    <description>If Onsite Remediation Required is &#39;Yes&#39;,Then &#39;Onsite Remediation Instructions’ is must</description>
+    <errorConditionFormula>AND( ISPICKVAL( Onsite_Remediation_Required__c ,&#39;Yes&#39;),
+LEN( Onsite_Remediation_Description__c )= 0
+)</errorConditionFormula>
+    <errorMessage>&#39;Onsite Remediation Description&#39; is must</errorMessage>
+</ValidationRule>

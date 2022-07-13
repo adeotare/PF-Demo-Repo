@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Due_Date_validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL( RFI_Item_Status__c , &quot;Closed&quot;),
+ISCHANGED( Due_Date__c ) )</errorConditionFormula>
+    <errorMessage>Cannot save Due Date since RFI Item is closed</errorMessage>
+</ValidationRule>
