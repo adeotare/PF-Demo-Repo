@@ -61,10 +61,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Number_of_Turbines__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Asset_Subtype__c</field>
             </layoutItems>
             <layoutItems>
@@ -80,10 +76,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>OwnerId</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Operator__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -129,6 +121,14 @@
                 <behavior>Edit</behavior>
                 <field>Operational_Status__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>OEM__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Operator__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
@@ -138,9 +138,10 @@
         <editHeading>true</editHeading>
         <label>High-level Equipment Info</label>
         <layoutColumns>
+        
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Number_of_Devices__c</field>
+                <field>Number_of_Turbines__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
