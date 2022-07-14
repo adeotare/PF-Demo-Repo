@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <interviewLabel>Update RFI Item Name for Missing or Incomplete Category {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update RFI Item Name for Missing or Incomplete Category</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_RFI_Item_based_on_Missing_or_Incomplete_category</name>
+        <label>Update RFI Item based on Missing or Incomplete category</label>
+        <locationX>512</locationX>
+        <locationY>238</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Missing_Incomplete_Category__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RFICategorymissingrecordid</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>a</stringValue>
+            </value>
+        </inputAssignments>
+        <object>RFI_Detail__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>373</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Update_RFI_Item_based_on_Missing_or_Incomplete_category</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>RFICategorymissingrecordid</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>
