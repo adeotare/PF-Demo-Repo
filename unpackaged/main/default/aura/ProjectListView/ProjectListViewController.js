@@ -1,7 +1,7 @@
 ({
 doinit : function(cmp, event, helper) {
      
-cmp.set('v.Columns', [  {label: 'name', fieldName: 'linkName', type: 'url', 
+cmp.set('v.Columns', [  {label: 'Name', fieldName: 'linkName', type: 'url', 
         typeAttributes: {label: { fieldName: 'Name' }, target: '_blank'}},
 
  //{ label: 'Project Name', fieldName: 'Project_Name__c ', type: 'text' },
@@ -20,12 +20,38 @@ if (state === "SUCCESS") {
         var records =response.getReturnValue();
                 records.forEach(function(record){
                     record.linkName = '/'+record.Id;
+                    
                 }); 
-cmp.set("v.ProjectList", records);
+      cmp.set("v.data", response.getReturnValue());
+                cmp.set("v.filteredData", response.getReturnValue());
+//cmp.set("v.ProjectList", records);
 }
 });
 $A.enqueueAction(action);
+     },
+     searchTable : function(cmp,event,helper) {
+        var allRecords = cmp.get("v.data");
+        var searchFilter = event.getSource().get("v.value").toUpperCase();
+        
+        var tempArray = [];
+        var i;
+
+        for(i=0; i < allRecords.length; i++){
+            if((allRecords[i].Name && allRecords[i].Name.toUpperCase().indexOf(searchFilter) != -1)) //||
+               //(allRecords[i].Account_Plant__r.Name && allRecords[i].Account_Plant__r.Name.toUpperCase().indexOf(searchFilter) != -1 ) || 
+               //(allRecords[i].External_Status__c && allRecords[i].External_Status__c.toUpperCase().indexOf(searchFilter) != -1 ) )
+            {
+                tempArray.push(allRecords[i]);
+            }
+        }
+        cmp.set("v.filteredData",tempArray);
+     },
+  
+  
+    handleClose : function(component, event, helper) {
+    	$A.get("e.force:closeQuickAction").fire();
+    },
     
    
-}
+
 })
