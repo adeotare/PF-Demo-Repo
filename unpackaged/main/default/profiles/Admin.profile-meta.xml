@@ -29,6 +29,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ApproveCrmProjectTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AssetBuilderApprovalHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -462,6 +466,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SubmitApproval</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SubmitApprovalTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
