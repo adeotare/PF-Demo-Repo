@@ -55,7 +55,7 @@
             <field>Trial__c</field>
             <operator>IsNull</operator>
             <value>
-                <booleanValue>true</booleanValue>
+                <booleanValue>false</booleanValue>
             </value>
         </filters>
         <object>Order</object>
