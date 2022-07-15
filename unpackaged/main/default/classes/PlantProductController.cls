@@ -36,10 +36,13 @@ public with sharing class PlantProductController {
     Methods to get the list of Plants that are associated with a quote line PPT object. This list of Plants are shown in the
     UI when the button to Add / Remove Plants is clicked
     */  
+  
     @AuraEnabled(cacheable=true)  
     public static List<Plant_Product_Transaction__c> fetchPlantProductList(String qLineItemId){  
         // return [SELECT Id, Name, Account__r.Name,Plant__r.Name,Plant__r.Plant_Name__c,Plant__r.Plant_MWH__c,Plant__r.Plant_MWP__c, Plant__r.Plant_Country__c,Plant__r.Plant_Number_of_Devices__c, Plant__r.Asset_Class__c From Plant_Product_Transaction__c where Quote_Line__c =: qLineItemId];  
-        return [SELECT Id, Name, Account__r.Name,Plant__r.Plant__r.Name,Plant__r.Plant_MWH__c,Plant__r.Plant_MWP__c, Plant__r.Plant_Country__c,Plant__r.Plant__r.Number_of_Turbines__c, Plant__r.Asset_Class__c From Plant_Product_Transaction__c where Quote_Line__c =: qLineItemId WITH SECURITY_ENFORCED];  
+        // return [SELECT Id, Name, Account__r.Name,Plant__r.Plant__r.Name,Plant__r.Plant_MWH__c,Plant__r.Plant_MWP__c, Plant__r.Plant_Country__c,Plant__r.Plant__r.Number_of_Turbines__c, Plant__r.Asset_Class__c From Plant_Product_Transaction__c where Quote_Line__c =: qLineItemId WITH SECURITY_ENFORCED];  
+        return [SELECT Id, Name, Status__c, Account__r.Name,Plant__r.Plant__r.Name,Plant__r.Plant_MWH__c,Plant__r.Plant_MWP__c, Plant__r.Plant_Country__c,Plant__r.Plant__r.Number_of_Turbines__c, Plant__r.Asset_Class__c From Plant_Product_Transaction__c where Quote_Line__c =:qLineItemId AND Status__c != 'Decommissioned' WITH SECURITY_ENFORCED];
+    
     }
 
     /*
@@ -53,25 +56,52 @@ public with sharing class PlantProductController {
         
         if (pptList.size() == 0)
             return;  // If number of plants to be deleted is zero, then return
+
+        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__Quote__r.SBQQ__Type__c, SBQQ__AdditionalDiscount__c, SBQQ__NetPrice__c, SBQQ__NetTotal__c, SBQQ__RegularPrice__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure 
+            from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+        
         List<Id>  accplan = new List<Id>();
         for(Plant_Product_Transaction__c ppt :pptList ){
             accplan.add(ppt.Plant__c);
+            If (quoteLine.SBQQ__Quote__r.SBQQ__Type__c == 'Amendment') {
+                ppt.Status__c = 'Decommissioned';
+                ppt.Amendment_Action__c = 'Removed Plant' ;
+
+            } 
+            If (quoteLine.SBQQ__Quote__r.SBQQ__Type__c == 'Renewal') {
+                ppt.Status__c = 'Decommissioned';
+                ppt.Renewal_Action__c = 'Removed Plant';
+            }
         }
         System.debug('Number of Plants to be deleted are::'+accplan.size());
         //List<Account_Plant__c> aplan =[SELECT Id, Name, Account__r.Name, Plant__r.Plant_Name__c,Plant__r.Country__c, Plant__r.MWp__c, Plant__r.MW_Energy_Capacity_MWh__c, Plant__r.Number_of_Turbines__c,Plant__r.Asset_Class__c From Account_Plant__c where Id IN :accplan WITH SECURITY_ENFORCED];
         //System.debug('aplan::'+aplan.size());
-        try {
-            delete pptList;
+        
+        // delete Plants from PPT only if they are not of type Amendment or Renewal
+        If (quoteLine.SBQQ__Quote__r.SBQQ__Type__c != 'Amendment' && quoteLine.SBQQ__Quote__r.SBQQ__Type__c != 'Renewal')
+        {
+            try {
+                delete pptList;
+            }
+            catch(Exception ex) {
+                    System.debug('Exception while deleting the plants from the quote line i.e. deleting PPT records'
+                                +string.valueOf(ex.getLineNumber()) +ex.getTypeName() +string.valueOf(ex.getCause()) +ex.getMessage() +ex.getStackTraceString());
+
+            }
         }
-        catch(Exception ex) {
-                System.debug('Exception while deleting the plants from the quote line i.e. deleting PPT records'
+        else {                          // just update the records
+                try {
+                    update pptList;
+                }
+                    catch(Exception ex) {
+                        System.debug('Exception while deleting the plants from the quote line i.e. deleting PPT records'
                                 +string.valueOf(ex.getLineNumber()) +ex.getTypeName() +string.valueOf(ex.getCause()) +ex.getMessage() +ex.getStackTraceString());
 
             }
 
-        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__AdditionalDiscount__c, SBQQ__NetPrice__c, SBQQ__NetTotal__c, SBQQ__RegularPrice__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure 
-            from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+        }
         
+
         // Execute the Quantity and Pricing functions  only if - 
         if ((quoteLine.SBQQ__Product__r.QuantityUnitOfMeasure == 'MWp') || (quoteLine.SBQQ__Product__r.QuantityUnitOfMeasure == 'Site')) {
         updateQuantityOnQuoteLineItem(quoteLineId);
@@ -152,6 +182,18 @@ public with sharing class PlantProductController {
             else 
                 ppt.Contracted_MW_Unit_List_Price__c = quoteLine.SBQQ__ListPrice__c;
 
+            If (quoteLine.SBQQ__Quote__r.SBQQ__Type__c == 'Amendment') {
+                ppt.Status__c = 'Amendment_Quoted';
+                ppt.Amendment_Action__c = 'Added Plant' ;
+                ppt.Plant_Product__c = FALSE;
+
+            } 
+            If (quoteLine.SBQQ__Quote__r.SBQQ__Type__c == 'Renewal') {
+                ppt.Status__c = 'Renewal Quoted';
+                ppt.Renewal_Action__c = 'Added Plant';
+                ppt.Plant_Product__c = FALSE;
+            }
+
             pList.add(ppt);
         }
         if(pList.size()>0){
@@ -196,7 +238,7 @@ public with sharing class PlantProductController {
         Decimal sumOfMWp = 0;
         SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED Limit 1 FOR UPDATE];
         // List<Plant_Product_Transaction__c> ppt =[SELECT Plant__r.Plant__c from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId];
-        List<Plant_Product_Transaction__c> ppt =[SELECT Plant__r.Plant__r.MWp__c from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId WITH SECURITY_ENFORCED];
+        List<Plant_Product_Transaction__c> ppt =[SELECT Quote_Line_Quantity__c, Plant__r.Plant__r.MWp__c from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId WITH SECURITY_ENFORCED];
         System.debug('Total records from PPT whose quantity we are calculating is '+ppt.size());
         System.debug('inside Quantity calculation');
         
@@ -221,7 +263,8 @@ public with sharing class PlantProductController {
         if(quoteLine.SBQQ__Product__r.QuantityUnitOfMeasure == 'MWp'){
             for(Plant_Product_Transaction__c ap: ppt) {
 
-                sumOfMWp =sumOfMWp + (ap.Plant__r.Plant__r.MWp__c);     
+                // sumOfMWp =sumOfMWp + (ap.Plant__r.Plant__r.MWp__c);   
+                sumOfMWp =sumOfMWp + (ap.Quote_Line_Quantity__c);
                 //System.debug('ap.Plant__r.MWp__c::'+SUM(decimal.valueof(ap.Plant__r.Plant_MWP__c)));
                 // System.debug('Sum of MWp' +sumOfMWp);
             }
@@ -263,13 +306,26 @@ public with sharing class PlantProductController {
     @AuraEnabled(cacheable=true)  
     public static List<Account_Plant__c> fetchAccountPlant(String qLineItemId){  
        // return [SELECT Id, Name, Account__r.Name,Plant__r.Name From Account_Plant__c];  
-       SBQQ__QuoteLine__c quoteLine = [Select Id, SBQQ__Quote__r.Id, SBQQ__Quote__r.SBQQ__Account__c from SBQQ__QuoteLine__c WHERE id = :qLineItemId WITH SECURITY_ENFORCED limit 1];
+       
 
-      return [SELECT Id, Name,Asset_Class__c, Account__r.Name, Plant__r.Name, Plant__r.Country__c, 
+       // Added by Dhiraj  --Start
+       // List pPTaddedlist contains all selected products. Same added in query 
+        list<Plant_Product_Transaction__c> pPTaddlist = [SELECT Id,Plant_Name__c, Name,Plant__c, Account__r.Name,Plant__r.Name,Plant__r.Plant_MWH__c,Plant__r.Plant_MWP__c, Plant__r.Plant_Country__c,Plant__r.Plant__r.Number_of_Turbines__c, Plant__r.Asset_Class__c From Plant_Product_Transaction__c where Quote_Line__c =: qLineItemId AND Status__c !='Decommissioned' WITH SECURITY_ENFORCED];  
+        list <string> pPTaddedlist=new List<string>();
+        for(Plant_Product_Transaction__c selectedPPT :pPTaddlist){
+            pPTaddedlist.add(selectedPPT.Plant__c);
+        }
+        // Dhiraj Code end
+         
+       SBQQ__QuoteLine__c quoteLine = [Select Id, SBQQ__Quote__r.Id, SBQQ__Quote__r.SBQQ__Account__c from SBQQ__QuoteLine__c WHERE id = :qLineItemId WITH SECURITY_ENFORCED limit 1];
+       
+        return [SELECT Id, Name,Asset_Class__c, Account__r.Name, Plant__r.Name, Plant__r.Country__c, 
                 Plant__r.MWp__c, Plant__r.MW_Energy_Capacity_MWh__c, Plant__r.Number_of_Turbines__c,
                 Plant__r.Asset_Class__c 
                 From Account_Plant__c
-                WHERE Account__r.Id = :quoteLine.SBQQ__Quote__r.SBQQ__Account__c AND Status__c='Active' WITH SECURITY_ENFORCED];
+                WHERE Account__r.Id = :quoteLine.SBQQ__Quote__r.SBQQ__Account__c  AND Id NOT IN: pPTaddedlist AND Status__c='Active' WITH SECURITY_ENFORCED];
+
+        
     }
 
 
@@ -306,7 +362,7 @@ public with sharing class PlantProductController {
         if(quoteLine1.SBQQ__Product__r.Product_Category__c == 'Software') {
             // check if there are any custom discount tiers for this SW Product
             System.debug ('Checking if the SW Product has Discount Tier pricing');
-            List <MSA_Software_Discount_Tier_Price__c> swDiscountTiersList =  [Select Name, Type__c, Discount_Amount__c, Pricing_Tier__c, Lower_Bound__c, Upper_Bound__c, Cross_Orders__c 
+            List <MSA_Software_Discount_Tier_Price__c> swDiscountTiersList =  [Select Name, Type__c, Discount_Unit__c, Discount__c, Discount_Amount__c, Pricing_Tier__c, Lower_Bound__c, Upper_Bound__c, Cross_Orders__c 
             from MSA_Software_Discount_Tier_Price__c 
             where (Product__r.ID = :quoteLine1.SBQQ__Product__r.ID)  
             AND (Account__r.ID = :quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.ID)
@@ -407,8 +463,13 @@ public with sharing class PlantProductController {
                 System.debug('Total records from PPT whose prices we are calculating is '+pptList.size());
                 Decimal CurrentMWForPricing = ActiveMW;             // Start with the value of Active MW
                 Integer noOfTiers = swDiscountTiersList.size();     // total number of discount tiers
+                Boolean isDiscountPercentage = TRUE;
+                if (swDiscountTiersList[0].Discount_Unit__c == 'Amount')
+                    isDiscountPercentage = FALSE;
+                
                 Integer currentTier = 0;
                 Decimal cumulativeDiscount = 0;
+
                 for (Plant_Product_Transaction__c eachPPT:pptList) {
                    
                     currentTier = 0;
@@ -420,7 +481,16 @@ public with sharing class PlantProductController {
                             System.debug('This plant falls in final Tier number - '+currentTier);
                             System.debug('This plant name is - '+eachPPT.Plant__r.Plant__r.Name);
                             eachPPT.Discount_Tier__c = currentTier+1;
-                            cumulativeDiscount += swDiscountTiersList[currentTier].Discount_Amount__c;
+                            
+                            If (isDiscountPercentage = FALSE){
+                                cumulativeDiscount += swDiscountTiersList[currentTier].Discount_Amount__c;
+                                System.debug ('The Discount is of type Amount and Cumulative discount is '+cumulativeDiscount);
+                            }
+                            else {
+                                    cumulativeDiscount += (contractPricePerMSA - cumulativeDiscount) * (swDiscountTiersList[currentTier].Discount__c/100);
+                                    System.debug ('The Discount is of type % and Cumulative discount is '+cumulativeDiscount);
+                            }
+                            
                             eachPPT.Unit_Price_After_Volume_Discount__c = contractPricePerMSA - cumulativeDiscount;
                             System.debug('The Unit_Price_After_Volume_Discount__c - '+eachPPT.Unit_Price_After_Volume_Discount__c);
                             update eachPPT;
@@ -432,7 +502,16 @@ public with sharing class PlantProductController {
                             System.debug('This plant falls in Tier number - '+currentTier);
                             System.debug('This plant name is - '+eachPPT.Plant__r.Plant__r.Name);
                             eachPPT.Discount_Tier__c = currentTier+1;
-                            cumulativeDiscount += swDiscountTiersList[currentTier].Discount_Amount__c;
+                            
+                            If (isDiscountPercentage = FALSE){
+                                cumulativeDiscount += swDiscountTiersList[currentTier].Discount_Amount__c;
+                                System.debug ('The Discount is of type Amount and Cumulative discount is '+cumulativeDiscount);
+                            }
+                            else {
+                                    cumulativeDiscount += (contractPricePerMSA - cumulativeDiscount) * (swDiscountTiersList[currentTier].Discount__c/100);
+                                    System.debug ('The Discount is of type % and Cumulative discount is '+cumulativeDiscount);
+                            }
+                          
                             eachPPT.Unit_Price_After_Volume_Discount__c = contractPricePerMSA - cumulativeDiscount;
                             System.debug('The Unit_Price_After_Volume_Discount__c - '+eachPPT.Unit_Price_After_Volume_Discount__c);
                             update eachPPT;
@@ -441,8 +520,17 @@ public with sharing class PlantProductController {
                             }
                         } 
                             if (currentTier != noOfTiers) {         // till the Tier is not found
-                                cumulativeDiscount += swDiscountTiersList[currentTier].Discount_Amount__c;
+                                // cumulativeDiscount += swDiscountTiersList[currentTier].Discount_Amount__c;
+                                If (isDiscountPercentage = FALSE){
+                                cumulativeDiscount += swDiscountTiersList[currentTier].Discount_Amount__c;                                
+                                }
+                                else {
+                                    cumulativeDiscount += (contractPricePerMSA - cumulativeDiscount) * (swDiscountTiersList[currentTier].Discount__c/100);
+                                }
+
                                 ++ currentTier;     // check into the next tier
+                                System.debug ('Going to the next tier number - '+currentTier);
+
                             }
                     
                     }               // end of while loop
