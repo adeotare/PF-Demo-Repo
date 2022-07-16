@@ -457,7 +457,7 @@ public with sharing class PlantProductController {
                     }
                 }
                 
-                List<Plant_Product_Transaction__c> pptList =[SELECT Plant__r.Plant__r.MWp__c, Plant__r.Plant__r.Name, Account__c, Addl_Discount_Percent__c, Contracted_MW_Unit_List_Price__c, List_Unit_Price__c, Net_Unit_Price__c, Unit_Price_After_Volume_Discount__c, Discount_Tier__c  
+                List<Plant_Product_Transaction__c> pptList =[SELECT Quote_Line_Quantity__c, Plant__r.Plant__r.MWp__c, Plant__r.Plant__r.Name, Account__c, Addl_Discount_Percent__c, Contracted_MW_Unit_List_Price__c, List_Unit_Price__c, Net_Unit_Price__c, Unit_Price_After_Volume_Discount__c, Discount_Tier__c  
                     from Plant_Product_Transaction__c 
                     where Quote_Line__c =: quoteLineId WITH SECURITY_ENFORCED];
                 System.debug('Total records from PPT whose prices we are calculating is '+pptList.size());
@@ -465,7 +465,10 @@ public with sharing class PlantProductController {
                 Integer noOfTiers = swDiscountTiersList.size();     // total number of discount tiers
                 Boolean isDiscountPercentage = TRUE;
                 if (swDiscountTiersList[0].Discount_Unit__c == 'Amount')
-                    isDiscountPercentage = FALSE;
+                    {
+                        isDiscountPercentage = FALSE;
+                        System.debug ('The SW discount tier is specified in Amount and not in Percentage');
+                    }
                 
                 Integer currentTier = 0;
                 Decimal cumulativeDiscount = 0;
@@ -482,7 +485,7 @@ public with sharing class PlantProductController {
                             System.debug('This plant name is - '+eachPPT.Plant__r.Plant__r.Name);
                             eachPPT.Discount_Tier__c = currentTier+1;
                             
-                            If (isDiscountPercentage = FALSE){
+                            If (isDiscountPercentage == FALSE){
                                 cumulativeDiscount += swDiscountTiersList[currentTier].Discount_Amount__c;
                                 System.debug ('The Discount is of type Amount and Cumulative discount is '+cumulativeDiscount);
                             }
@@ -503,7 +506,7 @@ public with sharing class PlantProductController {
                             System.debug('This plant name is - '+eachPPT.Plant__r.Plant__r.Name);
                             eachPPT.Discount_Tier__c = currentTier+1;
                             
-                            If (isDiscountPercentage = FALSE){
+                            If (isDiscountPercentage == FALSE){
                                 cumulativeDiscount += swDiscountTiersList[currentTier].Discount_Amount__c;
                                 System.debug ('The Discount is of type Amount and Cumulative discount is '+cumulativeDiscount);
                             }
@@ -519,10 +522,11 @@ public with sharing class PlantProductController {
 
                             }
                         } 
-                            if (currentTier != noOfTiers) {         // till the Tier is not found
+                        System.debug ('Not found in the current tier number - so going to next tier #'+currentTier+1);
+                        if (currentTier != noOfTiers) {         // till the Tier is not found
                                 // cumulativeDiscount += swDiscountTiersList[currentTier].Discount_Amount__c;
-                                If (isDiscountPercentage = FALSE){
-                                cumulativeDiscount += swDiscountTiersList[currentTier].Discount_Amount__c;                                
+                                If (isDiscountPercentage == FALSE){
+                                    cumulativeDiscount += swDiscountTiersList[currentTier].Discount_Amount__c;                                
                                 }
                                 else {
                                     cumulativeDiscount += (contractPricePerMSA - cumulativeDiscount) * (swDiscountTiersList[currentTier].Discount__c/100);
@@ -531,12 +535,14 @@ public with sharing class PlantProductController {
                                 ++ currentTier;     // check into the next tier
                                 System.debug ('Going to the next tier number - '+currentTier);
 
-                            }
+                        }
                     
                     }               // end of while loop
 
                         // Include the Plant MW only after the tier is found...else after addition of the Plant MW, it may get classified into the next tier
-                        CurrentMWForPricing += eachPPT.Plant__r.Plant__r.MWp__c; // Nitin - error - the next tier is not starting from the lower bound
+                        // CurrentMWForPricing += eachPPT.Plant__r.Plant__r.MWp__c; // Nitin - error - the next tier is not starting from the lower bound
+                        CurrentMWForPricing += eachPPT.Quote_Line_Quantity__c; // Nitin - error - the next tier is not starting from the lower bound
+                        System.debug ('Going to the next PPT record');
                 }               
             }
             
@@ -573,7 +579,8 @@ public with sharing class PlantProductController {
                 Decimal CurrentMWForPricing = 0;
                 for (Plant_Product_Transaction__c eachPPT:pptList) {
                     Integer currentTier = 0;
-                    CurrentMWForPricing = eachPPT.Plant__r.Plant__r.MWp__c;
+                    //CurrentMWForPricing = eachPPT.Plant__r.Plant__r.MWp__c;
+                    CurrentMWForPricing = eachPPT.Plant__r.Plant_MWP__c;
                     System.debug('Current MW for Implementation Bracket Pricing calculation is '+CurrentMWForPricing);
                     // If MW is not available on the Plant, then take the MW that may have been entered manually on the PPT line
                     if (CurrentMWForPricing == null) {
