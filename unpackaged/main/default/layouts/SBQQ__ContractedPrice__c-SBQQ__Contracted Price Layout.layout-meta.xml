@@ -35,6 +35,26 @@
                 <behavior>Edit</behavior>
                 <field>Same_As_List_Price__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>MSA_Contract__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Contracted_Price_Discount_Percentage__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Greenbyte_Legacy_SFDC_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>PF_Legacy_SFDC_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>BP_Legacy_SFDC_Id__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -44,6 +64,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>SBQQ__DiscountSchedule__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SBQQ__NonDiscountable__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
