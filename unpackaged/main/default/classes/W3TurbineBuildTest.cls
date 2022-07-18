@@ -32,7 +32,7 @@ public with sharing class W3TurbineBuildTest {
         insert nextPromptInfo;
 
         Plant_Asset_Prompt_Detail__c g1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        g1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ g1PromptInfo.Name;
+        g1PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ g1PromptInfo.Name;
         g1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         g1PlantAssetPromptDetail.Prompt_Information__c = g1PromptInfo.Id;
         g1PlantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplateG1.Id;
@@ -46,7 +46,7 @@ public with sharing class W3TurbineBuildTest {
         insert w1PromptInfo;
 
         Plant_Asset_Prompt_Detail__c plantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        plantAssetPromptDetail.Name = newPlantAsset.Name +'-'+w1PromptInfo.Name;
+        plantAssetPromptDetail.Name = 'Test Plant' +'-'+w1PromptInfo.Name;
         plantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         plantAssetPromptDetail.Prompt_Information__c = w1PromptInfo.Id;
         plantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplate.Id;
@@ -61,7 +61,7 @@ public with sharing class W3TurbineBuildTest {
         insert w1SiteMetaData;
 
         Plant_Asset_Prompt_Detail__c w2PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        w2PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+previousPromptInfo.Name;
+        w2PlantAssetPromptDetail.Name = 'Test Plant' +'-'+previousPromptInfo.Name;
         w2PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         w2PlantAssetPromptDetail.Prompt_Information__c = previousPromptInfo.Id;
         w2PlantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplate.Id;
@@ -89,7 +89,7 @@ public with sharing class W3TurbineBuildTest {
         update newTemVersion;
     }
     public static testMethod void W3TurbineBuildTest(){ 
-        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'].Id;
+        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'].Id;
         Id plantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name = 'Test Plant-W.2.0 String Build Info'].Id;
         String currentPromptName = Constants.W3_TURBINE_BUILD;
         String previousPromptName = Constants.W2_STRING_BUILD_INFO;

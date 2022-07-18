@@ -258,8 +258,12 @@ public with sharing class P9ATrackerControllerInfo {
                 }
                 if(nextPromptId.length() <= 8 && additionalParamsMap.get('isReadOnly') == 'false'){
                     Utils.updateValidateOnPrevious(plantAssetId, currentPromptName);
+                    
                 }
+                system.debug('---nextPromptId----'+nextPromptId);
                 Plant_Asset_Prompt_Detail__c plantAssetPromptDetail = Utils.queryPlantAssetPromptDetail(plantAssetId, currentPromptName);
+                string testValue= Utils.nextPromptFinderResponse(plantAssetId,PromptNavigationHelper.findPromptId(currentPromptName),nextPromptId,plantAssetPromptDetail.Id);
+                system.debug('---testValue----'+testValue);
                 return Utils.nextPromptFinderResponse(plantAssetId,PromptNavigationHelper.findPromptId(currentPromptName),nextPromptId,plantAssetPromptDetail.Id);
             }else{
                 return 'calling Next Batch';

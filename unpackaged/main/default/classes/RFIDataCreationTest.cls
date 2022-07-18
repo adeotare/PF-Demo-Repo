@@ -2,53 +2,46 @@
 **/
 @isTest
 public with sharing class RFIDataCreationTest {
-/*    @testSetup
+    @testSetup
     public static void testDataSetup() {
         TEM_Version__c newTemVersion = TestDataFactory.createTemVersion(Constants.DRAFT);
         insert newTemVersion;
 
-        Plant_Asset__c newPlantAsset = TestDataFactory.createPlantAsset(Constants.WIND, 'Drive', '7777.77.777', newTemVersion.Id);
-        insert newPlantAsset;
-        
-        
         Account newAcc = new Account();
         newAcc.Name = 'Test ACC RFI Check';
         insert newAcc;
+
         
-        Id parentPlantAssetRT = Utils.getRecordTypeInfo('Plant_Asset__c','Parent_Asset').getRecordTypeId();
+        Account_Plant__c newPlantAsset = TestDataFactory.createPlantAsset(Constants.WIND, 'Drive', '7777.77.777', newTemVersion.Id);
+        newPlantAsset.Account__c = newAcc.Id;
+        insert newPlantAsset; 
         
-        Plant_Asset__c parentPlantAsset = new Plant_Asset__c();
-        parentPlantAsset.Name = 'Parent Plant Asset';
-        parentPlantAsset.Plant_Name__c = 'Plant Asset';
-        parentPlantAsset.Renewable_Type__c = Constants.WIND;
-        parentPlantAsset.RecordTypeId = parentPlantAssetRT;
-        insert parentPlantAsset;
         
-        Id fleetPlantAssetRT = Utils.getRecordTypeInfo('Plant_Asset__c','Fleet_Asset').getRecordTypeId();
-        Plant_Asset__c newFleetPlantAsset = new Plant_Asset__c();
-        newFleetPlantAsset.Name = 'Test Plant';
-        newFleetPlantAsset.Renewable_Type__c = Constants.WIND;
-        newFleetPlantAsset.PF_Service_Product__c = 'Drive';
-        newFleetPlantAsset.Customer_Plant_Asset_ID__c  = '7777.77.888';
-        newFleetPlantAsset.RecordTypeId = fleetPlantAssetRT;
-        newFleetPlantAsset.Account__c = newAcc.Id;
-        newFleetPlantAsset.Parent__c = parentPlantAsset.Id;
-        insert newFleetPlantAsset;
+        Id RFIRECORDTYPEID = Utils.getRecordTypeInfo('RAID__c','RFI').getRecordTypeId();
         
-        RFI__c newFleetRFI = new RFI__c();
-        newFleetRFI.Name = 'New';
+        
+        RAID__c newFleetRFI = new RAID__c();        
         newFleetRFI.Sub_Type__c = 'Customer';
-        newFleetRFI.Plant_Asset__c = newFleetPlantAsset.Id;
+        newFleetRFI.Account_Plant__c = newPlantAsset.Id;
+        newFleetRFI.Priority__c = 'Low';
+        newFleetRFI.Status__c = 'In Progress';
+        newFleetRFI.Title__c = 'Test Raid';
+        newFleetRFI.Type__c = 'Development';
+        newFleetRFI.RecordTypeId = RFIRECORDTYPEID;
         insert newFleetRFI;
         
-        newFleetRFI.skipValidation__c=True;
+        
         newFleetRFI.RFI_Status__c = 'Closed';
         update newFleetRFI;
         
-        RFI__c newFleetRFI1 = new RFI__c();
-        newFleetRFI1.Name = 'New';
+        RAID__c newFleetRFI1 = new RAID__c();        
         newFleetRFI1.Sub_Type__c = 'Customer';
-        newFleetRFI1.Plant_Asset__c = newFleetPlantAsset.Id;
+        newFleetRFI1.Account_Plant__c = newPlantAsset.Id;
+        newFleetRFI1.Priority__c = 'Low';
+        newFleetRFI1.Status__c = 'In Progress';
+        newFleetRFI1.Title__c = 'Test Raid';
+        newFleetRFI1.Type__c = 'Development';
+        newFleetRFI1.RecordTypeId = RFIRECORDTYPEID;
         insert newFleetRFI1;
         
 		RFI_Categories__c newRFICat = new RFI_Categories__c();
@@ -110,7 +103,7 @@ public with sharing class RFIDataCreationTest {
 
         Plant_Asset_Prompt_Detail__c g1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
         g1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ p1PromptInfo.Name;
-        g1PlantAssetPromptDetail.Plant_Asset__c = newPlantAsset.Id;
+        g1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         g1PlantAssetPromptDetail.Prompt_Information__c = g1PromptInfo.Id;
         insert g1PlantAssetPromptDetail;
         
@@ -118,13 +111,13 @@ public with sharing class RFIDataCreationTest {
         g1SiteMetaData.Name = Constants.G1_G2_PLANT_INFO_AND_RENEWABLE_TYPE_PROMPT;
         g1SiteMetaData.Prompt_Specific_Info__c = '{"Switchgear Substation":"0", "Renewable Type":"SOLAR - PV"}';
         g1SiteMetaData.Attribute_Info__c = '{}';
-        g1SiteMetaData.Plant_Asset__c= newPlantAsset.id;
+        g1SiteMetaData.Account_Plant__c= newPlantAsset.id;
         g1SiteMetaData.Plant_Asset_Prompt_Detail__c = g1PlantAssetPromptDetail.Id;
         insert g1SiteMetaData;
 
         Plant_Asset_Prompt_Detail__c p1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        p1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ p1PromptInfo.Name;
-        p1PlantAssetPromptDetail.Plant_Asset__c = newPlantAsset.Id;
+        p1PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ p1PromptInfo.Name;
+        p1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         p1PlantAssetPromptDetail.Prompt_Information__c = p1PromptInfo.Id;
         p1PlantAssetPromptDetail.Base_Asset__c = p1PromptBaseAsset.Id;
         insert p1PlantAssetPromptDetail;
@@ -136,7 +129,7 @@ public with sharing class RFIDataCreationTest {
         p1SiteMetaData.Name = Constants.P1_PLANT_INFO_PROMPT_SOLAR;
         p1SiteMetaData.Prompt_Specific_Info__c = '{"No of Blocks":"2","Flat Hierarchy":"No"}';
         p1SiteMetaData.Attribute_Info__c = '{"AC_Capacity":"3724918","DC_Capacity":"3724918"}';
-        p1SiteMetaData.Plant_Asset__c= newPlantAsset.id;
+        p1SiteMetaData.Account_Plant__c= newPlantAsset.id;
         p1SiteMetaData.Base_Asset_Template__c = p1PromptBaseAsset.id;
         p1SiteMetaData.Plant_Asset_Prompt_Detail__c = p1PlantAssetPromptDetail.Id;
         insert p1SiteMetaData;
@@ -189,8 +182,8 @@ public with sharing class RFIDataCreationTest {
     
     public static testMethod void capabilityTest1(){
         //RFI Item creation check Without existing RFI against plant asset
-        List<Plant_Asset__c> plantAssetLst = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Plant_Asset__c WHERE Customer_Plant_Asset_ID__c ='7777.77.777'];
-		Plant_Asset__c plantAsset =  plantAssetLst[0];
+        List<Account_Plant__c> plantAssetLst = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Account_Plant__c WHERE Drive_Id__c ='7777.77.777'];
+		Account_Plant__c plantAsset =  plantAssetLst[0];
         List<Evaluation__c> evaluationLst = [SELECT Id, Name,RFI_Category__r.Name FROM Evaluation__c WHERE TEM_Version__c =: plantAsset.TEM_Version__c];
         
         List<Evaluation_Value__c> evalValLst = new List<Evaluation_Value__c>();
@@ -200,31 +193,32 @@ public with sharing class RFIDataCreationTest {
             evalValIns.Logic_Result__c = true;
             evalValIns.Result__c = 'Missing';
             evalValIns.Show_In_Report__c = true;
-            evalValIns.Plant_Asset__c = plantAsset.Id;
+            evalValIns.Account_Plant__c = plantAsset.Id;
             evalValIns.Evaluation__c = evaluationLst[evalIns].Id;
             evalValLst.add(evalValIns);
         }
         insert evalValLst;
+        system.debug('--plantAsset---'+plantAsset);
         RFIDataCreation.abSubstationRFICreation(plantAsset.Id);
         RFIDataCreation.dataFormationForRFI(plantAsset.Id);
         
 		Set<String> evalValChkLst = new Set<String>();
-        for(Evaluation_Value__c evalValIns :[SELECT Id, Name, Evaluation__r.RFI_Category__c, Evaluation_Not_Executed__c, Logic_Result__c, Result__c, Show_In_Report__c FROM Evaluation_Value__c WHERE Plant_Asset__c =: plantAsset.Id AND Show_In_Report__c = TRUE AND Result__c !=: Constants.PASS ]){
+        for(Evaluation_Value__c evalValIns :[SELECT Id, Name, Evaluation__r.RFI_Category__c, Evaluation_Not_Executed__c, Logic_Result__c, Result__c, Show_In_Report__c FROM Evaluation_Value__c WHERE Account_Plant__c =: plantAsset.Id AND Show_In_Report__c = TRUE AND Result__c !=: Constants.PASS ]){
         	evalValChkLst.add(evalValIns.Evaluation__r.RFI_Category__c);
         }
-        List<RFI_Detail__c> rfiItemLst = [SELECT Id, Name FROM RFI_Detail__c WHERE Plant_Asset__c =: plantAsset.Id];
+        List<RFI_Detail__c> rfiItemLst = [SELECT Id, Name FROM RFI_Detail__c WHERE Account_Plant__c =: plantAsset.Id];
         System.assertEquals(4, rfiItemLst.size());  
     } 
 
     public static testMethod void capabilityTest2(){
         //To check process works with existing RFI against Plant Asset
-        List<Plant_Asset__c> plantAssetLst = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Plant_Asset__c WHERE Customer_Plant_Asset_ID__c ='7777.77.777'];
-		Plant_Asset__c plantAsset =  plantAssetLst[0];
+        List<Account_Plant__c> plantAssetLst = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Account_Plant__c WHERE Drive_Id__c ='7777.77.777'];
+		Account_Plant__c plantAsset =  plantAssetLst[0];
         List<Evaluation__c> evaluationLst = [SELECT Id, Name,RFI_Category__r.Name FROM Evaluation__c WHERE TEM_Version__c =: plantAsset.TEM_Version__c];
         
-        RFI__c rfiInstance = new RFI__c();
-        rfiInstance.Name = 'RfiTest';
-        rfiInstance.Plant_Asset__c = plantAsset.Id;
+        RAID__C rfiInstance = new RAID__C();
+//        rfiInstance.Name = 'RfiTest';
+        rfiInstance.Account_Plant__c = plantAsset.Id;
         insert rfiInstance;
         List<Evaluation_Value__c> evalValLst = new List<Evaluation_Value__c>();
         for(integer evalIns = 0; evalIns < evaluationLst.size(); evalIns++){
@@ -233,31 +227,31 @@ public with sharing class RFIDataCreationTest {
             evalValIns.Logic_Result__c = true;
             evalValIns.Result__c = 'Missing';
             evalValIns.Show_In_Report__c = true;
-            evalValIns.Plant_Asset__c = plantAsset.Id;
+            evalValIns.Account_Plant__c = plantAsset.Id;
             evalValIns.Evaluation__c = evaluationLst[evalIns].Id;
             evalValLst.add(evalValIns);
         }
         insert evalValLst;
         RFIDataCreation.dataFormationForRFI(plantAsset.Id);
         Set<String> evalValChkLst = new Set<String>();
-        for(Evaluation_Value__c evalValIns :[SELECT Id, Name, Evaluation__r.RFI_Category__c, Evaluation_Not_Executed__c, Logic_Result__c, Result__c, Show_In_Report__c FROM Evaluation_Value__c WHERE Plant_Asset__c =: plantAsset.Id AND Show_In_Report__c = TRUE AND Result__c !=: Constants.PASS ]){
+        for(Evaluation_Value__c evalValIns :[SELECT Id, Name, Evaluation__r.RFI_Category__c, Evaluation_Not_Executed__c, Logic_Result__c, Result__c, Show_In_Report__c FROM Evaluation_Value__c WHERE Account_Plant__c =: plantAsset.Id AND Show_In_Report__c = TRUE AND Result__c !=: Constants.PASS ]){
         	evalValChkLst.add(evalValIns.Evaluation__r.RFI_Category__c);
         }
-        List<RFI_Detail__c> rfiItemLst = [SELECT Id, Name, RFI_Number__c FROM RFI_Detail__c WHERE Plant_Asset__c =: plantAsset.Id AND RFI_Category__c IN: evalValChkLst];
-        System.assertEquals(rfiInstance.Id, rfiItemLst[0].RFI_Number__c);
+        List<RFI_Detail__c> rfiItemLst = [SELECT Id, Name, RAID__c FROM RFI_Detail__c WHERE Account_Plant__c =: plantAsset.Id AND RFI_Category__c IN: evalValChkLst];
+        System.assertEquals(rfiInstance.Id, rfiItemLst[0].RAID__c);
     }
     public static testMethod void completenessTest1(){
-        List<Plant_Asset__c> plantAssetLst = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Plant_Asset__c WHERE Customer_Plant_Asset_ID__c ='7777.77.777'];
-		Plant_Asset__c plantAsset =  plantAssetLst[0];
+        List<Account_Plant__c> plantAssetLst = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Account_Plant__c WHERE Drive_Id__c ='7777.77.777'];
+		Account_Plant__c plantAsset =  plantAssetLst[0];
         List<Core_Attribute__c> coreAttrLst  = [SELECT Id, Name FROM Core_Attribute__c WHERE TEM_Version__c =: plantAsset.TEM_Version__c];
         Prompt_Information__c p1PromptInfo = [SELECT Id, Name FROM Prompt_Information__c WHERE TEM_Version__c =: plantAsset.TEM_Version__c LIMIT 1];
         List<Base_Asset_Template__c> p1PromptBaseAsset = [SELECT Id, Name FROM Base_Asset_Template__c WHERE TEM_Version__c =: plantAsset.TEM_Version__c];
-        Site_Metadata__c p1SiteMetaData = [SELECT Id, Name, Attribute_Info__c FROM Site_Metadata__c WHERE Plant_Asset__c =: plantAsset.Id AND Base_Asset_Template__c =: p1PromptBaseAsset[0].id LIMIT 1];
+        Site_Metadata__c p1SiteMetaData = [SELECT Id, Name, Attribute_Info__c FROM Site_Metadata__c WHERE Account_Plant__c =: plantAsset.Id AND Base_Asset_Template__c =: p1PromptBaseAsset[0].id LIMIT 1];
       	
         List<Attribute_Value__c> attrValueLst = new List<Attribute_Value__c>();
         for(integer j = 0; j < coreAttrLst.size(); j++){
             Attribute_Value__c attributeValue = new Attribute_Value__c();
-            attributeValue.Plant_Asset__c = plantAsset.Id;
+            attributeValue.Account_Plant__c = plantAsset.Id;
             attributeValue.Site_Metadata__c = p1SiteMetaData.Id;
             attributeValue.Prompt_Information__c = p1PromptInfo.Id; 
             attributeValue.Base_Asset_Template__c = p1PromptBaseAsset[0].id;
@@ -267,19 +261,19 @@ public with sharing class RFIDataCreationTest {
         }
         insert attrValueLst;
         
-		List<Attribute_Value__c> attrValueLst1 = [SELECT Id, Name FROM Attribute_Value__c WHERE Plant_Asset__c =: plantAsset.Id];
+		List<Attribute_Value__c> attrValueLst1 = [SELECT Id, Name FROM Attribute_Value__c WHERE Account_Plant__c =: plantAsset.Id];
         
         List<Id> promptInfo = new List<Id>();
         ReportDataHandler ReportDataHandlerCls = new ReportDataHandler();
         ReportDataHandlerCls.queryExsistingReportData(plantAsset.Id, promptInfo);
         
-        List<Asset_Builder_Report_Data__c> reportDataHldr1 = [SELECT Id, Name FROM Asset_Builder_Report_Data__c WHERE Plant_Asset__c =: plantAsset.Id];
+        List<Asset_Builder_Report_Data__c> reportDataHldr1 = [SELECT Id, Name FROM Asset_Builder_Report_Data__c WHERE Account_Plant__c =: plantAsset.Id];
         RFIDataCreation.dataFormationForRFI(plantAsset.Id);
         
         Set<String> baseAssetChkLst = new Set<String>();
         for(Base_Asset_Template__c baseAssetIns :[SELECT Id, Name, RFI_Category__c FROM Base_Asset_Template__c WHERE TEM_Version__c =: plantAsset.TEM_Version__c AND Name LIKE 'Base P%']){
             baseAssetChkLst.add(baseAssetIns.RFI_Category__c);
         }
-        List<RFI_Detail__c> rfiItemLst = [SELECT Id, Name FROM RFI_Detail__c WHERE Plant_Asset__c =: plantAsset.Id];
-    }*/
+        List<RFI_Detail__c> rfiItemLst = [SELECT Id, Name FROM RFI_Detail__c WHERE Account_Plant__c =: plantAsset.Id];
+    }
 }

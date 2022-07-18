@@ -121,7 +121,7 @@ public with sharing class P3PadBuildAndCountsTest {
         update newTemVersion;
 
         Plant_Asset_Prompt_Detail__c g1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        g1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ g1PromptInfo.Name;
+        g1PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ g1PromptInfo.Name;
         g1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         g1PlantAssetPromptDetail.Prompt_Information__c = g1PromptInfo.Id;
         g1PlantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplateG1.Id;
@@ -132,7 +132,7 @@ public with sharing class P3PadBuildAndCountsTest {
         insert newG1SiteMetadata;
 
         Plant_Asset_Prompt_Detail__c p1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        p1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ p1PromptInfo.Name;
+        p1PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ p1PromptInfo.Name;
         p1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         p1PlantAssetPromptDetail.Prompt_Information__c = p1PromptInfo.Id;
         p1PlantAssetPromptDetail.Base_Asset__c = p1BaseAssetTemplate.Id;
@@ -149,7 +149,7 @@ public with sharing class P3PadBuildAndCountsTest {
         insert p1SiteMetaData;
        
         Plant_Asset_Prompt_Detail__c plantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        plantAssetPromptDetail.Name = newPlantAsset.Name +'-'+p2PromptInfo.Name;
+        plantAssetPromptDetail.Name = 'Test Plant' +'-'+p2PromptInfo.Name;
         plantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         plantAssetPromptDetail.Prompt_Information__c = p2PromptInfo.Id;
         plantAssetPromptDetail.Base_Asset__c = p2BaseAssetTemplate.Id;
@@ -172,7 +172,7 @@ public with sharing class P3PadBuildAndCountsTest {
         Map<String, String> additionalParmsForFindNextPromptMap= new Map<String, String>{'isReadOnly' => 'false'};
         String additionalParamsForFindNextPrompt = JSON.serialize(additionalParmsForFindNextPromptMap);
 
-        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'].Id;
+        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'].Id;
         Id plantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name ='Test Plant-P.2.0 Block Info and Pad Counts'].Id;
         String dataTableInput = P3PadBuildAndCounts.getCustomDatatableCompInput(plantAsset, plantAssetPromptDetail,JSON.serialize(jsonInputParametersAndValuesMap));
         List<Site_Metadata__c> currentPromptSiteMetadata = Utils.querySiteMetadata(currentPromptName, plantAsset);
@@ -228,7 +228,7 @@ public with sharing class P3PadBuildAndCountsTest {
     } 
     public static testMethod void P3PromptIfFlatHierarchyNo(){
     String currentPromptName = Constants.P3_PAD_BUILDS_AND_COUNTS;
-        Id p3PlantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.777.777'].Id;
+        Id p3PlantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.777.777'].Id;
         Id newBaseAssetTemplate = [SELECT Id, Name FROM Base_Asset_Template__c WHERE Name =: Constants.BASE_INVERTER_PAD].Id;
         Id plantAssetPromptDetail = [SELECT Id, Name From Plant_Asset_Prompt_Detail__c WHERE Name = 'Test Plant-P.2.0 Block Info and Pad Counts'].Id;
         Id p1PlantAssetPromptDetail = [SELECT Id, Name From Plant_Asset_Prompt_Detail__c WHERE Name = 'Test Plant-P.1.0 Plant Info Prompt - Solar'].Id;

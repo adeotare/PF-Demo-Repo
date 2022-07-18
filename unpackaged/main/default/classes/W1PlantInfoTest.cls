@@ -8,8 +8,6 @@ public with sharing class W1PlantInfoTest {
         insert newTemVersion;
 
         Account_Plant__c newPlantAsset = TestDataFactory.createPlantAsset(Constants.WIND,'Drive','7777.77.777',newTemVersion.Id);
-        //newPlantAsset.PF_Service_Product__c = Constants.DRIVE_PLUS;
-        //newPlantAsset.Customer_Plant_Asset_ID__c = '120.020.0';
         insert newPlantAsset;
 
         Base_Asset_Template__c newBaseAssetTemplate = TestDataFactory.createBaseAssetTemplate(Constants.BASE_WIND_PLANT, newTemVersion.Id);
@@ -64,7 +62,7 @@ public with sharing class W1PlantInfoTest {
         insert coreAttrLst;
         
         Plant_Asset_Prompt_Detail__c plantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        plantAssetPromptDetail.Name = newPlantAsset.Name +'-'+previousPromptInfo.Name;
+        plantAssetPromptDetail.Name = 'Test Plant' +'-'+previousPromptInfo.Name;
         plantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         plantAssetPromptDetail.Prompt_Information__c = previousPromptInfo.Id;
         plantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplate.Id;
@@ -117,8 +115,8 @@ public with sharing class W1PlantInfoTest {
         update newTemVersion;
     }
     public static testMethod void w1PlantInfoTest(){
-        //query Plant Asset
-        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'].Id;
+        //query Account Plant
+        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'].Id;
         Id plantAssetPromptDetail = [SELECT Id, Name From Plant_Asset_Prompt_Detail__c WHERE Name = 'Test Plant-G.1.0 Plant Info and Renewable Type Prompt'].Id;
         
         //Calling P4 getCustomDatatableCompInput

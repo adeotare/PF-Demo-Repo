@@ -204,7 +204,7 @@
       </aura:if>
       <footer class="slds-modal__footer">
         <div class="slds-grid slds-grid_align-end">
-          <div class="slds-col slds-p-right_x-large">
+          <div class="slds-col slds-p-right_x-large" style="width: 16%;">
             <lightning:combobox label="Item Status" variant="label-inline" options="{!v.itemStatusOptions}"
               value="{!v.itemStatus}">
             </lightning:combobox>

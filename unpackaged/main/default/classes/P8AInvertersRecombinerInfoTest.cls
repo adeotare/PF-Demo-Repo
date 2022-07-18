@@ -85,7 +85,7 @@ public with sharing class P8AInvertersRecombinerInfoTest {
         update newTemVersion;
 
         Plant_Asset_Prompt_Detail__c g1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        g1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ g1PromptInfo.Name;
+        g1PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ g1PromptInfo.Name;
         g1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         g1PlantAssetPromptDetail.Prompt_Information__c = g1PromptInfo.Id;
         g1PlantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplateG1.Id;
@@ -96,7 +96,7 @@ public with sharing class P8AInvertersRecombinerInfoTest {
         insert newG1SiteMetadata;
 
         Plant_Asset_Prompt_Detail__c p5plantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        p5plantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ newP5PromptInfo.Name;
+        p5plantAssetPromptDetail.Name = 'Test Plant' +'-'+ newP5PromptInfo.Name;
         p5plantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         p5plantAssetPromptDetail.Prompt_Information__c = newP5PromptInfo.Id;
         p5plantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplate.Id;
@@ -112,7 +112,7 @@ public with sharing class P8AInvertersRecombinerInfoTest {
         insert p5SiteMetaData;
 
         Plant_Asset_Prompt_Detail__c plantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        plantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ newP7PromptInfo.Name;
+        plantAssetPromptDetail.Name = 'Test Plant' +'-'+ newP7PromptInfo.Name;
         plantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         plantAssetPromptDetail.Prompt_Information__c = newP7PromptInfo.Id;
         plantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplate.Id;
@@ -130,7 +130,7 @@ public with sharing class P8AInvertersRecombinerInfoTest {
     
     public static testMethod void p8AInvertersRecombinerTest(){
 
-        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'].Id;
+        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'].Id;
         Id plantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name ='Test Plant-P.7.0 Inverter Subarray Info'].Id;
         String currentPromptName = Constants.P8A_INVERTERS_RECOMBINERS_INFO;
         String nextPromptName = Constants.P8B_INVERTERS_COMBINERS_INFO;

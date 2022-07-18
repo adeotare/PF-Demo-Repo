@@ -94,14 +94,14 @@ public with sharing class P10AOtherAssetBuildTest {
         insert newG1SiteMetadata;
 
         Plant_Asset_Prompt_Detail__c plantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        plantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ newP9BPromptInfo.Name;
+        plantAssetPromptDetail.Name = 'Test Plant' +'-'+ newP9BPromptInfo.Name;
         plantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         plantAssetPromptDetail.Prompt_Information__c = newP9BPromptInfo.Id;
         plantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplate.Id;
         insert plantAssetPromptDetail;
 
         Plant_Asset_Prompt_Detail__c p3PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        p3PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ newP3PromptInfo.Name;
+        p3PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ newP3PromptInfo.Name;
         p3PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         p3PlantAssetPromptDetail.Prompt_Information__c = newP3PromptInfo.Id;
         p3PlantAssetPromptDetail.Base_Asset__c = p3BaseAssetTemplate.Id;
@@ -126,7 +126,7 @@ public with sharing class P10AOtherAssetBuildTest {
 
     public static testMethod void P10AOtherAssetBuildTest(){
         //query Plant Asset
-        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'].Id;
+        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'].Id;
         Id plantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name ='Test Plant-P.9.B Tracker Motor Info'].Id;
         String nextPromptName = Constants.P10B_OTHER_ASSET_BUILD_AND_INFO;
         String currentPromptName = Constants.P10A_OTHER_ASSET_BUILD;
@@ -163,7 +163,7 @@ public with sharing class P10AOtherAssetBuildTest {
 
     public static testMethod void P10AOtherAssetBuildTestInsertionLogicCheck(){
         //query Plant Asset
-        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'].Id;
+        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'].Id;
         Id plantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name ='Test Plant-P.9.B Tracker Motor Info'].Id;
         Id p3PlantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name ='Test Plant-P.3.0 Pad Builds and Counts'].Id;
         String nextPromptName = Constants.P10B_OTHER_ASSET_BUILD_AND_INFO;
@@ -189,7 +189,7 @@ public with sharing class P10AOtherAssetBuildTest {
 
     public static testMethod void ExistingSiteMetadata(){
         //query Plant Asset
-        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'].Id;
+        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'].Id;
         Id plantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name ='Test Plant-P.9.B Tracker Motor Info'].Id;
         Id p3PlantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name ='Test Plant-P.3.0 Pad Builds and Counts'].Id;
         String nextPromptName = Constants.P10B_OTHER_ASSET_BUILD_AND_INFO;

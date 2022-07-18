@@ -101,7 +101,7 @@ public with sharing class P10BOtherAssetBuildAndInfoTest {
         update newTemVersion;
 
         Plant_Asset_Prompt_Detail__c g1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        g1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ g1PromptInfo.Name;
+        g1PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ g1PromptInfo.Name;
         g1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         g1PlantAssetPromptDetail.Prompt_Information__c = g1PromptInfo.Id;
         g1PlantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplateG1.Id;
@@ -113,7 +113,7 @@ public with sharing class P10BOtherAssetBuildAndInfoTest {
         insert newG1SiteMetadata;
 
         Plant_Asset_Prompt_Detail__c p3PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        p3PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ newP3PromptInfo.Name;
+        p3PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ newP3PromptInfo.Name;
         p3PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         p3PlantAssetPromptDetail.Prompt_Information__c = newP3PromptInfo.Id;
         p3PlantAssetPromptDetail.Base_Asset__c = p3BaseAssetTemplate.Id;
@@ -128,7 +128,7 @@ public with sharing class P10BOtherAssetBuildAndInfoTest {
         insert p3SiteMetaData;
 
         Plant_Asset_Prompt_Detail__c plantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        plantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ parentPromptInfo.Name;
+        plantAssetPromptDetail.Name = 'Test Plant' +'-'+ parentPromptInfo.Name;
         plantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         plantAssetPromptDetail.Prompt_Information__c = parentPromptInfo.Id;
         plantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplate.Id;
@@ -145,7 +145,7 @@ public with sharing class P10BOtherAssetBuildAndInfoTest {
     }
 
     public static testMethod void P10BOtherAssetBuildAndInfoTest(){
-        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'].Id;
+        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'].Id;
         Id plantAssetPromptDetail = [SELECT Id FROM Plant_Asset_Prompt_Detail__c WHERE Name = 'Test Plant-P.10.A Other Asset Build'].Id;
         String currentPromptName = Constants.P10B_OTHER_ASSET_BUILD_AND_INFO;
         Boolean clearAttribute = false;
@@ -204,7 +204,7 @@ public with sharing class P10BOtherAssetBuildAndInfoTest {
         newTemVersion.Status__c = Constants.DRAFT;
         update newTemVersion;
         
-        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'].Id;
+        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'].Id;
 
         Id plantAssetPromptDetail = [SELECT Id FROM Plant_Asset_Prompt_Detail__c WHERE Name = 'Test Plant-P.10.A Other Asset Build'].Id;
 
@@ -231,7 +231,7 @@ public with sharing class P10BOtherAssetBuildAndInfoTest {
     }
 
     public static testMethod void P10BOtherAssetBuildAndInfoInsertionLogicCheck(){
-        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'].Id;
+        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'].Id;
         Id plantAssetPromptDetail = [SELECT Id FROM Plant_Asset_Prompt_Detail__c WHERE Name = 'Test Plant-P.10.A Other Asset Build'].Id;
         String currentPromptName = Constants.P10B_OTHER_ASSET_BUILD_AND_INFO;
         Boolean clearAttribute = false;

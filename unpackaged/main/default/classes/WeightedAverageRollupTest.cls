@@ -2,12 +2,12 @@
 **/
 @isTest
 public with sharing class WeightedAverageRollupTest {
-/*    @testSetup
+    @testSetup
     public static void testDataSetup() {
         TEM_Version__c newTemVersion = TestDataFactory.createTemVersion(Constants.DRAFT);
         insert newTemVersion;
 
-        Plant_Asset__c newPlantAsset = TestDataFactory.createPlantAsset(Constants.WIND, 'Drive', '7777.77.777', newTemVersion.Id);
+        Account_Plant__c newPlantAsset = TestDataFactory.createPlantAsset(Constants.WIND, 'Drive', '7777.77.777', newTemVersion.Id);
         insert newPlantAsset;
 
         List<Id> baseAssLst = new List<Id>();
@@ -31,7 +31,7 @@ public with sharing class WeightedAverageRollupTest {
         
         Plant_Asset_Prompt_Detail__c g1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
         g1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+g1PromptInfo.Name;
-        g1PlantAssetPromptDetail.Plant_Asset__c = newPlantAsset.Id;
+        g1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         g1PlantAssetPromptDetail.Prompt_Information__c = g1PromptInfo.Id;
         g1PlantAssetPromptDetail.Base_Asset__c = basePvPlant.Id;
         insert g1PlantAssetPromptDetail;
@@ -39,7 +39,7 @@ public with sharing class WeightedAverageRollupTest {
         Site_Metadata__c p1SiteMetaData = new Site_Metadata__c(); 
         p1SiteMetaData.Name = Constants.P1_PLANT_INFO_PROMPT_SOLAR;
         p1SiteMetaData.Prompt_Specific_Info__c = '{"Renewable Type":"Solar - PV"}';
-        p1SiteMetaData.Plant_Asset__c= newPlantAsset.id;
+        p1SiteMetaData.Account_Plant__c= newPlantAsset.id;
         p1SiteMetaData.Base_Asset_Template__c = basePvPlant.id;
         p1SiteMetaData.Plant_Asset_Prompt_Detail__c = g1PlantAssetPromptDetail.Id;
         p1SiteMetaData.Prompt_Information__c = g1PromptInfo.Id;
@@ -103,7 +103,7 @@ public with sharing class WeightedAverageRollupTest {
     @isTest
     public static void weightedAvgTest1(){
         //for single base asset template
-		Plant_Asset__c plantAssetForWeightedAvg = [SELECT Id, Name,TEM_Version__c FROM Plant_Asset__c WHERE Customer_Plant_Asset_ID__c = '7777.77.777' LIMIT 1];
+		Account_Plant__c plantAssetForWeightedAvg = [SELECT Id, Name,TEM_Version__c FROM Account_Plant__c WHERE Drive_Id__c = '7777.77.777' LIMIT 1];
         Prompt_Information__c p1PromptInfo = [SELECT Id, Name FROM Prompt_Information__c WHERE Name =: Constants.P1_PLANT_INFO_PROMPT_SOLAR AND TEM_Version__c =: plantAssetForWeightedAvg.TEM_Version__c ];
         Prompt_Information__c p7PromptInfo = [SELECT Id, Name FROM Prompt_Information__c WHERE Name =: Constants.P7_INVERTER_SUBARRAY_INFO AND TEM_Version__c =: plantAssetForWeightedAvg.TEM_Version__c];
         List<Id> promptInfoLst = new List<Id>();
@@ -114,7 +114,7 @@ public with sharing class WeightedAverageRollupTest {
         
         Plant_Asset_Prompt_Detail__c p1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
         p1PlantAssetPromptDetail.Name = plantAssetForWeightedAvg.Name +'-'+ p1PromptInfo.Name;
-        p1PlantAssetPromptDetail.Plant_Asset__c = plantAssetForWeightedAvg.Id;
+        p1PlantAssetPromptDetail.Account_Plant__c = plantAssetForWeightedAvg.Id;
         p1PlantAssetPromptDetail.Prompt_Information__c = p1PromptInfo.Id;
         p1PlantAssetPromptDetail.Base_Asset__c = basePvPlant.Id;
         insert p1PlantAssetPromptDetail;
@@ -123,7 +123,7 @@ public with sharing class WeightedAverageRollupTest {
         p1SiteMetaData.Name = Constants.P1_PLANT_INFO_PROMPT_SOLAR;
         p1SiteMetaData.Prompt_Specific_Info__c = '';
         p1SiteMetaData.Attribute_Info__c = '{"DC_Capacity":"","MODULE_TCOEFF":"","MOUNTING_GCR":"","MOUNTING_TILT":""}';
-        p1SiteMetaData.Plant_Asset__c= plantAssetForWeightedAvg.id;
+        p1SiteMetaData.Account_Plant__c= plantAssetForWeightedAvg.id;
         p1SiteMetaData.Base_Asset_Template__c = basePvPlant.id;
         p1SiteMetaData.Plant_Asset_Prompt_Detail__c = p1PlantAssetPromptDetail.Id;
         p1SiteMetaData.Prompt_Information__c = p1PromptInfo.Id;
@@ -131,7 +131,7 @@ public with sharing class WeightedAverageRollupTest {
         
         Plant_Asset_Prompt_Detail__c p7PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
         p7PlantAssetPromptDetail.Name = plantAssetForWeightedAvg.Name +'-'+ p1PromptInfo.Name;
-        p7PlantAssetPromptDetail.Plant_Asset__c = plantAssetForWeightedAvg.Id;
+        p7PlantAssetPromptDetail.Account_Plant__c = plantAssetForWeightedAvg.Id;
         p7PlantAssetPromptDetail.Prompt_Information__c = p7PromptInfo.Id;
         p7PlantAssetPromptDetail.Base_Asset__c = baseSubarray.Id;
         insert p7PlantAssetPromptDetail;
@@ -141,7 +141,7 @@ public with sharing class WeightedAverageRollupTest {
         p7SiteMetaData1.Name = Constants.P1_PLANT_INFO_PROMPT_SOLAR;
         p7SiteMetaData1.Prompt_Specific_Info__c = '';
         p7SiteMetaData1.Attribute_Info__c = '{"DC_Capacity":"","MODULE_TCOEFF":"","MOUNTING_GCR":"","MOUNTING_TILT":""}';
-        p7SiteMetaData1.Plant_Asset__c= plantAssetForWeightedAvg.id;
+        p7SiteMetaData1.Account_Plant__c= plantAssetForWeightedAvg.id;
         p7SiteMetaData1.Base_Asset_Template__c = baseSubarray.id;
         p7SiteMetaData1.Plant_Asset_Prompt_Detail__c = p7PlantAssetPromptDetail.Id;
         p7SiteMetaData1.Prompt_Information__c = p7PromptInfo.Id;
@@ -152,7 +152,7 @@ public with sharing class WeightedAverageRollupTest {
         p7SiteMetaData2.Name = Constants.P1_PLANT_INFO_PROMPT_SOLAR;
         p7SiteMetaData2.Prompt_Specific_Info__c = '';
         p7SiteMetaData2.Attribute_Info__c = '{"DC_Capacity":"","MODULE_TCOEFF":"","MOUNTING_GCR":"","MOUNTING_TILT":""}';
-        p7SiteMetaData2.Plant_Asset__c= plantAssetForWeightedAvg.id;
+        p7SiteMetaData2.Account_Plant__c= plantAssetForWeightedAvg.id;
         p7SiteMetaData2.Base_Asset_Template__c = baseSubarray.id;
         p7SiteMetaData2.Plant_Asset_Prompt_Detail__c = p7PlantAssetPromptDetail.Id;
         p7SiteMetaData2.Prompt_Information__c = p7PromptInfo.Id;
@@ -163,7 +163,7 @@ public with sharing class WeightedAverageRollupTest {
         p7SiteMetaData3.Name = Constants.P1_PLANT_INFO_PROMPT_SOLAR;
         p7SiteMetaData3.Prompt_Specific_Info__c = '';
         p7SiteMetaData3.Attribute_Info__c = '{"DC_Capacity":"","MODULE_TCOEFF":"","MOUNTING_GCR":"","MOUNTING_TILT":""}';
-        p7SiteMetaData3.Plant_Asset__c= plantAssetForWeightedAvg.id;
+        p7SiteMetaData3.Account_Plant__c= plantAssetForWeightedAvg.id;
         p7SiteMetaData3.Base_Asset_Template__c = baseSubarray.id;
         p7SiteMetaData3.Plant_Asset_Prompt_Detail__c = p7PlantAssetPromptDetail.Id;
         p7SiteMetaData3.Prompt_Information__c = p7PromptInfo.Id;
@@ -174,7 +174,7 @@ public with sharing class WeightedAverageRollupTest {
         p7SiteMetaData4.Name = Constants.P1_PLANT_INFO_PROMPT_SOLAR;
         p7SiteMetaData4.Prompt_Specific_Info__c = '';
         p7SiteMetaData4.Attribute_Info__c = '{"DC_Capacity":"","MODULE_TCOEFF":"","MOUNTING_GCR":"","MOUNTING_TILT":""}';
-        p7SiteMetaData4.Plant_Asset__c= plantAssetForWeightedAvg.id;
+        p7SiteMetaData4.Account_Plant__c= plantAssetForWeightedAvg.id;
         p7SiteMetaData4.Base_Asset_Template__c = baseSubarray.id;
         p7SiteMetaData4.Plant_Asset_Prompt_Detail__c = p7PlantAssetPromptDetail.Id;
         p7SiteMetaData4.Prompt_Information__c = p7PromptInfo.Id;
@@ -185,7 +185,7 @@ public with sharing class WeightedAverageRollupTest {
         for(Integer i=0; i< siteMetadataLst.size(); i++){
             for(integer j = 0; j < coreAttrLst.size(); j++){
                 Attribute_Value__c attributeValue = new Attribute_Value__c();
-                attributeValue.Plant_Asset__c = plantAssetForWeightedAvg.Id;
+                attributeValue.Account_Plant__c = plantAssetForWeightedAvg.Id;
                 attributeValue.Site_Metadata__c = siteMetadataLst[i];
                 attributeValue.Prompt_Information__c = p7PromptInfo.Id; 
                 attributeValue.Base_Asset_Template__c = baseSubarray.id;
@@ -198,5 +198,5 @@ public with sharing class WeightedAverageRollupTest {
    
         WeightedAverageRollup.formMapForRollup(promptInfoLst, System.now(), String.valueOf(p7PlantAssetPromptDetail.Id), String.valueOf(plantAssetForWeightedAvg.id));
         
-    }*/
+    }
 }

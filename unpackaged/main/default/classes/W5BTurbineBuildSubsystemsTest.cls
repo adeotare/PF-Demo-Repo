@@ -84,7 +84,7 @@ public with sharing class W5BTurbineBuildSubsystemsTest {
         update newTemVersion;
 
         Plant_Asset_Prompt_Detail__c g1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        g1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ g1PromptInfo.Name;
+        g1PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ g1PromptInfo.Name;
         g1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         g1PlantAssetPromptDetail.Prompt_Information__c = g1PromptInfo.Id;
         g1PlantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplateG1.Id;
@@ -96,7 +96,7 @@ public with sharing class W5BTurbineBuildSubsystemsTest {
         insert newG1SiteMetadata;
         
         Plant_Asset_Prompt_Detail__c w3PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        w3PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+w3PromptInfo.Name;
+        w3PlantAssetPromptDetail.Name = 'Test Plant' +'-'+w3PromptInfo.Name;
         w3PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         w3PlantAssetPromptDetail.Prompt_Information__c = w3PromptInfo.Id;
         w3PlantAssetPromptDetail.Base_Asset__c = meterBaseAssetTemplate.Id;
@@ -113,7 +113,7 @@ public with sharing class W5BTurbineBuildSubsystemsTest {
         Id m3SiteMetadata = [SELECT Id, Name FROM Site_Metadata__c WHERE Name =: Constants.W3_TURBINE_BUILD].Id;
         
         Plant_Asset_Prompt_Detail__c w4PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        w4PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+w4PromptInfo.Name;
+        w4PlantAssetPromptDetail.Name = 'Test Plant' +'-'+w4PromptInfo.Name;
         w4PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         w4PlantAssetPromptDetail.Prompt_Information__c = w4PromptInfo.Id;
         w4PlantAssetPromptDetail.Base_Asset__c = meterBaseAssetTemplate.Id;
@@ -129,7 +129,7 @@ public with sharing class W5BTurbineBuildSubsystemsTest {
         insert w4SiteMetaData;
         
         Plant_Asset_Prompt_Detail__c plantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        plantAssetPromptDetail.Name = newPlantAsset.Name +'-'+w5APromptInfo.Name;
+        plantAssetPromptDetail.Name = 'Test Plant' +'-'+w5APromptInfo.Name;
         plantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         plantAssetPromptDetail.Prompt_Information__c = w5APromptInfo.Id;
         plantAssetPromptDetail.Base_Asset__c = meterBaseAssetTemplate.Id;
@@ -137,7 +137,7 @@ public with sharing class W5BTurbineBuildSubsystemsTest {
     }
 
     public static testMethod void w5BTurbineBuildTest(){
-        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'].Id;
+        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'].Id;
         Id plantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name ='Test Plant-W.5.A Turbine Build Subsystems'].Id;
         Id w4PlantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name ='Test Plant-W.4.0 Turbine Build And Info'].Id;
         String previousPromptName = Constants.W4_TURBINE_BUILD_AND_INFO;
@@ -201,7 +201,7 @@ public with sharing class W5BTurbineBuildSubsystemsTest {
         String deviceAttrName = Constants.DEVICE_NAME;
         Map<String, String> jsonInputParametersAndValuesMap = new Map<String, String>{'isBulkUpload' => 'false', 'isBulkUploadMultipleBAT' => 'true', 'isImpWizUpLoad' => 'false', 'isOverride' => 'false'};
 
-        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'].Id;
+        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'].Id;
         Id plantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name ='Test Plant-W.5.A Turbine Build Subsystems'].Id;
     	String dataTableInput = W5BTurbineBuildSubsystems.getCustomDatatableCompInput(plantAsset, plantAssetPromptDetail, clearAttribute, JSON.serialize(jsonInputParametersAndValuesMap));
         List<Site_Metadata__c> currentPromptSiteMetadata = Utils.querySiteMetadata(currentPromptName, plantAsset);

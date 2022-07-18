@@ -111,12 +111,13 @@ export default class G1IntialPlantInfoPrompt extends LightningElement {
         var g1Data = JSON.parse(this.accountWithPlantAsset);  
         var accountRecords = g1Data.Account;
         var plantAssetRecords = g1Data.PlantAssetList;
-        
+        console.log('--plantAssetRecords---'+JSON.stringify(plantAssetRecords));
         for(var plantAssetRecKey in plantAssetRecords){
-          this.plantAssetList.push({
+                   
+          this.plantAssetList.push({            
             key : plantAssetRecords[plantAssetRecKey].Id,
             Id : plantAssetRecords[plantAssetRecKey].Id,
-            Name : plantAssetRecords[plantAssetRecKey].Plant__r.Name,
+            Name : plantAssetRecords[plantAssetRecKey].Name,
             isSelected : (this.plantAssetId === plantAssetRecords[plantAssetRecKey].Id),
             plantAssetDet : plantAssetRecords[plantAssetRecKey]
           });

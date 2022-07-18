@@ -98,7 +98,7 @@ public with sharing class P2BlockInfoAndPadCountsTest {
         update newTemVersion;
 
         Plant_Asset_Prompt_Detail__c plantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        plantAssetPromptDetail.Name = newPlantAsset.Name +'-'+previousPromptInfo.Name;
+        plantAssetPromptDetail.Name = 'Test Plant' +'-'+previousPromptInfo.Name;
         plantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         plantAssetPromptDetail.Prompt_Information__c = previousPromptInfo.Id;
         plantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplate[0].Id;
@@ -115,7 +115,7 @@ public with sharing class P2BlockInfoAndPadCountsTest {
     }
     public static testMethod void p2BlockTest(){
         //query Plant Asset
-        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'].Id;
+        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'].Id;
         Id plantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name = 'Test Plant-P.1.0 Plant Info Prompt - Solar'].Id;
         map<String, String> jsonInputParametersAndValuesMap = new Map<String, String>{'isBulkUpload' => 'true','isBulkUploadMultipleBAT' => 'false', 'isImpWizUpLoad' => 'false', 'isOverride' => 'false'};
         map<String, String> additionalParmsForFindNextPromptMap= new Map<String, String>{'isReadOnly' => 'false'};

@@ -2,7 +2,7 @@
 **/
 @isTest
 public with sharing class TriggerPEForReportsTest {
-/*    @testSetup
+    @testSetup
     public static void testDataSetup() {
         TEM_Version__c newTemVersion = TestDataFactory.createTemVersion(Constants.DRAFT);
         insert newTemVersion;
@@ -99,7 +99,7 @@ public with sharing class TriggerPEForReportsTest {
     }
     @isTest
     public static void triggerPEForReportsTest1(){
-        Account_Plant__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c ='7777.77.777'];
+        Account_Plant__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Account_Plant__c WHERE Drive_Id__c ='7777.77.777'];
         TriggerPEForReports.createPE(plantAsset.Id);
-    }   */
+    }   
 }

@@ -2,12 +2,12 @@
 **/
 @isTest
 public class SiteMetaDataHandlerTest {
-/*    @testSetup
+    @testSetup
     public static void testDataSetup() {
         TEM_Version__c newTemVersion = TestDataFactory.createTemVersion(Constants.DRAFT);
         insert newTemVersion;
 
-        Plant_Asset__c newPlantAsset = TestDataFactory.createPlantAsset(Constants.WIND, 'Drive', '7777.77.777', newTemVersion.Id);
+        Account_Plant__c newPlantAsset = TestDataFactory.createPlantAsset(Constants.WIND, 'Drive', '7777.77.777', newTemVersion.Id);
         insert newPlantAsset;
 
         Base_Asset_Template__c p1PromptBaseAsset = TestDataFactory.createBaseAssetTemplate(Constants.BASE_PV_PLANT, newTemVersion.Id);
@@ -56,6 +56,14 @@ public class SiteMetaDataHandlerTest {
             coreAttrLst.add(coreAttr);
         }
         insert coreAttrLst;
+        
+        Id metricDefinition = Utils.getRecordTypeInfo('Metric_Definition__c','Definition').getRecordTypeId();
+		List<Metric_Definition__c> metricDefLst = new List<Metric_Definition__c>();
+        for(Core_Attribute__c coreAttrIns : coreAttrLst){
+                Metric_Definition__c metricDef = TestDataFactory.createMetricDef(String.valueOf(p1PromptBaseAsset.Id), String.valueOf(coreAttrIns.Id), 'VALUES', '', '', String.valueOf(newTemVersion.Id), metricDefinition);
+                metricDefLst.add(metricDef);
+        }
+        insert metricDefLst;
 
         List<Core_Attribute__c> coreAttrLstP2  = new List<Core_Attribute__c> ();
         list<String>datatypeLstP2 = new list<String>{'Number'};
@@ -71,6 +79,13 @@ public class SiteMetaDataHandlerTest {
             coreAttrLstP2.add(coreAttr);
         }
         insert coreAttrLstP2;
+        
+        List<Metric_Definition__c> metricDefLst2 = new List<Metric_Definition__c>();
+        for(Core_Attribute__c coreAttrIns : coreAttrLstP2){
+                Metric_Definition__c metricDef2 = TestDataFactory.createMetricDef(String.valueOf(p2PromptBaseAsset.Id), String.valueOf(coreAttrIns.Id), 'VALUES', '', '', String.valueOf(newTemVersion.Id), metricDefinition);
+                metricDefLst2.add(metricDef2);
+        }
+        insert metricDefLst2;
         
         //for Prompt Specific records
         List<Core_Attribute__c> promptSpecificAttrLst  = new List<Core_Attribute__c> ();
@@ -102,6 +117,8 @@ public class SiteMetaDataHandlerTest {
             promptSpecificAttrLst2.add(promptSpecificAttr);
         }
         insert promptSpecificAttrLst2;
+        
+        
 
         List<Attribute_Requirement__c> attrReqLst  = new List<Attribute_Requirement__c> ();
         for(integer i = 0; i < 1; i++){
@@ -117,8 +134,8 @@ public class SiteMetaDataHandlerTest {
         insert attrReqLst2;
 
         Plant_Asset_Prompt_Detail__c p1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        p1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ p1PromptInfo.Name;
-        p1PlantAssetPromptDetail.Plant_Asset__c = newPlantAsset.Id;
+        p1PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ p1PromptInfo.Name;
+        p1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         p1PlantAssetPromptDetail.Prompt_Information__c = p1PromptInfo.Id;
         p1PlantAssetPromptDetail.Base_Asset__c = p1PromptBaseAsset.Id;
         insert p1PlantAssetPromptDetail;
@@ -130,7 +147,7 @@ public class SiteMetaDataHandlerTest {
         p1SiteMetaData.Name = Constants.P1_PLANT_INFO_PROMPT_SOLAR;
         p1SiteMetaData.Prompt_Specific_Info__c = '{"No of Blocks":"2","Flat Hierarchy":"No"';
         p1SiteMetaData.Attribute_Info__c = '{"AC_CAPACITY":""}';
-        p1SiteMetaData.Plant_Asset__c= newPlantAsset.id;
+        p1SiteMetaData.Account_Plant__c= newPlantAsset.id;
         p1SiteMetaData.Base_Asset_Template__c = p1PromptBaseAsset.id;
         p1SiteMetaData.Plant_Asset_Prompt_Detail__c = p1PlantAssetPromptDetail.Id;
         p1SiteMetaData.Prompt_Information__c = p1PromptInfo.Id;
@@ -140,7 +157,7 @@ public class SiteMetaDataHandlerTest {
     @isTest
     public static void siteMetaDataTriggerTest1(){
 		//for single base asset template
-        Plant_Asset__c newPlantAsset = [SELECT Id, Name,TEM_Version__c FROM Plant_Asset__c WHERE Customer_Plant_Asset_ID__c = '7777.77.777' LIMIT 1];
+        Account_Plant__c newPlantAsset = [SELECT Id, Name,TEM_Version__c FROM Account_Plant__c WHERE Drive_Id__c = '7777.77.777' LIMIT 1];
         Prompt_Information__c p1PromptInfo = [SELECT Id, Name FROM Prompt_Information__c WHERE Name =: Constants.P1_PLANT_INFO_PROMPT_SOLAR AND TEM_Version__c =: newPlantAsset.TEM_Version__c ];
         Prompt_Information__c p2PromptInfo = [SELECT Id, Name FROM Prompt_Information__c WHERE Name =: Constants.P2_BLOCK_INFO_AND_PAD_COUNTS AND TEM_Version__c =: newPlantAsset.TEM_Version__c];
         Prompt_Information__c p3PromptInfo = [SELECT Id, Name FROM Prompt_Information__c WHERE Name =: Constants.P3_PAD_BUILDS_AND_COUNTS AND TEM_Version__c =: newPlantAsset.TEM_Version__c];
@@ -152,7 +169,7 @@ public class SiteMetaDataHandlerTest {
         
         Plant_Asset_Prompt_Detail__c p2PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
         p2PlantAssetPromptDetail.Name = 'Test Plant'+'-'+p2PromptInfo.Id;
-        p2PlantAssetPromptDetail.Plant_Asset__c = newPlantAsset.Id;
+        p2PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         p2PlantAssetPromptDetail.Prompt_Information__c = p2PromptInfo.Id;
         p2PlantAssetPromptDetail.Base_Asset__c = p2PromptBaseAsset.Id;
         insert p2PlantAssetPromptDetail;
@@ -161,7 +178,7 @@ public class SiteMetaDataHandlerTest {
         p2SiteMetaData.Name = Constants.P2_BLOCK_INFO_AND_PAD_COUNTS;
         p2SiteMetaData.Prompt_Specific_Info__c = '{"No of Blocks":"2","Flat Hierarchy":"No"';
         p2SiteMetaData.Attribute_Info__c = '{"AC_CAPACITY":"100"}';
-        p2SiteMetaData.Plant_Asset__c= newPlantAsset.id;
+        p2SiteMetaData.Account_Plant__c= newPlantAsset.id;
         p2SiteMetaData.Base_Asset_Template__c = p2PromptBaseAsset.Id;
         p2SiteMetaData.Plant_Asset_Prompt_Detail__c = p2PlantAssetPromptDetail.Id;
         p2SiteMetaData.Prompt_Information__c = p2PromptInfo.Id;
@@ -170,7 +187,7 @@ public class SiteMetaDataHandlerTest {
         
         Plant_Asset_Prompt_Detail__c p3PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
         p3PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ p3PromptInfo.Name;
-        p3PlantAssetPromptDetail.Plant_Asset__c = newPlantAsset.Id;
+        p3PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         p3PlantAssetPromptDetail.Prompt_Information__c = p3PromptInfo.Id;
         p3PlantAssetPromptDetail.Base_Asset__c = p3PromptBaseAsset.Id;
         insert p3PlantAssetPromptDetail;
@@ -179,7 +196,7 @@ public class SiteMetaDataHandlerTest {
         p3SiteMetaData.Name = Constants.P3_PAD_BUILDS_AND_COUNTS;
         p3SiteMetaData.Prompt_Specific_Info__c = '{"No of Blocks":"2","Flat Hierarchy":"No"';
         p3SiteMetaData.Attribute_Info__c = '{"AC_CAPACITY":"1200"}';
-        p3SiteMetaData.Plant_Asset__c= newPlantAsset.id;
+        p3SiteMetaData.Account_Plant__c= newPlantAsset.id;
         p3SiteMetaData.Base_Asset_Template__c = p3PromptBaseAsset.Id;
         p3SiteMetaData.Plant_Asset_Prompt_Detail__c = p3PlantAssetPromptDetail.Id;
         p3SiteMetaData.Prompt_Information__c = p3PromptInfo.Id;
@@ -189,7 +206,7 @@ public class SiteMetaDataHandlerTest {
         p4SiteMetaData.Name = Constants.P3_PAD_BUILDS_AND_COUNTS;
         p4SiteMetaData.Prompt_Specific_Info__c = '{"No of Blocks":"2","Flat Hierarchy":"No"';
         p4SiteMetaData.Attribute_Info__c = '{"AC_CAPACITY":"1300"}';
-        p4SiteMetaData.Plant_Asset__c= newPlantAsset.id;
+        p4SiteMetaData.Account_Plant__c= newPlantAsset.id;
         p4SiteMetaData.Base_Asset_Template__c = p3PromptBaseAsset.Id;
         p4SiteMetaData.Plant_Asset_Prompt_Detail__c = p3PlantAssetPromptDetail.Id;
         p4SiteMetaData.Prompt_Information__c = p3PromptInfo.Id;
@@ -199,7 +216,7 @@ public class SiteMetaDataHandlerTest {
         p5SiteMetaData.Name = Constants.P3_PAD_BUILDS_AND_COUNTS;
         p5SiteMetaData.Prompt_Specific_Info__c = '{"No of Blocks":"2","Flat Hierarchy":"No"';
         p5SiteMetaData.Attribute_Info__c = '{"AC_CAPACITY":"1400"}';
-        p5SiteMetaData.Plant_Asset__c= newPlantAsset.id;
+        p5SiteMetaData.Account_Plant__c= newPlantAsset.id;
         p5SiteMetaData.Base_Asset_Template__c = p3PromptBaseAsset.Id;
         p5SiteMetaData.Plant_Asset_Prompt_Detail__c = p3PlantAssetPromptDetail.Id;
         p5SiteMetaData.Prompt_Information__c = p3PromptInfo.Id;
@@ -224,7 +241,7 @@ public class SiteMetaDataHandlerTest {
     @isTest
     public static void siteMetaDataTriggerTest2(){
 		//For multiple base asset template
-        Plant_Asset__c newPlantAsset = [SELECT Id, Name,TEM_Version__c FROM Plant_Asset__c WHERE Customer_Plant_Asset_ID__c = '7777.77.777' LIMIT 1];
+        Account_Plant__c newPlantAsset = [SELECT Id, Name,TEM_Version__c FROM Account_Plant__c WHERE Drive_Id__c = '7777.77.777' LIMIT 1];
         Prompt_Information__c p1PromptInfo = [SELECT Id, Name FROM Prompt_Information__c WHERE Name =: Constants.P1_PLANT_INFO_PROMPT_SOLAR AND TEM_Version__c =: newPlantAsset.TEM_Version__c ];
         Prompt_Information__c p2PromptInfo = [SELECT Id, Name FROM Prompt_Information__c WHERE Name =: Constants.P2_BLOCK_INFO_AND_PAD_COUNTS AND TEM_Version__c =: newPlantAsset.TEM_Version__c];
         Prompt_Information__c p3PromptInfo = [SELECT Id, Name FROM Prompt_Information__c WHERE Name =: Constants.P3_PAD_BUILDS_AND_COUNTS AND TEM_Version__c =: newPlantAsset.TEM_Version__c];
@@ -236,7 +253,7 @@ public class SiteMetaDataHandlerTest {
         
         Plant_Asset_Prompt_Detail__c p2PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
         p2PlantAssetPromptDetail.Name = 'Test Plant'+'-'+p2PromptInfo.Id;
-        p2PlantAssetPromptDetail.Plant_Asset__c = newPlantAsset.Id;
+        p2PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         p2PlantAssetPromptDetail.Prompt_Information__c = p2PromptInfo.Id;
         p2PlantAssetPromptDetail.Base_Asset__c = p2PromptBaseAsset.Id;
         insert p2PlantAssetPromptDetail;
@@ -245,7 +262,7 @@ public class SiteMetaDataHandlerTest {
         p2SiteMetaData.Name = Constants.P2_BLOCK_INFO_AND_PAD_COUNTS;
         p2SiteMetaData.Prompt_Specific_Info__c = '{"No of Blocks":"2","Flat Hierarchy":"No"';
         p2SiteMetaData.Attribute_Info__c = '{"AC_CAPACITY":"100"}';
-        p2SiteMetaData.Plant_Asset__c= newPlantAsset.id;
+        p2SiteMetaData.Account_Plant__c= newPlantAsset.id;
         p2SiteMetaData.Base_Asset_Template__c = p2PromptBaseAsset.Id;
         p2SiteMetaData.Plant_Asset_Prompt_Detail__c = p2PlantAssetPromptDetail.Id;
         p2SiteMetaData.Prompt_Information__c = p2PromptInfo.Id;
@@ -254,7 +271,7 @@ public class SiteMetaDataHandlerTest {
         
         Plant_Asset_Prompt_Detail__c p3PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
         p3PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ p3PromptInfo.Name;
-        p3PlantAssetPromptDetail.Plant_Asset__c = newPlantAsset.Id;
+        p3PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         p3PlantAssetPromptDetail.Prompt_Information__c = p3PromptInfo.Id;
         p3PlantAssetPromptDetail.Base_Asset__c = p3PromptBaseAsset.Id;
         insert p3PlantAssetPromptDetail;
@@ -263,7 +280,7 @@ public class SiteMetaDataHandlerTest {
         p3SiteMetaData.Name = Constants.P3_PAD_BUILDS_AND_COUNTS;
         p3SiteMetaData.Prompt_Specific_Info__c = '{"No of Blocks":"2","Flat Hierarchy":"No"';
         p3SiteMetaData.Attribute_Info__c = '{"AC_CAPACITY":"1200"}';
-        p3SiteMetaData.Plant_Asset__c= newPlantAsset.id;
+        p3SiteMetaData.Account_Plant__c= newPlantAsset.id;
         p3SiteMetaData.Base_Asset_Template__c = p3PromptBaseAsset.Id;
         p3SiteMetaData.Plant_Asset_Prompt_Detail__c = p3PlantAssetPromptDetail.Id;
         p3SiteMetaData.Prompt_Information__c = p3PromptInfo.Id;
@@ -273,7 +290,7 @@ public class SiteMetaDataHandlerTest {
         p4SiteMetaData.Name = Constants.P3_PAD_BUILDS_AND_COUNTS;
         p4SiteMetaData.Prompt_Specific_Info__c = '{"No of Blocks":"2","Flat Hierarchy":"No"';
         p4SiteMetaData.Attribute_Info__c = '{"AC_CAPACITY":"1300"}';
-        p4SiteMetaData.Plant_Asset__c= newPlantAsset.id;
+        p4SiteMetaData.Account_Plant__c= newPlantAsset.id;
         p4SiteMetaData.Base_Asset_Template__c = p3PromptBaseAsset.Id;
         p4SiteMetaData.Plant_Asset_Prompt_Detail__c = p3PlantAssetPromptDetail.Id;
         p4SiteMetaData.Prompt_Information__c = p3PromptInfo.Id;
@@ -283,13 +300,13 @@ public class SiteMetaDataHandlerTest {
         p5SiteMetaData.Name = Constants.P3_PAD_BUILDS_AND_COUNTS;
         p5SiteMetaData.Prompt_Specific_Info__c = '{"No of Blocks":"2","Flat Hierarchy":"No"';
         p5SiteMetaData.Attribute_Info__c = '{"AC_CAPACITY":"1400"}';
-        p5SiteMetaData.Plant_Asset__c= newPlantAsset.id;
+        p5SiteMetaData.Account_Plant__c = newPlantAsset.id;
         p5SiteMetaData.Base_Asset_Template__c = p3PromptBaseAsset.Id;
         p5SiteMetaData.Plant_Asset_Prompt_Detail__c = p3PlantAssetPromptDetail.Id;
         p5SiteMetaData.Prompt_Information__c = p3PromptInfo.Id;
         insert p5SiteMetaData;
         
-        List<Site_Metadata__c> allSiteMetaData = [SELECT Id, Name, Attribute_Info__c,Base_Asset_Template__c FROM Site_Metadata__c WHERE Plant_Asset__c =: newPlantAsset.Id];
+        List<Site_Metadata__c> allSiteMetaData = [SELECT Id, Name, Attribute_Info__c,Base_Asset_Template__c FROM Site_Metadata__c WHERE Account_Plant__c =: newPlantAsset.Id];
         System.debug('test 2'+allSiteMetaData.size());
 
         for(Site_Metadata__c siteMetaDataInstance : allSiteMetaData){
@@ -302,5 +319,5 @@ public class SiteMetaDataHandlerTest {
             siteMetaDataInstance.Attribute_Info__c = JSON.serialize(attrInforList); 
         }
         update allSiteMetaData;
-    }*/
+    }
 }

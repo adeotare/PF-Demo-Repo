@@ -17,14 +17,14 @@ public with sharing class RFIDataCreation {
             plantAssetId = plantAssetIdFromBtn;
             pltAstPrtDtl = [SELECT Id, Name, RFI_PE_Process_Description__c, RFI_Generated_for_CA_Report__c, RFI_Generated_for_CO_Report__c, Account_Plant__r.Asset_Builder_Status__c FROM Plant_Asset_Prompt_Detail__c WHERE Account_Plant__c =:plantAssetId AND Prompt_Information__r.Name=: Constants.G1_G2_PLANT_INFO_AND_RENEWABLE_TYPE_PROMPT AND Is_Deleted__c = FALSE];
             Boolean processCompletedCAReport = true;
-            RFI__c[] existingRfiRelToPA = [SELECT Id, Account_Plant__c, RFI_Status__c, Account_Plant__r.Asset_Builder_Status__c FROM RFI__c WHERE Account_Plant__c =: plantAssetId AND RFI_Status__c !=: Constants.CLOSED];
-            RFI__c rfiInstance; 
-            SObjectType rfiObj = Schema.getGlobalDescribe().get('RFI__c');
+            RAID__c[] existingRfiRelToPA = [SELECT Id, Account_Plant__c, RFI_Status__c, Account_Plant__r.Asset_Builder_Status__c FROM RAID__c WHERE Account_Plant__c =: plantAssetId AND RFI_Status__c !=: Constants.CLOSED];
+            RAID__c rfiInstance; 
+            SObjectType rfiObj = Schema.getGlobalDescribe().get('RAID__c');
             Map<String,Schema.SObjectField> rfiFields = rfiObj.getDescribe().fields.getMap();
         
             if(existingRfiRelToPA.size() == 0){
-                Map<String, String> mappingForRequiredFields = Utils.queryABRequiredFields('RFI__c');
-                rfiInstance = new RFI__c();
+                Map<String, String> mappingForRequiredFields = Utils.queryABRequiredFields('RAID__c');
+                rfiInstance = new RAID__c();
 
                 for(String rfiRequiredFields : mappingForRequiredFields.keySet()){
                     if(rfiFields.containskey(rfiRequiredFields.toLowerCase())){
@@ -121,10 +121,10 @@ public with sharing class RFIDataCreation {
 
      /*
     * RFI Item/Detail insertion based on RFI category and evaluation
-    * @param {RFI__c} rfiInstance - RFI Item need to create against RFI
+    * @param {RAID__c} rfiInstance - RFI Item need to create against RFI
     * @param {Map<String, List<Evaluation_Value__c>>} rfiCategoryRelToEval - Evaluation value grouped based on RFI Category.
     */
-    public static Boolean createRFILineItemForCapabilityReport(RFI__c rfiInstance, Map<String, List<Evaluation_Value__c>> rfiCategoryRelToEval){
+    public static Boolean createRFILineItemForCapabilityReport(RAID__c rfiInstance, Map<String, List<Evaluation_Value__c>> rfiCategoryRelToEval){
         Map<String, RFI_Detail__c> rfiItemList = new Map<String, RFI_Detail__c>();
         Savepoint sp = Database.setSavepoint();
         Boolean processCompleted = true;
@@ -138,7 +138,7 @@ public with sharing class RFIDataCreation {
                 if(!rfiItemList.containsKey(rfiCatId)){
                     //RFI Item Formation based on RFI Category
                     RFI_Detail__c rfiItemIns = new RFI_Detail__c();
-                    rfiItemIns.RFI_Number__c = rfiInstance.Id;
+                    rfiItemIns.RAID__c = rfiInstance.Id;
                     rfiItemIns.RFI_Category__c = rfiCatId;
                     rfiItemIns.Missing_Incomplete_Category__c = rfiCatId;
                     
@@ -187,11 +187,11 @@ public with sharing class RFIDataCreation {
     }
     /*
     * RFI Item/Detail insertion based on RFI category and Base asset template
-    * @param {RFI__c} rfiInstance - RFI Item need to create against RFI
+    * @param {RAID__c} rfiInstance - RFI Item need to create against RFI
     * @param {Map<String, Map<String, Map<String, List<String>>>>} missingAttributes - Attributes related to base asset template, prompt information, Attribute Requirement.
     * @param {Map<String, String>} toQueryAttrReq - Attribute requirements relate to core attribute
     */
-    public Static Boolean createRFILineItemForCompletenessReport(RFI__c rfiInstance, Map<String, Map<String, Map<String, List<String>>>> missingAttributes, Map<String, String> toQueryAttrReq){
+    public Static Boolean createRFILineItemForCompletenessReport(RAID__c rfiInstance, Map<String, Map<String, Map<String, List<String>>>> missingAttributes, Map<String, String> toQueryAttrReq){
         Boolean processCompleted = true;
         try{
             List<String> BAT = new List<String>();
@@ -219,7 +219,7 @@ public with sharing class RFIDataCreation {
             for(String conCatVal : missingAttributes.keyset()){
                 String rfiItemDes = '';
                 RFI_Detail__c rfiItemIns = new RFI_Detail__c();
-                rfiItemIns.RFI_Number__c = rfiInstance.Id;
+                rfiItemIns.RAID__c = rfiInstance.Id;
                 rfiItemIns.RFI_Category__c = conCatVal.split('-')[2]; 
                 rfiItemIns.Missing_Incomplete_Category__c = conCatVal.split('-')[2];
 
@@ -403,12 +403,12 @@ public with sharing class RFIDataCreation {
         Boolean processCompleted = false;
         try{
             Map<String, RFI_Detail__c> rfiItemList = new Map<String, RFI_Detail__c>();
-            RFI__c[] existingRfiRelToPA = [SELECT Id, Account_Plant__c, RFI_Status__c, Account_Plant__r.Asset_Builder_Status__c FROM RFI__c WHERE Account_Plant__c =: plantAssetId AND RFI_Status__c !=: Constants.CLOSED];
+            RAID__c[] existingRfiRelToPA = [SELECT Id, Account_Plant__c, RFI_Status__c, Account_Plant__r.Asset_Builder_Status__c FROM RAID__c WHERE Account_Plant__c =: plantAssetId AND RFI_Status__c !=: Constants.CLOSED];
             list<RFI_Categories__c> rfiCategories = [SELECT Id, Name, RFI_Category_Status__c 
                         FROM RFI_Categories__c WHERE NAME =: System.Label.SubstationRFICategoryName AND RFI_Category_Status__c = 'Active' AND
                         RecordTypeId =: Utils.getRecordTypeInfo('RFI_Categories__c', ConstantsRecordTypes.RFI_CATEGORY_MISSING_INCOMPLETE_INFORMATION).getRecordTypeId() LIMIT 1];
             List<RFI_Detail__c> rfiDetailsLst = new List<RFI_Detail__c> ();
-            RFI__c rfiInstance;
+            RAID__c rfiInstance;
             
             Integer substationSwitchgearCount = 0;
             String renewableType = '';
@@ -465,32 +465,39 @@ public with sharing class RFIDataCreation {
                     
                     if(rfiCategories.size() > 0){
                         if(existingRfiRelToPA.size() == 1){
-                            rfiDetailsLst = [SELECT Id, RFI_Number__c, RFI_Category__c
-                                FROM RFI_Detail__c WHERE RFI_Number__c =: existingRfiRelToPA[0].Id AND RFI_Category__c =: rfiCategories[0].Id
+                            rfiDetailsLst = [SELECT Id, RAID__c, RFI_Category__c
+                                FROM RFI_Detail__c WHERE RAID__c =: existingRfiRelToPA[0].Id AND RFI_Category__c =: rfiCategories[0].Id
                                 AND IsDeleted = false];
                         }
-
+						Id RFI_RT = Utils.getRecordTypeInfo('RAID__c', 'RFI').getRecordTypeId();
+                        
                         if(existingRfiRelToPA.size() == 0){
-                            Map<String, String> mappingForRequiredFields = Utils.queryABRequiredFields('RFI__c');
-                            SObjectType rfiObj = Schema.getGlobalDescribe().get('RFI__c');
+                            Map<String, String> mappingForRequiredFields = Utils.queryABRequiredFields('RAID__c');
+                            SObjectType rfiObj = Schema.getGlobalDescribe().get('RAID__c');
                             Map<String,Schema.SObjectField> rfiFields = rfiObj.getDescribe().fields.getMap();
-                            rfiInstance = new RFI__c();
+                            rfiInstance = new RAID__c();
 
                             for(String rfiRequiredFields : mappingForRequiredFields.keySet()){
                                 if(rfiFields.containskey(rfiRequiredFields.toLowerCase())){
                                     rfiInstance.put(rfiRequiredFields, mappingForRequiredFields.get(rfiRequiredFields));
                                 }
                             } 
-
+                            
+							rfiInstance.recordtypeId = RFI_RT;
+                            rfiInstance.Priority__c= 'Low';
+                            rfiInstance.Title__c= existingRfiRelToPA[0].Name;
+                            rfiInstance.Status__c= 'In Progress';
+                            rfiInstance.Type__c= 'Process';
                             rfiInstance.Account_Plant__c = plantAssetId;
                             insert rfiInstance;
                         }else{
+                            
                             rfiInstance = existingRfiRelToPA[0];
                         }
 
                         if(String.isNotBlank(rfiInstance.Id) && (existingRfiRelToPA.size() == 0 || (existingRfiRelToPA.size() == 1 && rfiDetailsLst.size() == 0))){
                             RFI_Detail__c rfiItemIns = new RFI_Detail__c();
-                            rfiItemIns.RFI_Number__c = rfiInstance.Id;
+                            rfiItemIns.RAID__c = rfiInstance.Id;
                             rfiItemIns.RFI_Category__c = rfiCategories[0].Id;
                             rfiItemIns.Missing_Incomplete_Category__c = rfiCategories[0].Id;
                             rfiItemIns.RFI_Detail_Description__c= System.Label.SubstationRFIItemDescription;

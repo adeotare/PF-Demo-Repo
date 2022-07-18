@@ -211,6 +211,7 @@ public class inlineRfiDetail {
       }
   
       try {
+        system.debug('---lstMissingDetail--'+lstMissingDetail);
         upsert lstMissingDetail;
         value = 'success';
         //RFIBatchProcess be = new RFIBatchProcess(lstMissingDetail);

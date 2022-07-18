@@ -118,7 +118,7 @@ public class SiteMetaDataHandler {
         for(Metric_Definition__c metricIns : [SELECT id FROM Metric_Definition__c WHERE Base_Asset_Template__c IN: baseAssetLst]){
             metricList.add(metricIns.Id);
         }
-        
+        system.debug('---metricList-size-'+metricList.size());
         //For Single Base Asset Template
         if(metricList.size() <= 2 && metricList.size() >0){
             Asset_Builder_Async_Job__e asyncJobMetricValueCreation = new Asset_Builder_Async_Job__e(); 

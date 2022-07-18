@@ -93,7 +93,7 @@ public class W4TurbineBuildAndInfoTest {
         update newTemVersion;
 
         Plant_Asset_Prompt_Detail__c g1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        g1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ g1PromptInfo.Name;
+        g1PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ g1PromptInfo.Name;
         g1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         g1PlantAssetPromptDetail.Prompt_Information__c = g1PromptInfo.Id;
         g1PlantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplateG1.Id;
@@ -105,7 +105,7 @@ public class W4TurbineBuildAndInfoTest {
         insert newG1SiteMetadata;
            
         Plant_Asset_Prompt_Detail__c plantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        plantAssetPromptDetail.Name = newPlantAsset.Name +'-'+w3PromptInfo.Name;
+        plantAssetPromptDetail.Name = 'Test Plant' +'-'+w3PromptInfo.Name;
         plantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         plantAssetPromptDetail.Prompt_Information__c = w3PromptInfo.Id;
         plantAssetPromptDetail.Base_Asset__c = p1BaseAssetTemplate.Id;
@@ -122,7 +122,7 @@ public class W4TurbineBuildAndInfoTest {
         insert w3SiteMetaData;
 
         Plant_Asset_Prompt_Detail__c w2PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        w2PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+w2PromptInfo.Name;
+        w2PlantAssetPromptDetail.Name = 'Test Plant' +'-'+w2PromptInfo.Name;
         w2PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         w2PlantAssetPromptDetail.Prompt_Information__c = w2PromptInfo.Id;
         w2PlantAssetPromptDetail.Base_Asset__c = p1BaseAssetTemplate.Id;
@@ -142,7 +142,7 @@ public class W4TurbineBuildAndInfoTest {
     public static testMethod void w4GetCustomDatatableCompInputAndSaveTest(){
         //query Plant Asset
         String currentPromptName = Constants.W4_TURBINE_BUILD_AND_INFO;
-        Id  plantAsset = [SELECT Id, Name FROM Account_Plant__c where Customer_Plant_Asset_ID__c  = '7777.77.777' ].Id;
+        Id  plantAsset = [SELECT Id, Name FROM Account_Plant__c where Drive_Id__c  = '7777.77.777' ].Id;
         Id plantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name ='Test Plant-W.3.0 Turbine Build'].Id;
         Id newBaseAssetTemplate = [SELECT Id, Name FROM Base_Asset_Template__c WHERE Name =: Constants.BASE_INVERTER_PAD].Id;
         Boolean clearAttribute = false;

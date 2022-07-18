@@ -18,8 +18,8 @@ public with sharing class G1IntialPlantInfoPrompt {
     public static string queryPlantAssetList(String recordId, Boolean fromPlantAssetList) {
         List<Account_Plant__c> plantAssets = new List<Account_Plant__c>();
         List<Account> accountList = new List<Account>();
-        accountList = [SELECT id, Name from Account  where OwnerId = :UserInfo.getUserId() ORDER BY Name ASC];
-        
+        //accountList = [SELECT id, Name from Account  where OwnerId = :UserInfo.getUserId() ORDER BY Name ASC];
+        accountList = [SELECT id, Name from Account  ORDER BY Name ASC];
         String plantAssetRecordsQryStr = formPlantAssetQryString();
 
         plantAssetRecordsQryStr +=' ORDER BY Name ASC'; 

@@ -56,7 +56,7 @@ public with sharing class P1PlantInfoPromptSolarTest {
                                                                                 (datatypeLst[i] == 'Picklist')? newPicklistMaster.Id : null,
                                                                                 newBaseAssetTemplate.Id, newTemVersion.Id);
             //coreAttr.Attribute_Master__c = attributeMaster.id; 
-           // coreAttr.Plant_Asset_Field_Name__c = 'PF_Service_Product__c';                            
+            //coreAttr.Plant_Asset_Field_Name__c = 'PF_Service_Product__c';                            
             coreAttrLst.add(coreAttr);
         }
         insert coreAttrLst;
@@ -104,7 +104,7 @@ public with sharing class P1PlantInfoPromptSolarTest {
         update newTemVersion;
         
         Plant_Asset_Prompt_Detail__c plantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        plantAssetPromptDetail.Name = newPlantAsset.Name +'-'+previousPromptInfo.Name;
+        plantAssetPromptDetail.Name = 'Test Plant' +'-'+previousPromptInfo.Name;
         plantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         plantAssetPromptDetail.Prompt_Information__c = previousPromptInfo.Id;
         plantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplate.Id;
@@ -122,8 +122,8 @@ public with sharing class P1PlantInfoPromptSolarTest {
 
     public static testMethod void p1PlantInfoTest(){
         //query Plant Asset
-        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'].Id;
-        Account_Plant__c  plantAsset1 = [SELECT Id, Name,TEM_Version__r.Status__c  FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'];
+        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'].Id;
+        Account_Plant__c  plantAsset1 = [SELECT Id, Name,TEM_Version__r.Status__c  FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'];
         Id plantAssetPromptDetail = [SELECT Id, Name From Plant_Asset_Prompt_Detail__c WHERE Name = 'Test Plant-G.1.0 Plant Info and Renewable Type Prompt'].Id;
         String currentPromptName = Constants.P1_PLANT_INFO_PROMPT_SOLAR;
         String previousPromptName = Constants.G1_G2_PLANT_INFO_AND_RENEWABLE_TYPE_PROMPT;

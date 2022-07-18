@@ -2,41 +2,43 @@
 **/
 @istest
 public with sharing class G1IntialPlantInfoPromptTest {
-/*    @testSetup
+    @testSetup
     public static void testDataSetup() { 
         TEM_Version__c newTemVersion = TestDataFactory.createTemVersion(Constants.DRAFT);
         insert newTemVersion;
+        
         Account acc = new account();
         acc.name ='Test';
         Insert acc;
-        Id parentPlantAssetRTId = Utils.getRecordTypeInfo('Account_Plant__c','Parent_Asset').getRecordTypeId();
-
+        
         Account_Plant__c newPlantAssetParent = TestDataFactory.createPlantAsset(Constants.SOLAR,'Drive','7777.77.777',newTemVersion.Id);
-        newPlantAssetParent.RecordTypeId = parentPlantAssetRTId;
+        
         insert newPlantAssetParent;
         List<Account_Plant__c> plantAssetLst= new List<Account_Plant__c>();
-        Id plantAssetRTId = Utils.getRecordTypeInfo('Account_Plant__c','Child_Asset').getRecordTypeId();
-        list<String> renewableType = new list<String>{Constants.SOLAR,Constants.WIND,Constants.SOLAR};
 
+        list<String> renewableType = new list<String>{Constants.SOLAR,Constants.WIND,Constants.SOLAR};
+		
+        List<Plant__c> plantLst= new List<Plant__c>();
+        for(integer i = 0; i<3; i++){
+            Plant__c plant = new Plant__c();
+            plant.Name = 'Test Plant' ;    
+            plant.Renewable_Type__c=renewableType[i];
+            plant.Timezone__c= 'India Standard Time';
+            plant.Latitude__c='45.5017';
+            plant.Longitude__c='-75.123';
+            plant.Commercial_Operating_Date__c = system.today();
+            plantLst.add(plant);
+        }
+        insert plantLst;
+        
         for(integer i = 0; i<3; i++){
             Account_Plant__c newPlantAsset = new Account_Plant__c();
-            newPlantAsset.Name = 'Test Plant Asset' + i;
-            newPlantAsset.Commercial_Operating_Date__c = system.today();
-            newPlantAsset.Latitude__c =  '2';
-            newPlantAsset.Longitude__c = '16';
+            newPlantAsset.Plant__c = plantLst[i].id;
             newPlantAsset.Asset_Builder_Status__c = '';
-            newPlantAsset.Plant_Name__c = 'Test' + i;
-            newPlantAsset.Plant_Id__c = 'Plant Asset' + i;
-            newPlantAsset.Customer_Plant_Asset_ID__c = '0000.000.00' + i; 
-            newPlantAsset.Description__c = 'Test Plant Asset';
-            newPlantAsset.Operator__c = 'Undefined';
-            newPlantAsset.Renewable_Type__c = renewableType[i];
-            newPlantAsset.Elevation_in_ft__c = 2;
-            newPlantAsset.RecordTypeId = plantAssetRTId;
-            newPlantAsset.Customer_Plant_Asset_ID__c = '7777.77.777';
-            newPlantAsset.Parent__c = newPlantAssetParent.Id;
+            newPlantAsset.Drive_Id__c = '0000.000.00' + i;
+            newPlantAsset.Drive_Id__c = '7777.77.777';
             newPlantAsset.TEM_Version__c = newTemVersion.Id;
-            newPlantAsset.Project_Lifecycle_Status__c = 'Onboarding';
+            newPlantAsset.Project_Lifecycle_Status__c = 'Pending';
             newPlantAsset.Asset_Builder_Status__c = 'Completed';
 //            newPlantAsset.Implementation_Status__c = 'In Progress';
             newPlantAsset.Account__c = acc.id;
@@ -60,10 +62,9 @@ public with sharing class G1IntialPlantInfoPromptTest {
     public static testMethod void g1InitialPlantInfoTest(){
         Boolean fromPlaantAssetLsttrue = true;
         Account_Plant__c plantAssetLst = [SELECT Id, Name, Commercial_Operating_Date__c, Latitude__c, Longitude__c, PF_Service_Product__c,
-              Status__c, Plant_Name__c, Plant_Id__c, Customer_Plant_Asset_ID__c,Account__c,
-              Description__c, Operator__c, Renewable_Type__c, Time_Zone__c, Elevation_in_ft__c, RecordTypeId, TEM_Version__c
-                FROM Account_Plant__c WHERE RecordTypeId =: Utils.getRecordTypeInfo('Account_Plant__c','Child_Asset').getRecordTypeId()
-                 ORDER BY Name ASC limit 1];
+              Status__c, Plant_Name__c, Drive_Id__c,Account__c,
+               Renewable_Type__c, Timezone__c,  TEM_Version__c
+                FROM Account_Plant__c ORDER BY Name ASC limit 1];
         string querPlantAsset = G1IntialPlantInfoPrompt.queryPlantAssetList(plantAssetLst.Id,fromPlaantAssetLsttrue);
         string plantassetId=plantAssetLst.id;
         string accountid= plantAssetLst.Account__c;
@@ -91,5 +92,5 @@ public with sharing class G1IntialPlantInfoPromptTest {
             (Map<String,String>) JSON.deserialize(promptResFinderError, Map<String,String>.class);
         String nextPromptIdError = (String)promptResponseError.get('nextPromptId');
         string querySite = G1IntialPlantInfoPrompt.getSiteMetadata(plantassetId);
-    }*/
+    }
 }

@@ -21,7 +21,7 @@ Query Plant Asset Record
 */
     public static Account_Plant__c queryPlantAsset(Id plantAssetId){
         return [SELECT Id, Name, Commercial_Operating_Date__c, Latitude__c, Longitude__c, PF_Service_Product__c, 
-                Asset_Builder_Status__c, Plant_Name__c, Customer_Plant_Asset_ID__c,
+                Asset_Builder_Status__c, Plant_Name__c, Drive_Id__c,
                   Renewable_Type__c, TEM_Version__c
                 FROM Account_Plant__c WHERE Id =: plantAssetId];
     }
@@ -270,7 +270,7 @@ Query Site Metadata Record
                 Parent_Site_Metadata__r.Alternate_Parent_Site_Metadata__r.Asset_Name__c, Alternate_Parent_Site_Metadata__c, Plant_Asset_Prompt_Detail__r.Is_Deleted__c,
                 Plant_Asset_Prompt_Detail__r.Prompt_Information__r.Type__c, Parent_Asset_Short_Name__c, Asset_Short_Name__c, Is_Attribute_Value_Modified_in_Prompt__c, 
                 Base_Asset_Template__r.Asset_Short_Name__c, Parent_Site_Metadata__r.Parent_Asset_Short_Name__c,  Account_Plant__r.Plant_Name__c, Plant_Asset_Prompt_Detail__r.Account_Plant__c,
-                Parent_Site_Metadata__r.Asset_Short_Name__c,Account_Plant__r.Customer_Plant_Asset_ID__c, Asset_Name__c,Prompt_Information__c FROM Site_Metadata__c 
+                Parent_Site_Metadata__r.Asset_Short_Name__c,Account_Plant__r.Drive_Id__c, Asset_Name__c,Prompt_Information__c FROM Site_Metadata__c 
                 WHERE Name =: promptName AND Plant_Asset_Prompt_Detail__r.Is_Deleted__c = false
                 AND Account_Plant__c =: plantAssetId AND Plant_Asset_Prompt_Detail__r.Account_Plant__c <> NULL ORDER BY Asset_Name__c ASC];
     }
@@ -285,7 +285,7 @@ public static List<Site_Metadata__c> querySortedSiteMetadata(String promptName, 
             Parent_Site_Metadata__r.Alternate_Parent_Site_Metadata__r.Asset_Name__c, Alternate_Parent_Site_Metadata__c, Plant_Asset_Prompt_Detail__r.Is_Deleted__c,
             Plant_Asset_Prompt_Detail__r.Prompt_Information__r.Type__c, Parent_Asset_Short_Name__c, Asset_Short_Name__c, Is_Attribute_Value_Modified_in_Prompt__c,
             Base_Asset_Template__r.Asset_Short_Name__c, Parent_Site_Metadata__r.Parent_Asset_Short_Name__c, Account_Plant__r.Plant_Name__c, Plant_Asset_Prompt_Detail__r.Account_Plant__c,
-            Parent_Site_Metadata__r.Asset_Short_Name__c,Account_Plant__r.Customer_Plant_Asset_ID__c FROM Site_Metadata__c 
+            Parent_Site_Metadata__r.Asset_Short_Name__c,Account_Plant__r.Drive_Id__c FROM Site_Metadata__c 
             WHERE Name =: promptName AND Plant_Asset_Prompt_Detail__r.Is_Deleted__c = false
             AND Account_Plant__c =: plantAssetId AND Plant_Asset_Prompt_Detail__r.Account_Plant__c <> NULL ORDER BY Parent_Site_Metadata__r.Asset_Name__c, Asset_Name__c ASC];
 }
@@ -481,7 +481,7 @@ This methods to fetch the Next Prompt Id based on previous prompts attribute Cou
             for(Site_Metadata__c g1SiteMetadata: g1PromptSiteMetaData){
                 Map<String,String> g1PromptSpecificInfoMap = 
                     (Map<String, String>) System.JSON.deserialize(g1SiteMetadata.Prompt_Specific_Info__c,Map<String, String>.class);
-                
+                system.debug('-----MetMast Info-----'+g1PromptSpecificInfoMap.get(Constants.MET_MAST));
                 if(g1PromptSpecificInfoMap.containsKey(Constants.MET_MAST) && g1PromptSpecificInfoMap.get(Constants.MET_MAST) != ''){
                     metMaskCount  = + Integer.valueOf(g1PromptSpecificInfoMap.get(Constants.MET_MAST));
                 }
@@ -886,7 +886,7 @@ This methods to fetch the Next Prompt Id based on previous prompts attribute Cou
                 String currentParentNameWithBaseShortName = '';
                 String currentSitemetadataAltrParentSitemetadata = siteMetadataRecord.Alternate_Parent_Site_Metadata__c;
                 if(siteMetadataRecord.Name == Constants.P1_PLANT_INFO_PROMPT_SOLAR || siteMetadataRecord.Name == Constants.W1_PLANT_INFO_PROMPT_WIND){
-                    plantAssetCustomerId = siteMetadataRecord.Account_Plant__r.Customer_Plant_Asset_ID__c;
+                    plantAssetCustomerId = siteMetadataRecord.Account_Plant__r.Drive_Id__c;
                     List<String> customerAssetIdSplitList = plantAssetCustomerId.split('\\.');
                     if(customerAssetIdSplitList.size()>0){
                         siteMetadataRecord.Parent_Asset_Short_Name__c = customerAssetIdSplitList[0]+'\\'+customerAssetIdSplitList[1];

@@ -463,7 +463,7 @@ export default class ImplementationWizardForm extends LightningElement {
     handlePlantIdSelected(event){
         this.plantIdPf = '';
         this.plantAssetId = '';
-        this.plantIdPf = event.detail.record.Customer_Plant_Asset_ID__c;
+        this.plantIdPf = event.detail.record.Drive_Id__c;
         this.plantAssetId = event.detail.record.Id;
         this.disableFileUploadForIWFD = false;
 

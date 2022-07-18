@@ -47,9 +47,9 @@ public class SATApprovalHandlerTest {
         LocaleSidKey = 'en_US');
         insert u;
         
-        SAT__C sat = [SELECT Id, Customer_Acceptance_Status__c, Account_Plant__r.Customer_Plant_Asset_ID__c, SAT_Approval_Status__c,
+        SAT__C sat = [SELECT Id, Customer_Acceptance_Status__c, Account_Plant__r.Drive_Id__c, SAT_Approval_Status__c,
                       SAT_Status__c, Customer_User__c FROM Sat__c WHERE 
-                      Account_Plant__r.Customer_Plant_Asset_ID__c ='21.21.21' LIMIT 1];
+                      Account_Plant__r.Drive_Id__c ='21.21.21' LIMIT 1];
         sat.Customer_User__c = u.Id;
         sat.SAT_Approval_Status__c  = '';
         update sat;

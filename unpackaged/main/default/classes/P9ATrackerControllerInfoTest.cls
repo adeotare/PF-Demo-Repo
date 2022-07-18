@@ -80,7 +80,7 @@ public with sharing class P9ATrackerControllerInfoTest{
         update newTemVersion;
 
         Plant_Asset_Prompt_Detail__c g1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        g1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ g1PromptInfo.Name;
+        g1PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ g1PromptInfo.Name;
         g1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         g1PlantAssetPromptDetail.Prompt_Information__c = g1PromptInfo.Id;
         g1PlantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplateG1.Id;
@@ -91,7 +91,7 @@ public with sharing class P9ATrackerControllerInfoTest{
         insert newG1SiteMetadata;
 
         Plant_Asset_Prompt_Detail__c p3PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        p3PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ p3PromptInfo.Name;
+        p3PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ p3PromptInfo.Name;
         p3PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         p3PlantAssetPromptDetail.Prompt_Information__c = p3PromptInfo.Id;
         p3PlantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplate.Id;
@@ -107,7 +107,7 @@ public with sharing class P9ATrackerControllerInfoTest{
         insert p3SiteMetaData;
 
         Plant_Asset_Prompt_Detail__c plantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        plantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ newP7PromptInfo.Name;
+        plantAssetPromptDetail.Name = 'Test Plant' +'-'+ newP7PromptInfo.Name;
         plantAssetPromptDetail.Account_Plant__c = newPlantAsset.id;
         plantAssetPromptDetail.Prompt_Information__c = newP7PromptInfo.Id;
         plantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplate.Id;
@@ -125,7 +125,7 @@ public with sharing class P9ATrackerControllerInfoTest{
 
     public static testMethod void P9ATrackerControllerInfoTest(){
         //query Plant Asset
-        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'].Id;
+        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'].Id;
         Id plantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name ='Test Plant-P.7.0 Inverter Subarray Info'].Id;
         String currentPromptName = Constants.P9A_TRACKER_CONTROLLER_INFO;
         String nextPromptName = Constants.P9B_TRACKER_MOTOR_INFO;
@@ -171,7 +171,7 @@ public with sharing class P9ATrackerControllerInfoTest{
         TEM_Version__c newTemVersion = TestDataFactory.createTemVersion(Constants.DRAFT);
         insert newTemVersion;
         
-        Account_Plant__c plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'];
+        Account_Plant__c plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'];
         Id plantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name ='Test Plant-P.7.0 Inverter Subarray Info'].Id;
 
         Base_Asset_Template__c p3BaseAssetTemplate = TestDataFactory.createBaseAssetTemplate('Base pad', newTemVersion.Id);
@@ -186,7 +186,7 @@ public with sharing class P9ATrackerControllerInfoTest{
         update newTemVersion;
 
         Plant_Asset_Prompt_Detail__c p3PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        p3PlantAssetPromptDetail.Name = plantAsset.Name +'-'+ newP3PromptInfo.Name;
+        p3PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ newP3PromptInfo.Name;
         p3PlantAssetPromptDetail.Account_Plant__c = plantAsset.Id;
         p3PlantAssetPromptDetail.Prompt_Information__c = newP3PromptInfo.Id;
         p3PlantAssetPromptDetail.Base_Asset__c = p3BaseAssetTemplate.Id;
@@ -236,7 +236,7 @@ public with sharing class P9ATrackerControllerInfoTest{
                                                                                                         p3BaseAssetTemplate.Id, newTemVersion.Id);
         insert newP3PromptInfo;
         
-        Account_Plant__c plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'];
+        Account_Plant__c plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'];
         Id plantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name ='Test Plant-P.7.0 Inverter Subarray Info'].Id;
 
         //update TemVersion status to Active
@@ -244,7 +244,7 @@ public with sharing class P9ATrackerControllerInfoTest{
         update newTemVersion;
 
         Plant_Asset_Prompt_Detail__c p3PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        p3PlantAssetPromptDetail.Name = plantAsset.Name +'-'+ newP3PromptInfo.Name;
+        p3PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ newP3PromptInfo.Name;
         p3PlantAssetPromptDetail.Account_Plant__c = plantAsset.Id;
         p3PlantAssetPromptDetail.Prompt_Information__c = newP3PromptInfo.Id;
         p3PlantAssetPromptDetail.Base_Asset__c = p3BaseAssetTemplate.Id;
@@ -299,7 +299,7 @@ public with sharing class P9ATrackerControllerInfoTest{
                                                                                                             p3BaseAssetTemplate.Id, newTemVersion.Id);
         insert newg1PromptInfo;
 
-        Account_Plant__c plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'];
+        Account_Plant__c plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'];
         Id plantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name ='Test Plant-P.7.0 Inverter Subarray Info'].Id;
 
         //update TemVersion status to Active
@@ -307,7 +307,7 @@ public with sharing class P9ATrackerControllerInfoTest{
         update newTemVersion;
 
         Plant_Asset_Prompt_Detail__c g1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        g1PlantAssetPromptDetail.Name = plantAsset.Name +'-'+ newg1PromptInfo.Name;
+        g1PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ newg1PromptInfo.Name;
         g1PlantAssetPromptDetail.Account_Plant__c = plantAsset.Id;
         g1PlantAssetPromptDetail.Prompt_Information__c = newg1PromptInfo.Id;
         g1PlantAssetPromptDetail.Base_Asset__c = p3BaseAssetTemplate.Id;
@@ -363,7 +363,7 @@ public with sharing class P9ATrackerControllerInfoTest{
                                                                                                             p3BaseAssetTemplate.Id, newTemVersion.Id);
         insert newg1PromptInfo;
 
-        Account_Plant__c plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'];
+        Account_Plant__c plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'];
         Id plantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name ='Test Plant-P.7.0 Inverter Subarray Info'].Id;
 
         //update TemVersion status to Active
@@ -371,7 +371,7 @@ public with sharing class P9ATrackerControllerInfoTest{
         update newTemVersion;
 
         Plant_Asset_Prompt_Detail__c g1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        g1PlantAssetPromptDetail.Name = plantAsset.Name +'-'+ newg1PromptInfo.Name;
+        g1PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ newg1PromptInfo.Name;
         g1PlantAssetPromptDetail.Account_Plant__c = plantAsset.Id;
         g1PlantAssetPromptDetail.Prompt_Information__c = newg1PromptInfo.Id;
         g1PlantAssetPromptDetail.Base_Asset__c = p3BaseAssetTemplate.Id;

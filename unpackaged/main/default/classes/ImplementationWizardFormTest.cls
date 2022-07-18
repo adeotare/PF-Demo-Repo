@@ -1,6 +1,6 @@
 @IsTest
 private class ImplementationWizardFormTest {
-/*    @TestSetup
+    @TestSetup
     static void setupData(){
         Implementation_Wizard_Form_Detail__c impWiz = new Implementation_Wizard_Form_Detail__c(
             Data_Interface__c = 'API',
@@ -30,7 +30,7 @@ private class ImplementationWizardFormTest {
 
         TEM_Version__c newTemVersion = TestDataFactory.createTemVersion(Constants.DRAFT);
         insert newTemVersion;
-        Plant_Asset__c newPlantAsset = TestDataFactory.createPlantAsset('Solar - PV', 'Drive', '7777.77.777', newTemVersion.Id);
+        Account_Plant__c newPlantAsset = TestDataFactory.createPlantAsset('Solar - PV', 'Drive', '7777.77.777', newTemVersion.Id);
         insert newPlantAsset;
     }
 
@@ -40,7 +40,7 @@ private class ImplementationWizardFormTest {
         // from the class that implements HttpCalloutMock.
         String bodyContent = '{"status":"success","details":{"fileContent":"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxMaWdodG5pbmdDb21wb25lbnRCdW5kbGUgeG1sbnM9Imh0dHA6Ly9zb2FwLnNmb3JjZS5jb20vMjAwNi8wNC9tZXRhZGF0YSI+DQogICAgPGFwaVZlcnNpb24+NDguMDwvYXBpVmVyc2lvbj4NCiAgICA8aXNFeHBvc2VkPmZhbHNlPC9pc0V4cG9zZWQ+DQo8L0xpZ2h0bmluZ0NvbXBvbmVudEJ1bmRsZT4="}}';
         Test.setMock(HttpCalloutMock.class, new ImplementationWizardFormMock(bodyContent, 200));
-        Plant_Asset__c newPlantAsset = [SELECT Id From Plant_Asset__c LIMIT 1];
+        Account_Plant__c newPlantAsset = [SELECT Id From Account_Plant__c LIMIT 1];
 
         Test.startTest();
         ImplementationWizardForm.queryInformation();
@@ -64,7 +64,7 @@ private class ImplementationWizardFormTest {
         // from the class that implements HttpCalloutMock.
         String bodyContent = '{"status": "error","details": {"code": "TenantNotFound","devMessage": "","userMessage": "Unable to retrieve tenant for customer name : 1452"}}';
         Test.setMock(HttpCalloutMock.class, new ImplementationWizardFormMock(bodyContent, 200));
-        Plant_Asset__c newPlantAsset = [SELECT Id From Plant_Asset__c LIMIT 1];
+        Account_Plant__c newPlantAsset = [SELECT Id From Account_Plant__c LIMIT 1];
 
         Test.startTest();
         ImplementationWizardForm.queryInformation();
@@ -88,7 +88,7 @@ private class ImplementationWizardFormTest {
         // from the class that implements HttpCalloutMock.
         String bodyContent = '{"code": "TenantNotFound","devMessage": "","userMessage": "Unable to retrieve tenant for customer name : 1452"}';
         Test.setMock(HttpCalloutMock.class, new ImplementationWizardFormMock(bodyContent, 500));
-        Plant_Asset__c newPlantAsset = [SELECT Id From Plant_Asset__c LIMIT 1];
+        Account_Plant__c newPlantAsset = [SELECT Id From Account_Plant__c LIMIT 1];
 
         Test.startTest();
         ImplementationWizardForm.queryInformation();
@@ -112,7 +112,7 @@ private class ImplementationWizardFormTest {
         // from the class that implements HttpCalloutMock.
         String bodyContent = '{"code": "TenantNotFound","devMessage": "","userMessage": "Unable to retrieve tenant for customer name : 1452"}';
         Test.setMock(HttpCalloutMock.class, new ImplementationWizardFormMock(bodyContent, 601));
-        Plant_Asset__c newPlantAsset = [SELECT Id From Plant_Asset__c LIMIT 1];
+        Account_Plant__c newPlantAsset = [SELECT Id From Account_Plant__c LIMIT 1];
 
         Test.startTest();
         ImplementationWizardForm.queryInformation();
@@ -139,16 +139,16 @@ private class ImplementationWizardFormTest {
     
     @IsTest
     static void createImpWizFormDetailCheck(){
-        Plant_Asset__c newPlantAsset = [SELECT Id From Plant_Asset__c LIMIT 1];
+        Account_Plant__c newPlantAsset = [SELECT Id From Account_Plant__c LIMIT 1];
         Map<String,String> jsonInputParametersAndValuesMap = new Map<String, String>();
         jsonInputParametersAndValuesMap.put('plantAssetId', String.valueOf(newPlantAsset.Id));
         jsonInputParametersAndValuesMap.put('plantIdPf', '123');
         ImplementationWizardForm.createImpWizFormDetail(JSON.serialize(jsonInputParametersAndValuesMap));
         TEM_Version__c newTemVersion = TestDataFactory.createTemVersion(Constants.DRAFT);
         insert newTemVersion;
-        Plant_Asset__c newPlantAssetCustomer = TestDataFactory.createPlantAsset('Solar - PV', 'Drive', '7777.77.777', newTemVersion.Id);
+        Account_Plant__c newPlantAssetCustomer = TestDataFactory.createPlantAsset('Solar - PV', 'Drive', '7777.77.777', newTemVersion.Id);
         insert newPlantAssetCustomer;
         ImplementationWizardForm.plantAssetStatus(newPlantAssetCustomer.Id);
         ImplementationWizardForm.plantAssetStatus(newPlantAsset.Id);
-    }*/
+    }
 }

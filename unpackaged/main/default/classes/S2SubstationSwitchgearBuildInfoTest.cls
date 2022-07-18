@@ -81,7 +81,7 @@ public with sharing class S2SubstationSwitchgearBuildInfoTest {
         update newTemVersion;
 
         Plant_Asset_Prompt_Detail__c g1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        g1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ g1PromptInfo.Name;
+        g1PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ g1PromptInfo.Name;
         g1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         g1PlantAssetPromptDetail.Prompt_Information__c = g1PromptInfo.Id;
         g1PlantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplateG1.Id;
@@ -92,7 +92,7 @@ public with sharing class S2SubstationSwitchgearBuildInfoTest {
         insert newG1SiteMetadata;
 
         Plant_Asset_Prompt_Detail__c plantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        plantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ newPromptInfo[0].Name;
+        plantAssetPromptDetail.Name = 'Test Plant' +'-'+ newPromptInfo[0].Name;
         plantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         plantAssetPromptDetail.Prompt_Information__c = newPromptInfo[0].Id;
         plantAssetPromptDetail.Base_Asset__c = newBaseAssetTemplate[0].Id;
@@ -109,7 +109,7 @@ public with sharing class S2SubstationSwitchgearBuildInfoTest {
     }
 
     public static testMethod void S2SubstationSwitchgearBuildTest(){
-        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Customer_Plant_Asset_ID__c  = '7777.77.777'].Id;
+        Id plantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777'].Id;
         Id plantAssetPromptDetail = [SELECT Id,Name From Plant_Asset_Prompt_Detail__c WHERE Name ='Test Plant-S.1.0 Substation/Switchgear Build'].Id;
 
         String currentPromptName = Constants.S2_SUBSTATION_SWITCHGEAR_BUILD_INFO;
