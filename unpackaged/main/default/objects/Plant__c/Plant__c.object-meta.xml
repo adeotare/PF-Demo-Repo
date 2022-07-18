@@ -155,10 +155,9 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Plant</label>
     <nameField>
-        <displayFormat>P-{0000}</displayFormat>
-        <label>Plant Number</label>
+        <label>Plant Name</label>
         <trackHistory>false</trackHistory>
-        <type>AutoNumber</type>
+        <type>Text</type>
     </nameField>
     <pluralLabel>Plants</pluralLabel>
     <profileSearchLayouts>
@@ -186,6 +185,6 @@
         <searchResultsAdditionalFields>OWNER.FIRST_NAME</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Region__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>Read</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
