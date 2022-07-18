@@ -21,6 +21,10 @@ public class ContractTriggerHandlerTest {
         opp2.AccountId = act.Id;
         insert opp2;  
         
+        
+        system.debug('1-->'+opp.id);
+        system.debug('2-->'+opp.id);
+        
         Product2 prd = new Product2();
         prd.SBQQ__SubscriptionPricing__c = 'Fixed Price';
         prd.Name = 'test';
@@ -92,7 +96,7 @@ public class ContractTriggerHandlerTest {
         update order;
         
         list<SBQQ__QuoteLine__c> qlList = new List<SBQQ__QuoteLine__c>();
-        for(Integer i = 0 ;  i < 5 ; i++){
+        for(Integer i = 0 ;  i < 1 ; i++){
             SBQQ__QuoteLine__c ql = new SBQQ__QuoteLine__c();
             ql.SBQQ__Quote__c = qut.Id;
             ql.SBQQ__Product__c = prd.Id;
@@ -101,10 +105,13 @@ public class ContractTriggerHandlerTest {
             qlList.add(ql);
             
         }
+        for(SBQQ__QuoteLine__c ql : qlList){
+            system.debug('-->'+ql);
+        }
         insert qlList;
         
 		list<SBQQ__QuoteLine__c> qlList2 = new List<SBQQ__QuoteLine__c>();
-        for(Integer i = 0 ;  i < 5 ; i++){
+        for(Integer i = 0 ;  i < 1 ; i++){
             SBQQ__QuoteLine__c ql = new SBQQ__QuoteLine__c();
             ql.SBQQ__Quote__c = qut2.Id;
             ql.SBQQ__Product__c = prd.Id;
@@ -139,7 +146,7 @@ public class ContractTriggerHandlerTest {
         
         List<Plant_Product_Transaction__c> pptList = new List<Plant_Product_Transaction__c>();
         for(SBQQ__QuoteLine__c ql : qlList){
-            for(Integer i = 0 ;  i < 5 ; i++){
+            for(Integer i = 0 ;  i < 1 ; i++){
             	Plant_Product_Transaction__c ppt = new Plant_Product_Transaction__c();
                 ppt.Quote_Line__c = ql.Id;
                 ppt.Name = 'test-'+i;
