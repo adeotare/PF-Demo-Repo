@@ -3858,6 +3858,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Order.NetSuite_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Order.PO_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
