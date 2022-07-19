@@ -1947,6 +1947,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Equipment__c.Data_connection_details__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Equipment__c.Data_connection_notes__c</field>
         <readable>true</readable>

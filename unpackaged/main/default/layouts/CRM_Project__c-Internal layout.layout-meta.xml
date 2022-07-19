@@ -394,41 +394,37 @@
         </platformActionListItems>
     </platformActionList>
     <relatedLists>
-        <relatedList>RelatedEntityHistoryList</relatedList>
-    </relatedLists>
-    <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
+        <fields>Title__c</fields>
         <fields>Priority__c</fields>
         <fields>Status__c</fields>
         <fields>RECORDTYPE</fields>
+        <fields>CREATED_DATE</fields>
+        <fields>Expected_Resolution_Date__c</fields>
+        <fields>Internal_Owner__c</fields>
+        <fields>External_Owner__c</fields>
+        <fields>Additional_Decision_Makers__c</fields>
         <relatedList>RAID__c.CRM_Project__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>TASK.SUBJECT</fields>
-        <fields>TASK.WHO_NAME</fields>
-        <fields>ACTIVITY.TASK</fields>
-        <fields>TASK.DUE_DATE</fields>
-        <fields>TASK.STATUS</fields>
-        <fields>TASK.PRIORITY</fields>
-        <fields>CORE.USERS.FULL_NAME</fields>
-        <relatedList>RelatedActivityList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>TASK.SUBJECT</fields>
-        <fields>TASK.WHO_NAME</fields>
-        <fields>ACTIVITY.TASK</fields>
-        <fields>TASK.DUE_DATE</fields>
-        <fields>CORE.USERS.FULL_NAME</fields>
-        <fields>TASK.LAST_UPDATE</fields>
-        <relatedList>RelatedHistoryList</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>NAME</fields>
+        <fields>Plant_Name__c</fields>
+        <fields>Product__c</fields>
+        <fields>Scope_Title__c</fields>
+        <fields>Scope_Definition__c</fields>
+        <fields>PPT_ARR__c</fields>
+        <fields>MWp_Quantity__c</fields>
+        <fields>Connection_Type__c</fields>
+        <fields>Trial__c</fields>
+        <fields>Installation_Commencement_Date__c</fields>
         <relatedList>Plant_Product_Transaction__c.CRM_Project_Name__c</relatedList>
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedEntityHistoryList</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

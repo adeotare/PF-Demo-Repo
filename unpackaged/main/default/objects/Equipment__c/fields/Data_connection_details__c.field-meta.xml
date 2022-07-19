@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Data_connection_details__c</fullName>
+    <externalId>false</externalId>
+    <formula>TEXT(Drive_OEM__c) + 
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;Also Energy &quot;), &quot;Also Energy; &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES( DAS_SCADA_Provider__c  , &quot;Ardexa&quot;), &quot;Ardexa; &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;Campbell Scientific&quot;), &quot;Campbell Scientific; &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;DAS/SCADA - Onsite&quot;), &quot;DAS/SCADA - Onsite; &quot;, &quot;&quot;) 
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;DAS/SCADA - Remote &quot;), &quot;DAS/SCADA - Remote; &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES( DAS_SCADA_Provider__c  , &quot;Draker Energy	&quot;), &quot;Draker Energy; &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;Egauge system&quot;), &quot;Egauge system; &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;ELM&quot;), &quot;ELM; &quot;, &quot;&quot;)
+ + TEXT( GB_Data_connection__c ) +  TEXT( Bluepoint_data_connection__c ) +   TEXT(Bluepoint_site_ID__c)  +   TEXT(Bluepoint_site_identifier__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Data connection details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

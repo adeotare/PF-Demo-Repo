@@ -83,7 +83,7 @@
                 <field>project_cloud__IsTemplate__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Position__c</field>
             </layoutItems>
         </layoutColumns>
@@ -421,12 +421,15 @@
     <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
-        <fields>Product_Category__c</fields>
-        <fields>Account__c</fields>
         <fields>Plant_Name__c</fields>
-        <fields>Plant__c</fields>
+        <fields>Product__c</fields>
+        <fields>Scope_Title__c</fields>
+        <fields>Scope_Definition__c</fields>
         <fields>MWp_Quantity__c</fields>
-        <fields>CREATED_DATE</fields>
+        <fields>PPT_ARR__c</fields>
+        <fields>Connection_Type__c</fields>
+        <fields>Trial__c</fields>
+        <fields>Installation_Commencement_Date__c</fields>
         <relatedList>Plant_Product_Transaction__c.Project_Name__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -439,9 +442,15 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Title__c</fields>
         <fields>Priority__c</fields>
         <fields>Status__c</fields>
         <fields>RECORDTYPE</fields>
+        <fields>CREATED_DATE</fields>
+        <fields>Expected_Resolution_Date__c</fields>
+        <fields>Internal_Owner__c</fields>
+        <fields>External_Owner__c</fields>
+        <fields>Additional_Decision_Makers__c</fields>
         <relatedList>RAID__c.Cloud_Coach_Project__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -456,17 +465,6 @@
         <relatedList>project_cloud__Stakeholder_Contact__c.project_cloud__Project__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <customButtons>project_cloud__Quick_Entry</customButtons>
-        <fields>NAME</fields>
-        <fields>project_cloud__Ticket_Name__c</fields>
-        <fields>project_cloud__Status__c</fields>
-        <fields>OWNER.ALIAS</fields>
-        <relatedList>project_cloud__Ticket__c.project_cloud__Project__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <relatedList>RelatedEntityHistoryList</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>NAME</fields>
         <fields>Internal_Status__c</fields>
         <fields>External_Status__c</fields>
@@ -476,13 +474,19 @@
         <relatedList>project_cloud__Project__c.Related_Projects__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <relatedList>RelatedFileList</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>NAME</fields>
         <fields>Equipment_Type__c</fields>
         <fields>Quantity__c</fields>
+        <fields>Data_connection_details__c</fields>
+        <fields>Data_connection_notes__c</fields>
+        <fields>Notes__c</fields>
         <relatedList>Equipment__c.Project__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedFileList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedEntityHistoryList</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
