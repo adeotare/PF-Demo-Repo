@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>53.0</apiVersion>
-    <decisions>
-        <name>Update_as_per_Quote_id</name>
-        <label>Update as per Quote id</label>
-        <locationX>483</locationX>
-        <locationY>530</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>If_ID_is_not_Null</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_record_id_of_order.Id</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_record_for_Order</targetReference>
-            </connector>
-            <label>If ID is not Null</label>
-        </rules>
-    </decisions>
     <description>REQ:3030</description>
     <interviewLabel>Oppurnity: {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opportunity: Bill to account &amp; Contact copy from opportunity to order</label>
@@ -46,68 +24,81 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get_record_id_of_order</name>
-        <label>Get record id of order</label>
-        <locationX>501</locationX>
-        <locationY>371</locationY>
+        <name>Get_Opportunity</name>
+        <label>Get Opportunity</label>
+        <locationX>487</locationX>
+        <locationY>527</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Update_as_per_Quote_id</targetReference>
+            <targetReference>Update_Fields_Bill_to_Contact_and_Account</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>SBQQ__Quote__c</field>
+            <field>SBQQ__PrimaryQuote__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.SBQQ__PrimaryQuote__r.Id</elementReference>
+                <elementReference>Get_Quote.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Order</object>
+        <object>Opportunity</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <recordUpdates>
-        <name>Update_record_for_Order</name>
-        <label>Update record for Order</label>
-        <locationX>525</locationX>
-        <locationY>738</locationY>
+    <recordLookups>
+        <name>Get_Quote</name>
+        <label>Get Quote</label>
+        <locationX>466</locationX>
+        <locationY>369</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Opportunity</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_record_id_of_order.Id</elementReference>
+                <elementReference>$Record.SBQQ__Quote__c</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>SBQQ__Quote__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Fields_Bill_to_Contact_and_Account</name>
+        <label>Update Fields Bill to Contact and Account</label>
+        <locationX>478</locationX>
+        <locationY>718</locationY>
         <inputAssignments>
             <field>BillToContactId</field>
             <value>
-                <elementReference>Get_record_id_of_order.Opportunity.Bill_To_Contact__c</elementReference>
+                <elementReference>Get_Opportunity.Bill_To_Contact__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Bill_To_Account__c</field>
             <value>
-                <elementReference>Get_record_id_of_order.Opportunity.Bill_To_Account__c</elementReference>
+                <elementReference>Get_Opportunity.Bill_To_Account__c</elementReference>
             </value>
         </inputAssignments>
-        <object>Order</object>
+        <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
         <locationX>373</locationX>
         <locationY>48</locationY>
         <connector>
-            <targetReference>Get_record_id_of_order</targetReference>
+            <targetReference>Get_Quote</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>SBQQ__PrimaryQuote__c</field>
+            <field>SBQQ__Quote__c</field>
             <operator>IsNull</operator>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
-        <object>Opportunity</object>
+        <object>Order</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
