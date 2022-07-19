@@ -230,6 +230,7 @@ public with sharing class PlantProductController {
     @description
     Based on the Unit of measure associated with the Product on the quote line, calculate the quantity (e.g. number of sites,
     MWp, MWh etc) and update the quote line with the quantity
+    Exclude Plants that are removed as part of the Amendment Action or Renewal Action
     @param quote line id
     */
     @AuraEnabled
@@ -238,11 +239,11 @@ public with sharing class PlantProductController {
         Decimal sumOfMWp = 0;
         SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED Limit 1 FOR UPDATE];
         // List<Plant_Product_Transaction__c> ppt =[SELECT Plant__r.Plant__c from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId];
-        List<Plant_Product_Transaction__c> ppt =[SELECT Quote_Line_Quantity__c, Plant__r.Plant__r.MWp__c from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId WITH SECURITY_ENFORCED];
+        List<Plant_Product_Transaction__c> ppt =[SELECT Quote_Line_Quantity__c, Plant__r.Plant__r.MWp__c from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId AND Status__c != 'Decommissioned' WITH SECURITY_ENFORCED];
+        System.debug('inside Quantity calculation method');
         System.debug('Total records from PPT whose quantity we are calculating is '+ppt.size());
-        System.debug('inside Quantity calculation');
         
-        
+        /* Nitin - 18July - commenting this code till we do not start to handle Products with UoM as MWh
         if(quoteLine.SBQQ__Product__r.QuantityUnitOfMeasure == 'MWh (EnCap)'){
             for(Plant_Product_Transaction__c ap: ppt){
                 // sumOfMWH =sumOfMWH + ap.Plant__r.Plant_MWH__c.intValue();
@@ -259,6 +260,7 @@ public with sharing class PlantProductController {
                                 +string.valueOf(ex.getLineNumber()) +ex.getTypeName() +string.valueOf(ex.getCause()) +ex.getMessage() +ex.getStackTraceString());
             }
         }
+        Nitin - 18 July - */
         
         if(quoteLine.SBQQ__Product__r.QuantityUnitOfMeasure == 'MWp'){
             for(Plant_Product_Transaction__c ap: ppt) {
@@ -309,7 +311,7 @@ public with sharing class PlantProductController {
        
 
        // Added by Dhiraj  --Start
-       // List pPTaddedlist contains all selected products. Same added in query 
+       // List pPTaddedlist contains all Plants on the Quoteline. Same added in query 
         list<Plant_Product_Transaction__c> pPTaddlist = [SELECT Id,Plant_Name__c, Name,Plant__c, Account__r.Name,Plant__r.Name,Plant__r.Plant_MWH__c,Plant__r.Plant_MWP__c, Plant__r.Plant_Country__c,Plant__r.Plant__r.Number_of_Turbines__c, Plant__r.Asset_Class__c From Plant_Product_Transaction__c where Quote_Line__c =: qLineItemId AND Status__c !='Decommissioned' WITH SECURITY_ENFORCED];  
         list <string> pPTaddedlist=new List<string>();
         for(Plant_Product_Transaction__c selectedPPT :pPTaddlist){
@@ -324,7 +326,6 @@ public with sharing class PlantProductController {
                 Plant__r.Asset_Class__c 
                 From Account_Plant__c
                 WHERE Account__r.Id = :quoteLine.SBQQ__Quote__r.SBQQ__Account__c  AND Id NOT IN: pPTaddedlist AND Status__c='Active' WITH SECURITY_ENFORCED];
-
         
     }
 
@@ -411,7 +412,7 @@ public with sharing class PlantProductController {
     public static void UpdateAllPlantRecordsWithSamePrice(String qLineItemId, Decimal contractPricePerMSA) {
         System.debug('Entered function UpdateAllPlantRecordsWithSamePrice');
         // get the list of all PPT Lines
-        List<Plant_Product_Transaction__c> pptRecordList =[SELECT Unit_Price_After_Volume_Discount__c from Plant_Product_Transaction__c where Quote_Line__c =: qLineItemId WITH SECURITY_ENFORCED];
+        List<Plant_Product_Transaction__c> pptRecordList =[SELECT Unit_Price_After_Volume_Discount__c from Plant_Product_Transaction__c where Quote_Line__c =: qLineItemId AND Status__c != 'Decommissioned' WITH SECURITY_ENFORCED];
 
         for(Plant_Product_Transaction__c pptRecord: pptRecordList){
             pptRecord.Unit_Price_After_Volume_Discount__c = contractPricePerMSA;
@@ -459,7 +460,7 @@ public with sharing class PlantProductController {
                 
                 List<Plant_Product_Transaction__c> pptList =[SELECT Quote_Line_Quantity__c, Plant__r.Plant__r.MWp__c, Plant__r.Plant__r.Name, Account__c, Addl_Discount_Percent__c, Contracted_MW_Unit_List_Price__c, List_Unit_Price__c, Net_Unit_Price__c, Unit_Price_After_Volume_Discount__c, Discount_Tier__c  
                     from Plant_Product_Transaction__c 
-                    where Quote_Line__c =: quoteLineId WITH SECURITY_ENFORCED];
+                    where Quote_Line__c =: quoteLineId AND Status__c != 'Decommissioned' WITH SECURITY_ENFORCED];
                 System.debug('Total records from PPT whose prices we are calculating is '+pptList.size());
                 Decimal CurrentMWForPricing = ActiveMW;             // Start with the value of Active MW
                 Integer noOfTiers = swDiscountTiersList.size();     // total number of discount tiers
@@ -573,7 +574,7 @@ public with sharing class PlantProductController {
                 
                 List<Plant_Product_Transaction__c> pptList =[SELECT MWp_Quantity__c, Plant__r.Plant__r.MWp__c, Plant__r.Plant__r.Name, Account__c, Addl_Discount_Percent__c, Contracted_MW_Unit_List_Price__c, List_Unit_Price__c, Net_Unit_Price__c, Unit_Price_After_Volume_Discount__c, Discount_Tier__c  
                     from Plant_Product_Transaction__c 
-                    where Quote_Line__c =: quoteLineId WITH SECURITY_ENFORCED];
+                    where Quote_Line__c =: quoteLineId AND Status__c != 'Decommissioned' WITH SECURITY_ENFORCED];
                 System.debug('Total records from PPT whose Implementation prices we are calculating is '+pptList.size());
                 Integer noOfTiers = ImplBracketPriceTiersList.size();     // total number of Implementation brackets
                 Decimal CurrentMWForPricing = 0;
@@ -656,7 +657,7 @@ public with sharing class PlantProductController {
           // get all the PPT records with this Quoteline ID
         List<Plant_Product_Transaction__c> pptList =[SELECT Unit_Price_After_Volume_Discount__c, Contracted_MW_Unit_List_Price__c, Quote_Line_Quantity__c,  Net_Unit_Price__c, Net_Total_Price__c  
                     from Plant_Product_Transaction__c 
-                    where Quote_Line__c =: quoteLineId WITH SECURITY_ENFORCED];
+                    where Quote_Line__c =: quoteLineId AND Status__c != 'Decommissioned' WITH SECURITY_ENFORCED];
                 System.debug('Total records from PPT whose Net Price is going to be updated is '+pptList.size());  
         if (pptList.size() == 0)
             return;
