@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Approvals</fullName>
+    <columns>NAME</columns>
+    <columns>Quote__c</columns>
+    <columns>sbaa__Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Opportunity_Close_Date__c</columns>
+    <columns>sbaa__Rule__c</columns>
+    <columns>Approval_Justification__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>My Approvals</label>
+</ListView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracted_Prices_for_Account</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Contracted Prices for Account</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>https://pwrfactors--pfdev.lightning.force.com/lightning/r/Report/00O7j000000ZbJSEA0/view?queryScope=userFolders</url>
+</WebLink>

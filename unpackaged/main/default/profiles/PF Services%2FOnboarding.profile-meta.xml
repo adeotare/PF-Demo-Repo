@@ -6552,8 +6552,18 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>sbaa__Approval__c.Approval_Justification__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>sbaa__Approval__c.MSA_Contract__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>sbaa__Approval__c.Opportunity_Close_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
