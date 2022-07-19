@@ -19,7 +19,7 @@ const COLS=[
 	{label:'Plant',fieldName:'PlantName', type:'text'}, */
 	{label:'MWh',fieldName:'PlantMWH', type:'text', cellAttributes: { alignment: 'center' }},
 	{label:'MWp',fieldName:'PlantMWP', type:'text', cellAttributes: { alignment: 'center' }},
-	{label:'# of Turbines',fieldName:'NumberofTurbines', type:'text', cellAttributes: { alignment: 'center' }}
+	//{label:'# of Turbines',fieldName:'NumberofTurbines', type:'text', cellAttributes: { alignment: 'center' }}
 	
 	
   ];
@@ -34,7 +34,7 @@ const AccountPlantCOLS=[
   {label:'Asset Class',fieldName:'AssetClass', type:'text', cellAttributes: { alignment: 'center' }},
   {label:'MWh',fieldName:'PlantMWH', type:'text', cellAttributes: { alignment: 'center' }},
 	{label:'MWp',fieldName:'PlantMWP', type:'text', cellAttributes: { alignment: 'center' }},
-	{label:'# of Turbines',fieldName:'NumberofTurbines', type:'text', cellAttributes: { alignment: 'center' }},
+	//{label:'# of Turbines',fieldName:'NumberofTurbines', type:'text', cellAttributes: { alignment: 'center' }},
 /* 	{label:'Plant Asset Class',fieldName:'PlantAssetClass', type:'text'} */
 	
   ];
@@ -87,7 +87,7 @@ export default class PlatProductDataTable extends LightningElement {
 				  PlantMWH :  row.Plant__r.Plant_MWH__c,
 				  PlantMWP : row.Plant__r.Plant_MWP__c,
 				  PlantCountry : row.Plant__r.Plant_Country__c,
-				  PlantNoOfDevices : row.Plant__r.Number_of_Turbines__c,
+				  //PlantNoOfDevices : row.Plant__r.Number_of_Turbines__c,
 				  // PlantRenewableType : row.Plant__r.Renewable_Type__c
           AssetClass : row.Plant__r.Asset_Class__c
                 
@@ -111,7 +111,7 @@ export default class PlatProductDataTable extends LightningElement {
 		  PlantCountry : row.Plant__r.Country__c,
 		  PlantMWP : row.Plant__r.MWp__c,
 		  PlantMWH : row.Plant__r.MW_Energy_Capacity_MWh__c,
-		  PlantDevices : row.Plant__r.Number_of_Turbines__c,
+		  //PlantDevices : row.Plant__r.Number_of_Turbines__c,
 		  AssetClass : row.Plant__r.Asset_Class__c,
       // PlantRenewableType : row.Renewable_Type__c    
       }));
@@ -177,10 +177,11 @@ export default class PlatProductDataTable extends LightningElement {
       //console.log( 'selRows.length: ' + selRows.length);
       if(selRows.length>0){
         this.deleteButtontrue = false;
+				return refreshApex(this.plantListdata);
       }else{
         this.deleteButtontrue = true;
       }
-      
+       
     }
 
     handleSelectAccountPlant(event){
@@ -189,6 +190,7 @@ export default class PlatProductDataTable extends LightningElement {
       //console.log( 'selRows.length: ' + selRows.length);
       if(selRows.length>0){
         this.saveButtontrue = false;
+				return refreshApex(this.plantListdata);
       }else{
         this.saveButtontrue = true;
       }
