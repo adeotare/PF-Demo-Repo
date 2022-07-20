@@ -6620,6 +6620,9 @@
         <layout>Contact-Contact Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Contract-Contract Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Core_Attribute__c-Core Attribute Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -7498,6 +7501,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AmendmentQuoteProcessHelper</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ApproveCrmProject</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -7507,6 +7514,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ProgramController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RenewableQuoteProcessHelper</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
