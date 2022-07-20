@@ -35,6 +35,7 @@
             <value>
                 <fullName>Custom</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Custom</label>
             </value>
         </valueSetDefinition>
