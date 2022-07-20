@@ -126,7 +126,7 @@ public with sharing class PlantProductController {
             return null;  // If number of plants to be added is zero, then return
 
         List<Plant_Product_Transaction__c> pList = new List<Plant_Product_Transaction__c>();
-        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__Discount__c, SBQQ__Quote__r.SBQQ__Type__c, SBQQ__Product__r.ID,SBQQ__ListPrice__c, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__SpecialPrice__c, SBQQ__EndDate__c, SBQQ__Quote__c, SBQQ__Quote__r.CurrencyIsoCode, SBQQ__Quote__r.SBQQ__StartDate__c, SBQQ__Quote__r.SBQQ__EndDate__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__AdditionalDiscountAmount__c, SBQQ__NetTotal__c, SBQQ__Discount__c, SBQQ__Quote__r.SBQQ__Type__c, SBQQ__Product__r.ID,SBQQ__ListPrice__c, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__SpecialPrice__c, SBQQ__EndDate__c, SBQQ__Quote__c, SBQQ__Quote__r.CurrencyIsoCode, SBQQ__Quote__r.SBQQ__StartDate__c, SBQQ__Quote__r.SBQQ__EndDate__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
          
         for(Account_Plant__c ap: plantList){
             // For every new plant that is added, create a record in the PPT table and populate it's fields
@@ -220,7 +220,43 @@ public with sharing class PlantProductController {
                 updatePricingForQuoteLineInPPT(quoteLineId);    
                 updatePricingfromPPTToQuoteline (quoteLine, quoteLineId);
             }
+
+        // For Products for whom we are automating pricing - MWp and Site based - adjust the additional discount
+        // get Net Total from Quoteline
+        // Decimal quoteLineNetTotal = quoteLine.SBQQ__NetTotal__c;
+        // Decimal quoteLineQuantity = quoteLine.SBQQ__Quantity__c;
+            Decimal pptQuoteLineNetTotal = 0;
+            List<Plant_Product_Transaction__c> pptList =[SELECT Net_Total_Price__c from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId AND Status__c != 'Decommissioned' WITH SECURITY_ENFORCED];    
+            for(Plant_Product_Transaction__c pptRecord: pptList){
+                pptQuoteLineNetTotal += pptRecord.Net_Total_Price__c;
+            }
+
+            quoteLine = [SELECT SBQQ__Discount__c, SBQQ__NetTotal__c, SBQQ__Quantity__c from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+            System.debug ('While calculating the additional discount for rounding the PPT Quote Line Net Total is -' +pptQuoteLineNetTotal);
+            System.debug ('While calculating the additional discount for rounding the Quote Line Net Total is -' +quoteLine.SBQQ__NetTotal__c);
+            System.debug ('While calculating the additional discount for rounding the total Quote Line Quantity is -' +quoteLine.SBQQ__Quantity__c);
+            
+            If (quoteLine.SBQQ__Quantity__c >0){
+                quoteLine.SBQQ__Discount__c = ((quoteLine.SBQQ__NetTotal__c - pptQuoteLineNetTotal) / quoteLine.SBQQ__Quantity__c)/100;
+                System.debug ('The additional discount for rounding is -' +quoteLine.SBQQ__Discount__c);
+            
+                try {
+                    update quoteLine;
+                }
+                catch(Exception ex) {
+                    System.debug('Error updating MWh quantity on quote line'
+                                +string.valueOf(ex.getLineNumber()) +ex.getTypeName() +string.valueOf(ex.getCause()) +ex.getMessage() +ex.getStackTraceString());
+                }
+            }
+
         }
+
+        
+        
+    
+
+
+
 
         return pList;
                  
