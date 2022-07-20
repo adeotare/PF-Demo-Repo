@@ -7506,6 +7506,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AmendmentQuoteProcessHelper</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ApproveCrmProject</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -7515,6 +7519,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ProgramController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RenewableQuoteProcessHelper</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
