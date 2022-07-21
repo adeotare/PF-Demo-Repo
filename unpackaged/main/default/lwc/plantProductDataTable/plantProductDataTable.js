@@ -47,6 +47,7 @@ export default class PlatProductDataTable extends LightningElement {
     @track result;
     @track deleteButtontrue=true;
     @track saveButtontrue=true;
+		@track accountplantListdata;
     cols=COLS; 
     acccols = AccountPlantCOLS;
 	@track data = [];
@@ -93,6 +94,8 @@ export default class PlatProductDataTable extends LightningElement {
                 
                 }));
 			//this.data = currentData;
+				 
+				
 		}else if(result.error) {
             window.console.log(result.error);
         }
@@ -103,6 +106,7 @@ export default class PlatProductDataTable extends LightningElement {
     //@wire(getAllAccountPlants) accountplantList;
     @wire(getAllAccountPlants,{qLineItemId:'$recordId'})
     fetchaccountplantList(result){
+		this.accountplantListdata=result;
       if(result.data){
         this.accountplantList = result.data.map((row) => ({
           ...row,
@@ -113,17 +117,26 @@ export default class PlatProductDataTable extends LightningElement {
 		  PlantMWH : row.Plant__r.MW_Energy_Capacity_MWh__c,
 		  //PlantDevices : row.Plant__r.Number_of_Turbines__c,
 		  AssetClass : row.Plant__r.Asset_Class__c,
+						
       // PlantRenewableType : row.Renewable_Type__c    
       }));
+					
       }
+					
+					
+          return refreshApex(this.plantListdata);
     }
     openModal() {
         // to open modal set isModalOpen tarck value as true
         this.isModalOpen = true;
+				
+				return refreshApex(this.accountplantListdata);
     }
     closeModal() {
         // to close modal set isModalOpen tarck value as false
         this.isModalOpen = false;
+				
+				return refreshApex(this.accountplantListdata);
     }
     submitDetails() {
         var selectedRecords =  
@@ -143,7 +156,7 @@ export default class PlatProductDataTable extends LightningElement {
               mode: 'dismissable'
           });
           this.dispatchEvent(evt);
-          return refreshApex(that.plantListdata);
+						 return refreshApex(this.plantListdata);
 
         })  
         .catch(error=>{  
@@ -164,7 +177,8 @@ export default class PlatProductDataTable extends LightningElement {
             mode: 'dismissable'
         });
         this.dispatchEvent(evt);
-        return refreshApex(this.plantListdata);  
+					return refreshApex(this.plantListdata);  
+         
       })  
       .catch(error=>{  
         alert('Could not delete'+JSON.stringify(error));  
@@ -173,11 +187,11 @@ export default class PlatProductDataTable extends LightningElement {
 
     handleSelectPlantProduct(event){
       const selRows = event.detail.selectedRows;
-      console.log( 'Selected Rows are ' + JSON.stringify(selRows));
+      console.log( 'Selected Rows are 2@ ' + JSON.stringify(selRows));
       //console.log( 'selRows.length: ' + selRows.length);
       if(selRows.length>0){
         this.deleteButtontrue = false;
-				return refreshApex(this.plantListdata);
+			//	return refreshApex(this.fetchaccountplantList);
       }else{
         this.deleteButtontrue = true;
       }
@@ -186,7 +200,7 @@ export default class PlatProductDataTable extends LightningElement {
 
     handleSelectAccountPlant(event){
       const selRows = event.detail.selectedRows;
-      console.log( 'Selected Rows are ' + JSON.stringify(selRows));
+      console.log( 'Selected Rows are1  ' + JSON.stringify(selRows));
       //console.log( 'selRows.length: ' + selRows.length);
       if(selRows.length>0){
         this.saveButtontrue = false;
@@ -211,7 +225,7 @@ export default class PlatProductDataTable extends LightningElement {
 
       closeQuickAction() {
         updateQuoteLineItem({quoteLineId: this.recordId}).then(result =>{
-
+         
         }).catch(error => {
 
         });
