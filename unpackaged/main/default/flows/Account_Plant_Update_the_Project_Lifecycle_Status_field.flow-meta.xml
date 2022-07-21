@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <name>Assigning_the_value_in_Project_Lifecycle_Status_Field</name>
+        <label>Assigning the value in Project Lifecycle Status Field</label>
+        <locationX>395</locationX>
+        <locationY>309</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Project_Lifecycle_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <interviewLabel>Account Plant : Update the Project Lifecycle Status field {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account Plant : Update the Project Lifecycle Status field</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>373</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Assigning_the_value_in_Project_Lifecycle_Status_Field</targetReference>
+        </connector>
+        <object>Account_Plant__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
