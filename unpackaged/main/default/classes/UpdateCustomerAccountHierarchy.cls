@@ -24,6 +24,14 @@ public class UpdateCustomerAccountHierarchy {
 				childRecord.Account_in_Hierarchy_is_Customer__c = true;               
                 acctsToUpdates.add(childRecord);
             }
+        } else {
+            if(ultimateAccountId != null){
+                allChildren.add(new Account(Id = ultimateAccountId));
+                for (Account childRecord : allChildren){
+                    childRecord.Account_in_Hierarchy_is_Customer__c = true;               
+                    acctsToUpdates.add(childRecord);
+                }
+            }
         }
         if(acctsToUpdates.size()>0){
             system.debug('------acctsToUpdates------'+acctsToUpdates);
