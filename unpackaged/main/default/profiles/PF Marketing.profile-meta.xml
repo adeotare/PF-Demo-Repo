@@ -6258,6 +6258,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>SBQQ__QuoteLine__c.Quantity_For_Discount_Tier__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>SBQQ__QuoteLine__c.Quantity_Unit_Of_Measure__c</field>
         <readable>true</readable>
     </fieldPermissions>
