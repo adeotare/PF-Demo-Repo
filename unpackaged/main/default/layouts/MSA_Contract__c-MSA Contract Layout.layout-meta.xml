@@ -474,15 +474,39 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>SBQQ__Product__c</fields>
+        <fields>CURRENCY_ISO_CODE</fields>
+        <fields>Product_List_Price__c</fields>
+        <fields>SBQQ__Price__c</fields>
+        <fields>Contracted_Price_Discount_Percentage__c</fields>
+        <fields>SBQQ__EffectiveDate__c</fields>
+        <fields>Same_As_List_Price__c</fields>
+        <fields>SBQQ__DiscountSchedule__c</fields>
+        <fields>SBQQ__Discount__c</fields>
         <relatedList>SBQQ__ContractedPrice__c.MSA_Contract__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>MSA_Implementation_Bracket_Price__c.MSA_Contract__c</relatedList>
+        <fields>Description__c</fields>
+        <fields>Product__c</fields>
+        <fields>Pricing_Tier__c</fields>
+        <fields>Lower_Bound__c</fields>
+        <fields>Upper_Bound__c</fields>
+        <fields>Discount__c</fields>
+        <fields>Discount_Amount__c</fields>
+        <fields>Asset_Class__c</fields>
+        <relatedList>MSA_Software_Discount_Tier_Price__c.MSA_Contract__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>MSA_Software_Discount_Tier_Price__c.MSA_Contract__c</relatedList>
+        <fields>Description__c</fields>
+        <fields>Product__c</fields>
+        <fields>Pricing_Tier__c</fields>
+        <fields>Lower_Bound__c</fields>
+        <fields>Upper_Bound__c</fields>
+        <fields>Fixed_Price__c</fields>
+        <fields>Asset_Class__c</fields>
+        <relatedList>MSA_Implementation_Bracket_Price__c.MSA_Contract__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
