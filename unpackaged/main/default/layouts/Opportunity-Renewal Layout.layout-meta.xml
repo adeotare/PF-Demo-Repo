@@ -380,7 +380,6 @@
         <excludeButtons>AddAccTeamMemberOnOpp</excludeButtons>
         <excludeButtons>AddAccountTeam</excludeButtons>
         <fields>MemberName</fields>
-        <fields>OppAccessLevel</fields>
         <fields>TeamMemberRole</fields>
         <relatedList>RelatedOpportunitySalesTeam</relatedList>
     </relatedLists>

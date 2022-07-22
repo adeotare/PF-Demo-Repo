@@ -59,6 +59,10 @@
                 <behavior>Required</behavior>
                 <field>CurrencyIsoCode</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Territory__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -203,6 +207,10 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>SBQQ__Quote__c</fields>
+        <fields>SBQQ__QuoteTemplate__c</fields>
+        <fields>SBQQ__NetAmount__c</fields>
+        <fields>SBQQ__SignatureStatus__c</fields>
         <relatedList>SBQQ__QuoteDocument__c.SBQQ__Opportunity__c</relatedList>
     </relatedLists>
     <relatedLists>

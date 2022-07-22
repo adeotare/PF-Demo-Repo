@@ -370,7 +370,6 @@
         <excludeButtons>AddAccTeamMemberOnOpp</excludeButtons>
         <excludeButtons>AddAccountTeam</excludeButtons>
         <fields>MemberName</fields>
-        <fields>OppAccessLevel</fields>
         <fields>TeamMemberRole</fields>
         <relatedList>RelatedOpportunitySalesTeam</relatedList>
     </relatedLists>
@@ -395,12 +394,6 @@
         <fields>SALES.ACCOUNT.NAME</fields>
         <fields>CONTRACT.STATUS</fields>
         <relatedList>Contract.SBQQ__RenewalOpportunity__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>project_cloud__Start__c</fields>
-        <fields>project_cloud__End__c</fields>
-        <relatedList>project_cloud__Project__c.ccpe_ocp__Opportunity__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
