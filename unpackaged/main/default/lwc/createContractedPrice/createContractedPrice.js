@@ -2,6 +2,7 @@ import { LightningElement, track, api, wire } from 'lwc';
 import getAllAccounts from '@salesforce/apex/AccountForMSAContractedPrices.fetchAccountName';
 import getCurrency from '@salesforce/apex/AccountForMSAContractedPrices.fetchCurrency';
 import getPriceBook from '@salesforce/apex/AccountForMSAContractedPrices.fetchPriceBook';
+import createNewContractPrice from '@salesforce/apex/AccountForMSAContractedPrices.createNewContractPrice';
 import getContractedPriceRecords from '@salesforce/apex/AccountForMSAContractedPrices.contractedPricesRecord';
 import getPriceBookRecords from '@salesforce/apex/AccountForMSAContractedPrices.priceBookRecords';
 import updateContractPrice from '@salesforce/apex/AccountForMSAContractedPrices.updateContractedPrices';
@@ -10,6 +11,7 @@ import { CloseActionScreenEvent } from 'lightning/actions';
 import { getRecordNotifyChange } from 'lightning/uiRecordApi';
 import { refreshApex } from '@salesforce/apex';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+
 
 export default class CreateContractedPrice extends LightningElement {
   cols = [
@@ -38,6 +40,7 @@ export default class CreateContractedPrice extends LightningElement {
   @track deleteButtontrue = true;
   @track contractedPriceData;
   @track allPriceBookData;
+
   draftValues = [];
 
   data = [];
@@ -75,12 +78,54 @@ export default class CreateContractedPrice extends LightningElement {
     }
   }
 
+
+
+@wire(createNewContractPrice, { msaRecId: '$recordId' })
+  contracted1;
+  async refreshClicked(event) {
+    
+    // Prepare the record IDs for getRecordNotifyChange()
+    const notifyChangeIds = this.recordId;
+    
+    try {
+      // Pass edited fields to the updateContacts Apex controller
+      //alert(this.recordId);
+      const result = await createNewContractPrice({ msaRecId: this.recordId });
+      console.log(JSON.stringify("Apex update result: " + result));
+
+      this.dispatchEvent(
+        new ShowToastEvent({
+          title: 'Success',
+          message: result,
+          variant: 'success'
+        })
+      );
+
+      // Refresh LDS cache and wires
+//      getRecordNotifyChange(notifyChangeIds);
+      this.isModalOpen = false;
+      // Display fresh data in the datatable
+      refreshApex(this.contractedPriceData);
+      refreshApex(this.allPriceBookData);
+
+    } catch (error) {
+      this.dispatchEvent(
+        new ShowToastEvent({
+          title: 'Error updating or refreshing records',
+          message: error.body.message,
+          variant: 'error'
+        })
+      );
+    };
+  }
+
+	
+
   @wire(getContractedPriceRecords, { RecId: '$recordId' })
   contractedPriceRecord(result) {
-    this.contractedPriceData = result;
+    this.contractedPriceData = result;    
     if (result.data) {
-      this.contractedPriceListdata = result.data.map((row) => ({
-        ...row,
+      this.contractedPriceListdata = result.data.map((row) => ({ ...row,
         ProductName: row.SBQQ__Product__r.Name,
         ProductCode: row.SBQQ__Product__r.ProductCode,
         ListPrice: row.Product_List_Price__c,
@@ -108,6 +153,7 @@ export default class CreateContractedPrice extends LightningElement {
       console.log(result.error);
     }
   }
+
 
   handleSelectContractedPrice(event) {
     const selRows = event.detail.selectedRows;

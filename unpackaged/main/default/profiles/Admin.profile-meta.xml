@@ -974,6 +974,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.isContractPriceCreated__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.of_Open_Deals__c</field>
         <readable>true</readable>
     </fieldPermissions>

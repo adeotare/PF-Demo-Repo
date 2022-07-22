@@ -5,6 +5,7 @@
     <masterLabel>CreateContractedPrices</masterLabel>
     <targets>
         <target>lightning__RecordAction</target>
+        
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__RecordAction">

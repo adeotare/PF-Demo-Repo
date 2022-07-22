@@ -17,10 +17,16 @@
                 <div class="header-column">
                     <p><b>Pricebook :</b> {priceBookName}</p>
                 </div>
-            </lightning-layout-item>
+            </lightning-layout-item>            
+            <div class="slds-float_right">
+            <button class="slds-input__icon slds-button slds-button_icon iconheight" onclick={refreshClicked}>
+                <lightning-icon icon-name="action:refresh" size="x-small" alternative-text="icon" ></lightning-icon>
+            </button>
+        </div>       
+            
         </lightning-layout>
         <div class="slds-p-around_x-medium" style="height:250px;">
-            <lightning-datatable min-column-width="150" max-column-width="300" data={contractedPriceListdata}
+            <lightning-datatable min-column-width="150" onclick={handleClick} max-column-width="300" data={contractedPriceListdata}
                 columns={cols} key-field="Id" onrowselection={handleSelectContractedPrice}>
             </lightning-datatable>
         </div>
