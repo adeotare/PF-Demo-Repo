@@ -5,9 +5,11 @@ cmp.set('v.Columns', [  {label: 'Name', fieldName: 'linkName', type: 'url',
         typeAttributes: {label: { fieldName: 'Name' }, target: '_blank'}},
 
  //{ label: 'Project Name', fieldName: 'Project_Name__c ', type: 'text' },
-{ label: 'Project Type', fieldName: 'Project_Type__c', type: 'text' },
+//{ label: 'Project Type', fieldName: 'Project_Type__c', type: 'text' },
 //{ label: 'Project Visibility', fieldName: 'Project_visibility__c', type: 'text' },
-{ label: 'Product ', fieldName: 'Product__c ', type: 'text' }
+{ label: 'Product ', fieldName: 'Product__c ', type: 'text' },
+{ label: 'Project Status ', fieldName: 'External_Status__c', type: 'text' },
+{ label: 'Installation Commencement Date ', fieldName: 'Installation_Commencement_Date__c ', type: 'text' }
 
 ]);
     
