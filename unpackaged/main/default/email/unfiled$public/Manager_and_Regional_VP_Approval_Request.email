@@ -1,0 +1,31 @@
+<messaging:emailTemplate subject="Manager and Regional VP Approval Request Email" recipientType="User" relatedToType="sbaa__Approval__c">
+<messaging:htmlEmailBody >
+<html>
+<body>
+<p>
+Hello {!recipient.name}, 
+</p>
+<p>
+You have been requested to approve &nbsp;Quote &nbsp;<apex:outputLink value="/{!relatedTo.Quote__r.id}">({!relatedTo.Quote__r.name})</apex:outputLink> of Opportunity &nbsp;<apex:outputLink value="/{!relatedTo.Quote__r.SBQQ__Opportunity2__r.id}">({!relatedTo.Quote__r.SBQQ__Opportunity2__r.name})</apex:outputLink>
+ As the Order Subtype on Opportunity is Full Cancellation. To Approve/Reject record this record. Click on&nbsp;<apex:outputLink value="/{!relatedTo.id}"> Approve/Reject </apex:outputLink> link.
+</p>
+<p>
+You can also Approve/Reject this record by replying to this mail with one of these words in the first line of the email message: 
+[ Approve, Approved , Yes, Rejected, Reject, No ]<br></br>
+If replying via email, you can also add comments on the second line. Comments will be stores with the approval request in Salesforce org.
+</p>
+<p>
+<b>Quote Line Details :</b>
+</p>
+<c:ApprovalQuoteLinesComponent quote_Id="{!relatedTo.Quote__r.Id}"></c:ApprovalQuoteLinesComponent>
+<p>
+<br></br><br></br>
+Thanks,<br></br>
+{!relatedTo.Quote__r.Owner.Name}<br></br>
+{!relatedTo.Quote__r.Owner.Email}<br></br>
+</p>
+
+</body>
+</html>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>
