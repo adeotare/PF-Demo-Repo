@@ -114,6 +114,9 @@
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.SBQQ__Quote__c.DEC</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -160,14 +163,6 @@
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListContainer</componentName>
                 <identifier>force_relatedListContainer</identifier>
@@ -280,26 +275,16 @@
                 <componentName>ApprovalJustification</componentName>
                 <identifier>c_ApprovalJustification</identifier>
                 <visibilityRule>
-                    <booleanFilter>(1 OR 2 OR 3 OR 4) AND 5</booleanFilter>
+                    <booleanFilter>(1 OR 2) AND 3</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.Additional_Discount_from_Quote_LIne__c}</leftValue>
                         <operator>GT</operator>
                         <rightValue>0</rightValue>
                     </criteria>
                     <criteria>
-                        <leftValue>{!Record.Opty_Order_Subtype__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>1</rightValue>
-                    </criteria>
-                    <criteria>
                         <leftValue>{!Record.Trial__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>true</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.QL_Product_Category__c}</leftValue>
-                        <operator>GT</operator>
-                        <rightValue>1</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.RecordType.Name}</leftValue>
