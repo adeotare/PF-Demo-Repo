@@ -72,6 +72,18 @@
                 <behavior>Edit</behavior>
                 <field>Swap_Migration__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Product_Category__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Quantity_Unit_Of_Measure__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Quantity_For_Discount_Tier__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -81,10 +93,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>SBQQ__Number__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Quantity_Unit_Of_Measure__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -105,6 +113,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Annual_Recurring_Revenue__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>One_Time_Add_on__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -470,7 +482,7 @@
         <fields>Contracted_MW_Unit_List_Price__c</fields>
         <fields>Discount_Tier__c</fields>
         <fields>Unit_Price_After_Volume_Discount__c</fields>
-        <fields>Net_Price__c</fields>
+        <fields>Net_Total_Price__c</fields>
         <fields>Status__c</fields>
         <relatedList>Plant_Product_Transaction__c.Quote_Line__c</relatedList>
     </relatedLists>
