@@ -2688,6 +2688,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Equipment__c.Drive_Customer_Solution_Formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Equipment__c.Drive_Data_connection_Formula_Reference__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Equipment__c.Drive_OEM__c</field>
         <readable>true</readable>
@@ -2695,6 +2705,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Equipment__c.Drive_Solution_1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Equipment__c.Equipment_Summary__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5475,11 +5490,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Plant__c.DC_Capacity_Quoted__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Plant__c.Expected_Commercial_Operation_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Drive_Customer_Solution_Formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( INCLUDES(DAS_SCADA_Provider__c , &quot;Also Energy&quot;), &quot;Also Energy, &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES( DAS_SCADA_Provider__c  , &quot;Ardexa&quot;), &quot;Ardexa, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;Campbell Scientific&quot;), &quot;Campbell Scientific, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;DAS/SCADA - Onsite&quot;), &quot;DAS/SCADA - Onsite, &quot;, &quot;&quot;) 
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;DAS/SCADA - Remote&quot;), &quot;DAS/SCADA - Remote, &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES( DAS_SCADA_Provider__c  , &quot;Draker Energy&quot;), &quot;Draker Energy, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;Egauge system&quot;), &quot;Egauge system, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;ELM&quot;), &quot;ELM, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;FTP Server&quot;), &quot;FTP Server, &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES( DAS_SCADA_Provider__c  , &quot;Greenbyte&quot;), &quot;Greenbyte, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;GreenPowerMonitor&quot;), &quot;GreenPowerMonitor, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;Inaccess&quot;), &quot;Inaccess, &quot;, &quot;&quot;) 
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;Locus Energy&quot;), &quot;Locus Energy, &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES( DAS_SCADA_Provider__c  , &quot;MeteoControls&quot;), &quot;MeteoControls, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;Nant Energy&quot;), &quot;Nant Energy, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;none&quot;), &quot;none, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;OSI Soft PSI&quot;), &quot;OSI Soft PSI, &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES( DAS_SCADA_Provider__c  , &quot;Power Factors&quot;), &quot;Power Factors, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;Skytron&quot;), &quot;Skytron, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;SolarEdge&quot;), &quot;SolarEdge, &quot;, &quot;&quot;) 
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;SolrenView&quot;), &quot;SolrenView, &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES( DAS_SCADA_Provider__c  , &quot;Trimark&quot;), &quot;Trimark, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(DAS_SCADA_Provider__c , &quot;SOLV SCADA&quot;), &quot;SOLV SCADA, &quot;, &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Drive Customer Solution(Formula)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

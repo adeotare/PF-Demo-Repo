@@ -12,7 +12,7 @@ public with sharing class AddPPTControllerV2 {
      
         if(Plant_Product_Transaction__c.SObjectType.getDescribe().isAccessible()){
         	if(lstProjectAccnts.size()>0){
-                return [SELECT Id, Name ,Plant_Name__c , Status__c , MWp_Quantity__c From Plant_Product_Transaction__c where Plant__c =: lstProjectAccnts[0].Account_Plant__c AND Project_Name__c = null];
+                return [SELECT Id, Name ,Plant_Name__c , Status__c , MWp_Quantity__c From Plant_Product_Transaction__c where Plant__c =: lstProjectAccnts[0].Account_Plant__c AND Project_Name__c = null AND Status__c != 'Quoted'];
         	} else {
             	return lstPPT;
             }

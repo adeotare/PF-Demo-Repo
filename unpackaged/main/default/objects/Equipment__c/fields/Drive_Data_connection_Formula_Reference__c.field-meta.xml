@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Drive_Data_connection_Formula_Reference__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( INCLUDES(Drive_Solution_1__c , &quot;PF Gateway Interface&quot;), &quot;PF Gateway Interface, &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c  , &quot;Third-Party gateway Interface&quot;), &quot;Third-Party gateway Interface, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;Third-Party Server Interface&quot;), &quot;Third-Party Server Interface, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;API- AlsoEnergy&quot;), &quot;API- AlsoEnergy, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;API - Deck&quot;), &quot;API - Deck, &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c  , &quot;API - Draker&quot;), &quot;API - Draker, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;API - Drakerv7&quot;), &quot;API - Drakerv7, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;API - LocusEnergy&quot;), &quot;API - LocusEnergy, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;API - Egauge&quot;), &quot;API - Egauge, &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c  , &quot;API - Enphase&quot;), &quot;API - Enphase, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;API - Fronius&quot;), &quot;API - Fronius, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;API - GreenPowerMonitor&quot;), &quot;API - GreenPowerMonitor, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;API - Itron&quot;), &quot;API - Itron, &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;API - Noveda&quot;), &quot;API - Noveda, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;API - SEConnect&quot;), &quot;API - SEConnect, &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c  , &quot;API - SolarEdge&quot;), &quot;API - SolarEdge, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;API - SolrenView&quot;), &quot;API - SolrenView, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;FTP - General&quot;), &quot;FTP - General, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;FTP - Skytron/Drive&quot;), &quot;FTP - Skytron/Drive, &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c  , &quot;N3uron - Onsite&quot;), &quot;N3uron - Onsite, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;N3uron - MQTT&quot;), &quot;N3uron - MQTT, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;N3uron - Obvious AQS&quot;), &quot;N3uron - Obvious AQS, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;N3uron - REST API&quot;), &quot;N3uron - REST API, &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;OSI PI - Connector&quot;), &quot;OSI PI - Connector, &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c  , &quot;OSI PI - Direct Connect&quot;), &quot;OSI PI - Direct Connect, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;OSI PI - Campbel Scientific&quot;), &quot;OSI PI - Campbel Scientific, &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Drive_Solution_1__c , &quot;Kafka Connector - API&quot;), &quot;Kafka Connector - API, &quot;, &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Drive Data connection(Formula Reference)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

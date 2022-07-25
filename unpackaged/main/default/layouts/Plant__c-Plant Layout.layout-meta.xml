@@ -98,16 +98,12 @@
                 <field>Competitor_Owner__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Commercial_Operating_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Squid_Plant_Id__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Expected_Commercial_Operation_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
