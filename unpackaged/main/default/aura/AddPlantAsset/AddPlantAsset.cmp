@@ -56,14 +56,14 @@
           <div class="slds-media__figure">
             <span class="slds-icon_container" title="RAID__c">
               <lightning:icon iconName="custom:custom55" title="custom55" />
-              <span class="slds-assistive-text">RFI</span>
+              <span class="slds-assistive-text">RAID</span>
             </span>
           </div>
           <div class="slds-media__body">
             <div class="slds-page-header__name">
               <div class="slds-page-header__name-title">
                 <h1>
-                  <span class="slds-page-header__title slds-truncate" title="Mass Create RFIs">Mass Create RFIs</span>
+                  <span class="slds-page-header__title slds-truncate" title="Mass Create RAIDS">Mass Create RAIDS</span>
                 </h1>
               </div>
             </div>
@@ -92,7 +92,7 @@
             <div class="slds-form-element">
               <label class="slds-form-element__label">&nbsp;</label>
               <div class="slds-form-element__control">
-                <lightning:button label="Get Plant Assets" onclick="{!c.doShowPlantAsset}"
+                <lightning:button label="Get Account Plant" onclick="{!c.doShowPlantAsset}"
                   class="slds-button slds-button--brand" />
               </div>
             </div>
@@ -115,6 +115,19 @@
   </aura:if>
 
   <aura:if isTrue="{!v.showPlantAsset == true}">
+      <div class="slds-card__header">
+        <div class="slds-grid slds-grid_align-end">
+          <div class="slds-col" style="width: 14%">
+            <lightning:combobox label="Status" variant="label-inline" options="{!v.itemStatusOptions}"
+              value="{!v.itemStatus}">
+            </lightning:combobox>
+          </div>
+          <div class="slds-col">
+            <lightning:button label="Cancel" onclick="{!c.doCancelParent}" />
+            <lightning:button label="Create RAIDS" onclick="{!c.next}" class="slds-button slds-button--brand" />
+          </div>
+        </div>
+      </div>
     <div class="slds-card slds-m-vertical--medium">
       <div class="slds-card__header slds-grid grid--flex-spread">
         <h2 class="slds-text-heading--small slds-truncate"> Select Customer Plant Assets</h2>
@@ -203,7 +216,7 @@
           </div>
           <div class="slds-col">
             <lightning:button label="Cancel" onclick="{!c.doCancelParent}" />
-            <lightning:button label="Create RAIDs" onclick="{!c.next}" class="slds-button slds-button--brand" />
+            <lightning:button label="Create RAIDS" onclick="{!c.next}" class="slds-button slds-button--brand" />
           </div>
         </div>
         <div class="slds-clearfix">
