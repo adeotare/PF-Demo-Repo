@@ -4,7 +4,7 @@
     <description>The total amount of the Product currently owned by this Account.</description>
     <externalId>false</externalId>
     <inlineHelpText>The total amount of the Product currently owned by this Account.</inlineHelpText>
-    <label>Active Quantity</label>
+    <label>No. of Active Subscrictions</label>
     <summarizedField>QS_Customer_Asset_Detail__c.QS_Quantity__c</summarizedField>
     <summaryFilterItems>
         <field>QS_Customer_Asset_Detail__c.QS_Currently_Active__c</field>
