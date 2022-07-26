@@ -275,11 +275,11 @@
                 <componentName>ApprovalJustification</componentName>
                 <identifier>c_ApprovalJustification</identifier>
                 <visibilityRule>
-                    <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+                    <booleanFilter>(1 OR 2 OR 4) AND 3</booleanFilter>
                     <criteria>
-                        <leftValue>{!Record.Additional_Discount_from_Quote_LIne__c}</leftValue>
-                        <operator>GT</operator>
-                        <rightValue>0</rightValue>
+                        <leftValue>{!Record.Opty_Order_Subtype__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>1</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Trial__c}</leftValue>
@@ -290,6 +290,11 @@
                         <leftValue>{!Record.RecordType.Name}</leftValue>
                         <operator>NE</operator>
                         <rightValue>Locked</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Additional_Discount_from_Quote_LIne__c}</leftValue>
+                        <operator>GT</operator>
+                        <rightValue>0</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
