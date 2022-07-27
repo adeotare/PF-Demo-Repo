@@ -2,12 +2,12 @@
 **/
 @isTest
 public with sharing class AttributeValueObjDataHandlerTest {
- /*   @testSetup
+    @testSetup
     public static void testDataSetup() {
         TEM_Version__c newTemVersion = TestDataFactory.createTemVersion(Constants.DRAFT);
         insert newTemVersion;
 
-        Plant_Asset__c newPlantAsset = TestDataFactory.createPlantAsset(Constants.WIND, 'Drive', '7777.77.777', newTemVersion.Id);
+        Account_Plant__c newPlantAsset = TestDataFactory.createPlantAsset(Constants.WIND, 'Drive', '7777.77.777', newTemVersion.Id);
         insert newPlantAsset;
 
         Base_Asset_Template__c p1PromptBaseAsset = TestDataFactory.createBaseAssetTemplate(Constants.BASE_PV_PLANT, newTemVersion.Id);
@@ -73,8 +73,8 @@ public with sharing class AttributeValueObjDataHandlerTest {
         insert attrReqLst;
 
         Plant_Asset_Prompt_Detail__c p1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        p1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ p1PromptInfo.Name;
-        p1PlantAssetPromptDetail.Plant_Asset__c = newPlantAsset.Id;
+        p1PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ p1PromptInfo.Name;
+        p1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         p1PlantAssetPromptDetail.Prompt_Information__c = p1PromptInfo.Id;
         p1PlantAssetPromptDetail.Base_Asset__c = p1PromptBaseAsset.Id;
         insert p1PlantAssetPromptDetail;
@@ -83,7 +83,7 @@ public with sharing class AttributeValueObjDataHandlerTest {
         p1SiteMetaData.Name = Constants.P1_PLANT_INFO_PROMPT_SOLAR;
         p1SiteMetaData.Prompt_Specific_Info__c = '{"No of Blocks":"2","Flat Hierarchy":"Yes"}';
         p1SiteMetaData.Attribute_Info__c = '{"AC_CAPACITY":"100","DC_CAPACITY":"2.73"}';
-        p1SiteMetaData.Plant_Asset__c= newPlantAsset.id;
+        p1SiteMetaData.Account_Plant__c= newPlantAsset.id;
         p1SiteMetaData.Base_Asset_Template__c = p1PromptBaseAsset.id;
         p1SiteMetaData.Plant_Asset_Prompt_Detail__c = p1PlantAssetPromptDetail.Id;
         p1SiteMetaData.Prompt_Information__c = p1PromptInfo.Id;
@@ -92,19 +92,24 @@ public with sharing class AttributeValueObjDataHandlerTest {
 
     @isTest
     public static void attrValueTest1(){
-        Plant_Asset__c newPlantAsset = [SELECT Id, Name FROM Plant_Asset__c WHERE Customer_Plant_Asset_ID__c ='7777.77.777' LIMIT 1];
+        Test.startTest();
+        Account_Plant__c newPlantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c ='7777.77.777' LIMIT 1];
         Prompt_Information__c p1PromptInfo = [SELECT Id, Name FROM Prompt_Information__c WHERE Name =: Constants.P1_PLANT_INFO_PROMPT_SOLAR LIMIT 1];
         Prompt_Information__c p2PromptInfo = [SELECT Id, Name FROM Prompt_Information__c WHERE Name =: Constants.P2_BLOCK_INFO_AND_PAD_COUNTS LIMIT 1];
         Base_Asset_Template__c p1PromptBaseAsset = [SELECT Id, Name FROM Base_Asset_Template__c WHERE Name =: Constants.BASE_PV_PLANT LIMIT 1];
         Base_Asset_Template__c p2PromptBaseAsset = [SELECT Id, Name FROM Base_Asset_Template__c WHERE Name =:Constants.BASE_BLOCK LIMIT 1];
         Site_Metadata__c p1SiteMetaData = [SELECT Id, Name, Attribute_Info__c FROM Site_Metadata__c WHERE Name =: p1PromptInfo.Name LIMIT 1];
-        String name = 'Test Plant'+'-'+ p1PromptInfo.Name;
-        Plant_Asset_Prompt_Detail__c p1PlantAssetPromptDetail = [SELECT Id, Name FROM Plant_Asset_Prompt_Detail__c WHERE Name =: name LIMIT 1];
+        String TestName = 'Test Plant'+'-'+ p1PromptInfo.Name;
+        Plant_Asset_Prompt_Detail__c p1PlantAssetPromptDetail = [SELECT Id, Name FROM Plant_Asset_Prompt_Detail__c WHERE Name =: TestName LIMIT 1];
         List<Site_Metadata__c> allSiteMetaData = Utils.querySiteMetadata(p1PromptInfo.Name, newPlantAsset.Id);
         List<Id> siteMetaDataIdLst = new List<Id>();
         for(Site_Metadata__c siteMetaDataInstance : allSiteMetaData){
             siteMetaDataIdLst.add(siteMetaDataInstance.Id);
         }
         AttributeValueObjDataHandler.createOrUpdateAttrValueRecs(siteMetaDataIdLst, System.now(), String.valueOf(p1PlantAssetPromptDetail.Id), String.valueOf(newPlantAsset.id));
-    }*/
+        System.debug('Mohit verification');
+        Test.stopTest();
+        
+        
+    }
 }
