@@ -4,7 +4,7 @@
     <formulas>
         <name>CalculateEndDate</name>
         <dataType>Date</dataType>
-        <expression>ADDMONTHS( {!$Record.SBQQ__StartDate__c} , {!$Record.SBQQ__SubscriptionTerm__c} )</expression>
+        <expression>ADDMONTHS( {!$Record.SBQQ__StartDate__c} , {!$Record.SBQQ__SubscriptionTerm__c} ) - 1</expression>
     </formulas>
     <interviewLabel>Quote: Update End Date as per Subscription Term {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Quote: Update End Date as per Subscription Term</label>
