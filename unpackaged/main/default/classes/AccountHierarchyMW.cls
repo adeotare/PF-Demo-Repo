@@ -64,7 +64,10 @@ global class AccountHierarchyMW implements Database.Batchable<SObject> {
             if(ppt.Account__c != null && ppt.Account__r.ParentId != null){
                 
 				if(accountRelationShipMap.containsKey(ppt.Account__r.ParentId)){
-                    accountRelationShipMap.get(ppt.Account__r.ParentId).add(ppt.Account__c);
+                    if(!accountRelationShipMap.get(ppt.Account__r.ParentId).contains(ppt.Account__c)){
+						accountRelationShipMap.get(ppt.Account__r.ParentId).add(ppt.Account__c);                        
+                    }
+                    
                 }else{
                     accountRelationShipMap.put(ppt.Account__r.ParentId , new List<Id>{ppt.Account__c});
                 } 
@@ -168,6 +171,8 @@ global class AccountHierarchyMW implements Database.Batchable<SObject> {
         
         
         map<id,Active_Megawatts__c> mer =  new map<id,Active_Megawatts__c>();
+        map<id,Active_Megawatts__c> childActiveMegawatsMaps =  new map<id,Active_Megawatts__c>();
+        List<Active_Megawatts__c> activeMWtoInsert = new List<Active_Megawatts__c>();
         for(Id parentAccId : accountRelationShipMap.keySet()){
 				
 				
@@ -195,34 +200,75 @@ global class AccountHierarchyMW implements Database.Batchable<SObject> {
                 Decimal Sum_Child_MW_Hydro = 0;
                 Decimal Sum_Child_MW_Industrial = 0;
 
-                for(Id childAccIds :  accountRelationShipMap.get(parentAccId)){
-                	
-                    if(accCalculationMap.containsKey(childAccIds)){
-                    	  	Sum_Total_Agnostic  +=	accCalculationMap.get(childAccIds).Total_Agnostic;
-                             Sum_Total_MW_Storage  +=	accCalculationMap.get(childAccIds).Total_MW_Storage;
-                             Sum_Total_MW_Hydro  +=	accCalculationMap.get(childAccIds).Total_MW_Hydro;
-                             Sum_Total_MW_Industrial  +=	accCalculationMap.get(childAccIds).Total_MW_Industrial;
-                             Sum_Total_MW_Wind  +=	accCalculationMap.get(childAccIds).Total_MW_Wind;
-                             Sum_Total_MW_Other_Renewable  +=	accCalculationMap.get(childAccIds).Total_MW_Other_Renewable;
-                             Sum_Total_MW_Solar  +=	accCalculationMap.get(childAccIds).Total_MW_Solar;
-                                
-                             Sum_MW_Agnostic  +=	accCalculationMap.get(childAccIds).MW_Agnostic;
-                             Sum_MW_Storage  +=	accCalculationMap.get(childAccIds).MW_Storage;
-                             Sum_MW_Other_Renewable  +=	accCalculationMap.get(childAccIds).MW_Other_Renewable;
-                             Sum_MW_Wind  +=	accCalculationMap.get(childAccIds).MW_Wind;
-                             Sum_MW_Solar  +=	accCalculationMap.get(childAccIds).MW_Solar;
-                             Sum_MW_Hydro  +=	accCalculationMap.get(childAccIds).MW_Hydro;
-                             Sum_MW_Industrial  +=	accCalculationMap.get(childAccIds).MW_Industrial;
-                                
-                             Sum_Child_MW_Agnostic  +=	accCalculationMap.get(childAccIds).Child_MW_Agnostic;
-                             Sum_Child_MW_Storage  +=	accCalculationMap.get(childAccIds).Child_MW_Storage;
-                             Sum_Child_MW_Other_Renewable  +=	accCalculationMap.get(childAccIds).Child_MW_Other_Renewable;
-                             Sum_Child_MW_Wind  +=	accCalculationMap.get(childAccIds).Child_MW_Wind;
-                             Sum_Child_MW_Solar  +=	accCalculationMap.get(childAccIds).Child_MW_Solar;
-                             Sum_Child_MW_Hydro  +=	accCalculationMap.get(childAccIds).Child_MW_Hydro;
-                             Sum_Child_MW_Industrial  +=	accCalculationMap.get(childAccIds).Child_MW_Industrial;
-						}
-					}
+            for(Id childAccIds :  accountRelationShipMap.get(parentAccId)){
+                
+                if(accCalculationMap.containsKey(childAccIds)){
+                    Sum_Total_Agnostic  +=	accCalculationMap.get(childAccIds).Total_Agnostic;
+                    Sum_Total_MW_Storage  +=	accCalculationMap.get(childAccIds).Total_MW_Storage;
+                    Sum_Total_MW_Hydro  +=	accCalculationMap.get(childAccIds).Total_MW_Hydro;
+                    Sum_Total_MW_Industrial  +=	accCalculationMap.get(childAccIds).Total_MW_Industrial;
+                    Sum_Total_MW_Wind  +=	accCalculationMap.get(childAccIds).Total_MW_Wind;
+                    Sum_Total_MW_Other_Renewable  +=	accCalculationMap.get(childAccIds).Total_MW_Other_Renewable;
+                    Sum_Total_MW_Solar  +=	accCalculationMap.get(childAccIds).Total_MW_Solar;
+                    
+                    Sum_MW_Agnostic  +=	accCalculationMap.get(childAccIds).MW_Agnostic;
+                    Sum_MW_Storage  +=	accCalculationMap.get(childAccIds).MW_Storage;
+                    Sum_MW_Other_Renewable  +=	accCalculationMap.get(childAccIds).MW_Other_Renewable;
+                    Sum_MW_Wind  +=	accCalculationMap.get(childAccIds).MW_Wind;
+                    Sum_MW_Solar  +=	accCalculationMap.get(childAccIds).MW_Solar;
+                    Sum_MW_Hydro  +=	accCalculationMap.get(childAccIds).MW_Hydro;
+                    Sum_MW_Industrial  +=	accCalculationMap.get(childAccIds).MW_Industrial;
+                    
+                    Sum_Child_MW_Agnostic  +=	accCalculationMap.get(childAccIds).Child_MW_Agnostic;
+                    Sum_Child_MW_Storage  +=	accCalculationMap.get(childAccIds).Child_MW_Storage;
+                    Sum_Child_MW_Other_Renewable  +=	accCalculationMap.get(childAccIds).Child_MW_Other_Renewable;
+                    Sum_Child_MW_Wind  +=	accCalculationMap.get(childAccIds).Child_MW_Wind;
+                    Sum_Child_MW_Solar  +=	accCalculationMap.get(childAccIds).Child_MW_Solar;
+                    Sum_Child_MW_Hydro  +=	accCalculationMap.get(childAccIds).Child_MW_Hydro;
+                    Sum_Child_MW_Industrial  +=	accCalculationMap.get(childAccIds).Child_MW_Industrial;
+                    
+                    
+                    ActiveMegawatWrapper parentFields = accCalculationMap.get(childAccIds);
+                    
+                    Active_Megawatts__c awForChildAccount = new Active_Megawatts__c(
+                        Total_Agnostic__c			= 	parentFields.MW_Agnostic,
+                        Total_MW_Hydro__c 			= 	parentFields.MW_Hydro ,
+                        Total_MW_Industrial__c		=	parentFields.MW_Industrial ,
+                        Total_MW_Other_Renewable__c	=	parentFields.MW_Other_Renewable ,
+                        Total_MW_Solar__c			=	parentFields.MW_Solar ,
+                        Total_MW_Storage__c			=	parentFields.MW_Storage ,
+                        Total_MW_Wind__c			=	parentFields.MW_Wind ,
+                        
+                        MW_Agnostic__c 				=	parentFields.MW_Agnostic,
+                        MW_Hydro__c 				=	parentFields.MW_Hydro ,
+                        MW_Industrial__c 			= 	parentFields.MW_Industrial ,
+                        MW_Other_Renewable__c 		= 	parentFields.MW_Other_Renewable ,
+                        MW_Solar__c 				= 	parentFields.MW_Solar ,
+                        MW_Storage__c 				= 	parentFields.MW_Storage ,
+                        MW_Wind__c					=	parentFields.MW_Wind ,
+                        
+                        Child_MW_Agnostic__c		=	0 ,
+                        Child_MW_Hydro__c			=	0 ,
+                        Child_MW_Industrial__c		=	0 ,
+                        Child_MW_Other_Renewable__c	=	0 ,
+                        Child_MW_Solar__c 			=	0 ,
+                        Child_MW_Storage__c 		=	0 ,
+                        Child_MW_Wind__c 			= 	0 ,
+                        
+                        Account__c					= 	childAccIds
+                    );
+                    
+                    childActiveMegawatsMaps.put(childAccIds,awForChildAccount);
+                    
+                    
+                    
+                }
+                
+                
+                
+            }
+            
+            
 
                 if(accCalculationMap.containsKey(parentAccId)){
                     
@@ -259,7 +305,19 @@ global class AccountHierarchyMW implements Database.Batchable<SObject> {
                         mer.put(parentAccId,ae3);
              	}
         }
-        insert mer.values();
+        
+        activeMWtoInsert.addAll(mer.values());
+        activeMWtoInsert.addAll(childActiveMegawatsMaps.values());
+        
+        if(activeMWtoInsert != null && activeMWtoInsert.size() >0 ){
+            try{
+                insert activeMWtoInsert;
+            }
+            catch(Exception e){
+                system.debug(e.getMessage());
+            }
+        }
+        
         
          
     }

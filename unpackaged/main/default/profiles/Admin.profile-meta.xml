@@ -13,6 +13,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AccountHierarchyMWschedule</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ActiveMegawattQuantityBatchapex</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -358,6 +362,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>PlantAssetABTreeViewHandlerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PlantProductCntTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
