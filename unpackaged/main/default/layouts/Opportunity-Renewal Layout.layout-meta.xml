@@ -57,6 +57,10 @@
                 <field>Trial__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Term__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Risk_Comments__c</field>
             </layoutItems>
@@ -79,10 +83,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Subsidiary__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Territory__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -153,6 +153,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Age_of_record__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Territory__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>

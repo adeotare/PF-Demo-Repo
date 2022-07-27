@@ -235,12 +235,12 @@
                 <field>Trial__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>CurrencyIsoCode</field>
+                <behavior>Readonly</behavior>
+                <field>Term__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Pricebook2Id</field>
+                <behavior>Required</behavior>
+                <field>CurrencyIsoCode</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -256,6 +256,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>ContractId</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Pricebook2Id</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>

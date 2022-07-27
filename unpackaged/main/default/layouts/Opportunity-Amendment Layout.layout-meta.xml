@@ -66,6 +66,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
+                <field>Term__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
                 <field>Payment_Terms__c</field>
             </layoutItems>
             <layoutItems>

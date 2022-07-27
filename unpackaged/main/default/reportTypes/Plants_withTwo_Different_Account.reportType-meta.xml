@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>Account</baseObject>
+    <category>accounts</category>
+    <deployed>false</deployed>
+    <description>Plants withTwo Different Account</description>
+    <join>
+        <join>
+            <outerJoin>false</outerJoin>
+            <relationship>Plant_Product_Transactions__r</relationship>
+        </join>
+        <outerJoin>false</outerJoin>
+        <relationship>Account_Plant__r</relationship>
+    </join>
+    <label>Plants withTwo Different Account</label>
+    <sections>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
+            <table>Account</table>
+        </columns>
+        <masterLabel>Accounts</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
+            <table>Account.Account_Plant__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Plant__c</field>
+            <table>Account.Account_Plant__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Plant_MWH__c</field>
+            <table>Account.Account_Plant__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Plant_MWP__c</field>
+            <table>Account.Account_Plant__r</table>
+        </columns>
+        <masterLabel>Account Plant</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
+            <table>Account.Account_Plant__r.Plant_Product_Transactions__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Product__c</field>
+            <table>Account.Account_Plant__r.Plant_Product_Transactions__r</table>
+        </columns>
+        <masterLabel>Plant Product Transactions</masterLabel>
+    </sections>
+</ReportType>

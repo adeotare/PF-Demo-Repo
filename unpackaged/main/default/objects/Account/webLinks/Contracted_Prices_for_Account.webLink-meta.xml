@@ -9,5 +9,5 @@
     <masterLabel>Contracted Prices for Account</masterLabel>
     <openType>sidebar</openType>
     <protected>false</protected>
-    <url>https://pwrfactors--pfdev.lightning.force.com/lightning/r/Report/00O7j000000ZbJSEA0/view?queryScope=userFolders</url>
+    <url>https://pwrfactors--pfdev.lightning.force.com/lightning/r/Report/00O7j000000ZbJSEA0/view?queryScope=userFolders&amp;fv0={!Account.Id}</url>
 </WebLink>

@@ -67,6 +67,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
+                <field>Term__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
                 <field>Payment_Terms__c</field>
             </layoutItems>
             <layoutItems>
@@ -76,10 +80,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Subsidiary__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Territory__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -166,6 +166,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Services_Total__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Territory__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>

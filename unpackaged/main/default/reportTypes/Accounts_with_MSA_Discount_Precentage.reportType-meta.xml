@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>Account</baseObject>
+    <category>other</category>
+    <deployed>false</deployed>
+    <description>Accounts with MSA Shared Account Discount Percentage</description>
+    <join>
+        <outerJoin>false</outerJoin>
+        <relationship>MSA_Contracts__r</relationship>
+    </join>
+    <label>Accounts with MSA Discount Precentage</label>
+    <sections>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
+            <table>Account</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Owner</field>
+            <table>Account</table>
+        </columns>
+        <masterLabel>Accounts</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
+            <table>Account.MSA_Contracts__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Shared_Plant_Discount_Percentage__c</field>
+            <table>Account.MSA_Contracts__r</table>
+        </columns>
+        <masterLabel>MSA Contracts</masterLabel>
+    </sections>
+</ReportType>
