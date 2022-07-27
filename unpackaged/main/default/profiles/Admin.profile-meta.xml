@@ -7293,6 +7293,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>project_cloud__Card__c.Position_Formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>project_cloud__Card__c.ProjectOwnerIdText__c</field>
         <readable>true</readable>

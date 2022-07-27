@@ -43,7 +43,7 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Card_Created_From_Project_Id__r.Position__c</field>
+        <field>Position_Formula__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
