@@ -4,7 +4,7 @@
     <assignments>
         <name>Add_to_PPT</name>
         <label>Add to PPT</label>
-        <locationX>402</locationX>
+        <locationX>138</locationX>
         <locationY>935</locationY>
         <assignmentItems>
             <assignToReference>PPTtoUpdate</assignToReference>
@@ -20,7 +20,7 @@
     <assignments>
         <name>Update_Status</name>
         <label>Update Order Item</label>
-        <locationX>402</locationX>
+        <locationX>138</locationX>
         <locationY>815</locationY>
         <assignmentItems>
             <assignToReference>Plant_Product_Transaction_Record_Update.Order_Item__c</assignToReference>
@@ -40,7 +40,7 @@
             <assignToReference>Plant_Product_Transaction_Record_Update.Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue>Ordered</stringValue>
+                <stringValue>Contracted</stringValue>
             </value>
         </assignmentItems>
         <connector>
@@ -50,7 +50,7 @@
     <decisions>
         <name>Plant_Product_Transaction_Records_Found</name>
         <label>Plant Product Transaction Records Found</label>
-        <locationX>534</locationX>
+        <locationX>182</locationX>
         <locationY>575</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -69,50 +69,13 @@
             <label>Plant Product Transaction Record found?</label>
         </rules>
     </decisions>
-    <decisions>
-        <name>Trial_Flag_Checked_or_Not</name>
-        <label>Trial Flag Checked or Not</label>
-        <locationX>314</locationX>
-        <locationY>1391</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Trial_Flag_checked</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Order_from_Order_Product.Trial__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Activate_Order</targetReference>
-            </connector>
-            <label>Trial Flag checked</label>
-        </rules>
-        <rules>
-            <name>Trial_flag_not_checked</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Order_from_Order_Product.Trial__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Activate_Order_and_Check_Contracted</targetReference>
-            </connector>
-            <label>Trial flag not checked</label>
-        </rules>
-    </decisions>
     <description>To Update PPT with Order</description>
     <interviewLabel>Order Product : Update PPT Record {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Order Product : Update PPT Record and Order</label>
+    <label>Order Product : Update PPT Record</label>
     <loops>
         <name>Plant_Product_Transaction_Record_Update</name>
         <label>Plant Product Transaction Record Update</label>
-        <locationX>314</locationX>
+        <locationX>50</locationX>
         <locationY>695</locationY>
         <collectionReference>Get_Plant_Product_Transactions</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -143,30 +106,9 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get_Order_from_Order_Product</name>
-        <label>Get Order from Order Product</label>
-        <locationX>314</locationX>
-        <locationY>1271</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Trial_Flag_Checked_or_Not</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.OrderId</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Order</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>Get_Plant_Product_Transactions</name>
         <label>Get Plant Product Transactions</label>
-        <locationX>534</locationX>
+        <locationX>182</locationX>
         <locationY>455</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -187,7 +129,7 @@
     <recordLookups>
         <name>Get_Quote_Line</name>
         <label>Get Quote Line</label>
-        <locationX>534</locationX>
+        <locationX>182</locationX>
         <locationY>335</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -206,65 +148,14 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Activate_Order</name>
-        <label>Activate Order</label>
-        <locationX>50</locationX>
-        <locationY>1511</locationY>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_Order_from_Order_Product.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Activated</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Order</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Activate_Order_and_Check_Contracted</name>
-        <label>Activate Order and Check Contracted</label>
-        <locationX>314</locationX>
-        <locationY>1511</locationY>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_Order_from_Order_Product.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>SBQQ__Contracted__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Activated</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Order</object>
-    </recordUpdates>
-    <recordUpdates>
         <name>Update_PPT_Records</name>
         <label>Update PPT Records</label>
-        <locationX>314</locationX>
+        <locationX>50</locationX>
         <locationY>1151</locationY>
-        <connector>
-            <targetReference>Get_Order_from_Order_Product</targetReference>
-        </connector>
         <inputReference>PPTtoUpdate</inputReference>
     </recordUpdates>
     <start>
-        <locationX>408</locationX>
+        <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Quote_Line</targetReference>
@@ -281,7 +172,7 @@
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Obsolete</status>
+    <status>Active</status>
     <variables>
         <name>PPTtoUpdate</name>
         <dataType>SObject</dataType>
