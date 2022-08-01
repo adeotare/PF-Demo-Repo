@@ -23,24 +23,18 @@
                 <label>Semi-Annually</label>
             </value>
             <value>
-                <fullName>Quarterly (Anniversary)</fullName>
+                <fullName>Quarterly</fullName>
                 <default>false</default>
-                <label>Quarterly (Anniversary)</label>
+                <label>Quarterly</label>
             </value>
             <value>
-                <fullName>Monthly Calendar Billing</fullName>
+                <fullName>Monthly</fullName>
                 <default>false</default>
-                <label>Monthly Calendar Billing</label>
-            </value>
-            <value>
-                <fullName>Quarterly (Calendar)</fullName>
-                <default>false</default>
-                <label>Quarterly (Calendar)</label>
+                <label>Monthly</label>
             </value>
             <value>
                 <fullName>Custom</fullName>
                 <default>false</default>
-                <isActive>false</isActive>
                 <label>Custom</label>
             </value>
         </valueSetDefinition>
