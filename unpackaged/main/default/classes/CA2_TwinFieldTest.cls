@@ -71,5 +71,8 @@ private class CA2_TwinFieldTest {
             //System.assert(c.AccountId == a.Id); //test standard same name / same type twinning
             //System.assert(c.Phone == a.Phone, c.Phone); //test standard same name / same type twinning
             //System.assert(c.LastName == a.Name, c.LastName); //override mapping
+            	Set<String> fieldSet = new Set<String>{'QS_Customer_Asset__c','QS_Currently_Active__c','QS_Start_Date__c','QS_End_Date__c'};
+                    CA2_TwinField.queryObjectDataByType('QS_Customer_Asset_Detail__c',fieldSet , 'Name != null', 500, new Set<Id>{cad.Id});
+
         } 
-}
+    }
