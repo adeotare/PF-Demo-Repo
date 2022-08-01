@@ -5,7 +5,7 @@ public with sharing class TestDataFactory {
     public static Account_Plant__c createPlantAsset(String renewableType, String pfServiceProduct, String customerPlantAsset, id temVersionid ){
         
        Plant__c plant = new Plant__c();
-       plant.Name = 'Test Plant';
+       
        plant.Renewable_Type__c = renewableType;
        plant.Timezone__c = 'India Standard Time';
        plant.Latitude__c = '45.4543';
@@ -14,7 +14,7 @@ public with sharing class TestDataFactory {
         
         Account_Plant__c plantAsset = new Account_Plant__c();
         plantAsset.PF_Service_Product__c = pfServiceProduct;
-        plantAsset.Customer_Plant_Asset_ID__c  = customerPlantAsset;
+        plantAsset.Drive_Id__c  = customerPlantAsset;
         plantAsset.TEM_Version__c = temVersionid;
 		plantAsset.plant__c = plant.id;
         return plantAsset;
@@ -321,7 +321,8 @@ public with sharing class TestDataFactory {
         
     // Create account
     public static Account createAccount(Id pricebookId) {
-        Account acc = new Account(Name='TestCP Account',
+        Account acc = new Account(Name='TestCP', CurrencyIsoCode = 'USD', 
+                                    Description = 'Testing',
                                 Account_Price_Book__c = priceBookId);
         return acc;
     }
@@ -388,5 +389,14 @@ public with sharing class TestDataFactory {
                                         MSA_Contract__c = msaId);
         return implPrice;
     }
+    // Create Program Data
+    public static Program__c createProgram(String accountId){
+        Program__c program = new Program__c();
+        program.Name = 'Test Program';
+        program.Customer_Name__c = accountId;
+        return program;
+    }
+
+    
 
 }

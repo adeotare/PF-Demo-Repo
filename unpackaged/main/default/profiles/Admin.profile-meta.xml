@@ -385,6 +385,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ProgramControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>PromptNavigationHelper</apexClass>
         <enabled>true</enabled>
     </classAccesses>
