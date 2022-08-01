@@ -408,6 +408,7 @@
         <relatedList>RAID__c.CRM_Project__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>Plant_Name__c</fields>
         <fields>Product__c</fields>

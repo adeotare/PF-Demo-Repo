@@ -390,6 +390,11 @@
             <actionType>CustomButton</actionType>
             <sortOrder>11</sortOrder>
         </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.TextPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>12</sortOrder>
+        </platformActionListItems>
     </platformActionList>
     <relatedContent>
         <relatedContentItems>
@@ -428,14 +433,6 @@
         <relatedList>RelatedPartnerList</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>CAMPAIGN.NAME</fields>
-        <fields>CONTACT.NAME</fields>
-        <fields>INFLUENCE</fields>
-        <fields>REVENUE_SHARE</fields>
-        <fields>OCR.ROLE</fields>
-        <relatedList>RelatedCampaignInfluence2List</relatedList>
-    </relatedLists>
-    <relatedLists>
         <excludeButtons>AddAccTeamMemberOnOpp</excludeButtons>
         <excludeButtons>AddAccountTeam</excludeButtons>
         <fields>MemberName</fields>
@@ -452,6 +449,14 @@
         <fields>End_Date__c</fields>
         <fields>Description</fields>
         <relatedList>RelatedLineItemList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>CAMPAIGN.NAME</fields>
+        <fields>CONTACT.NAME</fields>
+        <fields>INFLUENCE</fields>
+        <fields>REVENUE_SHARE</fields>
+        <fields>OCR.ROLE</fields>
+        <relatedList>RelatedCampaignInfluence2List</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

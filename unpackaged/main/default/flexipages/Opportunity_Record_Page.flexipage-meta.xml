@@ -4,16 +4,65 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>Global.LogACall</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Global.NewTask</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Opportunity.Collaboration_Request_Task</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Opportunity.New_Quote</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.Opportunity.SBQQ__Amend_Contract</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Global.NewEvent</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>StartOutboundConversation</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>ChangeOwnerOne</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Edit</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Delete</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.Opportunity.oppteamedit__Opportunity_Team_Edit</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.Opportunity.cascade_bill_to_record</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>collapsed</name>
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>enableActionsConfiguration</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>enableActionsInNative</name>
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideChatterActions</name>
                     <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>numVisibleActions</name>
+                    <value>5</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
                 <identifier>force_highlightsPanel</identifier>

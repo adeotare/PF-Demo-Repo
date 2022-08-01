@@ -2696,6 +2696,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>EvaluationValueDataCreation</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>G1BulkImportButtonHndlr</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ImplementationBracketPrice</apexClass>
         <enabled>true</enabled>
     </classAccesses>

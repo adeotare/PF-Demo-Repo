@@ -173,6 +173,129 @@
         <layoutColumns />
         <style>CustomLinks</style>
     </layoutSections>
+    <platformActionList>
+        <actionListContext>Record</actionListContext>
+        <platformActionListItems>
+            <actionName>ChangeRecordType</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>19</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>DeepClone</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>20</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>PrintableView</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>21</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>SBQQ__Include_Document</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>22</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.TextPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>23</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.ContentPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>0</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>NewContact</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>1</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>NewOpportunity</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>2</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>NewLead</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>3</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.RypplePost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>4</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>NewTask</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>5</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>NewEvent</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>6</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>LogACall</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>7</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.ContentNote</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>8</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.LinkPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>9</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Edit</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>10</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>ChangeOwnerOne</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>11</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>StartOutboundConversation</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>12</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>RecordShareHierarchy</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>13</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Share</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>14</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Submit</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>15</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Delete</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>16</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>CreateSalesChannel</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>17</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Clone</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>18</sortOrder>
+        </platformActionListItems>
+    </platformActionList>
     <relatedContent>
         <relatedContentItems>
             <layoutItem>
@@ -189,19 +312,25 @@
     </relatedContent>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>SBQQ__NetAmount__c</fields>
-        <fields>SBQQ__Status__c</fields>
-        <fields>CREATEDBY_USER</fields>
         <fields>SBQQ__Primary__c</fields>
+        <fields>SBQQ__ExpirationDate__c</fields>
         <fields>SBQQ__StartDate__c</fields>
-        <fields>SBQQ__EndDate__c</fields>
+        <fields>ApprovalStatus__c</fields>
+        <fields>SBQQ__SubscriptionTerm__c</fields>
+        <fields>SBQQ__ListAmount__c</fields>
+        <fields>SBQQ__NetAmount__c</fields>
+        <fields>Annual_Recurring_Revenue__c</fields>
+        <fields>Non_Recurring_Revenue__c</fields>
         <relatedList>SBQQ__Quote__c.SBQQ__Opportunity2__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>Product2</fields>
         <fields>Quantity</fields>
         <fields>UnitPrice</fields>
-        <fields>ServiceDate</fields>
+        <fields>Annual_Recurring_Revenue__c</fields>
+        <fields>Non_Recurring_Revenue__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
         <fields>Description</fields>
         <relatedList>RelatedLineItemList</relatedList>
     </relatedLists>
@@ -217,24 +346,34 @@
         <fields>CONTRACT.CONTRACT_NUMBER</fields>
         <fields>CONTRACT.NAME</fields>
         <fields>SALES.ACCOUNT.NAME</fields>
-        <fields>CONTRACT.STATUS</fields>
+        <fields>CONTRACT.START_DATE</fields>
+        <fields>CONTRACT.END_DATE</fields>
+        <fields>SBQQ__Order__c</fields>
+        <fields>SBQQ__RenewalOpportunity__c</fields>
+        <fields>SBQQ__RenewalQuoted__c</fields>
+        <fields>SBQQ__RenewalUpliftRate__c</fields>
         <relatedList>Contract.SBQQ__Opportunity__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>CONTRACT.CONTRACT_NUMBER</fields>
         <fields>CONTRACT.NAME</fields>
         <fields>SALES.ACCOUNT.NAME</fields>
-        <fields>CONTRACT.STATUS</fields>
+        <fields>CONTRACT.START_DATE</fields>
+        <fields>CONTRACT.END_DATE</fields>
+        <fields>SBQQ__Order__c</fields>
+        <fields>SBQQ__RenewalQuoted__c</fields>
+        <fields>SBQQ__RenewalUpliftRate__c</fields>
         <relatedList>Contract.SBQQ__RenewalOpportunity__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>ContactName</fields>
         <fields>Role</fields>
         <fields>ContactTitle</fields>
-        <fields>IsPrimary</fields>
-        <fields>ContactPhone</fields>
-        <fields>ContactEmail</fields>
         <fields>ContactAccountName</fields>
+        <fields>Disposition__c</fields>
+        <fields>Decision_Power_Level__c</fields>
+        <fields>Persona__c</fields>
+        <fields>IsPrimary</fields>
         <relatedList>RelatedContactRoleList</relatedList>
     </relatedLists>
     <relatedLists>
@@ -267,7 +406,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8F000000If8N</masterLabel>
+        <masterLabel>00h7j000000ZU9D</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
