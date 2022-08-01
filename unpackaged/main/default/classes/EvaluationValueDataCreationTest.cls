@@ -2,12 +2,12 @@
 **/
 @isTest
 public with sharing class EvaluationValueDataCreationTest {
-/*    @testSetup
+    @testSetup
     public static void testDataSetup() {
         TEM_Version__c newTemVersion = TestDataFactory.createTemVersion(Constants.DRAFT);
         insert newTemVersion;
 
-        Plant_Asset__c newPlantAsset = TestDataFactory.createPlantAsset(Constants.SOLAR, 'Drive', '7777.77.777', newTemVersion.Id);
+        Account_Plant__c newPlantAsset = TestDataFactory.createPlantAsset(Constants.SOLAR, 'Drive', '7777.77.777', newTemVersion.Id);
         insert newPlantAsset;
 
         Base_Asset_Template__c p1PromptBaseAsset = TestDataFactory.createBaseAssetTemplate(Constants.BASE_PV_PLANT, newTemVersion.Id);
@@ -55,14 +55,14 @@ public with sharing class EvaluationValueDataCreationTest {
         Id metricConst = Utils.getRecordTypeInfo('Metric_Definition__c','Constants').getRecordTypeId();
 
         Plant_Asset_Prompt_Detail__c g1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        g1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ p1PromptInfo.Name;
-        g1PlantAssetPromptDetail.Plant_Asset__c = newPlantAsset.Id;
+        g1PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ p1PromptInfo.Name;
+        g1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         g1PlantAssetPromptDetail.Prompt_Information__c = g1PromptInfo.Id;
         insert g1PlantAssetPromptDetail;
 
         Plant_Asset_Prompt_Detail__c p1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        p1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ p1PromptInfo.Name;
-        p1PlantAssetPromptDetail.Plant_Asset__c = newPlantAsset.Id;
+        p1PlantAssetPromptDetail.Name = 'Test Plant' +'-'+ p1PromptInfo.Name;
+        p1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         p1PlantAssetPromptDetail.Prompt_Information__c = p1PromptInfo.Id;
         p1PlantAssetPromptDetail.Base_Asset__c = p1PromptBaseAsset.Id;
         insert p1PlantAssetPromptDetail;
@@ -74,7 +74,7 @@ public with sharing class EvaluationValueDataCreationTest {
         p1SiteMetaData.Name = Constants.P1_PLANT_INFO_PROMPT_SOLAR;
         p1SiteMetaData.Prompt_Specific_Info__c = '{"No of Blocks":"2","Flat Hierarchy":"No"';
         p1SiteMetaData.Attribute_Info__c = '{"AC_CAPACITY":""}';
-        p1SiteMetaData.Plant_Asset__c= newPlantAsset.id;
+        p1SiteMetaData.Account_Plant__c= newPlantAsset.id;
         p1SiteMetaData.Base_Asset_Template__c = p1PromptBaseAsset.id;
         p1SiteMetaData.Plant_Asset_Prompt_Detail__c = p1PlantAssetPromptDetail.Id;
         insert p1SiteMetaData;
@@ -104,7 +104,7 @@ public with sharing class EvaluationValueDataCreationTest {
     
     public static testMethod void testMethod1(){
         //Scenario 1 -> When Attribute data type as Number in metric definition, which used for Component 1 and Component 2 field in Evaluation
-        Plant_Asset__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Plant_Asset__c WHERE Name LIKE '%7777.77.777%' LIMIT 1];
+        Account_Plant__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777' LIMIT 1];
         List<Metric_Definition__c> metricDefCalLst = [SELECT Attribute__c, Attribute__r.Attribute_Master__r.Data_Type__c, Base_Asset_Template__c,Description__c,
                 Id,IsDeleted,Modifer_1__c,Modifer_2_Value__c,Modifer_2__c,Name FROM Metric_Definition__c 
             WHERE TEM_Version__c =: plantAsset.TEM_Version__c];
@@ -144,7 +144,7 @@ public with sharing class EvaluationValueDataCreationTest {
     
      public static testMethod void testMethod2(){
         //Scenario 2 -> When Attribute data type as Number in metric definition, which used for Component 1, Component 2 and Component 3 field in Evaluation
-        Plant_Asset__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Plant_Asset__c WHERE Name LIKE '%7777.77.777%' LIMIT 1];
+        Account_Plant__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777' LIMIT 1];
         List<Metric_Definition__c> metricDefCalLst = [SELECT Attribute__c, Attribute__r.Attribute_Master__r.Data_Type__c, Base_Asset_Template__c,Description__c,
                 Id,IsDeleted,Modifer_1__c,Modifer_2_Value__c,Modifer_2__c,Name FROM Metric_Definition__c 
             WHERE TEM_Version__c =: plantAsset.TEM_Version__c];
@@ -182,7 +182,7 @@ public with sharing class EvaluationValueDataCreationTest {
     }
     public static testMethod void testMethod3(){
         //Scenario 3 -> When Attribute data type as Decimal in metric definition, which used for Component 1 and Component 2 field in Evaluation
-        Plant_Asset__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Plant_Asset__c WHERE Name LIKE '%7777.77.777%' LIMIT 1];
+        Account_Plant__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777' LIMIT 1];
         List<Metric_Definition__c> metricDefCalLst = [SELECT Attribute__c, Attribute__r.Attribute_Master__r.Data_Type__c, Base_Asset_Template__c,Description__c,
                 Id,IsDeleted,Modifer_1__c,Modifer_2_Value__c,Modifer_2__c,Name FROM Metric_Definition__c 
             WHERE TEM_Version__c =: plantAsset.TEM_Version__c];
@@ -218,7 +218,7 @@ public with sharing class EvaluationValueDataCreationTest {
     
      public static testMethod void testMethod4(){
         //Scenario 4 -> When Attribute data type as Decimal in metric definition, which used for Component 1, Component 2 and Component 3 field in Evaluation
-        Plant_Asset__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Plant_Asset__c WHERE Name LIKE '%7777.77.777%' LIMIT 1];
+        Account_Plant__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777' LIMIT 1];
         List<Metric_Definition__c> metricDefCalLst = [SELECT Attribute__c, Attribute__r.Attribute_Master__r.Data_Type__c, Base_Asset_Template__c,Description__c,
                 Id,IsDeleted,Modifer_1__c,Modifer_2_Value__c,Modifer_2__c,Name FROM Metric_Definition__c 
             WHERE TEM_Version__c =: plantAsset.TEM_Version__c];
@@ -253,7 +253,7 @@ public with sharing class EvaluationValueDataCreationTest {
     }
     public static testMethod void testMethod5(){
         //Scenario 5 -> When Attribute data type as Text in metric definition, which used for Component 1 and Component 2 field in Evaluation
-        Plant_Asset__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Plant_Asset__c WHERE Name LIKE '%7777.77.777%' LIMIT 1];
+        Account_Plant__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777' LIMIT 1];
         List<Metric_Definition__c> metricDefCalLst = [SELECT Attribute__c, Attribute__r.Attribute_Master__r.Data_Type__c, Base_Asset_Template__c,Description__c,
                 Id,IsDeleted,Modifer_1__c,Modifer_2_Value__c,Modifer_2__c,Name FROM Metric_Definition__c 
             WHERE TEM_Version__c =: plantAsset.TEM_Version__c];
@@ -289,7 +289,7 @@ public with sharing class EvaluationValueDataCreationTest {
     
      public static testMethod void testMethod6(){
         //Scenario 6 -> When Attribute data type as Text in metric definition, which used for Component 1, Component 2 and Component 3 field in Evaluation
-        Plant_Asset__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Plant_Asset__c WHERE Name LIKE '%7777.77.777%' LIMIT 1];
+        Account_Plant__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777' LIMIT 1];
         List<Metric_Definition__c> metricDefCalLst = [SELECT Attribute__c, Attribute__r.Attribute_Master__r.Data_Type__c, Base_Asset_Template__c,Description__c,
                 Id,IsDeleted,Modifer_1__c,Modifer_2_Value__c,Modifer_2__c,Name FROM Metric_Definition__c 
             WHERE TEM_Version__c =: plantAsset.TEM_Version__c];
@@ -325,7 +325,7 @@ public with sharing class EvaluationValueDataCreationTest {
     }
     public static testMethod void testMethod7(){
         //Scenario 7 -> When Attribute data type as Picklist in metric definition, which used for Component 1 and Component 2 field in Evaluation
-        Plant_Asset__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Plant_Asset__c WHERE Name LIKE '%7777.77.777%' LIMIT 1];
+        Account_Plant__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777' LIMIT 1];
         List<Metric_Definition__c> metricDefCalLst = [SELECT Attribute__c, Attribute__r.Attribute_Master__r.Data_Type__c, Base_Asset_Template__c,Description__c,
                 Id,IsDeleted,Modifer_1__c,Modifer_2_Value__c,Modifer_2__c,Name FROM Metric_Definition__c 
             WHERE TEM_Version__c =: plantAsset.TEM_Version__c];
@@ -361,7 +361,7 @@ public with sharing class EvaluationValueDataCreationTest {
     
      public static testMethod void testMethod8(){
         //Scenario 8 -> When Attribute data type as picklist in metric definition which used for Component 1, and When Attribute data type as date in metric definition which used for Component 2 field in Evaluation
-        Plant_Asset__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Plant_Asset__c WHERE Name LIKE '%7777.77.777%' LIMIT 1];
+        Account_Plant__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777' LIMIT 1];
         List<Metric_Definition__c> metricDefCalLst = [SELECT Attribute__c, Attribute__r.Attribute_Master__r.Data_Type__c, Base_Asset_Template__c,Description__c,
                 Id,IsDeleted,Modifer_1__c,Modifer_2_Value__c,Modifer_2__c,Name FROM Metric_Definition__c 
             WHERE TEM_Version__c =: plantAsset.TEM_Version__c];
@@ -396,7 +396,7 @@ public with sharing class EvaluationValueDataCreationTest {
     }
     public static testMethod void testMethod9(){
         //Scenario 9 -> When Attribute data type as Date in metric definition, which used for Component 1 and Component 2 field in Evaluation
-        Plant_Asset__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Plant_Asset__c WHERE Name LIKE '%7777.77.777%' LIMIT 1];
+        Account_Plant__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777' LIMIT 1];
         List<Metric_Definition__c> metricDefCalLst = [SELECT Attribute__c, Attribute__r.Attribute_Master__r.Data_Type__c, Base_Asset_Template__c,Description__c,
                 Id,IsDeleted,Modifer_1__c,Modifer_2_Value__c,Modifer_2__c,Name FROM Metric_Definition__c 
             WHERE TEM_Version__c =: plantAsset.TEM_Version__c];
@@ -432,7 +432,7 @@ public with sharing class EvaluationValueDataCreationTest {
     
     public static testMethod void testMethod10(){
         //Scenario 10 -> When Attribute data type as Date in metric definition, which used for Component 1, Component 2 and Component 3 field in Evaluation
-        Plant_Asset__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Plant_Asset__c WHERE Name LIKE '%7777.77.777%' LIMIT 1];
+        Account_Plant__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777' LIMIT 1];
         List<Metric_Definition__c> metricDefCalLst = [SELECT Attribute__c, Attribute__r.Attribute_Master__r.Data_Type__c, Base_Asset_Template__c,Description__c,
                 Id,IsDeleted,Modifer_1__c,Modifer_2_Value__c,Modifer_2__c,Name FROM Metric_Definition__c 
             WHERE TEM_Version__c =: plantAsset.TEM_Version__c];
@@ -471,7 +471,7 @@ public with sharing class EvaluationValueDataCreationTest {
         Id metricDefinition = Utils.getRecordTypeInfo('Metric_Definition__c','Definition').getRecordTypeId();
         Id metricConst = Utils.getRecordTypeInfo('Metric_Definition__c','Constants').getRecordTypeId();
 
-        Plant_Asset__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Plant_Asset__c WHERE Name LIKE '%7777.77.777%' LIMIT 1];
+        Account_Plant__c plantAsset = [SELECT Id, Name, TEM_Version__c, Renewable_Type__c FROM Account_Plant__c WHERE Drive_Id__c  = '7777.77.777' LIMIT 1];
 
         List<Metric_Definition__c> metricDefCalLst = [SELECT Attribute__c, Attribute__r.Attribute_Master__r.Data_Type__c, Base_Asset_Template__c,Description__c,
                 Id,IsDeleted,Modifer_1__c,Modifer_2_Value__c,Modifer_2__c,Name,RecordTypeId FROM Metric_Definition__c 
@@ -499,5 +499,5 @@ public with sharing class EvaluationValueDataCreationTest {
         evalLst.add(eval4);
         insert evalLst;
         EvaluationValueDataCreation.mapFormationForEvaluationValue(plantAsset.Id);
-    }*/
+    }
 }
