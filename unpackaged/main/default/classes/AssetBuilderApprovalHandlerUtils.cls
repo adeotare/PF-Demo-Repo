@@ -120,7 +120,7 @@ public with sharing class AssetBuilderApprovalHandlerUtils {
     
     /**
      * This Method is used to display Approval history in Approvals tab.
-    */ 
+    
     public static SATApprovalHandler.ApprovalHistory populateApprovalHistoryStepsSAT(List<ProcessInstance> processInstances, String recordId){
         List<SATApprovalHandler.ApprovalHistoryStep> steps = new List<SATApprovalHandler.ApprovalHistoryStep>();
         //Iterating through processInstance records to build the approval history steps
@@ -132,7 +132,7 @@ public with sharing class AssetBuilderApprovalHandlerUtils {
         } 
         return approvalHistoryToReturn;
     }
-
+*/ 
     /**
      * This Method is used for approve/reject/recall the approval request
      */
