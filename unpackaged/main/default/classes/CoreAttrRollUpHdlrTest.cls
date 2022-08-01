@@ -2,12 +2,12 @@
 **/
 @isTest
 public with sharing class CoreAttrRollUpHdlrTest {
-/*    @testSetup
+    @testSetup
     public static void testDataSetup() {
         TEM_Version__c newTemVersion = TestDataFactory.createTemVersion(Constants.DRAFT);
         insert newTemVersion;
 
-        Plant_Asset__c newPlantAsset = TestDataFactory.createPlantAsset(Constants.WIND, 'Drive', '7777.77.777', newTemVersion.Id);
+        Account_Plant__c newPlantAsset = TestDataFactory.createPlantAsset(Constants.WIND, 'Drive', '7777.77.777', newTemVersion.Id);
         insert newPlantAsset;
 
         Base_Asset_Template__c p1PromptBaseAsset = TestDataFactory.createBaseAssetTemplate(Constants.BASE_PV_PLANT, newTemVersion.Id);
@@ -37,7 +37,7 @@ public with sharing class CoreAttrRollUpHdlrTest {
 
         Plant_Asset_Prompt_Detail__c g1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
         g1PlantAssetPromptDetail.Name = newPlantAsset.Name +'-'+ p1PromptInfo.Name;
-        g1PlantAssetPromptDetail.Plant_Asset__c = newPlantAsset.Id;
+        g1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         g1PlantAssetPromptDetail.Prompt_Information__c = g1PromptInfo.Id;
         insert g1PlantAssetPromptDetail;
 
@@ -127,14 +127,14 @@ public with sharing class CoreAttrRollUpHdlrTest {
     @isTest
     public static void rollUpTest1(){
 		
-        Plant_Asset__c newPlantAsset = [SELECT Id, Name FROM Plant_Asset__c WHERE Customer_Plant_Asset_ID__c ='7777.77.777' LIMIT 1];
+        Account_Plant__c newPlantAsset = [SELECT Id, Name FROM Account_Plant__c WHERE Drive_Id__c ='7777.77.777' LIMIT 1];
         Prompt_Information__c p1PromptInfo = [SELECT Id, Name FROM Prompt_Information__c WHERE Name =: Constants.P1_PLANT_INFO_PROMPT_SOLAR LIMIT 1];
         Prompt_Information__c p2PromptInfo = [SELECT Id, Name FROM Prompt_Information__c WHERE Name =: Constants.P2_BLOCK_INFO_AND_PAD_COUNTS LIMIT 1];
         Base_Asset_Template__c p1PromptBaseAsset = [SELECT Id, Name FROM Base_Asset_Template__c WHERE Name =: Constants.BASE_PV_PLANT LIMIT 1];
         Base_Asset_Template__c p2PromptBaseAsset = [SELECT Id, Name FROM Base_Asset_Template__c WHERE Name =:Constants.BASE_BLOCK LIMIT 1];
         
         Plant_Asset_Prompt_Detail__c p1PlantAssetPromptDetail = new Plant_Asset_Prompt_Detail__c();
-        p1PlantAssetPromptDetail.Plant_Asset__c = newPlantAsset.Id;
+        p1PlantAssetPromptDetail.Account_Plant__c = newPlantAsset.Id;
         p1PlantAssetPromptDetail.Prompt_Information__c = p1PromptInfo.Id;
         p1PlantAssetPromptDetail.Base_Asset__c = p1PromptBaseAsset.Id;
         insert p1PlantAssetPromptDetail;
@@ -143,13 +143,13 @@ public with sharing class CoreAttrRollUpHdlrTest {
         p1SiteMetaData.Name = Constants.P1_PLANT_INFO_PROMPT_SOLAR;
         p1SiteMetaData.Prompt_Specific_Info__c = '{"No of Blocks":"2","Flat Hierarchy":"No"';
         p1SiteMetaData.Attribute_Info__c = '{"AC_CAPACITY":"","DC_CAPACITY":""}';
-        p1SiteMetaData.Plant_Asset__c= newPlantAsset.id;
+        p1SiteMetaData.Account_Plant__c= newPlantAsset.id;
         p1SiteMetaData.Base_Asset_Template__c = p1PromptBaseAsset.id;
         p1SiteMetaData.Plant_Asset_Prompt_Detail__c = p1PlantAssetPromptDetail.Id;
         insert p1SiteMetaData;
         
         Plant_Asset_Prompt_Detail__c p2PlantAssetPromptDetailA = new Plant_Asset_Prompt_Detail__c();
-        p2PlantAssetPromptDetailA.Plant_Asset__c = newPlantAsset.Id;
+        p2PlantAssetPromptDetailA.Account_Plant__c = newPlantAsset.Id;
         p2PlantAssetPromptDetailA.Prompt_Information__c = p2PromptInfo.Id;
         p2PlantAssetPromptDetailA.Base_Asset__c = p2PromptBaseAsset.Id;
         insert p2PlantAssetPromptDetailA;
@@ -158,7 +158,7 @@ public with sharing class CoreAttrRollUpHdlrTest {
         p2SiteMetaDataA.Name = Constants.P2_BLOCK_INFO_AND_PAD_COUNTS;
         p2SiteMetaDataA.Prompt_Specific_Info__c = '{"No of Blocks":"2","Flat Hierarchy":"No"';
         p2SiteMetaDataA.Attribute_Info__c = '{"AC_CAPACITY":"100","DC_CAPACITY":"100.19"}';
-        p2SiteMetaDataA.Plant_Asset__c= newPlantAsset.id;
+        p2SiteMetaDataA.Account_Plant__c= newPlantAsset.id;
         p2SiteMetaDataA.Base_Asset_Template__c = p2PromptBaseAsset.id;
         p2SiteMetaDataA.Parent_Site_Metadata__c = p1SiteMetaData.id;
         p2SiteMetaDataA.Plant_Asset_Prompt_Detail__c = p2PlantAssetPromptDetailA.Id;
@@ -166,7 +166,7 @@ public with sharing class CoreAttrRollUpHdlrTest {
 
         Plant_Asset_Prompt_Detail__c p2PlantAssetPromptDetailB = new Plant_Asset_Prompt_Detail__c();
         p2PlantAssetPromptDetailB.Name = newPlantAsset.Name +'-'+ p1PromptInfo.Name;
-        p2PlantAssetPromptDetailB.Plant_Asset__c = newPlantAsset.Id;
+        p2PlantAssetPromptDetailB.Account_Plant__c = newPlantAsset.Id;
         p2PlantAssetPromptDetailB.Prompt_Information__c = p2PromptInfo.Id;
         p2PlantAssetPromptDetailB.Base_Asset__c = p2PromptBaseAsset.Id;
         insert p2PlantAssetPromptDetailB;
@@ -176,7 +176,7 @@ public with sharing class CoreAttrRollUpHdlrTest {
         p2SiteMetaDataB.Name = Constants.P2_BLOCK_INFO_AND_PAD_COUNTS;
         p2SiteMetaDataB.Prompt_Specific_Info__c = '{"No of Blocks":"2","Flat Hierarchy":"No"';
         p2SiteMetaDataB.Attribute_Info__c = '{"AC_CAPACITY":"100","DC_CAPACITY":"100.19"}';
-        p2SiteMetaDataB.Plant_Asset__c= newPlantAsset.id;
+        p2SiteMetaDataB.Account_Plant__c= newPlantAsset.id;
         p2SiteMetaDataB.Base_Asset_Template__c = p2PromptBaseAsset.id;
         p2SiteMetaDataB.Parent_Site_Metadata__c = p1SiteMetaData.id;
         p2SiteMetaDataB.Plant_Asset_Prompt_Detail__c = p2PlantAssetPromptDetailB.Id;
@@ -198,5 +198,5 @@ public with sharing class CoreAttrRollUpHdlrTest {
             System.assertEquals(attrInforList2.get('AC_CAPACITY'),'200');
             System.assertEquals(attrInforList2.get('DC_CAPACITY'),'200.38');
         }
-    }*/
+    }
 }
