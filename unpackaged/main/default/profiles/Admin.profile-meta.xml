@@ -57,14 +57,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>AssetBuilderLocationAPI</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>AssetBuilderLocationAPITest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>AttributeValueObjDataHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>

@@ -2,7 +2,6 @@ import { LightningElement, track, api, wire } from 'lwc';
 import checkPlantAssetPromptDetail from "@salesforce/apex/G1PromptActionButtons.checkPlantAssetPromptDetail";
 import checkABStatusOfPlantAsset from "@salesforce/apex/G1InitialPlantInfoPromptRefresh.checkABStatusOfPlantAsset";
 import refreshG1SiteMetaData from "@salesforce/apex/G1InitialPlantInfoPromptRefresh.refreshG1SiteMetaData";
-import callLocationAPI from "@salesforce/apex/AssetBuilderLocationAPI.callLocationAPIfromLWC";
 import fetchPlantAssetDetails from "@salesforce/apex/WeightedAverageRollUpModalPopUp.plantAssetDetails";
 import { fireEvent } from 'c/pubsub';
 import { showToast } from 'c/utils';
@@ -446,7 +445,7 @@ export default class G1PromptActionButtons extends LightningElement {
               if(checkResult.hasOwnProperty('g1SiteMedataRecord') && checkResult.hasOwnProperty('Attributes')){
                 this.excelInputValue = JSON.parse(checkResult['Attributes']);
                 var plantAssetRecord = checkResult['plantAssetRecord'];
-                this.plantId = plantAssetRecord['Customer_Plant_Asset_ID__c'];
+                this.plantId = plantAssetRecord['Drive_Id__c'];
                 if(checkResult['g1SiteMedataRecord']){
                   this.exportSiteMetadata(true, true);
                 }
