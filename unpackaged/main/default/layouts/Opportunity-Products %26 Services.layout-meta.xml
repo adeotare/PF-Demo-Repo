@@ -186,15 +186,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Invoice_split_notes__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Finance_Review__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Finance_Reviewed_Date__c</field>
+                <field>Finance_Reviewed_Complete_Date__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -248,10 +244,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>SBQQ__Ordered__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>SBQQ__Contracted__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -436,6 +428,14 @@
         <relatedList>RelatedPartnerList</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>CAMPAIGN.NAME</fields>
+        <fields>CONTACT.NAME</fields>
+        <fields>INFLUENCE</fields>
+        <fields>REVENUE_SHARE</fields>
+        <fields>OCR.ROLE</fields>
+        <relatedList>RelatedCampaignInfluence2List</relatedList>
+    </relatedLists>
+    <relatedLists>
         <excludeButtons>AddAccTeamMemberOnOpp</excludeButtons>
         <excludeButtons>AddAccountTeam</excludeButtons>
         <fields>MemberName</fields>
@@ -497,10 +497,24 @@
         <relatedList>Finance_Checklist__c.Opportunity__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>ORDERS.ORDER_NUMBER</fields>
+        <fields>ORDERS.EFFECTIVE_DATE</fields>
+        <fields>ORDERS.STATUS</fields>
+        <fields>ORDERS.TOTAL_AMOUNT</fields>
+        <fields>SBQQ__Contracted__c</fields>
+        <fields>CONTRACT.CONTRACT_NUMBER</fields>
+        <relatedList>RelatedOrderList</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>CONTRACT.CONTRACT_NUMBER</fields>
         <fields>CONTRACT.NAME</fields>
         <fields>SALES.ACCOUNT.NAME</fields>
-        <fields>CONTRACT.STATUS</fields>
+        <fields>CONTRACT.START_DATE</fields>
+        <fields>CONTRACT.END_DATE</fields>
+        <fields>SBQQ__Order__c</fields>
+        <fields>SBQQ__RenewalOpportunity__c</fields>
+        <fields>SBQQ__RenewalQuoted__c</fields>
+        <fields>SBQQ__RenewalUpliftRate__c</fields>
         <relatedList>Contract.SBQQ__Opportunity__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -512,14 +526,6 @@
     <relatedLists>
         <relatedList>RelatedEntityHistoryList</relatedList>
     </relatedLists>
-    <relatedLists>
-        <fields>CAMPAIGN.NAME</fields>
-        <fields>CONTACT.NAME</fields>
-        <fields>INFLUENCE</fields>
-        <fields>REVENUE_SHARE</fields>
-        <fields>OCR.ROLE</fields>
-        <relatedList>RelatedCampaignInfluence2List</relatedList>
-    </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
@@ -527,7 +533,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8F000000IgDv</masterLabel>
+        <masterLabel>00h7j000000ZVmV</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
