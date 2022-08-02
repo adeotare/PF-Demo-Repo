@@ -37,8 +37,10 @@ product1.Asset_Class__c = 'Solar';
         
         Opportunity renewalOpp = new Opportunity();
         renewalOpp.AccountId = newAccount.Id;
-        renewalOpp.Type='Existing Business';
-        renewalOpp.QS_Order_Type__c='Subscription Renewal';    
+        //renewalOpp.Type='Existing Business';
+        renewalOpp.Type='Customer';
+        renewalOpp.QS_Order_Type__c='Subscription Renewal'; 
+        //renewalOpp.Order_Type__c='Renewal';
         renewalOpp.StageName= '4 - Evaluation';
         renewalOpp.CloseDate = System.today();
         renewalOpp.Name = 'Test Renewal';
