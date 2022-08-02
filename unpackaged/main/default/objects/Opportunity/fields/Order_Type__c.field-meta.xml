@@ -60,6 +60,10 @@
             <valueName>New</valueName>
         </valueSettings>
         <valueSettings>
+            <controllingFieldValue>Former Customer</controllingFieldValue>
+            <valueName>Winback</valueName>
+        </valueSettings>
+        <valueSettings>
             <controllingFieldValue>Customer</controllingFieldValue>
             <valueName>New Product Line (Cross-Sell)</valueName>
         </valueSettings>
@@ -82,10 +86,6 @@
         <valueSettings>
             <controllingFieldValue>Customer</controllingFieldValue>
             <valueName>Downsell</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Former Customer</controllingFieldValue>
-            <valueName>Winback</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>
