@@ -10,7 +10,6 @@
     <type>Picklist</type>
     <valueSet>
         <controllingField>Order_Type__c</controllingField>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
@@ -37,6 +36,7 @@
             <controllingFieldValue>Services Only</controllingFieldValue>
             <controllingFieldValue>Change Order</controllingFieldValue>
             <controllingFieldValue>Renewal</controllingFieldValue>
+            <controllingFieldValue>Downsell</controllingFieldValue>
             <valueName>N/A</valueName>
         </valueSettings>
         <valueSettings>
