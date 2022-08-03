@@ -4,8 +4,8 @@
     <assignments>
         <name>Add_to_PPT</name>
         <label>Add to PPT</label>
-        <locationX>138</locationX>
-        <locationY>935</locationY>
+        <locationX>484</locationX>
+        <locationY>1209</locationY>
         <assignmentItems>
             <assignToReference>PPTtoUpdate</assignToReference>
             <operator>Add</operator>
@@ -20,15 +20,8 @@
     <assignments>
         <name>Update_Status</name>
         <label>Update Status</label>
-        <locationX>138</locationX>
-        <locationY>815</locationY>
-        <assignmentItems>
-            <assignToReference>Plant_Product_Transaction_Record_Update.Status__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Contracted</stringValue>
-            </value>
-        </assignmentItems>
+        <locationX>141</locationX>
+        <locationY>1103</locationY>
         <assignmentItems>
             <assignToReference>Plant_Product_Transaction_Record_Update.Subscription__c</assignToReference>
             <operator>Assign</operator>
@@ -51,6 +44,13 @@
             </value>
         </assignmentItems>
         <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Contracted</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
             <assignToReference>Plant_Product_Transaction_Record_Update.Contract__c</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -61,11 +61,87 @@
             <targetReference>Add_to_PPT</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Update_Status_to_Decommissioned</name>
+        <label>Update Status to Decommissioned</label>
+        <locationX>326</locationX>
+        <locationY>938</locationY>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Subscription__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Contract__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.SBQQ__Contract__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Decommissioned</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Effective_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.SBQQ__StartDate__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.End_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.SBQQ__EndDate__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_to_PPT</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_Amendment_and_Renewal_Action</name>
+        <label>Check Amendment and Renewal Action</label>
+        <locationX>136</locationX>
+        <locationY>833</locationY>
+        <defaultConnector>
+            <targetReference>Update_Status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_action</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Plant_Product_Transaction_Record_Update.Amendment_Action__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Removed Plant</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Plant_Product_Transaction_Record_Update.Renewal_Action__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Removed Plant</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Status_to_Decommissioned</targetReference>
+            </connector>
+            <label>Check action</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>Plant_Product_Transaction_Records_Found</name>
         <label>Plant Product Transaction Records Found</label>
-        <locationX>182</locationX>
-        <locationY>575</locationY>
+        <locationX>575</locationX>
+        <locationY>623</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Plant_Product_Transaction_Record_found</name>
@@ -89,12 +165,12 @@
     <loops>
         <name>Plant_Product_Transaction_Record_Update</name>
         <label>Plant Product Transaction Record Update</label>
-        <locationX>50</locationX>
-        <locationY>695</locationY>
+        <locationX>443</locationX>
+        <locationY>743</locationY>
         <collectionReference>Get_Plant_Product_Transactions</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Update_Status</targetReference>
+            <targetReference>Check_Amendment_and_Renewal_Action</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>Update_PPT_Records</targetReference>
@@ -109,7 +185,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -122,8 +198,8 @@
     <recordLookups>
         <name>Get_Plant_Product_Transactions</name>
         <label>Get Plant Product Transactions</label>
-        <locationX>182</locationX>
-        <locationY>455</locationY>
+        <locationX>575</locationX>
+        <locationY>503</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Plant_Product_Transaction_Records_Found</targetReference>
@@ -143,8 +219,8 @@
     <recordLookups>
         <name>Get_Quote_Line</name>
         <label>Get Quote Line</label>
-        <locationX>182</locationX>
-        <locationY>335</locationY>
+        <locationX>575</locationX>
+        <locationY>383</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Plant_Product_Transactions</targetReference>
@@ -164,13 +240,13 @@
     <recordUpdates>
         <name>Update_PPT_Records</name>
         <label>Update PPT Records</label>
-        <locationX>50</locationX>
-        <locationY>1151</locationY>
+        <locationX>799</locationX>
+        <locationY>1053</locationY>
         <inputReference>PPTtoUpdate</inputReference>
     </recordUpdates>
     <start>
-        <locationX>56</locationX>
-        <locationY>0</locationY>
+        <locationX>449</locationX>
+        <locationY>48</locationY>
         <connector>
             <targetReference>Get_Quote_Line</targetReference>
         </connector>
