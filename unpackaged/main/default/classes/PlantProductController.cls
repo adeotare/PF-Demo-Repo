@@ -65,12 +65,13 @@ public with sharing class PlantProductController {
         List<Id>  accplan = new List<Id>();
         
         List<Plant_Product_Transaction__c> pptClonned = [Select id,
-                                                         		Product__r.QuantityUnitOfMeasure,
-                                                         		Plant__r.Plant_MWP__c,
-                                                         		Amendment_Quantity__c,
-                                                         		Quote_Line__c,
-                                                         		Plant__c
-                                                         	from Plant_Product_Transaction__c where id In:pptList];
+                                                                Product__r.QuantityUnitOfMeasure,
+                                                                Plant__r.Plant_MWP__c,
+                                                                Amendment_Quantity__c,
+                                                                Quote_Line__c,
+                                                                Plant__c,
+                                                                Plant_Product__c
+                                                            from Plant_Product_Transaction__c where id In:pptList WITH SECURITY_ENFORCED];
         
         pptList = pptClonned;
         
@@ -85,7 +86,8 @@ public with sharing class PlantProductController {
                 system.debug('-->>'+ppt.Product__r.QuantityUnitOfMeasure);
                 if (ppt.Product__r.QuantityUnitOfMeasure == 'MWp') {
                     ppt.Amendment_Quantity__c = -(ppt.Plant__r.Plant_MWP__c);
-                    ppt.Quote_Line_Quantity__c = -(ppt.Amendment_Quantity__c);      // set to negative quantity when plant is removed
+                    ppt.Quote_Line_Quantity__c = (ppt.Amendment_Quantity__c);      // set to negative quantity when plant is removed
+                    //ppt.Quote_Line_Quantity__c = 0;
                     system.debug('Plant__r.Plant_MWP__c---'+ppt.Plant__r.Plant_MWP__c);
                     system.debug('ppt.Amendment_Quantity__c---'+ppt.Amendment_Quantity__c);
                     system.debug('ppt.Quote_Line_Quantity__c---'+ppt.Quote_Line_Quantity__c);
@@ -93,6 +95,8 @@ public with sharing class PlantProductController {
                 else if (ppt.Product__r.QuantityUnitOfMeasure == 'Site') {
                     ppt.Amendment_Quantity__c = -1;
                     ppt.Quote_Line_Quantity__c = -1;
+                    //ppt.Quote_Line_Quantity__c = 0;
+
                 }
             } 
             If (quoteLine.SBQQ__Quote__r.SBQQ__Type__c == 'Renewal') {
@@ -105,7 +109,7 @@ public with sharing class PlantProductController {
         //List<Account_Plant__c> aplan =[SELECT Id, Name, Account__r.Name, Plant__r.Plant_Name__c,Plant__r.Country__c, Plant__r.MWp__c, Plant__r.MW_Energy_Capacity_MWh__c, Plant__r.Number_of_Turbines__c,Plant__r.Asset_Class__c From Account_Plant__c where Id IN :accplan WITH SECURITY_ENFORCED];
         //System.debug('aplan::'+aplan.size());
         
-        // delete Plants from PPT only if they are not of type Amendment or Renewal
+       // delete Plants from PPT only if they are not of type Amendment or Renewal
         If (quoteLine.SBQQ__Quote__r.SBQQ__Type__c != 'Amendment' && quoteLine.SBQQ__Quote__r.SBQQ__Type__c != 'Renewal')
         {
             try {
@@ -119,11 +123,11 @@ public with sharing class PlantProductController {
             }
         }
         else {                              // just update the records and delete the one's that are not part of Original Contract but were added as part of the Amendment
-                try {	
+                try {   
                         update pptList;
                         System.debug('Updated PPT records instead of deletion as this is an Amendement or Renewal');
                         for(Plant_Product_Transaction__c ppt :pptList ){
-                            if (ppt.Plant_Product__c == FALSE) {
+                            if (ppt.Plant_Product__c != TRUE) {
                                 System.debug('Deleting PPT record as this was not part of the Original Contract');
                                 delete ppt;
                             }
@@ -145,8 +149,8 @@ public with sharing class PlantProductController {
         updatePricingForQuoteLineInPPT(quoteLineId);
         updatePricingfromPPTToQuoteline (quoteLine, quoteLineId);
         }
-    } 
-    
+  } 
+
     /*
     @description
     Add the  Plants selected in the UI by the User to the Quote line. This is done by creating a PPT record for every
@@ -224,11 +228,13 @@ public with sharing class PlantProductController {
                 ppt.Amendment_Action__c = 'Added Plant' ;
                 ppt.Plant_Product__c = FALSE;                           // this is not the original quote line
                 ppt.Amendment_Quantity__c = ppt.Quote_Line_Quantity__c;     // set to +ve quantity when plant is added
+                system.debug ('Set Status, Amendment action, From Original PPT and Amendment quantity');
             } 
             If (quoteLine.SBQQ__Quote__r.SBQQ__Type__c == 'Renewal') {
                 ppt.Status__c = 'Renewal Quoted';
                 ppt.Renewal_Action__c = 'Added Plant';
                 ppt.Plant_Product__c = FALSE;                       // this is not the original quote line
+                system.debug ('Set Status, Renewal action, From Original PPT');
             }
 
             pList.add(ppt);
@@ -315,7 +321,7 @@ public with sharing class PlantProductController {
         SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED Limit 1 FOR UPDATE];
         // List<Plant_Product_Transaction__c> ppt =[SELECT Plant__r.Plant__c from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId];
         // List<Plant_Product_Transaction__c> ppt =[SELECT Quote_Line_Quantity__c, Plant__r.Plant__r.MWp__c from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId AND Status__c != 'Decommissioned' WITH SECURITY_ENFORCED];
-        List<Plant_Product_Transaction__c> pptList =[SELECT Quote_Line_Quantity__c, Plant__r.Plant__r.MWp__c 
+        List<Plant_Product_Transaction__c> pptList =[SELECT Quote_Line_Quantity__c, Plant__r.Plant__r.MWp__c, Renewal_Action__c, Amendment_Action__c 
         from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId AND 
         // (Amendment_Action__c != 'Removed Plant' AND Renewal_Action__c != 'Removed Plant') WITH SECURITY_ENFORCED];
         Renewal_Action__c != 'Removed Plant' WITH SECURITY_ENFORCED];
@@ -326,7 +332,7 @@ public with sharing class PlantProductController {
         if(quoteLine.SBQQ__Product__r.QuantityUnitOfMeasure == 'MWp'){
             for(Plant_Product_Transaction__c pptRecord: pptList) {
 				system.debug('ap.Quote_Line_Quantity__c--'+pptRecord.Quote_Line_Quantity__c);
-                if(pptRecord.Quote_Line_Quantity__c != null){
+                if(pptRecord.Quote_Line_Quantity__c != null && (pptRecord.Renewal_Action__c != 'Removed Plant' && pptRecord.Amendment_Action__c != 'Removed Plant')){
                     sumOfMWp =sumOfMWp + (pptRecord.Quote_Line_Quantity__c);
                 }
             }
