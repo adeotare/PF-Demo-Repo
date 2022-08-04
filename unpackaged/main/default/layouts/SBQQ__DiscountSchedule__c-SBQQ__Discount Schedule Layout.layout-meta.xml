@@ -152,9 +152,9 @@
         <detailHeading>false</detailHeading>
         <editHeading>true</editHeading>
         <label>Custom Links</label>
-        <layoutColumns/>
-        <layoutColumns/>
-        <layoutColumns/>
+        <layoutColumns />
+        <layoutColumns />
+        <layoutColumns />
         <style>CustomLinks</style>
     </layoutSections>
     <platformActionList>
@@ -226,6 +226,8 @@
         <fields>SBQQ__Number__c</fields>
         <fields>SBQQ__LowerBound__c</fields>
         <fields>SBQQ__UpperBound__c</fields>
+        <fields>CURRENCY_ISO_CODE</fields>
+        <fields>SBQQ__Price__c</fields>
         <fields>SBQQ__Discount__c</fields>
         <relatedList>SBQQ__DiscountTier__c.SBQQ__Schedule__c</relatedList>
         <sortField>SBQQ__Number__c</sortField>
@@ -268,7 +270,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8F000000If7I</masterLabel>
+        <masterLabel>00h7j000000ZU88</masterLabel>
         <sizeX>3</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
