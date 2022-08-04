@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>Power_Factor_Sales</application>
@@ -484,6 +484,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account_Plant__c.Longitude__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account_Plant__c.Operational_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4509,6 +4514,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Plant_Product_Transaction__c.Net_Unit_Price__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Plant_Product_Transaction__c.Operational_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

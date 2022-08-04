@@ -99,6 +99,10 @@
                 <behavior>Edit</behavior>
                 <field>Renewal_Action__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Operational_Status__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
