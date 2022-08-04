@@ -13,9 +13,6 @@
                             <value>Delete</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Clone</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Convert</value>
                         </valueListItems>
                     </valueList>
