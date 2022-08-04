@@ -254,6 +254,7 @@ public with sharing class TestDataFactory {
         opp.AccountId = accountId;
         opp.StageName = '00 - MQL';
         opp.CloseDate = date.today();
+        //opp.Pricebook2Id = 'Standard Price Book';
         return opp;
     }
     
@@ -314,8 +315,16 @@ public with sharing class TestDataFactory {
 
     //Create PriceBook
     public static Pricebook2 createPriceBook(){
-       Pricebook2 priceBook = new Pricebook2(Name = 'Standard Price Book'); 
+       Pricebook2 priceBook = new Pricebook2(Name = 'Standard Price Book',CurrencyIsoCode = 'USD',isActive = true); 
        return priceBook;
+    }
+
+     //Create PricebookEntry
+    public static PricebookEntry createPriceBookEntry(id pricebookId,Id ProductId){
+       PricebookEntry PBEntry = new PricebookEntry(IsActive = true,UnitPrice = 124, 
+                                                   CurrencyIsoCode = 'USD',Pricebook2Id = pricebookId,
+                                                   Product2Id = ProductId,UseStandardPrice = true); 
+       return PBEntry;
     }
 
         
@@ -395,6 +404,24 @@ public with sharing class TestDataFactory {
         program.Name = 'Test Program';
         program.Customer_Name__c = accountId;
         return program;
+    }
+    
+    //Create Quote data
+    public static SBQQ__Quote__c createQuote(String accId, String opptyId){
+        SBQQ__Quote__c quote  = new SBQQ__Quote__c();
+        quote.SBQQ__SubscriptionTerm__c = 12;
+        quote.SBQQ__Account__c = accId;
+        quote.SBQQ__Opportunity2__c = opptyId;
+        //quote.SBQQ__PriceBook__c = 'Standard Price Book';
+        return quote;
+    }
+    
+    //Create Quote Line data
+    public static SBQQ__QuoteLine__c createQuoteLine(String quoteId, String productId){
+        SBQQ__QuoteLine__c quoteLine  = new SBQQ__QuoteLine__c();
+        quoteLine.SBQQ__Product__c = productId;
+        quoteLine.SBQQ__Quote__c = quoteId;
+        return quoteLine;
     }
 
     

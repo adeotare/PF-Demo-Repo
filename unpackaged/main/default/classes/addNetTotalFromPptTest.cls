@@ -13,23 +13,25 @@ public class addNetTotalFromPptTest {
         Opportunity opp = TestDataFactory.createOpportunity(acc.Id);
         insert opp;
         
-        MSA_Contract__c msa = TestDataFactory.createMsa(acc.Id);                             
-        insert msa;
+        SBQQ__Quote__c quote  = TestDataFactory.createQuote(acc.Id, opp.Id);
+        insert quote;
         
         Product2 product = TestDataFactory.createProductAgain();
         insert product;
-
-        MSA_Software_Discount_Tier_Price__c softPrice = TestDataFactory.createSoftwareDiscountTier(acc.Id, product.Id, msa.Id);
-        insert softPrice;
         
-        User user = TestDataFactory.createNewUser();
-        insert user;
+        SBQQ__QuoteLine__c quoteLine = TestDataFactory.createQuoteLine(quote.Id, product.Id);
+        insert quoteLine;
         
         }
     
     public static testMethod void testInsert(){
- 
     
+    	String accName = 'TestCP';
+    	Account accts = [SELECT Id, Name FROM Account WHERE Name =:accName LIMIT 1];
+    	Test.startTest();
+        System.debug('Account Name : ' + accName);
+        Test.stopTest();
+        System.assertEquals('TestCP', accName );
     
 	}
 
