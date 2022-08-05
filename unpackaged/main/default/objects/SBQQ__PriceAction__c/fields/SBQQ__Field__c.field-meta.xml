@@ -67,6 +67,16 @@
                 <default>false</default>
                 <label>QS_Line_Classification__c</label>
             </value>
+            <value>
+                <fullName>QS_Initial_Quantity__c</fullName>
+                <default>false</default>
+                <label>QS_Initial_Quantity__c</label>
+            </value>
+            <value>
+                <fullName>QS_Initial_ARR__c</fullName>
+                <default>false</default>
+                <label>QS_Initial_ARR__c</label>
+            </value>
         </valueSetDefinition>
         <valueSettings>
             <controllingFieldValue>Quote</controllingFieldValue>
@@ -105,6 +115,14 @@
         <valueSettings>
             <controllingFieldValue>Quote Line</controllingFieldValue>
             <valueName>QS_Line_Classification__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>QS_Initial_Quantity__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>QS_Initial_ARR__c</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Quote Line Pricing Guidance</controllingFieldValue>
