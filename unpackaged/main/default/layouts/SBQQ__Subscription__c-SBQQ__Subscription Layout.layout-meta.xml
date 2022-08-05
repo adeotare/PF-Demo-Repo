@@ -43,6 +43,10 @@
                 <behavior>Edit</behavior>
                 <field>Unique_Account_Product__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>QS_ARR_Growth__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -64,10 +68,6 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>SBQQ__StartDate__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>SBQQ__SubscriptionType__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
