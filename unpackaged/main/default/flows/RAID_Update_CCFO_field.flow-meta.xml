@@ -18,7 +18,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Raid_CCFO</targetReference>
+                <targetReference>UpdateAssignedCustomerContact</targetReference>
             </connector>
             <label>Contact found</label>
         </rules>
@@ -48,8 +48,8 @@
     <recordLookups>
         <name>Get_Account_Contact_Relationship_Record</name>
         <label>Get Account Contact Relationship Record</label>
-        <locationX>575</locationX>
-        <locationY>383</locationY>
+        <locationX>574</locationX>
+        <locationY>348</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Decision_to_check_if_contact_available</targetReference>
@@ -74,10 +74,18 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Update_Raid_CCFO</name>
-        <label>Update Raid CCFO</label>
-        <locationX>565</locationX>
-        <locationY>742</locationY>
+        <name>UpdateAssignedCustomerContact</name>
+        <label>UpdateAssignedCustomerContact</label>
+        <locationX>579</locationX>
+        <locationY>756</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
         <inputAssignments>
             <field>Assigned_Customer_Contact__c</field>
             <value>
@@ -92,6 +100,14 @@
         <connector>
             <targetReference>Get_Account_Contact_Relationship_Record</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Account__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
         <object>RAID__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
