@@ -5,7 +5,7 @@
     <description>This flag is to track if the Contract Price has been changed from the List Price</description>
     <externalId>false</externalId>
     <inlineHelpText>This flag is to track if the Contract Price has been changed from the List Price</inlineHelpText>
-    <label>Same As List Price</label>
+    <label>Same As List Price on Creation</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>
