@@ -4,19 +4,19 @@
     <externalId>false</externalId>
     <formula>If ( AND( ISNULL ( Addl_Discount_Percent__c ) ,ISNULL (Unit_Price_After_Volume_Discount__c) ),
 
- (Contracted_MW_Unit_List_Price__c) ,
+ (Contracted_MW_Unit_List_Price__c*PPT_Prorate_Multiplier__c) ,
  
 If (AND ( ISNULL (Addl_Discount_Percent__c ),NOT( ISNULL( Unit_Price_After_Volume_Discount__c ))),
 
- (Unit_Price_After_Volume_Discount__c) ,
+ (Unit_Price_After_Volume_Discount__c*PPT_Prorate_Multiplier__c) ,
 
 If( AND(NOT(ISNULL( Addl_Discount_Percent__c )),ISNULL( Unit_Price_After_Volume_Discount__c )),
 
- (Contracted_MW_Unit_List_Price__c *((100 -  Addl_Discount_Percent__c )/100)),
+ ((Contracted_MW_Unit_List_Price__c *((100 -  Addl_Discount_Percent__c )/100))*PPT_Prorate_Multiplier__c),
 
 If( AND(NOT(ISNULL( Addl_Discount_Percent__c )),NOT(ISNULL( Unit_Price_After_Volume_Discount__c ))),
 
-Unit_Price_After_Volume_Discount__c *((100 - Addl_Discount_Percent__c)/100),
+(Unit_Price_After_Volume_Discount__c *((100 - Addl_Discount_Percent__c)/100))*PPT_Prorate_Multiplier__c,
 
 NULL))))</formula>
     <label>Net Unit Price</label>

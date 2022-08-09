@@ -164,13 +164,19 @@ public class ContractTriggerHandlerTest {
 		cnt.SBQQ__RenewalQuoted__c = true;
         cnt.Amendment_Quoted__c = true;
         cnt.Status = 'Activated';
-        update cnt;
+        //update cnt;
         Test.stopTest();
     }
     
     @isTest
     public static void method01(){
         Test.startTest();
+        Contract cnt = [SELECT Id FROM Contract LIMIT 1];
+        cnt.SBQQ__RenewalQuoted__c = true;
+        cnt.Amendment_Quoted__c = true;
+        cnt.Status = 'Activated';
+        update cnt;
+        
         List<Plant_Product_Transaction__c> pptList = [SELECT Id FROM Plant_Product_Transaction__c];
         for(Plant_Product_Transaction__c ppt : pptList){
             ppt.Quote_Line_Quantity__c = 5;

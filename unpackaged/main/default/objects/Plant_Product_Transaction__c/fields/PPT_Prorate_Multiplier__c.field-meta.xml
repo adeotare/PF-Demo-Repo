@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PPT_Prorate_Multiplier__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+   Quote_Type__c == &#39;Amendment&#39; &amp;&amp;  ISPICKVAL(Amendment_Action__c, &#39;Added Plant&#39;) , 
+     (Quote__r.SBQQ__EndDate__c  - Date_of_Amendment__c ) / (Quote__r.SBQQ__EndDate__c  - Quote__r.SBQQ__StartDate__c) , 
+   if(
+       Quote_Type__c == &#39;Amendment&#39; &amp;&amp;  ISPICKVAL(Amendment_Action__c, &#39;Removed Plant&#39;) , 
+         ( Date_of_Amendment__c  - Quote__r.SBQQ__StartDate__c) / (Quote__r.SBQQ__EndDate__c  - Quote__r.SBQQ__StartDate__c) ,
+         1
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>PPT Prorate Multiplier</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
