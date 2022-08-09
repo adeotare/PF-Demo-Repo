@@ -20,6 +20,7 @@ public class AmendmentQuoteProcessHelper {
                                                                  Amendment_Action__c,
                                                                  Plant_Product__c,
                                                                  Plant__r.Plant__r.MWp__c,
+                                                                 Contracted_MW_Unit_List_Price__c,
                                                                  		Subscription__r.SBQQ__QuoteLine__c,
                                                                  Subscription__r.SBQQ__Product__c,
                                                                  		Quote_Line__r.SBQQ__Quote__r.SBQQ__Account__c,
@@ -69,6 +70,7 @@ public class AmendmentQuoteProcessHelper {
                     pp.MWp_Quantity__c=pp.Plant__r.Plant__r.MWp__c;
                     pp.Quote_Line_Quantity__c=pp.Plant__r.Plant__r.MWp__c;
                     pp.List_Unit_Price__c=ql.SBQQ__ListPrice__c;
+                    pp.Contracted_MW_Unit_List_Price__c= ppt.Contracted_MW_Unit_List_Price__c;  
                         
                         pptListTOClone.add(pp);
                     }
