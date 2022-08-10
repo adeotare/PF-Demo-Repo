@@ -147,10 +147,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Closed Lost</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Closed Won</fullName>
             <default>false</default>
         </values>
@@ -213,13 +209,150 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Sales_Forecast_Category__c</picklist>
+        <picklist>QS_Decommission_Reason__c</picklist>
         <values>
-            <fullName>Best Case</fullName>
+            <fullName>AM Turn-Over%2FLack of Follow-Up</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Closed Lost</fullName>
+            <fullName>Associated or Consolidating with Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bankruptcy or Acquisition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Non-Responsiveness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Personnel Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Challenges</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Service %26 Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feature Deficiency%2FFunctionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation or Migration Time %26 Cost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Business Reasons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy Product%2FVersion Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low or Non-Usage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Migrated to Another Product Line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Older Version%2FCost of Ownership or Upgrade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner%2FThird-Party Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product No Longer Supported</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reduction of Users</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Order_Type__c</picklist>
+        <values>
+            <fullName>AddOn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Renewal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Debooking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Decommission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Migration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subscription Renewal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Sales_Forecast_Category__c</picklist>
+        <values>
+            <fullName>0 - Closed Won</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1 - Commit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 - Best Case</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - Pipeline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 - Omitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sales_Forecast_Category__c</picklist>
+        <values>
+            <fullName>Best Case</fullName>
             <default>false</default>
         </values>
         <values>
@@ -233,6 +366,21 @@
         <values>
             <fullName>Pipeline</fullName>
             <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Territory__c</picklist>
+        <values>
+            <fullName>APAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Americas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMEA</fullName>
+            <default>false</default>
         </values>
     </picklistValues>
     <picklistValues>

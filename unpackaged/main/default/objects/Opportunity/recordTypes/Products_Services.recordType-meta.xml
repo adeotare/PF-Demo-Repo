@@ -177,31 +177,7 @@
     <picklistValues>
         <picklist>Order_Type__c</picklist>
         <values>
-            <fullName>Additional Products %26 Services %28Upsell%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Change Order</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Downsell</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>New</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>New Product Line %28Cross-Sell%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Renewal</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Services Only</fullName>
             <default>false</default>
         </values>
         <values>
@@ -465,5 +441,23 @@
             <default>false</default>
         </values>
     </picklistValues>
-    
-    </RecordType>
+    <picklistValues>
+        <picklist>sbaa__ApprovalStatus__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recalled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
