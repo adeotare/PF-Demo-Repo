@@ -4,8 +4,8 @@
     <assignments>
         <name>Add_to_PPT</name>
         <label>Add to PPT</label>
-        <locationX>484</locationX>
-        <locationY>1209</locationY>
+        <locationX>270</locationX>
+        <locationY>1151</locationY>
         <assignmentItems>
             <assignToReference>PPTtoUpdate</assignToReference>
             <operator>Add</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>Update_Status</name>
         <label>Update Status</label>
-        <locationX>141</locationX>
-        <locationY>1103</locationY>
+        <locationX>402</locationX>
+        <locationY>935</locationY>
         <assignmentItems>
             <assignToReference>Plant_Product_Transaction_Record_Update.Subscription__c</assignToReference>
             <operator>Assign</operator>
@@ -64,8 +64,8 @@
     <assignments>
         <name>Update_Status_to_Decommissioned</name>
         <label>Update Status to Decommissioned</label>
-        <locationX>326</locationX>
-        <locationY>938</locationY>
+        <locationX>138</locationX>
+        <locationY>935</locationY>
         <assignmentItems>
             <assignToReference>Plant_Product_Transaction_Record_Update.Subscription__c</assignToReference>
             <operator>Assign</operator>
@@ -108,15 +108,15 @@
     <decisions>
         <name>Check_Amendment_and_Renewal_Action</name>
         <label>Check Amendment and Renewal Action</label>
-        <locationX>136</locationX>
-        <locationY>833</locationY>
+        <locationX>270</locationX>
+        <locationY>815</locationY>
         <defaultConnector>
             <targetReference>Update_Status</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Check_action</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>Plant_Product_Transaction_Record_Update.Amendment_Action__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -140,8 +140,8 @@
     <decisions>
         <name>Plant_Product_Transaction_Records_Found</name>
         <label>Plant Product Transaction Records Found</label>
-        <locationX>575</locationX>
-        <locationY>623</locationY>
+        <locationX>182</locationX>
+        <locationY>575</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Plant_Product_Transaction_Record_found</name>
@@ -165,8 +165,8 @@
     <loops>
         <name>Plant_Product_Transaction_Record_Update</name>
         <label>Plant Product Transaction Record Update</label>
-        <locationX>443</locationX>
-        <locationY>743</locationY>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
         <collectionReference>Get_Plant_Product_Transactions</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -185,7 +185,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -198,8 +198,8 @@
     <recordLookups>
         <name>Get_Plant_Product_Transactions</name>
         <label>Get Plant Product Transactions</label>
-        <locationX>575</locationX>
-        <locationY>503</locationY>
+        <locationX>182</locationX>
+        <locationY>455</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Plant_Product_Transaction_Records_Found</targetReference>
@@ -219,8 +219,8 @@
     <recordLookups>
         <name>Get_Quote_Line</name>
         <label>Get Quote Line</label>
-        <locationX>575</locationX>
-        <locationY>383</locationY>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Plant_Product_Transactions</targetReference>
@@ -240,13 +240,13 @@
     <recordUpdates>
         <name>Update_PPT_Records</name>
         <label>Update PPT Records</label>
-        <locationX>799</locationX>
-        <locationY>1053</locationY>
+        <locationX>50</locationX>
+        <locationY>1367</locationY>
         <inputReference>PPTtoUpdate</inputReference>
     </recordUpdates>
     <start>
-        <locationX>449</locationX>
-        <locationY>48</locationY>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Get_Quote_Line</targetReference>
         </connector>
