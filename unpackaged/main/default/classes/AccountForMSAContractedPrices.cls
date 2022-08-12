@@ -34,12 +34,17 @@ public class AccountForMSAContractedPrices {
         system.debug('No of records found with contracted price =>' + records.size());
         return records;
     }
-    @AuraEnabled
+    
+    @AuraEnabled   
     public static string createNewContractPrice(String msaRecId){
-        system.debug('----RecId-dd--'+msaRecId);        
-
-        List<MSA_Contract__c> msaContract = [Select Account_Name__r.Account_Price_Book__r.name from MSA_Contract__c where Id = :msaRecId limit 1];
-        Id accId = string.valueOf(msaContract[0].Account_Name__c);
+        system.debug('----RecId-dd--'+msaRecId);  
+               
+        
+//        CreateMSAContractPriceBatchProcess obj = new CreateMSAContractPriceBatchProcess(msaRecId);
+//		Database.executeBatch(obj,10);
+        
+        //  List<MSA_Contract__c> msaContract = [Select Account_Name__r.Account_Price_Book__r.name from MSA_Contract__c where Id = :msaRecId limit 1];
+//        Id accId = string.valueOf(msaContract[0].Account_Name__c);
 
         list<PricebookEntry>priceBookEntryList = new list<PricebookEntry>();
         map<string,Account>priceBookWithAccountMap = new map<string,Account>();
@@ -48,12 +53,12 @@ public class AccountForMSAContractedPrices {
         set<string>accountCurrency = new set<string>();
         list<Account>accountUpdate = new list<Account>();
         for(Account accountInfo : [Select id,Name,Account_Price_Book__c,CurrencyIsoCode,isContractPriceCreated__c,Uses_MSA_of__c from Account
-                                     where Uses_MSA_of__c =: msaRecId AND isContractPriceCreated__c = false AND Account_Price_Book__c != null]){
+                                     where Uses_MSA_of__c =: msaRecId AND  Account_Price_Book__c != null]){
                                          system.debug('---accountInfo---'+accountInfo);
 
                                     priceBookIdSet.add(accountInfo.Account_Price_Book__c);
                                     accountCurrency.add(accountInfo.CurrencyIsoCode);
-                                    string accountMapKey = accountInfo.Account_Price_Book__c + '-' + accountInfo.CurrencyIsoCode;
+                                    string accountMapKey = accountInfo.Account_Price_Book__c + '-' + accountInfo.CurrencyIsoCode + '*' + accountInfo.Id;
                                     accountInfo.isContractPriceCreated__c = true;
                                     accountUpdate.add(accountInfo);
                                     priceBookWithAccountMap.put(accountMapKey,accountInfo);
@@ -61,7 +66,7 @@ public class AccountForMSAContractedPrices {
         
         map<string,list<PricebookEntry>>priceBookWithPriceBookEntryMap = new map<string,list<PricebookEntry>>();
         for(PricebookEntry PBE : [Select id,UnitPrice,Pricebook2Id,CurrencyIsoCode,Product2Id,ProductCode 
-                                 from PricebookEntry where Pricebook2Id IN : priceBookIdSet AND CurrencyIsoCode IN : accountCurrency] ){
+                                 from PricebookEntry where Pricebook2Id IN : priceBookIdSet AND Product2.Product_Category__c = 'Software' AND CurrencyIsoCode IN : accountCurrency] ){
                                 system.debug('---PBE---'+PBE);
                                 string pricebookEntryKey = PBE.Pricebook2Id + '-' + PBE.CurrencyIsoCode;
 
@@ -80,16 +85,17 @@ public class AccountForMSAContractedPrices {
         system.debug('---priceBookWithPriceBookEntryMap---'+priceBookWithPriceBookEntryMap);
         list<SBQQ__ContractedPrice__c>insertContractedPriceList = new list<SBQQ__ContractedPrice__c>();
         if(!priceBookWithAccountMap.isEmpty() && !priceBookWithPriceBookEntryMap.isEmpty()){
-            for(string keyValue : priceBookWithAccountMap.keyset()){
-                if(priceBookWithPriceBookEntryMap.containskey(keyValue)){
-                    list<PricebookEntry>getpriceBookEntryList = priceBookWithPriceBookEntryMap.get(keyValue);
-                    Account accountData = priceBookWithAccountMap.get(keyValue);
+            for(string keySplit : priceBookWithAccountMap.keyset()){
+                string[] keyValue = keySplit.split('\\*');
+
+                if(priceBookWithPriceBookEntryMap.containskey(keyValue[0])){
+                    list<PricebookEntry>getpriceBookEntryList = priceBookWithPriceBookEntryMap.get(keyValue[0]);
+                    Account accountData = priceBookWithAccountMap.get(keySplit);
                     if(getpriceBookEntryList.size() > 0 && getpriceBookEntryList != null){
                         for(PricebookEntry priceBookEntry : getpriceBookEntryList){  
-
                             
                             SBQQ__ContractedPrice__c cp = new SBQQ__ContractedPrice__c();
-                            cp.SBQQ__Account__c	        = accountData.id;
+                            cp.SBQQ__Account__c	        = keyValue[1];
                             cp.SBQQ__Product__c         = priceBookEntry.Product2Id;
                             cp.SBQQ__Price__c	        = priceBookEntry.UnitPrice;
                             cp.CurrencyIsoCode          = accountData.CurrencyIsoCode;
@@ -113,7 +119,7 @@ public class AccountForMSAContractedPrices {
             insert insertContractedPriceList;
         }
         if(accountUpdate != null && accountUpdate.size() > 0){
-            system.debug('--accountUpdate--'+accountUpdate);
+            system.debug('--accountUpdate--'+accountUpdate.size());
             update accountUpdate;
         }
         else{
