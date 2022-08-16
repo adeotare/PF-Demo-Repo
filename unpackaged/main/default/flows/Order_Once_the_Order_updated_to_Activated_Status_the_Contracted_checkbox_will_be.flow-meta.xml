@@ -13,10 +13,17 @@
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Activated</stringValue>
+            </value>
+        </assignmentItems>
     </assignments>
-    <description>REQ - 1803</description>
+    <description>REQ - 1803 , Updated</description>
     <interviewLabel>Order : {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Order : Once the Order updated to Activated Status and trial unchecked, the &quot;Contracted&quot; checkbox will be checked</label>
+    <label>Order : Once the Order is Created Activate Order and Check Contract flag</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -45,22 +52,15 @@
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Status</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Activated</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Trial__c</field>
+            <field>SBQQ__Quote__c</field>
             <operator>IsNull</operator>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
         <object>Order</object>
-        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Obsolete</status>
+    <status>Active</status>
 </Flow>
