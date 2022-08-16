@@ -2,17 +2,10 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>55.0</apiVersion>
     <assignments>
-        <name>Assign_Contact_and_Account</name>
-        <label>Assign Contact and Account</label>
-        <locationX>500</locationX>
-        <locationY>329</locationY>
-        <assignmentItems>
-            <assignToReference>$Record.Bill_To_Contact__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Primary_Contact__c</elementReference>
-            </value>
-        </assignmentItems>
+        <name>Assign_Bill_to_Account</name>
+        <label>Assign Bill to Account</label>
+        <locationX>531</locationX>
+        <locationY>440</locationY>
         <assignmentItems>
             <assignToReference>$Record.Bill_To_Account__c</assignToReference>
             <operator>Assign</operator>
@@ -21,6 +14,112 @@
             </value>
         </assignmentItems>
     </assignments>
+    <assignments>
+        <name>Assign_Bill_To_Contact</name>
+        <label>Assign Bill To Contact</label>
+        <locationX>522</locationX>
+        <locationY>326</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Bill_To_Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Primary_Contact__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>If_both_changes</name>
+        <label>If both changes</label>
+        <locationX>529</locationX>
+        <locationY>567</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Bill_To_Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Bill_To_Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Primary_Contact__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>If_Bill_to_account_contact_change</name>
+        <label>Bill to Account and Contact</label>
+        <locationX>64</locationX>
+        <locationY>436</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Bill_account_change</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AccountId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Bill_to_Account</targetReference>
+            </connector>
+            <label>If Bill to Account change</label>
+        </rules>
+        <rules>
+            <name>If_Bill_to_Contact_change</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Primary_Contact__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Bill_To_Contact</targetReference>
+            </connector>
+            <label>If Bill to Contact change</label>
+        </rules>
+        <rules>
+            <name>If_both_change</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Primary_Contact__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AccountId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Bill_To_Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Bill_To_Contact__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>If_both_changes</targetReference>
+            </connector>
+            <label>If both change</label>
+        </rules>
+    </decisions>
     <interviewLabel>Opp: Assign bill to account {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opp: Assign bill to account</label>
     <processMetadataValues>
@@ -46,21 +145,35 @@
         <locationX>373</locationX>
         <locationY>48</locationY>
         <connector>
-            <targetReference>Assign_Contact_and_Account</targetReference>
+            <targetReference>If_Bill_to_account_contact_change</targetReference>
         </connector>
-        <filterLogic>or</filterLogic>
+        <filterLogic>((1 OR  2) OR (3 AND 4))</filterLogic>
         <filters>
-            <field>Bill_To_Account__c</field>
+            <field>AccountId</field>
             <operator>IsChanged</operator>
             <value>
-                <booleanValue>false</booleanValue>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Primary_Contact__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Bill_To_Account__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <filters>
             <field>Bill_To_Contact__c</field>
-            <operator>IsChanged</operator>
+            <operator>IsNull</operator>
             <value>
-                <booleanValue>false</booleanValue>
+                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <object>Opportunity</object>
