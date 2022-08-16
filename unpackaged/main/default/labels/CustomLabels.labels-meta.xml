@@ -1102,6 +1102,13 @@
         <value>Collecting time-series data may take several minutes for large sites</value>
     </labels>
     <labels>
+        <fullName>Product_Category</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product Category</shortDescription>
+        <value>Software</value>
+    </labels>
+    <labels>
         <fullName>Products</fullName>
         <categories>General</categories>
         <language>en_US</language>

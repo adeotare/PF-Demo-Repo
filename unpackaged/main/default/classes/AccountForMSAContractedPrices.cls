@@ -66,7 +66,7 @@ public class AccountForMSAContractedPrices {
         
         map<string,list<PricebookEntry>>priceBookWithPriceBookEntryMap = new map<string,list<PricebookEntry>>();
         for(PricebookEntry PBE : [Select id,UnitPrice,Pricebook2Id,CurrencyIsoCode,Product2Id,ProductCode 
-                                 from PricebookEntry where Pricebook2Id IN : priceBookIdSet AND Product2.Product_Category__c = 'Software' AND CurrencyIsoCode IN : accountCurrency] ){
+                                 from PricebookEntry where Pricebook2Id IN : priceBookIdSet AND Product2.Product_Category__c =: Label.Product_Category AND CurrencyIsoCode IN : accountCurrency] ){
                                 system.debug('---PBE---'+PBE);
                                 string pricebookEntryKey = PBE.Pricebook2Id + '-' + PBE.CurrencyIsoCode;
 
