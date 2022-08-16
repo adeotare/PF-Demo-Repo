@@ -4,8 +4,8 @@
     <assignments>
         <name>Add_to_Collection</name>
         <label>Add to Collection</label>
-        <locationX>1152</locationX>
-        <locationY>207</locationY>
+        <locationX>1153</locationX>
+        <locationY>208</locationY>
         <assignmentItems>
             <assignToReference>QuoteToUpdate</assignToReference>
             <operator>Add</operator>
