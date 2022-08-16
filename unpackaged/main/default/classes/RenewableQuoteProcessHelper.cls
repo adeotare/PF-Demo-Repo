@@ -14,10 +14,10 @@ public class RenewableQuoteProcessHelper {
             for(Plant_Product_Transaction__c ppt : pptList){																	
             if(vargQuotePptMap.containsKey(ppt.Subscription__c)){
                 vargQuotePptMap.get(ppt.Subscription__c).add(ppt);
-               system.debug('The get of vargQuotePptMap '+vargQuotePptMap); 
+               //system.debug('The get of vargQuotePptMap '+vargQuotePptMap); 
             }else{
                 vargQuotePptMap.put(ppt.Subscription__c , new List<Plant_Product_Transaction__c>{ppt});
-                system.debug('The add this to the ovargQuotePptMap '+vargQuotePptMap);
+                //system.debug('The add this to the ovargQuotePptMap '+vargQuotePptMap);
                 
             }
         }
@@ -37,12 +37,12 @@ public class RenewableQuoteProcessHelper {
 
                                            (Select id from Plant_Product_Transactions__r) 
                                            FROM SBQQ__QuoteLine__c 
-                                           WHERE SBQQ__RenewedSubscription__c IN : vargQuotePptMap.keySet()];
+                                           WHERE SBQQ__RenewedSubscription__c IN : vargQuotePptMap.keySet() LIMIT 50000];
         
         List<Plant_Product_Transaction__c> pptListTOClone = new List <Plant_Product_Transaction__c>();
         for(SBQQ__QuoteLine__c ql : qlList){
-            system.debug('ql.Plant_Product_Transactions__r--'+ql.Plant_Product_Transactions__r);
-            system.debug('ql.SBQQ__RenewedSubscription__c--'+ql.SBQQ__RenewedSubscription__c);
+            //system.debug('ql.Plant_Product_Transactions__r--'+ql.Plant_Product_Transactions__r);
+            //system.debug('ql.SBQQ__RenewedSubscription__c--'+ql.SBQQ__RenewedSubscription__c);
             if(vargQuotePptMap.containsKey(ql.SBQQ__RenewedSubscription__c) && ( ql.Plant_Product_Transactions__r.size() == null || ql.Plant_Product_Transactions__r.size() == 0)){
                 	
                    system.debug('ql.Plant_Product_Transactions__r--'+ql.Plant_Product_Transactions__r);
@@ -52,7 +52,8 @@ public class RenewableQuoteProcessHelper {
                        pp.Product__c=ql.SBQQ__Product__c;
                        pp.Quote__c=ql.SBQQ__Quote__r.id;
                        //pp.OwnerId = ql.SBQQ__Quote__r.OwnerId;
-                       pp.Renewal_Action__c ='No Change';    
+                       pp.Renewal_Action__c ='No Change';
+                       pp.Plant_Product__c=true;
                        pp.OwnerId=ql.SBQQ__Quote__r.OwnerId;
                        decimal s=ql.SBQQ__SpecialPrice__c;
                        decimal c=pp.Contracted_MW_Unit_List_Price__c;
@@ -70,25 +71,25 @@ public class RenewableQuoteProcessHelper {
                        
                        if(ql.SBQQ__Quote__r.SBQQ__StartDate__c !=null) {
                 pp.Effective_Date__c = ql.SBQQ__Quote__r.SBQQ__StartDate__c;
-                System.debug('Start Date is on the Quote...so putting effective date in pp from Quote start date');
+                //System.debug('Start Date is on the Quote...so putting effective date in pp from Quote start date');
                 }
             else {
                 pp.Effective_Date__c = ql.SBQQ__StartDate__c;
-                System.debug('There is no Start Date is on the Quote...so taking from Quote line in pp record');
+                //System.debug('There is no Start Date is on the Quote...so taking from Quote line in pp record');
                 }
             if(ql.SBQQ__Quote__r.SBQQ__EndDate__c !=null) {
                 pp.End_Date__c = ql.SBQQ__Quote__r.SBQQ__EndDate__c;
-                System.debug('End Date is on the Quote...so putting end date in pp from Quote end  date');
+                //System.debug('End Date is on the Quote...so putting end date in pp from Quote end  date');
                 } 
                 else { 
                     pp.End_Date__c = ql.SBQQ__EndDate__c;
-                    System.debug('There is no End Date is on the Quote...so taking from Quote line in pp record');
+                    //System.debug('There is no End Date is on the Quote...so taking from Quote line in pp record');
                     }
                        
                        
                  if(pp.Subscription__r.SBQQ__Discount__c!=null && pp.Status__c =='Renewal Quoted') {
                 pp.Addl_Discount_Percent__c = pp.Subscription__r.SBQQ__Discount__c;
-                System.debug(' the Subscription has Additional Discount Percent – if yes, then populate Addl Discount Percent ');
+                //System.debug(' the Subscription has Additional Discount Percent – if yes, then populate Addl Discount Percent ');
                 }  
                        
                    }
@@ -132,7 +133,7 @@ public class RenewableQuoteProcessHelper {
             for(SBQQ__QuoteLine__c ql : qlToUpdate){
                 
                 PlantProductController.updatePricingForQuoteLineInPPT(String.valueOf(ql.Id));
-                PlantProductController.updatePricingfromPPTToQuoteline (ql, String.valueOf(ql.Id));
+                PlantProductController.updatePricingfromPPTToQuoteline (String.valueOf(ql.Id));
                 
             }
         }
