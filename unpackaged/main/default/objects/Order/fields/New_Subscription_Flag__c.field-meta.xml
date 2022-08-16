@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Subscription_Flag__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( SBQQ__Quote__r.SBQQ__StartDate__c &gt;   Account.Uses_MSA_of__r.MSA_Minimum_Term_End_Date__c  , True, False)</formula>
+    <label>New Subscription Flag</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>
