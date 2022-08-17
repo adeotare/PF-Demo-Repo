@@ -2,22 +2,15 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>54.0</apiVersion>
     <assignments>
-        <name>Once_the_Order_updated_to_Activated_Status_the_Contracted_checkbox_should_be_aut</name>
-        <label>Once the Order updated to Activated Status , the &quot;Contracted&quot; checkbox should be auto-checked by the system</label>
-        <locationX>170</locationX>
-        <locationY>401</locationY>
+        <name>Update</name>
+        <label>Update</label>
+        <locationX>171</locationX>
+        <locationY>378</locationY>
         <assignmentItems>
             <assignToReference>$Record.SBQQ__Contracted__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>$Record.Status</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Activated</stringValue>
             </value>
         </assignmentItems>
     </assignments>
@@ -47,13 +40,12 @@
         <locationX>46</locationX>
         <locationY>46</locationY>
         <connector>
-            <targetReference>Once_the_Order_updated_to_Activated_Status_the_Contracted_checkbox_should_be_aut</targetReference>
+            <targetReference>Update</targetReference>
         </connector>
-        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>SBQQ__Quote__c</field>
-            <operator>IsNull</operator>
+            <field>SBQQ__Contracted__c</field>
+            <operator>EqualTo</operator>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
@@ -62,5 +54,5 @@
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
 </Flow>
