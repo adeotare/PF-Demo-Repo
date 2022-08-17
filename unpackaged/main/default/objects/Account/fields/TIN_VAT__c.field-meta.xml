@@ -4,7 +4,7 @@
     <description>Greenbyte Req (Merge VAT No &amp; Company Registration number)</description>
     <externalId>false</externalId>
     <label>TIN/VAT</label>
-    <length>20</length>
+    <length>30</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
