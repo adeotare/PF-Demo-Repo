@@ -4677,6 +4677,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Plant_Product_Transaction__c.Subscription_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Plant_Product_Transaction__c.Subscription__c</field>
         <readable>true</readable>

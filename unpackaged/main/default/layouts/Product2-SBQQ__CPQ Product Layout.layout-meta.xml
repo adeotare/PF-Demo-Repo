@@ -83,6 +83,14 @@
                 <behavior>Edit</behavior>
                 <field>Add_Implementation_Service__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>UoM__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Line_Classification__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -324,7 +332,7 @@
                 <field>SBQQ__RenewalProduct__c</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
+        <layoutColumns />
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
@@ -351,9 +359,9 @@
         <detailHeading>false</detailHeading>
         <editHeading>false</editHeading>
         <label>Custom Links</label>
-        <layoutColumns/>
-        <layoutColumns/>
-        <layoutColumns/>
+        <layoutColumns />
+        <layoutColumns />
+        <layoutColumns />
         <style>CustomLinks</style>
     </layoutSections>
     <miniLayout>
@@ -457,6 +465,16 @@
         <relatedList>SBQQ__Subscription__c.SBQQ__Product__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>NAME</fields>
+        <fields>SBQQ__Account__c</fields>
+        <fields>Product_List_Price__c</fields>
+        <fields>SBQQ__Price__c</fields>
+        <fields>Contracted_Price_Discount_Percentage__c</fields>
+        <fields>SBQQ__Discount__c</fields>
+        <fields>SBQQ__DiscountSchedule__c</fields>
+        <relatedList>SBQQ__ContractedPrice__c.SBQQ__Product__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>PRODUCT2.NAME</fields>
         <fields>PRODUCT2.CUSTOMER_PRODUCT_ID</fields>
         <fields>PRODUCT2.DESCRIPTION</fields>
@@ -486,10 +504,6 @@
         <relatedList>Plant_Product_Transaction__c.Product__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>Purchased_Product__c.Product__c</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>ASSET.NAME</fields>
         <fields>ASSET.SERIAL_NUMBER</fields>
         <fields>ASSET.INSTALL_DATE</fields>
@@ -498,13 +512,17 @@
         <fields>PRODUCT2.NAME</fields>
         <relatedList>Asset.Product__c</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Project_Template__c.Product_Code__c</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hS00000010lHF</masterLabel>
+        <masterLabel>00h7j000000ZU9G</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
