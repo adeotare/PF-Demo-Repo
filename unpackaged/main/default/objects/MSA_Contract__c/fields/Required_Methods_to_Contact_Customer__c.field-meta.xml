@@ -29,7 +29,7 @@
             </value>
             <value>
                 <fullName>Email</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>Email</label>
             </value>
             <value>

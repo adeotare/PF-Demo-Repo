@@ -3,6 +3,7 @@
     <fullName>SaaS_Minimum_Pricing__c</fullName>
     <defaultValue>0</defaultValue>
     <externalId>false</externalId>
+    <inlineHelpText>The minimum amount a customer should be billed if the actual total of their managed megawatts across all products calculates to less than the minimum for a period. Set $0 if not applicable.</inlineHelpText>
     <label>SaaS Minimum Pricing</label>
     <precision>18</precision>
     <required>false</required>

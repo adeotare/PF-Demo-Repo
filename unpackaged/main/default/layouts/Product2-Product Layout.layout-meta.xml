@@ -373,6 +373,7 @@
         <fields>NAME</fields>
         <fields>SBQQ__Account__c</fields>
         <fields>SBQQ__Price__c</fields>
+        <fields>Same_As_List_Price__c</fields>
         <fields>Product_List_Price__c</fields>
         <fields>Contracted_Price_Discount_Percentage__c</fields>
         <fields>SBQQ__Discount__c</fields>

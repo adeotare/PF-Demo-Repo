@@ -3,6 +3,7 @@
     <fullName>Annual_Uplift_Notes__c</fullName>
     <description>Holds nuance of uplift terms. Relevant for Greenbyte to hold terms where manual action is needed to adjust Contracted Pricing.</description>
     <externalId>false</externalId>
+    <inlineHelpText>Enter any details for uplift, especially if manual edits of Contracted Prices are required.</inlineHelpText>
     <label>Annual Uplift Notes</label>
     <length>255</length>
     <required>false</required>

@@ -17,24 +17,9 @@
                 <label>Power Factors Holdings, LLC</label>
             </value>
             <value>
-                <fullName>1. Elimination Subsidiary</fullName>
-                <default>false</default>
-                <label>1. Elimination Subsidiary</label>
-            </value>
-            <value>
-                <fullName>Ekhosoft Holdings Inc</fullName>
-                <default>false</default>
-                <label>Ekhosoft Holdings Inc</label>
-            </value>
-            <value>
                 <fullName>Inexcon Technologies Inc</fullName>
                 <default>false</default>
                 <label>Inexcon Technologies Inc</label>
-            </value>
-            <value>
-                <fullName>Goldcup 27434 AB</fullName>
-                <default>false</default>
-                <label>Goldcup 27434 AB</label>
             </value>
             <value>
                 <fullName>Greenbyte AB</fullName>
@@ -47,16 +32,6 @@
                 <label>Greenbyte Inc</label>
             </value>
             <value>
-                <fullName>Greenbyte SL</fullName>
-                <default>false</default>
-                <label>Greenbyte SL</label>
-            </value>
-            <value>
-                <fullName>Power Factors LLC</fullName>
-                <default>false</default>
-                <label>Power Factors LLC</label>
-            </value>
-            <value>
                 <fullName>3MEGAWATT GmbH</fullName>
                 <default>false</default>
                 <label>3MEGAWATT GmbH</label>
@@ -65,11 +40,6 @@
                 <fullName>3 Megawatt, LLC</fullName>
                 <default>false</default>
                 <label>3 Megawatt, LLC</label>
-            </value>
-            <value>
-                <fullName>Power Factors Philippines Operations Inc</fullName>
-                <default>false</default>
-                <label>Power Factors Philippines Operations Inc</label>
             </value>
         </valueSetDefinition>
     </valueSet>

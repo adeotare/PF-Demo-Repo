@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Type</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Plant__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Plant__r.Plant_Product_Transactions__r$Plant_Name__c</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Plant__r.Plant_Product_Transactions__r$Subscription_Status__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Identify plants that have no subscription relationship with a customer. Essentially, identify &quot;prospect&quot; power plants.
+Identify plants that are covered by subscriptions.</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Report for Subscription Status</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>PPT_not_having_Subscription__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

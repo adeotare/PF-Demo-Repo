@@ -4,6 +4,7 @@
     <externalId>false</externalId>
     <formula>MSA_Start_Date__c + (365 * MSA_Term_years__c)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>System-calcuated field (Start Date + Term). This captures the Initial Term period--the date until which the customer is obligated to remain.</inlineHelpText>
     <label>MSA Minimum Term End Date</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
