@@ -19,7 +19,8 @@
     <description>Ultimate Parent [checkbox] 
 Ultimate Parent is auto-set to true for any account where Parent lookup is blank.
 If Ultimate Parent is subsequently populated, Ultimate Parent is updated to false.
-23 March :- Updated the flow so that ultimate account functionality will not get fired if user selects &quot;Use Of Msa&quot; REQ-2405</description>
+23 March :- Updated the flow so that ultimate account functionality will not get fired if user selects &quot;Use Of Msa&quot; REQ-2405
+17 Aug :- Removed Uses of MSA condition as the lookup is being changed to MSA Contract not the Account. The details are provided in chatter of REQ-2405</description>
     <interviewLabel>Ultimate Parent is auto-set to true {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Account : Ultimate Parent is auto-set to true</label>
     <processMetadataValues>
@@ -47,14 +48,6 @@ If Ultimate Parent is subsequently populated, Ultimate Parent is updated to fals
         <connector>
             <targetReference>Update_Ultimate_Account</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Uses_MSA_of__c</field>
-            <operator>IsChanged</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
         <object>Account</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
