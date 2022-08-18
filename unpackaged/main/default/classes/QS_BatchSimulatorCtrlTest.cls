@@ -40,10 +40,11 @@ public class QS_BatchSimulatorCtrlTest {
         update qac;
         QS_BatchSimulatorCtrl.runBatchProcessByDate(qcAsset.id , system.today());
         
+        /*
 		qac.QS_End_Date__c = system.today().addDays(10);
         qac.QS_Start_Date__c = system.today().addDays(-10);
         update qac;
-        QS_BatchSimulatorCtrl.runBatchProcessByDate(qcAsset.id , system.today());        
+        QS_BatchSimulatorCtrl.runBatchProcessByDate(qcAsset.id , system.today());      */
         
         Test.stopTest();
     }
