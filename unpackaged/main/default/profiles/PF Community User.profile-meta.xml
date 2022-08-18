@@ -2143,6 +2143,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>SBQQ__QuoteLine__c.Billing_Frequency_Term__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>SBQQ__QuoteLine__c.Related_PPT_s_Net_Total_Final__c</field>
         <readable>true</readable>
     </fieldPermissions>

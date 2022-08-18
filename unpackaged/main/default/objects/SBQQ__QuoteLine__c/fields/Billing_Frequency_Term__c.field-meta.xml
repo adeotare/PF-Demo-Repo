@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Frequency_Term__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL( SBQQ__Product__r.Product_Category__c , &#39;Professional Services&#39;) , 
+TEXT(SBQQ__Quote__r.SBQQ__Account__r.Uses_MSA_of__r.Invoicing_Terms_Services__c ) ,TEXT(SBQQ__Quote__r.SBQQ__Account__r.Uses_MSA_of__r.Invoicing_Frequency_SaaS__c) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Billing Frequency / Term</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
