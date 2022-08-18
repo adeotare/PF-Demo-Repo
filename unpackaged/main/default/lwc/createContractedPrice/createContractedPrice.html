@@ -19,15 +19,24 @@
                 </div>
             </lightning-layout-item>            
             <div class="slds-float_right">
-            <button class="slds-input__icon slds-button slds-button_icon iconheight" onclick={refreshClicked}>
-                <lightning-icon icon-name="action:refresh" size="x-small" alternative-text="icon" ></lightning-icon>
-            </button>
-        </div>       
+                <lightning-button variant="brand" label="Create Default CP" onclick={refreshClicked} class="slds-m-left_x-medium">
+                </lightning-button>
             
+        </div>       
+        <div class="spinner" if:true ={isLoading} >
+                <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
+                  <div class="slds-spinner__dot-a"></div>
+                  <div class="slds-spinner__dot-b"></div>
+                </div>
+        </div>     
         </lightning-layout>
         <div class="slds-p-around_x-medium" style="height:250px;">
             <lightning-datatable min-column-width="150" onclick={handleClick} max-column-width="300" data={contractedPriceListdata}
-                columns={cols} key-field="Id" onrowselection={handleSelectContractedPrice}>
+                columns={cols} key-field="Id" onrowselection={handleSelectContractedPrice}
+                default-sort-direction={defaultSortDirection}
+                sorted-direction={sortDirection}
+                sorted-by={sortedBy}
+                onsort={onHandleSort}>
             </lightning-datatable>
         </div>
         <div slot="footer">
@@ -63,7 +72,11 @@
                     <div class="slds-modal__content slds-p-around_large" id="modal-content-id-1">
                         <lightning-datatable column-widths-mode="auto" min-column-width="140" max-column-width="250"
                             data={allPriceBookRecordListdata} columns={colsOfPriceBook} key-field="Id"
-                            data-id="overview" hide-checkbox-column onsave={handleSave} draft-values={draftValues}>
+                            data-id="overview" hide-checkbox-column onsave={handleSave} draft-values={draftValues}
+                            default-sort-direction={defaultSortDirection}
+                            sorted-direction={sortDirection}
+                            sorted-by={sortedBy}
+                            onsort={onHandleSort}>
                         </lightning-datatable>
                     </div>
                 </div>

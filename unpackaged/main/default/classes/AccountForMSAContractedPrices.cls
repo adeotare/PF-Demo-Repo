@@ -52,8 +52,9 @@ public class AccountForMSAContractedPrices {
         set<id>priceBookIdSet = new set<id>();
         set<string>accountCurrency = new set<string>();
         list<Account>accountUpdate = new list<Account>();
+        set<id>AccountIdSet = new set<id>();
         for(Account accountInfo : [Select id,Name,Account_Price_Book__c,CurrencyIsoCode,isContractPriceCreated__c,Uses_MSA_of__c from Account
-                                     where Uses_MSA_of__c =: msaRecId AND  Account_Price_Book__c != null]){
+                                     where Uses_MSA_of__c =: msaRecId AND  Account_Price_Book__c != null AND isContractPriceCreated__c = false]){
                                          system.debug('---accountInfo---'+accountInfo);
 
                                     priceBookIdSet.add(accountInfo.Account_Price_Book__c);
@@ -62,11 +63,15 @@ public class AccountForMSAContractedPrices {
                                     accountInfo.isContractPriceCreated__c = true;
                                     accountUpdate.add(accountInfo);
                                     priceBookWithAccountMap.put(accountMapKey,accountInfo);
-        }        
+        }   
+        set<id>removeProductSet = new set<Id>();
+        for(QS_Customer_Asset__c purchaseProduct : [Select id,Name,QS_Product__c from QS_Customer_Asset__c where QS_Account__c IN : AccountIdSet AND QS_New_Asset_Status__c = 'Active']){
+            removeProductSet.add(purchaseProduct.QS_Product__c);
+        }     
         
         map<string,list<PricebookEntry>>priceBookWithPriceBookEntryMap = new map<string,list<PricebookEntry>>();
         for(PricebookEntry PBE : [Select id,UnitPrice,Pricebook2Id,CurrencyIsoCode,Product2Id,ProductCode 
-                                 from PricebookEntry where Pricebook2Id IN : priceBookIdSet AND Product2.Product_Category__c =: Label.Product_Category AND CurrencyIsoCode IN : accountCurrency] ){
+                                 from PricebookEntry where Pricebook2Id IN : priceBookIdSet AND Product2.Product_Category__c =: Label.Product_Category AND CurrencyIsoCode IN : accountCurrency AND Product2Id NOT IN :removeProductSet] ){
                                 system.debug('---PBE---'+PBE);
                                 string pricebookEntryKey = PBE.Pricebook2Id + '-' + PBE.CurrencyIsoCode;
 
@@ -125,7 +130,7 @@ public class AccountForMSAContractedPrices {
         else{
             return 'Contracted Price has already been created for this account!';
         }
-        return 'Contract Prices Inserted!';
+        return 'Inserting Contract Prices !';
         
     }
 

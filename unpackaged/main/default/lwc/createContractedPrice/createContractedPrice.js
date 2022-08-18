@@ -17,14 +17,14 @@ export default class CreateContractedPrice extends LightningElement {
   cols = [
     { label: 'Product Name', fieldName: 'ProductName', type: 'text' },
     { label: 'Product Code', fieldName: 'ProductCode', type: 'text' },
-    { label: 'List Price', fieldName: 'ListPrice', type: 'text', cellAttributes: { alignment: 'center' } },
+    { label: 'List Price', fieldName: 'ListPrice', type: 'text', sortable: true, cellAttributes: { alignment: 'center' } },
     { label: 'Contract Price', fieldName: 'ContractPrice', type: 'text', cellAttributes: { alignment: 'center' } },
   ];
 
   colsOfPriceBook = [
     { label: 'Product Name', fieldName: 'ProductName', type: 'text' },
     { label: 'Product Code', fieldName: 'ProductCode', type: 'text' },
-    { label: 'List Price', fieldName: 'ListPrice', type: 'text', cellAttributes: { alignment: 'center' } },
+    { label: 'List Price', fieldName: 'ListPrice', type: 'text', sortable: true, cellAttributes: { alignment: 'center' } },
     { label: 'Contract Price', fieldName: 'SBQQ__Price__c', type: 'text', editable: true, cellAttributes: { alignment: 'center' } },
   ];
 
@@ -40,6 +40,8 @@ export default class CreateContractedPrice extends LightningElement {
   @track deleteButtontrue = true;
   @track contractedPriceData;
   @track allPriceBookData;
+  @api isLoading=false; // Show and Hide Spinner 
+
 
   draftValues = [];
 
@@ -83,7 +85,7 @@ export default class CreateContractedPrice extends LightningElement {
 @wire(createNewContractPrice, { msaRecId: '$recordId' })
   contracted1;
   async refreshClicked(event) {
-    
+    this.isLoading=true;
     // Prepare the record IDs for getRecordNotifyChange()
     const notifyChangeIds = this.recordId;
     
@@ -92,12 +94,12 @@ export default class CreateContractedPrice extends LightningElement {
       //alert(this.recordId);
       const result = await createNewContractPrice({ msaRecId: this.recordId });
       console.log(JSON.stringify("Apex update result: " + result));
-
+      this.isLoading=false;
       this.dispatchEvent(
         new ShowToastEvent({
-          title: 'Success',
+          title: 'Success!',
           message: result,
-          variant: 'success'
+          variant: 'Success!'
         })
       );
 
@@ -250,4 +252,36 @@ export default class CreateContractedPrice extends LightningElement {
     this.dispatchEvent(new CloseActionScreenEvent());
   }
 
+  //sort
+
+  @track defaultSortDirection = 'asc';
+  @track sortDirection = 'asc';
+  @track sortedBy;
+
+    
+    sortBy(field, reverse, primer) {
+        const key = primer
+            ? function (x) {
+                  return primer(x[field]);
+              }
+            : function (x) {
+                  return x[field];
+              };
+
+        return function (a, b) {
+            a = key(a);
+            b = key(b);
+            return reverse * ((a > b) - (b > a));
+        };
+    }
+
+    onHandleSort(event) {
+        const { fieldName: sortedBy, sortDirection } = event.detail;
+        const cloneData = [...this.data];
+
+        cloneData.sort(this.sortBy(sortedBy, sortDirection === 'asc' ? 1 : -1));
+        this.data = cloneData;
+        this.sortDirection = sortDirection;
+        this.sortedBy = sortedBy;
+    }
 }
