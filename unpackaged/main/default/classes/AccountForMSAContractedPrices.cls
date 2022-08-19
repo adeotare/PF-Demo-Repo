@@ -142,7 +142,7 @@ public class AccountForMSAContractedPrices {
         
         List<SBQQ__ContractedPrice__c> records = [Select SBQQ__Product__r.Name, Same_As_List_Price__c, SBQQ__Product__r.ProductCode , Product_List_Price__c, SBQQ__Price__c 
             from SBQQ__ContractedPrice__c 
-            where SBQQ__Account__r.Id = :accId AND Same_As_List_Price__c = True];
+            where SBQQ__Account__r.Id = :accId AND Same_As_List_Price__c = True AND SBQQ__Product__r.Product_Category__c = 'Software'];
         system.debug('Account ID' + accId);
         system.debug('No of records found with contracted price =>' + records.size());
         return records;

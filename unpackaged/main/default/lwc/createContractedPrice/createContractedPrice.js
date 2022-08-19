@@ -275,13 +275,23 @@ export default class CreateContractedPrice extends LightningElement {
         };
     }
 
-    onHandleSort(event) {
+    onHandleSortContracted(event) {
         const { fieldName: sortedBy, sortDirection } = event.detail;
-        const cloneData = [...this.data];
+        const cloneData = [...this.contractedPriceListdata];
 
         cloneData.sort(this.sortBy(sortedBy, sortDirection === 'asc' ? 1 : -1));
-        this.data = cloneData;
+        this.contractedPriceListdata = cloneData;
         this.sortDirection = sortDirection;
         this.sortedBy = sortedBy;
     }
+
+    onHandleSort(event) {
+      const { fieldName: sortedBy, sortDirection } = event.detail;
+      const cloneData = [...this.allPriceBookRecordListdata];
+
+      cloneData.sort(this.sortBy(sortedBy, sortDirection === 'asc' ? 1 : -1));
+      this.allPriceBookRecordListdata = cloneData;
+      this.sortDirection = sortDirection;
+      this.sortedBy = sortedBy;
+  }
 }
