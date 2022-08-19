@@ -28,6 +28,22 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
+                            <value>CustomButton.SBQQ__Quote__c.Recall_Approval</value>
+                            <visibilityRule>
+                                <booleanFilter>1 OR 2</booleanFilter>
+                                <criteria>
+                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Pending</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Approved</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
                             <value>CustomButton.SBQQ__Quote__c.SBQQ__EditLines</value>
                             <visibilityRule>
                                 <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
@@ -54,39 +70,10 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>CustomButton.SBQQ__Quote__c.Recall_Approval</value>
-                            <visibilityRule>
-                                <booleanFilter>1 OR 2</booleanFilter>
-                                <criteria>
-                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>Pending</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>Approved</rightValue>
-                                </criteria>
-                            </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
                             <value>CustomButton.SBQQ__Quote__c.Conga_Composer_Generate_Order_Form</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>CustomButton.SBQQ__Quote__c.SBQQ__IncludeDocument</value>
-                            <visibilityRule>
-                                <booleanFilter>1 AND 2</booleanFilter>
-                                <criteria>
-                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Rejected</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Recalled</rightValue>
-                                </criteria>
-                            </visibilityRule>
+                            <value>CustomButton.SBQQ__Quote__c.DEC</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Delete</value>
@@ -97,25 +84,6 @@
                                     <rightValue>Approved</rightValue>
                                 </criteria>
                             </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>CustomButton.SBQQ__Quote__c.SBQQ__PreviewDocument</value>
-                            <visibilityRule>
-                                <booleanFilter>1 AND 2</booleanFilter>
-                                <criteria>
-                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Rejected</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Recalled</rightValue>
-                                </criteria>
-                            </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>CustomButton.SBQQ__Quote__c.DEC</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
