@@ -4,8 +4,8 @@
     <assignments>
         <name>Add_to_PPT</name>
         <label>Add to PPT</label>
-        <locationX>138</locationX>
-        <locationY>935</locationY>
+        <locationX>531</locationX>
+        <locationY>983</locationY>
         <assignmentItems>
             <assignToReference>PPTtoUpdate</assignToReference>
             <operator>Add</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>Update_Status</name>
         <label>Update Order Item</label>
-        <locationX>138</locationX>
-        <locationY>815</locationY>
+        <locationX>531</locationX>
+        <locationY>863</locationY>
         <assignmentItems>
             <assignToReference>Plant_Product_Transaction_Record_Update.Order_Item__c</assignToReference>
             <operator>Assign</operator>
@@ -50,8 +50,8 @@
     <decisions>
         <name>Plant_Product_Transaction_Records_Found</name>
         <label>Plant Product Transaction Records Found</label>
-        <locationX>182</locationX>
-        <locationY>575</locationY>
+        <locationX>575</locationX>
+        <locationY>623</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Plant_Product_Transaction_Record_found</name>
@@ -75,8 +75,8 @@
     <loops>
         <name>Plant_Product_Transaction_Record_Update</name>
         <label>Plant Product Transaction Record Update</label>
-        <locationX>50</locationX>
-        <locationY>695</locationY>
+        <locationX>443</locationX>
+        <locationY>743</locationY>
         <collectionReference>Get_Plant_Product_Transactions</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -95,7 +95,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -108,8 +108,8 @@
     <recordLookups>
         <name>Get_Order_from_Order_Product</name>
         <label>Get Order from Order Product</label>
-        <locationX>50</locationX>
-        <locationY>1271</locationY>
+        <locationX>568</locationX>
+        <locationY>481</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Activate_Order_and_Check_Contracted</targetReference>
@@ -129,8 +129,8 @@
     <recordLookups>
         <name>Get_Plant_Product_Transactions</name>
         <label>Get Plant Product Transactions</label>
-        <locationX>182</locationX>
-        <locationY>455</locationY>
+        <locationX>333</locationX>
+        <locationY>530</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Plant_Product_Transaction_Records_Found</targetReference>
@@ -150,11 +150,11 @@
     <recordLookups>
         <name>Get_Quote_Line</name>
         <label>Get Quote Line</label>
-        <locationX>182</locationX>
-        <locationY>335</locationY>
+        <locationX>746</locationX>
+        <locationY>380</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Plant_Product_Transactions</targetReference>
+            <targetReference>Get_Order_from_Order_Product</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -171,8 +171,11 @@
     <recordUpdates>
         <name>Activate_Order_and_Check_Contracted</name>
         <label>Activate Order and Check Contracted</label>
-        <locationX>50</locationX>
-        <locationY>1391</locationY>
+        <locationX>331</locationX>
+        <locationY>396</locationY>
+        <connector>
+            <targetReference>Get_Plant_Product_Transactions</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -198,16 +201,13 @@
     <recordUpdates>
         <name>Update_PPT_Records</name>
         <label>Update PPT Records</label>
-        <locationX>50</locationX>
-        <locationY>1151</locationY>
-        <connector>
-            <targetReference>Get_Order_from_Order_Product</targetReference>
-        </connector>
+        <locationX>443</locationX>
+        <locationY>1199</locationY>
         <inputReference>PPTtoUpdate</inputReference>
     </recordUpdates>
     <start>
-        <locationX>56</locationX>
-        <locationY>0</locationY>
+        <locationX>449</locationX>
+        <locationY>48</locationY>
         <connector>
             <targetReference>Get_Quote_Line</targetReference>
         </connector>
