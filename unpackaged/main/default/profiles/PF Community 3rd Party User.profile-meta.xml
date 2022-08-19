@@ -2692,6 +2692,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>SBQQ__Subscription__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>Site_Metadata__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>

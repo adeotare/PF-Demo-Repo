@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DuplicateRule xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <actionOnInsert>Allow</actionOnInsert>
-    <actionOnUpdate>Allow</actionOnUpdate>
+    <actionOnInsert>Block</actionOnInsert>
+    <actionOnUpdate>Block</actionOnUpdate>
     <alertText>Use one of these records?</alertText>
     <description xsi:nil="true"/>
     <duplicateRuleFilter xsi:nil="true"/>
     <duplicateRuleMatchRules>
         <matchRuleSObjectType>Lead</matchRuleSObjectType>
-        <matchingRule>Duplicate_Leads</matchingRule>
+        <matchingRule>Prevent_Duplicate_leads_with_same_E_mail</matchingRule>
         <objectMapping xsi:nil="true"/>
     </duplicateRuleMatchRules>
     <isActive>true</isActive>
-    <masterLabel>Prevents Duplicate Leads</masterLabel>
-    <operationsOnInsert>Alert</operationsOnInsert>
-    <operationsOnInsert>Report</operationsOnInsert>
+    <masterLabel>Prevent Duplicate leads with same E-mail</masterLabel>
     <securityOption>EnforceSharingRules</securityOption>
-    <sortOrder>3</sortOrder>
+    <sortOrder>4</sortOrder>
 </DuplicateRule>

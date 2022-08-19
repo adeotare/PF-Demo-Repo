@@ -127,16 +127,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.Invoice_Requires_PO_No__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.Invoice_Requires_SAP_No__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>Account.IsCustomerPortal__c</field>
         <readable>true</readable>
@@ -2102,6 +2092,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Equipment__c.Account_Plant_Formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Equipment__c.Account_Plant__c</field>
         <readable>true</readable>
@@ -2998,7 +2993,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>MSA_Contract__c.Future_Functionality_Promise_del__c</field>
+        <field>MSA_Contract__c.Future_Functionality_Promise__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5358,6 +5353,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Program__c.Owner_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Program__c.Program_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6682,6 +6682,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>project_cloud__Project__c.Owner_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>project_cloud__Project__c.PPT_Reference__c</field>
         <readable>true</readable>
@@ -6699,6 +6704,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>project_cloud__Project__c.Product_Family__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>project_cloud__Project__c.Program_Name_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -7350,6 +7360,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>SBQQ__ContractedPrice__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>SBQQ__Subscription__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>

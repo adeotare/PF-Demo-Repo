@@ -902,16 +902,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.Invoice_Requires_PO_No__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.Invoice_Requires_SAP_No__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>Account.IsCustomerPortal__c</field>
         <readable>true</readable>
@@ -2884,11 +2874,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>MSA_Contract__c.Future_Functionality_Commitment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>MSA_Contract__c.Future_Functionality_Promise_del__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

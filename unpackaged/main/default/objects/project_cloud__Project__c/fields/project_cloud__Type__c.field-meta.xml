@@ -43,6 +43,11 @@
                 <default>false</default>
                 <label>Internal Projects</label>
             </value>
+            <value>
+                <fullName>Support</fullName>
+                <default>false</default>
+                <label>Support</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

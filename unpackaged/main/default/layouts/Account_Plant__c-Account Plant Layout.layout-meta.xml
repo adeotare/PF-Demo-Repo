@@ -354,6 +354,12 @@
         <fields>NAME</fields>
         <fields>Equipment_Type__c</fields>
         <fields>Quantity__c</fields>
+        <fields>Account_Plant_Formula__c</fields>
+        <fields>Project__c</fields>
+        <fields>DAS_SCADA_Provider__c</fields>
+        <fields>Drive_OEM__c</fields>
+        <fields>GB_OEM__c</fields>
+        <fields>GB_Data_connection__c</fields>
         <relatedList>Equipment__c.Account_Plant__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -382,7 +388,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8F000000IfIm</masterLabel>
+        <masterLabel>00h7j000000ZWf6</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
