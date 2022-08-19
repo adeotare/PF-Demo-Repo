@@ -4,8 +4,8 @@
     <assignments>
         <name>Purchaseproductisactive</name>
         <label>Purchaseproductisactive</label>
-        <locationX>940</locationX>
-        <locationY>298</locationY>
+        <locationX>1018</locationX>
+        <locationY>401</locationY>
         <assignmentItems>
             <assignToReference>Purchasedproductisactive</assignToReference>
             <operator>Add</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>PurchaseproductisInactive</name>
         <label>PurchaseproductisInactive</label>
-        <locationX>1139</locationX>
-        <locationY>183</locationY>
+        <locationX>1217</locationX>
+        <locationY>290</locationY>
         <assignmentItems>
             <assignToReference>PurchaseproductInactive</assignToReference>
             <operator>Add</operator>
@@ -50,11 +50,8 @@
     <decisions>
         <name>Check_Purchase_Product_Status</name>
         <label>Check Purchase Product Status</label>
-        <locationX>519</locationX>
-        <locationY>338</locationY>
-        <defaultConnector>
-            <targetReference>Update_type_field_to_Former_Customer</targetReference>
-        </defaultConnector>
+        <locationX>675</locationX>
+        <locationY>450</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Status_is_Active</name>
@@ -71,12 +68,27 @@
             </connector>
             <label>Status is Active</label>
         </rules>
+        <rules>
+            <name>Status_is_Inactive</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>PurchaseproductInactive</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_type_field_to_Former_Customer</targetReference>
+            </connector>
+            <label>Status is Inactive</label>
+        </rules>
     </decisions>
     <decisions>
         <name>Check_Purchased_product_status</name>
         <label>Check Purchased product status</label>
-        <locationX>924</locationX>
-        <locationY>115</locationY>
+        <locationX>993</locationX>
+        <locationY>118</locationY>
         <defaultConnector>
             <targetReference>PurchaseproductisInactive</targetReference>
         </defaultConnector>
@@ -111,8 +123,8 @@
         <description>check purchased Product status.</description>
         <name>Loop_through_records</name>
         <label>Loop through records</label>
-        <locationX>526</locationX>
-        <locationY>117</locationY>
+        <locationX>605</locationX>
+        <locationY>225</locationY>
         <collectionReference>StorePurchasedProduct</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -142,13 +154,34 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get_Purchased_Product_records</name>
-        <label>Get Purchased Product records</label>
-        <locationX>181</locationX>
-        <locationY>339</locationY>
+        <name>Get_Account_Record_Type</name>
+        <label>Get Account Record Type</label>
+        <locationX>462</locationX>
+        <locationY>305</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_through_records</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Account</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Purchased_Product_records</name>
+        <label>Get Purchased Product records</label>
+        <locationX>269</locationX>
+        <locationY>356</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Account_Record_Type</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -166,8 +199,8 @@
     <recordUpdates>
         <name>update_account_field</name>
         <label>update account field</label>
-        <locationX>392</locationX>
-        <locationY>480</locationY>
+        <locationX>473</locationX>
+        <locationY>587</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -200,8 +233,8 @@
     <recordUpdates>
         <name>Update_type_field_to_Former_Customer</name>
         <label>Update type field to Former Customer</label>
-        <locationX>759</locationX>
-        <locationY>530</locationY>
+        <locationX>837</locationX>
+        <locationY>637</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -219,8 +252,8 @@
         <object>Account</object>
     </recordUpdates>
     <start>
-        <locationX>54</locationX>
-        <locationY>26</locationY>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
         <connector>
             <targetReference>Get_Purchased_Product_records</targetReference>
         </connector>
@@ -228,7 +261,7 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>allStorePurchasedProduct</name>
         <dataType>SObject</dataType>
@@ -273,5 +306,13 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>QS_Customer_Asset__c</objectType>
+    </variables>
+    <variables>
+        <name>varRecordTypeId</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>RecordType</objectType>
     </variables>
 </Flow>
