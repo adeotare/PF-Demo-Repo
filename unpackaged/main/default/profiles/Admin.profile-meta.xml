@@ -1264,6 +1264,26 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Active_Megawatts__c.Child_MW_Bluepoint__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Child_MW_Drive__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Child_MW_Ekhosoft__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Child_MW_Greenbyte__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Active_Megawatts__c.Child_MW_Hydro__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1304,6 +1324,26 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Active_Megawatts__c.MW_Bluepoint__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.MW_Drive__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.MW_Ekhosoft__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.MW_Greenbyte__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Active_Megawatts__c.MW_Hydro__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1339,7 +1379,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Active_Megawatts__c.Total_Active_MW_to_consider_for_Ekhosoft__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Active_Megawatts__c.Total_Agnostic__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Total_MW_Bluepoint__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Total_MW_Drive__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Active_Megawatts__c.Total_MW_Greenbyte__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
