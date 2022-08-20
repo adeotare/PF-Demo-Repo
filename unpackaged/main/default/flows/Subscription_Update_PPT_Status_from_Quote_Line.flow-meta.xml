@@ -212,6 +212,20 @@
                 <elementReference>Get_Quote_Line.Id</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Amendment_Quoted</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Renewal Quoted</stringValue>
+            </value>
+        </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Plant_Product_Transaction__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
