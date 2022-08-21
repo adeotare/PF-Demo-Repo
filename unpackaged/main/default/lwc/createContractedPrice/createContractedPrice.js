@@ -40,7 +40,7 @@ export default class CreateContractedPrice extends LightningElement {
   @track deleteButtontrue = true;
   @track contractedPriceData;
   @track allPriceBookData;
-  @api isLoading=false; // Show and Hide Spinner 
+  @api isLoading = false; // Show and Hide Spinner 
 
 
   draftValues = [];
@@ -82,19 +82,19 @@ export default class CreateContractedPrice extends LightningElement {
 
 
 
-@wire(createNewContractPrice, { msaRecId: '$recordId' })
+  @wire(createNewContractPrice, { msaRecId: '$recordId' })
   contracted1;
   async refreshClicked(event) {
-    this.isLoading=true;
+    this.isLoading = true;
     // Prepare the record IDs for getRecordNotifyChange()
     const notifyChangeIds = this.recordId;
-    
+
     try {
       // Pass edited fields to the updateContacts Apex controller
       //alert(this.recordId);
       const result = await createNewContractPrice({ msaRecId: this.recordId });
       console.log(JSON.stringify("Apex update result: " + result));
-      this.isLoading=false;
+      this.isLoading = false;
       this.dispatchEvent(
         new ShowToastEvent({
           title: 'Success!',
@@ -104,7 +104,7 @@ export default class CreateContractedPrice extends LightningElement {
       );
 
       // Refresh LDS cache and wires
-//      getRecordNotifyChange(notifyChangeIds);
+      //      getRecordNotifyChange(notifyChangeIds);
       this.isModalOpen = false;
       // Display fresh data in the datatable
       refreshApex(this.contractedPriceData);
@@ -121,13 +121,14 @@ export default class CreateContractedPrice extends LightningElement {
     };
   }
 
-	
+
 
   @wire(getContractedPriceRecords, { RecId: '$recordId' })
   contractedPriceRecord(result) {
-    this.contractedPriceData = result;    
+    this.contractedPriceData = result;
     if (result.data) {
-      this.contractedPriceListdata = result.data.map((row) => ({ ...row,
+      this.contractedPriceListdata = result.data.map((row) => ({
+        ...row,
         ProductName: row.SBQQ__Product__r.Name,
         ProductCode: row.SBQQ__Product__r.ProductCode,
         ListPrice: row.Product_List_Price__c,
@@ -142,7 +143,13 @@ export default class CreateContractedPrice extends LightningElement {
   allPriceBookRecord(result) {
     this.allPriceBookData = result;
     if (result.data) {
-
+      this.mainAllProducts = result.data.map((row) => ({
+        ...row,
+        ProductName: row.SBQQ__Product__r.Name,
+        ProductCode: row.SBQQ__Product__r.ProductCode,
+        ListPrice: row.Product_List_Price__c,
+        ContractPrice: row.SBQQ__Price__c
+      }));
       this.allPriceBookRecordListdata = result.data.map((row) => ({
         ...row,
         ProductName: row.SBQQ__Product__r.Name,
@@ -258,40 +265,67 @@ export default class CreateContractedPrice extends LightningElement {
   @track sortDirection = 'asc';
   @track sortedBy;
 
-    
-    sortBy(field, reverse, primer) {
-        const key = primer
-            ? function (x) {
-                  return primer(x[field]);
-              }
-            : function (x) {
-                  return x[field];
-              };
 
-        return function (a, b) {
-            a = key(a);
-            b = key(b);
-            return reverse * ((a > b) - (b > a));
-        };
-    }
+  sortBy(field, reverse, primer) {
+    const key = primer
+      ? function (x) {
+        return primer(x[field]);
+      }
+      : function (x) {
+        return x[field];
+      };
 
-    onHandleSortContracted(event) {
-        const { fieldName: sortedBy, sortDirection } = event.detail;
-        const cloneData = [...this.contractedPriceListdata];
-
-        cloneData.sort(this.sortBy(sortedBy, sortDirection === 'asc' ? 1 : -1));
-        this.contractedPriceListdata = cloneData;
-        this.sortDirection = sortDirection;
-        this.sortedBy = sortedBy;
-    }
-
-    onHandleSort(event) {
-      const { fieldName: sortedBy, sortDirection } = event.detail;
-      const cloneData = [...this.allPriceBookRecordListdata];
-
-      cloneData.sort(this.sortBy(sortedBy, sortDirection === 'asc' ? 1 : -1));
-      this.allPriceBookRecordListdata = cloneData;
-      this.sortDirection = sortDirection;
-      this.sortedBy = sortedBy;
+    return function (a, b) {
+      a = key(a);
+      b = key(b);
+      return reverse * ((a > b) - (b > a));
+    };
   }
+
+  onHandleSortContracted(event) {
+    const { fieldName: sortedBy, sortDirection } = event.detail;
+    const cloneData = [...this.contractedPriceListdata];
+
+    cloneData.sort(this.sortBy(sortedBy, sortDirection === 'asc' ? 1 : -1));
+    this.contractedPriceListdata = cloneData;
+    this.sortDirection = sortDirection;
+    this.sortedBy = sortedBy;
+  }
+
+  onHandleSort(event) {
+    const { fieldName: sortedBy, sortDirection } = event.detail;
+    const cloneData = [...this.allPriceBookRecordListdata];
+
+    cloneData.sort(this.sortBy(sortedBy, sortDirection === 'asc' ? 1 : -1));
+    this.allPriceBookRecordListdata = cloneData;
+    this.sortDirection = sortDirection;
+    this.sortedBy = sortedBy;
+  }
+
+  //Search
+
+  @track mainAllProducts = [];
+
+  searchHandler(event) {
+
+    let searchKey = event.detail.value.toLowerCase();
+    let searchedTempProducts = [];
+
+
+    if (event.detail.value.length > 1) {
+      for (const product of this.mainAllProducts) {
+        if (product.SBQQ__Product__r.Name.toLowerCase().includes(searchKey))
+          searchedTempProducts.push(product);
+      }
+      this.allPriceBookRecordListdata = searchedTempProducts;
+    }
+
+    if (event.detail.value.length == 0) {
+      this.allPriceBookRecordListdata = this.mainAllProducts;
+    }
+
+
+  }
+
+
 }

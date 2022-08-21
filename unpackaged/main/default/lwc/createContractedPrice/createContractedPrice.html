@@ -17,26 +17,25 @@
                 <div class="header-column">
                     <p><b>Pricebook :</b> {priceBookName}</p>
                 </div>
-            </lightning-layout-item>            
+            </lightning-layout-item>
             <div class="slds-float_right">
-                <lightning-button variant="brand" label="Create Default CP" onclick={refreshClicked} class="slds-m-left_x-medium">
+                <lightning-button variant="brand" label="Create Default CP" onclick={refreshClicked}
+                    class="slds-m-left_x-medium">
                 </lightning-button>
-            
-        </div>       
-        <div class="spinner" if:true ={isLoading} >
+
+            </div>
+            <div class="spinner" if:true={isLoading}>
                 <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
-                  <div class="slds-spinner__dot-a"></div>
-                  <div class="slds-spinner__dot-b"></div>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
                 </div>
-        </div>     
+            </div>
         </lightning-layout>
         <div class="slds-p-around_x-medium" style="height:250px;">
-            <lightning-datatable min-column-width="150" onclick={handleClick} max-column-width="300" data={contractedPriceListdata}
-                columns={cols} key-field="Id" onrowselection={handleSelectContractedPrice}
-                default-sort-direction={defaultSortDirection}
-                sorted-direction={sortDirection}
-                sorted-by={sortedBy}
-                onsort={onHandleSortContracted}>
+            <lightning-datatable min-column-width="150" onclick={handleClick} max-column-width="300"
+                data={contractedPriceListdata} columns={cols} key-field="Id"
+                onrowselection={handleSelectContractedPrice} default-sort-direction={defaultSortDirection}
+                sorted-direction={sortDirection} sorted-by={sortedBy} onsort={onHandleSortContracted}>
             </lightning-datatable>
         </div>
         <div slot="footer">
@@ -66,17 +65,19 @@
                                 size="small"></lightning-icon>
                             <span class="slds-assistive-text">Close</span>
                         </button>
-                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Create Contracted Prices</h2>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Create Contracted
+                            Prices</h2>
+                        <div>
+                            <lightning-input name="enter-search" label="" type="search"
+                                placeholder="Search Product Name..." onchange={searchHandler}></lightning-input>
+                        </div>
                     </header>
-                    <!-- Modal/Popup Box LWC body starts here -->
-                    <div class="slds-modal__content slds-p-around_large" id="modal-content-id-1">
+                    <div class="slds-modal__content slds-p-around_medium ">
                         <lightning-datatable column-widths-mode="auto" min-column-width="140" max-column-width="250"
                             data={allPriceBookRecordListdata} columns={colsOfPriceBook} key-field="Id"
                             data-id="overview" hide-checkbox-column onsave={handleSave} draft-values={draftValues}
-                            default-sort-direction={defaultSortDirection}
-                            sorted-direction={sortDirection}
-                            sorted-by={sortedBy}
-                            onsort={onHandleSort}>
+                            default-sort-direction={defaultSortDirection} sorted-direction={sortDirection}
+                            sorted-by={sortedBy} onsort={onHandleSort}>
                         </lightning-datatable>
                     </div>
                 </div>
