@@ -18,9 +18,6 @@
                         <valueListItems>
                             <value>PrintableView</value>
                         </valueListItems>
-                        <valueListItems>
-                            <value>CustomButton.SBQQ__QuoteLine__c.SBQQ__CalculateQuoteFromQuoteLine</value>
-                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
