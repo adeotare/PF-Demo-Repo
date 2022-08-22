@@ -410,15 +410,15 @@
     <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
+        <fields>Product_Category__c</fields>
+        <fields>Net_Total_Price__c</fields>
+        <fields>Deployment_date__c</fields>
+        <fields>Account__c</fields>
         <fields>Plant_Name__c</fields>
         <fields>Product__c</fields>
-        <fields>Scope_Title__c</fields>
-        <fields>Scope_Definition__c</fields>
-        <fields>PPT_ARR__c</fields>
+        <fields>Operational_Status__c</fields>
         <fields>MWp_Quantity__c</fields>
-        <fields>Connection_Type__c</fields>
-        <fields>Trial__c</fields>
-        <fields>Installation_Commencement_Date__c</fields>
+        <fields>PPT_ARR__c</fields>
         <relatedList>Plant_Product_Transaction__c.CRM_Project_Name__c</relatedList>
     </relatedLists>
     <relatedLists>

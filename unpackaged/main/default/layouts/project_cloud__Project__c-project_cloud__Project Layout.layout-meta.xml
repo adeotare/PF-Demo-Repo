@@ -33,16 +33,20 @@
                 <field>Customer_Priority__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Internal_Priority__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ARR__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Product__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Product_Family__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Installation_Commencement_Date__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -76,15 +80,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>project_cloud__Methodology__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>project_cloud__IsTemplate__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Position__c</field>
+                <field>Installation_Fee__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -195,11 +191,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Implementation_start_date__c</field>
+                <field>Installation_Commencement_Date__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>project_cloud__Project_Duration__c</field>
+                <behavior>Edit</behavior>
+                <field>Implementation_start_date__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -210,6 +206,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>project_cloud__Calculated_End__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>project_cloud__Project_Duration__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -252,10 +252,6 @@
                 <behavior>Readonly</behavior>
                 <field>Schedule_Performance_Index__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Installation_Fee__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -274,9 +270,32 @@
                 <behavior>Readonly</behavior>
                 <field>To_Complete_Performance_Index__c</field>
             </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Project Processes</label>
+        <layoutColumns>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>ARR__c</field>
+                <behavior>Edit</behavior>
+                <field>project_cloud__Methodology__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Manage_Project_Priorities__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>project_cloud__IsTemplate__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Position__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -371,15 +390,15 @@
     <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
+        <fields>Product_Category__c</fields>
+        <fields>Net_Total_Price__c</fields>
+        <fields>Deployment_date__c</fields>
+        <fields>Account__c</fields>
         <fields>Plant_Name__c</fields>
         <fields>Product__c</fields>
-        <fields>Scope_Title__c</fields>
-        <fields>Scope_Definition__c</fields>
+        <fields>Operational_Status__c</fields>
         <fields>MWp_Quantity__c</fields>
         <fields>PPT_ARR__c</fields>
-        <fields>Connection_Type__c</fields>
-        <fields>Trial__c</fields>
-        <fields>Installation_Commencement_Date__c</fields>
         <relatedList>Plant_Product_Transaction__c.Project_Name__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -444,7 +463,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8F000000Ifu5</masterLabel>
+        <masterLabel>00h7j000000ZVdb</masterLabel>
         <sizeX>1</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
