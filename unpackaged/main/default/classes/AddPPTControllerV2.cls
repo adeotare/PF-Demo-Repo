@@ -33,12 +33,34 @@ public with sharing class AddPPTControllerV2 {
             system.debug('==programId==::'+projectId);
             system.debug('==lstProjectIds==::'+lstProjectIds);
             if(!string.isblank(projectId) && lstProjectIds.size()>0 ){
-                for(Plant_Product_Transaction__c ppt: [SELECT Id, Name From Plant_Product_Transaction__c where id IN:lstProjectIds]){
-                     ppt.Project_Name__c = projectId;
+                Decimal ARR = 0.00;
+                Decimal Installation_Fee = 0.00;
+                String product;
+                String Product_Family;
+                for(Plant_Product_Transaction__c ppt: [SELECT Id, Name,Product_Category__c,Product__r.Name,Product_Family__c, Net_Total_Price__c From Plant_Product_Transaction__c where id IN:lstProjectIds]){
+                    ppt.Project_Name__c = projectId;
                     ppt.Is_Project_Added__c = True;
                     lstProjects.add(ppt);
+                    if(ppt.Product_Category__c == 'Software'){
+                        ARR += ppt.Net_Total_Price__c;
+                        product = ppt.Product__r.Name;
+                    }
+                    if(ppt.Product_Category__c == 'Professional Services'){
+                        Installation_Fee += ppt.Net_Total_Price__c;
+                        Product_Family = ppt.Product_Family__c;
+                    }
+                }
+                project_cloud__Project__c project = [select Id, Installation_Fee__c, ARR__c from project_cloud__Project__c where ID =: projectId];
+                project.Installation_Fee__c = project.Installation_Fee__c + Installation_Fee;
+                project.ARR__c = project.ARR__c + ARR;
+                if(!String.isblank(product)){
+                    project.Product__c = product;
+                }
+                if(!String.isblank(Product_Family)){
+                    project.Product_Family__c = Product_Family;
                 }
                 update lstProjects;
+                update project;
             }
         }
     }

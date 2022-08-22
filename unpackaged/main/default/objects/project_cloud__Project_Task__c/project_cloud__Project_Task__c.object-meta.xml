@@ -193,11 +193,11 @@
         <searchFilterFields>project_cloud__Start__c</searchFilterFields>
         <searchFilterFields>project_cloud__End__c</searchFilterFields>
         <searchResultsAdditionalFields>project_cloud__Project__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>project_cloud__Project_Phase__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Assigned_Users__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>project_cloud__Status__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>project_cloud__Completed_Percent__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>project_cloud__Start__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>project_cloud__End__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>project_cloud__Completed_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>project_cloud__IsComplete__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>project_cloud__IsOn_Hold__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>

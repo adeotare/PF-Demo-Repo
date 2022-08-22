@@ -175,8 +175,14 @@
         <searchFilterFields>NAME</searchFilterFields>
         <searchFilterFields>project_cloud__Start__c</searchFilterFields>
         <searchFilterFields>project_cloud__End__c</searchFilterFields>
-        <searchResultsAdditionalFields>project_cloud__Start__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>project_cloud__End__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ccpe_ocp__Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>project_cloud__Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Owner_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Internal_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Product__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Program_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Internal_Priority__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Plant_Name__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

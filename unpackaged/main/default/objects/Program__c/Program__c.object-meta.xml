@@ -160,7 +160,13 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Program</pluralLabel>
-    <searchLayouts />
+    <searchLayouts>
+        <searchResultsAdditionalFields>Customer_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Completion__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Owner_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Health__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

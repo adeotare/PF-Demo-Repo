@@ -160,7 +160,16 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Customer Projects</pluralLabel>
-    <searchLayouts />
+    <searchLayouts>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Project_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Owner_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Internal_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Product__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Program_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Internal_Priority__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Plant_Name__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

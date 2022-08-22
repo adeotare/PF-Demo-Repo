@@ -163,11 +163,13 @@
     </nameField>
     <pluralLabel>Equipment</pluralLabel>
     <searchLayouts>
+        <searchResultsAdditionalFields>Equipment_Type__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Account_Plant__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Quantity__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Project__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>CURRENCY_ISO_CODE</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>OWNER.FIRST_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>DAS_SCADA_Provider__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Drive_OEM__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>GB_OEM__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>GB_Data_connection__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
