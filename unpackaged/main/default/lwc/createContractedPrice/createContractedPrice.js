@@ -15,17 +15,17 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class CreateContractedPrice extends LightningElement {
   cols = [
-    { label: 'Product Name', fieldName: 'ProductName', type: 'text' },
-    { label: 'Product Code', fieldName: 'ProductCode', type: 'text' },
+    { label: 'Product Name', fieldName: 'ProductName', type: 'text', sortable: true },
+    { label: 'Product Code', fieldName: 'ProductCode', type: 'text', sortable: true },
     { label: 'List Price', fieldName: 'ListPrice', type: 'text', sortable: true, cellAttributes: { alignment: 'center' } },
-    { label: 'Contract Price', fieldName: 'ContractPrice', type: 'text', cellAttributes: { alignment: 'center' } },
+    { label: 'Contract Price', fieldName: 'ContractPrice', type: 'text', sortable: true, cellAttributes: { alignment: 'center' } },
   ];
 
   colsOfPriceBook = [
-    { label: 'Product Name', fieldName: 'ProductName', type: 'text' },
-    { label: 'Product Code', fieldName: 'ProductCode', type: 'text' },
+    { label: 'Product Name', fieldName: 'ProductName', type: 'text', sortable: true },
+    { label: 'Product Code', fieldName: 'ProductCode', type: 'text', sortable: true },
     { label: 'List Price', fieldName: 'ListPrice', type: 'text', sortable: true, cellAttributes: { alignment: 'center' } },
-    { label: 'Contract Price', fieldName: 'SBQQ__Price__c', type: 'text', editable: true, cellAttributes: { alignment: 'center' } },
+    { label: 'Contract Price', fieldName: 'SBQQ__Price__c', type: 'text', sortable: true, editable: true, cellAttributes: { alignment: 'center' } },
   ];
 
   @track accountName;
