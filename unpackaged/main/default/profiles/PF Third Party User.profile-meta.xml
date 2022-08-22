@@ -3768,6 +3768,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>OpportunityContactRole.Function__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>OpportunityContactRole.Legacy_GB_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
