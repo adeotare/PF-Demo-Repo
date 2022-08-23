@@ -455,6 +455,14 @@
         <relatedList>RelatedLineItemList</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>CAMPAIGN.NAME</fields>
+        <fields>CONTACT.NAME</fields>
+        <fields>INFLUENCE</fields>
+        <fields>REVENUE_SHARE</fields>
+        <fields>OCR.ROLE</fields>
+        <relatedList>RelatedCampaignInfluence2List</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>NAME</fields>
         <fields>Competitor_Price_per_MW__c</fields>
         <fields>Competitor__c</fields>
