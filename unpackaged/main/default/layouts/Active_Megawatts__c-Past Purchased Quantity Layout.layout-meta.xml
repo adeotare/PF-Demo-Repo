@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
@@ -194,59 +193,24 @@
             <sortOrder>3</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>NewContact</actionName>
+            <actionName>FeedItem.ContentPost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>4</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>FeedItem.ContentPost</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>5</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>ChangeOwnerOne</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>6</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>Share</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>7</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>Submit</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>8</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>Delete</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>9</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>10</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>Clone</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>11</sortOrder>
+            <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>ChangeRecordType</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>12</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>RecordShareHierarchy</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>13</sortOrder>
+            <sortOrder>6</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>PrintableView</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>14</sortOrder>
+            <sortOrder>7</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedLists>

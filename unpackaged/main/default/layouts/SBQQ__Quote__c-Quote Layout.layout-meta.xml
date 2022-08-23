@@ -403,6 +403,7 @@
         </quickActionListItems>
     </quickActionList>
     <relatedLists>
+        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>SBQQ__ProductCode__c</fields>
         <fields>SBQQ__Product__c</fields>

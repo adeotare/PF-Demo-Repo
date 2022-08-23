@@ -363,6 +363,9 @@
         <relatedList>Equipment__c.Account_Plant__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <relatedList>RelatedFileList</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>NAME</fields>
         <relatedList>Asset_Builder_Approval__c.Account_Plant__c</relatedList>
     </relatedLists>

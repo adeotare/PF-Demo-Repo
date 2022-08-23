@@ -1,4 +1,8 @@
-global class AccountHierarchyMW implements Database.Batchable<SObject> {
+global class AccountHierarchyMW implements Database.Batchable<SObject> , Database.Stateful {
+    
+    map<id,Active_Megawatts__c> mapToInsert = new map<id,Active_Megawatts__c> ();
+    
+    
     global Database.QueryLocator Start(Database.BatchableContext bc)
     {
         
@@ -38,9 +42,10 @@ global class AccountHierarchyMW implements Database.Batchable<SObject> {
             if(pData.Account__c!=null)accountIdset.add(pData.Account__c);
         }
         
-        List<Plant_Product_Transaction__c> pptRecordsList = [SELECT Name, MWp_Quantity__c,plant__r.Asset_Class__c,plant__r.Plant_MWP__c,Account__c,Account__r.ParentId FROM Plant_Product_Transaction__c
+        List<Plant_Product_Transaction__c> pptRecordsList = [SELECT Name, MWp_Quantity__c,plant__r.Asset_Class__c,Plant__c ,Plant__r.Plant__c, Quote_Line__r.SBQQ__Quote__c , plant__r.Plant_MWP__c,Account__c,Account__r.ParentId FROM Plant_Product_Transaction__c
                                                              WHERE Account__c In:accountIdset AND Status__c ='Contracted'and MWp_Quantity__c!=null AND plant__c!=null and 
-																(Account__r.ParentId != null OR Account__r.Ultimate_Parent_Account__c = Null) and
+																( ( Account__r.ParentId != null AND Account__r.Parent.RecordType.name = 'Customer') OR Account__r.Ultimate_Parent_Account__c = Null) and
+                                                             Account__r.RecordType.name = 'Customer' AND
                                                              ( plant__r.Asset_Class__c='Solar' 
                                                               OR plant__r.Asset_Class__c='Other Renewable'
                                                               OR plant__r.Asset_Class__c='Wind'
@@ -51,6 +56,8 @@ global class AccountHierarchyMW implements Database.Batchable<SObject> {
         Map<Id,List<Id>> accountRelationShipMap = new Map<Id,List<Id>>();
         Map<Id,ActiveMegawatWrapper> accCalculationMap = new Map<Id,ActiveMegawatWrapper>();
         
+        Map<Id,ActiveMegawatWrapper> independantAccount = new Map<Id,ActiveMegawatWrapper>();
+        Set<Id> indipendatAccIds = new Set<Id>();
         
         for(Plant_Product_Transaction__c ppt : pptRecordsList ){
             if(pptMap.containsKey(ppt.Account__c)){
@@ -73,9 +80,54 @@ global class AccountHierarchyMW implements Database.Batchable<SObject> {
                 } 
 				///accountRelationShipMap.put(ppt.Account__r.ParentId,ppt.Account__c);
             }
+            
+            if(ppt.Account__c != null && ppt.Account__r.ParentId == null){
+                indipendatAccIds.add(ppt.Account__c);
+            }
         }
         
+        System.debug('indipendatAccIds--'+indipendatAccIds);
+        System.debug('accountRelationShipMap--'+accountRelationShipMap);
         
+        /*
+        List<Account> accountWithNoAMandPPt = [SELECT Id From Account WHERE Id NOT In :accountIdset AND Id NOT In (SELECT Account__c  from Active_Megawatts__c)];
+        
+        System.debug('accountWithNoAMandPPt---'+accountWithNoAMandPPt);
+        
+        map<id,Active_Megawatts__c> independantAMWWithIndipendatAcc =  new map<id,Active_Megawatts__c>();
+        
+        for(Account acc : accountWithNoAMandPPt){
+            Active_Megawatts__c amw = new Active_Megawatts__c(
+                
+                Total_Agnostic__c			= 	0,
+                Total_MW_Hydro__c 			= 	0 ,
+                Total_MW_Industrial__c		=	0 ,
+                Total_MW_Other_Renewable__c	=	0 ,
+                Total_MW_Solar__c			=	0 ,
+                Total_MW_Storage__c			=	0 ,
+                Total_MW_Wind__c			=	0 ,
+                
+                MW_Agnostic__c 				=	0,
+                MW_Hydro__c 				=	0 ,
+                MW_Industrial__c 			= 	0 ,
+                MW_Other_Renewable__c 		= 	0 ,
+                MW_Solar__c 				= 	0 ,
+                MW_Storage__c 				= 	0 ,
+                MW_Wind__c					=	0 ,
+                
+                Child_MW_Agnostic__c		=	0 ,
+                Child_MW_Hydro__c			=	0 ,
+                Child_MW_Industrial__c		=	0 ,
+                Child_MW_Other_Renewable__c	=	0 ,
+                Child_MW_Solar__c 			=	0 ,
+                Child_MW_Storage__c 		=	0 ,
+                Child_MW_Wind__c 			= 	0 ,
+                
+                Account__c					= 	acc.Id
+            );
+            independantAMWWithIndipendatAcc.put(acc.Id,amw);
+        }
+        */
         
         for(Id pptId : pptMap.keySet()){
             system.debug('Account Id ->'+pptId);
@@ -86,34 +138,74 @@ global class AccountHierarchyMW implements Database.Batchable<SObject> {
             Decimal SumOtherRenewable=0;
             Decimal SumIndustrial=0;
             
+            //Map<Id , Set<Id>> plantPptMap = new Map<Id , Set<Id>>();
+            //
             
+            Map<Id , Map<String, Decimal>> plantPptMap2 = new Map<Id ,Map<String, Decimal>>();
+            
+            Set<Id> plantIds = new Set<Id>();
             for(Plant_Product_Transaction__c pData :pptMap.get(pptId)){
                 system.debug(pData.plant__r.Asset_Class__c +'----PPT Records under AccID ---->'+pData.MWp_Quantity__c);
                 if(pData.plant__r.Plant_MWP__c!=null)
-                {
-
-					system.debug(pData.Name+'---'+pData.Id+'---'+pData.plant__r.Asset_Class__c +'-------'+pData.plant__r.Plant_MWP__c);
-                    if(pData.plant__r.Asset_Class__c == 'Solar'){
-                        SumSolar += pData.plant__r.Plant_MWP__c;
+                {	
+                    /*
+                    if(plantPptMap.containsKey(pData.Quote_Line__r.SBQQ__Quote__c) && !plantPptMap.get(pData.Quote_Line__r.SBQQ__Quote__c).contains(pData.Plant__c)){
+                        //SumOfDrive += pData.plant__r.Plant_MWP__c;
+                        plantPptMap.get(pData.Quote_Line__r.SBQQ__Quote__c).add(pData.Plant__c);
+                        
+                    }else if (!plantPptMap.containsKey(pData.Quote_Line__r.SBQQ__Quote__c)){
+                        plantPptMap.put(pData.Quote_Line__r.SBQQ__Quote__c , new Set<Id> {pData.Plant__c});
                     }
-                    if(pData.plant__r.Asset_Class__c == 'Other Renewable'){
-                        SumOtherRenewable += pData.plant__r.Plant_MWP__c;
+                    */
+                    system.debug(plantPptMap2.containsKey(pData.Plant__r.Plant__c));
+                    system.debug('plantPptMap2.get(pData.Plant__c)--'+plantPptMap2.get(pData.Plant__r.Plant__c));
+                    system.debug('pData.plant__r.Asset_Class__c--'+pData.plant__r.Asset_Class__c);
+                    //system.debug('!plantPptMap2.get(pData.Plant__c).containsKey(pData.plant__r.Asset_Class__c)--'+!plantPptMap2.get(pData.Plant__c).containsKey(pData.plant__r.Asset_Class__c));
+                    if(plantPptMap2.containsKey(pData.Plant__r.Plant__c) && !plantPptMap2.get(pData.Plant__r.Plant__c).containsKey(pData.plant__r.Asset_Class__c)){
+                        //SumOfDrive += pData.plant__r.Plant_MWP__c;
+                        plantPptMap2.get(pData.Plant__r.Plant__c).put(pData.plant__r.Asset_Class__c, pData.plant__r.Plant_MWP__c);
+                        
+                    }else if (!plantPptMap2.containsKey(pData.Plant__c)){
+                        plantPptMap2.put(pData.Plant__r.Plant__c , new Map<String, Decimal>{pData.plant__r.Asset_Class__c => pData.plant__r.Plant_MWP__c});
                     }
-                    if(pData.plant__r.Asset_Class__c == 'Wind'){
-                        SumWind += pData.plant__r.Plant_MWP__c;
-                    }
-                    if(pData.plant__r.Asset_Class__c == 'Hydro'){
-                        SumHydro += pData.plant__r.Plant_MWP__c;
-                    }
-                    if(pData.plant__r.Asset_Class__c == 'Storage'){
-                        SumStorage += pData.plant__r.Plant_MWP__c;
-                    }
-                    if(pData.plant__r.Asset_Class__c == 'Industrial'){
-                        SumIndustrial += pData.plant__r.Plant_MWP__c;
-                    }
+					
+                    
+					system.debug(pData.Plant__r.Plant__c+'-----------'+pData.Name+'---'+pData.Id+'---'+pData.plant__r.Asset_Class__c +'-------'+pData.plant__r.Plant_MWP__c);
+                    
                 }
             }
             
+            for(Id plantId : plantPptMap2.keySet()){
+                for(String assetClass : plantPptMap2.get(plantId).keySet()){
+                    if(assetClass == 'Solar'){
+                        SumSolar +=  plantPptMap2.get(plantId).get(assetClass);
+                    }
+                    else if(assetClass == 'Other Renewable'){
+                        SumOtherRenewable += plantPptMap2.get(plantId).get(assetClass);
+                    }
+                    else if(assetClass == 'Wind'){
+                        SumWind += plantPptMap2.get(plantId).get(assetClass);
+                    }
+                    else if(assetClass == 'Hydro'){
+                        SumHydro += plantPptMap2.get(plantId).get(assetClass);
+                    }
+                    else if(assetClass == 'Storage'){
+                        SumStorage += plantPptMap2.get(plantId).get(assetClass);
+                    }
+                    else if(assetClass == 'Industrial'){
+                        SumIndustrial += plantPptMap2.get(plantId).get(assetClass);
+                    } 
+                }
+            }
+            
+            
+            system.debug('SumSolar--->'+SumSolar);
+            system.debug('SumOtherRenewable--->'+SumOtherRenewable);
+            system.debug('SumWind--->'+SumWind);
+            system.debug('SumHydro--->'+SumHydro);
+            system.debug('SumStorage--->'+SumStorage);
+            system.debug('SumIndustrial--->'+SumIndustrial);
+           
             Decimal Total_Agnostic= SumStorage + SumWind + SumSolar + SumHydro+ SumOtherRenewable;
             Decimal Total_MW_Storage=SumStorage ;
             Decimal Total_MW_Other_Renewable=SumOtherRenewable;
@@ -169,6 +261,46 @@ global class AccountHierarchyMW implements Database.Batchable<SObject> {
                     
         }
         
+        for(Id accId : accCalculationMap.keySet()){
+            if(indipendatAccIds.contains(accId) && !accountRelationShipMap.keySet().contains(accId)){
+                independantAccount.put(accId , accCalculationMap.get(accId));
+            }
+        }
+        
+        map<id,Active_Megawatts__c> independantAMW =  new map<id,Active_Megawatts__c>();
+        
+        for(Id indipAccId : independantAccount.keySet()){
+            ActiveMegawatWrapper amwWrapper = independantAccount.get(indipAccId);
+            Active_Megawatts__c amw = new Active_Megawatts__c(
+                
+                Total_Agnostic__c			= 	amwWrapper.MW_Agnostic,
+                Total_MW_Hydro__c 			= 	amwWrapper.MW_Hydro ,
+                Total_MW_Industrial__c		=	amwWrapper.MW_Industrial ,
+                Total_MW_Other_Renewable__c	=	amwWrapper.MW_Other_Renewable ,
+                Total_MW_Solar__c			=	amwWrapper.MW_Solar ,
+                Total_MW_Storage__c			=	amwWrapper.MW_Storage ,
+                Total_MW_Wind__c			=	amwWrapper.MW_Wind ,
+                
+                MW_Agnostic__c 				=	amwWrapper.MW_Agnostic,
+                MW_Hydro__c 				=	amwWrapper.MW_Hydro ,
+                MW_Industrial__c 			= 	amwWrapper.MW_Industrial ,
+                MW_Other_Renewable__c 		= 	amwWrapper.MW_Other_Renewable ,
+                MW_Solar__c 				= 	amwWrapper.MW_Solar ,
+                MW_Storage__c 				= 	amwWrapper.MW_Storage ,
+                MW_Wind__c					=	amwWrapper.MW_Wind ,
+                
+                Child_MW_Agnostic__c		=	0 ,
+                Child_MW_Hydro__c			=	0 ,
+                Child_MW_Industrial__c		=	0 ,
+                Child_MW_Other_Renewable__c	=	0 ,
+                Child_MW_Solar__c 			=	0 ,
+                Child_MW_Storage__c 		=	0 ,
+                Child_MW_Wind__c 			= 	0 ,
+                
+                Account__c					= 	indipAccId
+            );
+            independantAMW.put(indipAccId,amw);
+        }    
         
         map<id,Active_Megawatts__c> mer =  new map<id,Active_Megawatts__c>();
         map<id,Active_Megawatts__c> childActiveMegawatsMaps =  new map<id,Active_Megawatts__c>();
@@ -308,7 +440,19 @@ global class AccountHierarchyMW implements Database.Batchable<SObject> {
         
         activeMWtoInsert.addAll(mer.values());
         activeMWtoInsert.addAll(childActiveMegawatsMaps.values());
+        activeMWtoInsert.addAll(independantAMW.values());
         
+        
+        mapToInsert.putAll(mer);
+        mapToInsert.putAll(childActiveMegawatsMaps);
+        mapToInsert.putAll(independantAMW); 
+        //mapToInsert.putAll(independantAMWWithIndipendatAcc);
+        system.debug('mer---'+mer.size());
+        system.debug('childActiveMegawatsMaps---'+childActiveMegawatsMaps.size());
+        system.debug('independantAMW---'+independantAMW.size());
+        //System.debug('independantAMWWithIndipendatAcc--->'+independantAMWWithIndipendatAcc.Size());
+        
+        /*
         if(activeMWtoInsert != null && activeMWtoInsert.size() >0 ){
             try{
                 insert activeMWtoInsert;
@@ -317,14 +461,19 @@ global class AccountHierarchyMW implements Database.Batchable<SObject> {
                 system.debug(e.getMessage());
             }
         }
-        
+        */
         
          
     }
     
     
-    global void finish(Database.BatchableContext BC)
-    {
+    global void finish(Database.BatchableContext BC){
+        system.debug(mapToInsert.size()+'---mapToInsert---'+mapToInsert);
+        if(mapToInsert != null && mapToInsert.size() >0 ){
+            
+                insert mapToInsert.values();
+            
+        }
     }
     
     public class ActiveMegawatWrapper{
