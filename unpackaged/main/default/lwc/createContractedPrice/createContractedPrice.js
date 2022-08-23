@@ -15,17 +15,17 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class CreateContractedPrice extends LightningElement {
   cols = [
-    { label: 'Product Name', fieldName: 'ProductName', type: 'text', sortable: true },
-    { label: 'Product Code', fieldName: 'ProductCode', type: 'text', sortable: true },
-    { label: 'List Price', fieldName: 'ListPrice', type: 'text', sortable: true, cellAttributes: { alignment: 'center' } },
-    { label: 'Contract Price', fieldName: 'ContractPrice', type: 'text', sortable: true, cellAttributes: { alignment: 'center' } },
+    { label: 'Product Name', fieldName: 'ProductName', type: 'text', sortable: true, initialWidth: 400 },
+    { label: 'Product Code', fieldName: 'ProductCode', type: 'text', sortable: true, initialWidth: 250 },
+    { label: 'List Price', fieldName: 'ListPrice', type: 'text', sortable: true, cellAttributes: { alignment: 'center' }, initialWidth: 100 },
+    { label: 'Contract Price', fieldName: 'ContractPrice', type: 'text', sortable: true, cellAttributes: { alignment: 'center' }, initialWidth: 100 },
   ];
 
   colsOfPriceBook = [
-    { label: 'Product Name', fieldName: 'ProductName', type: 'text', sortable: true },
-    { label: 'Product Code', fieldName: 'ProductCode', type: 'text', sortable: true },
-    { label: 'List Price', fieldName: 'ListPrice', type: 'text', sortable: true, cellAttributes: { alignment: 'center' } },
-    { label: 'Contract Price', fieldName: 'SBQQ__Price__c', type: 'text', sortable: true, editable: true, cellAttributes: { alignment: 'center' } },
+    { label: 'Product Name', fieldName: 'ProductName', type: 'text', sortable: true, initialWidth: 350 },
+    { label: 'Product Code', fieldName: 'ProductCode', type: 'text', sortable: true, initialWidth: 200 },
+    { label: 'List Price', fieldName: 'ListPrice', type: 'text', sortable: true, cellAttributes: { alignment: 'center' }, initialWidth: 80 },
+    { label: 'Contract Price', fieldName: 'SBQQ__Price__c', type: 'text', sortable: true, editable: true, cellAttributes: { alignment: 'center' }, initialWidth: 80 },
   ];
 
   @track accountName;
