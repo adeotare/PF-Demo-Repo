@@ -69,10 +69,6 @@
         <label>MSA Approval Information</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>MSA_Status__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>ApprovalStatus__c</field>
             </layoutItems>
@@ -275,7 +271,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Future_Functionality_Promise_del__c</field>
+                <field>Future_Functionality_Promise__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
