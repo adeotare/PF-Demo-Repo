@@ -559,6 +559,7 @@
         </quickActionListItems>
     </quickActionList>
     <relatedLists>
+        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>SBQQ__Product__c</fields>
         <fields>CURRENCY_ISO_CODE</fields>
@@ -572,6 +573,7 @@
         <relatedList>SBQQ__ContractedPrice__c.MSA_Contract__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>Description__c</fields>
         <fields>Product__c</fields>
@@ -584,6 +586,7 @@
         <relatedList>MSA_Software_Discount_Tier_Price__c.MSA_Contract__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>Description__c</fields>
         <fields>Product__c</fields>
@@ -595,6 +598,7 @@
         <relatedList>MSA_Implementation_Bracket_Price__c.MSA_Contract__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <relatedList>sbaa__Approval__c.MSA_Contract__c</relatedList>
     </relatedLists>
@@ -610,6 +614,7 @@
         <relatedList>RelatedFileList</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>dsfs__Envelope_Status__c</fields>
         <fields>dsfs__Sender__c</fields>
