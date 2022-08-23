@@ -3522,7 +3522,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Opportunity.Finance_Reviewed_Complete_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
