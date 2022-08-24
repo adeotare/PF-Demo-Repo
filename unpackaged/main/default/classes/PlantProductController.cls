@@ -422,13 +422,24 @@ public with sharing class PlantProductController {
         }
         // Dhiraj Code end
          
-       SBQQ__QuoteLine__c quoteLine = [Select Id, SBQQ__Quote__r.Id, SBQQ__Quote__r.SBQQ__Account__c from SBQQ__QuoteLine__c WHERE id = :qLineItemId WITH SECURITY_ENFORCED limit 1];
+       SBQQ__QuoteLine__c quoteLine = [Select Id, SBQQ__Product__r.Asset_Class__c, SBQQ__Quote__r.Id, SBQQ__Quote__r.SBQQ__Account__c from SBQQ__QuoteLine__c WHERE id = :qLineItemId WITH SECURITY_ENFORCED limit 1];
        
-        return [SELECT Id, Name,Asset_Class__c, Account__r.Name, Plant__r.Name, Plant__r.Country__c, 
+       if (quoteLine.SBQQ__Product__r.Asset_Class__c != 'Solar' && quoteLine.SBQQ__Product__r.Asset_Class__c != 'Wind' && quoteLine.SBQQ__Product__r.Asset_Class__c != 'Hydro') {
+                return [SELECT Id, Name,Asset_Class__c, Account__r.Name, Plant__r.Name, Plant__r.Country__c, 
                 Plant__r.MWp__c, Plant__r.MW_Energy_Capacity_MWh__c, Plant__r.Number_of_Turbines__c,
                 Plant__r.Asset_Class__c 
                 From Account_Plant__c
-                WHERE Account__r.Id = :quoteLine.SBQQ__Quote__r.SBQQ__Account__c  AND Id NOT IN: pPTaddedlist AND Status__c='Active' WITH SECURITY_ENFORCED];
+                WHERE Account__r.Id = :quoteLine.SBQQ__Quote__r.SBQQ__Account__c  AND Id NOT IN: pPTaddedlist AND Status__c='Active' 
+                WITH SECURITY_ENFORCED];
+            }
+        else {
+                return [SELECT Id, Name,Asset_Class__c, Account__r.Name, Plant__r.Name, Plant__r.Country__c, 
+                Plant__r.MWp__c, Plant__r.MW_Energy_Capacity_MWh__c, Plant__r.Number_of_Turbines__c,
+                Plant__r.Asset_Class__c 
+                From Account_Plant__c
+                WHERE Account__r.Id = :quoteLine.SBQQ__Quote__r.SBQQ__Account__c  AND Id NOT IN: pPTaddedlist AND Status__c='Active' 
+                AND Plant__r.Asset_Class__c =: quoteLine.SBQQ__Product__r.Asset_Class__c WITH SECURITY_ENFORCED];
+        }
         
     }
 
@@ -458,7 +469,7 @@ public with sharing class PlantProductController {
         Decimal contractPricePerMSA = 0;
         
         System.debug ('While setting the Contracted Price on the PPTLine - found it '+cPriceList.size());
-        If (cPriceList.size() == 1) 
+        If (cPriceList.size() == 1 && cPriceList[0].SBQQ__Price__c!= null) 
             contractPricePerMSA = cPriceList[0].SBQQ__Price__c;
         else 
             contractPricePerMSA = quoteLine1.SBQQ__ListPrice__c;
@@ -466,7 +477,7 @@ public with sharing class PlantProductController {
         if(quoteLine1.SBQQ__Product__r.Product_Category__c == 'Software') {
             // check if there are any custom discount tiers for this SW Product
             // System.debug ('Checking if the SW Product has Discount Tier pricing');
-            List <MSA_Software_Discount_Tier_Price__c> swDiscountTiersList =  [Select Name, Type__c, Discount_Unit__c, Discount__c, Discount_Amount__c, Pricing_Tier__c, Lower_Bound__c, Upper_Bound__c, Cross_Orders__c 
+            List <MSA_Software_Discount_Tier_Price__c> swDiscountTiersList =  [Select Name, Account__r.ID, Type__c, Discount_Unit__c, Discount__c, Discount_Amount__c, Pricing_Tier__c, Lower_Bound__c, Upper_Bound__c, Cross_Orders__c 
             from MSA_Software_Discount_Tier_Price__c 
             where (Product__r.ID = :quoteLine1.SBQQ__Product__r.ID)  
             AND (Account__r.ID = :quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.ID)
@@ -563,7 +574,7 @@ public with sharing class PlantProductController {
             // Don't count ActiveMW when Quote is for Renewal else it will result in double counting
             If (swDiscountTiersList[0].Cross_Orders__c == TRUE && quoteType !='Renewal') {
                 try {
-                        List <Active_Megawatts__c> aMW = [Select ID from Active_Megawatts__c where (Account__r.ID = :swDiscountTiersList[0].Account__r.ID) WITH SECURITY_ENFORCED limit 1];
+                        List <Active_Megawatts__c> aMW = [Select ID, Total_Agnostic__c from Active_Megawatts__c where (Account__r.ID = :swDiscountTiersList[0].Account__r.ID) WITH SECURITY_ENFORCED limit 1];
                         if (aMW.size() > 0) {
                             ActiveMW = aMW[0].Total_Agnostic__c;
                             System.debug('Currently total Active MW (Active_Megawatts__c.Total_Agnostic__c) for the Account is '+ActiveMW);    
@@ -706,7 +717,7 @@ public with sharing class PlantProductController {
                         else {
                             If ((totalQuantityToConsiderForDiscount >= swDiscountTiersList[currentTier].Lower_Bound__c) && (totalQuantityToConsiderForDiscount<= swDiscountTiersList[currentTier].Upper_Bound__c)) {
                             
-                                System.debug('Total MW falls in final Tier number - '+currentTier);
+                                System.debug('Total MW falls in Tier number - '+currentTier);
                                 tierOfDiscount = currentTier+1;
                                 currentTier = noOfTiers;                 // to break out of loop
                             }
@@ -779,8 +790,8 @@ public with sharing class PlantProductController {
                 Decimal CurrentMWForPricing = 0;
                 for (Plant_Product_Transaction__c eachPPT:pptList) {
                     Integer currentTier = 0;
-                    //CurrentMWForPricing = eachPPT.Plant__r.Plant__r.MWp__c;
-                    CurrentMWForPricing = eachPPT.Plant__r.Plant_MWP__c;
+                    CurrentMWForPricing = eachPPT.Plant__r.Plant__r.MWp__c;
+                    // CurrentMWForPricing = eachPPT.Plant__r.Plant_MWP__c;
                     // System.debug('Current MW for Implementation Bracket Pricing calculation is '+CurrentMWForPricing);
                     // If MW is not available on the Plant, then take the MW that may have been entered manually on the PPT line
                     if (CurrentMWForPricing == null) {
