@@ -50,10 +50,10 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Status</field>
-            <operator>EqualTo</operator>
+            <field>AccountId</field>
+            <operator>IsNull</operator>
             <value>
-                <stringValue>Draft</stringValue>
+                <booleanValue>false</booleanValue>
             </value>
         </filters>
         <object>Contract</object>
