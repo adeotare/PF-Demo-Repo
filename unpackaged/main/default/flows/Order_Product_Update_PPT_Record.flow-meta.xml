@@ -4,8 +4,8 @@
     <assignments>
         <name>Add_to_PPT</name>
         <label>Add to PPT</label>
-        <locationX>138</locationX>
-        <locationY>1175</locationY>
+        <locationX>666</locationX>
+        <locationY>1607</locationY>
         <assignmentItems>
             <assignToReference>PPTtoUpdate</assignToReference>
             <operator>Add</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>Update_Status</name>
         <label>Update Order Item</label>
-        <locationX>138</locationX>
-        <locationY>1055</locationY>
+        <locationX>930</locationX>
+        <locationY>1175</locationY>
         <assignmentItems>
             <assignToReference>Plant_Product_Transaction_Record_Update.Order_Item__c</assignToReference>
             <operator>Assign</operator>
@@ -40,13 +40,182 @@
             <assignToReference>Plant_Product_Transaction_Record_Update.Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue>Ordered</stringValue>
+                <stringValue>Contracted</stringValue>
             </value>
         </assignmentItems>
         <connector>
             <targetReference>Add_to_PPT</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Update_Status_to_Contracted</name>
+        <label>Update Status to Contracted</label>
+        <locationX>402</locationX>
+        <locationY>1295</locationY>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Order_Item__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Order__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.OrderId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Contracted</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_to_PPT</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Status_to_Contracted_but_no_Value</name>
+        <label>Update Status to Contracted but no Value</label>
+        <locationX>666</locationX>
+        <locationY>1295</locationY>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Order_Item__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Order__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.OrderId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_to_PPT</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Status_to_Decommissioned_0</name>
+        <label>Update Status to Decommissioned</label>
+        <locationX>138</locationX>
+        <locationY>1295</locationY>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Order_Item__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Order__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.OrderId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Plant_Product_Transaction_Record_Update.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Decommissioned</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_to_PPT</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_Amendment_and_Renewal_Status</name>
+        <label>Check Amendment and Renewal Status</label>
+        <locationX>666</locationX>
+        <locationY>1055</locationY>
+        <defaultConnector>
+            <targetReference>Update_Status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_PPT_Status_for_Amendment_or_Renewal</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Plant_Product_Transaction_Record_Update.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Amendment_Quoted</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Plant_Product_Transaction_Record_Update.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Renewal Quoted</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Renewal_or_Amendment_Action</targetReference>
+            </connector>
+            <label>Check PPT Status for Amendment or Renewal</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Renewal_or_Amendment_Action</name>
+        <label>Check Renewal or Amendment Action</label>
+        <locationX>402</locationX>
+        <locationY>1175</locationY>
+        <defaultConnector>
+            <targetReference>Update_Status_to_Contracted_but_no_Value</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_Remove_Renewal_Amend</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Plant_Product_Transaction_Record_Update.Renewal_Action__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Removed Plant</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Plant_Product_Transaction_Record_Update.Amendment_Action__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Removed Plant</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Status_to_Decommissioned_0</targetReference>
+            </connector>
+            <label>Check Remove Renewal/Amend</label>
+        </rules>
+        <rules>
+            <name>Check_Add_Renewal_Amend</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Plant_Product_Transaction_Record_Update.Renewal_Action__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Added Plant</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Plant_Product_Transaction_Record_Update.Amendment_Action__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Added Plant</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Status_to_Contracted</targetReference>
+            </connector>
+            <label>Check Add Renewal/Amend</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>Plant_Product_Transaction_Records_Found</name>
         <label>Plant Product Transaction Records Found</label>
@@ -69,7 +238,7 @@
             <label>Plant Product Transaction Record found?</label>
         </rules>
     </decisions>
-    <description>To Update PPT with Order</description>
+    <description>To Update PPT with Order Activation</description>
     <interviewLabel>Order Product : Update PPT Record {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Order Product : Update PPT Record and Order</label>
     <loops>
@@ -80,7 +249,7 @@
         <collectionReference>Get_Plant_Product_Transactions</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Update_Status</targetReference>
+            <targetReference>Check_Amendment_and_Renewal_Status</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>Update_PPT_Records</targetReference>
@@ -112,7 +281,7 @@
         <locationY>455</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Activate_Order_and_Check_Contracted</targetReference>
+            <targetReference>Activate_Order_and_Set_Contracted</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -143,20 +312,6 @@
                 <elementReference>Get_Quote_Line.Id</elementReference>
             </value>
         </filters>
-        <filters>
-            <field>Status__c</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <stringValue>Amendment_Quoted</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Status__c</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <stringValue>Renewal Quoted</stringValue>
-            </value>
-        </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Plant_Product_Transaction__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -183,8 +338,8 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Activate_Order_and_Check_Contracted</name>
-        <label>Activate Order and Check Contracted</label>
+        <name>Activate_Order_and_Set_Contracted</name>
+        <label>Activate Order and Set Contracted</label>
         <locationX>182</locationX>
         <locationY>575</locationY>
         <connector>
@@ -216,7 +371,7 @@
         <name>Update_PPT_Records</name>
         <label>Update PPT Records</label>
         <locationX>50</locationX>
-        <locationY>1391</locationY>
+        <locationY>1823</locationY>
         <inputReference>PPTtoUpdate</inputReference>
     </recordUpdates>
     <start>

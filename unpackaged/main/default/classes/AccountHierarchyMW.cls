@@ -42,6 +42,14 @@ global class AccountHierarchyMW implements Database.Batchable<SObject> , Databas
             if(pData.Account__c!=null)accountIdset.add(pData.Account__c);
         }
         
+        List<Active_Megawatts__c> existingAmw = [SELECT Id,Account__c FROM Active_Megawatts__c  WHERE Account__c IN: accountIdset];
+        
+        Map<Id, Active_Megawatts__c> existingAMWMap = new Map<Id, Active_Megawatts__c>();
+        for(Active_Megawatts__c amw : existingAmw){
+            existingAMWMap.put(amw.Account__c , amw);
+        }
+        
+        
         List<Plant_Product_Transaction__c> pptRecordsList = [SELECT Name, MWp_Quantity__c,plant__r.Asset_Class__c,Plant__c ,Plant__r.Plant__c, Quote_Line__r.SBQQ__Quote__c , plant__r.Plant_MWP__c,Account__c,Account__r.ParentId FROM Plant_Product_Transaction__c
                                                              WHERE Account__c In:accountIdset AND Status__c ='Contracted'and MWp_Quantity__c!=null AND plant__c!=null and 
 																( ( Account__r.ParentId != null AND Account__r.Parent.RecordType.name = 'Customer') OR Account__r.Ultimate_Parent_Account__c = Null) and
@@ -271,35 +279,98 @@ global class AccountHierarchyMW implements Database.Batchable<SObject> , Databas
         
         for(Id indipAccId : independantAccount.keySet()){
             ActiveMegawatWrapper amwWrapper = independantAccount.get(indipAccId);
-            Active_Megawatts__c amw = new Active_Megawatts__c(
+            /*
+            if(existingAMWMap != null && existingAMWMap.size() > 0 && existingAMWMap.containsKey(indipAccId)){
+                Active_Megawatts__c existingAMW = existingAMWMap.get(indipAccId);
                 
-                Total_Agnostic__c			= 	amwWrapper.MW_Agnostic,
-                Total_MW_Hydro__c 			= 	amwWrapper.MW_Hydro ,
-                Total_MW_Industrial__c		=	amwWrapper.MW_Industrial ,
-                Total_MW_Other_Renewable__c	=	amwWrapper.MW_Other_Renewable ,
-                Total_MW_Solar__c			=	amwWrapper.MW_Solar ,
-                Total_MW_Storage__c			=	amwWrapper.MW_Storage ,
-                Total_MW_Wind__c			=	amwWrapper.MW_Wind ,
                 
-                MW_Agnostic__c 				=	amwWrapper.MW_Agnostic,
-                MW_Hydro__c 				=	amwWrapper.MW_Hydro ,
-                MW_Industrial__c 			= 	amwWrapper.MW_Industrial ,
-                MW_Other_Renewable__c 		= 	amwWrapper.MW_Other_Renewable ,
-                MW_Solar__c 				= 	amwWrapper.MW_Solar ,
-                MW_Storage__c 				= 	amwWrapper.MW_Storage ,
-                MW_Wind__c					=	amwWrapper.MW_Wind ,
+                existingAMW.Total_Agnostic__c			= 	amwWrapper.MW_Agnostic;
+                    existingAMW.Total_MW_Hydro__c 			= 	amwWrapper.MW_Hydro ;
+                    existingAMW.Total_MW_Industrial__c		=	amwWrapper.MW_Industrial ;
+                    existingAMW.Total_MW_Other_Renewable__c	=	amwWrapper.MW_Other_Renewable ;
+                    existingAMW.Total_MW_Solar__c			=	amwWrapper.MW_Solar ;
+                    existingAMW.Total_MW_Storage__c			=	amwWrapper.MW_Storage ;
+                    existingAMW.Total_MW_Wind__c			=	amwWrapper.MW_Wind ;
+                    
+                    existingAMW.MW_Agnostic__c 				=	amwWrapper.MW_Agnostic;
+                    existingAMW.MW_Hydro__c 				=	amwWrapper.MW_Hydro ;
+                    existingAMW.MW_Industrial__c 			= 	amwWrapper.MW_Industrial ;
+                    existingAMW.MW_Other_Renewable__c 		= 	amwWrapper.MW_Other_Renewable ;
+                    existingAMW.MW_Solar__c 				= 	amwWrapper.MW_Solar ;
+                    existingAMW.MW_Storage__c 				= 	amwWrapper.MW_Storage ;
+                    existingAMW.MW_Wind__c					=	amwWrapper.MW_Wind ;
+                    
+                    existingAMW.Child_MW_Agnostic__c		=	0 ;
+                    existingAMW.Child_MW_Hydro__c			=	0 ;
+                    existingAMW.Child_MW_Industrial__c		=	0 ;
+                    existingAMW.Child_MW_Other_Renewable__c	=	0 ;
+                    existingAMW.Child_MW_Solar__c 			=	0 ;
+                    existingAMW.Child_MW_Storage__c 		=	0 ;
+                    existingAMW.Child_MW_Wind__c 			= 	0 ;
                 
-                Child_MW_Agnostic__c		=	0 ,
-                Child_MW_Hydro__c			=	0 ,
-                Child_MW_Industrial__c		=	0 ,
-                Child_MW_Other_Renewable__c	=	0 ,
-                Child_MW_Solar__c 			=	0 ,
-                Child_MW_Storage__c 		=	0 ,
-                Child_MW_Wind__c 			= 	0 ,
                 
-                Account__c					= 	indipAccId
-            );
-            independantAMW.put(indipAccId,amw);
+            } */
+            
+            if(existingAMWMap != null && existingAMWMap.size() > 0 && existingAMWMap.containsKey(indipAccId)){
+                Active_Megawatts__c amw = existingAMWMap.get(indipAccId).clone(true,true,true,true);
+                amw.Total_Agnostic__c			= 	amwWrapper.MW_Agnostic;
+                amw.Total_MW_Hydro__c 			= 	amwWrapper.MW_Hydro ;
+                amw.Total_MW_Industrial__c		=	amwWrapper.MW_Industrial ;
+                amw.Total_MW_Other_Renewable__c	=	amwWrapper.MW_Other_Renewable ;
+                amw.Total_MW_Solar__c			=	amwWrapper.MW_Solar ;
+                amw.Total_MW_Storage__c			=	amwWrapper.MW_Storage ;
+                amw.Total_MW_Wind__c			=	amwWrapper.MW_Wind ;
+                
+                amw.MW_Agnostic__c 				=	amwWrapper.MW_Agnostic;
+                amw.MW_Hydro__c 				=	amwWrapper.MW_Hydro ;
+                amw.MW_Industrial__c 			= 	amwWrapper.MW_Industrial ;
+                amw.MW_Other_Renewable__c 		= 	amwWrapper.MW_Other_Renewable ;
+                amw.MW_Solar__c 				= 	amwWrapper.MW_Solar ;
+                amw.MW_Storage__c 				= 	amwWrapper.MW_Storage ;
+                amw.MW_Wind__c					=	amwWrapper.MW_Wind ;
+                
+                amw.Child_MW_Agnostic__c		=	0 ;
+                amw.Child_MW_Hydro__c			=	0 ;
+                amw.Child_MW_Industrial__c		=	0 ;
+                amw.Child_MW_Other_Renewable__c	=	0 ;
+                amw.Child_MW_Solar__c 			=	0 ;
+                amw.Child_MW_Storage__c 		=	0 ;
+                amw.Child_MW_Wind__c 			= 	0 ;
+                
+                independantAMW.put(indipAccId,amw);
+            }
+            else{
+                Active_Megawatts__c amw = new Active_Megawatts__c(
+                    
+                    Total_Agnostic__c			= 	amwWrapper.MW_Agnostic,
+                    Total_MW_Hydro__c 			= 	amwWrapper.MW_Hydro ,
+                    Total_MW_Industrial__c		=	amwWrapper.MW_Industrial ,
+                    Total_MW_Other_Renewable__c	=	amwWrapper.MW_Other_Renewable ,
+                    Total_MW_Solar__c			=	amwWrapper.MW_Solar ,
+                    Total_MW_Storage__c			=	amwWrapper.MW_Storage ,
+                    Total_MW_Wind__c			=	amwWrapper.MW_Wind ,
+                    
+                    MW_Agnostic__c 				=	amwWrapper.MW_Agnostic,
+                    MW_Hydro__c 				=	amwWrapper.MW_Hydro ,
+                    MW_Industrial__c 			= 	amwWrapper.MW_Industrial ,
+                    MW_Other_Renewable__c 		= 	amwWrapper.MW_Other_Renewable ,
+                    MW_Solar__c 				= 	amwWrapper.MW_Solar ,
+                    MW_Storage__c 				= 	amwWrapper.MW_Storage ,
+                    MW_Wind__c					=	amwWrapper.MW_Wind ,
+                    
+                    Child_MW_Agnostic__c		=	0 ,
+                    Child_MW_Hydro__c			=	0 ,
+                    Child_MW_Industrial__c		=	0 ,
+                    Child_MW_Other_Renewable__c	=	0 ,
+                    Child_MW_Solar__c 			=	0 ,
+                    Child_MW_Storage__c 		=	0 ,
+                    Child_MW_Wind__c 			= 	0 ,
+                    
+                    Account__c					= 	indipAccId
+                );
+                independantAMW.put(indipAccId,amw);
+            }
+            
         }    
         
         map<id,Active_Megawatts__c> mer =  new map<id,Active_Megawatts__c>();
@@ -362,36 +433,65 @@ global class AccountHierarchyMW implements Database.Batchable<SObject> , Databas
                     
                     ActiveMegawatWrapper parentFields = accCalculationMap.get(childAccIds);
                     
-                    Active_Megawatts__c awForChildAccount = new Active_Megawatts__c(
-                        Total_Agnostic__c			= 	parentFields.MW_Agnostic,
-                        Total_MW_Hydro__c 			= 	parentFields.MW_Hydro ,
-                        Total_MW_Industrial__c		=	parentFields.MW_Industrial ,
-                        Total_MW_Other_Renewable__c	=	parentFields.MW_Other_Renewable ,
-                        Total_MW_Solar__c			=	parentFields.MW_Solar ,
-                        Total_MW_Storage__c			=	parentFields.MW_Storage ,
-                        Total_MW_Wind__c			=	parentFields.MW_Wind ,
+                    if(existingAMWMap != null && existingAMWMap.size() > 0 && existingAMWMap.containsKey(childAccIds)){
+                        Active_Megawatts__c amw = existingAMWMap.get(childAccIds).clone(true,true,true,true);
+                        amw.Total_Agnostic__c			= 	parentFields.MW_Agnostic;
+                        amw.Total_MW_Hydro__c 			= 	parentFields.MW_Hydro ;
+                        amw.Total_MW_Industrial__c		=	parentFields.MW_Industrial ;
+                        amw.Total_MW_Other_Renewable__c	=	parentFields.MW_Other_Renewable ;
+                        amw.Total_MW_Solar__c			=	parentFields.MW_Solar ;
+                        amw.Total_MW_Storage__c			=	parentFields.MW_Storage ;
+                        amw.Total_MW_Wind__c			=	parentFields.MW_Wind ;
                         
-                        MW_Agnostic__c 				=	parentFields.MW_Agnostic,
-                        MW_Hydro__c 				=	parentFields.MW_Hydro ,
-                        MW_Industrial__c 			= 	parentFields.MW_Industrial ,
-                        MW_Other_Renewable__c 		= 	parentFields.MW_Other_Renewable ,
-                        MW_Solar__c 				= 	parentFields.MW_Solar ,
-                        MW_Storage__c 				= 	parentFields.MW_Storage ,
-                        MW_Wind__c					=	parentFields.MW_Wind ,
+                        amw.MW_Agnostic__c 				=	parentFields.MW_Agnostic;
+                        amw.MW_Hydro__c 				=	parentFields.MW_Hydro ;
+                        amw.MW_Industrial__c 			= 	parentFields.MW_Industrial ;
+                        amw.MW_Other_Renewable__c 		= 	parentFields.MW_Other_Renewable ;
+                        amw.MW_Solar__c 				= 	parentFields.MW_Solar ;
+                        amw.MW_Storage__c 				= 	parentFields.MW_Storage ;
+                        amw.MW_Wind__c					=	parentFields.MW_Wind ;
                         
-                        Child_MW_Agnostic__c		=	0 ,
-                        Child_MW_Hydro__c			=	0 ,
-                        Child_MW_Industrial__c		=	0 ,
-                        Child_MW_Other_Renewable__c	=	0 ,
-                        Child_MW_Solar__c 			=	0 ,
-                        Child_MW_Storage__c 		=	0 ,
-                        Child_MW_Wind__c 			= 	0 ,
+                        amw.Child_MW_Agnostic__c		=	0 ;
+                        amw.Child_MW_Hydro__c			=	0 ;
+                        amw.Child_MW_Industrial__c		=	0 ;
+                        amw.Child_MW_Other_Renewable__c	=	0 ;
+                        amw.Child_MW_Solar__c 			=	0 ;
+                        amw.Child_MW_Storage__c 		=	0 ;
+                        amw.Child_MW_Wind__c 			= 	0 ;
                         
-                        Account__c					= 	childAccIds
-                    );
-                    
-                    childActiveMegawatsMaps.put(childAccIds,awForChildAccount);
-                    
+                        childActiveMegawatsMaps.put(childAccIds,amw);
+                    }
+                    else{
+                        Active_Megawatts__c awForChildAccount = new Active_Megawatts__c(
+                            Total_Agnostic__c			= 	parentFields.MW_Agnostic,
+                            Total_MW_Hydro__c 			= 	parentFields.MW_Hydro ,
+                            Total_MW_Industrial__c		=	parentFields.MW_Industrial ,
+                            Total_MW_Other_Renewable__c	=	parentFields.MW_Other_Renewable ,
+                            Total_MW_Solar__c			=	parentFields.MW_Solar ,
+                            Total_MW_Storage__c			=	parentFields.MW_Storage ,
+                            Total_MW_Wind__c			=	parentFields.MW_Wind ,
+                            
+                            MW_Agnostic__c 				=	parentFields.MW_Agnostic,
+                            MW_Hydro__c 				=	parentFields.MW_Hydro ,
+                            MW_Industrial__c 			= 	parentFields.MW_Industrial ,
+                            MW_Other_Renewable__c 		= 	parentFields.MW_Other_Renewable ,
+                            MW_Solar__c 				= 	parentFields.MW_Solar ,
+                            MW_Storage__c 				= 	parentFields.MW_Storage ,
+                            MW_Wind__c					=	parentFields.MW_Wind ,
+                            
+                            Child_MW_Agnostic__c		=	0 ,
+                            Child_MW_Hydro__c			=	0 ,
+                            Child_MW_Industrial__c		=	0 ,
+                            Child_MW_Other_Renewable__c	=	0 ,
+                            Child_MW_Solar__c 			=	0 ,
+                            Child_MW_Storage__c 		=	0 ,
+                            Child_MW_Wind__c 			= 	0 ,
+                            
+                            Account__c					= 	childAccIds
+                        );
+                        
+                        childActiveMegawatsMaps.put(childAccIds,awForChildAccount);
+                    }
                     
                     
                 }
@@ -406,7 +506,38 @@ global class AccountHierarchyMW implements Database.Batchable<SObject> , Databas
                     
                     ActiveMegawatWrapper parentFields = accCalculationMap.get(parentAccId);
                     
-                    Active_Megawatts__c ae3 = new Active_Megawatts__c(
+                    
+                    
+                    if(existingAMWMap != null && existingAMWMap.size() > 0 && existingAMWMap.containsKey(parentAccId)){
+                        Active_Megawatts__c amw = existingAMWMap.get(parentAccId).clone(true,true,true,true);
+                        amw.Total_Agnostic__c			= 	parentFields.MW_Agnostic;
+                        amw.Total_MW_Hydro__c 			= 	parentFields.MW_Hydro ;
+                        amw.Total_MW_Industrial__c		=	parentFields.MW_Industrial ;
+                        amw.Total_MW_Other_Renewable__c	=	parentFields.MW_Other_Renewable ;
+                        amw.Total_MW_Solar__c			=	parentFields.MW_Solar ;
+                        amw.Total_MW_Storage__c			=	parentFields.MW_Storage ;
+                        amw.Total_MW_Wind__c			=	parentFields.MW_Wind ;
+                        
+                        amw.MW_Agnostic__c 				=	parentFields.MW_Agnostic;
+                        amw.MW_Hydro__c 				=	parentFields.MW_Hydro ;
+                        amw.MW_Industrial__c 			= 	parentFields.MW_Industrial ;
+                        amw.MW_Other_Renewable__c 		= 	parentFields.MW_Other_Renewable ;
+                        amw.MW_Solar__c 				= 	parentFields.MW_Solar ;
+                        amw.MW_Storage__c 				= 	parentFields.MW_Storage ;
+                        amw.MW_Wind__c					=	parentFields.MW_Wind ;
+                        
+                        amw.Child_MW_Agnostic__c		=	0 ;
+                        amw.Child_MW_Hydro__c			=	0 ;
+                        amw.Child_MW_Industrial__c		=	0 ;
+                        amw.Child_MW_Other_Renewable__c	=	0 ;
+                        amw.Child_MW_Solar__c 			=	0 ;
+                        amw.Child_MW_Storage__c 		=	0 ;
+                        amw.Child_MW_Wind__c 			= 	0 ;
+                        
+                        mer.put(parentAccId,amw);
+                    }
+                    else{
+                    	Active_Megawatts__c ae3 = new Active_Megawatts__c(
                             Total_Agnostic__c			= 	parentFields.Total_Agnostic +Sum_Total_Agnostic ,
                             Total_MW_Hydro__c 			= 	parentFields.Total_MW_Hydro +Sum_Total_MW_Hydro ,
                             Total_MW_Industrial__c		=	parentFields.Total_MW_Industrial +Sum_Total_MW_Industrial ,
@@ -435,6 +566,7 @@ global class AccountHierarchyMW implements Database.Batchable<SObject> , Databas
                     );
 
                         mer.put(parentAccId,ae3);
+                    }
              	}
         }
         
@@ -471,7 +603,7 @@ global class AccountHierarchyMW implements Database.Batchable<SObject> , Databas
         system.debug(mapToInsert.size()+'---mapToInsert---'+mapToInsert);
         if(mapToInsert != null && mapToInsert.size() >0 ){
             
-                insert mapToInsert.values();
+                upsert mapToInsert.values();
             
         }
     }
