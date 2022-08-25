@@ -159,7 +159,7 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>Read</externalSharingModel>
+    <externalSharingModel>Private</externalSharingModel>
     <label>Account Plant</label>
     <nameField>
         <displayFormat>A-{0000}</displayFormat>
