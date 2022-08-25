@@ -336,6 +336,14 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Plant_Name__c</fields>
+        <fields>MWp_Quantity__c</fields>
+        <fields>Quote_Line_Quantity__c</fields>
+        <fields>Contracted_MW_Unit_List_Price__c</fields>
+        <fields>Discount_Tier__c</fields>
+        <fields>Unit_Price_After_Volume_Discount__c</fields>
+        <fields>Net_Total_Price__c</fields>
+        <fields>Status__c</fields>
         <relatedList>Plant_Product_Transaction__c.Subscription__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
