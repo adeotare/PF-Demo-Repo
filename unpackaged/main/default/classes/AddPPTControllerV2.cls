@@ -12,7 +12,7 @@ public with sharing class AddPPTControllerV2 {
      
         if(Plant_Product_Transaction__c.SObjectType.getDescribe().isAccessible()){
         	if(lstProjectAccnts.size()>0){
-                return [SELECT Id, Name ,Plant_Name__c , Status__c , MWp_Quantity__c From Plant_Product_Transaction__c where Plant__c =: lstProjectAccnts[0].Account_Plant__c AND Project_Name__c = null AND Status__c != 'Quoted'];
+                return [SELECT Id, Name ,Plant_Name__c , Status__c , MWp_Quantity__c,Product_Name__c From Plant_Product_Transaction__c where Plant__c =: lstProjectAccnts[0].Account_Plant__c AND Project_Name__c = null AND Status__c != 'Quoted'];
         	} else {
             	return lstPPT;
             }
@@ -33,8 +33,8 @@ public with sharing class AddPPTControllerV2 {
             system.debug('==programId==::'+projectId);
             system.debug('==lstProjectIds==::'+lstProjectIds);
             if(!string.isblank(projectId) && lstProjectIds.size()>0 ){
-                Decimal ARR = 0.00;
-                Decimal Installation_Fee = 0.00;
+                Decimal ARR = null;
+                Decimal Installation_Fee = null;
                 String product;
                 String Product_Family;
                 for(Plant_Product_Transaction__c ppt: [SELECT Id, Name,Product_Category__c,Product__r.Name,Product_Family__c, Net_Total_Price__c From Plant_Product_Transaction__c where id IN:lstProjectIds]){
@@ -51,8 +51,13 @@ public with sharing class AddPPTControllerV2 {
                     }
                 }
                 project_cloud__Project__c project = [select Id, Installation_Fee__c, ARR__c from project_cloud__Project__c where ID =: projectId];
-                project.Installation_Fee__c = project.Installation_Fee__c + Installation_Fee;
-                project.ARR__c = project.ARR__c + ARR;
+                if(Installation_Fee != null){
+                    project.Installation_Fee__c = project.Installation_Fee__c + Installation_Fee;
+                }
+                if(ARR != null){
+                    project.ARR__c = project.ARR__c + ARR;
+                }
+                
                 if(!String.isblank(product)){
                     project.Product__c = product;
                 }

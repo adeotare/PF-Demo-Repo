@@ -4718,6 +4718,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Plant_Product_Transaction__c.Product_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Plant_Product_Transaction__c.Product_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>

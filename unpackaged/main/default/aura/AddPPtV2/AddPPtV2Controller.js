@@ -3,6 +3,7 @@
         cmp.set('v.columns', [
             { label: 'Plant Product Transaction Name', fieldName: 'Name', type: 'text' },
             { label: 'Plant Name', fieldName: 'Plant_Name__c', type: 'text' },
+            { label: 'Product Name', fieldName: 'Product_Name__c', type: 'text' },
              { label: 'Purchase Status', fieldName: 'Status__c', type: 'Picklist' }, 
              { label: 'MW Quantity', fieldName: 'MWp_Quantity__c', type: 'Number' },       
         ]);

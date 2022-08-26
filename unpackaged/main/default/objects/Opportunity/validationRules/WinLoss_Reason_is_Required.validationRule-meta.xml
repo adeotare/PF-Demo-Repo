@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WinLoss_Reason_is_Required</fullName>
+    <active>true</active>
+    <description>Before moving to Closed Won/Loss, User have to pick the reason from the field Win/Loss Reason Picklist value.</description>
+    <errorConditionFormula>AND(
+OR(
+ISPICKVAL( StageName ,&quot;Closed Won&quot;),
+ISPICKVAL( StageName ,&quot;Closed Lost&quot;) ),
+OR (ISPICKVAL( Win_Loss_Reason__c  ,&quot;&quot;)))</errorConditionFormula>
+    <errorMessage>Please fill Win/Loss Reason</errorMessage>
+</ValidationRule>
