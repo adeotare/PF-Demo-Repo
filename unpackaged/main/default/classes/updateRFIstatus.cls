@@ -99,7 +99,7 @@ public class updateRFIstatus {
     }
 
     update updateRFIs;
-    if (!updatePlantAssets.isEmpty())
-      update updatePlantAssets;
+    //if (!updatePlantAssets.isEmpty())
+     // update updatePlantAssets;
   }
 }

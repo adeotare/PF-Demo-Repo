@@ -41,11 +41,11 @@ public with sharing class AddPPTControllerV2 {
                     ppt.Project_Name__c = projectId;
                     ppt.Is_Project_Added__c = True;
                     lstProjects.add(ppt);
-                    if(ppt.Product_Category__c == 'Software'){
+                    if(ppt.Product_Category__c == 'Software' && ppt.Net_Total_Price__c != null && ppt.Net_Total_Price__c != 0.00){
                         ARR += ppt.Net_Total_Price__c;
                         product = ppt.Product__r.Name;
                     }
-                    if(ppt.Product_Category__c == 'Professional Services'){
+                    if(ppt.Product_Category__c == 'Professional Services' && ppt.Net_Total_Price__c != null && ppt.Net_Total_Price__c != 0.00){
                         Installation_Fee += ppt.Net_Total_Price__c;
                         Product_Family = ppt.Product_Family__c;
                     }
