@@ -3,7 +3,7 @@
     <fullName>Owner_Name__c</fullName>
     <description>We have created this field as per the Data dictionary Update to add in the list view this will not be used in the Page Layout</description>
     <externalId>false</externalId>
-    <formula>Owner:User.FirstName  +&#39; &#39;+  Owner:User.LastName</formula>
+    <formula>IF(Owner:Queue.QueueName = &quot;&quot;, (Owner:User.FirstName + &quot; &quot; + Owner:User.LastName), Owner:Queue.QueueName)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Owner</label>
     <required>false</required>
