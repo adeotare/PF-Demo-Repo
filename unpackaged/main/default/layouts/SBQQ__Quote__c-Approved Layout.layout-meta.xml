@@ -45,10 +45,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>SBQQ__PrimaryContact__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
                 <field>SBQQ__SalesRep__c</field>
             </layoutItems>
             <layoutItems>

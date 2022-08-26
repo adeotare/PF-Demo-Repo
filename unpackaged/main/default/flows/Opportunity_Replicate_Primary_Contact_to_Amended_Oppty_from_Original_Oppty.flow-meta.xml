@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <name>Assign_Opportunity_to_update_Primary_contact</name>
+        <label>Assign Opportunity to update Primary contact</label>
+        <locationX>847</locationX>
+        <locationY>235</locationY>
+        <assignmentItems>
+            <assignToReference>varOpptyUpdateRecord.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.SBQQ__Opportunity2__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varOpptyUpdateRecord.Primary_Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.SBQQ__MasterContract__r.SBQQ__Opportunity__r.Primary_Contact__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Primary_Contact_on_Amended_Oppty</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_if_record_type_is_amendment</name>
+        <label>Check if record type is amendment</label>
+        <locationX>557</locationX>
+        <locationY>232</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Oppty_Rec_Type_is_Amendment</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__Opportunity2__r.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Amendment</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Opportunity_to_update_Primary_contact</targetReference>
+            </connector>
+            <label>If Oppty Rec Type is Amendment</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Opportunity : Replicate Primary Contact to Amended Oppty from Original Oppty {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity : Replicate Primary Contact to Amended Oppty from Original Oppty</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Primary_Contact_on_Amended_Oppty</name>
+        <label>Update Primary Contact on Amended Oppty</label>
+        <locationX>1094</locationX>
+        <locationY>196</locationY>
+        <inputReference>varOpptyUpdateRecord</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>49</locationX>
+        <locationY>123</locationY>
+        <connector>
+            <targetReference>Check_if_record_type_is_amendment</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SBQQ__MasterContract__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>SBQQ__Quote__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>varOpptyUpdateRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+</Flow>
