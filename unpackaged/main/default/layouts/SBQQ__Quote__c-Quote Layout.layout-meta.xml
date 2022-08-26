@@ -408,6 +408,8 @@
         <fields>SBQQ__ProductCode__c</fields>
         <fields>SBQQ__Product__c</fields>
         <fields>SBQQ__Quantity__c</fields>
+        <fields>SBQQ__EffectiveQuantity__c</fields>
+        <fields>SBQQ__NetTotal__c</fields>
         <relatedList>SBQQ__QuoteLine__c.SBQQ__Quote__c</relatedList>
     </relatedLists>
     <relatedLists>

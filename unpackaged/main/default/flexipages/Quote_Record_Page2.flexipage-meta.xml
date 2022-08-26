@@ -46,7 +46,7 @@
                         <valueListItems>
                             <value>CustomButton.SBQQ__Quote__c.SBQQ__EditLines</value>
                             <visibilityRule>
-                                <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+                                <booleanFilter>1 AND 2 AND 3</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.ApprovalStatus__c}</leftValue>
                                     <operator>NE</operator>
@@ -61,11 +61,6 @@
                                     <leftValue>{!Record.ApprovalStatus__c}</leftValue>
                                     <operator>NE</operator>
                                     <rightValue>Rejected</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Recalled</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
