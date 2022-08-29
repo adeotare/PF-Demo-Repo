@@ -38,6 +38,11 @@
             <label>If Renewal contract is not null</label>
         </rules>
     </decisions>
+    <formulas>
+        <name>varRenewOpptyName</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Account.Name} + &#39; Renewal &#39; + TEXT({!$Record.CloseDate})</expression>
+    </formulas>
     <interviewLabel>Opportunity : Update Record Type as Amendment/Renewal {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opportunity : Update Record Type as Amendment/Renewal</label>
     <processMetadataValues>
@@ -145,8 +150,8 @@
     <recordUpdates>
         <name>Update_Record_Type_of_Renewal</name>
         <label>Update Record Type of Renewal</label>
-        <locationX>1032</locationX>
-        <locationY>428</locationY>
+        <locationX>1031</locationX>
+        <locationY>429</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -155,6 +160,12 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </filters>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>varRenewOpptyName</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>RecordTypeId</field>
             <value>
