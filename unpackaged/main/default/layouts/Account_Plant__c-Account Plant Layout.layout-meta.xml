@@ -321,6 +321,13 @@
     </quickActionList>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Internal_Status__c</fields>
+        <fields>project_cloud__Type__c</fields>
+        <fields>Product__c</fields>
+        <relatedList>project_cloud__Project__c.Account_Plant__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
         <fields>RFI_Status__c</fields>
         <fields>Total_RFI_Details__c</fields>
         <relatedList>RAID__c.Account_Plant__c</relatedList>
@@ -386,7 +393,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h7j000000ZWf6</masterLabel>
+        <masterLabel>00h8F000000IfIm</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
