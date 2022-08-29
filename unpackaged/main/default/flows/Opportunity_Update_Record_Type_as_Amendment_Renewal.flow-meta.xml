@@ -39,6 +39,11 @@
         </rules>
     </decisions>
     <formulas>
+        <name>varAmendOpptyNAme</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Account.Name} + &#39; Amendment &#39; + TEXT(TODAY())</expression>
+    </formulas>
+    <formulas>
         <name>varRenewOpptyName</name>
         <dataType>String</dataType>
         <expression>{!$Record.Account.Name} + &#39; Renewal &#39; + TEXT({!$Record.CloseDate})</expression>
@@ -123,7 +128,7 @@
     <recordUpdates>
         <name>Update_Record_Type_Id</name>
         <label>Update Record Type Id</label>
-        <locationX>494</locationX>
+        <locationX>495</locationX>
         <locationY>435</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -133,6 +138,12 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </filters>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>varAmendOpptyNAme</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>RecordTypeId</field>
             <value>
