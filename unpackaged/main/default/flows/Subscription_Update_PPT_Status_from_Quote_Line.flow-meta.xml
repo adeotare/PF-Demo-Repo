@@ -156,6 +156,13 @@
                     <stringValue>Renewal Quoted</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Plant_Product_Transaction_Record_Update.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Decommissioned</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Check_Renewal_or_Amendment_Action</targetReference>
             </connector>
