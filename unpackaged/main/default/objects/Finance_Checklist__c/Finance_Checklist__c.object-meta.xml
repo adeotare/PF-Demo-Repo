@@ -155,9 +155,10 @@
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <label>Finance Checklist</label>
     <nameField>
+        <displayFormat>{0}</displayFormat>
         <label>Finance Checklist Name</label>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Finance Checklists</pluralLabel>
     <searchLayouts />
