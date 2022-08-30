@@ -9,7 +9,7 @@ public class AccountForMSAContractedPrices {
     @AuraEnabled(cacheable=true)
     public static List<MSA_Contract__c> fetchCurrency(String RecId){
         System.debug('Entered function fetchCurrency');
-        return [Select CurrencyIsoCode from MSA_Contract__c where Id = :RecId];
+        return [Select Account_Name__r.CurrencyIsoCode from MSA_Contract__c where Id = :RecId];
     }
     
     @AuraEnabled(cacheable=true)
@@ -27,9 +27,9 @@ public class AccountForMSAContractedPrices {
         //formContractedPrice(accId,accountId[0].id);
 
         system.debug('-----after cp creation-------');
-        List<SBQQ__ContractedPrice__c> records = [Select SBQQ__Product__r.Name, SBQQ__Product__r.ProductCode , Product_List_Price__c, SBQQ__Price__c 
+        List<SBQQ__ContractedPrice__c> records = [Select SBQQ__Product__r.Name,SBQQ__Product__r.IsActive,SBQQ__Product__r.ProductCode , Product_List_Price__c, SBQQ__Price__c 
             from SBQQ__ContractedPrice__c 
-            where SBQQ__Account__r.Id = :accId AND Same_As_List_Price__c = False AND SBQQ__Product__r.ProductCode != null];
+            where SBQQ__Account__r.Id = :accId AND Same_As_List_Price__c = False AND SBQQ__Product__r.ProductCode != null AND SBQQ__Product__r.IsActive=true];
         system.debug('Account ID' + accId);
         system.debug('No of records found with contracted price =>' + records.size());
         return records;
@@ -64,14 +64,14 @@ public class AccountForMSAContractedPrices {
                                     accountUpdate.add(accountInfo);
                                     priceBookWithAccountMap.put(accountMapKey,accountInfo);
         }   
-        set<id>removeProductSet = new set<Id>();
+        /*set<id>removeProductSet = new set<Id>();
         for(QS_Customer_Asset__c purchaseProduct : [Select id,Name,QS_Product__c from QS_Customer_Asset__c where QS_Account__c IN : AccountIdSet AND QS_New_Asset_Status__c = 'Active']){
             removeProductSet.add(purchaseProduct.QS_Product__c);
-        }     
+        } */    
         
         map<string,list<PricebookEntry>>priceBookWithPriceBookEntryMap = new map<string,list<PricebookEntry>>();
         for(PricebookEntry PBE : [Select id,UnitPrice,Pricebook2Id,CurrencyIsoCode,Product2Id,ProductCode 
-                                 from PricebookEntry where Pricebook2Id IN : priceBookIdSet AND Product2.Product_Category__c =: Label.Product_Category AND CurrencyIsoCode IN : accountCurrency AND Product2Id NOT IN :removeProductSet] ){
+                                 from PricebookEntry where Pricebook2Id IN : priceBookIdSet AND Product2.Product_Category__c =: Label.Product_Category AND CurrencyIsoCode IN : accountCurrency] ){
                                 system.debug('---PBE---'+PBE);
                                 string pricebookEntryKey = PBE.Pricebook2Id + '-' + PBE.CurrencyIsoCode;
 
@@ -99,6 +99,7 @@ public class AccountForMSAContractedPrices {
                     if(getpriceBookEntryList.size() > 0 && getpriceBookEntryList != null){
                         for(PricebookEntry priceBookEntry : getpriceBookEntryList){  
                             
+
                             SBQQ__ContractedPrice__c cp = new SBQQ__ContractedPrice__c();
                             cp.SBQQ__Account__c	        = keyValue[1];
                             cp.SBQQ__Product__c         = priceBookEntry.Product2Id;
@@ -140,9 +141,9 @@ public class AccountForMSAContractedPrices {
         List<MSA_Contract__c> accountId = [Select Account_Name__r.Account_Price_Book__r.name from MSA_Contract__c where Id = :RecId limit 1];
         Id accId = string.valueOf(accountId[0].Account_Name__c);
         
-        List<SBQQ__ContractedPrice__c> records = [Select SBQQ__Product__r.Name, Same_As_List_Price__c, SBQQ__Product__r.ProductCode , Product_List_Price__c, SBQQ__Price__c 
+        List<SBQQ__ContractedPrice__c> records = [Select SBQQ__Product__r.Name,SBQQ__Product__r.IsActive, Same_As_List_Price__c, SBQQ__Product__r.ProductCode , Product_List_Price__c, SBQQ__Price__c 
             from SBQQ__ContractedPrice__c 
-            where SBQQ__Account__r.Id = :accId AND Same_As_List_Price__c = True AND SBQQ__Product__r.Product_Category__c = 'Software'];
+            where SBQQ__Account__r.Id = :accId AND Same_As_List_Price__c = True AND SBQQ__Product__r.Product_Category__c = 'Software' AND SBQQ__Product__r.IsActive=true];
         system.debug('Account ID' + accId);
         system.debug('No of records found with contracted price =>' + records.size());
         return records;

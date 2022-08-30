@@ -27,6 +27,9 @@
                         <valueListItems>
                             <value>CustomButton.Opportunity.cascade_bill_to_record</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>ChangeOwnerOne</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>

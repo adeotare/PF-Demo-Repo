@@ -1,0 +1,9 @@
+Hi,
+{!User.Name}  has requested your approval for the following item:
+
+{!Asset_Builder_Approval__c.Link}
+
+Please click this link to approve or reject this record.
+
+Thank you,
+Salesforce
