@@ -23,7 +23,7 @@ private class CA2_AssetHandlerTest {
         cnt.StartDate = System.today().adddays(-5);
         cnt.ContractTerm = 12;
         cnt.SBQQ__Quote__c = qut.id;
-        insert cnt;
+        //insert cnt;
         
         SBQQ__Quote__c qut2 = new SBQQ__Quote__c();
         qut2.SBQQ__Opportunity2__c = opp.Id;

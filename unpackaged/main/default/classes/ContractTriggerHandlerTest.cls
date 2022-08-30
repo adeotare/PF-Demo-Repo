@@ -39,9 +39,32 @@ public class ContractTriggerHandlerTest {
         qut.SBQQ__Opportunity2__c = opp.Id;
         insert qut;
         
+        MSA_Contract__c msa = new MSA_Contract__c();
+        msa.Account_Name__c = act.Id;
+        msa.Subsidiary__c = 'Greenbyte AB';
+        msa.MSA_Start_Date__c = system.Today();
+        msa.MSA_Term_years__c = 2;
+        insert msa;
+        
+        act.Account_Status__c = 'Approved';
+        act.Legal_Entity__c = 'Yes';
+        act.Theater__c = 'APAC';
+        act.Compliance_Designations__c = 'NERC/CIP';
+        act.BillingStreet  = 'hb';
+        act.BillingCity = 'hb';
+        act.BillingPostalCode = '209096';
+        act.BillingState  = 'Arizona';
+        act.ShippingStreet  = 'test';
+        act.ShippingCity  = 'test';
+        act.ShippingCountry = 'United States';
+        act.ShippingState  = 'Arizona';
+        act.Uses_MSA_of__c   = msa.Id;
+        
+        update act;
+        
        	Contract cnt = new Contract();
         cnt.AccountId = act.Id;
-        cnt.Status = 'Draft';
+        //cnt.Status = 'Draft';
         cnt.StartDate = System.today().adddays(-5);
         cnt.ContractTerm = 12;
         cnt.SBQQ__Quote__c = qut.id;
@@ -174,7 +197,7 @@ public class ContractTriggerHandlerTest {
         Contract cnt = [SELECT Id FROM Contract LIMIT 1];
         cnt.SBQQ__RenewalQuoted__c = true;
         cnt.Amendment_Quoted__c = true;
-        cnt.Status = 'Activated';
+       cnt.Status = 'Activated';
         update cnt;
         
         List<Plant_Product_Transaction__c> pptList = [SELECT Id FROM Plant_Product_Transaction__c];

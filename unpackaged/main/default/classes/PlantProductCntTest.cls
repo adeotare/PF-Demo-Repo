@@ -49,12 +49,12 @@ public class PlantProductCntTest {
         cnt.StartDate = System.today().adddays(-5);
         cnt.ContractTerm = 12;
         cnt.SBQQ__Quote__c = qut.id;
-        insert cnt;
+       // insert cnt;
         
         SBQQ__Quote__c qut2 = new SBQQ__Quote__c();
         qut2.SBQQ__Opportunity2__c = opp2.Id;
         qut2.SBQQ__Type__c = 'Amendment' ;
-        qut2.SBQQ__MasterContract__c = cnt.Id;
+       // qut2.SBQQ__MasterContract__c = cnt.Id;
         insert qut2;
         
         Product2 p = new Product2();
@@ -249,19 +249,40 @@ public class PlantProductCntTest {
         List<Product2> prdList = [SELECT Id FROM Product2 LIMIT 2]; 
         for(Product2 prd : prdList) prd.QuantityUnitOfMeasure = 'Site';
         update prdList;
-        List<SBQQ__Quote__c> qutList = [SELECT ID FROM SBQQ__Quote__c LIMIT 2];
-        for(SBQQ__Quote__c qut : qutList) qut.SBQQ__Type__c = 'Quote';
-        update qutList;
-        List<SBQQ__QuoteLine__c> qlList2 = [SELECT id FROM SBQQ__QuoteLine__c LIMIT 2];
         
-        PlantProductController.addPlantProductList(apList ,qlList2[0].Id );
         
 		PlantProductController.updateQuantityOnQuoteLineItem(qlList[0].Id);
         PlantProductController.deletePlantProduct(pptList ,qlList[0].Id );
         
         Test.stopTest();
     }
-    
+     @isTest
+    public static void method06(){
+        List<Account_Plant__c> apList = [Select id,Name,Account__c,Plant__r.MWp__c from Account_Plant__c LIMIT 10];
+        List<SBQQ__Quote__c> qutList = [SELECT ID FROM SBQQ__Quote__c LIMIT 2];
+        for(SBQQ__Quote__c qut : qutList) qut.SBQQ__Type__c = 'Quote';
+        update qutList;
+        List<SBQQ__QuoteLine__c> qlList2 = [SELECT id FROM SBQQ__QuoteLine__c LIMIT 2];
+        
+        PlantProductController.addPlantProductList(apList ,qlList2[0].Id );
+    }
+    @isTest
+    public static void method07(){
+        List<MSA_Software_Discount_Tier_Price__c> msaList = [SELECT ID FROM MSA_Software_Discount_Tier_Price__c];
+        
+        for(MSA_Software_Discount_Tier_Price__c msa : msaList){
+            msa.Type__c = 'Range';
+        }
+        update msaList;
+        
+        List<Account_Plant__c> apList = [Select id,Name,Account__c,Plant__r.MWp__c from Account_Plant__c LIMIT 10];
+        List<SBQQ__Quote__c> qutList = [SELECT ID FROM SBQQ__Quote__c LIMIT 2];
+        for(SBQQ__Quote__c qut : qutList) qut.SBQQ__Type__c = 'Quote';
+        update qutList;
+        List<SBQQ__QuoteLine__c> qlList2 = [SELECT id FROM SBQQ__QuoteLine__c LIMIT 2];
+        
+        PlantProductController.addPlantProductList(apList ,qlList2[0].Id );
+    }
     @isTest
     public static void method03(){
         Test.startTest();
