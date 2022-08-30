@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Auto_renewal__c</fullName>
     <externalId>false</externalId>
+    <inlineHelpText>Indicates that the customer will renew for additional one-year terms following the end of the Initial Term unless they provide notice. “Auto-renew” means that the customer does not have to sign paperwork although we still must close an opportunity.</inlineHelpText>
     <label>Auto-renewal</label>
     <required>false</required>
     <trackFeedHistory>true</trackFeedHistory>

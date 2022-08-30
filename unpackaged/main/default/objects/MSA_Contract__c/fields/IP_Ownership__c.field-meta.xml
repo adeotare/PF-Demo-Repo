@@ -29,7 +29,7 @@
             </value>
             <value>
                 <fullName>Company expressly owns</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>Company expressly owns</label>
             </value>
         </valueSetDefinition>

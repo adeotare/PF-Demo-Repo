@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Annual_Uplift_Based_on_CPI__c</fullName>
     <externalId>false</externalId>
+    <inlineHelpText>CPI = Consumer Price Index. For customers with this term, Contracted Prices must be manually adjusted each year.</inlineHelpText>
     <label>Annual Uplift Based on CPI</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

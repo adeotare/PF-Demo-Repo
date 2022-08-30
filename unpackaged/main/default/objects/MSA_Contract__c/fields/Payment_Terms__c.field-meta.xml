@@ -13,14 +13,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
+                <fullName>Net 15</fullName>
+                <default>false</default>
+                <label>Net 15</label>
+            </value>
+            <value>
                 <fullName>Net 30</fullName>
                 <default>true</default>
                 <label>Net 30</label>
-            </value>
-            <value>
-                <fullName>Net 45</fullName>
-                <default>false</default>
-                <label>Net 45</label>
             </value>
             <value>
                 <fullName>Net 60</fullName>
@@ -28,14 +28,37 @@
                 <label>Net 60</label>
             </value>
             <value>
-                <fullName>Net 90</fullName>
+                <fullName>Due on receipt</fullName>
                 <default>false</default>
-                <label>Net 90</label>
+                <label>Due on receipt</label>
+            </value>
+            <value>
+                <fullName>1% 10 Net 30</fullName>
+                <default>false</default>
+                <label>1% 10 Net 30</label>
+            </value>
+            <value>
+                <fullName>2% 10 Net 30</fullName>
+                <default>false</default>
+                <label>2% 10 Net 30</label>
             </value>
             <value>
                 <fullName>Custom</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Custom</label>
+            </value>
+            <value>
+                <fullName>Net 45</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Net 45</label>
+            </value>
+            <value>
+                <fullName>Net 90</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Net 90</label>
             </value>
         </valueSetDefinition>
     </valueSet>

@@ -24,7 +24,7 @@
             </value>
             <value>
                 <fullName>PowerFactors language</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>PowerFactors language</label>
             </value>
         </valueSetDefinition>

@@ -24,7 +24,7 @@
             </value>
             <value>
                 <fullName>Prohibited</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>Prohibited</label>
             </value>
         </valueSetDefinition>

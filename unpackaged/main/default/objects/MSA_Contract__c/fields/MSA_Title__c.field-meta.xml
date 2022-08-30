@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>MSA_Title__c</fullName>
     <externalId>false</externalId>
+    <inlineHelpText>Customer-facing document name such as &quot;Master Services Agreement&quot; or &quot;Data Platform Services Agreement.&quot;</inlineHelpText>
     <label>MSA Title</label>
     <length>255</length>
     <required>false</required>

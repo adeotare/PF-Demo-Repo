@@ -29,7 +29,7 @@
             </value>
             <value>
                 <fullName>Fees paid with a time limit</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>Fees paid with a time limit</label>
             </value>
             <value>

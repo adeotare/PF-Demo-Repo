@@ -14,7 +14,7 @@
             <sorted>false</sorted>
             <value>
                 <fullName>No assignment w/o consent</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>No assignment w/o consent</label>
             </value>
             <value>
