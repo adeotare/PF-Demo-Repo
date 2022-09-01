@@ -91,9 +91,9 @@
                 <label>BDR Task</label>
             </value>
             <value>
-                <fullName>Professional Services Task</fullName>
+                <fullName>Technical Services Task</fullName>
                 <default>false</default>
-                <label>Professional Services Task</label>
+                <label>Technical Services Task</label>
             </value>
             <value>
                 <fullName>Product/PM Task</fullName>
@@ -119,6 +119,120 @@
                 <fullName>Correspondence</fullName>
                 <default>false</default>
                 <label>Correspondence</label>
+            </value>
+            <value>
+                <fullName>Active Opportunity</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Active Opportunity</label>
+            </value>
+            <value>
+                <fullName>Audit</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Audit</label>
+            </value>
+            <value>
+                <fullName>Custom Demo</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Custom Demo</label>
+            </value>
+            <value>
+                <fullName>Customer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Customer</label>
+            </value>
+            <value>
+                <fullName>Discovery</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Discovery</label>
+            </value>
+            <value>
+                <fullName>Executive Level</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Executive Level</label>
+            </value>
+            <value>
+                <fullName>Generic Demo</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Generic Demo</label>
+            </value>
+            <value>
+                <fullName>Health Score Update</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Health Score Update</label>
+            </value>
+            <value>
+                <fullName>Incident Response</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Incident Response</label>
+            </value>
+            <value>
+                <fullName>Internal Acquia</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Internal Acquia</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Partner Co-Sell</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Partner Co-Sell</label>
+            </value>
+            <value>
+                <fullName>Partner Planning</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Partner Planning</label>
+            </value>
+            <value>
+                <fullName>QBR</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>QBR</label>
+            </value>
+            <value>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Renewal</label>
+            </value>
+            <value>
+                <fullName>Security</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Security</label>
+            </value>
+            <value>
+                <fullName>Success Plan Update</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Success Plan Update</label>
+            </value>
+            <value>
+                <fullName>Welcome Call</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Welcome Call</label>
+            </value>
+            <value>
+                <fullName>Wellness Call</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Wellness Call</label>
             </value>
         </valueSetDefinition>
         <valueSettings>
@@ -187,7 +301,7 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Task</controllingFieldValue>
-            <valueName>Professional Services Task</valueName>
+            <valueName>Technical Services Task</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Task</controllingFieldValue>

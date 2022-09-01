@@ -6,7 +6,8 @@
     <errorConditionFormula>AND(
 OR(
 ISPICKVAL( StageName ,&quot;Closed Won&quot;),
-ISPICKVAL( StageName ,&quot;Closed Lost&quot;) ),
+ISPICKVAL( StageName ,&quot;Closed Lost&quot;),
+ISPICKVAL( StageName ,&quot;Close Pending&quot;) ),
 OR (ISPICKVAL( Win_Loss_Reason__c  ,&quot;&quot;)))</errorConditionFormula>
     <errorMessage>Please fill Win/Loss Reason</errorMessage>
 </ValidationRule>
