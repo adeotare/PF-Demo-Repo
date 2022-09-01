@@ -3,7 +3,9 @@
     <fullName>PO_Required_to_Close_Opportunity</fullName>
     <active>true</active>
     <description>If the Account requires a PO Number and the Opportunity PO Number field is blank, the Opportunity cannot move to Closed Won.</description>
-    <errorConditionFormula>AND( ISPICKVAL(   Account.PO_Required__c , &quot;Mandatory&quot;),
+    <errorConditionFormula>AND( ISPICKVAL( Account.PO_Required__c , &quot;Mandatory&quot;),
+OR (ISPICKVAL( Account.Type ,&#39;Customer&#39;) ,
+ISPICKVAL( Account.Type ,&#39;Prospect&#39;)),
 ISBLANK( PO_Number__c ) ,
 ISCHANGED( StageName ) ,
 OR(
