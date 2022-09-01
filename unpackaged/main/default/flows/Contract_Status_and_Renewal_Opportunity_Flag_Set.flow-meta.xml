@@ -3,7 +3,7 @@
     <apiVersion>54.0</apiVersion>
     <description>Req 1889</description>
     <interviewLabel>Contract : Status and Renewal Opportunity Flag Set {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Contract : Status and Renewal Opportunity Flag Set</label>
+    <label>Contract : Status, Renewal Opportunity Flag Set and Uplift</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -23,15 +23,63 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Account</name>
+        <label>Get Account</label>
+        <locationX>577</locationX>
+        <locationY>384</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_MSA</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_MSA</name>
+        <label>Get MSA</label>
+        <locationX>585</locationX>
+        <locationY>513</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Status_and_Check_Renewal</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Account.Uses_MSA_of__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>MSA_Contract__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Status_and_Check_Renewal</name>
         <label>Update Status and Check Renewal</label>
-        <locationX>569</locationX>
-        <locationY>433</locationY>
+        <locationX>723</locationX>
+        <locationY>601</locationY>
         <inputAssignments>
             <field>SBQQ__RenewalForecast__c</field>
             <value>
                 <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__RenewalUpliftRate__c</field>
+            <value>
+                <elementReference>Get_MSA.Annual_Uplift_Percentage__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -46,7 +94,7 @@
         <locationX>449</locationX>
         <locationY>48</locationY>
         <connector>
-            <targetReference>Update_Status_and_Check_Renewal</targetReference>
+            <targetReference>Get_Account</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
