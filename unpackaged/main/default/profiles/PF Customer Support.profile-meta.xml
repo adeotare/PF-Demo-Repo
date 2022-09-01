@@ -6863,7 +6863,6 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
         <recordType>Task.Collaboration_Request_Task</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
