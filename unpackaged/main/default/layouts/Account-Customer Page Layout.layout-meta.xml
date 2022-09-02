@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>DataDotComAccountInsights</excludeButtons>
-    <excludeButtons>DataDotComClean</excludeButtons>
-    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -21,10 +18,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>IsCustomerPortal__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Netsuite_Subscription_Id__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -249,6 +242,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>NetSuite_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Netsuite_Subscription_Id__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -479,6 +476,7 @@
         
         
         
+        
         <fields>ACTIVITY.TASK</fields>
         <fields>TASK.DUE_DATE</fields>
         <fields>TASK.STATUS</fields>
@@ -489,6 +487,7 @@
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
+        
         
         
         
@@ -658,15 +657,15 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>SBQQ__Quantity__c</fields>
         <fields>SBQQ__Product__c</fields>
-        <fields>CA_Quantity__c</fields>
         <fields>SBQQ__SubscriptionStartDate__c</fields>
         <fields>SBQQ__SubscriptionEndDate__c</fields>
+        <fields>SBQQ__QuoteLine__c</fields>
         <fields>Annual_Recurring_Revenue__c</fields>
-        <fields>Change_in_ARR__c</fields>
+        <fields>SBQQ__NetPrice__c</fields>
         <fields>Line_Classification__c</fields>
         <fields>SBQQ__Contract__c</fields>
-        <fields>SBQQ__QuoteLine__c</fields>
         <relatedList>SBQQ__Subscription__c.SBQQ__Account__c</relatedList>
     </relatedLists>
     <relatedLists>
