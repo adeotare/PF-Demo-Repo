@@ -557,6 +557,7 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Account__c</fields>
         <fields>Description__c</fields>
         <fields>Product__c</fields>
         <fields>Pricing_Tier__c</fields>
