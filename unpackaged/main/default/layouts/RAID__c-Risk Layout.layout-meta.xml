@@ -40,7 +40,7 @@
                 <field>Account__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Account_Plant__c</field>
             </layoutItems>
         </layoutColumns>
