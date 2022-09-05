@@ -1,12 +1,13 @@
 @isTest
-public class AccountHierarchyMWTest {
+public class AccountHierarchyproductfamilyTest {
 	
     @TestSetup
     public static void setupData(){
-        Test.startTest();
+        
         // Test data creation :
         List<String> assetClassList = new List<String>{'Solar', 'Wind','Hydro','Storage','Industrial','Other Renewable'};
-        List<Account> actList = new List<Account>();
+		List<String> productFamily = new List<String>{'Drive', 'Greenbyte','BluePoint','Ekhosoft','Drive', 'Greenbyte'};
+		List<Account> actList = new List<Account>();
         
         Account act = new Account();
         act.Name  = 'AccountHierarchyMWTest';
@@ -54,7 +55,7 @@ public class AccountHierarchyMWTest {
         }
 		insert plantList;
         
-        
+        Test.startTest();
         List<Account_Plant__c> accPlantList = new List<Account_Plant__c>();
         for(Integer i = 0 ; i<6 ; i++){
             Account_Plant__c accPlant = new Account_Plant__c();
@@ -92,6 +93,7 @@ public class AccountHierarchyMWTest {
             prd.Product_Services__c = 'N/A';
             prd.QuantityUnitOfMeasure = 'MWp';
             prd.Asset_Class__c = 'Solar';
+            prd.Family = productFamily[i];
             prdList.add(prd);
         }
         insert prdList;
@@ -129,8 +131,7 @@ public class AccountHierarchyMWTest {
     @isTest
     public static void testMethod01(){
         Test.startTest();
-       	
-        AccountHierarchyMW upd = new AccountHierarchyMW();
+        AccountHierarchyproductfamily upd = new AccountHierarchyproductfamily();
         Database.executeBatch(upd);
         
         Test.stopTest();
@@ -143,29 +144,17 @@ public class AccountHierarchyMWTest {
         List<Active_Megawatts__c> amwTiInsert = new List<Active_Megawatts__c>();
         for(Account acc: accList){
             Active_Megawatts__c amw = new Active_Megawatts__c(
-                Total_Agnostic__c			= 	0 ,
-                Total_MW_Hydro__c 			= 	0 ,
-                Total_MW_Industrial__c		=	0 ,
-                Total_MW_Other_Renewable__c	=	0 ,
-                Total_MW_Solar__c			=	0 ,
-                Total_MW_Storage__c			=	0 ,
-                Total_MW_Wind__c			=	0 ,
+                Total_MW_Bluepoint__c 	= 0 ,
+                Total_MW_Drive__c 		= 0 ,
+                Total_MW_Greenbyte__c 	= 0 ,
                 
-                MW_Agnostic__c 				=	0 ,
-                MW_Hydro__c 				=	0 ,
-                MW_Industrial__c 			= 	0 ,
-                MW_Other_Renewable__c 		= 	0 ,
-                MW_Solar__c 				= 	0 ,
-                MW_Storage__c 				= 	0 ,
-                MW_Wind__c					=	0 ,
+                MW_Bluepoint__c 		= 0 ,
+                MW_Drive__c 			= 0 ,
+                MW_Greenbyte__c 		= 0 ,
                 
-                Child_MW_Agnostic__c		=	0 ,
-                Child_MW_Hydro__c			=	0 ,
-                Child_MW_Industrial__c		=	0 ,
-                Child_MW_Other_Renewable__c	=	0 ,
-                Child_MW_Solar__c 			=	0 ,
-                Child_MW_Storage__c 		=	0 ,
-                Child_MW_Wind__c 			= 	0 ,
+                Child_MW_Bluepoint__c 	= 0,
+                Child_MW_Drive__c 		= 0,
+                Child_MW_Greenbyte__c 	= 0,
                 
                 Account__c					= 	acc.Id
             );
@@ -174,7 +163,7 @@ public class AccountHierarchyMWTest {
         
         insert amwTiInsert;
         
-        AccountHierarchyMW upd = new AccountHierarchyMW();
+        AccountHierarchyproductfamily upd = new AccountHierarchyproductfamily();
         Database.executeBatch(upd);
         
         Test.stopTest();
@@ -188,29 +177,17 @@ public class AccountHierarchyMWTest {
         List<Active_Megawatts__c> amwTiInsert = new List<Active_Megawatts__c>();
         for(Account acc: accList){
             Active_Megawatts__c amw = new Active_Megawatts__c(
-                Total_Agnostic__c			= 	0 ,
-                Total_MW_Hydro__c 			= 	0 ,
-                Total_MW_Industrial__c		=	0 ,
-                Total_MW_Other_Renewable__c	=	0 ,
-                Total_MW_Solar__c			=	0 ,
-                Total_MW_Storage__c			=	0 ,
-                Total_MW_Wind__c			=	0 ,
+                Total_MW_Bluepoint__c 	= 0 ,
+                Total_MW_Drive__c 		= 0 ,
+                Total_MW_Greenbyte__c 	= 0 ,
                 
-                MW_Agnostic__c 				=	0 ,
-                MW_Hydro__c 				=	0 ,
-                MW_Industrial__c 			= 	0 ,
-                MW_Other_Renewable__c 		= 	0 ,
-                MW_Solar__c 				= 	0 ,
-                MW_Storage__c 				= 	0 ,
-                MW_Wind__c					=	0 ,
+                MW_Bluepoint__c 		= 0 ,
+                MW_Drive__c 			= 0 ,
+                MW_Greenbyte__c 		= 0 ,
                 
-                Child_MW_Agnostic__c		=	0 ,
-                Child_MW_Hydro__c			=	0 ,
-                Child_MW_Industrial__c		=	0 ,
-                Child_MW_Other_Renewable__c	=	0 ,
-                Child_MW_Solar__c 			=	0 ,
-                Child_MW_Storage__c 		=	0 ,
-                Child_MW_Wind__c 			= 	0 ,
+                Child_MW_Bluepoint__c 	= 0,
+                Child_MW_Drive__c 		= 0,
+                Child_MW_Greenbyte__c 	= 0,
                 
                 Account__c					= 	acc.Id
             );
@@ -218,10 +195,8 @@ public class AccountHierarchyMWTest {
         }
         
         insert amwTiInsert;
-        
-        List<Plant_Product_Transaction__c> pptList = [Select Id FROM Plant_Product_Transaction__c]; 
-        AccountHierarchyMW upd = new AccountHierarchyMW();
-        Database.executeBatch(upd);
+        AccountHierarchyproductfamily upd = new AccountHierarchyproductfamily();
+       	Database.executeBatch(upd);
         
         Test.stopTest();
     }
@@ -229,9 +204,9 @@ public class AccountHierarchyMWTest {
     @isTest
     public static void testMethod03(){
         Test.startTest();
+        
         delete [select id from account where parentId != null];
-        List<Plant_Product_Transaction__c> pptList = [Select Id FROM Plant_Product_Transaction__c]; 
-        AccountHierarchyMW upd = new AccountHierarchyMW();
+        AccountHierarchyproductfamily upd = new AccountHierarchyproductfamily();
         Database.executeBatch(upd);
         
         Test.stopTest();
@@ -245,29 +220,17 @@ public class AccountHierarchyMWTest {
         for(Account acc: accList){
             if(acc.ParentId == null){
                  Active_Megawatts__c amw = new Active_Megawatts__c(
-                Total_Agnostic__c			= 	0 ,
-                Total_MW_Hydro__c 			= 	0 ,
-                Total_MW_Industrial__c		=	0 ,
-                Total_MW_Other_Renewable__c	=	0 ,
-                Total_MW_Solar__c			=	0 ,
-                Total_MW_Storage__c			=	0 ,
-                Total_MW_Wind__c			=	0 ,
+                Total_MW_Bluepoint__c 	= 0 ,
+                Total_MW_Drive__c 		= 0 ,
+                Total_MW_Greenbyte__c 	= 0 ,
                 
-                MW_Agnostic__c 				=	0 ,
-                MW_Hydro__c 				=	0 ,
-                MW_Industrial__c 			= 	0 ,
-                MW_Other_Renewable__c 		= 	0 ,
-                MW_Solar__c 				= 	0 ,
-                MW_Storage__c 				= 	0 ,
-                MW_Wind__c					=	0 ,
+                MW_Bluepoint__c 		= 0 ,
+                MW_Drive__c 			= 0 ,
+                MW_Greenbyte__c 		= 0 ,
                 
-                Child_MW_Agnostic__c		=	0 ,
-                Child_MW_Hydro__c			=	0 ,
-                Child_MW_Industrial__c		=	0 ,
-                Child_MW_Other_Renewable__c	=	0 ,
-                Child_MW_Solar__c 			=	0 ,
-                Child_MW_Storage__c 		=	0 ,
-                Child_MW_Wind__c 			= 	0 ,
+                Child_MW_Bluepoint__c 	= 0,
+                Child_MW_Drive__c 		= 0,
+                Child_MW_Greenbyte__c 	= 0,
                 
                 Account__c					= 	acc.Id
             );
@@ -278,8 +241,7 @@ public class AccountHierarchyMWTest {
         insert amwTiInsert;
         delete [select id from account where parentId != null];
         
-        List<Plant_Product_Transaction__c> pptList = [Select Id FROM Plant_Product_Transaction__c]; 
-        AccountHierarchyMW upd = new AccountHierarchyMW();
+        AccountHierarchyproductfamily upd = new AccountHierarchyproductfamily();
         Database.executeBatch(upd);
         
         Test.stopTest();
@@ -304,9 +266,7 @@ public class AccountHierarchyMWTest {
         accList[1].Uses_MSA_of__c = msa2.Id;
         update accList;
         
-        List<Plant_Product_Transaction__c> pptList = [Select Id FROM Plant_Product_Transaction__c]; 
-        
-        AccountHierarchyMW upd = new AccountHierarchyMW();
+        AccountHierarchyproductfamily upd = new AccountHierarchyproductfamily();
         Database.executeBatch(upd);
         
         Test.stopTest();
@@ -335,29 +295,17 @@ public class AccountHierarchyMWTest {
         List<Active_Megawatts__c> amwTiInsert = new List<Active_Megawatts__c>();
         for(Account acc: accList2){
             Active_Megawatts__c amw = new Active_Megawatts__c(
-                Total_Agnostic__c			= 	0 ,
-                Total_MW_Hydro__c 			= 	0 ,
-                Total_MW_Industrial__c		=	0 ,
-                Total_MW_Other_Renewable__c	=	0 ,
-                Total_MW_Solar__c			=	0 ,
-                Total_MW_Storage__c			=	0 ,
-                Total_MW_Wind__c			=	0 ,
+                Total_MW_Bluepoint__c 	= 0 ,
+                Total_MW_Drive__c 		= 0 ,
+                Total_MW_Greenbyte__c 	= 0 ,
                 
-                MW_Agnostic__c 				=	0 ,
-                MW_Hydro__c 				=	0 ,
-                MW_Industrial__c 			= 	0 ,
-                MW_Other_Renewable__c 		= 	0 ,
-                MW_Solar__c 				= 	0 ,
-                MW_Storage__c 				= 	0 ,
-                MW_Wind__c					=	0 ,
+                MW_Bluepoint__c 		= 0 ,
+                MW_Drive__c 			= 0 ,
+                MW_Greenbyte__c 		= 0 ,
                 
-                Child_MW_Agnostic__c		=	0 ,
-                Child_MW_Hydro__c			=	0 ,
-                Child_MW_Industrial__c		=	0 ,
-                Child_MW_Other_Renewable__c	=	0 ,
-                Child_MW_Solar__c 			=	0 ,
-                Child_MW_Storage__c 		=	0 ,
-                Child_MW_Wind__c 			= 	0 ,
+                Child_MW_Bluepoint__c 	= 0,
+                Child_MW_Drive__c 		= 0,
+                Child_MW_Greenbyte__c 	= 0,
                 
                 Account__c					= 	acc.Id
             );
@@ -366,7 +314,8 @@ public class AccountHierarchyMWTest {
         
         insert amwTiInsert;
         
-        AccountHierarchyMW upd = new AccountHierarchyMW();
+        
+        AccountHierarchyproductfamily upd = new AccountHierarchyproductfamily();
         Database.executeBatch(upd);
         
         Test.stopTest();
@@ -388,7 +337,7 @@ public class AccountHierarchyMWTest {
         update pptList;
         
         
-        AccountHierarchyMW upd = new AccountHierarchyMW();
+        AccountHierarchyproductfamily upd = new AccountHierarchyproductfamily();
         Database.executeBatch(upd);
         
         Test.stopTest();
@@ -406,29 +355,17 @@ public class AccountHierarchyMWTest {
             apList[i].Account__c = acc.Id;
         }
         Active_Megawatts__c amw = new Active_Megawatts__c(
-                Total_Agnostic__c			= 	0 ,
-                Total_MW_Hydro__c 			= 	0 ,
-                Total_MW_Industrial__c		=	0 ,
-                Total_MW_Other_Renewable__c	=	0 ,
-                Total_MW_Solar__c			=	0 ,
-                Total_MW_Storage__c			=	0 ,
-                Total_MW_Wind__c			=	0 ,
+                Total_MW_Bluepoint__c 	= 0 ,
+                Total_MW_Drive__c 		= 0 ,
+                Total_MW_Greenbyte__c 	= 0 ,
                 
-                MW_Agnostic__c 				=	0 ,
-                MW_Hydro__c 				=	0 ,
-                MW_Industrial__c 			= 	0 ,
-                MW_Other_Renewable__c 		= 	0 ,
-                MW_Solar__c 				= 	0 ,
-                MW_Storage__c 				= 	0 ,
-                MW_Wind__c					=	0 ,
+                MW_Bluepoint__c 		= 0 ,
+                MW_Drive__c 			= 0 ,
+                MW_Greenbyte__c 		= 0 ,
                 
-                Child_MW_Agnostic__c		=	0 ,
-                Child_MW_Hydro__c			=	0 ,
-                Child_MW_Industrial__c		=	0 ,
-                Child_MW_Other_Renewable__c	=	0 ,
-                Child_MW_Solar__c 			=	0 ,
-                Child_MW_Storage__c 		=	0 ,
-                Child_MW_Wind__c 			= 	0 ,
+                Child_MW_Bluepoint__c 	= 0,
+                Child_MW_Drive__c 		= 0,
+                Child_MW_Greenbyte__c 	= 0,
                 
                 Account__c					= 	acc.Id
             );
@@ -437,7 +374,7 @@ public class AccountHierarchyMWTest {
         update pptList;
         
         
-        AccountHierarchyMW upd = new AccountHierarchyMW();
+        AccountHierarchyproductfamily upd = new AccountHierarchyproductfamily();
         Database.executeBatch(upd);
         
         Test.stopTest();
@@ -446,15 +383,16 @@ public class AccountHierarchyMWTest {
     @isTest
     public static void testMethod10(){
         Test.startTest();
+        
         MSA_Contract__c msa = new MSA_Contract__c();
         msa.Subsidiary__c = 'Power Factors LLC';
         msa.Parent_MSA_Opt_Out__c = 'Yes';
         insert msa;
         
         Account acc = [Select id from account where name like 'Test-2023' LIMIT 1];
-        
-        acc.Uses_MSA_of__c = msa.Id;
+        acc.Uses_MSA_of__c = msa.id;
         update acc;
+        
         List<Account_Plant__c> apList= [Select id from Account_Plant__c LIMIT 3];
         List<Plant_Product_Transaction__c> pptList = [Select Id FROM Plant_Product_Transaction__c LIMIT 3]; 
         
@@ -463,29 +401,17 @@ public class AccountHierarchyMWTest {
             apList[i].Account__c = acc.Id;
         }
         Active_Megawatts__c amw = new Active_Megawatts__c(
-                Total_Agnostic__c			= 	0 ,
-                Total_MW_Hydro__c 			= 	0 ,
-                Total_MW_Industrial__c		=	0 ,
-                Total_MW_Other_Renewable__c	=	0 ,
-                Total_MW_Solar__c			=	0 ,
-                Total_MW_Storage__c			=	0 ,
-                Total_MW_Wind__c			=	0 ,
+                Total_MW_Bluepoint__c 	= 0 ,
+                Total_MW_Drive__c 		= 0 ,
+                Total_MW_Greenbyte__c 	= 0 ,
                 
-                MW_Agnostic__c 				=	0 ,
-                MW_Hydro__c 				=	0 ,
-                MW_Industrial__c 			= 	0 ,
-                MW_Other_Renewable__c 		= 	0 ,
-                MW_Solar__c 				= 	0 ,
-                MW_Storage__c 				= 	0 ,
-                MW_Wind__c					=	0 ,
+                MW_Bluepoint__c 		= 0 ,
+                MW_Drive__c 			= 0 ,
+                MW_Greenbyte__c 		= 0 ,
                 
-                Child_MW_Agnostic__c		=	0 ,
-                Child_MW_Hydro__c			=	0 ,
-                Child_MW_Industrial__c		=	0 ,
-                Child_MW_Other_Renewable__c	=	0 ,
-                Child_MW_Solar__c 			=	0 ,
-                Child_MW_Storage__c 		=	0 ,
-                Child_MW_Wind__c 			= 	0 ,
+                Child_MW_Bluepoint__c 	= 0,
+                Child_MW_Drive__c 		= 0,
+                Child_MW_Greenbyte__c 	= 0,
                 
                 Account__c					= 	acc.Id
             );
@@ -494,7 +420,7 @@ public class AccountHierarchyMWTest {
         update pptList;
         
         
-        AccountHierarchyMW upd = new AccountHierarchyMW();
+        AccountHierarchyproductfamily upd = new AccountHierarchyproductfamily();
         Database.executeBatch(upd);
         
         Test.stopTest();
@@ -509,8 +435,7 @@ public class AccountHierarchyMWTest {
         insert msa;
         
         Account acc = [Select id from account where name like 'Test-2023' LIMIT 1];
-        
-        acc.Uses_MSA_of__c = msa.Id;
+        acc.Uses_MSA_of__c = msa.id;
         update acc;
         List<Account_Plant__c> apList= [Select id from Account_Plant__c LIMIT 3];
         List<Plant_Product_Transaction__c> pptList = [Select Id FROM Plant_Product_Transaction__c LIMIT 3]; 
@@ -523,9 +448,10 @@ public class AccountHierarchyMWTest {
         update pptList;
         
         
-        AccountHierarchyMW upd = new AccountHierarchyMW();
+        AccountHierarchyproductfamily upd = new AccountHierarchyproductfamily();
         Database.executeBatch(upd);
         
         Test.stopTest();
     }
+
 }
