@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Total_Active_MW_to_consider_for_Ekhosoft__c</fullName>
     <externalId>false</externalId>
-    <label>Total Active MW to consider for EK PRC</label>
+    <label>MW to consider for EK Pricing</label>
     <precision>12</precision>
     <required>false</required>
     <scale>2</scale>
