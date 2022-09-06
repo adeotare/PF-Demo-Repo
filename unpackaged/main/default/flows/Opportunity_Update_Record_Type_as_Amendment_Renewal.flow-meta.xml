@@ -100,8 +100,8 @@
     <recordLookups>
         <name>Get_Id_of_Renewal</name>
         <label>Get Id of Renewal</label>
-        <locationX>1024</locationX>
-        <locationY>275</locationY>
+        <locationX>1026</locationX>
+        <locationY>274</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Record_Type_of_Renewal</targetReference>
@@ -178,6 +178,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Order_Type__c</field>
+            <value>
+                <stringValue>Renewal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>RecordTypeId</field>
             <value>
                 <elementReference>Get_Id_of_Renewal.Id</elementReference>
@@ -187,6 +193,12 @@
             <field>StageName</field>
             <value>
                 <stringValue>4 - Evaluation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Customer</stringValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>

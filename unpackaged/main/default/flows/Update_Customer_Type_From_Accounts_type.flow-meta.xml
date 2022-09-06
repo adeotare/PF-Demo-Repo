@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>51.0</apiVersion>
+    <assignments>
+        <name>Update_Opp_Account_type_as_Customer</name>
+        <label>Update Opp. Account type as Customer</label>
+        <locationX>823</locationX>
+        <locationY>117</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Customer</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Update_Opp_Account_type_as_Former_Customer</name>
+        <label>Update Opp. Account type as Former Customer</label>
+        <locationX>1067</locationX>
+        <locationY>343</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Former Customer</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Update_Opp_Account_type_as_Prospect</name>
+        <label>Update Opp. Account type as Prospect</label>
+        <locationX>895</locationX>
+        <locationY>533</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Prospect</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
     <decisions>
         <name>Check_account_type_is_not_null</name>
         <label>Check account type is not null</label>
@@ -26,8 +65,8 @@
     <decisions>
         <name>Check_Account_type_value</name>
         <label>Check Account type value</label>
-        <locationX>677</locationX>
-        <locationY>372</locationY>
+        <locationX>694</locationX>
+        <locationY>380</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Account_type_is_Customer</name>
@@ -40,7 +79,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Opportunity_type_is_updated</targetReference>
+                <targetReference>Update_Opp_Account_type_as_Customer</targetReference>
             </connector>
             <label>Account type is Customer</label>
         </rules>
@@ -55,7 +94,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Opportunity_type_is_updated_0</targetReference>
+                <targetReference>Update_Opp_Account_type_as_Former_Customer</targetReference>
             </connector>
             <label>Account type is Former Customer</label>
         </rules>
@@ -70,7 +109,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Opportunity_type_is_updated_0_0</targetReference>
+                <targetReference>Update_Opp_Account_type_as_Prospect</targetReference>
             </connector>
             <label>Account type is Prospect</label>
         </rules>
@@ -99,12 +138,12 @@
     <recordUpdates>
         <name>Opportunity_type_is_updated</name>
         <label>Opportunity type is updated</label>
-        <locationX>920</locationX>
-        <locationY>240</locationY>
+        <locationX>1249</locationX>
+        <locationY>135</locationY>
         <inputAssignments>
             <field>Type</field>
             <value>
-                <stringValue>Customer</stringValue>
+                <stringValue>Active Customer</stringValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -112,8 +151,8 @@
     <recordUpdates>
         <name>Opportunity_type_is_updated_0</name>
         <label>Opportunity type is updated</label>
-        <locationX>1005</locationX>
-        <locationY>482</locationY>
+        <locationX>1303</locationX>
+        <locationY>340</locationY>
         <inputAssignments>
             <field>Type</field>
             <value>
@@ -125,8 +164,8 @@
     <recordUpdates>
         <name>Opportunity_type_is_updated_0_0</name>
         <label>Opportunity type is updated</label>
-        <locationX>699</locationX>
-        <locationY>564</locationY>
+        <locationX>1326</locationX>
+        <locationY>500</locationY>
         <inputAssignments>
             <field>Type</field>
             <value>
@@ -143,7 +182,7 @@
         </connector>
         <object>Opportunity</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
-        <triggerType>RecordAfterSave</triggerType>
+        <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>
 </Flow>
