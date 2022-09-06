@@ -574,10 +574,25 @@ public with sharing class PlantProductController {
             // Don't count ActiveMW when Quote is for Renewal else it will result in double counting
             If (swDiscountTiersList[0].Cross_Orders__c == TRUE && quoteType !='Renewal') {
                 try {
-                        List <Active_Megawatts__c> aMW = [Select ID, Total_Agnostic__c from Active_Megawatts__c where (Account__r.ID = :swDiscountTiersList[0].Account__r.ID) WITH SECURITY_ENFORCED limit 1];
+                        // List <Active_Megawatts__c> aMW = [Select ID, Total_Agnostic__c from Active_Megawatts__c where (Account__r.ID = :swDiscountTiersList[0].Account__r.ID) WITH SECURITY_ENFORCED limit 1];
+                        List <Active_Megawatts__c> aMW = [Select ID, Total_MW_Bluepoint__c, Total_MW_Drive__c, Total_Active_MW_to_consider_for_Ekhosoft__c, Total_MW_Greenbyte__c from Active_Megawatts__c where (Account__r.ID = :swDiscountTiersList[0].Account__r.ID) WITH SECURITY_ENFORCED limit 1];
                         if (aMW.size() > 0) {
-                            ActiveMW = aMW[0].Total_Agnostic__c;
-                            System.debug('Currently total Active MW (Active_Megawatts__c.Total_Agnostic__c) for the Account is '+ActiveMW);    
+                            //ActiveMW = aMW[0].Total_Agnostic__c;
+                            SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__ProductFamily__c from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+                            If (quoteLine.SBQQ__ProductFamily__c == 'Ekhosoft') {
+                                ActiveMW = aMW[0].Total_Active_MW_to_consider_for_Ekhosoft__c;
+                            }
+                            else if (quoteLine.SBQQ__ProductFamily__c == 'Drive') {
+                                ActiveMW = aMW[0].Total_MW_Drive__c;
+                            }
+                            else if (quoteLine.SBQQ__ProductFamily__c == 'Greenbyte') {
+                                ActiveMW = aMW[0].Total_MW_Greenbyte__c;
+                            }
+                            else if (quoteLine.SBQQ__ProductFamily__c == 'BluePoint') {
+                                ActiveMW = aMW[0].Total_MW_Bluepoint__c;
+                            }
+                            
+                            System.debug('Currently total Active MW for the given Product family and for the Account is '+ActiveMW);    
                         }
                     }
                     catch(Exception ex) {
