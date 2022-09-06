@@ -8,14 +8,14 @@
    if(
        Quote_Type__c == &#39;Amendment&#39; &amp;&amp;  ISPICKVAL(Amendment_Action__c, &#39;Removed Plant&#39;) , 
          ( Date_of_Amendment__c  - Quote__r.SBQQ__StartDate__c) / (Quote__r.SBQQ__EndDate__c  - Quote__r.SBQQ__StartDate__c) ,
-         1
+         (End_Date__c - Effective_Date__c)/365
   )
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>PPT Prorate Multiplier</label>
     <precision>18</precision>
     <required>false</required>
-    <scale>2</scale>
+    <scale>4</scale>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Number</type>
