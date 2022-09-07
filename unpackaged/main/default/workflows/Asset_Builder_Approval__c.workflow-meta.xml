@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>ABA_Email_Alert_For_Submitted</fullName>
+        <description>ABA Email Alert For Submitted</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Customer_Contact_for_Onboarding__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>Partner_Primary_Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/AB_Email_Template_for_Submitted</template>
+    </alerts>
+</Workflow>
