@@ -1083,6 +1083,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>CRM_Project__c.Deployment_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>CRM_Project__c.Due_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6249,6 +6254,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>project_cloud__Project_Task__c.Task_Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>project_cloud__Project__c.Deployment_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

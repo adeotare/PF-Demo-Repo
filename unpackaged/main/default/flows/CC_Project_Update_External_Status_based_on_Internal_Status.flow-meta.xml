@@ -39,6 +39,9 @@
                 <stringValue>Completed</stringValue>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>Check_If_Deployment_Date_is_already_populated_or_not</targetReference>
+        </connector>
     </assignments>
     <assignments>
         <name>CC_Update_External_Status_In_Progress</name>
@@ -66,6 +69,41 @@
             </value>
         </assignmentItems>
     </assignments>
+    <assignments>
+        <name>Update_Deployment_Date</name>
+        <label>Update Deployment Date</label>
+        <locationX>709</locationX>
+        <locationY>687</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Deployment_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_If_Deployment_Date_is_already_populated_or_not</name>
+        <label>Check If Deployment Date is already populated or not</label>
+        <locationX>531</locationX>
+        <locationY>695</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Not_Populated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Deployment_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Deployment_Date</targetReference>
+            </connector>
+            <label>Not Populated</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>update_CC_project_external_status_base_on_internal_status</name>
         <label>update CC project external status base on internal status</label>
@@ -204,6 +242,7 @@
             <label>CC Status:Cancelled</label>
         </rules>
     </decisions>
+    <description>07 Sept :- Updated the flow to accommodate changes for Deployment Date.</description>
     <interviewLabel>CC Project: {!$Flow.CurrentDateTime}</interviewLabel>
     <label>CC Project: Update External Status based on Internal Status V4</label>
     <processMetadataValues>

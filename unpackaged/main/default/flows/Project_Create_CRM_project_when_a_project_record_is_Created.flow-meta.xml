@@ -428,6 +428,13 @@
                 <elementReference>$Record.Product_Family__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCRMRecord.Deployment_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Deployment_Date__c</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Assign_CRM_Records_to_Collection</targetReference>
         </connector>
@@ -457,7 +464,8 @@
             <label>Project is created</label>
         </rules>
     </decisions>
-    <description>As per the REQ- 2139</description>
+    <description>As per the REQ- 2139
+07 Sept :- Updated flow to accommodate changes for Deployment Date</description>
     <interviewLabel>Project : Create CRM project when a project record is Created {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Project : Create CRM project when a project record is Created</label>
     <loops>
@@ -514,6 +522,12 @@
             <field>CRM_Reference_Project__c</field>
             <value>
                 <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Deployment_Date__c</field>
+            <value>
+                <elementReference>$Record.Deployment_Date__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

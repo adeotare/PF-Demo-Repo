@@ -197,6 +197,10 @@
                 <behavior>Edit</behavior>
                 <field>Implementation_start_date__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Deployment_Date__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
