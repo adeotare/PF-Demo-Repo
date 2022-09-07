@@ -3,7 +3,7 @@
     <fullName>Card_Created_From_Project_Id__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>Project id</label>
+    <label>Project Name</label>
     <referenceTo>project_cloud__Project__c</referenceTo>
     <relationshipLabel>Cards</relationshipLabel>
     <relationshipName>Cards</relationshipName>

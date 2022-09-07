@@ -2,6 +2,11 @@
 <FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>project_cloud__sidepanel</fullName>
     <availableFields>
+        <field>project_cloud__Card_Name__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>project_cloud__Color__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -28,7 +33,7 @@
     </availableFields>
     <description>Used on the Cloudcoach Sidepanel</description>
     <displayedFields>
-        <field>project_cloud__Card_Name__c</field>
+        <field>Card_Created_From_Project_Id__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
