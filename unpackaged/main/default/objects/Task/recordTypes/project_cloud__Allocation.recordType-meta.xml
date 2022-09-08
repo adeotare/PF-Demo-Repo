@@ -4,8 +4,94 @@
     <active>true</active>
     <description>Any task of this type is an Allocation of time towards a Project Task</description>
     <label>Allocation</label>
-    
-        <picklistValues>
+    <picklistValues>
+        <picklist>Detail__c</picklist>
+        <values>
+            <fullName>Account Executive Task</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Account Manager Task</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BDR Task</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Correspondence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance Task</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In person</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbound - Conversation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal Task</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn InMail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound - Conversation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound - No answer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound - Voicemail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Sales%2FEngineering Task</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product%2FPM Task</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promotional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewals Task</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Ops Task</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TPM Task</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VITO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Priority</picklist>
         <values>
             <fullName>High</fullName>
@@ -23,8 +109,122 @@
             <default>false</default>
         </values>
     </picklistValues>
-    
-        <picklistValues>
+    <picklistValues>
+        <picklist>Sub_Type__c</picklist>
+        <values>
+            <fullName>Account Reassignment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Account Transition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Additional Discount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Case%2FROI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client-Supplied Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Create Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Demo preparation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Pricing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Merge Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation Escalation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NDA Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PoV Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PoV Preparation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Sales SupportCustom Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pricing Estimation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposal Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAFI%2FRFP%2FSecQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Scoping Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sizing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skinned Demo preparation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solution Definition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Territory Update</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Subject</picklist>
         <values>
             <fullName>Call</fullName>
@@ -58,5 +258,35 @@
             <default>false</default>
         </values>
     </picklistValues>
-    
-    </RecordType>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Letter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Task</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

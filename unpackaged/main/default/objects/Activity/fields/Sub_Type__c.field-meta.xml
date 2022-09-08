@@ -315,18 +315,6 @@
             <valueName>Territory Update</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>Professional Services Task</controllingFieldValue>
-            <valueName>Pricing Estimation</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Professional Services Task</controllingFieldValue>
-            <valueName>SOW</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Professional Services Task</controllingFieldValue>
-            <valueName>Implementation Escalation</valueName>
-        </valueSettings>
-        <valueSettings>
             <controllingFieldValue>Virtual</controllingFieldValue>
             <controllingFieldValue>In person</controllingFieldValue>
             <valueName>Active Opportunity</valueName>
