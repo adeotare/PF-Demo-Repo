@@ -11,7 +11,6 @@
          (End_Date__c - Effective_Date__c)/365
   )
 )</formula>
-    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>PPT Prorate Multiplier</label>
     <precision>18</precision>
     <required>false</required>
