@@ -22,6 +22,10 @@
         border-top-style : none !important;
         border-bottom-style : none !important;
      }
+     .slds-modal__container{
+        width: 70% !important;
+        max-width: 70% !important;
+     }
     </aura:html>
     <!--End Custom Styles for Modal Header and Footer-->
     <!-- handlers-->

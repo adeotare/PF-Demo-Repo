@@ -50,11 +50,15 @@ public with sharing class AddPPTControllerV2 {
                     if(ppt.Product_Category__c == 'Software' && ppt.Net_Total_Price__c != null && ppt.Net_Total_Price__c != 0){
                         system.debug('ARR-Net_Total_Price__c::'+ARR);
                         ARR += ppt.Net_Total_Price__c;
+                    }
+                    if(ppt.Product_Category__c == 'Software'){
                         product = ppt.Product__r.Name;
                     }
                     if(ppt.Product_Category__c == 'Professional Services' && ppt.Net_Total_Price__c != null && ppt.Net_Total_Price__c != 0){
                         system.debug('Installation_Fee-Net_Total_Price__c::'+ARR);
                         Installation_Fee += ppt.Net_Total_Price__c;
+                    }
+                    if(ppt.Product_Category__c == 'Professional Services'){
                         Product_Family = ppt.Product_Family__c;
                     }
                 }
