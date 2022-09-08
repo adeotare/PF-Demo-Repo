@@ -18,6 +18,45 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Assign_PPT_Collection_Record</name>
+        <label>Assign PPT Collection Record</label>
+        <locationX>868</locationX>
+        <locationY>780</locationY>
+        <assignmentItems>
+            <assignToReference>varPPTRecordCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>varPPTRecord</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_All_Associated_PPTs</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_PPT_Deployment_Date</name>
+        <label>Assign PPT Deployment Date</label>
+        <locationX>1000</locationX>
+        <locationY>563</locationY>
+        <assignmentItems>
+            <assignToReference>varPPTRecord.Deployment_date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Deployment_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varPPTRecord.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Iterate_All_Associated_PPTs.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_PPT_Collection_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Assign_Project_Record_Values_to_CRM_Records</name>
         <label>Assign Project Record Values to CRM Records</label>
         <locationX>71</locationX>
@@ -440,6 +479,64 @@
         </connector>
     </assignments>
     <decisions>
+        <name>Check_if_PPT_Collection_Null</name>
+        <label>Check if PPT Collection Null</label>
+        <locationX>506</locationX>
+        <locationY>728</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>PPT_Collection_Exist</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varPPTRecordCollection</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Associated_PPT</targetReference>
+            </connector>
+            <label>PPT Collection Exist</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Internal_Status_of_Project</name>
+        <label>Check Internal Status of Project</label>
+        <locationX>823</locationX>
+        <locationY>570</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Completed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed - work open</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Internal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed - historical data import</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_PPT_Deployment_Date</targetReference>
+            </connector>
+            <label>Completed</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>When_a_Project_is_Created</name>
         <label>When a Project is Created</label>
         <locationX>635</locationX>
@@ -465,9 +562,24 @@
         </rules>
     </decisions>
     <description>As per the REQ- 2139
-07 Sept :- Updated flow to accommodate changes for Deployment Date</description>
+07 Sept :- Updated flow to accommodate changes for Deployment Date
+08 Sept :- Updated flow to update all associated PPT records with deployment Date.</description>
     <interviewLabel>Project : Create CRM project when a project record is Created {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Project : Create CRM project when a project record is Created</label>
+    <loops>
+        <name>Iterate_All_Associated_PPTs</name>
+        <label>Iterate All Associated PPTs</label>
+        <locationX>631</locationX>
+        <locationY>561</locationY>
+        <collectionReference>Get_Associated_PPT_Records</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Check_Internal_Status_of_Project</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Check_if_PPT_Collection_Null</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <loops>
         <name>Iterate_Associated_CRM_Records</name>
         <label>Iterate Associated CRM Records</label>
@@ -596,12 +708,43 @@
         <object>CRM_Project__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Associated_PPT_Records</name>
+        <label>Get Associated PPT Records</label>
+        <locationX>481</locationX>
+        <locationY>562</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Iterate_All_Associated_PPTs</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Project_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Plant_Product_Transaction__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Associated_CRM_Records</name>
         <label>Update Associated CRM Records</label>
         <locationX>312</locationX>
         <locationY>564</locationY>
+        <connector>
+            <targetReference>Get_Associated_PPT_Records</targetReference>
+        </connector>
         <inputReference>varCRMCollection</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Associated_PPT</name>
+        <label>Update Associated PPT</label>
+        <locationX>313</locationX>
+        <locationY>733</locationY>
+        <inputReference>varPPTRecordCollection</inputReference>
     </recordUpdates>
     <start>
         <locationX>544</locationX>
@@ -629,5 +772,21 @@
         <isInput>true</isInput>
         <isOutput>true</isOutput>
         <objectType>CRM_Project__c</objectType>
+    </variables>
+    <variables>
+        <name>varPPTRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Plant_Product_Transaction__c</objectType>
+    </variables>
+    <variables>
+        <name>varPPTRecordCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Plant_Product_Transaction__c</objectType>
     </variables>
 </Flow>

@@ -108,6 +108,14 @@
             <fullName>Completed</fullName>
             <default>false</default>
         </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
     </picklistValues>
     <picklistValues>
         <picklist>Sub_Type__c</picklist>

@@ -120,6 +120,10 @@
             <default>true</default>
         </values>
         <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Pending Input</fullName>
             <default>false</default>
         </values>
