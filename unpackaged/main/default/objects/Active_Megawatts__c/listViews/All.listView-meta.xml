@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Total_MW_Solar__c</columns>
+    <columns>Total_MW_Hydro__c</columns>
+    <columns>Total_MW_Other_Renewable__c</columns>
+    <columns>Total_MW_Storage__c</columns>
+    <columns>Total_MW_Wind__c</columns>
+    <columns>Total_Agnostic__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>
