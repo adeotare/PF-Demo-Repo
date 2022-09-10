@@ -4,8 +4,8 @@
     <assignments>
         <name>Assign_Opportunity_to_update_Primary_contact</name>
         <label>Assign Opportunity to update Primary contact</label>
-        <locationX>847</locationX>
-        <locationY>235</locationY>
+        <locationX>703</locationX>
+        <locationY>149</locationY>
         <assignmentItems>
             <assignToReference>varOpptyUpdateRecord.Id</assignToReference>
             <operator>Assign</operator>
@@ -27,7 +27,7 @@
     <decisions>
         <name>Check_if_record_type_is_amendment</name>
         <label>Check if record type is amendment</label>
-        <locationX>557</locationX>
+        <locationX>496</locationX>
         <locationY>232</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -38,6 +38,13 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Amendment</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__MasterContract__r.SBQQ__Opportunity__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -70,8 +77,8 @@
     <recordUpdates>
         <name>Update_Primary_Contact_on_Amended_Oppty</name>
         <label>Update Primary Contact on Amended Oppty</label>
-        <locationX>1094</locationX>
-        <locationY>196</locationY>
+        <locationX>880</locationX>
+        <locationY>283</locationY>
         <inputReference>varOpptyUpdateRecord</inputReference>
     </recordUpdates>
     <start>
