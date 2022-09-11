@@ -4693,6 +4693,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Plant_Product_Transaction__c.PPT_NRR__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Plant_Product_Transaction__c.PPT_Prorate_Multiplier__c</field>
         <readable>true</readable>
     </fieldPermissions>

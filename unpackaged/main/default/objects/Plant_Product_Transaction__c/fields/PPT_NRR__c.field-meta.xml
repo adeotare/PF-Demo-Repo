@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Annual_Recurring_Revenue__c</fullName>
+    <fullName>PPT_NRR__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(TEXT(SBQQ__SubscriptionPricing__c) = &#39;&#39;,0,(Related_PPT_s_Net_Total_Final__c) /(SBQQ__DefaultSubscriptionTerm__c / 12))</formula>
+    <formula>IF(TEXT( Product__r.SBQQ__SubscriptionPricing__c ) = &#39;&#39;, ( Net_Total_Price__c /  PPT_Prorate_Multiplier__c ), 0)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>Annual Recurring Revenue</label>
+    <label>PPT NRR</label>
     <precision>18</precision>
     <required>false</required>
     <scale>2</scale>

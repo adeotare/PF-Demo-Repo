@@ -5,6 +5,7 @@ public class ContractTriggerHandlerTest {
         
         Account act = new Account();
 		act.Name = 'test';
+         act.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Customer').getRecordTypeId();
 		insert act;        
         
         Opportunity opp = new Opportunity();
@@ -61,6 +62,7 @@ public class ContractTriggerHandlerTest {
         act.Uses_MSA_of__c   = msa.Id;
         
         update act;
+        
         
        	Contract cnt = new Contract();
         cnt.AccountId = act.Id;
