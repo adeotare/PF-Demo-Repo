@@ -1,6 +1,7 @@
 global class AccountHierarchyproductfamily implements Database.Batchable<SObject> ,Database.Stateful {
     
     public Set<Id> idSetToTest = new Set<Id>();
+        
     map<id,Active_Megawatts__c> mapToInsert = new map<id,Active_Megawatts__c> ();
     
     global Database.QueryLocator Start(Database.BatchableContext bc){
@@ -34,7 +35,7 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
             if(pData.Account__c!=null)accountIdset.add(pData.Account__c);
         }
         
-        List<Active_Megawatts__c> existingAmw = [SELECT Id,Account__c FROM Active_Megawatts__c  WHERE Account__c IN: accountIdset];
+        List<Active_Megawatts__c> existingAmw = [SELECT Id,Account__c FROM Active_Megawatts__c  WHERE Account__c IN: idSetToTest];
         
         Map<Id, Active_Megawatts__c> existingAMWMap = new Map<Id, Active_Megawatts__c>();
         for(Active_Megawatts__c amw : existingAmw){
@@ -57,13 +58,15 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                                                                     Account__c,
                                                                     Account__r.ParentId 
                                                              FROM Plant_Product_Transaction__c
-                                                             WHERE Account__c In:accountIdset 
+                                                             //WHERE Account__c In:accountIdset 
+                                                             WHERE Account__c In :idSetToTest
                                                              AND Status__c ='Contracted'
                                                              AND MWp_Quantity__c!=null 
                                                              AND plant__c!=null 
-                                                             AND (( Account__r.ParentId != null AND Account__r.Parent.RecordType.name = 'Customer') 
+                                                             AND (( Account__r.ParentId != null 
+                                                                  ) 
                                                                   OR Account__r.Ultimate_Parent_Account__c = Null) 
-                                                             AND Account__r.RecordType.name = 'Customer'
+                                                            
                                                              AND (Product_Family__c ='Drive' OR
                                                                   Product_Family__c ='Greenbyte' OR
                                                                   Product_Family__c ='BluePoint' OR
@@ -73,6 +76,8 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
         Map<Id,List<Id>> accountRelationShipMap = new Map<Id,List<Id>>();
         
         Map<Id,List<Id>> accountRelationShipMapWithParentOptOut = new Map<Id,List<Id>>();
+        
+        Map<Id,List<Id>> ultimateParentAndItsAcc = new Map<Id,List<Id>>();
         
         Set<Id> accSet1 = new Set<Id>();
         Set<Id> accSet2 = new Set<Id>();
@@ -100,21 +105,35 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                && (ppt.Account__r.Parent.Uses_MSA_of__r.Parent_MSA_Opt_Out__c != 'Yes')
                && !accSet2.contains(ppt.Account__c)
                && !accSet2.contains(ppt.Account__r.ParentId)){
-                
-                System.debug('ppt.Account__c-->'+ppt.Account__c + '->'+ppt.Account__r.Name );
-                System.debug('ppt.Account__r.ParentId-->'+ppt.Account__r.ParentId + '->'+ppt.Account__r.Parent.Name);
-                System.debug('ppt.Account__r.Parent.Uses_MSA_of__r.Parent_MSA_Opt_Out__c-->'+ppt.Account__r.Parent.Uses_MSA_of__r.Parent_MSA_Opt_Out__c );
-                
-                accSet1.add(ppt.Account__c);
-                accSet1.add(ppt.Account__r.ParentId);
-                if(accountRelationShipMap.containsKey(ppt.Account__r.ParentId)){
-                    if(!accountRelationShipMap.get(ppt.Account__r.ParentId).contains(ppt.Account__c)){
-                        accountRelationShipMap.get(ppt.Account__r.ParentId).add(ppt.Account__c);                        
-                    }
-                }else{
-                    accountRelationShipMap.put(ppt.Account__r.ParentId , new List<Id>{ppt.Account__c});
-                } 
-            }
+                   
+                   System.debug('ppt.Account__c-->'+ppt.Account__c + '->'+ppt.Account__r.Name );
+                   System.debug('ppt.Account__r.ParentId-->'+ppt.Account__r.ParentId + '->'+ppt.Account__r.Parent.Name);
+                   System.debug('ppt.Account__r.Parent.Uses_MSA_of__r.Parent_MSA_Opt_Out__c-->'+ppt.Account__r.Parent.Uses_MSA_of__r.Parent_MSA_Opt_Out__c );
+                   
+                   accSet1.add(ppt.Account__c);
+                   accSet1.add(ppt.Account__r.ParentId);
+                   if(accountRelationShipMap.containsKey(ppt.Account__r.ParentId)){
+                       if(!accountRelationShipMap.get(ppt.Account__r.ParentId).contains(ppt.Account__c)){
+                           accountRelationShipMap.get(ppt.Account__r.ParentId).add(ppt.Account__c);                        
+                       }
+                   }else{
+                       accountRelationShipMap.put(ppt.Account__r.ParentId , new List<Id>{ppt.Account__c});
+                   } 
+                   
+                   if( ppt.Account__r.ParentId == ppt.Account__r.Ultimate_Parent_Account__c &&
+                      ppt.Account__r.Ultimate_Parent_Account__r.Uses_MSA_of__c == ppt.Account__r.Uses_MSA_of__c ){
+                          system.debug('in iff');
+                          if(ultimateParentAndItsAcc.containsKey(ppt.Account__r.ParentId)){
+                              if(!ultimateParentAndItsAcc.get(ppt.Account__r.ParentId).contains(ppt.Account__c)){
+                                  system.debug('in iff-2 ');
+                                  ultimateParentAndItsAcc.get(ppt.Account__r.ParentId).add(ppt.Account__c);                        
+                              }
+                          }else{
+                              system.debug('in else');
+                              ultimateParentAndItsAcc.put(ppt.Account__r.ParentId , new List<Id>{ppt.Account__c});
+                          } 
+                      }
+               }
             
             if(ppt.Account__c != null 
                && ppt.Account__r.ParentId != null 
@@ -216,10 +235,125 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
         }
 		
 		for(Id accId : accCalculationMap.keySet()){
-            if(indipendatAccIds.contains(accId) && !accountRelationShipMap.keySet().contains(accId)){
+            if(indipendatAccIds.contains(accId) && !accountRelationShipMap.keySet().contains(accId) && !accountRelationShipMapWithParentOptOut.keySet().contains(accId)){
                 independantAccount.put(accId , accCalculationMap.get(accId));
             }
         }
+        
+		// for the scenario parent have no PPT and child have PPT and they are in hierarchy : 
+		//Start -- 
+        map<id,Active_Megawatts__c> patentWitoutPPTChildWithPPT =  new map<id,Active_Megawatts__c>();
+        for(Id accId : accountRelationShipMap.KeySet() ){
+            if(!accCalculationMap.KeySet().contains(accId)){
+                Decimal Sum_Total_MW_Bluepoint 	= 0;
+                Decimal Sum_Total_MW_Drive 		= 0;
+                Decimal Sum_Total_MW_Greenbyte 	= 0;
+                
+                
+                for(Id childAccId : accountRelationShipMap.get(accId)){
+                    if(accCalculationMap.KeySet().contains(childAccId)){
+                        Sum_Total_MW_Bluepoint 	+= accCalculationMap.get(childAccId).Total_MW_Bluepoint;
+                        Sum_Total_MW_Drive  	+= accCalculationMap.get(childAccId).Total_MW_Drive;
+                        Sum_Total_MW_Greenbyte 	+= accCalculationMap.get(childAccId).Total_MW_Greenbyte;
+                   }
+                    
+                }
+                if(existingAMWMap != null && existingAMWMap.size() > 0 && existingAMWMap.containsKey(accId)){
+                        Active_Megawatts__c amw = existingAMWMap.get(accId).clone(true,true,true,true);
+                        
+                        amw.Total_MW_Bluepoint__c 	= Sum_Total_MW_Bluepoint ;
+                        amw.Total_MW_Drive__c 		= Sum_Total_MW_Drive ;
+                        amw.Total_MW_Greenbyte__c 	= Sum_Total_MW_Greenbyte ;
+                        
+                        amw.MW_Bluepoint__c 		= 0 ;
+                        amw.MW_Drive__c 			= 0 ;
+                        amw.MW_Greenbyte__c 		= 0 ;
+                        
+                        amw.Child_MW_Bluepoint__c 	= Sum_Total_MW_Bluepoint;
+                        amw.Child_MW_Drive__c 		= Sum_Total_MW_Drive;
+                        amw.Child_MW_Greenbyte__c 	= Sum_Total_MW_Greenbyte;
+                        
+                        patentWitoutPPTChildWithPPT.put(accId,amw);
+                        
+                    }
+                    else{
+                        Active_Megawatts__c awForChildAccount = new Active_Megawatts__c(
+                            
+                            Total_MW_Bluepoint__c 	= Sum_Total_MW_Bluepoint ,
+                            Total_MW_Drive__c 		= Sum_Total_MW_Drive ,
+                            Total_MW_Greenbyte__c 	= Sum_Total_MW_Greenbyte ,
+                            
+                            MW_Bluepoint__c 		= 0 ,
+                            MW_Drive__c 			= 0 ,
+                            MW_Greenbyte__c 		= 0 ,
+                            
+                            Child_MW_Bluepoint__c 	= Sum_Total_MW_Bluepoint,
+                            Child_MW_Drive__c 		= Sum_Total_MW_Drive,
+                            Child_MW_Greenbyte__c 	= Sum_Total_MW_Greenbyte,
+                            
+                            Account__c					= 	accId
+                        );
+                        patentWitoutPPTChildWithPPT.put(accId,awForChildAccount);
+                    }
+            }
+        }
+        
+        map<id,Active_Megawatts__c> patentWitoutPPTChildWithPPT2 =  new map<id,Active_Megawatts__c>();
+        for(Id accId : accountRelationShipMapWithParentOptOut.KeySet() ){
+            if(!accCalculationMap.KeySet().contains(accId)){
+                Decimal Sum_Total_MW_Bluepoint 	= 0;
+                Decimal Sum_Total_MW_Drive 		= 0;
+                Decimal Sum_Total_MW_Greenbyte 	= 0;
+                
+                
+                for(Id childAccId : accountRelationShipMapWithParentOptOut.get(accId)){
+                    if(accCalculationMap.KeySet().contains(childAccId)){
+                        Sum_Total_MW_Bluepoint 	+= accCalculationMap.get(childAccId).Total_MW_Bluepoint;
+                        Sum_Total_MW_Drive  	+= accCalculationMap.get(childAccId).Total_MW_Drive;
+                        Sum_Total_MW_Greenbyte 	+= accCalculationMap.get(childAccId).Total_MW_Greenbyte;
+                   }
+                    
+                }
+                if(existingAMWMap != null && existingAMWMap.size() > 0 && existingAMWMap.containsKey(accId)){
+                        Active_Megawatts__c amw = existingAMWMap.get(accId).clone(true,true,true,true);
+                        
+                        amw.Total_MW_Bluepoint__c 	= Sum_Total_MW_Bluepoint ;
+                        amw.Total_MW_Drive__c 		= Sum_Total_MW_Drive ;
+                        amw.Total_MW_Greenbyte__c 	= Sum_Total_MW_Greenbyte ;
+                        
+                        amw.MW_Bluepoint__c 		= 0 ;
+                        amw.MW_Drive__c 			= 0 ;
+                        amw.MW_Greenbyte__c 		= 0 ;
+                        
+                        amw.Child_MW_Bluepoint__c 	= Sum_Total_MW_Bluepoint;
+                        amw.Child_MW_Drive__c 		= Sum_Total_MW_Drive;
+                        amw.Child_MW_Greenbyte__c 	= Sum_Total_MW_Greenbyte;
+                        
+                        patentWitoutPPTChildWithPPT2.put(accId,amw);
+                        
+                    }
+                    else{
+                        Active_Megawatts__c awForChildAccount = new Active_Megawatts__c(
+                            
+                            Total_MW_Bluepoint__c 	= Sum_Total_MW_Bluepoint ,
+                            Total_MW_Drive__c 		= Sum_Total_MW_Drive ,
+                            Total_MW_Greenbyte__c 	= Sum_Total_MW_Greenbyte ,
+                            
+                            MW_Bluepoint__c 		= 0 ,
+                            MW_Drive__c 			= 0 ,
+                            MW_Greenbyte__c 		= 0 ,
+                            
+                            Child_MW_Bluepoint__c 	= Sum_Total_MW_Bluepoint,
+                            Child_MW_Drive__c 		= Sum_Total_MW_Drive,
+                            Child_MW_Greenbyte__c 	= Sum_Total_MW_Greenbyte,
+                            
+                            Account__c					= 	accId
+                        );
+                        patentWitoutPPTChildWithPPT2.put(accId,awForChildAccount);
+                    }
+            }
+        }
+        
         
         map<id,Active_Megawatts__c> independantAMW =  new map<id,Active_Megawatts__c>();
         
@@ -344,6 +478,8 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                 
                 ActiveMegawatWrapper parentFields = accCalculationMap.get(parentAccId);
                 
+                //if(ultimateParentAndItsAcc.contain)
+                
                 if(existingAMWMap != null && existingAMWMap.size() > 0 && existingAMWMap.containsKey(parentAccId)){
                     Active_Megawatts__c amw = existingAMWMap.get(parentAccId).clone(true,true,true,true);
                     
@@ -382,6 +518,45 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                     mer.put(parentAccId,ae3);
                 }
             }
+        }
+        
+        for(Id accId : ultimateParentAndItsAcc.keySet()){
+            system.debug('ultimateParentAndItsAcc---'+accId);
+            if(mer.containsKey(accId)){
+                for(Id childAcc : ultimateParentAndItsAcc.get(accId)){
+                    system.debug('child acc---'+childAcc);
+                    if(childActiveMegawatsMaps.containsKey(childAcc)){
+                        childActiveMegawatsMaps.get(childAcc).Total_MW_Bluepoint__c = mer.get(accId).Total_MW_Bluepoint__c;
+                        childActiveMegawatsMaps.get(childAcc).Total_MW_Drive__c = mer.get(accId).Total_MW_Drive__c;
+                        childActiveMegawatsMaps.get(childAcc).Total_MW_Greenbyte__c = mer.get(accId).Total_MW_Greenbyte__c;
+                        
+                        //childActiveMegawatsMaps.get(childAcc).Account__c = accId;
+                        //childActiveMegawatsMaps.get(childAcc).Accountytoconsider__c = childAcc;
+                        
+                        system.debug('Acc--'+childAcc + ' :: '+mer.get(accId).Total_MW_Bluepoint__c);
+                        system.debug('Acc--'+childAcc + ' :: '+mer.get(accId).Total_MW_Drive__c);
+                        system.debug('Acc--'+childAcc + ' :: '+mer.get(accId).Total_MW_Greenbyte__c);
+                    }
+                }
+            }
+            if(patentWitoutPPTChildWithPPT.containsKey(accId)){
+                for(Id childAcc : ultimateParentAndItsAcc.get(accId)){
+                    system.debug('child acc---'+childAcc);
+                    if(childActiveMegawatsMaps.containsKey(childAcc)){
+                        childActiveMegawatsMaps.get(childAcc).Total_MW_Bluepoint__c = patentWitoutPPTChildWithPPT.get(accId).Total_MW_Bluepoint__c;
+                        childActiveMegawatsMaps.get(childAcc).Total_MW_Drive__c = patentWitoutPPTChildWithPPT.get(accId).Total_MW_Drive__c;
+                        childActiveMegawatsMaps.get(childAcc).Total_MW_Greenbyte__c = patentWitoutPPTChildWithPPT.get(accId).Total_MW_Greenbyte__c;
+                        
+                        //childActiveMegawatsMaps.get(childAcc).Account__c = accId;
+                        //childActiveMegawatsMaps.get(childAcc).Accountytoconsider__c = childAcc;
+                        
+                        system.debug('Acc--'+childAcc + ' :: '+patentWitoutPPTChildWithPPT.get(accId).Total_MW_Bluepoint__c);
+                        system.debug('Acc--'+childAcc + ' :: '+patentWitoutPPTChildWithPPT.get(accId).Total_MW_Drive__c);
+                        system.debug('Acc--'+childAcc + ' :: '+patentWitoutPPTChildWithPPT.get(accId).Total_MW_Greenbyte__c);
+                    }
+                }
+            }
+            
         }
         
         
@@ -509,7 +684,7 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                                                 FROM Account 
                                                 WHERE Id NOT IN (SELECT Account__c FROM Active_Megawatts__c) 
                                                 AND Id NOT IN (SELECT Account__c FROM Plant_Product_Transaction__c)
-                                                AND RecordType.Name = 'Customer'];
+                                                ];
         
         system.debug('indipandantAccountsList size--'+indipandantAccountsList.size());
         Map<Id, Active_Megawatts__c> indipandantAccountsMap = new Map<Id, Active_Megawatts__c>();
@@ -547,6 +722,10 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
        	mapToInsert.putAll(independantAMW);
         
         mapToInsert.putAll(indipandantAccountsMap);
+        
+        //
+       	mapToInsert.putAll(patentWitoutPPTChildWithPPT);
+        mapToInsert.putAll(patentWitoutPPTChildWithPPT2);
         system.debug('\n\n\n');
         for(Id ids : indipandantAccountsMap.keySet()){
             System.debug('indipandantAccountsMap key ->'+ids+' :: '+indipandantAccountsMap.get(ids));
