@@ -22,9 +22,9 @@
                 <label>Removed Plant</label>
             </value>
             <value>
-                <fullName>No Change</fullName>
+                <fullName>Renewed</fullName>
                 <default>false</default>
-                <label>No Change</label>
+                <label>Renewed</label>
             </value>
         </valueSetDefinition>
     </valueSet>
