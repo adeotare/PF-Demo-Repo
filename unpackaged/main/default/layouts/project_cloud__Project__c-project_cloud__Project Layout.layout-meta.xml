@@ -45,7 +45,7 @@
                 <field>Product__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>Product_Family__c</field>
             </layoutItems>
         </layoutColumns>
