@@ -563,7 +563,8 @@
     </decisions>
     <description>As per the REQ- 2139
 07 Sept :- Updated flow to accommodate changes for Deployment Date
-08 Sept :- Updated flow to update all associated PPT records with deployment Date.</description>
+08 Sept :- Updated flow to update all associated PPT records with deployment Date.
+12 Sept :- Added condition to exclude flow for is_template condition</description>
     <interviewLabel>Project : Create CRM project when a project record is Created {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Project : Create CRM project when a project record is Created</label>
     <loops>
@@ -752,6 +753,14 @@
         <connector>
             <targetReference>When_a_Project_is_Created</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>project_cloud__IsTemplate__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
         <object>project_cloud__Project__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
