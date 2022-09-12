@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>After_Submission</fullName>
+    <active>true</active>
+    <label>After Submission</label>
+    <picklistValues>
+        <picklist>Customer_Acceptance_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On-Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SAT_Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SAT_Status__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drafting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remediation Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remediation in Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remediation in Progress - Partial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted - Pending Customer Review</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SAT_Type__c</picklist>
+        <values>
+            <fullName>Deployment Validation Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pro SAT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regular SAT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

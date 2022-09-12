@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RFI_Status_field_Change_rule1</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(AND(
+NOT(ISPICKVAL(RFI_Item_Status__c, &quot;Canceled&quot;)),NOT(ISPICKVAL(RFI_Item_Status__c, &quot;Cannot Complete&quot;))),
+NOT(ISBLANK(Cancel_Cannot_Complete_Description__c))
+)</errorConditionFormula>
+    <errorMessage>Please remove description in Cancel/Cannot complete</errorMessage>
+</ValidationRule>

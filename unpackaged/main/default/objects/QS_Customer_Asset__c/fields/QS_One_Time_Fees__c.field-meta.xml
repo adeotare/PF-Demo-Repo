@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_One_Time_Fees__c</fullName>
+    <description>Roll-up field which sums all CATs’ one-time fees. Sums Customer Asset Transaction: One Time Fee where Currently in Date Range EQUALS True. Date range is ignored for perpetual products, so they are always included.</description>
+    <externalId>false</externalId>
+    <label>One Time Fees</label>
+    <summarizedField>QS_Customer_Asset_Detail__c.QS_One_Time_Fee__c</summarizedField>
+    <summaryForeignKey>QS_Customer_Asset_Detail__c.QS_Customer_Asset__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

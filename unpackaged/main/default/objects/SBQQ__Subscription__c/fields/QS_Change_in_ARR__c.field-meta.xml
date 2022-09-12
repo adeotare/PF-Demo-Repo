@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Change_in_ARR__c</fullName>
+    <description>From the Quote Line. The change in Annual Recurring Revenue for the transaction that generated this Subscription. Negative values indicate a reduction/cancellation.</description>
+    <externalId>false</externalId>
+    <formula>SBQQ__QuoteLine__r.QS_ARR_Growth__c</formula>
+    <inlineHelpText>From the Quote Line. The change in Annual Recurring Revenue for the transaction that generated this Subscription. Negative values indicate a reduction/cancellation.</inlineHelpText>
+    <label>Change in ARR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

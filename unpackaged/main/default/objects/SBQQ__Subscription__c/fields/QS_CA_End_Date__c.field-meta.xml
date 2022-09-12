@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_CA_End_Date__c</fullName>
+    <description>Different End Date fields get populated on the Quote Line when MDQ is used. If the Segment End Date is populated, this field displays the Segment End Date. If it is blank, this field displays the End Date. Used for Customer Asset data.</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(SBQQ__SegmentEndDate__c), 
+SBQQ__EndDate__c, 
+SBQQ__SegmentEndDate__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>If the Segment End Date is populated, this field displays the Segment End Date. If it is blank, this field displays the End Date. Used for Customer Asset data.</inlineHelpText>
+    <label>CA End Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

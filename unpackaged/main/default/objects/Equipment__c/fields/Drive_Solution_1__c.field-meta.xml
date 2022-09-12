@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Drive_Solution_1__c</fullName>
+    <externalId>false</externalId>
+    <label>Drive Data connection</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PF Gateway Interface</fullName>
+                <default>false</default>
+                <label>PF Gateway Interface</label>
+            </value>
+            <value>
+                <fullName>Third-Party gateway Interface</fullName>
+                <default>false</default>
+                <label>Third-Party gateway Interface</label>
+            </value>
+            <value>
+                <fullName>Third-Party Server Interface</fullName>
+                <default>false</default>
+                <label>Third-Party Server Interface</label>
+            </value>
+            <value>
+                <fullName>API- AlsoEnergy</fullName>
+                <default>false</default>
+                <label>API- AlsoEnergy</label>
+            </value>
+            <value>
+                <fullName>API - Deck</fullName>
+                <default>false</default>
+                <label>API - Deck</label>
+            </value>
+            <value>
+                <fullName>API - Draker</fullName>
+                <default>false</default>
+                <label>API - Draker</label>
+            </value>
+            <value>
+                <fullName>API - Drakerv7</fullName>
+                <default>false</default>
+                <label>API - Drakerv7</label>
+            </value>
+            <value>
+                <fullName>API - LocusEnergy</fullName>
+                <default>false</default>
+                <label>API - LocusEnergy</label>
+            </value>
+            <value>
+                <fullName>API - Egauge</fullName>
+                <default>false</default>
+                <label>API - Egauge</label>
+            </value>
+            <value>
+                <fullName>API - Enphase</fullName>
+                <default>false</default>
+                <label>API - Enphase</label>
+            </value>
+            <value>
+                <fullName>API - Fronius</fullName>
+                <default>false</default>
+                <label>API - Fronius</label>
+            </value>
+            <value>
+                <fullName>API - GreenPowerMonitor</fullName>
+                <default>false</default>
+                <label>API - GreenPowerMonitor</label>
+            </value>
+            <value>
+                <fullName>API - Itron</fullName>
+                <default>false</default>
+                <label>API - Itron</label>
+            </value>
+            <value>
+                <fullName>API - Noveda</fullName>
+                <default>false</default>
+                <label>API - Noveda</label>
+            </value>
+            <value>
+                <fullName>API - SEConnect</fullName>
+                <default>false</default>
+                <label>API - SEConnect</label>
+            </value>
+            <value>
+                <fullName>API - SolarEdge</fullName>
+                <default>false</default>
+                <label>API - SolarEdge</label>
+            </value>
+            <value>
+                <fullName>API - SolrenView</fullName>
+                <default>false</default>
+                <label>API - SolrenView</label>
+            </value>
+            <value>
+                <fullName>FTP - General</fullName>
+                <default>false</default>
+                <label>FTP - General</label>
+            </value>
+            <value>
+                <fullName>FTP - Skytron/Drive</fullName>
+                <default>false</default>
+                <label>FTP - Skytron/Drive</label>
+            </value>
+            <value>
+                <fullName>N3uron - Onsite</fullName>
+                <default>false</default>
+                <label>N3uron - Onsite</label>
+            </value>
+            <value>
+                <fullName>N3uron - MQTT</fullName>
+                <default>false</default>
+                <label>N3uron - MQTT</label>
+            </value>
+            <value>
+                <fullName>N3uron - Obvious AQS</fullName>
+                <default>false</default>
+                <label>N3uron - Obvious AQS</label>
+            </value>
+            <value>
+                <fullName>N3uron - REST API</fullName>
+                <default>false</default>
+                <label>N3uron - REST API</label>
+            </value>
+            <value>
+                <fullName>OSI PI - Connector</fullName>
+                <default>false</default>
+                <label>OSI PI - Connector</label>
+            </value>
+            <value>
+                <fullName>OSI PI - Direct Connect</fullName>
+                <default>false</default>
+                <label>OSI PI - Direct Connect</label>
+            </value>
+            <value>
+                <fullName>OSI PI - Campbel Scientific</fullName>
+                <default>false</default>
+                <label>OSI PI - Campbel Scientific</label>
+            </value>
+            <value>
+                <fullName>Kafka Connector - API</fullName>
+                <default>false</default>
+                <label>Kafka Connector - API</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Due_in_Days__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (
+ISPICKVAL(RFI_Item_Status__c , &#39;Requested&#39;) ||
+ISPICKVAL(RFI_Item_Status__c , &#39;In Progress&#39;) ||
+ISPICKVAL(RFI_Item_Status__c , &#39;Needs Detail&#39;),
+IF(AND((Due_Date__c- TODAY() &gt;= 0),(Due_Date__c - TODAY()&lt;=2)),
+&quot;Due in Two Days&quot;,
+IF(AND((Due_Date__c - TODAY()&gt;2),(Due_Date__c - TODAY()&lt;=7)),
+&quot;Due in Week&quot;,
+IF((Due_Date__c - TODAY() &lt; 0),
+&quot;Overdue&quot;,
+&quot;Due After A Week&quot;
+)
+)
+),
+&quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Due in Days</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

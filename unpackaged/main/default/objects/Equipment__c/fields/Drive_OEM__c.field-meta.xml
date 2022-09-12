@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Drive_OEM__c</fullName>
+    <externalId>false</externalId>
+    <label>Drive OEM</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Elster</fullName>
+                <default>false</default>
+                <label>Elster</label>
+            </value>
+            <value>
+                <fullName>ENERGY RECOMMERCE</fullName>
+                <default>false</default>
+                <label>ENERGY RECOMMERCE</label>
+            </value>
+            <value>
+                <fullName>FAT SPANIEL</fullName>
+                <default>false</default>
+                <label>FAT SPANIEL</label>
+            </value>
+            <value>
+                <fullName>Generation</fullName>
+                <default>false</default>
+                <label>Generation</label>
+            </value>
+            <value>
+                <fullName>G&amp;W</fullName>
+                <default>false</default>
+                <label>G&amp;W</label>
+            </value>
+            <value>
+                <fullName>Hukseflux</fullName>
+                <default>false</default>
+                <label>Hukseflux</label>
+            </value>
+            <value>
+                <fullName>Hubbel</fullName>
+                <default>false</default>
+                <label>Hubbel</label>
+            </value>
+            <value>
+                <fullName>ION</fullName>
+                <default>false</default>
+                <label>ION</label>
+            </value>
+            <value>
+                <fullName>Li-Cor</fullName>
+                <default>false</default>
+                <label>Li-Cor</label>
+            </value>
+            <value>
+                <fullName>Locus Energy</fullName>
+                <default>false</default>
+                <label>Locus Energy</label>
+            </value>
+            <value>
+                <fullName>Lufft</fullName>
+                <default>false</default>
+                <label>Lufft</label>
+            </value>
+            <value>
+                <fullName>Milbank</fullName>
+                <default>false</default>
+                <label>Milbank</label>
+            </value>
+            <value>
+                <fullName>Nexus</fullName>
+                <default>false</default>
+                <label>Nexus</label>
+            </value>
+            <value>
+                <fullName>PG&amp;E</fullName>
+                <default>false</default>
+                <label>PG&amp;E</label>
+            </value>
+            <value>
+                <fullName>POWERLOGIC</fullName>
+                <default>false</default>
+                <label>POWERLOGIC</label>
+            </value>
+            <value>
+                <fullName>Satec</fullName>
+                <default>false</default>
+                <label>Satec</label>
+            </value>
+            <value>
+                <fullName>SEL</fullName>
+                <default>false</default>
+                <label>SEL</label>
+            </value>
+            <value>
+                <fullName>Shark</fullName>
+                <default>false</default>
+                <label>Shark</label>
+            </value>
+            <value>
+                <fullName>SHARP</fullName>
+                <default>false</default>
+                <label>SHARP</label>
+            </value>
+            <value>
+                <fullName>SolarEdge</fullName>
+                <default>false</default>
+                <label>SolarEdge</label>
+            </value>
+            <value>
+                <fullName>Sun Edison</fullName>
+                <default>false</default>
+                <label>Sun Edison</label>
+            </value>
+            <value>
+                <fullName>TransData Inc</fullName>
+                <default>false</default>
+                <label>TransData Inc</label>
+            </value>
+            <value>
+                <fullName>Veris</fullName>
+                <default>false</default>
+                <label>Veris</label>
+            </value>
+            <value>
+                <fullName>WATTSON</fullName>
+                <default>false</default>
+                <label>WATTSON</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

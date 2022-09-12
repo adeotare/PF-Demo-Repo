@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Start_Date__c</fullName>
+    <description>Roll-up field displaying the earliest start date of all Customer Asset Transactions for this product. This field shows when the customer first purchased the product. This date never changes. Start Date must be populated on at least one CAT.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Roll-up field displaying the earliest start date of all Customer Asset Transactions for this product. This field shows when the customer first purchased the product. This date never changes. Start Date must be populated on at least one CAT.</inlineHelpText>
+    <label>Start Date</label>
+    <summarizedField>QS_Customer_Asset_Detail__c.QS_Start_Date__c</summarizedField>
+    <summaryForeignKey>QS_Customer_Asset_Detail__c.QS_Customer_Asset__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

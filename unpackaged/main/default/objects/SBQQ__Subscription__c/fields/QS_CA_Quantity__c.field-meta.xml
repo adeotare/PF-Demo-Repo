@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_CA_Quantity__c</fullName>
+    <description>Quantity is populated differently when MDQ is used. If the Segment Quantity is populated, this field displays the Segment Quantity. If it is blank, this field displays the Quantity. Used for Customer Asset data.</description>
+    <externalId>false</externalId>
+    <formula>If((SBQQ__SegmentQuantity__c &gt; 0 &amp;&amp; SBQQ__RevisedSubscription__c = null), SBQQ__SegmentQuantity__c, SBQQ__Quantity__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>If the Segment Quantity is populated, this field displays the Segment Quantity. If it is blank, this field displays the Quantity. Used for Customer Asset data.</inlineHelpText>
+    <label>CA Quantity</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

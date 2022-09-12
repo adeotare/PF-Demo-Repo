@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Data_Interface__c</fullName>
+    <description>This will help user to select Data Interface type to show the dependent API type</description>
+    <externalId>false</externalId>
+    <label>Data Interface</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>API</fullName>
+                <default>false</default>
+                <label>API</label>
+            </value>
+            <value>
+                <fullName>Datalogger</fullName>
+                <default>false</default>
+                <label>Datalogger</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

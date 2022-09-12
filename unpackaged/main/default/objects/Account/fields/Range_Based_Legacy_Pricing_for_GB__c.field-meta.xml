@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Range_Based_Legacy_Pricing_for_GB__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Identifies the Account that uses Range based legacy pricing. These are GB accounts. This pricing differs from Slab based Veritas go-forward pricing</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Identifies the Account that uses Range based legacy pricing. These are GB accounts. This pricing differs from Slab based Veritas go-forward pricing</inlineHelpText>
+    <label>Range Based Legacy Pricing for GB</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

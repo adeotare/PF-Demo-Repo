@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Customer_Asset_Unique_Id__c</fullName>
+    <description>&quot;QS_Customer_Asset_Account_Id__c &amp; SBQQ__Product__r.Id
+Can be appended with additional value such as Partner Account so as to associate a CAT record to an additional Account.&quot;</description>
+    <externalId>false</externalId>
+    <formula>QS_Customer_Asset_Account_Id__c &amp; SBQQ__Product__r.Id</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>&quot;QS_Customer_Asset_Account_Id__c&amp; SBQQ__Product__r.Id
+Can be appended with additional value such as Partner Account so as to associate a CAT record to an additional Account.&quot;</inlineHelpText>
+    <label>Customer Asset Unique Id</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Equipment_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Equipment Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BESS package</fullName>
+                <default>false</default>
+                <label>BESS package</label>
+            </value>
+            <value>
+                <fullName>Bluepoint</fullName>
+                <default>false</default>
+                <label>Bluepoint</label>
+            </value>
+            <value>
+                <fullName>Combiners/Recombiners</fullName>
+                <default>false</default>
+                <label>Combiners/Recombiners</label>
+            </value>
+            <value>
+                <fullName>Gateway</fullName>
+                <default>false</default>
+                <label>Gateway</label>
+            </value>
+            <value>
+                <fullName>Grid Monitoring Unit</fullName>
+                <default>false</default>
+                <label>Grid Monitoring Unit</label>
+            </value>
+            <value>
+                <fullName>Hydro Generator</fullName>
+                <default>false</default>
+                <label>Hydro Generator</label>
+            </value>
+            <value>
+                <fullName>Measurement Unit</fullName>
+                <default>false</default>
+                <label>Measurement Unit</label>
+            </value>
+            <value>
+                <fullName>Meter</fullName>
+                <default>false</default>
+                <label>Meter</label>
+            </value>
+            <value>
+                <fullName>Other core device</fullName>
+                <default>false</default>
+                <label>Other core device</label>
+            </value>
+            <value>
+                <fullName>Other peripheral device</fullName>
+                <default>false</default>
+                <label>Other peripheral device</label>
+            </value>
+            <value>
+                <fullName>Protective device</fullName>
+                <default>false</default>
+                <label>Protective device</label>
+            </value>
+            <value>
+                <fullName>Solar Inverter</fullName>
+                <default>false</default>
+                <label>Solar Inverter</label>
+            </value>
+            <value>
+                <fullName>String inverter</fullName>
+                <default>false</default>
+                <label>String inverter</label>
+            </value>
+            <value>
+                <fullName>Substation</fullName>
+                <default>false</default>
+                <label>Substation</label>
+            </value>
+            <value>
+                <fullName>Tracker Controller/Motor</fullName>
+                <default>false</default>
+                <label>Tracker Controller/Motor</label>
+            </value>
+            <value>
+                <fullName>Weather Station</fullName>
+                <default>false</default>
+                <label>Weather Station</label>
+            </value>
+            <value>
+                <fullName>Wind Turbine</fullName>
+                <default>false</default>
+                <label>Wind Turbine</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

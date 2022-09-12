@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_End_Date__c</fullName>
+    <description>Roll-up field displaying the latest end date amongst all the CATs. This field changes as products are added or renewed.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Roll-up field displaying the latest end date amongst all the CATs. This field changes as products are added or renewed.</inlineHelpText>
+    <label>End Date</label>
+    <summarizedField>QS_Customer_Asset_Detail__c.QS_End_Date__c</summarizedField>
+    <summaryForeignKey>QS_Customer_Asset_Detail__c.QS_Customer_Asset__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

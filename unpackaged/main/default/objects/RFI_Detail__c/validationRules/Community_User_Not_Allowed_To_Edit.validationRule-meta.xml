@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Community_User_Not_Allowed_To_Edit</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(OR(ISCHANGED( Customer_Comments__c),
+ISCHANGED(RFI_Item_Status__c),
+ISCHANGED( Name )),
+$User.ContactId &lt;&gt; NULL,
+OR(ISPICKVAL(PRIORVALUE(RFI_Item_Status__c),&quot;Closed&quot;),
+ISPICKVAL(PRIORVALUE(RFI_Item_Status__c),&quot;Cannot Complete&quot;),
+ISPICKVAL(PRIORVALUE(RFI_Item_Status__c),&quot;Canceled&quot;)))</errorConditionFormula>
+    <errorMessage>You cannot edit Closed RFI Item. Please contact the PF Owner</errorMessage>
+</ValidationRule>

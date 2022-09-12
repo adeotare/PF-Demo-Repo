@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>DataDotComAccountInsights</excludeButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
+    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
+    <excludeButtons>DisableCustomerPortalAccount</excludeButtons>
+    <excludeButtons>DisablePartnerPortalAccount</excludeButtons>
+    <excludeButtons>IncludeOffline</excludeButtons>
+    <excludeButtons>PartnerScorecard</excludeButtons>
+    <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -16,72 +24,8 @@
                 <field>ParentId</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Ultimate_Parent__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Ultimate_Parent_Account__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Legal_Entity__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Site</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Description</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
-                <field>CurrencyIsoCode</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>AccountSource</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Phone</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Website</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Type</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Subtype__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Portfolio_Size_Account__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>IsCustomerPortal__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Targeted__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Region__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Billing_Account_Only__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>PO_Required__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -90,95 +34,16 @@
                 <field>OwnerId</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Account_Status__c</field>
+                <behavior>Readonly</behavior>
+                <field>Ultimate_Parent__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>RecordTypeId</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Account_Price_Book__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>AnnualRevenue</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>NumberOfEmployees</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Sic</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>SicDesc</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Industry</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Compliance_Designations__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Compliance_Notes__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Theater__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>of_Open_Deals__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Asset_Class_Managed_Account__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>TIN_VAT__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Invoice_Requires_PO_No__c</field>
+                <behavior>Readonly</behavior>
+                <field>Ultimate_Parent_Account__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Account_in_Hierarchy_is_Customer__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Uses_MSA_of__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
-    </layoutSections>
-    <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
-        <label>Merge Details</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Merge_into_del__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Request_Note__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>To_Be_Merged__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -206,6 +71,160 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
+        <label>Segmentation Data</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Region__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Theater__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>AnnualRevenue</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Asset_Class_Managed_Account__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Portfolio_Size_Account__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>CurrencyIsoCode</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Type</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Subtype__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Legal_Entity__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Billing_Account_Only__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Company Data</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Phone</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Website</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Industry</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>NumberOfEmployees</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Sic</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SicDesc</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Compliance_Designations__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Compliance_Notes__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Sales Data</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Targeted__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>AccountSource</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Account_Price_Book__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>of_Open_Deals__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Uses_MSA_of__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>PO_Required__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Credit_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Finance_Notes__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>TIN_VAT__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Description</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Description</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>OneColumn</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
         <label>Legacy Details</label>
         <layoutColumns>
             <layoutItems>
@@ -222,7 +241,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>GB_Customer_Name__c</field>
+                <field>Shipping_Address_Netsuite_Id__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -236,7 +255,35 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>GB_Customer_Id__c</field>
+                <field>Billing_Address_Netsuite_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>NetSuite_Id__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Merge Details</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Merge_into_del__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Merged_Account__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+        
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Request_Note__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -251,11 +298,20 @@
                 <behavior>Readonly</behavior>
                 <field>CreatedById</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>LastModifiedById</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+        
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>RecordTypeId</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Account_Status__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -265,9 +321,9 @@
         <detailHeading>true</detailHeading>
         <editHeading>false</editHeading>
         <label>Custom Links</label>
-        <layoutColumns/>
-        <layoutColumns/>
-        <layoutColumns/>
+        <layoutColumns />
+        <layoutColumns />
+        <layoutColumns />
         <style>CustomLinks</style>
     </layoutSections>
     <platformActionList>
@@ -288,32 +344,32 @@
             <sortOrder>2</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>NewEvent</actionName>
-            <actionType>QuickAction</actionType>
+            <actionName>Plant_ARR_Report</actionName>
+            <actionType>CustomButton</actionType>
             <sortOrder>3</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>SendEmail</actionName>
+            <actionName>NewEvent</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>4</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Account.Collaboration_Request_Task</actionName>
+            <actionName>SendEmail</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>FeedItem.TextPost</actionName>
+            <actionName>Account.Collaboration_Request_Task</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>6</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>FeedItem.LinkPost</actionName>
+            <actionName>FeedItem.TextPost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>7</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>NewContact</actionName>
+            <actionName>FeedItem.LinkPost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>8</sortOrder>
         </platformActionListItems>
@@ -343,64 +399,54 @@
             <sortOrder>13</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>ChangeOwnerOne</actionName>
+            <actionName>Delete</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>14</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Delete</actionName>
+            <actionName>CreateSurveyInvitation</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>15</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>CreateSurveyInvitation</actionName>
+            <actionName>AccountHierarchy</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>16</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>AccountHierarchy</actionName>
+            <actionName>JigsawSearch</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>17</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>JigsawSearch</actionName>
+            <actionName>AccountAddToCampaign</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>18</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>AccountAddToCampaign</actionName>
+            <actionName>PartnerScorecard</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>19</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>PartnerScorecard</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>20</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>CallHighlightAction</actionName>
             <actionType>ProductivityAction</actionType>
-            <sortOrder>21</sortOrder>
+            <sortOrder>20</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>SmsHighlightAction</actionName>
             <actionType>ProductivityAction</actionType>
-            <sortOrder>22</sortOrder>
+            <sortOrder>21</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>EmailHighlightAction</actionName>
             <actionType>ProductivityAction</actionType>
-            <sortOrder>23</sortOrder>
+            <sortOrder>22</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>WebsiteHighlightAction</actionName>
             <actionType>ProductivityAction</actionType>
-            <sortOrder>24</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>NewTaskQS</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>25</sortOrder>
+            <sortOrder>23</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
@@ -411,25 +457,7 @@
             <quickActionName>FeedItem.ContentPost</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
-            <quickActionName>FeedItem.MobileSmartActions</quickActionName>
-        </quickActionListItems>
-        <quickActionListItems>
-            <quickActionName>FeedItem.RypplePost</quickActionName>
-        </quickActionListItems>
-        <quickActionListItems>
-            <quickActionName>FeedItem.LinkPost</quickActionName>
-        </quickActionListItems>
-        <quickActionListItems>
-            <quickActionName>FeedItem.PollPost</quickActionName>
-        </quickActionListItems>
-        <quickActionListItems>
-            <quickActionName>FeedItem.QuestionPost</quickActionName>
-        </quickActionListItems>
-        <quickActionListItems>
             <quickActionName>Account.Collaboration_Request_Task</quickActionName>
-        </quickActionListItems>
-        <quickActionListItems>
-            <quickActionName>FeedItem.ContentNote</quickActionName>
         </quickActionListItems>
     </quickActionList>
     <relatedContent>
@@ -447,6 +475,7 @@
     <relatedLists>
         <fields>CONTACT.FULL_NAME</fields>
         <fields>CONTACT.ACCOUNT_NAME</fields>
+        <fields>ACCCONRELATION.IS_DIRECT</fields>
         <fields>Active__c</fields>
         <fields>CONTACT.TITLE</fields>
         <fields>CONTACT.EMAIL</fields>
@@ -458,62 +487,124 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>MSA_Title__c</fields>
-        <fields>MSA_Start_Date__c</fields>
-        <fields>MSA_Term_years__c</fields>
-        <fields>MSA_Minimum_Term_End_Date__c</fields>
-        <fields>MSA_End_Date__c</fields>
-        <fields>Annual_Uplift_Percentage__c</fields>
-        <fields>Annual_Uplift_Based_on_CPI__c</fields>
-        <fields>Auto_renewal__c</fields>
-        <fields>Approval_Status__c</fields>
-        <relatedList>MSA_Contract__c.Account_Name__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>OPPORTUNITY.NAME</fields>
-        <fields>OPPORTUNITY.STAGE_NAME</fields>
-        <fields>OPPORTUNITY.AMOUNT</fields>
-        <fields>OPPORTUNITY.CLOSE_DATE</fields>
-        <relatedList>RelatedOpportunityList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>CASES.CASE_NUMBER</fields>
-        <fields>CASES.STATUS</fields>
-        <fields>NAME</fields>
-        <fields>CASES.PRIORITY</fields>
-        <fields>CASES.RECORDTYPE</fields>
-        <fields>Purchased_Product__c</fields>
-        <fields>OWNER_NAME</fields>
-        <fields>CASES.CREATED_DATE</fields>
-        <fields>CASES.CLOSED_DATE</fields>
-        <fields>Plant__c</fields>
-        <relatedList>RelatedCaseList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>Account_Plant__c.Account__c</relatedList>
+        <fields>QS_New_Asset_Status__c</fields>
+        <fields>QS_Quantity__c</fields>
+        <fields>QS_Annual_Recurring_Revenue__c</fields>
+        <fields>QS_Product__c</fields>
+        <fields>QS_Start_Date__c</fields>
+        <fields>QS_End_Date__c</fields>
+        <fields>CURRENCY_ISO_CODE</fields>
+        <relatedList>QS_Customer_Asset__c.QS_Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
-        <fields>TASK.WHAT_NAME</fields>
-        <fields>ACTIVITY.TASK</fields>
         <fields>TASK.DUE_DATE</fields>
         <fields>TASK.STATUS</fields>
         <fields>TASK.PRIORITY</fields>
         <fields>CORE.USERS.FULL_NAME</fields>
+        <fields>Comments__c</fields>
         <relatedList>RelatedActivityList</relatedList>
     </relatedLists>
     <relatedLists>
-        <relatedList>RelatedEntityHistoryList</relatedList>
+        <fields>TASK.SUBJECT</fields>
+        <fields>TASK.WHO_NAME</fields>
+        <fields>TASK.DUE_DATE</fields>
+        <fields>CORE.USERS.FULL_NAME</fields>
+        <fields>Comments__c</fields>
+        <relatedList>RelatedHistoryList</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>MEMBER_NAME</fields>
-        <fields>TEAM_MEMBER_ROLE</fields>
-        <relatedList>RelatedAccountSalesTeam</relatedList>
+        <fields>NAME</fields>
+        <fields>Plant__c</fields>
+        <fields>Customer_Plant_Name__c</fields>
+        <fields>Asset_Class__c</fields>
+        <fields>Plant_MWP__c</fields>
+        <fields>Status__c</fields>
+        <fields>Ownership_Percentage__c</fields>
+        <fields>Relationship_Type__c</fields>
+        <fields>Assigned_Customer_Contact__c</fields>
+        <relatedList>Account_Plant__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <relatedList>RelatedFileList</relatedList>
+        <fields>OPPORTUNITY.NAME</fields>
+        <fields>OPPORTUNITY.STAGE_NAME</fields>
+        <fields>OPPORTUNITY.CLOSE_DATE</fields>
+        <fields>OPPORTUNITY.AMOUNT</fields>
+        <fields>Annual_Recurring_Revenue__c</fields>
+        <fields>Non_Recurring_Revenue__c</fields>
+        <fields>Order_Type__c</fields>
+        <fields>Order_Subtype__c</fields>
+        <fields>Primary_Contact__c</fields>
+        <fields>OPPORTUNITY.NEXT_STEP</fields>
+        <relatedList>RelatedOpportunityList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>MSA_Title__c</fields>
+        <fields>MSA_Status__c</fields>
+        <fields>MSA_Start_Date__c</fields>
+        <fields>MSA_End_Date__c</fields>
+        <fields>MSA_Term_years__c</fields>
+        <fields>MSA_Minimum_Term_End_Date__c</fields>
+        <fields>Annual_Uplift_Percentage__c</fields>
+        <fields>Auto_renewal__c</fields>
+        <fields>Subsidiary__c</fields>
+        <relatedList>MSA_Contract__c.Account_Name__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>SBQQ__Product__c</fields>
+        <fields>CURRENCY_ISO_CODE</fields>
+        <fields>Product_List_Price__c</fields>
+        <fields>SBQQ__Price__c</fields>
+        <fields>Contracted_Price_Discount_Percentage__c</fields>
+        <fields>SBQQ__EffectiveDate__c</fields>
+        <fields>Same_As_List_Price__c</fields>
+        <fields>SBQQ__DiscountSchedule__c</fields>
+        <fields>SBQQ__Discount__c</fields>
+        <relatedList>SBQQ__ContractedPrice__c.SBQQ__Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Description__c</fields>
+        <fields>Product__c</fields>
+        <fields>Pricing_Tier__c</fields>
+        <fields>Lower_Bound__c</fields>
+        <fields>Upper_Bound__c</fields>
+        <fields>Discount__c</fields>
+        <fields>Discount_Amount__c</fields>
+        <fields>Asset_Class__c</fields>
+        <relatedList>MSA_Software_Discount_Tier_Price__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Description__c</fields>
+        <fields>Product__c</fields>
+        <fields>Pricing_Tier__c</fields>
+        <fields>Lower_Bound__c</fields>
+        <fields>Upper_Bound__c</fields>
+        <fields>Fixed_Price__c</fields>
+        <fields>Asset_Class__c</fields>
+        <relatedList>MSA_Implementation_Bracket_Price__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Total_Agnostic__c</fields>
+        <fields>MW_Drive__c</fields>
+        <fields>MW_Greenbyte__c</fields>
+        <fields>MW_Bluepoint__c</fields>
+        <fields>MW_Ekhosoft__c</fields>
+        <relatedList>Active_Megawatts__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Total_Agnostic__c</fields>
+        <fields>MW_Drive__c</fields>
+        <fields>MW_Greenbyte__c</fields>
+        <fields>MW_Bluepoint__c</fields>
+        <fields>MW_Ekhosoft__c</fields>
+        <relatedList>Active_Megawatts__c.AccountForPricingAM__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -523,6 +614,17 @@
         <fields>Document_Notes__c</fields>
         <relatedList>Document_Link__c.Account__c</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>MEMBER_NAME</fields>
+        <fields>TEAM_MEMBER_ROLE</fields>
+        <relatedList>RelatedAccountSalesTeam</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedEntityHistoryList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedFileList</relatedList>
+    </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
@@ -530,7 +632,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8F000000Ig9R</masterLabel>
+        <masterLabel>00h7j000000ZTEH</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_New_Asset_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(QS_Start_Date__c &gt; QS_Dynamic_Current_Date__c) , &#39;Pending Activation&#39;, 
+IF(AND(QS_Start_Date__c &lt;= QS_Dynamic_Current_Date__c,  QS_Quantity__c &gt; 0), &#39;Active&#39;, 
+IF(AND(QS_Quantity__c = 0,  QS_Start_Date__c &lt;= QS_Dynamic_Current_Date__c),&#39;Decommissioned&#39;, 
+&#39;Error Occurred&#39; 
+)
+) 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Asset Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

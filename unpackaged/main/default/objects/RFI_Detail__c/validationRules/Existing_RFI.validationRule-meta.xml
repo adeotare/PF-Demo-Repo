@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Existing_RFI</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND( OR(00N8F000000LTdV.00N8F000000LTXS.00N8F000000LTdW  = 0,(AND(00N8F000000LTdV.00N8F000000LTXS.00N8F000000LTdW &lt;&gt; 0,
+ISPICKVAL( RAID__r.RFI_Status__c , &quot;Closed&quot;)))),
+$User.ContactId &lt;&gt; NULL,
+OR(ISCHANGED(Cancel_Cannot_Complete_Description__c), ISCHANGED(Category_Classification__c), ISCHANGED(Completion_date__c),
+ISCHANGED(Customer_Comments__c), ISCHANGED(Due_Date__c), 
+ISCHANGED(IE_Owner__c), ISCHANGED(Implementation_Blocked__c), ISCHANGED(RFI_Detail_Description__c),
+ISCHANGED(Incorrect_Category__c), ISCHANGED(Missing_Incomplete_Category__c), ISCHANGED(RFI_Detail_Owner__c),
+ISCHANGED(Onsite_Remediation_Description__c), ISCHANGED(Onsite_Remediation_Required__c), ISCHANGED( Account_Plant__c ),
+ISCHANGED(RFI_Category_Type__c), ISCHANGED(RFI_Item_Status__c), ISCHANGED( RAID__c )),OR(ISPICKVAL( PRIORVALUE( RFI_Item_Status__c ) , &quot;Closed&quot;),
+ISPICKVAL( PRIORVALUE( RFI_Item_Status__c ) , &quot;Canceled&quot;),
+ISPICKVAL( PRIORVALUE( RFI_Item_Status__c ) , &quot;Cannot Complete&quot;)))</errorConditionFormula>
+    <errorMessage>Cannot edit RFI Item once status is Closed or Canceled or Cannot complete . Please contact PF owner.</errorMessage>
+</ValidationRule>

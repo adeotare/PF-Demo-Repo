@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Status__c</fullName>
+    <description>REQ-2326</description>
+    <externalId>false</externalId>
+    <label>Credit Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No - Denied</fullName>
+                <default>false</default>
+                <label>No - Denied</label>
+            </value>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
+            <value>
+                <fullName>Pending</fullName>
+                <default>false</default>
+                <label>Pending</label>
+            </value>
+            <value>
+                <fullName>Revoke</fullName>
+                <default>false</default>
+                <label>Revoke</label>
+            </value>
+            <value>
+                <fullName>Yes - Fully Approved</fullName>
+                <default>false</default>
+                <label>Yes - Fully Approved</label>
+            </value>
+            <value>
+                <fullName>Yes - Management Override</fullName>
+                <default>false</default>
+                <label>Yes - Management Override</label>
+            </value>
+            <value>
+                <fullName>Yes - Prepay Required</fullName>
+                <default>false</default>
+                <label>Yes - Prepay Required</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

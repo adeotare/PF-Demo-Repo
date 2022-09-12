@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Completed__c</fullName>
+    <externalId>false</externalId>
+    <formula>OR(
+CONTAINS(&#39;Closed;Cannot Complete;Canceled;&#39;, TEXT( RFI_Item_Status__c)) ,
+(NOT(Is_Requestor__c) &amp;&amp; ISPICKVAL(RFI_Item_Status__c, &#39;Submitted&#39;))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Completed</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

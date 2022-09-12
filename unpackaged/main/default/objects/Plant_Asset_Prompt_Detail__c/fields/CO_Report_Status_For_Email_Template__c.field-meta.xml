@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CO_Report_Status_For_Email_Template__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL( Completeness_Report_Status__c , &quot;Completed&quot;) , &quot;is ready for review, please run the G1 prompt.&quot; , &quot;could not able to run,please contact your System Engineer.&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CO Report Status For Email Template</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

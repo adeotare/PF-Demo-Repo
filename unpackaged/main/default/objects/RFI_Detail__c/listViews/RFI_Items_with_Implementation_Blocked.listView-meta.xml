@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RFI_Items_with_Implementation_Blocked</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Account_Plant__c</columns>
+    <columns>RFI_Detail_Description__c</columns>
+    <columns>Additional_RFI_Item_Description__c</columns>
+    <columns>Customer_Comments__c</columns>
+    <columns>Assigned_Customer_Contact__c</columns>
+    <columns>Implementation_Blocked__c</columns>
+    <columns>Onsite_Remediation_Required__c</columns>
+    <columns>Onsite_Remediation_Description__c</columns>
+    <columns>RAID__c</columns>
+    <columns>RFI_Item_Status__c</columns>
+    <columns>IE_Owner__c</columns>
+    <columns>Technical_Project_Manager__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Implementation_Blocked__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>RFI_Item_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Drafting,Closed,Canceled,Cannot Complete</value>
+    </filters>
+    <label>RFI Items with Implementation Blocked</label>
+</ListView>

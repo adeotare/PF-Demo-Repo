@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Requestor__c</fullName>
+    <externalId>false</externalId>
+    <formula>OR(
+ISPICKVAL($User.UserType,&#39;Standard&#39;),
+$Profile.Name = &#39;PF Community User&#39;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Requestor</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

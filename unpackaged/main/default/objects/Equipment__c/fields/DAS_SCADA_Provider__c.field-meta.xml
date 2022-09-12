@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DAS_SCADA_Provider__c</fullName>
+    <externalId>false</externalId>
+    <label>Drive Customer Solution</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Also Energy</fullName>
+                <default>false</default>
+                <label>Also Energy</label>
+            </value>
+            <value>
+                <fullName>Ardexa</fullName>
+                <default>false</default>
+                <label>Ardexa</label>
+            </value>
+            <value>
+                <fullName>Campbell Scientific</fullName>
+                <default>false</default>
+                <label>Campbell Scientific</label>
+            </value>
+            <value>
+                <fullName>DAS/SCADA - Onsite</fullName>
+                <default>false</default>
+                <label>DAS/SCADA - Onsite</label>
+            </value>
+            <value>
+                <fullName>DAS/SCADA - Remote</fullName>
+                <default>false</default>
+                <label>DAS/SCADA - Remote</label>
+            </value>
+            <value>
+                <fullName>Draker Energy</fullName>
+                <default>false</default>
+                <label>Draker Energy</label>
+            </value>
+            <value>
+                <fullName>Egauge system</fullName>
+                <default>false</default>
+                <label>Egauge system</label>
+            </value>
+            <value>
+                <fullName>ELM</fullName>
+                <default>false</default>
+                <label>ELM</label>
+            </value>
+            <value>
+                <fullName>FTP Server</fullName>
+                <default>false</default>
+                <label>FTP Server</label>
+            </value>
+            <value>
+                <fullName>Greenbyte</fullName>
+                <default>false</default>
+                <label>Greenbyte</label>
+            </value>
+            <value>
+                <fullName>GreenPowerMonitor</fullName>
+                <default>false</default>
+                <label>GreenPowerMonitor</label>
+            </value>
+            <value>
+                <fullName>Inaccess</fullName>
+                <default>false</default>
+                <label>Inaccess</label>
+            </value>
+            <value>
+                <fullName>Locus Energy</fullName>
+                <default>false</default>
+                <label>Locus Energy</label>
+            </value>
+            <value>
+                <fullName>MeteoControls</fullName>
+                <default>false</default>
+                <label>MeteoControls</label>
+            </value>
+            <value>
+                <fullName>Nant Energy</fullName>
+                <default>false</default>
+                <label>Nant Energy</label>
+            </value>
+            <value>
+                <fullName>none</fullName>
+                <default>false</default>
+                <label>none</label>
+            </value>
+            <value>
+                <fullName>OSI Soft PSI</fullName>
+                <default>false</default>
+                <label>OSI Soft PSI</label>
+            </value>
+            <value>
+                <fullName>Power Factors</fullName>
+                <default>false</default>
+                <label>Power Factors</label>
+            </value>
+            <value>
+                <fullName>Skytron</fullName>
+                <default>false</default>
+                <label>Skytron</label>
+            </value>
+            <value>
+                <fullName>SolarEdge</fullName>
+                <default>false</default>
+                <label>SolarEdge</label>
+            </value>
+            <value>
+                <fullName>SolrenView</fullName>
+                <default>false</default>
+                <label>SolrenView</label>
+            </value>
+            <value>
+                <fullName>Trimark</fullName>
+                <default>false</default>
+                <label>Trimark</label>
+            </value>
+            <value>
+                <fullName>SOLV SCADA</fullName>
+                <default>false</default>
+                <label>SOLV SCADA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

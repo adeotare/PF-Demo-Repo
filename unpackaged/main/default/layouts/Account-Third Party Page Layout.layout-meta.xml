@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>DataDotComAccountInsights</excludeButtons>
-    <excludeButtons>DataDotComClean</excludeButtons>
-    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
+    <excludeButtons>DisableCustomerPortalAccount</excludeButtons>
+    <excludeButtons>IncludeOffline</excludeButtons>
+    <excludeButtons>PartnerScorecard</excludeButtons>
+    <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -18,83 +19,15 @@
                 <behavior>Edit</behavior>
                 <field>ParentId</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Description</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Type</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Subtype__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Industry</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Website</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Phone</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>AccountSource</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Asset_Class_Managed_Account__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Regions__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>OwnerId</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>RecordTypeId</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
-                <field>CurrencyIsoCode</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>AnnualRevenue</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>NumberOfEmployees</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Sic</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>SicDesc</field>
+                <behavior>Readonly</behavior>
+                <field>Region__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Theater__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Targeted__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>PO_Required__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -122,6 +55,57 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
+        <label>Company Data</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Phone</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Website</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Industry</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>NumberOfEmployees</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>AnnualRevenue</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Type</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Subtype__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Sic</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SicDesc</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>AccountSource</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
         <label>Legacy Details</label>
         <layoutColumns>
             <layoutItems>
@@ -138,13 +122,18 @@
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
+        
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Drive_Customer_Id__c</field>
+                <field>Billing_Address_Netsuite_Id__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>X3MW_Customer_Id__c</field>
+                <field>Shipping_Address_Netsuite_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Netsuite_Subscription_Id__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -161,16 +150,30 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Request_Note__c</field>
+                <field>Merged_Account__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
+        
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>To_Be_Merged__c</field>
+                <field>Request_Note__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Description</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Description</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -182,11 +185,20 @@
                 <behavior>Readonly</behavior>
                 <field>CreatedById</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>LastModifiedById</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+        
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>OwnerId</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>RecordTypeId</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -196,9 +208,9 @@
         <detailHeading>true</detailHeading>
         <editHeading>false</editHeading>
         <label>Custom Links</label>
-        <layoutColumns/>
-        <layoutColumns/>
-        <layoutColumns/>
+        <layoutColumns />
+        <layoutColumns />
+        <layoutColumns />
         <style>CustomLinks</style>
     </layoutSections>
     <platformActionList>
@@ -214,44 +226,39 @@
             <sortOrder>4</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>NewContact</actionName>
+            <actionName>NewOpportunity</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>NewOpportunity</actionName>
+            <actionName>FeedItem.TextPost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>6</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>FeedItem.TextPost</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>7</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>PartnerScorecard</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>8</sortOrder>
+            <sortOrder>7</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>CreateCallList</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>9</sortOrder>
+            <sortOrder>8</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>10</sortOrder>
+            <sortOrder>9</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Delete</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>11</sortOrder>
+            <sortOrder>10</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>JigsawSearch</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>12</sortOrder>
+            <sortOrder>11</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>NewEvent</actionName>
@@ -261,42 +268,42 @@
         <platformActionListItems>
             <actionName>Account.Collaboration_Request_Task</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>13</sortOrder>
+            <sortOrder>12</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>CreateSurveyInvitation</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>14</sortOrder>
+            <sortOrder>13</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>IncludeOffline</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>15</sortOrder>
+            <sortOrder>14</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>ChangeRecordType</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>16</sortOrder>
+            <sortOrder>15</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>AccountHierarchy</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>17</sortOrder>
+            <sortOrder>16</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>CallHighlightAction</actionName>
             <actionType>ProductivityAction</actionType>
-            <sortOrder>18</sortOrder>
+            <sortOrder>17</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>SmsHighlightAction</actionName>
             <actionType>ProductivityAction</actionType>
-            <sortOrder>19</sortOrder>
+            <sortOrder>18</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>EmailHighlightAction</actionName>
             <actionType>ProductivityAction</actionType>
-            <sortOrder>20</sortOrder>
+            <sortOrder>19</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>LogACall</actionName>
@@ -324,6 +331,7 @@
     <relatedLists>
         <fields>CONTACT.FULL_NAME</fields>
         <fields>CONTACT.ACCOUNT_NAME</fields>
+        <fields>ACCCONRELATION.IS_DIRECT</fields>
         <fields>Active__c</fields>
         <fields>CONTACT.TITLE</fields>
         <fields>CONTACT.EMAIL</fields>
@@ -334,39 +342,27 @@
         <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
-        <fields>OPPORTUNITY.NAME</fields>
-        <fields>OPPORTUNITY.STAGE_NAME</fields>
-        <fields>OPPORTUNITY.AMOUNT</fields>
-        <fields>OPPORTUNITY.CLOSE_DATE</fields>
-        <relatedList>RelatedOpportunityList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>CASES.CASE_NUMBER</fields>
-        <fields>CASES.STATUS</fields>
         <fields>NAME</fields>
-        <fields>CASES.PRIORITY</fields>
-        <fields>CASES.RECORDTYPE</fields>
-        <fields>Purchased_Product__c</fields>
-        <fields>OWNER_NAME</fields>
-        <fields>CASES.CREATED_DATE</fields>
-        <fields>CASES.CLOSED_DATE</fields>
         <fields>Plant__c</fields>
-        <relatedList>RelatedCaseList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
+        <fields>Customer_Plant_Name__c</fields>
+        <fields>Asset_Class__c</fields>
+        <fields>Plant_MWP__c</fields>
+        <fields>Status__c</fields>
+        <fields>Ownership_Percentage__c</fields>
+        <fields>Relationship_Type__c</fields>
+        <fields>Assigned_Customer_Contact__c</fields>
         <relatedList>Account_Plant__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <relatedList>RelatedFileList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <relatedList>RelatedEntityHistoryList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>MEMBER_NAME</fields>
-        <fields>TEAM_MEMBER_ROLE</fields>
-        <relatedList>RelatedAccountSalesTeam</relatedList>
+        <fields>NAME</fields>
+        <fields>QS_Account__c</fields>
+        <fields>QS_New_Asset_Status__c</fields>
+        <fields>QS_Quantity__c</fields>
+        <fields>QS_Annual_Recurring_Revenue__c</fields>
+        <fields>QS_Product__c</fields>
+        <fields>QS_Start_Date__c</fields>
+        <fields>QS_End_Date__c</fields>
+        <relatedList>QS_Customer_Asset__c.QS_Secondary_Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -376,6 +372,16 @@
         <fields>Document_Notes__c</fields>
         <relatedList>Document_Link__c.Account__c</relatedList>
     </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedEntityHistoryList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedFileList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Active_Megawatts__c.AccountForPricingAM__c</relatedList>
+    </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
@@ -383,7 +389,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8F000000Ig9S</masterLabel>
+        <masterLabel>00h7j000000ZTEM</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

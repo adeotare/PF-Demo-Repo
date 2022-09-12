@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_User_Status_Update</fullName>
+    <active>true</active>
+    <description>Options for Community RFI Item Status editing needs to prevent users from choosing options other than In Progress or Canceled</description>
+    <errorConditionFormula>AND(
+OR(
+$Profile.Name = &quot;PF Community User&quot;,
+$Profile.Name = &quot;PF Community 3rd Party User&quot;),
+OR(
+ISPICKVAL(PRIORVALUE(RFI_Item_Status__c),&quot;Requested&quot;),
+ISPICKVAL(PRIORVALUE(RFI_Item_Status__c),&quot;Needs Detail&quot;),
+ISPICKVAL(PRIORVALUE(RFI_Item_Status__c),&quot;Submitted&quot;),
+ISPICKVAL(PRIORVALUE(RFI_Item_Status__c),&quot;In Progress&quot;),
+ISPICKVAL(PRIORVALUE(RFI_Item_Status__c),&quot;Closed&quot;),
+ISPICKVAL(PRIORVALUE(RFI_Item_Status__c),&quot;Canceled&quot;),
+ISPICKVAL(PRIORVALUE(RFI_Item_Status__c),&quot;Drafting&quot;),
+ISPICKVAL(PRIORVALUE(RFI_Item_Status__c),&quot;Cannot Complete&quot;)),
+ISCHANGED(RFI_Item_Status__c ),
+OR(
+ISPICKVAL(RFI_Item_Status__c , &quot;Closed&quot;),
+ISPICKVAL(RFI_Item_Status__c , &quot;Requested&quot;),
+ISPICKVAL(RFI_Item_Status__c , &quot;Needs Detail&quot;),
+ISPICKVAL(RFI_Item_Status__c , &quot;Drafting&quot;),
+ISPICKVAL(RFI_Item_Status__c , &quot;Cannot Complete&quot;))
+)</errorConditionFormula>
+    <errorMessage>Customer users cannot choose status other than &quot;In progress, Submitted or Cancelled&quot;.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bluepoint_data_connection__c</fullName>
+    <externalId>false</externalId>
+    <label>Bluepoint data connection</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Powerfactors</fullName>
+                <default>false</default>
+                <label>Powerfactors</label>
+            </value>
+            <value>
+                <fullName>Also Energy</fullName>
+                <default>false</default>
+                <label>Also Energy</label>
+            </value>
+            <value>
+                <fullName>Greenbyte</fullName>
+                <default>false</default>
+                <label>Greenbyte</label>
+            </value>
+            <value>
+                <fullName>Locus</fullName>
+                <default>false</default>
+                <label>Locus</label>
+            </value>
+            <value>
+                <fullName>Meteocontrol</fullName>
+                <default>false</default>
+                <label>Meteocontrol</label>
+            </value>
+            <value>
+                <fullName>Synaptiq</fullName>
+                <default>false</default>
+                <label>Synaptiq</label>
+            </value>
+            <value>
+                <fullName>SolarEdge</fullName>
+                <default>false</default>
+                <label>SolarEdge</label>
+            </value>
+            <value>
+                <fullName>GPM</fullName>
+                <default>false</default>
+                <label>GPM</label>
+            </value>
+            <value>
+                <fullName>Inaccess</fullName>
+                <default>false</default>
+                <label>Inaccess</label>
+            </value>
+            <value>
+                <fullName>Enphase</fullName>
+                <default>false</default>
+                <label>Enphase</label>
+            </value>
+            <value>
+                <fullName>Ikologik</fullName>
+                <default>false</default>
+                <label>Ikologik</label>
+            </value>
+            <value>
+                <fullName>Enervest (7C Solarparken)</fullName>
+                <default>false</default>
+                <label>Enervest (7C Solarparken)</label>
+            </value>
+            <value>
+                <fullName>Nispera API</fullName>
+                <default>false</default>
+                <label>Nispera API</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
