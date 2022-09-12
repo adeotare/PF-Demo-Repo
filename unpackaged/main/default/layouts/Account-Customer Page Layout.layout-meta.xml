@@ -477,6 +477,7 @@
         
         
         
+        
         <fields>ACTIVITY.TASK</fields>
         <fields>TASK.DUE_DATE</fields>
         <fields>TASK.STATUS</fields>
@@ -492,21 +493,12 @@
         
         
         
+        
         <fields>ACTIVITY.TASK</fields>
         <fields>TASK.DUE_DATE</fields>
         <fields>CORE.USERS.FULL_NAME</fields>
         <fields>TASK.LAST_UPDATE</fields>
         <relatedList>RelatedHistoryList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>Total_MW_Solar__c</fields>
-        <fields>Total_MW_Other_Renewable__c</fields>
-        <fields>Total_MW_Hydro__c</fields>
-        <fields>Total_MW_Wind__c</fields>
-        <fields>Total_MW_Storage__c</fields>
-        <fields>Total_Agnostic__c</fields>
-        <relatedList>Active_Megawatts__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -528,16 +520,26 @@
         <fields>QS_Product__c</fields>
         <fields>QS_Start_Date__c</fields>
         <fields>QS_End_Date__c</fields>
+        <fields>CURRENCY_ISO_CODE</fields>
         <relatedList>QS_Customer_Asset__c.QS_Account__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>ASSET.NAME</fields>
-        <fields>Product__c</fields>
-        <fields>ASSET.QUANTITY</fields>
-        <fields>ASSET.PRICE</fields>
-        <fields>QS_Net_Price__c</fields>
-        <fields>QS_Booking_Date__c</fields>
-        <relatedList>RelatedAssetList</relatedList>
+        <fields>NAME</fields>
+        <fields>Total_Agnostic__c</fields>
+        <fields>MW_Drive__c</fields>
+        <fields>MW_Greenbyte__c</fields>
+        <fields>MW_Bluepoint__c</fields>
+        <fields>MW_Ekhosoft__c</fields>
+        <relatedList>Active_Megawatts__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Total_Agnostic__c</fields>
+        <fields>MW_Drive__c</fields>
+        <fields>MW_Greenbyte__c</fields>
+        <fields>MW_Bluepoint__c</fields>
+        <fields>MW_Ekhosoft__c</fields>
+        <relatedList>Active_Megawatts__c.AccountForPricingAM__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -664,9 +666,18 @@
         <fields>SBQQ__QuoteLine__c</fields>
         <fields>Annual_Recurring_Revenue__c</fields>
         <fields>SBQQ__NetPrice__c</fields>
-        <fields>Line_Classification__c</fields>
         <fields>SBQQ__Contract__c</fields>
+        <fields>CURRENCY_ISO_CODE</fields>
         <relatedList>SBQQ__Subscription__c.SBQQ__Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>ASSET.NAME</fields>
+        <fields>Product__c</fields>
+        <fields>ASSET.QUANTITY</fields>
+        <fields>ASSET.PRICE</fields>
+        <fields>QS_Net_Price__c</fields>
+        <fields>QS_Booking_Date__c</fields>
+        <relatedList>RelatedAssetList</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>MEMBER_NAME</fields>

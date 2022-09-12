@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -19,48 +20,43 @@
                 <behavior>Required</behavior>
                 <field>Plant__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Status__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Ownership_Percentage__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Drive_Id__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Plant_Megawatt_Capacity__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Renewable_Type__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>TEM_Version__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Commercial_Operating_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Active_RFI__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Operator__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>Customer_Plant_Name__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Customer_provided_MW_Capacity__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Data_Connection_Notes__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsTopToBottom</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Relationship Information</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Relationship_Type__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Ownership_Percentage__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Effective_Date__c</field>
@@ -71,7 +67,50 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>CurrencyIsoCode</field>
+                <field>Assigned_Customer_Contact__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Plant Information</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Plant_Name__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Plant_Megawatt_Capacity__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>AC_Capacity_kW__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>DC_Capacity_kW__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Plant_MWH__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Plant_MWP__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Operational_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Commercial_Operating_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -83,11 +122,32 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Record_Name__c</field>
+                <field>State_Province__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Plant_Country__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Timezone__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Ids</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Drive_Id__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>System_Modstamp__c</field>
+                <field>Greenbyte_Id__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -97,20 +157,27 @@
                 <behavior>Edit</behavior>
                 <field>Ekhosoft_Id__c</field>
             </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Greenbyte_Id__c</field>
+                <field>PF_Legacy_ID__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Data_Connection_Notes__c</field>
+                <field>Customer_Plant_Asset_ID__c</field>
+            </layoutItems>
+        
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>X3MW_Legacy_ID__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Customer_provided_MW_Capacity__c</field>
+                <field>GB_Legacy_ID__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsTopToBottom</style>
+        <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -126,6 +193,10 @@
                 <behavior>Readonly</behavior>
                 <field>Asset_Class__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Renewable_Type__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -136,6 +207,10 @@
                 <behavior>Edit</behavior>
                 <field>AB_Approval_Status__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>TEM_Version__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -144,29 +219,33 @@
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>System Information</label>
+        <layoutColumns />
+        <layoutColumns />
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>System Information</label>
         <layoutColumns>
-        
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>X3MW_Legacy_ID__c</field>
+                <behavior>Readonly</behavior>
+                <field>Record_Name__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>GB_Legacy_ID__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>PF_Legacy_ID__c</field>
+                <field>System_Modstamp__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>LastModifiedById</field>
+                <field>CreatedById</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>CreatedById</field>
+                <field>LastModifiedById</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -320,6 +399,20 @@
         </quickActionListItems>
     </quickActionList>
     <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <fields>NAME</fields>
+        <fields>Product__c</fields>
+        <fields>Quote_Line_Quantity__c</fields>
+        <fields>Unit_Price_After_Volume_Discount__c</fields>
+        <fields>Net_Total_Price__c</fields>
+        <fields>CURRENCY_ISO_CODE</fields>
+        <fields>Discount_Tier__c</fields>
+        <fields>Effective_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <fields>Amendment_Action__c</fields>
+        <relatedList>Plant_Product_Transaction__c.Plant__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>NAME</fields>
         <fields>Internal_Status__c</fields>
         <fields>project_cloud__Type__c</fields>
@@ -334,22 +427,31 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Asset_Name__c</fields>
+        <fields>Attribute_Info__c</fields>
+        <fields>Asset_Short_Name__c</fields>
+        <fields>Base_Asset_Template__c</fields>
+        <fields>Prompt_Information__c</fields>
         <relatedList>Site_Metadata__c.Account_Plant__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Base_Asset__c</fields>
+        <fields>Capability_Report_Status__c</fields>
+        <fields>Completeness_Report_Status__c</fields>
         <relatedList>Plant_Asset_Prompt_Detail__c.Account_Plant__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>Product2</fields>
         <fields>Quantity</fields>
         <fields>UnitPrice</fields>
-        <fields>ListPrice</fields>
         <fields>TotalPrice</fields>
         <fields>ODER_ITEM.START_DATE</fields>
         <fields>ODER_ITEM.END_DATE</fields>
+        <fields>Annual_Recurring_Revenue__c</fields>
         <fields>QUOTE_LI</fields>
-        <fields>OriginalOrderItem</fields>
+        <fields>SBQQ__Subscription__c</fields>
+        <fields>SBQQ__RevisedOrderProduct__c</fields>
         <relatedList>OrderItem.Account_Plant__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -369,22 +471,53 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Approval_Status__c</fields>
+        <fields>Customer_Contact_for_Onboarding__c</fields>
+        <fields>Partner_Primary_Contact__c</fields>
         <relatedList>Asset_Builder_Approval__c.Account_Plant__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>File_Name__c</fields>
+        <fields>Graph__c</fields>
+        <fields>Budget__c</fields>
+        <fields>Method__c</fields>
+        <fields>Coefficient__c</fields>
+        <fields>Processing_Status__c</fields>
+        <fields>Approval_Status__c</fields>
+        <fields>Validation__c</fields>
+        <fields>Synced_On__c</fields>
         <relatedList>PF_Survey__c.Plant__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>SAT_Type__c</fields>
+        <fields>SAT_Approval_Status__c</fields>
+        <fields>Customer_Acceptance_Status__c</fields>
+        <fields>Customer_Comments__c</fields>
+        <fields>Customer_Contact_For_Onboarding__c</fields>
+        <fields>Customer_User__c</fields>
+        <fields>Designated_CSM__c</fields>
+        <fields>Due_Date__c</fields>
         <relatedList>SAT__c.Account_Plant__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Status__c</fields>
+        <fields>API_Type__c</fields>
+        <fields>Data_Interface__c</fields>
+        <fields>Plant_API_Id__c</fields>
+        <fields>Response_Message__c</fields>
         <relatedList>Implementation_Wizard_Form_Detail__c.Account_Plant__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Additional_RFI_Item_Description__c</fields>
+        <fields>RFI_Item_Status__c</fields>
+        <fields>Completed__c</fields>
+        <fields>RAID__c</fields>
+        <fields>RFI_Category__c</fields>
+        <fields>Technical_Project_Manager__c</fields>
         <relatedList>RFI_Detail__c.Account_Plant__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
@@ -393,7 +526,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8F000000IfIm</masterLabel>
+        <masterLabel>00h7j000000ZWf6</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
