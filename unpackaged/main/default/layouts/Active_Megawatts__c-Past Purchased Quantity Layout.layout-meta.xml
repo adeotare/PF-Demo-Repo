@@ -12,7 +12,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Account__c</field>
+                <field>AccountForPricingAM__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -34,7 +34,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>AccountForPricingAM__c</field>
+                <field>Account__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

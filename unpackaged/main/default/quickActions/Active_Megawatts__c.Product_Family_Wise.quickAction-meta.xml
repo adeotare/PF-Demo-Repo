@@ -7,7 +7,7 @@
         <quickActionLayoutColumns>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Account__c</field>
+                <field>AccountForPricingAM__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
@@ -50,6 +50,11 @@
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
         <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Account__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>true</emptySpace>
                 <uiBehavior>Edit</uiBehavior>

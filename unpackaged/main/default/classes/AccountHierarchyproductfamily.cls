@@ -1,7 +1,6 @@
 global class AccountHierarchyproductfamily implements Database.Batchable<SObject> ,Database.Stateful {
     
     public Set<Id> idSetToTest = new Set<Id>();
-        
     map<id,Active_Megawatts__c> mapToInsert = new map<id,Active_Megawatts__c> ();
     
     global Database.QueryLocator Start(Database.BatchableContext bc){
@@ -35,7 +34,7 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
             if(pData.Account__c!=null)accountIdset.add(pData.Account__c);
         }
         
-        List<Active_Megawatts__c> existingAmw = [SELECT Id,Account__c FROM Active_Megawatts__c  WHERE Account__c IN: idSetToTest];
+        List<Active_Megawatts__c> existingAmw = [SELECT Id,Account__c FROM Active_Megawatts__c  WHERE Account__c IN: accountIdset];
         
         Map<Id, Active_Megawatts__c> existingAMWMap = new Map<Id, Active_Megawatts__c>();
         for(Active_Megawatts__c amw : existingAmw){
@@ -59,7 +58,7 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                                                                     Account__r.ParentId 
                                                              FROM Plant_Product_Transaction__c
                                                              //WHERE Account__c In:accountIdset 
-                                                             WHERE Account__c In :idSetToTest
+                                                             WHERE Account__c In :accountIdset
                                                              AND Status__c ='Contracted'
                                                              AND MWp_Quantity__c!=null 
                                                              AND plant__c!=null 
@@ -531,7 +530,7 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                         childActiveMegawatsMaps.get(childAcc).Total_MW_Greenbyte__c = mer.get(accId).Total_MW_Greenbyte__c;
                         
                         //childActiveMegawatsMaps.get(childAcc).Account__c = accId;
-                        //childActiveMegawatsMaps.get(childAcc).Accountytoconsider__c = childAcc;
+                        childActiveMegawatsMaps.get(childAcc).AccountForPricingAM__c = accId;
                         
                         system.debug('Acc--'+childAcc + ' :: '+mer.get(accId).Total_MW_Bluepoint__c);
                         system.debug('Acc--'+childAcc + ' :: '+mer.get(accId).Total_MW_Drive__c);
@@ -548,7 +547,7 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                         childActiveMegawatsMaps.get(childAcc).Total_MW_Greenbyte__c = patentWitoutPPTChildWithPPT.get(accId).Total_MW_Greenbyte__c;
                         
                         //childActiveMegawatsMaps.get(childAcc).Account__c = accId;
-                        //childActiveMegawatsMaps.get(childAcc).Accountytoconsider__c = childAcc;
+                        childActiveMegawatsMaps.get(childAcc).AccountForPricingAM__c = accId;
                         
                         system.debug('Acc--'+childAcc + ' :: '+patentWitoutPPTChildWithPPT.get(accId).Total_MW_Bluepoint__c);
                         system.debug('Acc--'+childAcc + ' :: '+patentWitoutPPTChildWithPPT.get(accId).Total_MW_Drive__c);
