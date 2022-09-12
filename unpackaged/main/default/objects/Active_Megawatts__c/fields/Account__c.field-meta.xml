@@ -3,7 +3,7 @@
     <fullName>Account__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>AccountForPricingAM</label>
+    <label>AM for Account</label>
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Active Megawatts</relationshipLabel>
     <relationshipName>Active_Megawatts</relationshipName>

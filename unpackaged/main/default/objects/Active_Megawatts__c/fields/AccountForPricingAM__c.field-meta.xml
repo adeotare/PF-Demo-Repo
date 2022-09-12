@@ -3,7 +3,7 @@
     <fullName>AccountForPricingAM__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>AccountToConsiderForMWAggregation</label>
+    <label>Account MW to consider for Pricing</label>
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Active Megawatts (AccountForPricingAM)</relationshipLabel>
     <relationshipName>Active_Megawatts1</relationshipName>
