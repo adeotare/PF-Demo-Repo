@@ -1,0 +1,156 @@
+<!--
+  @description       : Generic Related List Component, to be implemented by specific related list components
+  @author            : Justin Smith @cyberjus
+  @group             : 
+  @last modified on  : 08-31-2022
+  @last modified by  : Justin Smith @cyberjus
+-->
+<template>
+  <article class="slds-card slds-card_boundary">
+    <div class="slds-page-header">
+      <div class="slds-page-header__row">
+        <div class="slds-page-header__col-title">
+          <div class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-media__figure">
+              <lightning-icon
+                icon-name={listIcon}
+                size="small"
+                alternative-text={listName}
+              >
+              </lightning-icon>
+            </div>
+            <div class="slds-media__body">
+              <h2 class="slds-card__header-title">
+                <a
+                  href="javascript:void(0);"
+                  class="slds-card__header-link slds-truncate"
+                  title={countLabel}
+                >
+                  <span>{countLabel}</span>
+                </a>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="slds-page-header__col-actions">
+          <div class="slds-page-header__controls">
+            <div class="slds-page-header__control">
+              <slot name="buttons"></slot>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slds-page-header__row">
+        <div class="slds-page-header__col-meta">
+          <p class="slds-page-header__meta-text">
+            {count} items • 
+          </p>
+        </div>
+        <div class="slds-page-header__col-controls">
+          <div class="slds-page-header__controls">
+            <div class="slds-page-header__control">
+              <lightning-input
+              name="filter-list"
+              label="Filter List"
+              type="search"
+              variant="label-hidden"
+              is-loading={searchLoading}
+              onchange={handleSearchKeyChange}
+          ></lightning-input>
+            </div>
+            <div class="slds-page-header__control">
+              <lightning-button-icon
+              icon-name="utility:refresh"
+              variant="border-filled"
+              alternative-text="Refresh"
+              title="Refresh"
+              onclick={handleClickRefresh}
+              class="slds-m-right_x-small"
+            ></lightning-button-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--<article class="slds-card slds-card_boundary">
+    <div
+      class="slds-page-header slds-page-header_joined slds-shrink-none slds-is-relative slds-page-header--object-home"
+    >
+      <div class="slds-grid">
+        <div class="slds-col slds-has-flexi-truncate">
+          <div class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-media__figure">
+              <lightning-icon
+                icon-name={listIcon}
+                size="small"
+                alternative-text={listName}
+              >
+              </lightning-icon>
+            </div>
+            <div class="slds-media__body">
+              <h2 class="slds-card__header-title">
+                <a
+                  href="javascript:void(0);"
+                  class="slds-card__header-link slds-truncate"
+                  title={countLabel}
+                >
+                  <span>{countLabel}</span>
+                </a>
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="slds-col slds-no-flex">
+          <lightning-button-icon
+            icon-name="utility:refresh"
+            variant="border-filled"
+            alternative-text="Refresh"
+            title="Refresh"
+            onclick={handleClickRefresh}
+            class="slds-m-right_x-small"
+          ></lightning-button-icon>
+          <lightning-button-group>
+            <slot name="buttons"></slot>
+          </lightning-button-group>
+        </div>
+      </div>
+      <div class="slds-grid">
+        <div class="slds-col slds-align-bottom">
+          <div class="slds-text-body--small">
+            <div aria-live="polite">
+              <span>{count} items • </span><span></span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="slds-col slds-no-flex slds-grid slds-align-bottom slds-shrink"
+        ></div>
+      </div>
+    </div>-->
+    <div>
+      <template if:true={columns}>
+        <lightning-datatable
+          key-field="Id"
+          data={_records}
+          columns={columns}
+          sorted-by={sortBy}
+          sorted-direction={sortDirection}
+          onsort={handleSort}
+          show-row-number-column
+          hide-checkbox-column
+        >
+        </lightning-datatable>
+      </template>
+    </div>
+    <footer class="slds-card__footer" style="margin-top: -1px">
+      <template if:false={isFullPage}>
+        <a class="slds-card__footer-action" href={viewAllUrl}
+          >View All
+          <span class="slds-assistive-text">{listName}</span>
+        </a>
+      </template>
+    </footer>
+  </article>
+</template>

@@ -1,0 +1,27 @@
+<!--
+  @description       : 
+  @author            : Justin Smith @cyberjus
+  @group             : 
+  @last modified on  : 08-31-2022
+  @last modified by  : Justin Smith @cyberjus
+-->
+<aura:component
+  implements="lightning:isUrlAddressable"
+  description="c:helloTarget component"
+>
+  <aura:attribute name="id" type="String" />
+  <aura:attribute name="listName" type="String" />
+
+  <aura:handler
+    name="init"
+    value="{!this}"
+    action="{!c.onPageReferenceChange}"
+  />
+  <aura:handler
+    name="change"
+    value="{!v.pageReference}"
+    action="{!c.onPageReferenceChange}"
+  />
+
+  {!v.body}
+</aura:component>

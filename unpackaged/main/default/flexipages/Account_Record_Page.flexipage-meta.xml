@@ -46,6 +46,12 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentName>relatedListAccountPlantTransactions</componentName>
+                <identifier>c_relatedListAccountPlantTransactions</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>
