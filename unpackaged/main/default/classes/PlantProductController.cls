@@ -887,11 +887,18 @@ public with sharing class PlantProductController {
                     from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId AND 
                     (Amendment_Action__c != 'Removed Plant' AND Renewal_Action__c != 'Removed Plant') WITH SECURITY_ENFORCED];
                     
-                System.debug('Total records from PPT whose Net Price is going to be updated is '+pptList.size());  
-        if (pptList.size() == 0)
-            return;
+                System.debug('Total records from PPT whose Net Price is going to be updated is '+pptList.size());
 
-        for (Plant_Product_Transaction__c eachPPT:pptList) {
+        SBQQ__QuoteLine__c quoteLine = [SELECT Related_PPT_s_Net_Total__c, SBQQ__SpecialPriceType__c, SBQQ__SpecialPrice__c, SBQQ__AdditionalDiscount__c,  SBQQ__NetPrice__c, SBQQ__NetTotal__c, SBQQ__RegularPrice__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure 
+        from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+
+        if (pptList.size() == 0) {
+            quoteLine.SBQQ__SpecialPriceType__c = 'Custom';
+            quoteLine.SBQQ__SpecialPrice__c = 0;
+            quoteLine.Related_PPT_s_Net_Total__c = 0;
+        }
+        else {
+            for (Plant_Product_Transaction__c eachPPT:pptList) {
             
             if(eachPPT.Quote_Line_Quantity__c != null) cumulativeQLQuantity += eachPPT.Quote_Line_Quantity__c;
             
@@ -905,8 +912,7 @@ public with sharing class PlantProductController {
 
         }
 
-        SBQQ__QuoteLine__c quoteLine = [SELECT Related_PPT_s_Net_Total__c, SBQQ__SpecialPriceType__c, SBQQ__SpecialPrice__c, SBQQ__AdditionalDiscount__c,  SBQQ__NetPrice__c, SBQQ__NetTotal__c, SBQQ__RegularPrice__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure 
-        from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+        
 
         // System.debug('Cumulative QL Net Total Price is = '+cumulativeQLNetTotal);
         // System.debug('Cumulative QL Net Total Quantity is = '+cumulativeQLQuantity);
@@ -919,13 +925,15 @@ public with sharing class PlantProductController {
         // quoteLine.SBQQ__SpecialPrice__c = 100;
         quoteLine.Related_PPT_s_Net_Total__c = pptTotalforQLToAddressRounding;
 
-            try {
-                update quoteLine;
-            }
-            catch(Exception ex) {
-                System.debug('Error updating Number of Sites quantity on quote line'
+        }
+        
+        try {
+            update quoteLine;
+        }
+        catch(Exception ex) {
+            System.debug('Error updating Number of Sites quantity on quote line'
                                 +string.valueOf(ex.getLineNumber()) +ex.getTypeName() +string.valueOf(ex.getCause()) +ex.getMessage() +ex.getStackTraceString());
-            }
+        }
 
 
         // System.debug('Updated Quote Line with the value as = '+quoteLine.SBQQ__SpecialPrice__c);

@@ -4,13 +4,11 @@
     <externalId>false</externalId>
     <formula>IF(
    Quote_Type__c == &#39;Amendment&#39; &amp;&amp;  ISPICKVAL(Amendment_Action__c, &#39;Added Plant&#39;) , 
-     (Quote__r.SBQQ__EndDate__c  - Date_of_Amendment__c ) / (Quote__r.SBQQ__EndDate__c  - Quote__r.SBQQ__StartDate__c) , 
+     ( Quote_Line__r.SBQQ__ProrateMultiplier__c ) , 
    if(
        Quote_Type__c == &#39;Amendment&#39; &amp;&amp;  ISPICKVAL(Amendment_Action__c, &#39;Removed Plant&#39;) , 
-         ( Date_of_Amendment__c  - Quote__r.SBQQ__StartDate__c) / (Quote__r.SBQQ__EndDate__c  - Quote__r.SBQQ__StartDate__c) ,
-         (End_Date_Custom__c -  Effective_Date_Custom__c)/365
-  )
-)</formula>
+         ( 1-Quote_Line__r.SBQQ__ProrateMultiplier__c) , Quote_Line__r.SBQQ__ProrateMultiplier__c
+))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>PPT Prorate Multiplier</label>
     <precision>18</precision>

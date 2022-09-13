@@ -161,7 +161,7 @@
     <recordUpdates>
         <name>Update_Record_Type_of_Renewal</name>
         <label>Update Record Type of Renewal</label>
-        <locationX>1031</locationX>
+        <locationX>1032</locationX>
         <locationY>429</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -178,9 +178,9 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Order_Type__c</field>
+            <field>QS_Order_Type__c</field>
             <value>
-                <stringValue>Renewal</stringValue>
+                <stringValue>Subscription Renewal</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>

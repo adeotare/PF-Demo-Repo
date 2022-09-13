@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Annual_Recurring_Revenue__c</fullName>
+    <description>Annualized Subscription Fee for this specific product. 
+
+Standard Formula (DO NOT EDIT):
+IF(
+TEXT(SBQQ__SubscriptionPricing__c) = &#39;&#39;,
+0,
+( SBQQ__NetTotal__c / SBQQ__ProrateMultiplier__c ) / ( SBQQ__DefaultSubscriptionTerm__c / 12 ) )</description>
+    <externalId>false</externalId>
+    <formula>/*NOTE: The below formula is designed to calculate a negative ARR when Quantity decreases. If this needs to change, the following logic can be added to the end of the formula BETWEEN the last two parenthesis: * IF( SBQQ__Quantity__c &lt; SBQQ__PriorQuantity__c, -1, 1)*/
+
+
+/*IF(
+
+TEXT(SBQQ__SubscriptionPricing__c) = &#39;&#39;,
+
+0,
+
+(SBQQ__NetTotal__c / SBQQ__ProrateMultiplier__c) / (SBQQ__DefaultSubscriptionTerm__c / 12))*/
+
+
+IF(
+TEXT(SBQQ__SubscriptionPricing__c) = &#39;&#39;,0,
+IF( SBQQ__Quantity__c &lt; SBQQ__PriorQuantity__c,0,(Related_PPT_s_Net_Total_Final__c)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Annualized Subscription Fee for this specific product.</inlineHelpText>
+    <label>Annual Recurring Revenue</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>
