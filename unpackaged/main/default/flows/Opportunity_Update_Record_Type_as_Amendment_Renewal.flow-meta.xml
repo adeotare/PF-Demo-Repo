@@ -180,7 +180,7 @@
         <inputAssignments>
             <field>QS_Order_Type__c</field>
             <value>
-                <stringValue>Subscription Renewal</stringValue>
+                <stringValue>Renewal</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>

@@ -162,15 +162,7 @@
     <picklistValues>
         <picklist>Order_Subtype__c</picklist>
         <values>
-            <fullName>Full Cancellation</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>N%2FA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Reduction</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -275,59 +267,7 @@
     <picklistValues>
         <picklist>QS_Order_Type__c</picklist>
         <values>
-            <fullName>AddOn</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Additional Products %26 Services %28Upsell%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Change Order</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Contract Renewal</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Debooking</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Decommission</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Downsell</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Migration</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>New</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>New Product Line %28Cross-Sell%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Overage</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Renewal</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Services Only</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Subscription Renewal</fullName>
             <default>false</default>
         </values>
         <values>

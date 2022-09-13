@@ -101,39 +101,11 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>AddOn</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>Migration</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Customer</controllingFieldValue>
             <valueName>Services Only</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Customer</controllingFieldValue>
             <valueName>Change Order</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>Subscription Renewal</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>Decommission</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>Contract Renewal</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>Overage</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>Debooking</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Customer</controllingFieldValue>
