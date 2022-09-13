@@ -9,7 +9,6 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <controllingField>Type</controllingField>
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
@@ -54,38 +53,5 @@
                 <label>Downsell</label>
             </value>
         </valueSetDefinition>
-        <valueSettings>
-            <controllingFieldValue>Prospect</controllingFieldValue>
-            <controllingFieldValue>Former Customer</controllingFieldValue>
-            <valueName>New</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Former Customer</controllingFieldValue>
-            <valueName>Winback</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>New Product Line (Cross-Sell)</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>Additional Products &amp; Services (Upsell)</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>Services Only</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>Change Order</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>Renewal</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Customer</controllingFieldValue>
-            <valueName>Downsell</valueName>
-        </valueSettings>
     </valueSet>
 </CustomField>

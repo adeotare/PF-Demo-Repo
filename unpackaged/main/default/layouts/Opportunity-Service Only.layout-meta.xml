@@ -54,8 +54,8 @@
                 <field>Type</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Order_Type__c</field>
+                <behavior>Edit</behavior>
+                <field>QS_Order_Type__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

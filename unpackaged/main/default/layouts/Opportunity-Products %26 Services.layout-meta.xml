@@ -84,8 +84,8 @@
                 <field>Type</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Order_Type__c</field>
+                <behavior>Edit</behavior>
+                <field>QS_Order_Type__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -435,14 +435,6 @@
         <fields>PARTNER.ROLE</fields>
         <fields>PARTNER.PRIMARY</fields>
         <relatedList>RelatedPartnerList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>CAMPAIGN.NAME</fields>
-        <fields>CONTACT.NAME</fields>
-        <fields>INFLUENCE</fields>
-        <fields>REVENUE_SHARE</fields>
-        <fields>OCR.ROLE</fields>
-        <relatedList>RelatedCampaignInfluence2List</relatedList>
     </relatedLists>
     <relatedLists>
         <excludeButtons>AddAccTeamMemberOnOpp</excludeButtons>

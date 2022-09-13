@@ -9,7 +9,7 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <controllingField>Order_Type__c</controllingField>
+        <controllingField>QS_Order_Type__c</controllingField>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
@@ -29,14 +29,14 @@
             </value>
         </valueSetDefinition>
         <valueSettings>
-            <controllingFieldValue>New</controllingFieldValue>
             <controllingFieldValue>New Product Line (Cross-Sell)</controllingFieldValue>
             <controllingFieldValue>Additional Products &amp; Services (Upsell)</controllingFieldValue>
             <controllingFieldValue>Winback</controllingFieldValue>
-            <controllingFieldValue>Services Only</controllingFieldValue>
-            <controllingFieldValue>Change Order</controllingFieldValue>
             <controllingFieldValue>Renewal</controllingFieldValue>
             <controllingFieldValue>Downsell</controllingFieldValue>
+            <controllingFieldValue>New</controllingFieldValue>
+            <controllingFieldValue>Services Only</controllingFieldValue>
+            <controllingFieldValue>Change Order</controllingFieldValue>
             <valueName>N/A</valueName>
         </valueSettings>
         <valueSettings>
