@@ -174,13 +174,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Order_Type__c</picklist>
-        <values>
-            <fullName>Renewal</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>Primary_Risk_Reason__c</picklist>
         <values>
             <fullName>Competitive Pressure</fullName>
@@ -285,6 +278,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Additional Products %26 Services %28Upsell%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Change Order</fullName>
             <default>false</default>
         </values>
@@ -301,6 +298,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Downsell</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Migration</fullName>
             <default>false</default>
         </values>
@@ -309,7 +310,15 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>New Product Line %28Cross-Sell%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Overage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal</fullName>
             <default>false</default>
         </values>
         <values>
@@ -318,6 +327,10 @@
         </values>
         <values>
             <fullName>Subscription Renewal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winback</fullName>
             <default>false</default>
         </values>
     </picklistValues>
