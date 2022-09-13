@@ -2,9 +2,10 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Approving_an_Accounts</fullName>
     <active>true</active>
-    <errorConditionFormula>AND( 
- ISCHANGED( Account_Status__c ),
-ISPICKVAL( Account_Status__c , &#39;approved&#39;),
+    <errorConditionFormula>OR(
+AND( 
+ISCHANGED( Account_Status__c ),
+ISPICKVAL( Account_Status__c ,&#39;Approved&#39;),
 OR(
 ISBLANK( TEXT( Legal_Entity__c  ) ),
 ISBLANK( TEXT( Theater__c ) ),
@@ -12,13 +13,37 @@ ISBLANK( Compliance_Designations__c ),
 ISBLANK( BillingStreet ),
 ISBLANK( BillingCity ) ,
 ISBLANK( BillingPostalCode ),
-ISBLANK( BillingState ) ,
 ISBLANK( ShippingStreet ),
 ISBLANK( ShippingCity ) ,
-ISBLANK( ShippingState ) ,
 ISBLANK(  Uses_MSA_of__c )
+)),
+AND( 
+ISCHANGED( Account_Status__c ),
+ISPICKVAL( Account_Status__c ,&#39;Approved&#39;),
+OR(
+AND(
+OR
+(BillingCountry = &quot;CAN&quot;, BillingCountry = &quot;CA&quot;,
+BillingCountry = &quot;Canada&quot;),
+ISBLANK(BillingState)
+),
+AND(
+OR
+(BillingCountry = &quot;USA&quot;, BillingCountry =&quot;US&quot;, BillingCountry = &quot;United States&quot; ),
+ISBLANK(BillingState)
+),
+AND(
+OR
+(ShippingCountry = &quot;CAN&quot;, ShippingCountry = &quot;CA&quot;,
+ShippingCountry = &quot;Canada&quot;),
+ISBLANK(ShippingState)
+),
+AND(
+OR
+(ShippingCountry = &quot;USA&quot;, ShippingCountry = &quot;US&quot; , ShippingCountry = &quot;United States&quot;),
+ISBLANK(ShippingState)
 )
-)</errorConditionFormula>
-    <errorMessage>Following fields are required to approve an Account.
-Legal Entity, Theater, Compliance Designations, Billing Street, Billing City, Billing Postal Code, Billing State, Shipping Street, Shipping City, Shipping State and Uses MSA of.</errorMessage>
+)
+))</errorConditionFormula>
+    <errorMessage>An Account must have complete addresses and these fields populated to be Approved: Legal Entity, Theater, Compliance Designations, and Uses MSA. State/Province is required for USA and Canada.</errorMessage>
 </ValidationRule>
