@@ -59,7 +59,7 @@ public with sharing class PlantProductController {
         if (pptList.size() == 0)
             return;  // If number of plants to be deleted is zero, then return
 
-        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__Quote__r.SBQQ__Type__c, SBQQ__AdditionalDiscount__c, SBQQ__NetPrice__c, SBQQ__NetTotal__c, SBQQ__RegularPrice__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure 
+        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__Quote__r.SBQQ__Type__c, SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c,SBQQ__AdditionalDiscount__c, SBQQ__NetPrice__c, SBQQ__NetTotal__c, SBQQ__RegularPrice__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure 
             from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
         
         List<Id>  accplan = new List<Id>();
@@ -145,7 +145,7 @@ public with sharing class PlantProductController {
 
             if (quoteLine.SBQQ__Quote__r.SBQQ__Type__c == 'Amendment') {
                 system.debug ('do pricing for quote type as Amendment when a Plant is deleted ');
-                Boolean allBoatsRise = FALSE;                        // Nitin - TBD - find the criterion to set this flag
+                Boolean allBoatsRise = quoteLine.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c;    // Nitin - TBD - find the criterion to set this flag
                 if (allBoatsRise == TRUE) {
                     system.debug ('all Boats Rise is TRUE');
                     updatePricingForQuoteLineInPPT(quoteLineId);            // re-price all Plants
@@ -462,7 +462,7 @@ public with sharing class PlantProductController {
 
         System.debug('Inside updatePricingForQuoteLine function');
 
-        SBQQ__QuoteLine__c quoteLine1 = [SELECT CurrencyIsoCode, SBQQ__ListPrice__c, SBQQ__Product__r.ID, SBQQ__Quote__r.SBQQ__Type__c, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__Product__r.Product_Category__c, SBQQ__SpecialPrice__c, SBQQ__Quote__r.SBQQ__PriceBook__r.Name from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+        SBQQ__QuoteLine__c quoteLine1 = [SELECT CurrencyIsoCode, SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c, SBQQ__ListPrice__c, SBQQ__Product__r.ID, SBQQ__Quote__r.SBQQ__Type__c, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__Product__r.Product_Category__c, SBQQ__SpecialPrice__c, SBQQ__Quote__r.SBQQ__PriceBook__r.Name from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
         // Keep the original contract price here... since we are updating Special Price itself, this will not work
         // Decimal contractPricePerMSA = quoteLine1.SBQQ__SpecialPrice__c;
          List <SBQQ__ContractedPrice__c> cPriceList = [Select SBQQ__Price__c, Name from SBQQ__ContractedPrice__c where SBQQ__Product__r.ID =:quoteLine1.SBQQ__Product__r.ID AND SBQQ__Account__r.ID =:quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.ID AND CurrencyIsoCode =:quoteLine1.CurrencyIsoCode WITH SECURITY_ENFORCED LIMIT 1];
@@ -484,14 +484,14 @@ public with sharing class PlantProductController {
             WITH SECURITY_ENFORCED Order by Lower_Bound__c ];
             if (swDiscountTiersList!=null && !swDiscountTiersList.IsEmpty()) {
                 // Found atleast 1 discount tier for the Product on the quote line for a given account
-                doDiscountTierBasedPriceCalculationforSW (quoteLineId, contractPricePerMSA, swDiscountTiersList, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c);
+                doDiscountTierBasedPriceCalculationforSW (quoteLineId, contractPricePerMSA, swDiscountTiersList, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c,quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);
     
             }
             else {
                     // No discount tier was found for the Product + Account combination
                     // Therefore no updates to the Contract Price. Just Update the PPT records
                     // System.debug ('No Discount Tier pricing for found for the Product');
-                    updateAllPlantRecordswithSamePrice(quoteLineId, contractPricePerMSA, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c);
+                    updateAllPlantRecordswithSamePrice(quoteLineId, contractPricePerMSA, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c, quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);
             }
 
         }
@@ -506,28 +506,27 @@ public with sharing class PlantProductController {
             WITH SECURITY_ENFORCED];    
             if (ImplBracketPriceTiersList!=null && !ImplBracketPriceTiersList.IsEmpty()) {
                 // Found atleast 1 Implementation braket tier for the Product on the quote line for a given account
-                doImplBracketTierBasedPriceCalculationforImpl (quoteLineId, contractPricePerMSA, ImplBracketPriceTiersList, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c);
+                doImplBracketTierBasedPriceCalculationforImpl (quoteLineId, contractPricePerMSA, ImplBracketPriceTiersList, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c, quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);
     
             }
             else {
                     // No Implementation bracket was found for the Product + Account combination
                     // Therefore no updates to the Contract Price. Just Update the PPT records
-                    updateAllPlantRecordswithSamePrice(quoteLineId, contractPricePerMSA, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c);
+                    updateAllPlantRecordswithSamePrice(quoteLineId, contractPricePerMSA, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c, quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);
             }
 
         }
-            
 
     }
 
     //@description
     // Function to update a single Price on all Plants of a given Quote Line
     @AuraEnabled(cacheable=true)  
-    public static void UpdateAllPlantRecordsWithSamePrice(String qLineItemId, Decimal contractPricePerMSA, String quoteType) {
+    public static void UpdateAllPlantRecordsWithSamePrice(String qLineItemId, Decimal contractPricePerMSA, String quoteType, Boolean allBoatsRise) {
         // System.debug('Entered function UpdateAllPlantRecordsWithSamePrice');
         // get the list of all PPT Lines
 
-        Boolean allBoatsRise = FALSE;
+        // Boolean allBoatsRise = FALSE;
         List<Plant_Product_Transaction__c> pptRecordList = NULL;
         
         if (quoteType !='Amendment' || (quoteType =='Amendment' && allBoatsRise == TRUE)) {     // reprice all plants
@@ -563,7 +562,7 @@ public with sharing class PlantProductController {
     // also the flag - if All Plants rise
     // 
     @AuraEnabled(cacheable=true)  
-    public static void doDiscountTierBasedPriceCalculationforSW (String quoteLineId, Decimal contractPricePerMSA, List <MSA_Software_Discount_Tier_Price__c> swDiscountTiersList, String quoteType){
+    public static void doDiscountTierBasedPriceCalculationforSW (String quoteLineId, Decimal contractPricePerMSA, List <MSA_Software_Discount_Tier_Price__c> swDiscountTiersList, String quoteType, Boolean allBoatsRise){
 
         System.debug('Entered function doDiscountTierBasedPriceCalculationforSW');
         System.debug('The Quote type is '+quoteType);
@@ -622,7 +621,7 @@ public with sharing class PlantProductController {
             Integer currentTier = 0;
             Decimal cumulativeDiscount = 0;
 
-            Boolean allBoatsRise = FALSE;            // Nitin - figure out how to set this
+            //Boolean allBoatsRise = FALSE;            // Nitin - figure out how to set this
 
             List<Plant_Product_Transaction__c> pptList = NULL;
 
@@ -764,7 +763,7 @@ public with sharing class PlantProductController {
             }           // at least 1 discount tier is available
         else{
             System.debug('No Discount Tiers were found');
-            updateAllPlantRecordswithSamePrice(quoteLineId, contractPricePerMSA, quoteType);
+            updateAllPlantRecordswithSamePrice(quoteLineId, contractPricePerMSA, quoteType, allBoatsRise);
             return;
         }
 
@@ -777,7 +776,7 @@ public with sharing class PlantProductController {
     // @param Contract price as per MSA
     // @param list of Software discount tiers
     @AuraEnabled(cacheable=true)  
-    public static void doImplBracketTierBasedPriceCalculationforImpl (String quoteLineId, Decimal contractPricePerMSA, List <MSA_Implementation_Bracket_Price__c> ImplBracketPriceTiersList, String quoteType){
+    public static void doImplBracketTierBasedPriceCalculationforImpl (String quoteLineId, Decimal contractPricePerMSA, List <MSA_Implementation_Bracket_Price__c> ImplBracketPriceTiersList, String quoteType, Boolean allBoatsRise){
         System.debug('Entered function doImplBracketTierBasedPriceCalculationforImpl');
 
 
@@ -785,7 +784,7 @@ public with sharing class PlantProductController {
                 // System.debug('Found atleast 1 Implementation bracket for the Product on the quote line for a given account');
                 
 
-            Boolean allBoatsRise = FALSE;    
+            // Boolean allBoatsRise = FALSE;    
             List<Plant_Product_Transaction__c> pptList = NULL;      // Swathi - Is this declaration OK? Will the for loop some 15 lines below will work properly?
 
             if (quoteType !='Amendment' || (quoteType =='Amendment' && allBoatsRise == TRUE)) {     // reprice all plants
@@ -860,7 +859,7 @@ public with sharing class PlantProductController {
 
         else{
             System.debug('No Implementation Brackets were found');
-            updateAllPlantRecordswithSamePrice(quoteLineId, contractPricePerMSA, quoteType);
+            updateAllPlantRecordswithSamePrice(quoteLineId, contractPricePerMSA, quoteType, allBoatsRise);
             return;
         }
 
