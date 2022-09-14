@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <formula>IF(NOT(ISNULL(Quote_Line__r.SBQQ__Quote__r.SBQQ__EndDate__c)),Quote_Line__r.SBQQ__Quote__r.SBQQ__EndDate__c,Quote_Line__r.SBQQ__EndDate__c)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>End Date</label>
+    <label>End Date not to be used</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

@@ -107,10 +107,6 @@
                 <field>SBQQ__PriceEditable__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Contracted_Discount_Tier__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Annual_Recurring_Revenue__c</field>
             </layoutItems>
@@ -137,6 +133,14 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>QS_Uplift_ARR__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>SBQQ__EffectiveQuantity__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SBQQ__OriginalQuoteLineId__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -245,6 +249,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
+                <field>SBQQ__EffectiveStartDate__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
                 <field>SBQQ__DefaultSubscriptionTerm__c</field>
             </layoutItems>
             <layoutItems>
@@ -268,6 +276,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>SBQQ__EndDate__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>SBQQ__EffectiveEndDate__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>

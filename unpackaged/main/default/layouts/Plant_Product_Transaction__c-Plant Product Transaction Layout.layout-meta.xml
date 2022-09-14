@@ -241,12 +241,12 @@
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Effective_Date_Custom__c</field>
+                <behavior>Edit</behavior>
+                <field>Effective_Date__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>End_Date_Custom__c</field>
+                <behavior>Edit</behavior>
+                <field>End_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
