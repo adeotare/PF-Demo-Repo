@@ -20,6 +20,7 @@ public class AmendmentQuoteProcessHelper {
                                                                  Subscription__r.Line_Classification__c ,
                                                                  Plant__r.Name,
                                                                  Amendment_Action__c,
+                                                                 CurrencyIsoCode,
                                                                  Plant_Product__c,
                                                                  Contract__r.name,
                                                                  Subscription__r.Name,
@@ -75,6 +76,7 @@ public class AmendmentQuoteProcessHelper {
                       //pp.Trial__c =false; 
                     //pp.Amendment_Action__c ='NoChange' ;
                     pp.Plant_Product__c =true ;
+                      
                     pp.Amendment_Action__c='No_Change';    
                     pp.Product__c=ql.SBQQ__Product__c;
                     pp.Quote__c=ql.SBQQ__Quote__r.id;
@@ -82,6 +84,7 @@ public class AmendmentQuoteProcessHelper {
                     pp.MWp_Quantity__c=pp.Plant__r.Plant__r.MWp__c;
                     //pp.Quote_Line_Quantity__c=pp.Plant__r.Plant__r.MWp__c;
                     pp.Quote_Line_Quantity__c=ppt.Quote_Line_Quantity__c;
+                    pp.CurrencyIsoCode= ppt.CurrencyIsoCode;     
                     
                     pp.List_Unit_Price__c=ql.SBQQ__ListPrice__c;
                     pp.Contracted_MW_Unit_List_Price__c= ppt.Contracted_MW_Unit_List_Price__c;

@@ -3,7 +3,7 @@ public class RenewableQuoteProcessHelper {
     public static void createChildPPTunderRenewableQL(Set<Id> quoteIds){
         
         
-        String query = 'select id,name,Product__c,Renewal_Action__c,Plant__c,Subscription__r.SBQQ__Discount__c,Unit_Price_After_Volume_Discount__c,Subscription__r.Line_Classification__c,Contracted_MW_Unit_List_Price__c,Quote_Line_Quantity__c,Plant__r.Plant__r.MWp__c,Account__c,Subscription__c,Subscription__r.SBQQ__QuoteLine__c  '
+        String query = 'select id,name,Product__c,Renewal_Action__c,CurrencyIsoCode,Plant__c,Subscription__r.SBQQ__Discount__c,Unit_Price_After_Volume_Discount__c,Subscription__r.Line_Classification__c,Contracted_MW_Unit_List_Price__c,Quote_Line_Quantity__c,Plant__r.Plant__r.MWp__c,Account__c,Subscription__c,Subscription__r.SBQQ__QuoteLine__c  '
             			+' from Plant_Product_Transaction__c '
             			+' where Subscription__c != Null AND Status__c = \'Contracted\' AND Plant__r.Status__c =\'Active\' AND Quote_Line__r.SBQQ__Quote__c In: quoteIds';
         
@@ -52,7 +52,8 @@ public class RenewableQuoteProcessHelper {
                        pp.Product__c=ql.SBQQ__Product__c;
                        pp.Quote__c=ql.SBQQ__Quote__r.id;
                        //pp.OwnerId = ql.SBQQ__Quote__r.OwnerId;
-                       pp.Renewal_Action__c ='No Change';
+                        pp.CurrencyIsoCode= ppt.CurrencyIsoCode;
+                       pp.Renewal_Action__c ='Renewed';
                        pp.Plant_Product__c=true;
                        pp.OwnerId=ql.SBQQ__Quote__r.OwnerId;
                        decimal s=ql.SBQQ__SpecialPrice__c;
