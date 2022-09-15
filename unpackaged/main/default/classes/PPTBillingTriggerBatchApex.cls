@@ -16,7 +16,7 @@ global class PPTBillingTriggerBatchApex implements Database.Batchable<sObject>
             system.debug('---pptRec---'+pptRec);
             //Criteria to populate Billing_Start_Date__c from Installation commencement Date    
            if((pptRec.Product_Category__c == 'Professional Services' &&  pptRec.Product_Family__c == 'Greenbyte') && ( pptRec.Product_Line__c =='Add-ons' || pptRec.Product_Line__c =='Core')){
-            pptRec.Billing_Start_Date__c = pptRec.Installation_Commencement_Date__c;
+            pptRec.Billing_Start_Date__c = pptRec.Implementation_Start_Date__c;
             updatePPTList.add(pptRec);
            }
            //Criteria to populate Billing_Start_Date__c from Implementation Start Date
@@ -32,11 +32,14 @@ global class PPTBillingTriggerBatchApex implements Database.Batchable<sObject>
                 updatePPTList.add(pptRec);
            }
            //Criteria to populate Billing_Start_Date__c from Discussion Pending
-           /*if(((pptRec.Product_Family__c == 'BluePoint' && pptRec.Product_Category__c == 'Software') && (pptRec.Product_Line__c == 'Bluepoint' || pptRec.Product_Line__c == 'Core' || pptRec.Product_Line__c == 'Enterprise' || pptRec.Product_Line__c == 'Pro')) || 
-                 (pptRec.Product_Family__c == 'BluePoint' && pptRec.Product_Category__c == 'Professional Services' && pptRec.Product_Line__c == 'Bluepoint') ){
-                pptRec.Billing_Start_Date__c = pptRec.Effective_Date__c;
+           if(((pptRec.Product_Family__c == 'BluePoint' && pptRec.Product_Category__c == 'Software') && (pptRec.Product_Line__c == 'Bluepoint' || pptRec.Product_Line__c == 'Core' || pptRec.Product_Line__c == 'Enterprise' || pptRec.Product_Line__c == 'Pro'))){
+                pptRec.Billing_Start_Date__c = pptRec.Deployment_date__c;
                 updatePPTList.add(pptRec);
-           }*/
+           }
+           if((pptRec.Product_Family__c == 'BluePoint' && pptRec.Product_Category__c == 'Professional Services' && pptRec.Product_Line__c == 'Bluepoint')){
+               pptRec.Billing_Start_Date__c = pptRec.Implementation_Start_Date__c;
+               updatePPTList.add(pptRec);
+           }
            //Criteria to populate Billing_Start_Date__c from Deployment Date
            if(
             ((pptRec.Product_Family__c == 'Drive' && pptRec.Product_Category__c == 'Software') && (pptRec.Product_Line__c == 'Add-ons' || pptRec.Product_Line__c == 'Core' || pptRec.Product_Line__c == 'Core Lite' || pptRec.Product_Line__c == 'O&M' || pptRec.Product_Line__c == 'Pro')) ||
