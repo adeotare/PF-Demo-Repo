@@ -222,7 +222,8 @@
                 <field>Description</field>
             </layoutItems>
         </layoutColumns>
-        <style>OneColumn</style>
+        <layoutColumns />
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -250,6 +251,10 @@
                 <behavior>Edit</behavior>
                 <field>Netsuite_Subscription_Id__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Netsuite_Reprocess_Flag__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -267,6 +272,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Shipping_Address_Netsuite_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Netsuite_Failure_Indicator__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Netsuite_Response_Message__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -482,6 +495,7 @@
         
         
         
+        
         <fields>ACTIVITY.TASK</fields>
         <fields>TASK.DUE_DATE</fields>
         <fields>TASK.STATUS</fields>
@@ -492,6 +506,7 @@
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
+        
         
         
         
@@ -593,7 +608,6 @@
         <fields>OPPORTUNITY.AMOUNT</fields>
         <fields>Annual_Recurring_Revenue__c</fields>
         <fields>Non_Recurring_Revenue__c</fields>
-        <fields>Order_Type__c</fields>
         <fields>Order_Subtype__c</fields>
         <fields>Primary_Contact__c</fields>
         <fields>OPPORTUNITY.NEXT_STEP</fields>

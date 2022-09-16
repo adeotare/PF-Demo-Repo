@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Netsuite_Reprocess_Flag__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>this is for the Business/NS team to reprocess the same record</description>
+    <externalId>false</externalId>
+    <label>Netsuite Reprocess Flag</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>
