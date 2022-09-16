@@ -111,6 +111,10 @@
                 <behavior>Edit</behavior>
                 <field>Delete_Plant__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Manual_Entry_Implementation_Start_Date__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

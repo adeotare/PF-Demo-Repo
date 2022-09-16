@@ -5461,6 +5461,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Plant_Product_Transaction__c.Manual_Entry_Implementation_Start_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Plant_Product_Transaction__c.Net_Price__c</field>
         <readable>true</readable>
     </fieldPermissions>
