@@ -1,10 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>55.0</apiVersion>
+    <decisions>
+        <name>Calculate_End_Date_or_Subscription_Term</name>
+        <label>Calculate End Date or Subscription Term</label>
+        <locationX>553</locationX>
+        <locationY>362</locationY>
+        <defaultConnector>
+            <targetReference>Update_End_Date1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>End_Date_Changes_then_Calculate_Subscription_Term</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__EndDate__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Subscription_Term</targetReference>
+            </connector>
+            <label>End Date Changes then Calculate Subscription Term</label>
+        </rules>
+        <rules>
+            <name>Subscription_Term_Changes_then_Calculate_End_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__SubscriptionTerm__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_End_Date</targetReference>
+            </connector>
+            <label>Subscription Term Changes then Calculate End Date</label>
+        </rules>
+    </decisions>
     <formulas>
         <name>CalculateEndDate</name>
         <dataType>Date</dataType>
         <expression>ADDMONTHS( {!$Record.SBQQ__StartDate__c} , {!$Record.SBQQ__SubscriptionTerm__c} ) - 1</expression>
+    </formulas>
+    <formulas>
+        <name>CalculateSubscriptionTerm</name>
+        <dataType>Number</dataType>
+        <expression>((YEAR( {!$Record.SBQQ__EndDate__c}) - YEAR( {!$Record.SBQQ__StartDate__c}))*12) + (MONTH( {!$Record.SBQQ__EndDate__c}) - MONTH( {!$Record.SBQQ__StartDate__c}))</expression>
+        <scale>2</scale>
     </formulas>
     <interviewLabel>Quote: Update End Date as per Subscription Term {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Quote: Update End Date as per Subscription Term</label>
@@ -30,8 +76,8 @@
     <recordUpdates>
         <name>Update_End_Date</name>
         <label>Update End Date</label>
-        <locationX>556</locationX>
-        <locationY>411</locationY>
+        <locationX>842</locationX>
+        <locationY>358</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -48,27 +94,54 @@
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_End_Date1</name>
+        <label>Update End Date1</label>
+        <locationX>564</locationX>
+        <locationY>558</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>SBQQ__EndDate__c</field>
+            <value>
+                <elementReference>CalculateEndDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Subscription_Term</name>
+        <label>Update Subscription Term</label>
+        <locationX>281</locationX>
+        <locationY>296</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>SBQQ__SubscriptionTerm__c</field>
+            <value>
+                <elementReference>CalculateSubscriptionTerm</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <start>
         <locationX>449</locationX>
         <locationY>50</locationY>
         <connector>
-            <targetReference>Update_End_Date</targetReference>
+            <targetReference>Calculate_End_Date_or_Subscription_Term</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>SBQQ__StartDate__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>SBQQ__SubscriptionTerm__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
         <object>SBQQ__Quote__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>

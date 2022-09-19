@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <name>Start_Dates_or_End_Date_Changed</name>
+        <label>Start Dates or End Date Changed</label>
+        <locationX>381</locationX>
+        <locationY>359</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Dates_Changed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__StartDate__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__EndDate__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_PPT_Records</targetReference>
+            </connector>
+            <label>Dates Changed</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Quote: Update Start Date and End Date on PPT if changed {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Quote: Update Start Date and End Date on PPT if changed</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_PPT_Records</name>
+        <label>Update PPT Records</label>
+        <locationX>587</locationX>
+        <locationY>403</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Quote__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Effective_Date__c</field>
+            <value>
+                <elementReference>$Record.SBQQ__StartDate__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>End_Date__c</field>
+            <value>
+                <elementReference>$Record.SBQQ__EndDate__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Plant_Product_Transaction__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>449</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Start_Dates_or_End_Date_Changed</targetReference>
+        </connector>
+        <object>SBQQ__Quote__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

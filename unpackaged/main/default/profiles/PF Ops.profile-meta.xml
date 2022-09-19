@@ -4527,6 +4527,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Plant_Product_Transaction__c.Additional_Discount_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Plant_Product_Transaction__c.Addl_Discount_Percent__c</field>
         <readable>true</readable>
