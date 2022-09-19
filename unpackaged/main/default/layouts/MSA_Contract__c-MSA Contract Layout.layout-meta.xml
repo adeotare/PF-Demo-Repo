@@ -550,6 +550,7 @@
         <fields>CURRENCY_ISO_CODE</fields>
         <fields>Product_List_Price__c</fields>
         <fields>SBQQ__Price__c</fields>
+        <fields>Same_As_List_Price__c</fields>
         <fields>Contracted_Price_Discount_Percentage__c</fields>
         <fields>SBQQ__DiscountSchedule__c</fields>
         <fields>SBQQ__Discount__c</fields>
@@ -565,7 +566,7 @@
         <fields>Upper_Bound__c</fields>
         <fields>Discount__c</fields>
         <fields>Discount_Amount__c</fields>
-        <fields>Asset_Class__c</fields>
+        <fields>Type__c</fields>
         <relatedList>MSA_Software_Discount_Tier_Price__c.MSA_Contract__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -577,12 +578,17 @@
         <fields>Lower_Bound__c</fields>
         <fields>Upper_Bound__c</fields>
         <fields>Fixed_Price__c</fields>
-        <fields>Asset_Class__c</fields>
+        <fields>CURRENCY_ISO_CODE</fields>
         <relatedList>MSA_Implementation_Bracket_Price__c.MSA_Contract__c</relatedList>
     </relatedLists>
     <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
+        <fields>sbaa__Status__c</fields>
+        <fields>sbaa__Approver__c</fields>
+        <fields>sbaa__AssignedTo__c</fields>
+        <fields>sbaa__Actions__c</fields>
+        <fields>sbaa__CommentsLong__c</fields>
         <relatedList>sbaa__Approval__c.MSA_Contract__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -595,18 +601,6 @@
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <excludeButtons>New</excludeButtons>
-        <fields>NAME</fields>
-        <fields>dsfs__Envelope_Status__c</fields>
-        <fields>dsfs__Sender__c</fields>
-        <fields>dsfs__Subject__c</fields>
-        <fields>dsfs__Sent_Date_Time__c</fields>
-        <fields>dsfs__Sent_Age__c</fields>
-        <fields>dsfs__Completed_Date_Time__c</fields>
-        <fields>dsfs__Time_to_Complete__c</fields>
-        <relatedList>dsfs__DocuSign_Status__c.MSA_Contract__c</relatedList>
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedEntityHistoryList</relatedList>
