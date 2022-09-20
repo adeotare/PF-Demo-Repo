@@ -2,13 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>PPT_Prorate_Multiplier__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(
-   Quote_Type__c == &#39;Amendment&#39; &amp;&amp;  ISPICKVAL(Amendment_Action__c, &#39;Added Plant&#39;) , 
-     ( Quote_Line__r.SBQQ__ProrateMultiplier__c ) , 
-   if(
-       Quote_Type__c == &#39;Amendment&#39; &amp;&amp;  ISPICKVAL(Amendment_Action__c, &#39;Removed Plant&#39;) , 
-         ( 1-Quote_Line__r.SBQQ__ProrateMultiplier__c) , Quote_Line__r.SBQQ__ProrateMultiplier__c
-))</formula>
+    <formula>Quote_Line__r.SBQQ__ProrateMultiplier__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>PPT Prorate Multiplier</label>
     <precision>18</precision>
