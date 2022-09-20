@@ -503,7 +503,7 @@ public with sharing class PlantProductController {
             from MSA_Implementation_Bracket_Price__c 
             where (Product__r.ID = :quoteLine1.SBQQ__Product__r.ID)  
             AND (Account__r.ID = :quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.ID)
-            WITH SECURITY_ENFORCED];    
+            WITH SECURITY_ENFORCED Order by Lower_Bound__c];    
             if (ImplBracketPriceTiersList!=null && !ImplBracketPriceTiersList.IsEmpty()) {
                 // Found atleast 1 Implementation braket tier for the Product on the quote line for a given account
                 doImplBracketTierBasedPriceCalculationforImpl (quoteLineId, contractPricePerMSA, ImplBracketPriceTiersList, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c, quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);
