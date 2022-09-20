@@ -36,11 +36,14 @@ public class PlantProductCntTest {
         prd.Product_Services__c = 'Implementation';
         prd.Asset_Class__c = 'Hydro';
         prd.QuantityUnitOfMeasure = 'MWp';
+        prd.IsActive = true;
+        prd.Family = 'Drive';
         insert prd;
         
         SBQQ__Quote__c qut = new SBQQ__Quote__c();
         qut.SBQQ__Opportunity2__c = opp.Id;
         qut.SBQQ__Type__c = 'Renewal' ;
+        qut.SBQQ__SubscriptionTerm__c = 1;
         insert qut;
         
        	Contract cnt = new Contract();
@@ -54,6 +57,7 @@ public class PlantProductCntTest {
         SBQQ__Quote__c qut2 = new SBQQ__Quote__c();
         qut2.SBQQ__Opportunity2__c = opp2.Id;
         qut2.SBQQ__Type__c = 'Amendment' ;
+        qut2.SBQQ__SubscriptionTerm__c = 1;
        // qut2.SBQQ__MasterContract__c = cnt.Id;
         insert qut2;
         
@@ -68,6 +72,7 @@ public class PlantProductCntTest {
         p.Product_Services__c = 'Implementation';
         p.Asset_Class__c = 'Hydro';
         p.QuantityUnitOfMeasure = 'MWp';
+        p.Family = 'Ekhosoft';
         insert p;
         
         PricebookEntry standardPrice = new PricebookEntry();
@@ -295,12 +300,16 @@ public class PlantProductCntTest {
         PlantProductController.updatePricingForQuoteLineInPPT(qlList[0].Id );
         
         List<SBQQ__Quote__c> qutList = [SELECT Id FROM SBQQ__Quote__c LIMIT 2];
+        system.debug('::--qutList'+qutList);
+        List<SBQQ__Quote__c> quoteUpdateLst = new List<SBQQ__Quote__c>();
         for(SBQQ__Quote__c ql : qutList) {
             ql.SBQQ__StartDate__c = System.today();
-            ql.SBQQ__EndDate__c = System.today().addDays(5);
+            //ql.SBQQ__EndDate__c = System.today().addDays(5);
             ql.SBQQ__Type__c = 'Amendment';
+            quoteUpdateLst.add(ql);
         }
-        update qutList;
+        system.debug('::--quoteUpdateLst'+quoteUpdateLst);
+        update quoteUpdateLst;
         List<Account_Plant__c> apList = [Select id,Name,Account__c,Plant__r.MWp__c from Account_Plant__c LIMIT 10];
         List<SBQQ__QuoteLine__c> qlList2 = [SELECT id FROM SBQQ__QuoteLine__c LIMIT 2];
         PlantProductController.addPlantProductList(apList ,qlList2[0].Id );
