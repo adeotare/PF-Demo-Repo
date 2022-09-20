@@ -142,6 +142,21 @@
         <connector>
             <targetReference>Calculate_End_Date_or_Subscription_Term</targetReference>
         </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>SBQQ__SubscriptionTerm__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SBQQ__SubscriptionTerm__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <object>SBQQ__Quote__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
