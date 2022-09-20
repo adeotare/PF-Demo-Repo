@@ -37,7 +37,7 @@ public class PlantProductCntTest {
         prd.Asset_Class__c = 'Hydro';
         prd.QuantityUnitOfMeasure = 'MWp';
         prd.IsActive = true;
-        prd.Family = 'Drive';
+        //prd.Family = 'Drive';
         insert prd;
         
         SBQQ__Quote__c qut = new SBQQ__Quote__c();
@@ -72,7 +72,7 @@ public class PlantProductCntTest {
         p.Product_Services__c = 'Implementation';
         p.Asset_Class__c = 'Hydro';
         p.QuantityUnitOfMeasure = 'MWp';
-        p.Family = 'Ekhosoft';
+        //p.Family = 'Ekhosoft';
         insert p;
         
         PricebookEntry standardPrice = new PricebookEntry();
