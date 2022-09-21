@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Attribute_Master__c</fullName>
+    <externalId>false</externalId>
+    <label>Attribute Master</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>$Source.TEM_Version__c</field>
+            <operation>equals</operation>
+            <valueField>Attribute_Master__c.TEM_Version__r.Id</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Attribute_Master__c</referenceTo>
+    <relationshipLabel>Core Atributes</relationshipLabel>
+    <relationshipName>Core_Atributes</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

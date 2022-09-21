@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Ambient Temperature</fullName>
+        <default>false</default>
+        <label>Ambient Temperature</label>
+    </customValue>
+    <customValue>
+        <fullName>Anemometer</fullName>
+        <default>false</default>
+        <label>Anemometer</label>
+    </customValue>
+    <customValue>
+        <fullName>Availability</fullName>
+        <default>false</default>
+        <label>Availability</label>
+    </customValue>
+    <customValue>
+        <fullName>Combiner Heatmap</fullName>
+        <default>false</default>
+        <label>Combiner Heatmap</label>
+    </customValue>
+    <customValue>
+        <fullName>Common</fullName>
+        <default>false</default>
+        <label>Common</label>
+    </customValue>
+    <customValue>
+        <fullName>Common - Energy Loss Allocation - Energy Loss</fullName>
+        <default>false</default>
+        <label>Common - Energy Loss Allocation - Energy Loss</label>
+    </customValue>
+    <customValue>
+        <fullName>Dashboard</fullName>
+        <default>false</default>
+        <label>Dashboard</label>
+    </customValue>
+    <customValue>
+        <fullName>Energy Loss Allocation</fullName>
+        <default>false</default>
+        <label>Energy Loss Allocation</label>
+    </customValue>
+    <customValue>
+        <fullName>Event Creation</fullName>
+        <default>false</default>
+        <label>Event Creation</label>
+    </customValue>
+    <customValue>
+        <fullName>Expected/Predicted Production</fullName>
+        <default>false</default>
+        <label>Expected/Predicted Production</label>
+    </customValue>
+    <customValue>
+        <fullName>Inverter</fullName>
+        <default>false</default>
+        <label>Inverter</label>
+    </customValue>
+    <customValue>
+        <fullName>Inverter Configuration S</fullName>
+        <default>false</default>
+        <label>Inverter Configuration S</label>
+    </customValue>
+    <customValue>
+        <fullName>IRRADIANCE CLEAR_SKY</fullName>
+        <default>false</default>
+        <label>IRRADIANCE CLEAR_SKY</label>
+    </customValue>
+    <customValue>
+        <fullName>Level 0</fullName>
+        <default>false</default>
+        <label>Level 0</label>
+    </customValue>
+    <customValue>
+        <fullName>Level 0 (optional)</fullName>
+        <default>false</default>
+        <label>Level 0 (optional)</label>
+    </customValue>
+    <customValue>
+        <fullName>Level 2</fullName>
+        <default>false</default>
+        <label>Level 2</label>
+    </customValue>
+    <customValue>
+        <fullName>Meter</fullName>
+        <default>false</default>
+        <label>Meter</label>
+    </customValue>
+    <customValue>
+        <fullName>Met mast Configuration W</fullName>
+        <default>false</default>
+        <label>Met mast Configuration W</label>
+    </customValue>
+    <customValue>
+        <fullName>Missing or Invalid Metadata - Inverter</fullName>
+        <default>false</default>
+        <label>Missing or Invalid Metadata - Inverter</label>
+    </customValue>
+    <customValue>
+        <fullName>Missing or Invalid Metadata - Plant</fullName>
+        <default>false</default>
+        <label>Missing or Invalid Metadata - Plant</label>
+    </customValue>
+    <customValue>
+        <fullName>Missing or Invalid Metadata - Subarray</fullName>
+        <default>false</default>
+        <label>Missing or Invalid Metadata - Subarray</label>
+    </customValue>
+    <customValue>
+        <fullName>Missing or Invalid Subarray Metadata - Inverter</fullName>
+        <default>false</default>
+        <label>Missing or Invalid Subarray Metadata - Inverter</label>
+    </customValue>
+    <customValue>
+        <fullName>Modelling</fullName>
+        <default>false</default>
+        <label>Modelling</label>
+    </customValue>
+    <customValue>
+        <fullName>Module Temperature</fullName>
+        <default>false</default>
+        <label>Module Temperature</label>
+    </customValue>
+    <customValue>
+        <fullName>Nominal Power</fullName>
+        <default>false</default>
+        <label>Nominal Power</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Other Miscellaneous</fullName>
+        <default>false</default>
+        <label>Other Miscellaneous</label>
+    </customValue>
+    <customValue>
+        <fullName>Plant Configuration S</fullName>
+        <default>false</default>
+        <label>Plant Configuration S</label>
+    </customValue>
+    <customValue>
+        <fullName>Plant configuration W</fullName>
+        <default>false</default>
+        <label>Plant configuration W</label>
+    </customValue>
+    <customValue>
+        <fullName>POA Pyranometer</fullName>
+        <default>false</default>
+        <label>POA Pyranometer</label>
+    </customValue>
+    <customValue>
+        <fullName>Primary MTR Configuration S</fullName>
+        <default>false</default>
+        <label>Primary MTR Configuration S</label>
+    </customValue>
+    <customValue>
+        <fullName>PV - Availability - Time Based Availability (TBA)</fullName>
+        <default>false</default>
+        <label>PV - Availability - Time Based Availability (TBA)</label>
+    </customValue>
+    <customValue>
+        <fullName>PV - Dashboard - Combiner Heatmap</fullName>
+        <default>false</default>
+        <label>PV - Dashboard - Combiner Heatmap</label>
+    </customValue>
+    <customValue>
+        <fullName>PV - Event Creation</fullName>
+        <default>false</default>
+        <label>PV - Event Creation</label>
+    </customValue>
+    <customValue>
+        <fullName>PV - Expected/Predicted Production</fullName>
+        <default>false</default>
+        <label>PV - Expected/Predicted Production</label>
+    </customValue>
+    <customValue>
+        <fullName>PV - Modelling - IRRADIANCE CLEAR_SKY - PV Plant</fullName>
+        <default>false</default>
+        <label>PV - Modelling - IRRADIANCE CLEAR_SKY - PV Plant</label>
+    </customValue>
+    <customValue>
+        <fullName>PV - Modelling - Nominal Power</fullName>
+        <default>false</default>
+        <label>PV - Modelling - Nominal Power</label>
+    </customValue>
+    <customValue>
+        <fullName>PV - Modelling - Sun Positions - PV Plant</fullName>
+        <default>false</default>
+        <label>PV - Modelling - Sun Positions - PV Plant</label>
+    </customValue>
+    <customValue>
+        <fullName>PV - Modelling - Tracker - PV Plant</fullName>
+        <default>false</default>
+        <label>PV - Modelling - Tracker - PV Plant</label>
+    </customValue>
+    <customValue>
+        <fullName>PV - Other</fullName>
+        <default>false</default>
+        <label>PV - Other</label>
+    </customValue>
+    <customValue>
+        <fullName>PV Plant</fullName>
+        <default>false</default>
+        <label>PV Plant</label>
+    </customValue>
+    <customValue>
+        <fullName>PV - VEE</fullName>
+        <default>false</default>
+        <label>PV - VEE</label>
+    </customValue>
+    <customValue>
+        <fullName>Subarray</fullName>
+        <default>false</default>
+        <label>Subarray</label>
+    </customValue>
+    <customValue>
+        <fullName>Subarray Configuration 2 S</fullName>
+        <default>false</default>
+        <label>Subarray Configuration 2 S</label>
+    </customValue>
+    <customValue>
+        <fullName>Substation/Meter Configuration W</fullName>
+        <default>false</default>
+        <label>Substation/Meter Configuration W</label>
+    </customValue>
+    <customValue>
+        <fullName>Sun Positions</fullName>
+        <default>false</default>
+        <label>Sun Positions</label>
+    </customValue>
+    <customValue>
+        <fullName>Time Based Availability (TBA)</fullName>
+        <default>false</default>
+        <label>Time Based Availability (TBA)</label>
+    </customValue>
+    <customValue>
+        <fullName>Tracker</fullName>
+        <default>false</default>
+        <label>Tracker</label>
+    </customValue>
+    <customValue>
+        <fullName>Turbine configuration</fullName>
+        <default>false</default>
+        <label>Turbine configuration</label>
+    </customValue>
+    <customValue>
+        <fullName>VEE</fullName>
+        <default>false</default>
+        <label>VEE</label>
+    </customValue>
+    <description>Picklist values for Group fields in Evaluation Object.</description>
+    <masterLabel>Group for Evaluation</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

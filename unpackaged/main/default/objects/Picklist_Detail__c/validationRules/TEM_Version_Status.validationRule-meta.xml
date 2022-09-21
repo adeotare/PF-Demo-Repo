@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TEM_Version_Status</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISPICKVAL(TEM_Version__r.Status__c, &#39;Draft&#39;))</errorConditionFormula>
+    <errorDisplayField>TEM_Version__c</errorDisplayField>
+    <errorMessage>Please select the TEM Version which has the status as &#39;Draft&#39;.</errorMessage>
+</ValidationRule>

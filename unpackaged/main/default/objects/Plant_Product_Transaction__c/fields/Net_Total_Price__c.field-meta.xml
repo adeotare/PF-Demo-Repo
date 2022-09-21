@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Net_Total_Price__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+	Quote_Type__c == &#39;Amendment&#39; &amp;&amp;  ( ISPICKVAL(Amendment_Action__c, &#39;No_Change&#39;) ||  ISPICKVAL(Amendment_Action__c, &#39;None&#39;)) ,
+        0 , 
+    ( Net_Unit_Price__c *  Quote_Line_Quantity__c )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Net Total Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_proper_record_type_for_definitions</fullName>
+    <active>true</active>
+    <description>To validate the record type field value for Modifier 1 value not equal to Constants</description>
+    <errorConditionFormula>AND( NOT(ISPICKVAL(Modifer_1__c, &#39;CONSTANT&#39;)) , RecordType.Name &lt;&gt; &#39;Definition&#39;)</errorConditionFormula>
+    <errorMessage>Record Type field is mandatory, please have a new column &#39;record type Id&#39; in upload file and populate the &#39;Definition&#39; record type Id in it.</errorMessage>
+</ValidationRule>

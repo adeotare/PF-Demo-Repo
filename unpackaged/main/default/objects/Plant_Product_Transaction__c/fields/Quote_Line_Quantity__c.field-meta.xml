@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Line_Quantity__c</fullName>
+    <description>This is the field where the User will enter the Quantity - which in turn will add to the aggregate Quantity on the Quote line. e.g. for a Product with Unit of Measure as Turbines (WTG), this filed will have the number of Turbines and the MWp_Quantity__c (which is going to be renamed to MW_Quantity__c later) will have the MW for the WTG plant</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the field where the User will enter the Quantity - which in turn will add to the aggregate Quantity on the Quote line. e.g. for a Product with Unit of Measure as Turbines (WTG), this filed will have the number of Turbines and the MWp_Quantity__c (which is going to be renamed to MW_Quantity__c later) will have the MW for the WTG plant</inlineHelpText>
+    <label>Quote Line Quantity</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

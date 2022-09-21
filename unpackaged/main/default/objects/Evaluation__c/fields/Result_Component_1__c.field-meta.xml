@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Result_Component_1__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Result Component 1</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Metric_Definition__c.TEM_Version__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.TEM_Version__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Metric_Definition__c</referenceTo>
+    <relationshipLabel>Evaluations (Result Component 1)</relationshipLabel>
+    <relationshipName>Evaluations3</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

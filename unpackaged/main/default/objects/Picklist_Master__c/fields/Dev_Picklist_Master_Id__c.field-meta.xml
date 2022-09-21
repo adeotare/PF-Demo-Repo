@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dev_Picklist_Master_Id__c</fullName>
+    <description>This field is used for back end data loading process, data is fetching from &#39;PFDev&#39; environment. This field is hold &#39;Picklist Master&#39; object record Id.</description>
+    <externalId>false</externalId>
+    <label>Dev Picklist Master Id</label>
+    <length>30</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

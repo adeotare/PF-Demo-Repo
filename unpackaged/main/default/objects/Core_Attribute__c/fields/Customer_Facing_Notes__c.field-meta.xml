@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Facing_Notes__c</fullName>
+    <description>Information that will support the typical user questions or concerns about the entrance of the data to be entered. Meant to help the user identify the information that is being asked and guide them to perform self-discovery to better complete the data.</description>
+    <externalId>false</externalId>
+    <label>Customer Facing Notes</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

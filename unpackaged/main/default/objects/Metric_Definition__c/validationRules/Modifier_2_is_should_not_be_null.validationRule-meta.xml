@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Modifier_2_is_should_not_be_null</fullName>
+    <active>true</active>
+    <description>Modifier 2 should not be null when &quot;COUNT&quot; is selected as Modifier 1</description>
+    <errorConditionFormula>AND(ISPICKVAL(Modifer_1__c,&#39;COUNT&#39;),
+ISPICKVAL(Modifer_2__c,&#39;&#39;))</errorConditionFormula>
+    <errorDisplayField>Modifer_2__c</errorDisplayField>
+    <errorMessage>Cannot be null, when Modifier 1 is COUNT</errorMessage>
+</ValidationRule>

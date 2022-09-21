@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UI_Column_Size__c</fullName>
+    <externalId>false</externalId>
+    <label>UI Column Size</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>table-col-xx-small</fullName>
+                <default>false</default>
+                <label>XX-Small</label>
+            </value>
+            <value>
+                <fullName>table-col-x-small</fullName>
+                <default>false</default>
+                <label>X-Small</label>
+            </value>
+            <value>
+                <fullName>table-col-small</fullName>
+                <default>false</default>
+                <label>Small</label>
+            </value>
+            <value>
+                <fullName>table-col-medium</fullName>
+                <default>false</default>
+                <label>Medium</label>
+            </value>
+            <value>
+                <fullName>table-col-large</fullName>
+                <default>false</default>
+                <label>Large</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

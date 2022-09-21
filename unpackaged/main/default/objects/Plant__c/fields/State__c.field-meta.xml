@@ -9,7 +9,6 @@
     <type>Picklist</type>
     <valueSet>
         <controllingField>Country__c</controllingField>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
@@ -1797,79 +1796,15 @@
                 <default>false</default>
                 <label>Wyoming</label>
             </value>
-            <value>
-                <fullName>American Samoa</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>American Samoa</label>
-            </value>
-            <value>
-                <fullName>Armed Forces Americas</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Armed Forces Americas</label>
-            </value>
-            <value>
-                <fullName>Armed Forces Europe</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Armed Forces Europe</label>
-            </value>
-            <value>
-                <fullName>Armed Forces Pacific</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Armed Forces Pacific</label>
-            </value>
-            <value>
-                <fullName>Federated Micronesia</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Federated Micronesia</label>
-            </value>
-            <value>
-                <fullName>Guam</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Guam</label>
-            </value>
-            <value>
-                <fullName>Marshall Islands</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Marshall Islands</label>
-            </value>
-            <value>
-                <fullName>Northern Mariana Islands</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Northern Mariana Islands</label>
-            </value>
-            <value>
-                <fullName>Palau</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Palau</label>
-            </value>
-            <value>
-                <fullName>Puerto Rico</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Puerto Rico</label>
-            </value>
-            <value>
-                <fullName>US Virgin Islands</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>US Virgin Islands</label>
-            </value>
-            <value>
-                <fullName>United States Minor Outlying Islands</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>United States Minor Outlying Islands</label>
-            </value>
         </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>FR</controllingFieldValue>
+            <valueName>LYON</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FR</controllingFieldValue>
+            <valueName>Rhône-Alpes</valueName>
+        </valueSettings>
         <valueSettings>
             <controllingFieldValue>IN</controllingFieldValue>
             <valueName>Andaman and Nicobar Islands</valueName>
@@ -3085,14 +3020,6 @@
         <valueSettings>
             <controllingFieldValue>TR</controllingFieldValue>
             <valueName>GÖLBASI</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>FR</controllingFieldValue>
-            <valueName>LYON</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>FR</controllingFieldValue>
-            <valueName>Rhône-Alpes</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>US</controllingFieldValue>

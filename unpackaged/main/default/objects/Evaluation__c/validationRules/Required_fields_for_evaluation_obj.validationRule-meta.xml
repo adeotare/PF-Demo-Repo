@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_fields_for_evaluation_obj</fullName>
+    <active>true</active>
+    <description>To validate the required field on evaluation records</description>
+    <errorConditionFormula>OR(ISPICKVAL(  Group_1__c  , &quot;&quot;),ISPICKVAL(  Group_2__c  , &quot;&quot;))</errorConditionFormula>
+    <errorMessage>The fields or columns Category, Sub Category, Group 1, Group 2, Component 1, Component 2, and Operand 1 are mandatory.</errorMessage>
+</ValidationRule>

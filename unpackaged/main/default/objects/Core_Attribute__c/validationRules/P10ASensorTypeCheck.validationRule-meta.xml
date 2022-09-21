@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>P10ASensorTypeCheck</fullName>
+    <active>true</active>
+    <description>Check Prompt Sensr type</description>
+    <errorConditionFormula>AND(Prompt_Information__r.Name  = &#39;P.10.A Other Asset Build&#39;,
+AND(NOT(ISPICKVAL(Sensor_Type__c, &#39;Substation switchgear&#39;)),NOT(ISPICKVAL(Sensor_Type__c, &#39;&#39;))))</errorConditionFormula>
+    <errorMessage>P.10.A Other Asset Build Prompt Sensor type can only have &quot;Substation switchgear&quot;</errorMessage>
+</ValidationRule>

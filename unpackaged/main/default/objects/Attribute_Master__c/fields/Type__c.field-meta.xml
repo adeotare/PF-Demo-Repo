@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>Defines the attribute type as it pertains to the template. This determines the role of the data populated against the attribute for the static value configuration versus being read from a measured value</description>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Metadata</fullName>
+                <default>false</default>
+                <label>Metadata</label>
+            </value>
+            <value>
+                <fullName>Time Series</fullName>
+                <default>false</default>
+                <label>Time Series</label>
+            </value>
+            <value>
+                <fullName>Calculated</fullName>
+                <default>false</default>
+                <label>Calculated</label>
+            </value>
+            <value>
+                <fullName>Prompt Specific</fullName>
+                <default>false</default>
+                <label>Prompt Specific</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

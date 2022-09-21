@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Base_attribute_data_type_for_rollup</fullName>
+    <active>true</active>
+    <description>Base attribute must need to be decimal or number data type</description>
+    <errorConditionFormula>AND( Is_Rollup_To_P1_W1__c == true, NOT( OR( ISPICKVAL( Base_Attribute_For_Weighted_Average_Calc__r.Attribute_Master__r.Data_Type__c , &#39;Decimal&#39;), ISPICKVAL(Base_Attribute_For_Weighted_Average_Calc__r.Attribute_Master__r.Data_Type__c, &#39;Number&#39;))))</errorConditionFormula>
+    <errorDisplayField>Base_Attribute_For_Weighted_Average_Calc__c</errorDisplayField>
+    <errorMessage>Base Attribute can be only for number or decimal datatype</errorMessage>
+</ValidationRule>

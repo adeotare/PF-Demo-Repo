@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unit_Price_After_Volume_Discount__c</fullName>
+    <description>This is the Unit Price after Software Discount Tier or Implementation Bracket pricing is applied to Contracted Price or List Price</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the Unit Price after Software Discount Tier or Implementation Bracket pricing is applied to Contracted Price or List Price</inlineHelpText>
+    <label>Unit Price After Volume Discount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>
