@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>55.0</apiVersion>
-    <assignments>
-        <name>update_the_bill_to_contact_and_account_from_order</name>
-        <label>update the bill to contact and account from order</label>
-        <locationX>600</locationX>
-        <locationY>124</locationY>
-        <assignmentItems>
-            <assignToReference>$Record.Bill_To_Contact__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.SBQQ__Order__r.BillToContactId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>$Record.Bill_To_Account__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.SBQQ__Order__r.Bill_To_Account__c</elementReference>
-            </value>
-        </assignmentItems>
-    </assignments>
     <description>20/9/22 - Updating the contract record using assignment operator on before save</description>
     <interviewLabel>Contract : Update Bill To Contact and Account from Order on Contract {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Contract : Update Bill To Contact and Account from Order on Contract</label>
@@ -43,15 +23,42 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Bill_To_Account_and_Contact_from_Opportunity</name>
+        <label>Update Bill To Account and Contact from Opportunity</label>
+        <locationX>342</locationX>
+        <locationY>395</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SBQQ__Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SBQQ__Opportunity__r.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Bill_To_Account__c</field>
+            <value>
+                <elementReference>$Record.SBQQ__Opportunity__r.Bill_To_Account__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Bill_To_Contact__c</field>
+            <value>
+                <elementReference>$Record.SBQQ__Opportunity__r.Bill_To_Contact__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <start>
-        <locationX>155</locationX>
+        <locationX>154</locationX>
         <locationY>37</locationY>
         <connector>
-            <targetReference>update_the_bill_to_contact_and_account_from_order</targetReference>
+            <targetReference>Update_Bill_To_Account_and_Contact_from_Opportunity</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>SBQQ__Order__c</field>
+            <field>SBQQ__Opportunity__c</field>
             <operator>IsNull</operator>
             <value>
                 <booleanValue>false</booleanValue>
@@ -59,7 +66,7 @@
         </filters>
         <object>Contract</object>
         <recordTriggerType>Create</recordTriggerType>
-        <triggerType>RecordBeforeSave</triggerType>
+        <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
 </Flow>
