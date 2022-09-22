@@ -357,7 +357,7 @@ public with sharing class PlantProductController {
         
         if(quoteLine.SBQQ__Product__r.QuantityUnitOfMeasure == 'MWp'){
             for(Plant_Product_Transaction__c pptRecord: pptList) {
-				system.debug('ap.Quote_Line_Quantity__c--'+pptRecord.Quote_Line_Quantity__c);
+                system.debug('ap.Quote_Line_Quantity__c--'+pptRecord.Quote_Line_Quantity__c);
                 if(pptRecord.Quote_Line_Quantity__c != null && (pptRecord.Renewal_Action__c != 'Removed Plant' && pptRecord.Amendment_Action__c != 'Removed Plant')){
                     sumOfMWp =sumOfMWp + (pptRecord.Quote_Line_Quantity__c);
                 }
@@ -899,34 +899,26 @@ public with sharing class PlantProductController {
         else {
             for (Plant_Product_Transaction__c eachPPT:pptList) {
             
-            if(eachPPT.Quote_Line_Quantity__c != null) cumulativeQLQuantity += eachPPT.Quote_Line_Quantity__c;
-            
-            // // we are taking the value before Additional Discount % is applied
-            // if (eachPPT.Unit_Price_After_Volume_Discount__c == null)
-            //     cumulativeQLNetTotal += (eachPPT.Contracted_MW_Unit_List_Price__c * eachPPT.Quote_Line_Quantity__c);
-            // else
-            //     cumulativeQLNetTotal += (eachPPT.Unit_Price_After_Volume_Discount__c * eachPPT.Quote_Line_Quantity__c);
-
-            // pptTotalforQLToAddressRounding += eachPPT.Net_Total_Price__c;
+            if(eachPPT.Quote_Line_Quantity__c != null) 
+                cumulativeQLQuantity += eachPPT.Quote_Line_Quantity__c;
 
 
             // we are taking the value before Additional Discount % is applied
             if (eachPPT.Unit_Price_After_Volume_Discount__c == null)
-       //         cumulativeQLNetTotal += (eachPPT.Contracted_MW_Unit_List_Price__c * eachPPT.Quote_Line_Quantity__c);
-                  cumulativeQLNetTotal += (eachPPT.Contracted_MW_Unit_List_Price__c * quoteLine.SBQQ__EffectiveQuantity__c);
+                cumulativeQLNetTotal += (eachPPT.Contracted_MW_Unit_List_Price__c * eachPPT.Quote_Line_Quantity__c);
+                //  cumulativeQLNetTotal += (eachPPT.Contracted_MW_Unit_List_Price__c * quoteLine.SBQQ__EffectiveQuantity__c);
             else
-        //        cumulativeQLNetTotal += (eachPPT.Unit_Price_After_Volume_Discount__c * eachPPT.Quote_Line_Quantity__c);
-                  cumulativeQLNetTotal += (eachPPT.Unit_Price_After_Volume_Discount__c * quoteLine.SBQQ__EffectiveQuantity__c);
+                cumulativeQLNetTotal += (eachPPT.Unit_Price_After_Volume_Discount__c * eachPPT.Quote_Line_Quantity__c);
+        //      cumulativeQLNetTotal += (eachPPT.Unit_Price_After_Volume_Discount__c * quoteLine.SBQQ__EffectiveQuantity__c);
 
-            //pptTotalforQLToAddressRounding += eachPPT.Net_Total_Price__c;
-                pptTotalforQLToAddressRounding += cumulativeQLNetTotal;
+                pptTotalforQLToAddressRounding += eachPPT.Net_Total_Price__c;
+            //  pptTotalforQLToAddressRounding += cumulativeQLNetTotal;
 
         }
 
-        
-
-        // System.debug('Cumulative QL Net Total Price is = '+cumulativeQLNetTotal);
-        // System.debug('Cumulative QL Net Total Quantity is = '+cumulativeQLQuantity);
+        System.debug('PPT Net Total Amount for QL is = '+pptTotalforQLToAddressRounding);
+        System.debug('Cumulative QL Net Total Price is = '+cumulativeQLNetTotal);
+        System.debug('Cumulative QL Net Total Quantity is = '+cumulativeQLQuantity);
         System.debug('Cumulative QL Net Unit Price (set to Special Price on QL) is = '+(cumulativeQLNetTotal/cumulativeQLQuantity));
 
         
