@@ -4,8 +4,8 @@
     <assignments>
         <name>Assign_Bill_to_Account</name>
         <label>Assign Bill to Account</label>
-        <locationX>531</locationX>
-        <locationY>440</locationY>
+        <locationX>814</locationX>
+        <locationY>481</locationY>
         <assignmentItems>
             <assignToReference>$Record.Bill_To_Account__c</assignToReference>
             <operator>Assign</operator>
@@ -17,8 +17,8 @@
     <assignments>
         <name>Assign_Bill_To_Contact</name>
         <label>Assign Bill To Contact</label>
-        <locationX>522</locationX>
-        <locationY>326</locationY>
+        <locationX>569</locationX>
+        <locationY>486</locationY>
         <assignmentItems>
             <assignToReference>$Record.Bill_To_Contact__c</assignToReference>
             <operator>Assign</operator>
@@ -30,8 +30,8 @@
     <assignments>
         <name>If_both_changes</name>
         <label>If both changes</label>
-        <locationX>529</locationX>
-        <locationY>567</locationY>
+        <locationX>1054</locationX>
+        <locationY>452</locationY>
         <assignmentItems>
             <assignToReference>$Record.Bill_To_Account__c</assignToReference>
             <operator>Assign</operator>
@@ -48,10 +48,39 @@
         </assignmentItems>
     </assignments>
     <decisions>
+        <name>Check_If_Oppty_is_Product_Services_and_Service_Only</name>
+        <label>Check If Oppty is Product &amp; Services and Service Only</label>
+        <locationX>800</locationX>
+        <locationY>141</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_rec_type_is_equals_Product_Services_and_Service_Only</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Amendment</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>If_Bill_to_account_contact_change</targetReference>
+            </connector>
+            <label>If rec type is equals Product &amp; Services and Service Only</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>If_Bill_to_account_contact_change</name>
         <label>Bill to Account and Contact</label>
-        <locationX>64</locationX>
-        <locationY>436</locationY>
+        <locationX>791</locationX>
+        <locationY>315</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>If_Bill_account_change</name>
@@ -120,6 +149,8 @@
             <label>If both change</label>
         </rules>
     </decisions>
+    <description>22/9/22 :- Decision is added for Product &amp; Services and Service Only Oppty 
+              :- For Amend &amp; Renewal ( Flow - Opportunity : Update Record Type as Amendment/Renewal )</description>
     <interviewLabel>Opp: Assign bill to account {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opp: Assign bill to account</label>
     <processMetadataValues>
@@ -142,10 +173,10 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <start>
-        <locationX>373</locationX>
-        <locationY>48</locationY>
+        <locationX>121</locationX>
+        <locationY>125</locationY>
         <connector>
-            <targetReference>If_Bill_to_account_contact_change</targetReference>
+            <targetReference>Check_If_Oppty_is_Product_Services_and_Service_Only</targetReference>
         </connector>
         <filterLogic>((1 OR  2) OR (3 AND 4))</filterLogic>
         <filters>
