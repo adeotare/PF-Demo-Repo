@@ -5353,6 +5353,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>QS_Customer_Asset_Detail__c.Demo_CheckBox_for_ARR__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>QS_Customer_Asset_Detail__c.QS_15_Digit_Customer_Asset_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5519,6 +5524,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>QS_Customer_Asset_Detail__c.QS_UniqueKey__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>QS_Customer_Asset__c.Demo_CheckBox_for_Line_Classification__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
