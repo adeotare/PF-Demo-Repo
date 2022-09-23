@@ -2,10 +2,10 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>55.0</apiVersion>
     <assignments>
-        <name>Update_Bill_To_Account_from_Account_Id_Amendment</name>
-        <label>Update Bill To Account from Account Id (Amendment)</label>
-        <locationX>327</locationX>
-        <locationY>669</locationY>
+        <name>Update_Bill_To_Account_from_Account_Id</name>
+        <label>Update Bill To Account from Account Id</label>
+        <locationX>804</locationX>
+        <locationY>328</locationY>
         <assignmentItems>
             <assignToReference>$Record.Bill_To_Account__c</assignToReference>
             <operator>Assign</operator>
@@ -15,23 +15,10 @@
         </assignmentItems>
     </assignments>
     <assignments>
-        <name>Update_Bill_To_Account_from_Account_Id_Renewal</name>
-        <label>Update Bill To Account from Account Id (Renewal)</label>
-        <locationX>625</locationX>
-        <locationY>855</locationY>
-        <assignmentItems>
-            <assignToReference>$Record.Bill_To_Account__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.AccountId</elementReference>
-            </value>
-        </assignmentItems>
-    </assignments>
-    <assignments>
-        <name>Update_Bill_To_Contact_and_Bill_To_Account_from_Amend_Oppty</name>
-        <label>Update Bill To Contact and Bill To Account from Amend Oppty</label>
-        <locationX>852</locationX>
-        <locationY>836</locationY>
+        <name>Update_Bill_To_Contact_and_Bill_To_Account</name>
+        <label>Update Bill To Contact and Bill To Account</label>
+        <locationX>946</locationX>
+        <locationY>319</locationY>
         <assignmentItems>
             <assignToReference>$Record.Bill_To_Account__c</assignToReference>
             <operator>Assign</operator>
@@ -48,43 +35,10 @@
         </assignmentItems>
     </assignments>
     <assignments>
-        <name>Update_Bill_To_Contact_and_Bill_To_Account_from_Renewal_Oppty</name>
-        <label>Update Bill To Contact and Bill To Account from Renewal Oppty</label>
-        <locationX>1068</locationX>
-        <locationY>819</locationY>
-        <assignmentItems>
-            <assignToReference>$Record.Bill_To_Account__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.AccountId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>$Record.Bill_To_Contact__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Primary_Contact__c</elementReference>
-            </value>
-        </assignmentItems>
-    </assignments>
-    <assignments>
-        <name>Update_Bill_To_Contact_from_Primary_Contact_Amendment</name>
-        <label>Update Bill To Contact from Primary Contact (Amendment)</label>
-        <locationX>36</locationX>
-        <locationY>330</locationY>
-        <assignmentItems>
-            <assignToReference>$Record.Bill_To_Contact__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Primary_Contact__c</elementReference>
-            </value>
-        </assignmentItems>
-    </assignments>
-    <assignments>
-        <name>Update_Bill_To_contact_from_Primary_Contact_Renewal</name>
-        <label>Update Bill To contact from Primary Contact (Renewal)</label>
-        <locationX>180</locationX>
-        <locationY>507</locationY>
+        <name>Update_Bill_To_Contact_from_Primary_Contact</name>
+        <label>Update Bill To Contact from Primary Contact</label>
+        <locationX>666</locationX>
+        <locationY>286</locationY>
         <assignmentItems>
             <assignToReference>$Record.Bill_To_Contact__c</assignToReference>
             <operator>Assign</operator>
@@ -96,8 +50,8 @@
     <decisions>
         <name>Check_if_Opportunity_is_Blank_on_Contract</name>
         <label>Check if Opportunity is Blank on Contract</label>
-        <locationX>1369</locationX>
-        <locationY>921</locationY>
+        <locationX>1103</locationX>
+        <locationY>785</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>If_Oppty_is_not_Blank_on_Contract</name>
@@ -118,8 +72,8 @@
     <decisions>
         <name>Check_if_Opportunity_is_Blank_on_Contract_for_Renewal</name>
         <label>Check if Opportunity is Blank on Contract for Renewal</label>
-        <locationX>1786</locationX>
-        <locationY>903</locationY>
+        <locationX>1344</locationX>
+        <locationY>821</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>If_Oppty_is_not_blank</name>
@@ -140,8 +94,8 @@
     <decisions>
         <name>check_if_oppty_is_amend_or_renew</name>
         <label>check if oppty is amend or renew</label>
-        <locationX>1555</locationX>
-        <locationY>323</locationY>
+        <locationX>1164</locationX>
+        <locationY>236</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>If_Amended_contract_is_not_null</name>
@@ -177,8 +131,8 @@
     <decisions>
         <name>Create_and_update_decision</name>
         <label>Create and update decision</label>
-        <locationX>820</locationX>
-        <locationY>329</locationY>
+        <locationX>833</locationX>
+        <locationY>93</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>check_if_Opportunity_is_created</name>
@@ -197,7 +151,7 @@
         </rules>
         <rules>
             <name>If_primary_Contact_is_updated_for_amend</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND 2 AND 4 AND (3 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Primary_Contact__c</leftValueReference>
                 <operator>IsChanged</operator>
@@ -226,50 +180,21 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Renewal</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Update_Bill_To_Contact_from_Primary_Contact_Amendment</targetReference>
+                <targetReference>Update_Bill_To_Contact_from_Primary_Contact</targetReference>
             </connector>
             <label>If primary Contact is updated for amend</label>
         </rules>
         <rules>
-            <name>If_primary_Contact_is_updated_for_renewal</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record__Prior.Id</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Primary_Contact__c</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.RecordType.Name</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Renewal</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.AccountId</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_Bill_To_contact_from_Primary_Contact_Renewal</targetReference>
-            </connector>
-            <label>If primary Contact is updated for renewal</label>
-        </rules>
-        <rules>
             <name>If_Account_is_updated_for_amend</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND 2 AND 4 AND (3 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record__Prior.Id</leftValueReference>
                 <operator>IsNull</operator>
@@ -298,50 +223,21 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Renewal</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Update_Bill_To_Account_from_Account_Id_Amendment</targetReference>
+                <targetReference>Update_Bill_To_Account_from_Account_Id</targetReference>
             </connector>
             <label>If Account is updated for amend</label>
         </rules>
         <rules>
-            <name>If_Account_is_updated_for_renewal</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record__Prior.Id</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.AccountId</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.RecordType.Name</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Renewal</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Primary_Contact__c</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_Bill_To_Account_from_Account_Id_Renewal</targetReference>
-            </connector>
-            <label>If Account is updated for renewal</label>
-        </rules>
-        <rules>
             <name>If_both_updates_for_amend</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND 4 AND 3 AND ( 2 OR 5 )</conditionLogic>
             <conditions>
                 <leftValueReference>$Record__Prior.Id</leftValueReference>
                 <operator>IsNull</operator>
@@ -370,21 +266,6 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Update_Bill_To_Contact_and_Bill_To_Account_from_Amend_Oppty</targetReference>
-            </connector>
-            <label>If both updates for amend</label>
-        </rules>
-        <rules>
-            <name>If_both_updates_for_Renewal</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record__Prior.Id</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
             <conditions>
                 <leftValueReference>$Record.RecordType.Name</leftValueReference>
                 <operator>EqualTo</operator>
@@ -392,24 +273,10 @@
                     <stringValue>Renewal</stringValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <leftValueReference>$Record.Primary_Contact__c</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.AccountId</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
             <connector>
-                <targetReference>Update_Bill_To_Contact_and_Bill_To_Account_from_Renewal_Oppty</targetReference>
+                <targetReference>Update_Bill_To_Contact_and_Bill_To_Account</targetReference>
             </connector>
-            <label>If both updates for Renewal</label>
+            <label>If both updates for amend</label>
         </rules>
     </decisions>
     <formulas>
@@ -446,8 +313,8 @@
     <recordLookups>
         <name>Get_Id_of_Amendment</name>
         <label>Get Id of Amendment</label>
-        <locationX>1366</locationX>
-        <locationY>527</locationY>
+        <locationX>1095</locationX>
+        <locationY>485</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Record_Type_Id</targetReference>
@@ -474,8 +341,8 @@
     <recordLookups>
         <name>Get_Id_of_Renewal</name>
         <label>Get Id of Renewal</label>
-        <locationX>1780</locationX>
-        <locationY>526</locationY>
+        <locationX>1335</locationX>
+        <locationY>472</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Record_Type_of_Renewal</targetReference>
@@ -502,8 +369,8 @@
     <recordUpdates>
         <name>Update_Record_Type_Id</name>
         <label>Update Record Type Id</label>
-        <locationX>1367</locationX>
-        <locationY>702</locationY>
+        <locationX>1106</locationX>
+        <locationY>622</locationY>
         <connector>
             <targetReference>Check_if_Opportunity_is_Blank_on_Contract</targetReference>
         </connector>
@@ -550,8 +417,8 @@
     <recordUpdates>
         <name>Update_Record_Type_of_Renewal</name>
         <label>Update Record Type of Renewal</label>
-        <locationX>1790</locationX>
-        <locationY>714</locationY>
+        <locationX>1329</locationX>
+        <locationY>639</locationY>
         <connector>
             <targetReference>Check_if_Opportunity_is_Blank_on_Contract_for_Renewal</targetReference>
         </connector>
@@ -610,8 +477,8 @@
     <recordUpdates>
         <name>Update_the_Primary_Contact</name>
         <label>Update the Primary Contact</label>
-        <locationX>1399</locationX>
-        <locationY>1100</locationY>
+        <locationX>1124</locationX>
+        <locationY>969</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -631,8 +498,8 @@
     <recordUpdates>
         <name>Update_the_Primary_Contact_for_Renewal</name>
         <label>Update the Primary Contact for Renewal</label>
-        <locationX>1794</locationX>
-        <locationY>1082</locationY>
+        <locationX>1343</locationX>
+        <locationY>991</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -650,8 +517,8 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>690</locationX>
-        <locationY>15</locationY>
+        <locationX>263</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Create_and_update_decision</targetReference>
         </connector>
