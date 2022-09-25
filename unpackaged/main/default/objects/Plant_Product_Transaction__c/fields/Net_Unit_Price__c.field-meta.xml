@@ -2,39 +2,43 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Net_Unit_Price__c</fullName>
     <externalId>false</externalId>
-    <formula>If ( AND( ISNULL ( Additional_Discount_Percentage__c ) ,ISNULL (Unit_Price_After_Volume_Discount__c),ISNULL ( Additional_Discount_Amount__c ) ),
+    <formula>If ( AND(  Additional_Discount_Percentage__c = 0 ,ISNULL (Unit_Price_After_Volume_Discount__c), Additional_Discount_Amount__c =0  ),
 
-(Contracted_MW_Unit_List_Price__c*PPT_Prorate_Multiplier__c) ,
+( Contracted_MW_Unit_List_Price__c *  PPT_Prorate_Multiplier__c ) ,
 
-If (AND ( ISNULL (Additional_Discount_Percentage__c ),NOT( ISNULL( Unit_Price_After_Volume_Discount__c )),ISNULL ( Additional_Discount_Amount__c )),
+If (AND ( Additional_Discount_Percentage__c = 0,NOT( ISNULL( Unit_Price_After_Volume_Discount__c )),Additional_Discount_Amount__c =0),
 
-(Unit_Price_After_Volume_Discount__c*PPT_Prorate_Multiplier__c) ,
+(Unit_Price_After_Volume_Discount__c * PPT_Prorate_Multiplier__c) ,
 
-If( AND(NOT(ISNULL( Additional_Discount_Percentage__c )),ISNULL( Unit_Price_After_Volume_Discount__c ),ISNULL ( Additional_Discount_Amount__c )),
+If( AND( Additional_Discount_Percentage__c != 0 ,ISNULL( Unit_Price_After_Volume_Discount__c ),Additional_Discount_Amount__c =0),
 
-((Contracted_MW_Unit_List_Price__c *((100 - Additional_Discount_Percentage__c )/100))*PPT_Prorate_Multiplier__c),
+(Contracted_MW_Unit_List_Price__c * ((100 - ((Additional_Discount_Percentage__c)*100))/100) * PPT_Prorate_Multiplier__c),
 
-If( AND(NOT(ISNULL( Additional_Discount_Percentage__c )),NOT(ISNULL( Unit_Price_After_Volume_Discount__c )),ISNULL ( Additional_Discount_Amount__c )),
+If( AND(Additional_Discount_Percentage__c != 0,NOT(ISNULL( Unit_Price_After_Volume_Discount__c )),Additional_Discount_Amount__c =0),
 
-(Unit_Price_After_Volume_Discount__c *((100 - Additional_Discount_Percentage__c	)/100)*PPT_Prorate_Multiplier__c),
+(Unit_Price_After_Volume_Discount__c * ((100 - ((Additional_Discount_Percentage__c)*100))/100) * PPT_Prorate_Multiplier__c),
 
-If ( AND( ISNULL ( Additional_Discount_Amount__c ) ,ISNULL (Unit_Price_After_Volume_Discount__c),ISNULL ( Additional_Discount_Percentage__c ) ),
+If ( AND( Additional_Discount_Amount__c =0 ,ISNULL (Unit_Price_After_Volume_Discount__c),Additional_Discount_Percentage__c = 0 ),
 
-(Contracted_MW_Unit_List_Price__c*PPT_Prorate_Multiplier__c) ,
+(Contracted_MW_Unit_List_Price__c * PPT_Prorate_Multiplier__c) ,
 
-If (AND ( ISNULL (Additional_Discount_Amount__c ),NOT( ISNULL( Unit_Price_After_Volume_Discount__c )), ISNULL ( Additional_Discount_Percentage__c )),
+If (AND ( Additional_Discount_Amount__c =0,NOT( ISNULL( Unit_Price_After_Volume_Discount__c )), Additional_Discount_Percentage__c = 0),
 
-(Unit_Price_After_Volume_Discount__c*PPT_Prorate_Multiplier__c) ,
+(Unit_Price_After_Volume_Discount__c * PPT_Prorate_Multiplier__c) ,
 
-If( AND(NOT(ISNULL( Additional_Discount_Amount__c )),ISNULL( Unit_Price_After_Volume_Discount__c ),ISNULL ( Additional_Discount_Percentage__c )),
+If( AND(Additional_Discount_Amount__c != 0,ISNULL( Unit_Price_After_Volume_Discount__c ),Additional_Discount_Percentage__c = 0),
 
-(Contracted_MW_Unit_List_Price__c *Additional_Discount_Amount__c *PPT_Prorate_Multiplier__c),
+((Contracted_MW_Unit_List_Price__c  - Additional_Discount_Amount__c) * PPT_Prorate_Multiplier__c),
 
-If( AND(NOT(ISNULL( Additional_Discount_Amount__c )),NOT(ISNULL( Unit_Price_After_Volume_Discount__c )),ISNULL ( Additional_Discount_Percentage__c)),
+If( AND(Additional_Discount_Amount__c != 0,NOT(ISNULL( Unit_Price_After_Volume_Discount__c )),Additional_Discount_Percentage__c = 0),
 
-(Unit_Price_After_Volume_Discount__c *Additional_Discount_Amount__c*PPT_Prorate_Multiplier__c),
+((Unit_Price_After_Volume_Discount__c - Additional_Discount_Amount__c) * PPT_Prorate_Multiplier__c),
 
-NULL))))))))</formula>
+If( AND(Additional_Discount_Amount__c = 0,NOT(ISNULL( Unit_Price_After_Volume_Discount__c )),NOT(ISNULL(Contracted_MW_Unit_List_Price__c )),Additional_Discount_Percentage__c = 0),
+
+(Unit_Price_After_Volume_Discount__c * PPT_Prorate_Multiplier__c),
+
+NULL)))))))))</formula>
     <label>Net Unit Price</label>
     <precision>18</precision>
     <required>false</required>
