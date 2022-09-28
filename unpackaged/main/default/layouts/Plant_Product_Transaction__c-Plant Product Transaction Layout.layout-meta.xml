@@ -113,8 +113,8 @@
                 <field>Additional_Discount_Amount__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Addl_Discount_Percent__c</field>
+                <behavior>Readonly</behavior>
+                <field>Additional_Discount_Percentage__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
