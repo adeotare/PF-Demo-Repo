@@ -32,6 +32,11 @@
                 <default>false</default>
                 <label>QS_Initial_ARR__c</label>
             </value>
+            <value>
+                <fullName>New_Quote_Line__c</fullName>
+                <default>false</default>
+                <label>New_Quote_Line__c</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
