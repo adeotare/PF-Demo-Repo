@@ -7,7 +7,7 @@
         <locationX>549</locationX>
         <locationY>422</locationY>
         <defaultConnector>
-            <targetReference>Get_Subscription</targetReference>
+            <targetReference>Dont_Move_forward_if_checkbox_is_checked</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -31,6 +31,28 @@
                 <targetReference>Check_the_Checkkbox</targetReference>
             </connector>
             <label>Same - New Quote Line</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Dont_Move_forward_if_checkbox_is_checked</name>
+        <label>Dont Move forward if checkbox is checked</label>
+        <locationX>440</locationX>
+        <locationY>535</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Checked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.New_Quote_Line__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Subscription</targetReference>
+            </connector>
+            <label>Checked</label>
         </rules>
     </decisions>
     <interviewLabel>QuoteLine: Identify Quote Line (Newer/Older) {!$Flow.CurrentDateTime}</interviewLabel>
@@ -57,8 +79,8 @@
     <recordLookups>
         <name>Get_Subscription</name>
         <label>Get Subscription</label>
-        <locationX>469</locationX>
-        <locationY>581</locationY>
+        <locationX>205</locationX>
+        <locationY>529</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Line_Classification</targetReference>
@@ -91,8 +113,8 @@
     <recordUpdates>
         <name>Update_Line_Classification</name>
         <label>Update Line Classification</label>
-        <locationX>198</locationX>
-        <locationY>501</locationY>
+        <locationX>43</locationX>
+        <locationY>473</locationY>
         <inputAssignments>
             <field>QS_Line_Classification__c</field>
             <value>
