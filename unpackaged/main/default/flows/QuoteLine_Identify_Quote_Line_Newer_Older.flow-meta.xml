@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <name>Check_for_Newer_Quote_Line</name>
+        <label>Check for Newer Quote Line</label>
+        <locationX>549</locationX>
+        <locationY>422</locationY>
+        <defaultConnector>
+            <targetReference>Get_Subscription</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Same_New_Quote_Line</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__Quantity__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__Quantity__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.SBQQ__EffectiveQuantity__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_the_Checkkbox</targetReference>
+            </connector>
+            <label>Same - New Quote Line</label>
+        </rules>
+    </decisions>
+    <interviewLabel>QuoteLine: Identify Quote Line (Newer/Older) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>QuoteLine: Identify Quote Line (Newer/Older)</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Subscription</name>
+        <label>Get Subscription</label>
+        <locationX>469</locationX>
+        <locationY>581</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Line_Classification</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SBQQ__UpgradedSubscription__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>SBQQ__Subscription__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Check_the_Checkkbox</name>
+        <label>Check the Checkkbox</label>
+        <locationX>787</locationX>
+        <locationY>360</locationY>
+        <inputAssignments>
+            <field>New_Quote_Line__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Line_Classification</name>
+        <label>Update Line Classification</label>
+        <locationX>198</locationX>
+        <locationY>501</locationY>
+        <inputAssignments>
+            <field>QS_Line_Classification__c</field>
+            <value>
+                <elementReference>Get_Subscription.Line_Classification__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>49</locationX>
+        <locationY>42</locationY>
+        <connector>
+            <targetReference>Check_for_Newer_Quote_Line</targetReference>
+        </connector>
+        <object>SBQQ__QuoteLine__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

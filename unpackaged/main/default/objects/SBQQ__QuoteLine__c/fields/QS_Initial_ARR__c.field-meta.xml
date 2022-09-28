@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Initial_ARR__c</fullName>
+    <description>Starting Recurring Revenue for this Quote Line. Set by Price Rule: Set Initial QL Values</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The Starting ARR balance for this Line Item. Is 0 by default for all New Product and Amendment sales</inlineHelpText>
+    <label>Initial ARR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>DataDotComAccountInsights</excludeButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
+    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -324,6 +327,10 @@
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>QS_Snowball_Product_Solution__c</field>
+            </layoutItems>
         
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -335,7 +342,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>QS_Snowball_Product_Solution__c</field>
+                <field>QS_Snowball_Product_Solution1__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -489,6 +496,7 @@
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
+        <fields>TASK.WHAT_NAME</fields>
         
         
         
@@ -508,6 +516,7 @@
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
+        <fields>TASK.WHAT_NAME</fields>
         
         
         

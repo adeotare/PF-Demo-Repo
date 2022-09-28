@@ -120,6 +120,10 @@
                 <behavior>Edit</behavior>
                 <field>Legacy_3MW_ID__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Netsuite_Response_Message__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -133,6 +137,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Netsuite_Subscription_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Netsuite_Reprocess_Flag__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Netsuite_Failure_Indicator__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -172,7 +184,8 @@
                 <field>Description</field>
             </layoutItems>
         </layoutColumns>
-        <style>OneColumn</style>
+        <layoutColumns />
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>

@@ -142,6 +142,10 @@
                 <behavior>Edit</behavior>
                 <field>SBQQ__OriginalQuoteLineId__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>New_Quote_Line__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>

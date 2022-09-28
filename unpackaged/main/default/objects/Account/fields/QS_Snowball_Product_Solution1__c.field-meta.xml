@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Snowball_Product_Solution1__c</fullName>
+    <externalId>false</externalId>
+    <label>Not to be Used</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>true</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>BluePoint Core Recurring</fullName>
+                <default>false</default>
+                <label>BluePoint Core Recurring</label>
+            </value>
+            <value>
+                <fullName>BluePoint Core SaaS</fullName>
+                <default>false</default>
+                <label>BluePoint Core SaaS</label>
+            </value>
+            <value>
+                <fullName>BluePoint Enterprise SaaS</fullName>
+                <default>false</default>
+                <label>BluePoint Enterprise SaaS</label>
+            </value>
+            <value>
+                <fullName>BluePoint Pro SaaS</fullName>
+                <default>false</default>
+                <label>BluePoint Pro SaaS</label>
+            </value>
+            <value>
+                <fullName>Drive Add-ons SaaS</fullName>
+                <default>false</default>
+                <label>Drive Add-ons SaaS</label>
+            </value>
+            <value>
+                <fullName>Drive_Core_Lite_SaaS</fullName>
+                <default>false</default>
+                <label>Drive Core Lite SaaS</label>
+            </value>
+            <value>
+                <fullName>Drive Core Recurring</fullName>
+                <default>false</default>
+                <label>Drive Core Recurring</label>
+            </value>
+            <value>
+                <fullName>Drive Core SaaS</fullName>
+                <default>false</default>
+                <label>Drive Core SaaS</label>
+            </value>
+            <value>
+                <fullName>Drive O&amp;M Recurring</fullName>
+                <default>false</default>
+                <label>Drive O&amp;M Recurring</label>
+            </value>
+            <value>
+                <fullName>Drive O&amp;M SaaS</fullName>
+                <default>false</default>
+                <label>Drive O&amp;M SaaS</label>
+            </value>
+            <value>
+                <fullName>Drive Pro Recurring</fullName>
+                <default>false</default>
+                <label>Drive Pro Recurring</label>
+            </value>
+            <value>
+                <fullName>Drive Pro SaaS</fullName>
+                <default>false</default>
+                <label>Drive Pro SaaS</label>
+            </value>
+            <value>
+                <fullName>Ekhosoft Ekho Perpetual License</fullName>
+                <default>false</default>
+                <label>Ekhosoft Ekho Perpetual License</label>
+            </value>
+            <value>
+                <fullName>Ekhosoft Ekho Recurring</fullName>
+                <default>false</default>
+                <label>Ekhosoft Ekho Recurring</label>
+            </value>
+            <value>
+                <fullName>Ekhosoft Ekho SaaS</fullName>
+                <default>false</default>
+                <label>Ekhosoft Ekho SaaS</label>
+            </value>
+            <value>
+                <fullName>Greenbyte Add-ons Recurring</fullName>
+                <default>false</default>
+                <label>Greenbyte Add-ons Recurring</label>
+            </value>
+            <value>
+                <fullName>Greenbyte Add-ons SaaS</fullName>
+                <default>false</default>
+                <label>Greenbyte Add-ons SaaS</label>
+            </value>
+            <value>
+                <fullName>Greenbyte Breeze Development SaaS</fullName>
+                <default>false</default>
+                <label>Greenbyte Breeze Development SaaS</label>
+            </value>
+            <value>
+                <fullName>Greenbyte Core SaaS</fullName>
+                <default>false</default>
+                <label>Greenbyte Core SaaS</label>
+            </value>
+            <value>
+                <fullName>Drive Customer Success Recurring</fullName>
+                <default>false</default>
+                <label>Drive Customer Success Recurring</label>
+            </value>
+            <value>
+                <fullName>Greenbyte Customer Success Recurring</fullName>
+                <default>false</default>
+                <label>Greenbyte Customer Success Recurring</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

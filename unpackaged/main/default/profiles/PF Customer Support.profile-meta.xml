@@ -5993,6 +5993,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>SBQQ__QuoteLine__c.New_Quote_Line__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>SBQQ__QuoteLine__c.One_Time_Add_on__c</field>
         <readable>true</readable>
     </fieldPermissions>
