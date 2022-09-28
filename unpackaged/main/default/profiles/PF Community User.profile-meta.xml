@@ -2813,6 +2813,9 @@
         <recordType>RAID__c.Risk</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>RFI_Detail__c-Community Page Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>SBQQ__Quote__c-Quote Layout</layout>
     </layoutAssignments>
     <userLicense>Customer Community Plus</userLicense>
