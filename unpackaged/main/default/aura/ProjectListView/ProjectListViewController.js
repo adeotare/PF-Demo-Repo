@@ -7,10 +7,17 @@ cmp.set('v.Columns', [  {label: 'Name', fieldName: 'linkName', type: 'url',
  //{ label: 'Project Name', fieldName: 'Project_Name__c ', type: 'text' },
 //{ label: 'Project Type', fieldName: 'Project_Type__c', type: 'text' },
 //{ label: 'Project Visibility', fieldName: 'Project_visibility__c', type: 'text' },
-{ label: 'Product ', fieldName: 'Product__c ', type: 'text' },
+{ label: 'Product ', fieldName: 'Product__c ', type: 'text' }, 
 { label: 'Project Status ', fieldName: 'External_Status__c', type: 'text' },
-{ label: 'Installation Commencement Date ', fieldName: 'Installation_Commencement_Date__c ', type: 'text' },
-{ label: 'Approval Status ', fieldName: 'Approval_Status__c ', type: 'text' }
+{ label: 'Installation Commencement Date ', fieldName: 'Installation_Commencement_Date__c', type: 'date',typeAttributes:{
+            																day: 'numeric',  
+                                                                            month: 'numeric', 
+                                                                            year: 'numeric',  
+                                                                            hour: '2-digit',  
+                                                                            minute: '2-digit',  
+                                                                            second: '2-digit',  
+                                                                            hour12: true} }, 
+{ label: 'Approval Status ', fieldName: 'Formula_Approval_Status__c', type: 'text' }
 ]);
     
 var action = cmp.get("c.fetchDetails");
