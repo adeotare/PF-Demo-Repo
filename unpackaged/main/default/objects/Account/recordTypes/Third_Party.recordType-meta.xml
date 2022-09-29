@@ -212,28 +212,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Invoice_Requires_PO_No__c</picklist>
-        <values>
-            <fullName>No</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Yes</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Invoice_Requires_SAP_No__c</picklist>
-        <values>
-            <fullName>No</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Yes</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>Legal_Entity__c</picklist>
         <values>
             <fullName>No</fullName>
@@ -298,6 +276,97 @@
         </values>
         <values>
             <fullName>X-Large %28%3E5000 MWp%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QS_Snowball_Product_Solution1__c</picklist>
+        <values>
+            <fullName>BluePoint Core Recurring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BluePoint Core SaaS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BluePoint Enterprise SaaS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BluePoint Pro SaaS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drive Add-ons SaaS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drive Core Recurring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drive Core SaaS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drive Customer Success Recurring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drive O%26M Recurring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drive O%26M SaaS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drive Pro Recurring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drive Pro SaaS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drive_Core_Lite_SaaS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ekhosoft Ekho Perpetual License</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ekhosoft Ekho Recurring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ekhosoft Ekho SaaS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greenbyte Add-ons Recurring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greenbyte Add-ons SaaS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greenbyte Breeze Development SaaS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greenbyte Core SaaS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greenbyte Customer Success Recurring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -468,7 +537,7 @@
         <picklist>Type</picklist>
         <values>
             <fullName>3rd Party</fullName>
-            <default>false</default>
+            <default>true</default>
         </values>
     </picklistValues>
 </RecordType>

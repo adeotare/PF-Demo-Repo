@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>DataDotComAccountInsights</excludeButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
+    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
     <excludeButtons>DisableCustomerPortalAccount</excludeButtons>
     <excludeButtons>DisablePartnerPortalAccount</excludeButtons>
     <excludeButtons>IncludeOffline</excludeButtons>
@@ -494,17 +497,6 @@
         <relatedList>RelatedAccountContactRelationList</relatedList>
         <sortField>Active__c</sortField>
         <sortOrder>Desc</sortOrder>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>QS_New_Asset_Status__c</fields>
-        <fields>QS_Quantity__c</fields>
-        <fields>QS_Annual_Recurring_Revenue__c</fields>
-        <fields>QS_Product__c</fields>
-        <fields>QS_Start_Date__c</fields>
-        <fields>QS_End_Date__c</fields>
-        <fields>CURRENCY_ISO_CODE</fields>
-        <relatedList>QS_Customer_Asset__c.QS_Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
