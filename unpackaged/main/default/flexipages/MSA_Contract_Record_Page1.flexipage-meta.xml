@@ -10,18 +10,19 @@
                             <value>Edit</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>CustomButton.MSA_Contract__c.Submit_for_Approval</value>
+                            <value>CustomButton.MSA_Contract__c.Preview_Approval</value>
                             <visibilityRule>
+                                <booleanFilter>1 AND 2 AND 3</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.ApprovalStatus__c}</leftValue>
                                     <operator>NE</operator>
-                                    <rightValue>Approved</rightValue>
+                                    <rightValue>Pending</rightValue>
                                 </criteria>
-                            </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>CustomButton.MSA_Contract__c.Preview_Approval</value>
-                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
+                                    <operator>NE</operator>
+                                    <rightValue>Rejected</rightValue>
+                                </criteria>
                                 <criteria>
                                     <leftValue>{!Record.ApprovalStatus__c}</leftValue>
                                     <operator>NE</operator>
@@ -31,6 +32,19 @@
                         </valueListItems>
                         <valueListItems>
                             <value>CustomButton.MSA_Contract__c.Recall_Approval</value>
+                            <visibilityRule>
+                                <booleanFilter>1 OR 2</booleanFilter>
+                                <criteria>
+                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Pending</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Approved</rightValue>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>CustomButton.MSA_Contract__c.DEC</value>
