@@ -163,6 +163,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Migrated_Data_Confirmed_Correct__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.NetSuite_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
