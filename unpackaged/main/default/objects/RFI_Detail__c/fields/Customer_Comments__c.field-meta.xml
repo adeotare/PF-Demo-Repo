@@ -3,9 +3,9 @@
     <fullName>Customer_Comments__c</fullName>
     <externalId>false</externalId>
     <label>Customer Comments</label>
-    <length>32768</length>
+    <length>64000</length>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>LongTextArea</type>
-    <visibleLines>3</visibleLines>
+    <visibleLines>5</visibleLines>
 </CustomField>

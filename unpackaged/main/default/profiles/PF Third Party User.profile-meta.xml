@@ -6162,6 +6162,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>RFI_Detail__c.Request_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>RFI_Detail__c.Technical_Project_Manager__c</field>
         <readable>true</readable>

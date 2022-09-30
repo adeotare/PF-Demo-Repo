@@ -82,6 +82,10 @@
                 <behavior>Edit</behavior>
                 <field>Incorrect_Category__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Request_Type__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
