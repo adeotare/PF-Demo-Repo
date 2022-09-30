@@ -162,7 +162,15 @@
     <picklistValues>
         <picklist>Order_Subtype__c</picklist>
         <values>
+            <fullName>Full Cancellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reduction</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -267,7 +275,19 @@
     <picklistValues>
         <picklist>QS_Order_Type__c</picklist>
         <values>
+            <fullName>Additional Products %26 Services %28Upsell%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Downsell</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Product Line %28Cross-Sell%29</fullName>
             <default>false</default>
         </values>
         <values>
