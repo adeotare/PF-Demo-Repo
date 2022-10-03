@@ -9,5 +9,10 @@
     <columns>sbaa__Rule__c</columns>
     <columns>Approval_Justification__c</columns>
     <filterScope>Mine</filterScope>
+    <filters>
+        <field>sbaa__Status__c</field>
+        <operation>equals</operation>
+        <value>Requested</value>
+    </filters>
     <label>My Approvals</label>
 </ListView>

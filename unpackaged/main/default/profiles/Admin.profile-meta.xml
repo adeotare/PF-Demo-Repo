@@ -7669,6 +7669,11 @@
         <field>sbaa__Approval__c.Opportunity_Close_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>sbaa__Approver__c.X18_Digit_Group_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Competitor Page Layout</layout>
         <recordType>Account.Competitor</recordType>

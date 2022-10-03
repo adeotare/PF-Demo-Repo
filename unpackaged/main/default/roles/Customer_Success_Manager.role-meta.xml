@@ -5,5 +5,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Customer Success Manager</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>Admin</parentRole>
+    <parentRole>CRO_Sales_Operations_Finance_Legal</parentRole>
 </Role>
