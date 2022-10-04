@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <assignments>
+        <description>Set &quot;Standard Price Book&quot; Id as default price book Id</description>
+        <name>Assign_Default_Price_Book_Id</name>
+        <label>Assign Default Price Book Id</label>
+        <locationX>495</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Account_Price_Book__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Price_Book_Id.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_available_Price_Book_Id</name>
+        <label>Check available Price Book Id</label>
+        <locationX>584</locationX>
+        <locationY>293</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Available</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Price_Book_Id.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Default_Price_Book_Id</targetReference>
+            </connector>
+            <label>Available</label>
+        </rules>
+    </decisions>
+    <description>4 Oct :- Update &quot;Standard Price Book&quot; when new account is created.</description>
+    <interviewLabel>Account :- Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account :- Update &quot;Standard Price Book&quot; for new account</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Price_Book_Id</name>
+        <label>Get Price Book Id</label>
+        <locationX>401</locationX>
+        <locationY>283</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_available_Price_Book_Id</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Standard Price Book</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>401</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Get_Price_Book_Id</targetReference>
+        </connector>
+        <object>Account</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
