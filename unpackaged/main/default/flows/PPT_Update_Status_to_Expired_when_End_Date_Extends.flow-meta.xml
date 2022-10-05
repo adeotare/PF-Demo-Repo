@@ -40,24 +40,16 @@
                 <elementReference>TodaysDate</elementReference>
             </value>
         </filters>
-        <filters>
-            <field>Status__c</field>
-            <operator>EqualTo</operator>
+        <inputAssignments>
+            <field>Expired_Subscription__c</field>
             <value>
-                <stringValue>Contracted</stringValue>
+                <booleanValue>true</booleanValue>
             </value>
-        </filters>
-        <filters>
-            <field>Product_Category__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Software</stringValue>
-            </value>
-        </filters>
+        </inputAssignments>
         <inputAssignments>
             <field>Status__c</field>
             <value>
-                <stringValue>Expired</stringValue>
+                <stringValue>Decommissioned</stringValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -76,11 +68,32 @@
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
+        <filters>
+            <field>Expired_Subscription__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Contracted</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Product_Category__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Software</stringValue>
+            </value>
+        </filters>
         <object>Plant_Product_Transaction__c</object>
         <schedule>
             <frequency>Daily</frequency>
-            <startDate>2022-08-23</startDate>
-            <startTime>07:15:00.000Z</startTime>
+            <startDate>2022-10-04</startDate>
+            <startTime>06:30:00.000Z</startTime>
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>

@@ -4443,6 +4443,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Plant_Product_Transaction__c.Expired_Subscription__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Plant_Product_Transaction__c.Hint__c</field>
         <readable>true</readable>
     </fieldPermissions>
