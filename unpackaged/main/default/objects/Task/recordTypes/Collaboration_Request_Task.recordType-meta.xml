@@ -6,18 +6,6 @@
     <picklistValues>
         <picklist>Detail__c</picklist>
         <values>
-            <fullName>Account Executive Task</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Account Manager Task</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>BDR Task</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Correspondence</fullName>
             <default>false</default>
         </values>
@@ -35,10 +23,6 @@
         </values>
         <values>
             <fullName>Inbound - Conversation</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Legal Task</fullName>
             <default>false</default>
         </values>
         <values>
@@ -67,10 +51,6 @@
         </values>
         <values>
             <fullName>Promotional</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Renewals Task</fullName>
             <default>false</default>
         </values>
         <values>

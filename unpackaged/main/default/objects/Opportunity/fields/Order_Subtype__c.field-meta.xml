@@ -27,6 +27,11 @@
                 <default>false</default>
                 <label>Full Cancellation</label>
             </value>
+            <value>
+                <fullName>Strategic</fullName>
+                <default>false</default>
+                <label>Strategic</label>
+            </value>
         </valueSetDefinition>
         <valueSettings>
             <controllingFieldValue>New Product Line (Cross-Sell)</controllingFieldValue>
@@ -38,6 +43,11 @@
             <controllingFieldValue>Services Only</controllingFieldValue>
             <controllingFieldValue>Change Order</controllingFieldValue>
             <valueName>N/A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Additional Products &amp; Services (Upsell)</controllingFieldValue>
+            <controllingFieldValue>Renewal</controllingFieldValue>
+            <valueName>Strategic</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Downsell</controllingFieldValue>

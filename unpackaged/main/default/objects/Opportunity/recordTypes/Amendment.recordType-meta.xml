@@ -173,6 +173,10 @@
             <fullName>Reduction</fullName>
             <default>false</default>
         </values>
+        <values>
+            <fullName>Strategic</fullName>
+            <default>false</default>
+        </values>
     </picklistValues>
     <picklistValues>
         <picklist>Primary_Risk_Reason__c</picklist>
