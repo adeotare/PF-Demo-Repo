@@ -1,13 +1,22 @@
+/**************************************************************************************
+* @File Name          : 	AccountHierarchyproductfamilyTest
+* @Description        : 	Test class for AccountHierarchyproductfamily batch class
+* @Last Modified On   : 	05/10/2022
+* @Modification Log   :
+* Ver       Date         Modification
+* 1.0    	09/11/2021    Initial Version
+***************************************************************************************/
+
 @isTest
 public class AccountHierarchyproductfamilyTest {
-	
+    
     @TestSetup
     public static void setupData(){
         
         // Test data creation :
         List<String> assetClassList = new List<String>{'Solar', 'Wind','Hydro','Storage','Industrial','Other Renewable'};
-		List<String> productFamily = new List<String>{'Drive', 'Greenbyte','BluePoint','Ekhosoft','Drive', 'Greenbyte'};
-		List<Account> actList = new List<Account>();
+            List<String> productFamily = new List<String>{'Drive', 'Greenbyte','BluePoint','Ekhosoft','Drive', 'Greenbyte'};
+                List<Account> actList = new List<Account>();
         
         Account act = new Account();
         act.Name  = 'AccountHierarchyMWTest';
@@ -43,8 +52,8 @@ public class AccountHierarchyproductfamilyTest {
         act5.ParentId = act.Id;
         insert act5;
         actList.add(act5);
-         
-       	List<Plant__c> plantList = new List<Plant__c>();
+        
+        List<Plant__c> plantList = new List<Plant__c>();
         for(Integer i = 0 ; i<6 ; i++){
             Plant__c pl = new Plant__c();
             //pl.Name = 'Test Plant - '+(i+1);
@@ -53,7 +62,7 @@ public class AccountHierarchyproductfamilyTest {
             pl.Asset_Class__c = assetClassList[i];
             plantList.add(pl);
         }
-		insert plantList;
+        insert plantList;
         
         Test.startTest();
         List<Account_Plant__c> accPlantList = new List<Account_Plant__c>();
@@ -76,7 +85,7 @@ public class AccountHierarchyproductfamilyTest {
         cnt.StartDate = System.today().addDays(-5);
         cnt.ContractTerm = 5;
         //insert cnt;
-       
+        
         cnt.Status = 'Activated';
         //update cnt;
         
@@ -144,19 +153,19 @@ public class AccountHierarchyproductfamilyTest {
         List<Active_Megawatts__c> amwTiInsert = new List<Active_Megawatts__c>();
         for(Account acc: accList){
             Active_Megawatts__c amw = new Active_Megawatts__c(
-                Total_MW_Bluepoint__c 	= 0 ,
-                Total_MW_Drive__c 		= 0 ,
-                Total_MW_Greenbyte__c 	= 0 ,
+                Total_MW_Bluepoint__c   = 0 ,
+                Total_MW_Drive__c       = 0 ,
+                Total_MW_Greenbyte__c   = 0 ,
                 
-                MW_Bluepoint__c 		= 0 ,
-                MW_Drive__c 			= 0 ,
-                MW_Greenbyte__c 		= 0 ,
+                MW_Bluepoint__c         = 0 ,
+                MW_Drive__c             = 0 ,
+                MW_Greenbyte__c         = 0 ,
                 
-                Child_MW_Bluepoint__c 	= 0,
-                Child_MW_Drive__c 		= 0,
-                Child_MW_Greenbyte__c 	= 0,
+                Child_MW_Bluepoint__c   = 0,
+                Child_MW_Drive__c       = 0,
+                Child_MW_Greenbyte__c   = 0,
                 
-                Account__c					= 	acc.Id
+                Account__c                  =   acc.Id
             );
             amwTiInsert.add(amw);
         }
@@ -177,26 +186,26 @@ public class AccountHierarchyproductfamilyTest {
         List<Active_Megawatts__c> amwTiInsert = new List<Active_Megawatts__c>();
         for(Account acc: accList){
             Active_Megawatts__c amw = new Active_Megawatts__c(
-                Total_MW_Bluepoint__c 	= 0 ,
-                Total_MW_Drive__c 		= 0 ,
-                Total_MW_Greenbyte__c 	= 0 ,
+                Total_MW_Bluepoint__c   = 0 ,
+                Total_MW_Drive__c       = 0 ,
+                Total_MW_Greenbyte__c   = 0 ,
                 
-                MW_Bluepoint__c 		= 0 ,
-                MW_Drive__c 			= 0 ,
-                MW_Greenbyte__c 		= 0 ,
+                MW_Bluepoint__c         = 0 ,
+                MW_Drive__c             = 0 ,
+                MW_Greenbyte__c         = 0 ,
                 
-                Child_MW_Bluepoint__c 	= 0,
-                Child_MW_Drive__c 		= 0,
-                Child_MW_Greenbyte__c 	= 0,
+                Child_MW_Bluepoint__c   = 0,
+                Child_MW_Drive__c       = 0,
+                Child_MW_Greenbyte__c   = 0,
                 
-                Account__c					= 	acc.Id
+                Account__c                  =   acc.Id
             );
             amwTiInsert.add(amw);
         }
         
         insert amwTiInsert;
         AccountHierarchyproductfamily upd = new AccountHierarchyproductfamily();
-       	Database.executeBatch(upd);
+        Database.executeBatch(upd);
         
         Test.stopTest();
     }
@@ -219,22 +228,22 @@ public class AccountHierarchyproductfamilyTest {
         List<Active_Megawatts__c> amwTiInsert = new List<Active_Megawatts__c>();
         for(Account acc: accList){
             if(acc.ParentId == null){
-                 Active_Megawatts__c amw = new Active_Megawatts__c(
-                Total_MW_Bluepoint__c 	= 0 ,
-                Total_MW_Drive__c 		= 0 ,
-                Total_MW_Greenbyte__c 	= 0 ,
-                
-                MW_Bluepoint__c 		= 0 ,
-                MW_Drive__c 			= 0 ,
-                MW_Greenbyte__c 		= 0 ,
-                
-                Child_MW_Bluepoint__c 	= 0,
-                Child_MW_Drive__c 		= 0,
-                Child_MW_Greenbyte__c 	= 0,
-                
-                Account__c					= 	acc.Id
-            );
-            amwTiInsert.add(amw);
+                Active_Megawatts__c amw = new Active_Megawatts__c(
+                    Total_MW_Bluepoint__c   = 0 ,
+                    Total_MW_Drive__c       = 0 ,
+                    Total_MW_Greenbyte__c   = 0 ,
+                    
+                    MW_Bluepoint__c         = 0 ,
+                    MW_Drive__c             = 0 ,
+                    MW_Greenbyte__c         = 0 ,
+                    
+                    Child_MW_Bluepoint__c   = 0,
+                    Child_MW_Drive__c       = 0,
+                    Child_MW_Greenbyte__c   = 0,
+                    
+                    Account__c                  =   acc.Id
+                );
+                amwTiInsert.add(amw);
             }
         }
         
@@ -259,7 +268,7 @@ public class AccountHierarchyproductfamilyTest {
         msa2.Subsidiary__c = 'Power Factors LLC';
         msa2.Parent_MSA_Opt_Out__c = 'Yes';
         insert msa2;
-            
+        
         List<Account> accList = [SELECT Id FROM Account where name like 'AccountHierarchyMWTest' or name like 'Test-2023' LIMIT 2 ];
         
         accList[0].Uses_MSA_of__c = msa.Id;
@@ -272,7 +281,7 @@ public class AccountHierarchyproductfamilyTest {
         Test.stopTest();
     }
     
-     @isTest
+    @isTest
     public static void testMethod06(){
         Test.startTest();
         MSA_Contract__c msa = new MSA_Contract__c();
@@ -284,7 +293,7 @@ public class AccountHierarchyproductfamilyTest {
         msa2.Subsidiary__c = 'Power Factors LLC';
         msa2.Parent_MSA_Opt_Out__c = 'Yes';
         insert msa2;
-            
+        
         List<Account> accList = [SELECT Id FROM Account where name like 'AccountHierarchyMWTest' or name like 'Test-2023' LIMIT 2 ];
         
         accList[0].Uses_MSA_of__c = msa.Id;
@@ -295,19 +304,19 @@ public class AccountHierarchyproductfamilyTest {
         List<Active_Megawatts__c> amwTiInsert = new List<Active_Megawatts__c>();
         for(Account acc: accList2){
             Active_Megawatts__c amw = new Active_Megawatts__c(
-                Total_MW_Bluepoint__c 	= 0 ,
-                Total_MW_Drive__c 		= 0 ,
-                Total_MW_Greenbyte__c 	= 0 ,
+                Total_MW_Bluepoint__c   = 0 ,
+                Total_MW_Drive__c       = 0 ,
+                Total_MW_Greenbyte__c   = 0 ,
                 
-                MW_Bluepoint__c 		= 0 ,
-                MW_Drive__c 			= 0 ,
-                MW_Greenbyte__c 		= 0 ,
+                MW_Bluepoint__c         = 0 ,
+                MW_Drive__c             = 0 ,
+                MW_Greenbyte__c         = 0 ,
                 
-                Child_MW_Bluepoint__c 	= 0,
-                Child_MW_Drive__c 		= 0,
-                Child_MW_Greenbyte__c 	= 0,
+                Child_MW_Bluepoint__c   = 0,
+                Child_MW_Drive__c       = 0,
+                Child_MW_Greenbyte__c   = 0,
                 
-                Account__c					= 	acc.Id
+                Account__c                  =   acc.Id
             );
             amwTiInsert.add(amw);
         }
@@ -355,20 +364,20 @@ public class AccountHierarchyproductfamilyTest {
             apList[i].Account__c = acc.Id;
         }
         Active_Megawatts__c amw = new Active_Megawatts__c(
-                Total_MW_Bluepoint__c 	= 0 ,
-                Total_MW_Drive__c 		= 0 ,
-                Total_MW_Greenbyte__c 	= 0 ,
-                
-                MW_Bluepoint__c 		= 0 ,
-                MW_Drive__c 			= 0 ,
-                MW_Greenbyte__c 		= 0 ,
-                
-                Child_MW_Bluepoint__c 	= 0,
-                Child_MW_Drive__c 		= 0,
-                Child_MW_Greenbyte__c 	= 0,
-                
-                Account__c					= 	acc.Id
-            );
+            Total_MW_Bluepoint__c   = 0 ,
+            Total_MW_Drive__c       = 0 ,
+            Total_MW_Greenbyte__c   = 0 ,
+            
+            MW_Bluepoint__c         = 0 ,
+            MW_Drive__c             = 0 ,
+            MW_Greenbyte__c         = 0 ,
+            
+            Child_MW_Bluepoint__c   = 0,
+            Child_MW_Drive__c       = 0,
+            Child_MW_Greenbyte__c   = 0,
+            
+            Account__c                  =   acc.Id
+        );
         insert amw;
         update apList;
         update pptList;
@@ -401,20 +410,20 @@ public class AccountHierarchyproductfamilyTest {
             apList[i].Account__c = acc.Id;
         }
         Active_Megawatts__c amw = new Active_Megawatts__c(
-                Total_MW_Bluepoint__c 	= 0 ,
-                Total_MW_Drive__c 		= 0 ,
-                Total_MW_Greenbyte__c 	= 0 ,
-                
-                MW_Bluepoint__c 		= 0 ,
-                MW_Drive__c 			= 0 ,
-                MW_Greenbyte__c 		= 0 ,
-                
-                Child_MW_Bluepoint__c 	= 0,
-                Child_MW_Drive__c 		= 0,
-                Child_MW_Greenbyte__c 	= 0,
-                
-                Account__c					= 	acc.Id
-            );
+            Total_MW_Bluepoint__c   = 0 ,
+            Total_MW_Drive__c       = 0 ,
+            Total_MW_Greenbyte__c   = 0 ,
+            
+            MW_Bluepoint__c         = 0 ,
+            MW_Drive__c             = 0 ,
+            MW_Greenbyte__c         = 0 ,
+            
+            Child_MW_Bluepoint__c   = 0,
+            Child_MW_Drive__c       = 0,
+            Child_MW_Greenbyte__c   = 0,
+            
+            Account__c                  =   acc.Id
+        );
         insert amw;
         update apList;
         update pptList;
@@ -453,5 +462,4 @@ public class AccountHierarchyproductfamilyTest {
         
         Test.stopTest();
     }
-
 }
