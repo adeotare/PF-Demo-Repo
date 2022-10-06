@@ -882,15 +882,38 @@ public with sharing class PlantProductController {
         // get all the PPT records with this Quoteline ID
         // List<Plant_Product_Transaction__c> pptList =[SELECT Unit_Price_After_Volume_Discount__c, Contracted_MW_Unit_List_Price__c, Quote_Line_Quantity__c,  Net_Unit_Price__c, Net_Total_Price__c from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId AND Status__c != 'Decommissioned' WITH SECURITY_ENFORCED];
 
+        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__Quote__r.SBQQ__Type__c, Related_PPT_s_Net_Total__c, SBQQ__EffectiveQuantity__c, SBQQ__SpecialPriceType__c, SBQQ__SpecialPrice__c, SBQQ__AdditionalDiscount__c,  SBQQ__NetPrice__c, SBQQ__NetTotal__c, SBQQ__RegularPrice__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure 
+        from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+
+        /* Nitin 5th October
         List<Plant_Product_Transaction__c> pptList =[SELECT Unit_Price_After_Volume_Discount__c, Contracted_MW_Unit_List_Price__c, Quote_Line_Quantity__c,  Net_Unit_Price__c, Net_Total_Price__c  
                     from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId AND 
                     (Amendment_Action__c != 'Removed Plant' AND Renewal_Action__c != 'Removed Plant') WITH SECURITY_ENFORCED];
                     
                 System.debug('Total records from PPT whose Net Price is going to be updated is '+pptList.size());
 
+
         SBQQ__QuoteLine__c quoteLine = [SELECT Related_PPT_s_Net_Total__c, SBQQ__EffectiveQuantity__c, SBQQ__SpecialPriceType__c, SBQQ__SpecialPrice__c, SBQQ__AdditionalDiscount__c,  SBQQ__NetPrice__c, SBQQ__NetTotal__c, SBQQ__RegularPrice__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure 
         from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+         Nitin 5 Oct*/
+        List<Plant_Product_Transaction__c> pptList = new List<Plant_Product_Transaction__c> ();
+        If (quoteLine.SBQQ__Quote__r.SBQQ__Type__c !='Amendment') {
+            pptList =[SELECT Unit_Price_After_Volume_Discount__c, Contracted_MW_Unit_List_Price__c, Quote_Line_Quantity__c,  Net_Unit_Price__c, Net_Total_Price__c  
+                    from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId AND 
+                    (Amendment_Action__c != 'Removed Plant' AND Renewal_Action__c != 'Removed Plant') WITH SECURITY_ENFORCED];
+                    
+                System.debug('Total records from PPT whose Net Price is going to be updated is '+pptList.size());
 
+        }
+        else{       // for Amendment/Cancellation - we need to include the Removed Plants as well to calculate the total
+            pptList =[SELECT Unit_Price_After_Volume_Discount__c, Contracted_MW_Unit_List_Price__c, Quote_Line_Quantity__c,  Net_Unit_Price__c, Net_Total_Price__c  
+                    from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId WITH SECURITY_ENFORCED];
+                    
+                System.debug('Total records from PPT whose Net Price is going to be updated is '+pptList.size());
+        }
+
+
+        // This will happen only for a New Quote and not for an Amendment or a Renewal
         if (pptList.size() == 0) {
             quoteLine.SBQQ__SpecialPriceType__c = 'Custom';
             quoteLine.SBQQ__SpecialPrice__c = 0;
@@ -924,8 +947,6 @@ public with sharing class PlantProductController {
         
         quoteLine.SBQQ__SpecialPriceType__c = 'Custom';
         quoteLine.SBQQ__SpecialPrice__c = (cumulativeQLNetTotal / cumulativeQLQuantity);
-        // quoteLine.SBQQ__RegularPrice__c = 100;
-        // quoteLine.SBQQ__SpecialPrice__c = 100;
         quoteLine.Related_PPT_s_Net_Total__c = pptTotalforQLToAddressRounding;
 
         }
