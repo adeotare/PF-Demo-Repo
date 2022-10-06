@@ -192,31 +192,44 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                 }else if(prodFamily == 'BluePoint'){
                     for(Decimal mwp : productPptMap.get(prodFamily).values())SumOfBluePoint += mwp;
                 }
+                else if(prodFamily == 'Ekhosoft'){
+                    for(Decimal mwp : productPptMap.get(prodFamily).values())SumOfEkhoSoft += mwp;
+                }
+                
             }
             Decimal Total_MW_Bluepoint  = SumOfBluePoint;
             Decimal Total_MW_Drive      = SumOfDrive;
             Decimal Total_MW_Greenbyte  = SumOfGreenByte;
+            Decimal Total_MW_Ekhosoft   = SumOfEkhoSoft;
+            
             
             Decimal MW_Bluepoint        = SumOfBluePoint;
             Decimal MW_Drive            = SumOfDrive;
             Decimal MW_Greenbyte        = SumOfGreenByte;
+            Decimal MW_Ekhosoft         = SumOfEkhoSoft;
+            
             
             Decimal Child_MW_Bluepoint  = SumOfBluePoint;
             Decimal Child_MW_Drive      = SumOfDrive;
             Decimal Child_MW_Greenbyte  = SumOfGreenByte;
+            Decimal Child_MW_Ekhosoft   = SumOfEkhoSoft;
+            
             
             ActiveMegawatWrapper wrp = new ActiveMegawatWrapper(
                Total_MW_Bluepoint, 
                 Total_MW_Drive ,
                 Total_MW_Greenbyte ,
+                Total_MW_Ekhosoft,
                 
                 MW_Bluepoint ,
                 MW_Drive ,
                 MW_Greenbyte ,
+                MW_Ekhosoft,
                 
                 Child_MW_Bluepoint ,
                 Child_MW_Drive ,
-                Child_MW_Greenbyte 
+                Child_MW_Greenbyte,
+                Child_MW_Ekhosoft 
             );
             accCalculationMap.put(pptId, wrp);
         }
@@ -241,14 +254,17 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                 Total_MW_Bluepoint__c   = 0 ,
                 Total_MW_Drive__c       = 0 ,
                 Total_MW_Greenbyte__c   = 0 ,
+                Total_Active_MW_to_consider_for_Ekhosoft__c=0,
                 
                 MW_Bluepoint__c         = 0 ,
                 MW_Drive__c             = 0 ,
                 MW_Greenbyte__c         = 0 ,
+                MW_Ekhosoft__c          =0,
                 
                 Child_MW_Bluepoint__c   = 0,
                 Child_MW_Drive__c       = 0,
                 Child_MW_Greenbyte__c   = 0,
+                Child_MW_Ekhosoft__c    =0,
                 
                 Account__c              =   acc.Id,
                 AccountForPricingAM__c  =   acc.ParentId
@@ -262,12 +278,16 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                 Decimal Sum_Total_MW_Bluepoint  = 0;
                 Decimal Sum_Total_MW_Drive      = 0;
                 Decimal Sum_Total_MW_Greenbyte  = 0;
+                Decimal Sum_Total_MW_Ekhosoft   =0;
+                
                 
 				for(Id childAccId : accountRelationShipMap.get(accId)){
                     if(accCalculationMap.KeySet().contains(childAccId)){
                         Sum_Total_MW_Bluepoint  += accCalculationMap.get(childAccId).Total_MW_Bluepoint;
                         Sum_Total_MW_Drive      += accCalculationMap.get(childAccId).Total_MW_Drive;
                         Sum_Total_MW_Greenbyte  += accCalculationMap.get(childAccId).Total_MW_Greenbyte;
+                        Sum_Total_MW_Ekhosoft   +=accCalculationMap.get(childAccId).Total_MW_Ekhosoft;
+                        
                    }
                     
                 }
@@ -275,15 +295,19 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                         Active_Megawatts__c amw = existingAMWMap.get(accId).clone(true,true,true,true);
                         amw.Total_MW_Bluepoint__c   = Sum_Total_MW_Bluepoint ;
                         amw.Total_MW_Drive__c       = Sum_Total_MW_Drive ;
-                        amw.Total_MW_Greenbyte__c   += Sum_Total_MW_Greenbyte ;
+                        amw.Total_MW_Greenbyte__c   = Sum_Total_MW_Greenbyte ;//need to check 298 line//
+                        amw.Total_Active_MW_to_consider_for_Ekhosoft__c=Sum_Total_MW_Ekhosoft;
+                    
                         
                         amw.MW_Bluepoint__c         = 0 ;
                         amw.MW_Drive__c             = 0 ;
                         amw.MW_Greenbyte__c         = 0 ;
+                        amw.MW_Ekhosoft__c          = 0 ;
                         
                         amw.Child_MW_Bluepoint__c   = Sum_Total_MW_Bluepoint;
                         amw.Child_MW_Drive__c       = Sum_Total_MW_Drive;
                         amw.Child_MW_Greenbyte__c   = Sum_Total_MW_Greenbyte;
+                        amw.Child_MW_Ekhosoft__c    = Sum_Total_MW_Ekhosoft;
                         
                         patentWitoutPPTChildWithPPT.put(accId,amw);
                 }
@@ -293,14 +317,17 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                             Total_MW_Bluepoint__c   = Sum_Total_MW_Bluepoint ,
                             Total_MW_Drive__c       = Sum_Total_MW_Drive ,
                             Total_MW_Greenbyte__c   = Sum_Total_MW_Greenbyte ,
+                            Total_Active_MW_to_consider_for_Ekhosoft__c=Sum_Total_MW_Ekhosoft,
                             
                             MW_Bluepoint__c         = 0 ,
                             MW_Drive__c             = 0 ,
                             MW_Greenbyte__c         = 0 ,
+                            MW_Ekhosoft__c          =0 ,
                             
                             Child_MW_Bluepoint__c   = Sum_Total_MW_Bluepoint,
                             Child_MW_Drive__c       = Sum_Total_MW_Drive,
                             Child_MW_Greenbyte__c   = Sum_Total_MW_Greenbyte,
+                            Child_MW_Ekhosoft__c  =   Sum_Total_MW_Ekhosoft,
                             
                             Account__c                  =   accId
                         );
@@ -313,11 +340,13 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                 Decimal Sum_Total_MW_Bluepoint  = 0;
                 Decimal Sum_Total_MW_Drive      = 0;
                 Decimal Sum_Total_MW_Greenbyte  = 0;
+                Decimal Sum_Total_MW_Ekhosoft   = 0;
                 for(Id childAccId : accountRelationShipMapWithParentOptOut.get(accId)){
                     if(accCalculationMap.KeySet().contains(childAccId)){
                         Sum_Total_MW_Bluepoint  += accCalculationMap.get(childAccId).Total_MW_Bluepoint;
                         Sum_Total_MW_Drive      += accCalculationMap.get(childAccId).Total_MW_Drive;
                         Sum_Total_MW_Greenbyte  += accCalculationMap.get(childAccId).Total_MW_Greenbyte;
+                        Sum_Total_MW_Ekhosoft   += accCalculationMap.get(childAccId).Total_MW_Ekhosoft;
                     }
                 }
                 if(existingAMWMap != null && existingAMWMap.size() > 0 && existingAMWMap.containsKey(accId)){
@@ -326,14 +355,17 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                     amw.Total_MW_Bluepoint__c   = Sum_Total_MW_Bluepoint ;
                     amw.Total_MW_Drive__c       = Sum_Total_MW_Drive ;
                     amw.Total_MW_Greenbyte__c   = Sum_Total_MW_Greenbyte ;
+                    amw.Total_Active_MW_to_consider_for_Ekhosoft__c=Sum_Total_MW_Ekhosoft;
                     
                     amw.MW_Bluepoint__c         = 0 ;
                     amw.MW_Drive__c             = 0 ;
                     amw.MW_Greenbyte__c         = 0 ;
+                    amw.MW_Ekhosoft__c          = 0 ;
                     
                     amw.Child_MW_Bluepoint__c   = Sum_Total_MW_Bluepoint;
                     amw.Child_MW_Drive__c       = Sum_Total_MW_Drive;
                     amw.Child_MW_Greenbyte__c   = Sum_Total_MW_Greenbyte;
+                    amw.Child_MW_Ekhosoft__c    = Sum_Total_MW_Ekhosoft;
                     
                     patentWitoutPPTChildWithPPT2.put(accId,amw);
                     
@@ -343,14 +375,17 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                         Total_MW_Bluepoint__c   = Sum_Total_MW_Bluepoint ,
                         Total_MW_Drive__c       = Sum_Total_MW_Drive ,
                         Total_MW_Greenbyte__c   = Sum_Total_MW_Greenbyte ,
+                        Total_Active_MW_to_consider_for_Ekhosoft__c = Sum_Total_MW_Ekhosoft,
                         
                         MW_Bluepoint__c         = 0 ,
                         MW_Drive__c             = 0 ,
                         MW_Greenbyte__c         = 0 ,
+                        MW_Ekhosoft__c          = 0,
                         
                         Child_MW_Bluepoint__c   = Sum_Total_MW_Bluepoint,
                         Child_MW_Drive__c       = Sum_Total_MW_Drive,
                         Child_MW_Greenbyte__c   = Sum_Total_MW_Greenbyte,
+                        Child_MW_Ekhosoft__c    = Sum_Total_MW_Ekhosoft,
                         
                         Account__c                  =   accId
                     );
@@ -368,14 +403,17 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                 amw.Total_MW_Bluepoint__c   = amwWrapper.MW_Bluepoint ;
                 amw.Total_MW_Drive__c       = amwWrapper.MW_Drive ;
                 amw.Total_MW_Greenbyte__c   = amwWrapper.MW_Greenbyte ;
+                amw.Total_Active_MW_to_consider_for_Ekhosoft__c=amwWrapper.MW_Ekhosoft;
                 
                 amw.MW_Bluepoint__c         = amwWrapper.MW_Bluepoint ;
                 amw.MW_Drive__c             = amwWrapper.MW_Drive ;
                 amw.MW_Greenbyte__c         = amwWrapper.MW_Greenbyte ;
+                amw.MW_Ekhosoft__c          = amwWrapper.MW_Ekhosoft;
                 
                 amw.Child_MW_Bluepoint__c   = 0;
                 amw.Child_MW_Drive__c       = 0;
                 amw.Child_MW_Greenbyte__c   = 0;
+                amw.Child_MW_Ekhosoft__c    =0;
                 
                 independantAMW.put(indipAccId,amw);
             }
@@ -384,14 +422,17 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                     Total_MW_Bluepoint__c   = amwWrapper.MW_Bluepoint ,
                     Total_MW_Drive__c       = amwWrapper.MW_Drive ,
                     Total_MW_Greenbyte__c   = amwWrapper.MW_Greenbyte ,
+                    Total_Active_MW_to_consider_for_Ekhosoft__c=amwWrapper.MW_Ekhosoft,
                     
                     MW_Bluepoint__c         = amwWrapper.MW_Bluepoint ,
                     MW_Drive__c             = amwWrapper.MW_Drive ,
                     MW_Greenbyte__c         = amwWrapper.MW_Greenbyte ,
+                    MW_Ekhosoft__c          = amwWrapper.MW_Ekhosoft,
                     
                     Child_MW_Bluepoint__c   = 0,
                     Child_MW_Drive__c       = 0,
                     Child_MW_Greenbyte__c   = 0,
+                    Child_MW_Ekhosoft__c    =0,
                     
                     Account__c                  =   indipAccId
                 );
@@ -402,14 +443,17 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
             Decimal Sum_Total_MW_Bluepoint = 0;
             Decimal Sum_Total_MW_Drive =0;
             Decimal Sum_Total_MW_Greenbyte =0;
+            Decimal Sum_Total_MW_Ekhosoft =0;
             
             Decimal Sum_MW_Bluepoint =0;
             Decimal Sum_MW_Drive =0;
             Decimal Sum_MW_Greenbyte =0;
+            Decimal Sum_MW_Ekhosoft=0;
             
             Decimal Sum_Child_MW_Bluepoint =0;
             Decimal Sum_Child_MW_Drive =0;
             Decimal Sum_Child_MW_Greenbyte =0;
+            Decimal Sum_Child_MW_Ekhosoft =0;
             
             for(Id childAccIds :  accountRelationShipMap.get(parentAccId)){
                 if(accCalculationMap.containsKey(childAccIds)){
@@ -417,14 +461,17 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                     Sum_Total_MW_Bluepoint  += accCalculationMap.get(childAccIds).Total_MW_Bluepoint;
                     Sum_Total_MW_Drive      += accCalculationMap.get(childAccIds).Total_MW_Drive;
                     Sum_Total_MW_Greenbyte  += accCalculationMap.get(childAccIds).Total_MW_Greenbyte;
+                    Sum_Total_MW_Ekhosoft   += accCalculationMap.get(childAccIds).Total_MW_Ekhosoft;
                     
                     Sum_MW_Bluepoint        += accCalculationMap.get(childAccIds).MW_Bluepoint;
                     Sum_MW_Drive            += accCalculationMap.get(childAccIds).MW_Drive;
                     Sum_MW_Greenbyte        += accCalculationMap.get(childAccIds).MW_Greenbyte;
+                    Sum_Total_MW_Ekhosoft   += accCalculationMap.get(childAccIds).MW_Ekhosoft;
                     
                     Sum_Child_MW_Bluepoint  += accCalculationMap.get(childAccIds).Child_MW_Bluepoint;
                     Sum_Child_MW_Drive      += accCalculationMap.get(childAccIds).Child_MW_Drive;
                     Sum_Child_MW_Greenbyte  += accCalculationMap.get(childAccIds).Child_MW_Greenbyte;
+                    Sum_Total_MW_Ekhosoft   += accCalculationMap.get(childAccIds).Child_MW_Ekhosoft;
 
                     ActiveMegawatWrapper parentFields = accCalculationMap.get(childAccIds);
                     
@@ -434,14 +481,17 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                         amw.Total_MW_Bluepoint__c   = parentFields.MW_Bluepoint ;
                         amw.Total_MW_Drive__c       = parentFields.MW_Drive ;
                         amw.Total_MW_Greenbyte__c   = parentFields.MW_Greenbyte ;
+                        amw.Total_Active_MW_to_consider_for_Ekhosoft__c=parentFields.MW_Ekhosoft;
                         
                         amw.MW_Bluepoint__c         = parentFields.MW_Bluepoint ;
                         amw.MW_Drive__c             = parentFields.MW_Drive ;
                         amw.MW_Greenbyte__c         = parentFields.MW_Greenbyte ;
+                        amw.MW_Ekhosoft__c          = parentFields.MW_Ekhosoft;
                         
                         amw.Child_MW_Bluepoint__c   = 0;
                         amw.Child_MW_Drive__c       = 0;
                         amw.Child_MW_Greenbyte__c   = 0;
+                        amw.Child_MW_Ekhosoft__c    =0;
                         
                         childActiveMegawatsMaps.put(childAccIds,amw);
                     }
@@ -450,14 +500,17 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                             Total_MW_Bluepoint__c   = parentFields.MW_Bluepoint ,
                             Total_MW_Drive__c       = parentFields.MW_Drive ,
                             Total_MW_Greenbyte__c   = parentFields.MW_Greenbyte ,
+                            Total_Active_MW_to_consider_for_Ekhosoft__c = parentFields.MW_Ekhosoft,
                             
                             MW_Bluepoint__c         = parentFields.MW_Bluepoint ,
                             MW_Drive__c             = parentFields.MW_Drive ,
                             MW_Greenbyte__c         = parentFields.MW_Greenbyte ,
+                            MW_Ekhosoft__c          = parentFields.MW_Ekhosoft,
                             
                             Child_MW_Bluepoint__c   = 0,
                             Child_MW_Drive__c       = 0,
                             Child_MW_Greenbyte__c   = 0,
+                            Child_MW_Ekhosoft__c    =0,
                             
                             Account__c                  =   childAccIds
                         );
@@ -474,14 +527,17 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                     amw.Total_MW_Bluepoint__c   = parentFields.MW_Bluepoint  + Sum_Total_MW_Bluepoint ;
                     amw.Total_MW_Drive__c       = parentFields.MW_Drive + Sum_Total_MW_Drive ;
                     amw.Total_MW_Greenbyte__c   = parentFields.MW_Greenbyte + Sum_Total_MW_Greenbyte ;
+                    amw.Total_Active_MW_to_consider_for_Ekhosoft__c= parentFields.MW_Ekhosoft+Sum_Total_MW_Ekhosoft;
                     
                     amw.MW_Bluepoint__c         = parentFields.MW_Bluepoint ;
                     amw.MW_Drive__c             = parentFields.MW_Drive ;
                     amw.MW_Greenbyte__c         = parentFields.MW_Greenbyte ;
+                    amw.MW_Ekhosoft__c          = parentFields.MW_Ekhosoft;
                     
                     amw.Child_MW_Bluepoint__c   = Sum_Total_MW_Bluepoint;
                     amw.Child_MW_Drive__c       = Sum_Total_MW_Drive;
                     amw.Child_MW_Greenbyte__c   = Sum_Total_MW_Greenbyte;
+                    amw.Child_MW_Ekhosoft__c    = Sum_Total_MW_Ekhosoft;
                     
                     mer.put(parentAccId,amw);
                 }
@@ -490,14 +546,17 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                         Total_MW_Bluepoint__c   = parentFields.MW_Bluepoint  + Sum_Total_MW_Bluepoint ,
                         Total_MW_Drive__c       = parentFields.MW_Drive + Sum_Total_MW_Drive ,
                         Total_MW_Greenbyte__c   = parentFields.MW_Greenbyte + Sum_Total_MW_Greenbyte ,
+                        Total_Active_MW_to_consider_for_Ekhosoft__c = parentFields.MW_Ekhosoft+Sum_Total_MW_Ekhosoft,
                         
                         MW_Bluepoint__c         = parentFields.MW_Bluepoint ,
                         MW_Drive__c             = parentFields.MW_Drive ,
                         MW_Greenbyte__c         = parentFields.MW_Greenbyte ,
+                        MW_Ekhosoft__c          = parentFields.MW_Ekhosoft,
                         
                         Child_MW_Bluepoint__c   = Sum_Total_MW_Bluepoint,
                         Child_MW_Drive__c       = Sum_Total_MW_Drive,
                         Child_MW_Greenbyte__c   = Sum_Total_MW_Greenbyte,
+                        Child_MW_Ekhosoft__c    = Sum_Total_MW_Ekhosoft,
                         
                         Account__c                  =   parentAccId
                     );
@@ -509,14 +568,17 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
             Decimal Sum_Total_MW_Bluepoint = 0;
             Decimal Sum_Total_MW_Drive =0;
             Decimal Sum_Total_MW_Greenbyte =0;
+            Decimal Sum_Total_MW_Ekhosoft=0;
             
             Decimal Sum_MW_Bluepoint =0;
             Decimal Sum_MW_Drive =0;
             Decimal Sum_MW_Greenbyte =0;
+            Decimal Sum_MW_Ekhosoft  =0;
             
             Decimal Sum_Child_MW_Bluepoint =0;
             Decimal Sum_Child_MW_Drive =0;
             Decimal Sum_Child_MW_Greenbyte =0;
+            Decimal Sum_Child_MW_Ekhosoft =0;
             
             for(Id childAccIds :  accountRelationShipMapWithParentOptOut.get(parentAccId)){
                 if(accCalculationMap.containsKey(childAccIds)){
@@ -524,14 +586,19 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                     Sum_Total_MW_Bluepoint  += accCalculationMap.get(childAccIds).Total_MW_Bluepoint;
                     Sum_Total_MW_Drive      += accCalculationMap.get(childAccIds).Total_MW_Drive;
                     Sum_Total_MW_Greenbyte  += accCalculationMap.get(childAccIds).Total_MW_Greenbyte;
+                    Sum_Total_MW_Ekhosoft  +=  accCalculationMap.get(childAccIds).Total_MW_Ekhosoft;
                     
                     Sum_MW_Bluepoint        += accCalculationMap.get(childAccIds).MW_Bluepoint;
                     Sum_MW_Drive            += accCalculationMap.get(childAccIds).MW_Drive;
                     Sum_MW_Greenbyte        += accCalculationMap.get(childAccIds).MW_Greenbyte;
+                    Sum_MW_Ekhosoft         += accCalculationMap.get(childAccIds).MW_Ekhosoft;
+                    
                     
                     Sum_Child_MW_Bluepoint  += accCalculationMap.get(childAccIds).Child_MW_Bluepoint;
                     Sum_Child_MW_Drive      += accCalculationMap.get(childAccIds).Child_MW_Drive;
                     Sum_Child_MW_Greenbyte  += accCalculationMap.get(childAccIds).Child_MW_Greenbyte;
+                    Sum_Child_MW_Ekhosoft +=accCalculationMap.get(childAccIds).Child_MW_Ekhosoft;
+                    
                     
                     ActiveMegawatWrapper parentFields = accCalculationMap.get(childAccIds);
                     
@@ -541,14 +608,17 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                         amw.Total_MW_Bluepoint__c   = parentFields.MW_Bluepoint ;
                         amw.Total_MW_Drive__c       = parentFields.MW_Drive ;
                         amw.Total_MW_Greenbyte__c   = parentFields.MW_Greenbyte ;
+                        amw.Total_Active_MW_to_consider_for_Ekhosoft__c=parentFields.MW_Ekhosoft;
                         
                         amw.MW_Bluepoint__c         = parentFields.MW_Bluepoint ;
                         amw.MW_Drive__c             = parentFields.MW_Drive ;
                         amw.MW_Greenbyte__c         = parentFields.MW_Greenbyte ;
+                        amw.MW_Ekhosoft__c          = parentFields.MW_Ekhosoft;
                         
                         amw.Child_MW_Bluepoint__c   = 0;
                         amw.Child_MW_Drive__c       = 0;
                         amw.Child_MW_Greenbyte__c   = 0;
+                        amw.Child_MW_Ekhosoft__c   =0;
                         
                         childActiveMegawatsMaps2.put(childAccIds,amw);
                    }
@@ -558,14 +628,17 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                             Total_MW_Bluepoint__c   = parentFields.MW_Bluepoint ,
                             Total_MW_Drive__c       = parentFields.MW_Drive ,
                             Total_MW_Greenbyte__c   = parentFields.MW_Greenbyte ,
+                            Total_Active_MW_to_consider_for_Ekhosoft__c=parentFields.MW_Ekhosoft,
                             
                             MW_Bluepoint__c         = parentFields.MW_Bluepoint ,
                             MW_Drive__c             = parentFields.MW_Drive ,
                             MW_Greenbyte__c         = parentFields.MW_Greenbyte ,
+                            MW_Ekhosoft__c          = parentFields.MW_Ekhosoft,
                             
                             Child_MW_Bluepoint__c   = 0,
                             Child_MW_Drive__c       = 0,
                             Child_MW_Greenbyte__c   = 0,
+                            Child_MW_Ekhosoft__c    =0,
                             
                             Account__c                  =   childAccIds
                         );
@@ -582,14 +655,17 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                     amw.Total_MW_Bluepoint__c   = parentFields.MW_Bluepoint  + Sum_Total_MW_Bluepoint ;
                     amw.Total_MW_Drive__c       = parentFields.MW_Drive + Sum_Total_MW_Drive ;
                     amw.Total_MW_Greenbyte__c   = parentFields.MW_Greenbyte + Sum_Total_MW_Greenbyte ;
+                    amw.Total_Active_MW_to_consider_for_Ekhosoft__c=parentFields.MW_Ekhosoft+Sum_Total_MW_Ekhosoft;
                     
                     amw.MW_Bluepoint__c         = parentFields.MW_Bluepoint ;
                     amw.MW_Drive__c             = parentFields.MW_Drive ;
                     amw.MW_Greenbyte__c         = parentFields.MW_Greenbyte ;
+                    amw.MW_Ekhosoft__c          = parentFields.MW_Ekhosoft;
                     
                     amw.Child_MW_Bluepoint__c   = Sum_Total_MW_Bluepoint;
                     amw.Child_MW_Drive__c       = Sum_Total_MW_Drive;
                     amw.Child_MW_Greenbyte__c   = Sum_Total_MW_Greenbyte;
+                    amw.Child_MW_Ekhosoft__c    =Sum_Total_MW_Ekhosoft;
                     
                     mer2.put(parentAccId,amw);
                 }
@@ -598,14 +674,17 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                         Total_MW_Bluepoint__c   = parentFields.MW_Bluepoint  + Sum_Total_MW_Bluepoint ,
                         Total_MW_Drive__c       = parentFields.MW_Drive + Sum_Total_MW_Drive ,
                         Total_MW_Greenbyte__c   = parentFields.MW_Greenbyte + Sum_Total_MW_Greenbyte ,
+                        Total_Active_MW_to_consider_for_Ekhosoft__c=parentFields.MW_Ekhosoft+Sum_Total_MW_Ekhosoft,
                         
                         MW_Bluepoint__c         = parentFields.MW_Bluepoint ,
                         MW_Drive__c             = parentFields.MW_Drive ,
                         MW_Greenbyte__c         = parentFields.MW_Greenbyte ,
+                        MW_Ekhosoft__c          = parentFields.MW_Ekhosoft,
                         
                         Child_MW_Bluepoint__c   = Sum_Total_MW_Bluepoint,
                         Child_MW_Drive__c       = Sum_Total_MW_Drive,
                         Child_MW_Greenbyte__c   = Sum_Total_MW_Greenbyte,
+                        Child_MW_Ekhosoft__c    = Sum_Total_MW_Ekhosoft,
                         
                         Account__c                  =   parentAccId
                     );
@@ -620,6 +699,7 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                         childActiveMegawatsMaps.get(childAcc).Total_MW_Bluepoint__c = mer.get(accId).Total_MW_Bluepoint__c;
                         childActiveMegawatsMaps.get(childAcc).Total_MW_Drive__c = mer.get(accId).Total_MW_Drive__c;
                         childActiveMegawatsMaps.get(childAcc).Total_MW_Greenbyte__c = mer.get(accId).Total_MW_Greenbyte__c;
+                        childActiveMegawatsMaps.get(childAcc).Total_Active_MW_to_consider_for_Ekhosoft__c=mer.get(accId).Total_Active_MW_to_consider_for_Ekhosoft__c;
                         childActiveMegawatsMaps.get(childAcc).AccountForPricingAM__c = accId;
                         mer.get(accId).AccountForPricingAM__c = accId;
                     }
@@ -631,6 +711,8 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
                         childActiveMegawatsMaps.get(childAcc).Total_MW_Bluepoint__c = patentWitoutPPTChildWithPPT.get(accId).Total_MW_Bluepoint__c;
                         childActiveMegawatsMaps.get(childAcc).Total_MW_Drive__c = patentWitoutPPTChildWithPPT.get(accId).Total_MW_Drive__c;
                         childActiveMegawatsMaps.get(childAcc).Total_MW_Greenbyte__c = patentWitoutPPTChildWithPPT.get(accId).Total_MW_Greenbyte__c;
+                        childActiveMegawatsMaps.get(childAcc).Total_Active_MW_to_consider_for_Ekhosoft__c=patentWitoutPPTChildWithPPT.get(accId).Total_Active_MW_to_consider_for_Ekhosoft__c;
+
                         childActiveMegawatsMaps.get(childAcc).AccountForPricingAM__c = accId;
                         patentWitoutPPTChildWithPPT.get(accId).AccountForPricingAM__c = accId;
                     }
@@ -684,39 +766,49 @@ global class AccountHierarchyproductfamily implements Database.Batchable<SObject
         public Decimal Total_MW_Bluepoint ;
         public Decimal Total_MW_Drive ;
         public Decimal Total_MW_Greenbyte ;
+        public Decimal  Total_MW_Ekhosoft;
         
         public Decimal MW_Bluepoint ;
         public Decimal MW_Drive ;
         public Decimal MW_Greenbyte ;
+        public Decimal MW_Ekhosoft;
         
         public Decimal Child_MW_Bluepoint ;
         public Decimal Child_MW_Drive ;
         public Decimal Child_MW_Greenbyte ;
+        public Decimal Child_MW_Ekhosoft;
         
         public ActiveMegawatWrapper(
             Decimal Total_MW_Bluepoint ,
             Decimal Total_MW_Drive ,
             Decimal Total_MW_Greenbyte ,
+            Decimal Total_MW_Ekhosoft,
             
             Decimal MW_Bluepoint ,
             Decimal MW_Drive ,
             Decimal MW_Greenbyte ,
+            Decimal MW_Ekhosoft,
             
             Decimal Child_MW_Bluepoint ,
             Decimal Child_MW_Drive ,
-            Decimal Child_MW_Greenbyte 
+            Decimal Child_MW_Greenbyte,
+            Decimal Child_MW_Ekhosoft
         ){
             this.Total_MW_Bluepoint = Total_MW_Bluepoint ;
             this.Total_MW_Drive = Total_MW_Drive ;
             this.Total_MW_Greenbyte = Total_MW_Greenbyte ;
+            this.Total_MW_Ekhosoft = Total_MW_Ekhosoft;
+            
             
             this.MW_Bluepoint = MW_Bluepoint ;
             this.MW_Drive = MW_Drive ;
             this.MW_Greenbyte = MW_Greenbyte ;
+            this.MW_Ekhosoft= MW_Ekhosoft;
             
             this.Child_MW_Bluepoint = Child_MW_Bluepoint ;
             this.Child_MW_Drive = Child_MW_Drive ;
             this.Child_MW_Greenbyte = Child_MW_Greenbyte;
+            this.Child_MW_Ekhosoft=Child_MW_Ekhosoft;
         }
     }
 }
