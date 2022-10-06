@@ -21,9 +21,12 @@ TEXT(SBQQ__SubscriptionPricing__c) = &#39;&#39;,
 (SBQQ__NetTotal__c / SBQQ__ProrateMultiplier__c) / (SBQQ__DefaultSubscriptionTerm__c / 12))*/
 
 
-IF(
+/*IF(
 TEXT(SBQQ__SubscriptionPricing__c) = &#39;&#39;,0,
-IF( SBQQ__Quantity__c &lt; SBQQ__PriorQuantity__c,0,(Related_PPT_s_Net_Total_Final__c)))</formula>
+IF( SBQQ__Quantity__c &lt; SBQQ__PriorQuantity__c,0,(Related_PPT_s_Net_Total_Final__c)))   Done by Utkarsh/Nitin on October 06, 2022*/
+
+
+ Annual_Recurring_Revenue__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <inlineHelpText>Annualized Subscription Fee for this specific product.</inlineHelpText>
     <label>Annual Recurring Revenue</label>
