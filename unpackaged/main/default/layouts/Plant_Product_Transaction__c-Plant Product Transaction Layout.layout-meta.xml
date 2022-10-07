@@ -105,7 +105,7 @@
                 <field>Quote_Line_Quantity__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>PPT_Prorate_Multiplier__c</field>
             </layoutItems>
             <layoutItems>
