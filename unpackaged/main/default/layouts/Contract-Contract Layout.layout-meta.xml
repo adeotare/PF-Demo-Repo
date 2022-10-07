@@ -248,8 +248,6 @@
         <fields>SBQQ__NetPrice__c</fields>
         <fields>SBQQ__SubscriptionStartDate__c</fields>
         <fields>SBQQ__SubscriptionEndDate__c</fields>
-        <fields>Line_Classification__c</fields>
-        <fields>Annual_Recurring_Revenue__c</fields>
         <fields>QS_Annual_Recurring_Revenue__c</fields>
         <relatedList>SBQQ__Subscription__c.SBQQ__Contract__c</relatedList>
     </relatedLists>
