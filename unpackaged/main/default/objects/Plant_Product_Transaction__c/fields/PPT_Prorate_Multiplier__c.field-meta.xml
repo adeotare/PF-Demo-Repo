@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>PPT_Prorate_Multiplier__c</fullName>
+    <description>PPT Prorate Multiplier calculated using Flow &quot;PPT : Update Prorate Multiplier&quot;</description>
     <externalId>false</externalId>
-    <formula>IF( ISBLANK(Quote_Line__c), (((((YEAR(Subscription__r.SBQQ__EndDate__c) - YEAR(Subscription__r.SBQQ__StartDate__c))*12) + (MONTH(Subscription__r.SBQQ__EndDate__c) - MONTH(Subscription__r.SBQQ__StartDate__c)))+1)/12), Quote_Line__r.SBQQ__ProrateMultiplier__c)</formula>
-    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>PPT Prorate Multiplier</label>
-    <precision>18</precision>
+    <precision>6</precision>
     <required>false</required>
-    <scale>4</scale>
+    <scale>2</scale>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Number</type>
