@@ -7,6 +7,7 @@ public class CA2_CustAssetDetailStatusbatchableTest {
         Account account = new Account();
         account.Name = 'Test acctName';
         account.BillingCountry = 'United States';
+        account.Account_Status__c = 'Approved';
         insert account;
         
         // Create a product record
@@ -75,6 +76,7 @@ public class CA2_CustAssetDetailStatusbatchableTest {
         productList.add(product2);
         
         insert  productList; 
+        List<Opportunity> oppList = new List<Opportunity>();
         //===========================================
         Opportunity newOPp = new Opportunity();
         newOPp.Name = 'Test Opp';
@@ -85,7 +87,8 @@ public class CA2_CustAssetDetailStatusbatchableTest {
         newOpp.QS_Order_Type__c = 'Commit';
         newOpp.Type ='New';
         newOpp.QS_Order_Type__c = 'New Customer';
-        insert newOPp;
+        oppList.add(newOpp);
+        //insert newOPp;
         
         
         Opportunity closeLostRenewalOpp = new Opportunity();
@@ -97,20 +100,22 @@ public class CA2_CustAssetDetailStatusbatchableTest {
         closeLostRenewalOpp.QS_Order_Type__c = 'Commit';
         closeLostRenewalOpp.Type ='Existing Customer';
         closeLostRenewalOpp.QS_Order_Type__c = 'Subscription Renewal';
-        insert closeLostRenewalOpp;
+        oppList.add(closeLostRenewalOpp);
+        //insert closeLostRenewalOpp;
         
         Contract cont = new Contract();
         cont.AccountId = account.Id;
-        cont.SBQQ__Opportunity__c = newOPp.Id;
-        cont.SBQQ__RenewalOpportunity__c = closeLostRenewalOpp.Id;
+        cont.SBQQ__Opportunity__c = oppList[0].Id;
+        cont.SBQQ__RenewalOpportunity__c = oppList[1].Id;
         cont.StartDate = Date.today().addDays(-380);
         cont.ContractTerm = 12;
         insert cont;
         
-        
+		Test.startTest();        
         //====================================================
         QS_Customer_Asset__c ca = new QS_Customer_Asset__c(QS_Account__c = account.Id);
         insert ca; 
+        
         
         // Insert a Customer Asset Detail with an OLD Start Date and FUTURE End Date
         List<QS_Customer_Asset_Detail__c> lstCadToInsert = new List<QS_Customer_Asset_Detail__c>();
@@ -153,7 +158,7 @@ public class CA2_CustAssetDetailStatusbatchableTest {
         Integer second = future.second();
         String cron_exp = second + ' ' + minute + ' ' + hour + ' ' + day + ' ' + month + ' ?' + ' ' + year;            
         
-        Test.startTest();
+        
         
         // Create an instance of CA2_CustomerAssetDetailStatusbatchable
         CA2_CustomerAssetDetailStatusSchedule scheduler = new CA2_CustomerAssetDetailStatusSchedule();
@@ -251,6 +256,8 @@ public class CA2_CustAssetDetailStatusbatchableTest {
         
         insert  productList; 
         //===========================================
+        List<Opportunity> oppList = new List<Opportunity>();
+        
         Opportunity newOPp = new Opportunity();
         newOPp.Name = 'Test Opp';
         newOPp.AccountId = account.Id;
@@ -260,7 +267,8 @@ public class CA2_CustAssetDetailStatusbatchableTest {
         newOpp.QS_Order_Type__c = 'Commit';
         newOpp.Type ='New';
         newOpp.QS_Order_Type__c = 'New Customer';
-        insert newOPp;
+        oppList.add(newOPp);
+        //insert newOPp;
         
         
         Opportunity closeLostRenewalOpp = new Opportunity();
@@ -272,17 +280,19 @@ public class CA2_CustAssetDetailStatusbatchableTest {
         closeLostRenewalOpp.QS_Order_Type__c = 'Commit';
         closeLostRenewalOpp.Type ='Existing Customer';
         closeLostRenewalOpp.QS_Order_Type__c = 'Subscription Renewal';
-        insert closeLostRenewalOpp;
+        oppList.add(closeLostRenewalOpp);
+        //insert closeLostRenewalOpp;
+        insert oppList;
         
         Contract cont = new Contract();
         cont.AccountId = account.Id;
-        cont.SBQQ__Opportunity__c = newOPp.Id;
-        cont.SBQQ__RenewalOpportunity__c = closeLostRenewalOpp.Id;
+        cont.SBQQ__Opportunity__c = oppList[0].Id;
+        cont.SBQQ__RenewalOpportunity__c = oppList[1].Id;
         cont.StartDate = Date.today().addDays(-380);
         cont.ContractTerm = 12;
         insert cont;
         
-        
+        Test.startTest();
         //====================================================
         QS_Customer_Asset__c ca = new QS_Customer_Asset__c(QS_Account__c = account.Id);
         insert ca; 
@@ -334,7 +344,7 @@ public class CA2_CustAssetDetailStatusbatchableTest {
         mn.start(null);
         mn.execute(null, lstCadToInsert);
         mn.finish(null);
-       
+       Test.stopTest();
     }  
     
     

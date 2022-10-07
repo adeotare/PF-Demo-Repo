@@ -37,17 +37,17 @@ private class CA2_CustomerAssetTriggerHandlerTest {
         
         // Insert a Customer Asset Detail with an OLD Start Date and FUTURE End Date
         QS_Customer_Asset_Detail__c cad = new QS_Customer_Asset_Detail__c(QS_Customer_Asset__c = ca.id,QS_Currently_Active__c=False,QS_Start_Date__c = System.today().addDays(-365),QS_End_Date__c = System.today().addDays(+5));
-        insert cad;        
-        update ca;
+        insert cad;       
+        
         AccounttWrapper accWrap = new AccounttWrapper(account.id);
         accWrap.refreshCA();
         system.assertEquals(1, accWrap.caList.size());
         
         //test Cad Status Decommissioned
        
-        update cad;
+        //update cad;
         //ca.QS_Quantity__c = 0;
-        update ca;
+        //update ca;
         accWrap.refreshCA();
         
         //Test CAD Status Active
@@ -56,11 +56,11 @@ private class CA2_CustomerAssetTriggerHandlerTest {
         update cad;        
         update ca;
         accWrap.refreshCA();
-       
+       /*
         cad.QS_Quantity__c = 2;
         update cad;        
         update ca;
-        accWrap.refreshCA();
+        accWrap.refreshCA();*/
        
         Test.stopTest();
     }   
@@ -103,8 +103,7 @@ private class CA2_CustomerAssetTriggerHandlerTest {
             refreshSub();
             refreshAsset();
         }
-
-
-    }   
+	}   
+    
     
 }
