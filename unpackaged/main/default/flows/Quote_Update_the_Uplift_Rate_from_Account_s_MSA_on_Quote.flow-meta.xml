@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <name>Update_Renewal_Uplift_Rate_from_MSA</name>
+        <label>Update Renewal Uplift Rate from MSA</label>
+        <locationX>1146</locationX>
+        <locationY>173</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.SBQQ__RenewalUpliftRate__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.SBQQ__Account__r.Uses_MSA_of__r.Annual_Uplift_Percentage__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>check_if_account_is_not_null</name>
+        <label>check if account is not null</label>
+        <locationX>662</locationX>
+        <locationY>186</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Account_is_not_null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>check_if_MSA_is_not_null</targetReference>
+            </connector>
+            <label>Account is not null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>check_if_MSA_is_not_null</name>
+        <label>check if MSA is not null</label>
+        <locationX>935</locationX>
+        <locationY>186</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>MSA_is_not_null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__Account__r.Uses_MSA_of__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Renewal_Uplift_Rate_from_MSA</targetReference>
+            </connector>
+            <label>MSA is not null</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Quote : Update the Uplift Rate from Account&#39;s MSA on Quote {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Quote : Update the Uplift Rate from Account&#39;s MSA on Quote</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>187</locationX>
+        <locationY>107</locationY>
+        <connector>
+            <targetReference>check_if_account_is_not_null</targetReference>
+        </connector>
+        <object>SBQQ__Quote__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
