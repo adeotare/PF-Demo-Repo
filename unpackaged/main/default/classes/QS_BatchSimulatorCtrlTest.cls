@@ -29,22 +29,60 @@ public class QS_BatchSimulatorCtrlTest {
         
         QS_BatchSimulatorCtrl.runBatchProcessByDate(qcAsset.id , system.today());
         
+             
+        
+        Test.stopTest();
+    }
+    
+     @isTest
+    public static void method02(){
+        Test.startTest();
+        
+		QS_Customer_Asset__c qcAsset = [SELECT Id FROM QS_Customer_Asset__c LIMIT 1];
         QS_Customer_Asset_Detail__c qac = [SELECT Id FROM QS_Customer_Asset_Detail__c LIMIT 1];
         
         qac.QS_End_Date__c = system.today().addDays(-10);
         update qac;
         QS_BatchSimulatorCtrl.runBatchProcessByDate(qcAsset.id , system.today());
         
+            
+        
+        Test.stopTest();
+    }
+    
+     @isTest
+    public static void method03(){
+        Test.startTest();
+        
+		QS_Customer_Asset__c qcAsset = [SELECT Id FROM QS_Customer_Asset__c LIMIT 1];
+        
+
+        
+        QS_Customer_Asset_Detail__c qac = [SELECT Id FROM QS_Customer_Asset_Detail__c LIMIT 1];
+        
+        qac.QS_End_Date__c = system.today().addDays(-10);
+        update qac;
+        
+        
         qac.QS_End_Date__c = system.today().addDays(10);
         qac.QS_Start_Date__c = system.today().addDays(10);
         update qac;
         QS_BatchSimulatorCtrl.runBatchProcessByDate(qcAsset.id , system.today());
         
-        /*
-		qac.QS_End_Date__c = system.today().addDays(10);
+		
+        Test.stopTest();
+    }
+    
+     @isTest
+    public static void method04(){
+        Test.startTest();
+         
+		QS_Customer_Asset__c qcAsset = [SELECT Id FROM QS_Customer_Asset__c LIMIT 1];
+        QS_Customer_Asset_Detail__c qac = [SELECT Id FROM QS_Customer_Asset_Detail__c LIMIT 1];
+        qac.QS_End_Date__c = system.today().addDays(10);
         qac.QS_Start_Date__c = system.today().addDays(-10);
         update qac;
-        QS_BatchSimulatorCtrl.runBatchProcessByDate(qcAsset.id , system.today());      */
+        QS_BatchSimulatorCtrl.runBatchProcessByDate(qcAsset.id , system.today());      
         
         Test.stopTest();
     }
