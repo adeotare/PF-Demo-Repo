@@ -130,6 +130,14 @@
         <connector>
             <targetReference>Get_all_Quotes</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Bill_To_Account__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <object>Opportunity</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
