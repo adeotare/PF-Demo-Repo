@@ -189,6 +189,28 @@
         <connector>
             <targetReference>Get_Subscription</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Subscription__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Quote_Line__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>PPT_Prorate_Multiplier__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <object>Plant_Product_Transaction__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
