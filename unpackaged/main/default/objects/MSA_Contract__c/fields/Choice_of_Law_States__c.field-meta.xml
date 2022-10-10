@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Choice_of_Law_States__c</fullName>
+    <defaultValue>&quot;California&quot;</defaultValue>
     <externalId>false</externalId>
     <label>Choice of Law States</label>
     <length>500</length>

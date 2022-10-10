@@ -14,7 +14,7 @@
             <sorted>false</sorted>
             <value>
                 <fullName>List of States</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>List of States</label>
             </value>
             <value>
