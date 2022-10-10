@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Discount_Amount__c</fullName>
     <externalId>false</externalId>
+    <inlineHelpText>This discount amount will be subtracted from the List Price or the Contract Price. This amount will also get compounded as Tiers increase. i.e. for Tier 2, the discount for Tier 1 and Tier 2 will get added.</inlineHelpText>
     <label>Discount Amount</label>
     <precision>14</precision>
     <required>false</required>

@@ -3,11 +3,6 @@
     <fullName>Number_of_opportuninties__c</fullName>
     <externalId>false</externalId>
     <label>Number of opportuninties</label>
-    <summaryFilterItems>
-        <field>Opportunity.StageName</field>
-        <operation>equals</operation>
-        <value>00 - MQL, 0 - Identified Prospect Account, 1 - Account Exploration, 2 - Account Qualification</value>
-    </summaryFilterItems>
     <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
     <summaryOperation>count</summaryOperation>
     <trackHistory>false</trackHistory>
