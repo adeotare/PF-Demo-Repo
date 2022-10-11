@@ -1,0 +1,58 @@
+<!--
+  @description       : 
+  @author            : Justin Smith @cyberjus
+  @group             : 
+  @last modified on  : 10-06-2022
+  @last modified by  : Justin Smith @cyberjus
+  Modifications Log 
+  Ver   Date         Author                   Modification
+  1.0   09-30-2020   Justin Smith @cyberjus   Initial Version
+  2.0   10-02-2022   Justin Smith @cyberjus   Migrated to Veritas - Changed Implementation
+-->
+<template>
+  <lightning-card title="RFI Items">
+    <div slot="actions">
+      <template if:true={showSave}>
+        <lightning-button label="Cancel" onclick={handleClickCancel}></lightning-button>
+        <lightning-button label="Save All" onclick={handleClickSave} variant="brand"></lightning-button>
+      </template>
+    </div>
+    <table
+      class="slds-table slds-table_cell-buffer slds-max-medium-table_stacked-horizontal slds-table_striped slds-table_bordered">
+      <thead>
+        <th scope="col">
+          <div class="slds-cell-wrap" title="Icons"></div>
+        </th>
+        <th scope="col">
+          <div class="slds-cell-wrap" title="Name">Name</div>
+        </th>
+        <th scope="col">
+          <div class="slds-cell-wrap" title="Status">Status</div>
+        </th>
+        <th scope="col">
+          <div class="slds-cell-wrap" title="Due Date">Due Date</div>
+        </th>
+        <th scope="col">
+          <div class="slds-cell-wrap" title="Instructions">Instructions</div>
+        </th>
+        <th scope="col">
+          <div class="slds-cell-wrap" title="Response">Response</div>
+        </th>
+        <th scope="col">
+          <div class="slds-cell-wrap" title="Actions"></div>
+        </th>
+      </thead>
+      <tbody>
+        <template if:true={showTable}>
+          <template for:each={items.data} for:item="item">
+            <c-rfi-mass-edit-item key={item.Id} item={item} onitemedit={handleItemEdit} permissions={permissions}
+              onitemselect={handleItemNavigate} onitemerror={handleItemError} onitemsave={handleItemSave}>
+            </c-rfi-mass-edit-item>
+          </template>
+        </template>
+      </tbody>
+    </table>
+
+  </lightning-card>
+
+</template>

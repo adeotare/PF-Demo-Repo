@@ -1,0 +1,143 @@
+<!--
+  @description       : 
+  @author            : Justin Smith @cyberjus
+  @group             : 
+  @last modified on  : 10-06-2022
+  @last modified by  : Justin Smith @cyberjus
+  Modifications Log 
+  Ver   Date         Author                   Modification
+  1.0   09-30-2020   Justin Smith @cyberjus   Initial Version
+  2.0   10-02-2022   Justin Smith @cyberjus   Migrated to Veritas - Changed Implementation
+-->
+<template>
+
+  <td>
+    <template if:true={isToDo}>
+      <template if:true={isBlocker}>
+        <lightning-icon icon-name="utility:warning" alternative-text="Implementation Blocked"
+          title="Implementation Blocked" variant="warning"></lightning-icon>
+      </template>
+      <template if:false={isBlocker}>
+        <lightning-icon icon-name="utility:clock" alternative-text="Input Requested" title="Input Requested">
+        </lightning-icon>
+      </template>
+    </template>
+    <template if:true={isComplete}>
+      <lightning-icon icon-name="utility:check" alternative-text="Complete" title="Complete" variant="success">
+      </lightning-icon>
+    </template>
+  </td>
+  <td>
+    <div><a href={url} onclick={clickNavigateItem}>{item.Name}</a></div>
+    <div>
+      <lightning-formatted-text value={item.RFI_Detail_Description__c}></lightning-formatted-text>
+    </div>
+  </td>
+  <td>
+    <template if:true={permissions.data.RFI_Item_Status__c.Read}>
+      <template if:true={fieldControl.RFI_Item_Status__c}>
+        <lightning-combobox class="rfi_item_status" value={itemStatus} options={statusOptions} variant="label-hidden"
+          onchange={changeItemStatus}>
+        </lightning-combobox>
+      </template>
+    </template>
+    <template if:false={fieldControl.RFI_Item_Status__c}>
+      <div class="slds-p-left_medium">
+        {itemStatus}</div>
+    </template>
+  </td>
+  <td>
+    <div>
+      <template if:true={permissions.data.Due_Date__c.Read}>
+        <template if:true={fieldControl.Due_Date__c}>
+          <lightning-input type="date" class="due_date" value={item.Due_Date__c} variant="label-hidden"
+            onchange={unsaved}>
+          </lightning-input>
+        </template>
+        <template if:false={fieldControl.Due_Date__c}>
+          <lightning-formatted-date-time value={item.Due_Date__c}></lightning-formatted-date-time>
+        </template>
+      </template>
+    </div>
+  </td>
+  <td>
+    <template if:true={instructionUrl}>
+      <a href={instructionUrl} onclick={clickNavigateInstructions}>Instructions</a>
+    </template>
+  </td>
+  <td>
+
+    <template if:true={isCancel}>
+      <template if:true={fieldControl.Cancel_Cannot_Complete_Description__c}>
+        <lightning-textarea class="cancel_cannot_complete" name="cancel" label="" variant="label-hidden"
+          value={item.Cancel_Cannot_Complete_Description__c}>
+        </lightning-textarea>
+      </template>
+    </template>
+
+    <template if:false={isCancel}>
+      <template if:true={isFile}>
+        <div class="files">
+          <template for:each={files} for:item="file">
+            <lightning-button-icon key={file.ContentDocumentId} size="large" icon-name="utility:file"
+              title={file.ContentDocument.Title} variant="bare" onclick={clickNavigateFile}></lightning-button-icon>
+          </template>
+        </div>
+        <template if:true={fieldControl.Customer_Comments__c}>
+          <lightning-file-upload name="fileUploader" accept={acceptedFormats} record-id={item.Id}
+            onuploadfinished={handleUploadFinished} multiple>
+          </lightning-file-upload>
+        </template>
+      </template>
+
+      <template if:true={isCheckbox}>
+        <template if:true={fieldControl.Customer_Comments__c}>
+          <lightning-input type="toggle" class="completed" checked={item.Completed__c} message-toggle-active="Complete"
+            message-toggle-inactive="Incomplete" onchange={handleToggleComplete}>
+          </lightning-input>
+        </template>
+        <template if:false={fieldControl.Customer_Comments__c}>
+          <template if:true={item.Completed__c}>
+            <div>
+              <lightning-icon icon-name="utility:check" alternative-text="Complete" title="Complete" size="small">
+              </lightning-icon>
+            </div>
+          </template>
+        </template>
+      </template>
+
+      <template if:true={fieldControl.Customer_Comments__c}>
+        <template if:false={showComments}>
+          <div style="position: absolute; bottom: 3px; right: 3px;">
+            <lightning-button-icon icon-name="utility:share_post" variant="bare" alternative-text="Add Comment"
+              title="Add Comment" onclick={handleClickAddComment}>
+            </lightning-button-icon>
+          </div>
+        </template>
+      </template>
+
+      <template if:true={showComments}>
+
+        <template if:true={fieldControl.Customer_Comments__c}>
+          <lightning-textarea class="customer_comments" name="comments" label="" variant="label-hidden"
+            onchange={handleChangeComment} value={item.Customer_Comments__c}>
+          </lightning-textarea>
+        </template>
+        <template if:false={fieldControl.Customer_Comments__c}>
+          <div>
+            <lightning-formatted-text value={item.Customer_Comments__c}>
+            </lightning-formatted-text>
+          </div>
+        </template>
+      </template>
+    </template>
+
+  </td>
+
+  <td style="text-align: right;">
+    <template if:true={showSave}>
+      <lightning-button label="Save" onclick={handleClickSave} variant="brand"></lightning-button>
+    </template>
+  </td>
+
+</template>
