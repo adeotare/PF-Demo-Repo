@@ -4,7 +4,7 @@
     <deprecated>false</deprecated>
     <description>Subscription term used to prorate eligible products by day or month.  This has been set by your administrator.</description>
     <externalId>false</externalId>
-    <inlineHelpText>Subscription term used to prorate eligible products by day or month.  This has been set by your administrator.</inlineHelpText>
+    <inlineHelpText>Enter 12 unless duration should be less than a year. Ex. Trial.</inlineHelpText>
     <label>Subscription Term</label>
     <precision>5</precision>
     <required>false</required>
