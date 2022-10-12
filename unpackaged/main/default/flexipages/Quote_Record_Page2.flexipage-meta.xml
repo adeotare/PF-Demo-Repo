@@ -9,7 +9,7 @@
                         <valueListItems>
                             <value>CustomButton.SBQQ__Quote__c.Preview_Approvals</value>
                             <visibilityRule>
-                                <booleanFilter>1 AND 2 AND 3</booleanFilter>
+                                <booleanFilter>1 AND 2</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.ApprovalStatus__c}</leftValue>
                                     <operator>NE</operator>
@@ -19,11 +19,6 @@
                                     <leftValue>{!Record.ApprovalStatus__c}</leftValue>
                                     <operator>NE</operator>
                                     <rightValue>Approved</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Rejected</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -46,7 +41,7 @@
                         <valueListItems>
                             <value>CustomButton.SBQQ__Quote__c.SBQQ__EditLines</value>
                             <visibilityRule>
-                                <booleanFilter>1 AND 2 AND 3</booleanFilter>
+                                <booleanFilter>1 AND 2</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.ApprovalStatus__c}</leftValue>
                                     <operator>NE</operator>
@@ -56,11 +51,6 @@
                                     <leftValue>{!Record.ApprovalStatus__c}</leftValue>
                                     <operator>NE</operator>
                                     <rightValue>Approved</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Rejected</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -74,9 +64,9 @@
                             <value>Delete</value>
                             <visibilityRule>
                                 <criteria>
-                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Approved</rightValue>
+                                    <leftValue>{!Record.SBQQ__Status__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Draft</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>

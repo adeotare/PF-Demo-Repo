@@ -12,16 +12,11 @@
                         <valueListItems>
                             <value>CustomButton.MSA_Contract__c.Preview_Approval</value>
                             <visibilityRule>
-                                <booleanFilter>1 AND 2 AND 3</booleanFilter>
+                                <booleanFilter>1 AND 2</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.ApprovalStatus__c}</leftValue>
                                     <operator>NE</operator>
                                     <rightValue>Pending</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.ApprovalStatus__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Rejected</rightValue>
                                 </criteria>
                                 <criteria>
                                     <leftValue>{!Record.ApprovalStatus__c}</leftValue>
