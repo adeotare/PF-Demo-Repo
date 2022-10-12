@@ -826,7 +826,7 @@ public with sharing class PlantProductController {
             }
             else {              // only reprice Plants added as part of Amendment
 
-                pptList =[SELECT Quote_Line_Quantity__c, Plant__r.Plant__r.MWp__c, Plant__r.Plant__r.Name, Account__c, Addl_Discount_Percent__c, Contracted_MW_Unit_List_Price__c, List_Unit_Price__c, Net_Unit_Price__c, Unit_Price_After_Volume_Discount__c, Discount_Tier__c  
+                pptList =[SELECT Quote_Line_Quantity__c, Plant__r.Plant__r.MWp__c, Plant__r.Plant__r.Name,MWp_Quantity__c, Account__c, Addl_Discount_Percent__c, Contracted_MW_Unit_List_Price__c, List_Unit_Price__c, Net_Unit_Price__c, Unit_Price_After_Volume_Discount__c, Discount_Tier__c  
                     from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId AND 
                     Amendment_Action__c = 'Added Plant' WITH SECURITY_ENFORCED];
             }
