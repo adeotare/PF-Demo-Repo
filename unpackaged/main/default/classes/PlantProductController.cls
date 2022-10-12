@@ -102,6 +102,9 @@ public with sharing class PlantProductController {
                 ppt.Quote_Line_Quantity__c = 0;
             }
         }
+        
+        
+        
         System.debug('Number of Plants to be deleted are::'+accplan.size());
         //List<Account_Plant__c> aplan =[SELECT Id, Name, Account__r.Name, Plant__r.Plant_Name__c,Plant__r.Country__c, Plant__r.MWp__c, Plant__r.MW_Energy_Capacity_MWh__c, Plant__r.Number_of_Turbines__c,Plant__r.Asset_Class__c From Account_Plant__c where Id IN :accplan WITH SECURITY_ENFORCED];
         //System.debug('aplan::'+aplan.size());
@@ -182,7 +185,7 @@ public with sharing class PlantProductController {
             return null;  // If number of plants to be added is zero, then return
 
         List<Plant_Product_Transaction__c> pList = new List<Plant_Product_Transaction__c>();
-        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__SpecialPrice__c, SBQQ__AdditionalDiscount__c,  SBQQ__NetPrice__c, SBQQ__NetTotal__c, SBQQ__RegularPrice__c, SBQQ__Discount__c, SBQQ__ListPrice__c, SBQQ__Quantity__c, SBQQ__Product__r.QuantityUnitOfMeasure, SBQQ__Quote__r.SBQQ__Type__c, SBQQ__Product__r.ID, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__StartDate__c, SBQQ__EndDate__c, SBQQ__Quote__c, SBQQ__Quote__r.CurrencyIsoCode, SBQQ__Quote__r.SBQQ__StartDate__c, SBQQ__Quote__r.SBQQ__EndDate__c
+        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__SpecialPrice__c, SBQQ__AdditionalDiscount__c, SBQQ__ProrateMultiplier__c, SBQQ__NetPrice__c, SBQQ__NetTotal__c, SBQQ__RegularPrice__c, SBQQ__Discount__c, SBQQ__ListPrice__c, SBQQ__Quantity__c, SBQQ__Product__r.QuantityUnitOfMeasure, SBQQ__Quote__r.SBQQ__Type__c, SBQQ__Product__r.ID, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__StartDate__c, SBQQ__EndDate__c, SBQQ__Quote__c, SBQQ__Quote__r.CurrencyIsoCode, SBQQ__Quote__r.SBQQ__StartDate__c, SBQQ__Quote__r.SBQQ__EndDate__c
         from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
          
         for(Account_Plant__c ap: plantList){
@@ -219,6 +222,7 @@ public with sharing class PlantProductController {
             ppt.Addl_Discount_Percent__c = quoteLine.SBQQ__Discount__c;
             ppt.Quote_Line__c = quoteLineId;
             ppt.Status__c = 'Quoted';
+            ppt.PPT_Prorate_Multiplier__c = quoteLine.SBQQ__ProrateMultiplier__c;
             if (quoteLine.SBQQ__Product__r.QuantityUnitOfMeasure == 'MWp') {
 
                 ppt.Quote_Line_Quantity__c = ap.Plant__r.MWp__c;  // update the Quoteline Quantity
@@ -462,59 +466,87 @@ public with sharing class PlantProductController {
 
         System.debug('Inside updatePricingForQuoteLine function');
 
-        SBQQ__QuoteLine__c quoteLine1 = [SELECT CurrencyIsoCode, SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c, SBQQ__ListPrice__c, SBQQ__Product__r.ID, SBQQ__Quote__r.SBQQ__Type__c, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__Product__r.Product_Category__c, SBQQ__SpecialPrice__c, SBQQ__Quote__r.SBQQ__PriceBook__r.Name from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+        SBQQ__QuoteLine__c quoteLine1 = [SELECT CurrencyIsoCode,SBQQ__ContractedPrice__c, SBQQ__Quote__r.SBQQ__Account__r.Uses_MSA_of__r.Account_Name__r.ID, SBQQ__ContractedPrice__r.SBQQ__Account__r.ID, SBQQ__ContractedPrice__r.SBQQ__Price__c, SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c, SBQQ__ListPrice__c, SBQQ__Product__r.ID, SBQQ__Quote__r.SBQQ__Type__c, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__Product__r.Product_Category__c, SBQQ__SpecialPrice__c, SBQQ__Quote__r.SBQQ__PriceBook__r.Name 
+        from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
+        
         // Keep the original contract price here... since we are updating Special Price itself, this will not work
         // Decimal contractPricePerMSA = quoteLine1.SBQQ__SpecialPrice__c;
+        
          List <SBQQ__ContractedPrice__c> cPriceList = [Select SBQQ__Price__c, Name from SBQQ__ContractedPrice__c where SBQQ__Product__r.ID =:quoteLine1.SBQQ__Product__r.ID AND SBQQ__Account__r.ID =:quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.ID AND CurrencyIsoCode =:quoteLine1.CurrencyIsoCode WITH SECURITY_ENFORCED LIMIT 1];
         Decimal contractPricePerMSA = 0;
         
         System.debug ('While setting the Contracted Price on the PPTLine - found it '+cPriceList.size());
         If (cPriceList.size() == 1 && cPriceList[0].SBQQ__Price__c!= null) 
             contractPricePerMSA = cPriceList[0].SBQQ__Price__c;
-        else 
-            contractPricePerMSA = quoteLine1.SBQQ__ListPrice__c;
-        
+        else {                                                          // 11 Oct
+            if (quoteLine1.SBQQ__ContractedPrice__c !=null)
+                contractPricePerMSA = quoteLine1.SBQQ__ContractedPrice__r.SBQQ__Price__c;
+            else
+                contractPricePerMSA = quoteLine1.SBQQ__ListPrice__c;
+        }
+
+        List <MSA_Software_Discount_Tier_Price__c> swDiscountTiersList = new List <MSA_Software_Discount_Tier_Price__c> ();
         if(quoteLine1.SBQQ__Product__r.Product_Category__c == 'Software') {
             // check if there are any custom discount tiers for this SW Product
             // System.debug ('Checking if the SW Product has Discount Tier pricing');
-            List <MSA_Software_Discount_Tier_Price__c> swDiscountTiersList =  [Select Name, Account__r.ID, Type__c, Discount_Unit__c, Discount__c, Discount_Amount__c, Pricing_Tier__c, Lower_Bound__c, Upper_Bound__c, Cross_Orders__c 
+            swDiscountTiersList =  [Select Name, Account__r.ID, Type__c, Discount_Unit__c, Discount__c, Discount_Amount__c, Pricing_Tier__c, Lower_Bound__c, Upper_Bound__c, Cross_Orders__c 
             from MSA_Software_Discount_Tier_Price__c 
             where (Product__r.ID = :quoteLine1.SBQQ__Product__r.ID)  
             AND (Account__r.ID = :quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.ID)
             WITH SECURITY_ENFORCED Order by Lower_Bound__c ];
             if (swDiscountTiersList!=null && !swDiscountTiersList.IsEmpty()) {
-                // Found atleast 1 discount tier for the Product on the quote line for a given account
+                System.debug('Found atleast 1 SW discount tier for the Product on the quote line for a given account');
                 doDiscountTierBasedPriceCalculationforSW (quoteLineId, contractPricePerMSA, swDiscountTiersList, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c,quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);
-    
             }
-            else {
-                    // No discount tier was found for the Product + Account combination
-                    // Therefore no updates to the Contract Price. Just Update the PPT records
-                    // System.debug ('No Discount Tier pricing for found for the Product');
-                    updateAllPlantRecordswithSamePrice(quoteLineId, contractPricePerMSA, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c, quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);
+        else {
+                    // check if the Account related with the MSA has any Contracted Prices. This could happen in case of Account hierarchy with the Child Account using MSA of Parent Account
+                    swDiscountTiersList =  [Select Name, Account__r.ID, Type__c, Discount_Unit__c, Discount__c, Discount_Amount__c, Pricing_Tier__c, Lower_Bound__c, Upper_Bound__c, Cross_Orders__c 
+                    from MSA_Software_Discount_Tier_Price__c 
+                    where (Product__r.ID = :quoteLine1.SBQQ__Product__r.ID)  
+                    AND (Account__r.ID = :quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Uses_MSA_of__r.Account_Name__r.ID)
+                    WITH SECURITY_ENFORCED Order by Lower_Bound__c ];
+                    if (swDiscountTiersList!=null && !swDiscountTiersList.IsEmpty()) {
+                        System.debug('Found atleast 1 SW discount tier for the Product on the quote line for the Parent of the Account');
+                        doDiscountTierBasedPriceCalculationforSW (quoteLineId, contractPricePerMSA, swDiscountTiersList, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c,quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);
+                    }
+                    else {
+                            System.debug('No SW Discount Tiers were found for the Product and Account');
+                                // No discount tier was found for the Product + Account combination
+                                // Therefore no updates to the Contract Price. Just Update the PPT records
+                            updateAllPlantRecordswithSamePrice(quoteLineId, contractPricePerMSA, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c, quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);    
+                    }
             }
-
         }
         else {
             // System.debug ('Checking if the Product has Implementation Services bracket pricing');
             // The Product is a Professional Services Product. check if there are any Implementation tier brackets for it
             // check if there are any Implementation brackets for this Implementation service
-            List <MSA_Implementation_Bracket_Price__c> ImplBracketPriceTiersList =  [SELECT ID, Fixed_Price__c, Lower_Bound__c, Upper_Bound__c 
-            from MSA_Implementation_Bracket_Price__c 
-            where (Product__r.ID = :quoteLine1.SBQQ__Product__r.ID)  
-            AND (Account__r.ID = :quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.ID)
-            WITH SECURITY_ENFORCED Order by Lower_Bound__c];    
+            List <MSA_Implementation_Bracket_Price__c> ImplBracketPriceTiersList = new List <MSA_Implementation_Bracket_Price__c> ();
+            ImplBracketPriceTiersList =  [SELECT ID, Fixed_Price__c, Lower_Bound__c, Upper_Bound__c 
+                from MSA_Implementation_Bracket_Price__c 
+                where (Product__r.ID = :quoteLine1.SBQQ__Product__r.ID)  
+                AND (Account__r.ID = :quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.ID)
+                WITH SECURITY_ENFORCED Order by Lower_Bound__c];    
             if (ImplBracketPriceTiersList!=null && !ImplBracketPriceTiersList.IsEmpty()) {
                 // Found atleast 1 Implementation braket tier for the Product on the quote line for a given account
                 doImplBracketTierBasedPriceCalculationforImpl (quoteLineId, contractPricePerMSA, ImplBracketPriceTiersList, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c, quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);
-    
             }
             else {
-                    // No Implementation bracket was found for the Product + Account combination
-                    // Therefore no updates to the Contract Price. Just Update the PPT records
-                    updateAllPlantRecordswithSamePrice(quoteLineId, contractPricePerMSA, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c, quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);
-            }
-
+                    ImplBracketPriceTiersList =  [SELECT ID, Fixed_Price__c, Lower_Bound__c, Upper_Bound__c 
+                       from MSA_Implementation_Bracket_Price__c 
+                        where (Product__r.ID = :quoteLine1.SBQQ__Product__r.ID)  
+                        AND (Account__r.ID = :quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Uses_MSA_of__r.Account_Name__r.ID)
+                        WITH SECURITY_ENFORCED Order by Lower_Bound__c];    
+                    if (ImplBracketPriceTiersList!=null && !ImplBracketPriceTiersList.IsEmpty()) {
+                        // Found atleast 1 Implementation braket tier for the Product on the quote line for a given account
+                        doImplBracketTierBasedPriceCalculationforImpl (quoteLineId, contractPricePerMSA, ImplBracketPriceTiersList, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c, quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);
+                    }
+                    else {
+                        // No Implementation bracket was found for the Product + Account combination
+                        // Therefore no updates to the Contract Price. Just Update the PPT records
+                        updateAllPlantRecordswithSamePrice(quoteLineId, contractPricePerMSA, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c, quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);
+                    }
+                }
         }
 
     }
