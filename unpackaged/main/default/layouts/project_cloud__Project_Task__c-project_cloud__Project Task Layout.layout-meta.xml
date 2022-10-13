@@ -22,7 +22,11 @@
                 <field>project_cloud__Project_Phase__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
+                <field>project_cloud__Work_Type__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>New_S__c</field>
             </layoutItems>
             <layoutItems>
