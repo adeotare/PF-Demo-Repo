@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Data_connection_details__c</fullName>
     <externalId>false</externalId>
-    <formula>TEXT(Drive_OEM__c) + &quot;  &quot; + Drive_Customer_Solution_Formula__c + &quot;  &quot; + Drive_Data_connection_Formula_Reference__c + &quot;  &quot; + TEXT(Model__c) + &quot;  &quot; + TEXT( Bluepoint_data_connection__c ) + &quot;  &quot; +TEXT(Bluepoint_site_ID__c)  + &quot;  &quot; + TEXT(Bluepoint_site_identifier__c)</formula>
+    <formula>TEXT(Drive_OEM__c) + &quot;  &quot; + Drive_Customer_Solution_Formula__c + &quot;  &quot; + Drive_Data_connection_Formula_Reference__c + &quot;  &quot; + TEXT(Model__c) + &quot;  &quot; +  GB_Data_connection_Formula_Text__c + &quot;  &quot; + TEXT( Bluepoint_data_connection__c ) + &quot;  &quot; +TEXT(Bluepoint_site_ID__c)  + &quot;  &quot; + TEXT(Bluepoint_site_identifier__c)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Data connection details</label>
     <required>false</required>

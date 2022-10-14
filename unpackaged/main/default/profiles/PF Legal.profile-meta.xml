@@ -2213,6 +2213,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Equipment__c.GB_Data_connection_Formula_Text__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Equipment__c.GB_Data_connection__c</field>
         <readable>true</readable>
     </fieldPermissions>
