@@ -910,11 +910,13 @@ public with sharing class PlantProductController {
         Decimal cumulativeQLQuantity = 0;
         Decimal cumulativeQLNetTotal = 0;
         Decimal pptTotalforQLToAddressRounding = 0;
+        Decimal ARRTotalforQLToAddressRounding = 0;
+
 
         // get all the PPT records with this Quoteline ID
         // List<Plant_Product_Transaction__c> pptList =[SELECT Unit_Price_After_Volume_Discount__c, Contracted_MW_Unit_List_Price__c, Quote_Line_Quantity__c,  Net_Unit_Price__c, Net_Total_Price__c from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId AND Status__c != 'Decommissioned' WITH SECURITY_ENFORCED];
 
-        SBQQ__QuoteLine__c quoteLine = [SELECT SBQQ__Quote__r.SBQQ__Type__c, Related_PPT_s_Net_Total__c, SBQQ__EffectiveQuantity__c, SBQQ__SpecialPriceType__c, SBQQ__SpecialPrice__c, SBQQ__AdditionalDiscount__c,  SBQQ__NetPrice__c, SBQQ__NetTotal__c, SBQQ__RegularPrice__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure 
+        SBQQ__QuoteLine__c quoteLine = [SELECT Annual_Recurring_Revenue__c, SBQQ__Quote__r.SBQQ__Type__c, Related_PPT_s_Net_Total__c, SBQQ__EffectiveQuantity__c, SBQQ__SpecialPriceType__c, SBQQ__SpecialPrice__c, SBQQ__AdditionalDiscount__c,  SBQQ__NetPrice__c, SBQQ__NetTotal__c, SBQQ__RegularPrice__c, SBQQ__Quantity__c,SBQQ__Product__r.QuantityUnitOfMeasure 
         from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
 
         /* Nitin 5th October
@@ -930,7 +932,7 @@ public with sharing class PlantProductController {
          Nitin 5 Oct*/
         List<Plant_Product_Transaction__c> pptList = new List<Plant_Product_Transaction__c> ();
         If (quoteLine.SBQQ__Quote__r.SBQQ__Type__c !='Amendment') {
-            pptList =[SELECT Unit_Price_After_Volume_Discount__c, Contracted_MW_Unit_List_Price__c, Quote_Line_Quantity__c,  Net_Unit_Price__c, Net_Total_Price__c  
+            pptList =[SELECT PPT_ARR__c, Unit_Price_After_Volume_Discount__c, Contracted_MW_Unit_List_Price__c, Quote_Line_Quantity__c,  Net_Unit_Price__c, Net_Total_Price__c  
                     from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId AND 
                     (Amendment_Action__c != 'Removed Plant' AND Renewal_Action__c != 'Removed Plant') WITH SECURITY_ENFORCED];
                     
@@ -938,7 +940,7 @@ public with sharing class PlantProductController {
 
         }
         else{       // for Amendment/Cancellation - we need to include the Removed Plants as well to calculate the total
-            pptList =[SELECT Unit_Price_After_Volume_Discount__c, Contracted_MW_Unit_List_Price__c, Quote_Line_Quantity__c,  Net_Unit_Price__c, Net_Total_Price__c  
+            pptList =[SELECT PPT_ARR__c, Unit_Price_After_Volume_Discount__c, Contracted_MW_Unit_List_Price__c, Quote_Line_Quantity__c,  Net_Unit_Price__c, Net_Total_Price__c  
                     from Plant_Product_Transaction__c where Quote_Line__c =: quoteLineId WITH SECURITY_ENFORCED];
                     
                 System.debug('Total records from PPT whose Net Price is going to be updated is '+pptList.size());
@@ -950,6 +952,7 @@ public with sharing class PlantProductController {
             quoteLine.SBQQ__SpecialPriceType__c = 'Custom';
             quoteLine.SBQQ__SpecialPrice__c = 0;
             quoteLine.Related_PPT_s_Net_Total__c = 0;
+            quoteLine.Annual_Recurring_Revenue__c = 0;
         }
         else {
             for (Plant_Product_Transaction__c eachPPT:pptList) {
@@ -967,6 +970,9 @@ public with sharing class PlantProductController {
         //      cumulativeQLNetTotal += (eachPPT.Unit_Price_After_Volume_Discount__c * quoteLine.SBQQ__EffectiveQuantity__c);
 
                 pptTotalforQLToAddressRounding += eachPPT.Net_Total_Price__c;
+                if (eachPPT.PPT_ARR__c !=null)              // In an Amendment, for PPT's that have not changed, PPT_ARR__c will be null
+                    ARRTotalforQLToAddressRounding += eachPPT.PPT_ARR__c;
+                
             //  pptTotalforQLToAddressRounding += cumulativeQLNetTotal;
 
         }
@@ -980,6 +986,7 @@ public with sharing class PlantProductController {
         quoteLine.SBQQ__SpecialPriceType__c = 'Custom';
         quoteLine.SBQQ__SpecialPrice__c = (cumulativeQLNetTotal / cumulativeQLQuantity);
         quoteLine.Related_PPT_s_Net_Total__c = pptTotalforQLToAddressRounding;
+        quoteLine.Annual_Recurring_Revenue__c = ARRTotalforQLToAddressRounding;
 
         }
         
