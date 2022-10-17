@@ -5,6 +5,7 @@
     <columns>Equipment_Type__c</columns>
     <columns>Quantity__c</columns>
     <columns>Account_Plant__c</columns>
+    <columns>Project__c</columns>
     <columns>DAS_SCADA_Provider__c</columns>
     <columns>Drive_OEM__c</columns>
     <columns>GB_OEM__c</columns>

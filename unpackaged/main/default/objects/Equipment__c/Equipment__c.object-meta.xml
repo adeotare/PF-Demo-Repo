@@ -164,6 +164,7 @@
     <pluralLabel>Equipment</pluralLabel>
     <searchLayouts>
         <searchResultsAdditionalFields>Equipment_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Quantity__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Account_Plant__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Project__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>DAS_SCADA_Provider__c</searchResultsAdditionalFields>
