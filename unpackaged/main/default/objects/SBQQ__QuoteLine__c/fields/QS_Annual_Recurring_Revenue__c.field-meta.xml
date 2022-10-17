@@ -28,7 +28,10 @@ IF( SBQQ__Quantity__c &lt; SBQQ__PriorQuantity__c,0,(Related_PPT_s_Net_Total_Fin
 /* Nitin 16 October
  Annual_Recurring_Revenue__c  16 Oct */
 
-IF (Annual_Recurring_Revenue__c = 0, (SBQQ__EffectiveQuantity__c * (SBQQ__ProratedPrice__c / SBQQ__ProrateMultiplier__c)), Annual_Recurring_Revenue__c)</formula>
+/*IF (Annual_Recurring_Revenue__c = 0, (SBQQ__EffectiveQuantity__c * (SBQQ__ProratedPrice__c / SBQQ__ProrateMultiplier__c)), Annual_Recurring_Revenue__c)*/
+
+
+IF(AND(TEXT(SBQQ__SubscriptionPricing__c) = &#39;&#39;, Annual_Recurring_Revenue__c = 0), Annual_Recurring_Revenue__c, (SBQQ__EffectiveQuantity__c * (SBQQ__ProratedPrice__c / SBQQ__ProrateMultiplier__c)))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <inlineHelpText>Annualized Subscription Fee for this specific product.</inlineHelpText>
     <label>Annual Recurring Revenue</label>
