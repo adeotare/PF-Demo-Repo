@@ -493,7 +493,6 @@
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
-        <fields>TASK.WHAT_NAME</fields>
         
         
         
@@ -513,7 +512,6 @@
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
-        <fields>TASK.WHAT_NAME</fields>
         
         
         
@@ -683,7 +681,7 @@
         <fields>SBQQ__SubscriptionStartDate__c</fields>
         <fields>SBQQ__SubscriptionEndDate__c</fields>
         <fields>SBQQ__QuoteLine__c</fields>
-        <fields>Annual_Recurring_Revenue__c</fields>
+        <fields>QS_Annual_Recurring_Revenue__c</fields>
         <fields>SBQQ__NetPrice__c</fields>
         <fields>SBQQ__Contract__c</fields>
         <fields>CURRENCY_ISO_CODE</fields>
