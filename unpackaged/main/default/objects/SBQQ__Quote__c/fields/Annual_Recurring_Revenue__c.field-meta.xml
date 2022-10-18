@@ -3,7 +3,7 @@
     <fullName>Annual_Recurring_Revenue__c</fullName>
     <externalId>false</externalId>
     <label>Annual Recurring Revenue</label>
-    <summarizedField>SBQQ__QuoteLine__c.SBQQ__NetTotal__c</summarizedField>
+    <summarizedField>SBQQ__QuoteLine__c.QS_Annual_Recurring_Revenue__c</summarizedField>
     <summaryFilterItems>
         <field>SBQQ__QuoteLine__c.Product_Type__c</field>
         <operation>equals</operation>
