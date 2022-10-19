@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MSA_Sof_Currency_must_match_Acc_Currency</fullName>
+    <active>true</active>
+    <description>MSA Software Discount Tier Prices record Currency must match with related Account&#39;s currency</description>
+    <errorConditionFormula>AND(
+IF((TEXT(CurrencyIsoCode)!=TEXT(Account__r.CurrencyIsoCode)), True, False),
+NOT(ISBLANK(Account__c))
+)</errorConditionFormula>
+    <errorDisplayField>CurrencyIsoCode</errorDisplayField>
+    <errorMessage>Currency must match with Account&#39;s Currency</errorMessage>
+</ValidationRule>

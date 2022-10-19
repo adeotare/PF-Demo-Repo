@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_can_either_add_Amount_or_Percentage</fullName>
+    <active>true</active>
+    <description>User can input Amount or Percentage but not both</description>
+    <errorConditionFormula>AND(
+NOT(ISBLANK( Discount__c )),
+NOT(ISBLANK( Discount_Amount__c ))
+)</errorConditionFormula>
+    <errorMessage>Discount Amount or Discount % can&#39;t be filled at the same time. Either fill Amount or Percentage but not both.</errorMessage>
+</ValidationRule>
