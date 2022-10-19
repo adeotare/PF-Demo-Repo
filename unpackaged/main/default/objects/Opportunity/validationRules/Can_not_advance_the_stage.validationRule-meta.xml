@@ -8,8 +8,10 @@
 $Profile.Name &lt;&gt; &quot;PF Super User&quot;,
   ISCHANGED(  StageName ),
      ISPICKVAL( StageName , &quot;Close Pending&quot;),
-  ISPICKVAL( Account.PO_Required__c,&quot;&quot; ) 
-  )</errorConditionFormula>
+  OR(  ISPICKVAL( Account.PO_Required__c,&quot;&quot; ),
+ISPICKVAL(  Account.Legal_Entity__c ,&quot;&quot; ),
+ INCLUDES( Account.Compliance_Designations__c ,&quot;&quot;) 
+  ))</errorConditionFormula>
     <errorDisplayField>StageName</errorDisplayField>
-    <errorMessage>User cannot  move stage to Close Pending  if PO Required field is blank on the Account .</errorMessage>
+    <errorMessage>User cannot  move stage to Close Pending  if PO Required, Legal Entity, Compliance Designation field is blank on the Account .</errorMessage>
 </ValidationRule>

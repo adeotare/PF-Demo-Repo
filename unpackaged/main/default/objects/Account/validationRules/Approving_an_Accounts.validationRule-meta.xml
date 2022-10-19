@@ -7,9 +7,7 @@ AND(
 ISCHANGED( Account_Status__c ),
 ISPICKVAL( Account_Status__c ,&#39;Approved&#39;),
 OR(
-ISBLANK( TEXT( Legal_Entity__c  ) ),
 ISBLANK( TEXT( Theater__c ) ),
-ISBLANK( Compliance_Designations__c ),
 ISBLANK( BillingStreet ),
 ISBLANK( BillingCity ) ,
 ISBLANK( BillingPostalCode ),
@@ -45,5 +43,5 @@ ISBLANK(ShippingState)
 )
 )
 ))</errorConditionFormula>
-    <errorMessage>An Account must have complete addresses and these fields populated to be Approved: Legal Entity, Theater, Compliance Designations, and Uses MSA. State/Province is required for USA and Canada.</errorMessage>
+    <errorMessage>An Account must have complete addresses and these fields populated to be Approved: Theater,  and Uses MSA. State/Province is required for USA and Canada.</errorMessage>
 </ValidationRule>
