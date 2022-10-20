@@ -17,11 +17,6 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>project_cloud__Estimated_Hours__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>project_cloud__Health_Reason__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -84,6 +79,11 @@
     </displayedFields>
     <displayedFields>
         <field>project_cloud__IsOn_Hold__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>project_cloud__Estimated_Hours__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
