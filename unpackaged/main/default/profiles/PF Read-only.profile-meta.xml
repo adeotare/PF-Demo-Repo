@@ -3888,6 +3888,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>OpportunityLineItem.QS_Annual_Recurring_Revenue__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>OpportunityLineItem.ServiceDate</field>
         <readable>true</readable>
     </fieldPermissions>

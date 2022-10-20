@@ -3,7 +3,7 @@
     <fullName>Annual_Recurring_Revenue__c</fullName>
     <externalId>false</externalId>
     <label>Annual Recurring Revenue</label>
-    <summarizedField>OpportunityLineItem.Annual_Recurring_Revenue__c</summarizedField>
+    <summarizedField>OpportunityLineItem.QS_Annual_Recurring_Revenue__c</summarizedField>
     <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
     <summaryOperation>sum</summaryOperation>
     <trackHistory>false</trackHistory>
