@@ -3,7 +3,7 @@
     <fullName>QS_Annual_Recurring_Revenue__c</fullName>
     <description>Twin</description>
     <externalId>false</externalId>
-    <label>QS Annual Recurring Revenue</label>
+    <label>Annual Recurring Revenue</label>
     <precision>18</precision>
     <required>false</required>
     <scale>2</scale>
