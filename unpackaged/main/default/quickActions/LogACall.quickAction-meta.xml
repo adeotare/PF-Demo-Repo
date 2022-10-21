@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldOverrides>
+        <field>Status</field>
+        <literalValue>Not Started</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Type__c</field>
+        <literalValue>Call</literalValue>
+    </fieldOverrides>
     <optionsCreateFeedItem>true</optionsCreateFeedItem>
     <quickActionLayout>
         <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
@@ -63,6 +71,6 @@
     </quickActionLayout>
     <standardLabel>LogACall</standardLabel>
     <targetObject>Task</targetObject>
-    <targetRecordType>Task.project_cloud__Allocation</targetRecordType>
+    <targetRecordType>Task.New_Task</targetRecordType>
     <type>LogACall</type>
 </QuickAction>

@@ -59,6 +59,6 @@
     </quickActionLayout>
     <standardLabel>New</standardLabel>
     <targetObject>Task</targetObject>
-    <targetRecordType>Task.project_cloud__Allocation</targetRecordType>
+    <targetRecordType>Task.New_Task</targetRecordType>
     <type>Create</type>
 </QuickAction>
