@@ -7582,6 +7582,11 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
+        <recordType>Task.New_Task</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
         <recordType>Task.project_cloud__Allocation</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
