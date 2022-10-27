@@ -3,20 +3,25 @@
     <table border="1">
             <tr>
                 <th> Product Code </th> 
-                <th> Product Name </th> 
-                <th> Quantity </th> 
+                <th> Product Name </th>
+                <th> Effective Quantity </th>
+                <th> Total Quantity </th> 
                 <th> List Price </th> 
                 <th> Discount </th> 
-                <th> Net Total </th> 
+                <th> ARR </th>
+                <th> NRR </th>
             </tr>
             <apex:repeat var="li" value="{!quotelines}">
                  <tr>
                     <td> {!li.SBQQ__ProductCode__c} </td>
                     <td> {!li.SBQQ__ProductName__c} </td>
+                    <td> {!li.SBQQ__EffectiveQuantity__c} </td>
                     <td> {!li.SBQQ__Quantity__c} </td> 
                     <td> {!li.CurrencyIsoCode} {!li.SBQQ__ListPrice__c} </td>
-                    <td> {!li.SBQQ__Discount__c}% </td>
-                    <td> {!li.CurrencyIsoCode} {!li.SBQQ__NetTotal__c} </td>            
+                    <td> {!li.SBQQ__TotalDiscountRate__c}% </td>
+                    <td> {!li.CurrencyIsoCode} {!li.QS_Annual_Recurring_Revenue__c} </td>
+                    <td> {!li.CurrencyIsoCode} {!li.Non_Recurring_Revenue__c} </td>
+                                
                 </tr>
             </apex:repeat>
         </table>

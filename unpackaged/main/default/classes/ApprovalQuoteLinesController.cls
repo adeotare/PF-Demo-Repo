@@ -19,6 +19,10 @@ public with sharing class ApprovalQuoteLinesController
                     SBQQ__ListPrice__c,
                     SBQQ__Discount__c,
                     SBQQ__NetTotal__c,
+                    SBQQ__EffectiveQuantity__c,
+                    QS_Annual_Recurring_Revenue__c,
+                    Non_Recurring_Revenue__c,
+                    SBQQ__TotalDiscountRate__c,
                     CurrencyIsoCode 
                     from SBQQ__QuoteLine__c 
                     where SBQQ__Quote__c= : quoteId ];

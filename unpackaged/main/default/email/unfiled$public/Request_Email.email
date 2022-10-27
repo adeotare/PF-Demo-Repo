@@ -82,6 +82,9 @@ If replying via email, you can also add comments on the second line. Comments wi
                 </tr>
                 <tr>
                     <td>Quote</td><td><apex:outputLink value="/{!relatedTo.Quote__c}"> {!relatedTo.Quote__r.name}</apex:outputLink></td>
+                </tr>
+                <tr>
+                    <td>Type</td><td>{!relatedTo.Quote__r.SBQQ__Type__c}</td>
                 </tr>   
                 <tr>
                     <td>Close Date</td><td>{!relatedTo.Quote__r.SBQQ__Opportunity2__r.CloseDate}</td>
@@ -99,19 +102,19 @@ If replying via email, you can also add comments on the second line. Comments wi
                     <td>Approval Justification</td><td>{!relatedTo.Quote__r.Approval_Justification__c}</td>
                 </tr>
                 <tr>
-                    <td>Start Date</td><td>{!relatedTo.Quote__r.SBQQ__StartDate__c}</td>
+                    <td>ARR Start Date</td><td>{!relatedTo.Quote__r.SBQQ__StartDate__c}</td>
                 </tr>
                 <tr>
-                    <td>End Date</td><td>{!relatedTo.Quote__r.SBQQ__EndDate__c}</td>
-                </tr>
-                <tr>
-                    <td>Trial</td><td>{!relatedTo.Quote__r.Trial__c}</td>
+                    <td>Subscription End Date</td><td>{!relatedTo.Quote__r.SBQQ__EndDate__c}</td>
                 </tr>
                 <tr>
                     <td>Subscription Term</td><td>{!relatedTo.Quote__r.SBQQ__SubscriptionTerm__c}</td>
                 </tr>
                 <tr>
-                    <td>Expiration Date</td><td>{!relatedTo.Quote__r.SBQQ__ExpirationDate__c}</td>
+                    <td>Quote Expiration Date</td><td>{!relatedTo.Quote__r.SBQQ__ExpirationDate__c}</td>
+                </tr>
+                <tr>
+                    <td>Trial</td><td>{!relatedTo.Quote__r.Trial__c}</td>
                 </tr>
 </table>
 <p>
