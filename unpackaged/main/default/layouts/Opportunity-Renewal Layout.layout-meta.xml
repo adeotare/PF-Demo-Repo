@@ -382,7 +382,7 @@
         <fields>Product2</fields>
         <fields>Quantity</fields>
         <fields>UnitPrice</fields>
-        <fields>Annual_Recurring_Revenue__c</fields>
+        <fields>QS_Annual_Recurring_Revenue__c</fields>
         <fields>Non_Recurring_Revenue__c</fields>
         <fields>Start_Date__c</fields>
         <fields>End_Date__c</fields>
@@ -478,7 +478,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8F000000IgDw</masterLabel>
+        <masterLabel>00h5f00000EXwTC</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
