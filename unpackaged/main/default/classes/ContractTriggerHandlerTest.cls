@@ -6,39 +6,7 @@ public class ContractTriggerHandlerTest {
         Account act = new Account();
 		act.Name = 'test';
          act.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Customer').getRecordTypeId();
-		insert act;        
-        
-        Opportunity opp = new Opportunity();
-        opp.CloseDate = System.today().addDays(5);
-        opp.Name = 'Test Opportunity';
-        opp.StageName = '00 - MQL';
-        opp.AccountId = act.Id;
-        insert opp;   
-        
-        Opportunity opp2 = new Opportunity();
-        opp2.CloseDate = System.today().addDays(5);
-        opp2.Name = 'Test Opportunity';
-        opp2.StageName = '00 - MQL';
-        opp2.AccountId = act.Id;
-        insert opp2;  
-        
-        
-        system.debug('1-->'+opp.id);
-        system.debug('2-->'+opp.id);
-        
-        Product2 prd = new Product2();
-        prd.SBQQ__SubscriptionPricing__c = 'Fixed Price';
-        prd.Name = 'test';
-        prd.Product_Line__c='Core';
-        prd.Product_Category__c = 'Software';
-        prd.Product_Type__c = 'Recurring';
-        prd.Product_Services__c = 'Implementation';
-        prd.Asset_Class__c = 'Hydro';
-        insert prd;
-        
-        SBQQ__Quote__c qut = new SBQQ__Quote__c();
-        qut.SBQQ__Opportunity2__c = opp.Id;
-        insert qut;
+		insert act;    
         
         MSA_Contract__c msa = new MSA_Contract__c();
         msa.Account_Name__c = act.Id;
@@ -61,7 +29,45 @@ public class ContractTriggerHandlerTest {
         act.ShippingState  = 'Arizona';
         act.Uses_MSA_of__c   = msa.Id;
         
-        update act;
+        update act;    
+        
+        Opportunity opp = new Opportunity();
+        opp.CloseDate = System.today().addDays(5);
+        opp.Name = 'Test Opportunity';
+        opp.StageName = '4 - Evaluation';
+        opp.AccountId = act.Id;
+        opp.RecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Amendment').getRecordTypeId();//Amendment
+        insert opp;   
+        
+        Opportunity opp2 = new Opportunity();
+        opp2.CloseDate = System.today().addDays(5);
+        opp2.Name = 'Test Opportunity';
+        opp2.StageName = '4 - Evaluation';
+        opp2.AccountId = act.Id;
+        opp2.RecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Amendment').getRecordTypeId();
+        insert opp2;  
+        
+        
+        system.debug('1-->'+opp.id);
+        system.debug('2-->'+opp.id);
+        
+        Product2 prd = new Product2();
+        prd.SBQQ__SubscriptionPricing__c = 'Fixed Price';
+        prd.Name = 'test';
+        prd.Product_Line__c='Core';
+        prd.Product_Category__c = 'Software';
+        prd.Product_Type__c = 'Recurring';
+        prd.Product_Services__c = 'Implementation';
+        prd.Asset_Class__c = 'Hydro';
+        insert prd;
+        
+        SBQQ__Quote__c qut = new SBQQ__Quote__c();
+        qut.SBQQ__Opportunity2__c = opp.Id;
+        insert qut;
+        
+        
+        
+        
         
         
        	Contract cnt = new Contract();
@@ -180,6 +186,7 @@ public class ContractTriggerHandlerTest {
                 ppt.Subscription__c = subs.Id;
                 ppt.Plant__c = ap.Id;
                 ppt.Account__c = act.Id;
+                ppt.Product__c = prd.id;
                 pptList.add(ppt);
             }
         }
@@ -202,7 +209,7 @@ public class ContractTriggerHandlerTest {
         Contract cnt = [SELECT Id FROM Contract LIMIT 1];
         cnt.SBQQ__RenewalQuoted__c = true;
         cnt.Amendment_Quoted__c = true;
-       cnt.Status = 'Activated';
+        cnt.Status = 'Activated';
         update cnt;
         
         List<Plant_Product_Transaction__c> pptList = [SELECT Id FROM Plant_Product_Transaction__c];
@@ -249,6 +256,61 @@ public class ContractTriggerHandlerTest {
             opp.SBQQ__AmendedContract__c = cnt.id;
             system.debug('-->>'+opp.RecordType.name);
         }
+        Test.stopTest();
+    }
+    
+    @isTest
+    public static void method03(){
+        Test.startTest();
+        List <Opportunity> oppList = [Select ID,StageName from Opportunity];
+        for(Opportunity opp : oppList){
+            system.debug('stage--'+opp.StageName);
+        }
+        for(Opportunity opp : oppList) opp.StageName = '5 - Verbal Commit/LOI';
+        update oppList;
+        for(Opportunity opp : oppList) opp.StageName = '6 - Negotiations';//	6 - Negotiations
+        update oppList;
+        for(Opportunity opp : oppList) opp.StageName = '7-Execution';//	
+        update oppList;
+        
+        List<SBQQ__Quote__c> qutList = [Select id from SBQQ__Quote__c];
+        for(SBQQ__Quote__c qut : qutList){
+            qut.SBQQ__Type__c = 'Amendment' ;
+            qut.SBQQ__Status__c = 'Approved';
+            qut.SBQQ__Primary__c =  true;
+        } 
+        update qutList;
+        
+        for(Opportunity opp : oppList) {
+            opp.StageName = 'Close Pending';
+            opp.Win_Loss_Reason__c = 'Wrong Persona';
+        }
+        update oppList;
+        for(Opportunity opp : oppList){
+            opp.StageName = 'Closed Won';
+            opp.Finance_Review__c = 'Approved';
+        } 
+        update oppList;
+        
+        Contract cnt = [SELECT Id FROM Contract LIMIT 1];
+        cnt.SBQQ__RenewalQuoted__c = true;
+        cnt.Amendment_Quoted__c = true;
+        cnt.Status = 'Activated';
+        update cnt;
+        
+        
+        
+        Test.stopTest();
+    }
+    
+    @isTest
+    public static void method04(){
+        Test.startTest();
+        Contract cnt = [SELECT Id FROM Contract LIMIT 1];
+        cnt.SBQQ__RenewalQuoted__c = true;
+        cnt.Amendment_Quoted__c = false;
+        cnt.Status = 'Activated';
+        update cnt;
         Test.stopTest();
     }
 }
