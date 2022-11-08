@@ -73,8 +73,8 @@
                 <field>Additional_Disc_Amt__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Annual_Recurring_Revenue__c</field>
+                <behavior>Readonly</behavior>
+                <field>QS_Annual_Recurring_Revenue__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
