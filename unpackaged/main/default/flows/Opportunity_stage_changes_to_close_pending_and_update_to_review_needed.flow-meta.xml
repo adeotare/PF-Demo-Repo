@@ -115,12 +115,6 @@
             <targetReference>Ordered_will_be_checked_automatically</targetReference>
         </connector>
         <inputAssignments>
-            <field>CloseDate</field>
-            <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>StageName</field>
             <value>
                 <stringValue>Closed Won</stringValue>
