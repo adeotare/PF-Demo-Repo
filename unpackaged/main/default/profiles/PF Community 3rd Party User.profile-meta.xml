@@ -2297,6 +2297,9 @@
         <recordType>SBQQ__Quote__c.Locked</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Task-Task Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>project_cloud__Project_Task__c-project_cloud__Project Task Layout</layout>
     </layoutAssignments>
     <layoutAssignments>

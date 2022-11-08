@@ -6935,6 +6935,9 @@
     <layoutAssignments>
         <layout>SBQQ__Quote__c-Quote Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Task-Task Layout</layout>
+    </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>
