@@ -3,7 +3,7 @@
     <fullName>Annual_Recurring_Revenue__c</fullName>
     <defaultValue>0</defaultValue>
     <externalId>false</externalId>
-    <label>Annual Recurring Revenue</label>
+    <label>ARR used in Pricing Code</label>
     <precision>18</precision>
     <required>false</required>
     <scale>2</scale>
