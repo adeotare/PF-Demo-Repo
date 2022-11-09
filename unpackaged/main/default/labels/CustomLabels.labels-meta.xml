@@ -1035,6 +1035,13 @@
         <value>Recombiner name should not be empty</value>
     </labels>
     <labels>
+        <fullName>PPTBillingTriggerSoql</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PPTBillingTriggerSoql</shortDescription>
+        <value>where Product_Line__c != null AND Product_Family__c != null AND  Product_Category__c != null AND Billing_Start_Date__c = null</value>
+    </labels>
+    <labels>
         <fullName>PageCount</fullName>
         <language>en_US</language>
         <protected>false</protected>

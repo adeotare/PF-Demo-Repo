@@ -4,8 +4,10 @@ global class PPTBillingTriggerBatchApex implements Database.Batchable<sObject>
     {
         
         String query = 'SELECT Id,Name,Product_Category__c,Product_Family__c,Product_Line__c,Effective_Date__c,Billing_Start_Date__c,Implementation_Start_Date__c,'+
-                        ' Deployment_date__c,Installation_Commencement_Date__c,Project_Name__c,Project_Name__r.Implementation_Start_Date__c FROM Plant_Product_Transaction__c  where Product_Line__c != null AND Product_Family__c != null AND  Product_Category__c != null';
-       
+                        ' Deployment_date__c,Installation_Commencement_Date__c,Project_Name__c,Project_Name__r.Implementation_Start_Date__c FROM Plant_Product_Transaction__c '+ 
+                        System.Label.PPTBillingTriggerSoql;
+                        // +System.Label.BatchApexAutocreateProjectSoql where Product_Line__c != null AND Product_Family__c != null AND  Product_Category__c != null
+       	system.debug('::query::'+query);
         return Database.getQueryLocator(query);
     }
     global void execute(Database.BatchableContext BC, List<Plant_Product_Transaction__c> scope)
@@ -54,6 +56,7 @@ global class PPTBillingTriggerBatchApex implements Database.Batchable<sObject>
 
         }
         if(updatePPTList.size() > 0 && updatePPTList != null){
+            system.debug('---updatePPTList.size()---'+updatePPTList.size());
             system.debug('---updatePPTList---'+updatePPTList);
             update updatePPTList;
         }
