@@ -69,8 +69,8 @@
     <assignments>
         <name>Update_Task_Owner_0_0_0_0_0</name>
         <label>Update Task Owner</label>
-        <locationX>789</locationX>
-        <locationY>986</locationY>
+        <locationX>794</locationX>
+        <locationY>921</locationY>
         <assignmentItems>
             <assignToReference>$Record.OwnerId</assignToReference>
             <operator>Assign</operator>
@@ -78,9 +78,6 @@
                 <elementReference>Get_Queue_Id_for_Professional_Services_Task_detail.Id</elementReference>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>Get_Queue_Id_for_Professional_Services_Task_detail</targetReference>
-        </connector>
     </assignments>
     <assignments>
         <name>Update_Task_Owner_0_0_0_0_0_0</name>
@@ -396,7 +393,30 @@
             <label>Detail for BDR Task</label>
         </rules>
     </decisions>
-    <description>REQ -2437</description>
+    <decisions>
+        <name>Check_whether_the_Request_is_Collaboration_Request</name>
+        <label>Check whether the Request is Collaboration Request</label>
+        <locationX>641</locationX>
+        <locationY>180</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_whether_the_Request_is_Collaboration_Request_Task</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Collaboration Request Task</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Task_Detail_Value_0</targetReference>
+            </connector>
+            <label>Check whether the Request is Collaboration Request Task</label>
+        </rules>
+    </decisions>
+    <description>REQ -2437
+10-11-2022 : Sameer : As per Raid -0679 adding a decision element to check if the record type is of Collaboration Request Type .</description>
     <interviewLabel>Task : assigning task to respective queue {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Task : assigning task to respective queue</label>
     <processMetadataValues>
@@ -550,6 +570,9 @@
         <locationX>800</locationX>
         <locationY>645</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Task_Owner_0_0_0_0_0</targetReference>
+        </connector>
         <filterLogic>or</filterLogic>
         <filters>
             <field>DeveloperName</field>
@@ -647,10 +670,10 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>691</locationX>
-        <locationY>50</locationY>
+        <locationX>742</locationX>
+        <locationY>55</locationY>
         <connector>
-            <targetReference>Check_Task_Detail_Value_0</targetReference>
+            <targetReference>Check_whether_the_Request_is_Collaboration_Request</targetReference>
         </connector>
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
