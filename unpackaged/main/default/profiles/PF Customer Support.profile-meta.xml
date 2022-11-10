@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>Power_Factor_Sales</application>
@@ -379,11 +379,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.isContractPriceCreated__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.of_Open_Deals__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -7381,18 +7376,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ImplementationBracketPrice</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>LID__SalesNavigatorProfileController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>LID__SalesNavigatorProfileHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>LID__salesNavigatorOAuth</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
