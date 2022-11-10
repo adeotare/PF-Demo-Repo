@@ -4,8 +4,8 @@
     <assignments>
         <name>Update_Prorate_Difference</name>
         <label>Update Prorate Difference</label>
-        <locationX>50</locationX>
-        <locationY>551</locationY>
+        <locationX>1210</locationX>
+        <locationY>520</locationY>
         <assignmentItems>
             <assignToReference>$Record.PPT_Prorate_Multiplier__c</assignToReference>
             <operator>Assign</operator>
@@ -17,8 +17,8 @@
     <assignments>
         <name>Update_Prorate_No_Diff</name>
         <label>Update Prorate No Diff</label>
-        <locationX>314</locationX>
-        <locationY>551</locationY>
+        <locationX>1443</locationX>
+        <locationY>521</locationY>
         <assignmentItems>
             <assignToReference>$Record.PPT_Prorate_Multiplier__c</assignToReference>
             <operator>Assign</operator>
@@ -30,8 +30,8 @@
     <assignments>
         <name>Update_Prorate_Quote_Line</name>
         <label>Update Prorate Quote Line</label>
-        <locationX>578</locationX>
-        <locationY>671</locationY>
+        <locationX>1669</locationX>
+        <locationY>592</locationY>
         <assignmentItems>
             <assignToReference>$Record.PPT_Prorate_Multiplier__c</assignToReference>
             <operator>Assign</operator>
@@ -40,11 +40,68 @@
             </value>
         </assignmentItems>
     </assignments>
+    <assignments>
+        <name>Update_Prorate_Quote_Line_0</name>
+        <label>Update Prorate Quote Line</label>
+        <locationX>817</locationX>
+        <locationY>583</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.PPT_Prorate_Multiplier__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Quote_Line__r.SBQQ__ProrateMultiplier__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_for_Quote_first_then_subscription</name>
+        <label>Check for Quote first then subscription</label>
+        <locationX>811</locationX>
+        <locationY>258</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_quote_is_present</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Quote_Line__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Quote__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Prorate_Quote_Line_0</targetReference>
+            </connector>
+            <label>If quote is present</label>
+        </rules>
+        <rules>
+            <name>If_Subscription_is_present_but_not_Quote</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subscription__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Subscription</targetReference>
+            </connector>
+            <label>If Subscription is present but not Quote</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>Check_PPT</name>
         <label>Check PPT</label>
-        <locationX>314</locationX>
-        <locationY>431</locationY>
+        <locationX>1336</locationX>
+        <locationY>323</locationY>
         <defaultConnector>
             <targetReference>Get_Quote_Line</targetReference>
         </defaultConnector>
@@ -131,7 +188,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -144,8 +201,8 @@
     <recordLookups>
         <name>Get_Quote_Line</name>
         <label>Get Quote Line</label>
-        <locationX>578</locationX>
-        <locationY>551</locationY>
+        <locationX>1578</locationX>
+        <locationY>343</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Prorate_Quote_Line</targetReference>
@@ -165,8 +222,8 @@
     <recordLookups>
         <name>Get_Subscription</name>
         <label>Get Subscription</label>
-        <locationX>314</locationX>
-        <locationY>311</locationY>
+        <locationX>1377</locationX>
+        <locationY>159</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_PPT</targetReference>
@@ -184,12 +241,12 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>188</locationX>
-        <locationY>0</locationY>
+        <locationX>294</locationX>
+        <locationY>69</locationY>
         <connector>
-            <targetReference>Get_Subscription</targetReference>
+            <targetReference>Check_for_Quote_first_then_subscription</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
+        <filterLogic>or</filterLogic>
         <filters>
             <field>Subscription__c</field>
             <operator>IsNull</operator>
@@ -198,17 +255,10 @@
             </value>
         </filters>
         <filters>
-            <field>Quote_Line__c</field>
+            <field>Quote__c</field>
             <operator>IsNull</operator>
             <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>PPT_Prorate_Multiplier__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>true</booleanValue>
+                <booleanValue>false</booleanValue>
             </value>
         </filters>
         <object>Plant_Product_Transaction__c</object>
