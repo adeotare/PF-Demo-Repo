@@ -22,11 +22,6 @@
                 <label>Duplicate</label>
             </value>
             <value>
-                <fullName>Will manage via Amendment</fullName>
-                <default>false</default>
-                <label>Will manage via Amendment</label>
-            </value>
-            <value>
                 <fullName>Prospect did not attend discovery call</fullName>
                 <default>false</default>
                 <label>Prospect did not attend discovery call</label>

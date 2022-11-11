@@ -55,6 +55,11 @@
         <default>false</default>
         <label>Enterprise</label>
     </customValue>
+    <customValue>
+        <fullName>VPP</fullName>
+        <default>false</default>
+        <label>VPP</label>
+    </customValue>
     <masterLabel>Product Line</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>
