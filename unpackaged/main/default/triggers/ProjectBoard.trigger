@@ -24,7 +24,7 @@ trigger ProjectBoard on project_cloud__Project__c (before insert,before update, 
     // created project
     if(Trigger.isAfter){
 
-        if (Trigger.isUpdate && Trigger.New[0].Manage_Project_Priorities__c == false) {
+        if (Trigger.isUpdate && Trigger.New[0].Manage_Project_Priorities__c == false && Trigger.New[0].Internal_Status__c != Trigger.Old[0].Internal_Status__c) {
 
             //System.debug('After update trigger------------');
             // List: will hold the new Card that is going to be inserted in the Kanban Project
@@ -68,19 +68,20 @@ trigger ProjectBoard on project_cloud__Project__c (before insert,before update, 
                 projectTypeToBoard.put(b.project_cloud__Project_Phase__r.project_cloud__Project__r.Product_Family__c, b.Id);
                 boardIdToBoardProcess.put(b.Id, b.project_cloud__Board_Process__c);
             }
-
+			system.debug('----boardIdToBoardProcess---'+boardIdToBoardProcess);
             List<project_cloud__Board_Process_Step__c> boardProcessSteps = [SELECT Id, Name, 
                                                                             project_cloud__Board_Process__c
                                                                             FROM project_cloud__Board_Process_Step__c 
                                                                             WHERE Name = 'New'
                                                                             AND project_cloud__Board_Process__c IN :boardIdToBoardProcess.values()];
 
+            system.debug('--boardProcessSteps---'+boardProcessSteps);
             Map<Id, Id> boardProcessToStep = new Map<Id, Id>();
             for (project_cloud__Board_Process_Step__c bProcessStep : boardProcessSteps) {
                 
                 boardProcessToStep.put(bProcessStep.project_cloud__Board_Process__c, bProcessStep.Id);
             }
-    
+    		system.debug('----boardProcessToStep---'+boardProcessToStep);
             // SOQL query to the newly created project (Project object) to gather the necessary field data to be added to the card
             /* Calculated Start Date
              *  Calculated End Date
@@ -120,13 +121,17 @@ trigger ProjectBoard on project_cloud__Project__c (before insert,before update, 
                 // Card creation from the data gather from the project
                 // project_cloud__Board__c: fixed board in the Kanban project
                 // project_cloud__Board_Process_Step__c: step in the fixed board
-                if(StatusCheck.get(p.Id) == 'To Do' &&  isprojectcardExist == false ) {
+                if(StatusCheck.get(p.Id) == 'To Do' &&  isprojectcardExist == false && p.Product_Family__c != null) {
 
                     if(p.Product_Family__c == 'Greenbyte' || p.Product_Family__c == 'BluePoint')
                     {
                        p.Product_Family__c= 'Greenbyte,BluePoint';
                     }
-                     project_cloud__Card__c newCard = new project_cloud__Card__c(
+                    system.debug('--p.Product_Family__c--'+p.Product_Family__c);
+                    system.debug('-----projectTypeToBoard- Map--'+projectTypeToBoard.get(p.Product_Family__c));
+                    system.debug('--boardIdToBoardProcess- Map--'+boardIdToBoardProcess.get(projectTypeToBoard.get(p.Product_Family__c))); 
+                    system.debug('--boardProcessToStep-Map---'+boardProcessToStep.get(boardIdToBoardProcess.get(projectTypeToBoard.get(p.Product_Family__c))));
+                    project_cloud__Card__c newCard = new project_cloud__Card__c(
                          Card_Created_From_Project_Id__c = p.Id,
                          project_cloud__Card_Name__c = p.Name,
                          ProjectOwnerIdText__c = p.OwnerId,
@@ -146,6 +151,7 @@ trigger ProjectBoard on project_cloud__Project__c (before insert,before update, 
                 }
                 // If the card was created and added the list successfuly, it gets inserted in the Salesforce Database
                 if(!newCardList.isEmpty()){
+                    system.debug('--newCardList---'+newCardList);
                     insert newCardList;   
                 }
             
