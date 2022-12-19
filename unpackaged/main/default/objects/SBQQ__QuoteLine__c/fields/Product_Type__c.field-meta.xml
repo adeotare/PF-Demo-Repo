@@ -26,6 +26,11 @@
                 <default>false</default>
                 <label>One-Time</label>
             </value>
+            <value>
+                <fullName>Perpetual License</fullName>
+                <default>false</default>
+                <label>Perpetual License</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
