@@ -34,6 +34,26 @@
                 <default>false</default>
                 <label>MSA</label>
             </value>
+            <value>
+                <fullName>First Call Deck</fullName>
+                <default>false</default>
+                <label>First Call Deck</label>
+            </value>
+            <value>
+                <fullName>Pricing/Proposal Deck</fullName>
+                <default>false</default>
+                <label>Pricing/Proposal Deck</label>
+            </value>
+            <value>
+                <fullName>Pricing Sheet</fullName>
+                <default>false</default>
+                <label>Pricing Sheet</label>
+            </value>
+            <value>
+                <fullName>Call Recording</fullName>
+                <default>false</default>
+                <label>Call Recording</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
