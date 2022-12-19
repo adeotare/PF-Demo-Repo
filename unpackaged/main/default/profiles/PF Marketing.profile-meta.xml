@@ -6827,6 +6827,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>project_cloud__Project__c.project_cloud__Resourcing_Mode__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>sbaa__Approval__c.Approval_Justification__c</field>
         <readable>true</readable>
