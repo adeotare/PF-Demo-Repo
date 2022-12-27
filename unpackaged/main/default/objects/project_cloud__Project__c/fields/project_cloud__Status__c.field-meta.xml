@@ -20,7 +20,7 @@
         )
     )    
 )</formula>
-    <inlineHelpText>The overall status of the project.</inlineHelpText>
+    <inlineHelpText>The overall status of the project. (Not In Use)</inlineHelpText>
     <label>Project Status</label>
     <required>false</required>
     <trackHistory>false</trackHistory>

@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Project_Status__c</fullName>
     <externalId>false</externalId>
-    <label>Project Status</label>
+    <label>Project Status Not In Use</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>true</trackHistory>
@@ -91,6 +91,10 @@
         </valueSetDefinition>
         <valueSettings>
             <controllingFieldValue>Monitoring Implementation</controllingFieldValue>
+            <controllingFieldValue>Monitoring Decommissioning</controllingFieldValue>
+            <controllingFieldValue>T&amp;M</controllingFieldValue>
+            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
             <valueName>Info collection</valueName>
         </valueSettings>
         <valueSettings>
@@ -98,6 +102,7 @@
             <controllingFieldValue>Monitoring Decommissioning</controllingFieldValue>
             <controllingFieldValue>T&amp;M</controllingFieldValue>
             <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
             <valueName>In progress</valueName>
         </valueSettings>
         <valueSettings>
@@ -105,6 +110,7 @@
             <controllingFieldValue>Monitoring Decommissioning</controllingFieldValue>
             <controllingFieldValue>T&amp;M</controllingFieldValue>
             <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
             <valueName>Blocked</valueName>
         </valueSettings>
         <valueSettings>
@@ -112,6 +118,7 @@
             <controllingFieldValue>Monitoring Decommissioning</controllingFieldValue>
             <controllingFieldValue>T&amp;M</controllingFieldValue>
             <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
             <valueName>Completed</valueName>
         </valueSettings>
         <valueSettings>
@@ -119,48 +126,8 @@
             <controllingFieldValue>Monitoring Decommissioning</controllingFieldValue>
             <controllingFieldValue>T&amp;M</controllingFieldValue>
             <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
+            <controllingFieldValue>Edge Services</controllingFieldValue>
             <valueName>Cancelled</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Monitoring Decommissioning</controllingFieldValue>
-            <controllingFieldValue>T&amp;M</controllingFieldValue>
-            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
-            <controllingFieldValue>Edge Services</controllingFieldValue>
-            <valueName>To Do</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Monitoring Decommissioning</controllingFieldValue>
-            <controllingFieldValue>T&amp;M</controllingFieldValue>
-            <valueName>Inbox</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Drive O&amp;M</controllingFieldValue>
-            <controllingFieldValue>Edge Services</controllingFieldValue>
-            <valueName>New</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Edge Services</controllingFieldValue>
-            <valueName>Backlog</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Edge Services</controllingFieldValue>
-            <valueName>Selected for Development</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Edge Services</controllingFieldValue>
-            <valueName>Under Spec</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Edge Services</controllingFieldValue>
-            <valueName>Waiting</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Edge Services</controllingFieldValue>
-            <valueName>Won&#39;t do</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Edge Services</controllingFieldValue>
-            <valueName>Done</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Internal Projects</controllingFieldValue>
