@@ -31,8 +31,8 @@
                 <field>Quantity</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>SBQQ__ChargeType__c</field>
+                <behavior>Readonly</behavior>
+                <field>Rate_Type_for_Billing_to_NS__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -53,6 +53,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Netsuite_Failure_Indicator__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>NS_Item_Name__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
