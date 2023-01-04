@@ -4050,6 +4050,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>MSA_Implementation_Bracket_Price__c.Product_Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MSA_Implementation_Bracket_Price__c.Product_Family__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MSA_Implementation_Bracket_Price__c.Product_Line__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>MSA_Software_Discount_Tier_Price__c.Account__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4106,6 +4121,21 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>MSA_Software_Discount_Tier_Price__c.Pricing_Tier__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MSA_Software_Discount_Tier_Price__c.Product_Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MSA_Software_Discount_Tier_Price__c.Product_Family__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MSA_Software_Discount_Tier_Price__c.Product_Line__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -28,6 +28,11 @@ public static void UpdateAllPlantRecordsWithSamePrice(String qLineItemId, Decima
 public static void updatePPTWithAdditionalDiscountFromQuoteLine(String qLineItemId, Decimal additionalDiscountPercent)
 public static void updatePPTWithQuantityFromQuoteLine(String qLineItemId, Integer quantityEnteredManuallyOnQuoteline )
 
+// Get Data from Pricing Setup
+public static void getSWDiscountTiers (SBQQ__QuoteLine__c quoteLine, String AccountId, List <MSA_Software_Discount_Tier_Price__c>)
+public static void getImplementationBrackets (SBQQ__QuoteLine__c quoteLine, String AccountId, List <MSA_Implementation_Bracket_Price__c>)
+
+
 */
 
 public with sharing class PlantProductController {
@@ -466,7 +471,7 @@ public with sharing class PlantProductController {
 
         System.debug('Inside updatePricingForQuoteLine function');
 
-        SBQQ__QuoteLine__c quoteLine1 = [SELECT CurrencyIsoCode,SBQQ__ContractedPrice__c, SBQQ__Quote__r.SBQQ__Account__r.Uses_MSA_of__r.Account_Name__r.ID, SBQQ__ContractedPrice__r.SBQQ__Account__r.ID, SBQQ__ContractedPrice__r.SBQQ__Price__c, SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c, SBQQ__ListPrice__c, SBQQ__Product__r.ID, SBQQ__Quote__r.SBQQ__Type__c, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__Product__r.Product_Category__c, SBQQ__SpecialPrice__c, SBQQ__Quote__r.SBQQ__PriceBook__r.Name 
+        SBQQ__QuoteLine__c quoteLine1 = [SELECT CurrencyIsoCode,SBQQ__ProductFamily__c, SBQQ__Product__r.Product_Line__c, SBQQ__ContractedPrice__c, SBQQ__Quote__r.SBQQ__Account__r.Uses_MSA_of__r.Account_Name__r.ID, SBQQ__ContractedPrice__r.SBQQ__Account__r.ID, SBQQ__ContractedPrice__r.SBQQ__Price__c, SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c, SBQQ__ListPrice__c, SBQQ__Product__r.ID, SBQQ__Quote__r.SBQQ__Type__c, SBQQ__Quote__r.SBQQ__Account__r.ID, SBQQ__Product__r.Product_Category__c, SBQQ__SpecialPrice__c, SBQQ__Quote__r.SBQQ__PriceBook__r.Name 
         from SBQQ__QuoteLine__c where Id =: quoteLineId WITH SECURITY_ENFORCED];
         
         // Keep the original contract price here... since we are updating Special Price itself, this will not work
@@ -485,6 +490,10 @@ public with sharing class PlantProductController {
                 contractPricePerMSA = quoteLine1.SBQQ__ListPrice__c;
         }
 
+        // public static void getSWDiscountTiers (SBQQ__QuoteLine__c quoteLine, String AccountId, List <MSA_Software_Discount_Tier_Price__c>)
+        // public static void getImplementationBrackets (SBQQ__QuoteLine__c quoteLine, String AccountId, List <MSA_Implementation_Bracket_Price__c>)
+
+    /* Nitin - 1 Dec 2022 - replacing the following code with the one that is based on Product + Product Line
         List <MSA_Software_Discount_Tier_Price__c> swDiscountTiersList = new List <MSA_Software_Discount_Tier_Price__c> ();
         if(quoteLine1.SBQQ__Product__r.Product_Category__c == 'Software') {
             // check if there are any custom discount tiers for this SW Product
@@ -498,7 +507,7 @@ public with sharing class PlantProductController {
                 System.debug('Found atleast 1 SW discount tier for the Product on the quote line for a given account');
                 doDiscountTierBasedPriceCalculationforSW (quoteLineId, contractPricePerMSA, swDiscountTiersList, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c,quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);
             }
-        else {
+            else {
                     // check if the Account related with the MSA has any Contracted Prices. This could happen in case of Account hierarchy with the Child Account using MSA of Parent Account
                     swDiscountTiersList =  [Select Name, Account__r.ID, Type__c, Discount_Unit__c, Discount__c, Discount_Amount__c, Pricing_Tier__c, Lower_Bound__c, Upper_Bound__c, Cross_Orders__c 
                     from MSA_Software_Discount_Tier_Price__c 
@@ -548,8 +557,38 @@ public with sharing class PlantProductController {
                     }
                 }
         }
+    */      // Nitin - 1 Dec 2022
 
-    }
+        if(quoteLine1.SBQQ__Product__r.Product_Category__c == 'Software') {
+            System.debug ('Checking if the SW Product has Discount Tier pricing');
+            List <MSA_Software_Discount_Tier_Price__c> swDiscountTiersList = getSWDiscountTiers (quoteLine1);
+            if (swDiscountTiersList!=null && !swDiscountTiersList.IsEmpty()) {
+                System.debug('Number of SW discount tiers found is'+swDiscountTiersList.size());
+                doDiscountTierBasedPriceCalculationforSW (quoteLineId, contractPricePerMSA, swDiscountTiersList, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c,quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);
+            }
+            else {
+                    System.debug('No SW Discount Tiers were found for the Product, Product Family and Account');
+                    // No discount tier was found for the Product + Account combination
+                    // Therefore no updates to the Contract Price. Just Update the PPT records
+                    updateAllPlantRecordswithSamePrice(quoteLineId, contractPricePerMSA, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c, quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);    
+                    
+                }    
+        }
+        else {      // check for non software products
+
+                // System.debug ('Checking if the Product has Implementation Services bracket pricing');
+                List <MSA_Implementation_Bracket_Price__c> ImplBracketPriceTiersList = getImplementationBrackets (quoteLine1);
+                if (ImplBracketPriceTiersList!=null && !ImplBracketPriceTiersList.IsEmpty()) {
+                    System.debug('Number of Implementation Brackets found is'+ImplBracketPriceTiersList.size());
+                    doImplBracketTierBasedPriceCalculationforImpl (quoteLineId, contractPricePerMSA, ImplBracketPriceTiersList, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c, quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);
+                }
+                else {
+                        System.debug('No Implementation Brackets were found for the Product, Product Family and Account');
+                        // Therefore no updates to the Contract Price. Just Update the PPT records
+                        updateAllPlantRecordswithSamePrice(quoteLineId, contractPricePerMSA, quoteLine1.SBQQ__Quote__r.SBQQ__Type__c, quoteLine1.SBQQ__Quote__r.SBQQ__Account__r.Range_Based_Legacy_Pricing_for_GB__c);
+                }
+            }
+        }
 
     //@description
     // Function to update a single Price on all Plants of a given Quote Line
@@ -575,14 +614,16 @@ public with sharing class PlantProductController {
 
         for(Plant_Product_Transaction__c pptRecord: pptRecordList){
             pptRecord.Unit_Price_After_Volume_Discount__c = contractPricePerMSA;
+            }
             try {
-                update pptRecord;
+                // update pptRecord;        // Nitin 29 Nov - changing to Bulk DML
+                update pptRecordList;
             }
             catch(Exception ex) {
                 System.debug('Error updating price on quote line'
                                 +string.valueOf(ex.getLineNumber()) +ex.getTypeName() +string.valueOf(ex.getCause()) +ex.getMessage() +ex.getStackTraceString());
             }
-        }
+        
     }
 
     //@description
@@ -700,7 +741,7 @@ public with sharing class PlantProductController {
                             currentTier = noOfTiers; // set to this value so as to break out of the while loop
                         }
                         else {
-                            If ((CurrentMWForPricing >= swDiscountTiersList[currentTier].Lower_Bound__c) && (CurrentMWForPricing<= swDiscountTiersList[currentTier].Upper_Bound__c)) {
+                            If ((CurrentMWForPricing > swDiscountTiersList[currentTier].Lower_Bound__c) && (CurrentMWForPricing<= swDiscountTiersList[currentTier].Upper_Bound__c)) {
                             
                             System.debug('This plant falls in Tier number - '+currentTier);
                             System.debug('This plant name is - '+eachPPT.Plant__r.Plant__r.Name);
@@ -722,7 +763,9 @@ public with sharing class PlantProductController {
 
                             }
                         } 
-                        System.debug ('Not found in the current tier number - so going to next tier #'+currentTier+1);
+                        // System.debug ('Current tier number - is'+currentTier);
+                        // System.debug ('Total Number of Tiers are - '+noOfTiers);
+
                         if (currentTier != noOfTiers) {         // till the Tier is not found
                                 // cumulativeDiscount += swDiscountTiersList[currentTier].Discount_Amount__c;
                                 If (isDiscountPercentage == FALSE){
@@ -741,6 +784,8 @@ public with sharing class PlantProductController {
 
                         // Include the Plant MW only after the tier is found...else after addition of the Plant MW, it may get classified into the next tier
                         // CurrentMWForPricing += eachPPT.Plant__r.Plant__r.MWp__c; // Nitin - error - the next tier is not starting from the lower bound
+                        // System.debug ('Value of eachPPT.Quote_Line_Quantity__c is - '+eachPPT.Quote_Line_Quantity__c);
+                        // System.debug ('Value of CurrentMWForPricing is - '+CurrentMWForPricing);
                         CurrentMWForPricing += eachPPT.Quote_Line_Quantity__c; // Nitin - error - the next tier is not starting from the lower bound
                         System.debug ('Going to the next PPT record');
                 }                        
@@ -761,7 +806,7 @@ public with sharing class PlantProductController {
                             currentTier = noOfTiers;                     // to break out of loop
                         }
                         else {
-                            If ((totalQuantityToConsiderForDiscount >= swDiscountTiersList[currentTier].Lower_Bound__c) && (totalQuantityToConsiderForDiscount<= swDiscountTiersList[currentTier].Upper_Bound__c)) {
+                            If ((totalQuantityToConsiderForDiscount > swDiscountTiersList[currentTier].Lower_Bound__c) && (totalQuantityToConsiderForDiscount<= swDiscountTiersList[currentTier].Upper_Bound__c)) {
                             
                                 System.debug('Total MW falls in Tier number - '+currentTier);
                                 tierOfDiscount = currentTier+1;
@@ -868,7 +913,7 @@ public with sharing class PlantProductController {
                             currentTier = noOfTiers; // set to this value so as to break out of the while loop
                         }
                         else {
-                            If ((CurrentMWForPricing >= ImplBracketPriceTiersList[currentTier].Lower_Bound__c) && (CurrentMWForPricing<= ImplBracketPriceTiersList[currentTier].Upper_Bound__c)) {
+                            If ((CurrentMWForPricing > ImplBracketPriceTiersList[currentTier].Lower_Bound__c) && (CurrentMWForPricing<= ImplBracketPriceTiersList[currentTier].Upper_Bound__c)) {
                             
                             System.debug('This plant falls in Implementation Tier number - '+currentTier);
                             System.debug('This plant name is - '+eachPPT.Plant__r.Plant__r.Name);
@@ -1002,6 +1047,98 @@ public with sharing class PlantProductController {
         // System.debug('Updated Quote Line with the value as = '+quoteLine.SBQQ__SpecialPrice__c);
 
         }
+
+
+    public static List <MSA_Software_Discount_Tier_Price__c> getSWDiscountTiers (SBQQ__QuoteLine__c quoteLine) {
+
+        System.debug('Inside method getSWDiscountTiers');
+        List <MSA_Software_Discount_Tier_Price__c> swDiscountTiersList = new List <MSA_Software_Discount_Tier_Price__c> ();
+        swDiscountTiersList =  [Select Name, Account__r.ID, Asset_Class__c, Product_Category__c, Product_Family__c, Product_Line__c, Type__c, Discount_Unit__c, Discount__c, Discount_Amount__c, Pricing_Tier__c, Lower_Bound__c, Upper_Bound__c, Cross_Orders__c 
+            from MSA_Software_Discount_Tier_Price__c 
+            where (Product__r.ID = :quoteLine.SBQQ__Product__r.ID)  
+            AND (Account__r.ID = :quoteLine.SBQQ__Quote__r.SBQQ__Account__r.ID)
+            WITH SECURITY_ENFORCED Order by Lower_Bound__c ];
+
+        // If SW Discount Tiers are not found for Product and Account, then look for Product and MSA Account
+        if (swDiscountTiersList!=null && (swDiscountTiersList.size() == 0)) {
+            // check if the Account related with the MSA has any Contracted Prices. This could happen in case of Account hierarchy with the Child Account using MSA of Parent Account
+                    swDiscountTiersList =  [Select Name, Account__r.ID, Asset_Class__c, Product_Category__c, Product_Family__c, Product_Line__c, Type__c, Discount_Unit__c, Discount__c, Discount_Amount__c, Pricing_Tier__c, Lower_Bound__c, Upper_Bound__c, Cross_Orders__c 
+                    from MSA_Software_Discount_Tier_Price__c 
+                    where (Product__r.ID = :quoteLine.SBQQ__Product__r.ID)  
+                    AND (Account__r.ID = :quoteLine.SBQQ__Quote__r.SBQQ__Account__r.Uses_MSA_of__r.Account_Name__r.ID)
+                    WITH SECURITY_ENFORCED Order by Lower_Bound__c ];
+        }
+
+        // If SW Discount Tiers are not found for Product and Account, then look for Product Family, Line and  Account
+        if (swDiscountTiersList!=null && (swDiscountTiersList.size() == 0)) {
+                    swDiscountTiersList =  [Select Name, Account__r.ID, Asset_Class__c, Product_Category__c, Product_Family__c, Product_Line__c, Type__c, Discount_Unit__c, Discount__c, Discount_Amount__c, Pricing_Tier__c, Lower_Bound__c, Upper_Bound__c, Cross_Orders__c 
+                    from MSA_Software_Discount_Tier_Price__c 
+                    where (Product_Family__c = :quoteLine.SBQQ__ProductFamily__c)  
+                    AND (Product_Line__c = :quoteLine.SBQQ__Product__r.Product_Line__c)
+                    AND (Account__r.ID = :quoteLine.SBQQ__Quote__r.SBQQ__Account__r.ID)
+                    WITH SECURITY_ENFORCED Order by Lower_Bound__c ];
+        }
+
+        // If SW Discount Tiers are not found for Product and Account, then look for Product Family, Line and MSA Account
+        if (swDiscountTiersList!=null && (swDiscountTiersList.size() == 0)) {
+                    swDiscountTiersList =  [Select Name, Account__r.ID, Asset_Class__c, Product_Category__c, Product_Family__c, Product_Line__c, Type__c, Discount_Unit__c, Discount__c, Discount_Amount__c, Pricing_Tier__c, Lower_Bound__c, Upper_Bound__c, Cross_Orders__c 
+                    from MSA_Software_Discount_Tier_Price__c 
+                    where (Product_Family__c = :quoteLine.SBQQ__ProductFamily__c)  
+                    AND (Product_Line__c = :quoteLine.SBQQ__Product__r.Product_Line__c)
+                    AND (Account__r.ID = :quoteLine.SBQQ__Quote__r.SBQQ__Account__r.Uses_MSA_of__r.Account_Name__r.ID)
+                    WITH SECURITY_ENFORCED Order by Lower_Bound__c ];
+        }
+
+        System.debug('Number of SW Discount Tiers found in method getSWDiscountTiers is - '+swDiscountTiersList.size());
+        return swDiscountTiersList;
+
+    } // end of method getSWDiscountTiers
+
+ 
+    public static List <MSA_Implementation_Bracket_Price__c> getImplementationBrackets (SBQQ__QuoteLine__c quoteLine) {
+
+            System.debug('Inside method getImplementationBrackets ');
+            List <MSA_Implementation_Bracket_Price__c> ImplBracketPriceTiersList = new List <MSA_Implementation_Bracket_Price__c> ();
+            ImplBracketPriceTiersList =  [SELECT ID, Asset_Class__c, Product_Category__c, Product_Family__c, Product_Line__c, Fixed_Price__c, Lower_Bound__c, Upper_Bound__c 
+                from MSA_Implementation_Bracket_Price__c 
+                where (Product__r.ID = :quoteLine.SBQQ__Product__r.ID)  
+                AND (Account__r.ID = :quoteLine.SBQQ__Quote__r.SBQQ__Account__r.ID)
+                WITH SECURITY_ENFORCED Order by Lower_Bound__c];    
+            
+            // If Impl brackets are not found for Product and Account, then look for Product and MSA Account
+            if (ImplBracketPriceTiersList!=null && (ImplBracketPriceTiersList.size() == 0)) {
+                ImplBracketPriceTiersList =  [SELECT ID, Asset_Class__c, Product_Category__c, Product_Family__c, Product_Line__c, Fixed_Price__c, Lower_Bound__c, Upper_Bound__c 
+                       from MSA_Implementation_Bracket_Price__c 
+                        where (Product__r.ID = :quoteLine.SBQQ__Product__r.ID)  
+                        AND (Account__r.ID = :quoteLine.SBQQ__Quote__r.SBQQ__Account__r.Uses_MSA_of__r.Account_Name__r.ID)
+                        WITH SECURITY_ENFORCED Order by Lower_Bound__c];    
+            }
+            
+            // If Impl brackets are not found for Product and Account, then look for Product Family and Line and Account
+            if (ImplBracketPriceTiersList!=null && (ImplBracketPriceTiersList.size() == 0)) {
+                ImplBracketPriceTiersList =  [SELECT ID, Asset_Class__c, Product_Category__c, Product_Family__c, Product_Line__c, Fixed_Price__c, Lower_Bound__c, Upper_Bound__c 
+                       from MSA_Implementation_Bracket_Price__c 
+                        where (Product_Family__c = :quoteLine.SBQQ__ProductFamily__c)  
+                        AND (Product_Line__c = :quoteLine.SBQQ__Product__r.Product_Line__c)
+                        AND (Account__r.ID = :quoteLine.SBQQ__Quote__r.SBQQ__Account__r.ID)
+                        WITH SECURITY_ENFORCED Order by Lower_Bound__c];    
+            }
+
+            // If Impl brackets are not found for Product and Account, then look for Product Family and Line and MSA Account
+            if (ImplBracketPriceTiersList!=null && (ImplBracketPriceTiersList.size() == 0)) {
+                ImplBracketPriceTiersList =  [SELECT ID, Asset_Class__c, Product_Category__c, Product_Family__c, Product_Line__c, Fixed_Price__c, Lower_Bound__c, Upper_Bound__c 
+                       from MSA_Implementation_Bracket_Price__c 
+                        where (Product_Family__c = :quoteLine.SBQQ__ProductFamily__c)  
+                        AND (Product_Line__c = :quoteLine.SBQQ__Product__r.Product_Line__c)
+                        AND (Account__r.ID = :quoteLine.SBQQ__Quote__r.SBQQ__Account__r.Uses_MSA_of__r.Account_Name__r.ID)
+                        WITH SECURITY_ENFORCED Order by Lower_Bound__c];    
+            }
+
+            System.debug('Number of Implementation brackets found in method getImplementationBrackets is - '+ImplBracketPriceTiersList.size());
+            return ImplBracketPriceTiersList;
+
+    } // end of method getImplementationBrackets
+
 
 // end of file
 }
