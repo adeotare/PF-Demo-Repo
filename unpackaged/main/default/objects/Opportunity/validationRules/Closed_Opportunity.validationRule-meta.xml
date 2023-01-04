@@ -3,20 +3,13 @@
     <fullName>Closed_Opportunity</fullName>
     <active>true</active>
     <errorConditionFormula>AND(
-
-OR (
-ISPICKVAL( StageName , &quot;Closed Won&quot;)
-),
-
-$Profile.Name  &lt;&gt; &quot;PF Ops&quot;,
-$Profile.Name  &lt;&gt; &quot;PF Legal&quot;,
-$Profile.Name  &lt;&gt; &quot;PF Finance&quot;,
-$Profile.Name  &lt;&gt; &quot;PF Super User&quot;,
-$Profile.Name  &lt;&gt; &quot;System Administrator&quot;
-
-
-
-
+PRIORVALUE( IsClosed ) = True,
+NOT(OR(
+$Profile.Name  = &quot;PF Ops&quot;,
+$Profile.Name  = &quot;PF Legal&quot;,
+$Profile.Name  = &quot;PF Finance&quot;,
+$Profile.Name  = &quot;PF Super User&quot;,
+$Profile.Name  = &quot;System Administrator&quot;))
 )</errorConditionFormula>
     <errorMessage>Only certain profiles can edit the closed opportunity</errorMessage>
 </ValidationRule>
