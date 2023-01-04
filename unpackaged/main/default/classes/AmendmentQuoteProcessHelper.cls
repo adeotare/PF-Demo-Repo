@@ -31,6 +31,11 @@ public class AmendmentQuoteProcessHelper {
                                                                  Subscription__r.SBQQ__Product__c,
                                                                         Quote_Line__r.SBQQ__Quote__r.SBQQ__Account__c,
                                                                  Unit_Price_After_Volume_Discount__c,
+                                                                 Billing_Start_Date__c,
+                                                                      Project_Name__c,
+                                                                 Deployment_date__c,
+                                                                 Customer_Acceptance__c,
+                                                                 Manual_Entry_Implementation_Start_Date__c,
                                                                  
                                                                         Product__c,
                                                                         Quote_Line__r.SBQQ__Product__c
@@ -83,8 +88,14 @@ public class AmendmentQuoteProcessHelper {
                     pp.MWp_Quantity__c=pp.Plant__r.Plant__r.MWp__c;
                     //pp.Quote_Line_Quantity__c=pp.Plant__r.Plant__r.MWp__c;
                     pp.Quote_Line_Quantity__c=ppt.Quote_Line_Quantity__c;
-                    pp.CurrencyIsoCode= ppt.CurrencyIsoCode;     
-                    
+                    pp.CurrencyIsoCode= ppt.CurrencyIsoCode;
+                     //
+                        pp.Project_Name__c=ppt.Project_Name__c;
+                        pp.Billing_Start_Date__c=ppt.Billing_Start_Date__c;
+                        pp.Deployment_date__c=ppt.Deployment_date__c;
+                        pp.Customer_Acceptance__c=ppt.Customer_Acceptance__c;
+                        pp.Manual_Entry_Implementation_Start_Date__c=ppt.Manual_Entry_Implementation_Start_Date__c;
+                    //
                     pp.List_Unit_Price__c=ql.SBQQ__ListPrice__c;
                     pp.Contracted_MW_Unit_List_Price__c= ppt.Contracted_MW_Unit_List_Price__c;
                     pp.Unit_Price_After_Volume_Discount__c= ppt.Unit_Price_After_Volume_Discount__c;  
@@ -120,6 +131,8 @@ public class AmendmentQuoteProcessHelper {
         for(SBQQ__Quote__c qut : quoteList){
             system.debug('qut--'+qut.SBQQ__LineItems__r);
         }
+        
+        
         Map<Id, Map<Id, SBQQ__QuoteLine__c >> existingData = new Map<Id, Map<Id, SBQQ__QuoteLine__c >>();
         Map<Id, Map<Id, SBQQ__QuoteLine__c >> revisedData = new Map<Id, Map<Id, SBQQ__QuoteLine__c >>();
         
@@ -165,6 +178,13 @@ public class AmendmentQuoteProcessHelper {
             
             
         }
+        
+        List<Plant_Product_Transaction__c> pptList = [Select id,Quote_Line__c from Plant_Product_Transaction__c Where Quote_Line__c IN : revisedData2.values()];
+        Set<Id> existingPPTRecordSet = new Set<Id>();
+        for(Plant_Product_Transaction__c ppt : pptList){
+            existingPPTRecordSet.add(ppt.Quote_Line__c);
+        }
+        
         system.debug('existingData2-->'+existingData2);
         system.debug('revisedData2-->'+revisedData2);
         system.debug('sourceQuoteLines-->'+sourceQuoteLines);
@@ -189,6 +209,11 @@ public class AmendmentQuoteProcessHelper {
                                                             Quote_Line__r.SBQQ__Quote__r.SBQQ__Account__c,
                                                             Unit_Price_After_Volume_Discount__c,
                                                             Product__c,
+                                                           Billing_Start_Date__c,
+                                                            Project_Name__c,
+                                                                 Deployment_date__c,
+                                                                 Customer_Acceptance__c,
+                                                                 Manual_Entry_Implementation_Start_Date__c,
                                                             Quote_Line__r.SBQQ__Product__c 
                                                     from Plant_Product_Transactions__r 
                                                     where Status__c != 'Decommissioned') 
@@ -199,7 +224,10 @@ public class AmendmentQuoteProcessHelper {
         List<Plant_Product_Transaction__c> pptListTOClone = new List <Plant_Product_Transaction__c>();
         for(SBQQ__QuoteLine__c ql : qlList){
             system.debug('quote line-->'+ql.Plant_Product_Transactions__r);
-            if(revisedData2.containsKey(ql.SBQQ__Product__c ) && ql.Plant_Product_Transactions__r != null && ql.Plant_Product_Transactions__r.size() > 0){
+            if(revisedData2.containsKey(ql.SBQQ__Product__c ) 
+               && ql.Plant_Product_Transactions__r != null 
+               && ql.Plant_Product_Transactions__r.size() > 0
+               && !existingPPTRecordSet.contains(revisedData2.get(ql.SBQQ__Product__c ).Id)){
                 for(Plant_Product_Transaction__c ppt  : ql.Plant_Product_Transactions__r ){
                     Plant_Product_Transaction__c pp = ppt.clone(false,true,false,false);
                     pp.Quote_Line__c        =   revisedData2.get(ql.SBQQ__Product__c ).Id;
@@ -211,6 +239,13 @@ public class AmendmentQuoteProcessHelper {
                     pp.Subscription__c      =   null;
                     pp.MWp_Quantity__c      =   pp.Plant__r.Plant__r.MWp__c;
                     pp.Quote_Line_Quantity__c=  ppt.Quote_Line_Quantity__c;
+                    //
+                        pp.Project_Name__c=ppt.Project_Name__c;
+                        pp.Billing_Start_Date__c=ppt.Billing_Start_Date__c;
+                        pp.Deployment_date__c=ppt.Deployment_date__c;
+                        pp.Customer_Acceptance__c=ppt.Customer_Acceptance__c;
+                        pp.Manual_Entry_Implementation_Start_Date__c=ppt.Manual_Entry_Implementation_Start_Date__c;
+                    //
                     pp.CurrencyIsoCode      =   ppt.CurrencyIsoCode;     
                     pp.List_Unit_Price__c   =   ql.SBQQ__ListPrice__c;
                     pp.Contracted_MW_Unit_List_Price__c     =   ppt.Contracted_MW_Unit_List_Price__c;

@@ -3,7 +3,7 @@ public class RenewableQuoteProcessHelper {
     public static void createChildPPTunderRenewableQL(Set<Id> quoteIds){
         
         
-        String query = 'select id,name,Product__c,Renewal_Action__c,CurrencyIsoCode,Plant__c,Subscription__r.SBQQ__Discount__c,Unit_Price_After_Volume_Discount__c,Subscription__r.Line_Classification__c,Contracted_MW_Unit_List_Price__c,Quote_Line_Quantity__c,Plant__r.Plant__r.MWp__c,Account__c,Subscription__c,Subscription__r.SBQQ__QuoteLine__c  '
+        String query = 'select id,name,Product__c,Renewal_Action__c,Billing_Start_Date__c,Project_Name__c,Deployment_date__c,Customer_Acceptance__c,Manual_Entry_Implementation_Start_Date__c,CurrencyIsoCode,Plant__c,Subscription__r.SBQQ__Discount__c,Unit_Price_After_Volume_Discount__c,Subscription__r.Line_Classification__c,Contracted_MW_Unit_List_Price__c,Quote_Line_Quantity__c,Plant__r.Plant__r.MWp__c,Account__c,Subscription__c,Subscription__r.SBQQ__QuoteLine__c  '
             			+' from Plant_Product_Transaction__c '
             			+' where Subscription__c != Null AND Status__c = \'Contracted\' AND Plant__r.Status__c =\'Active\' AND Quote_Line__r.SBQQ__Quote__c In: quoteIds';
         
@@ -63,7 +63,8 @@ public class RenewableQuoteProcessHelper {
                     pp.Unit_Price_After_Volume_Discount__c=ppt.Unit_Price_After_Volume_Discount__c;
                     
                     pp.MWp_Quantity__c=pp.Plant__r.Plant__r.MWp__c;
-                    pp.Quote_Line_Quantity__c=pp.Plant__r.Plant__r.MWp__c;
+                    //pp.Quote_Line_Quantity__c=pp.Plant__r.Plant__r.MWp__c;
+                    pp.Quote_Line_Quantity__c=ppt.Quote_Line_Quantity__c;
                     pp.CurrencyIsoCode = ql.SBQQ__Quote__r.CurrencyIsoCode;
                     pp.List_Unit_Price__c=ql.SBQQ__ListPrice__c;
                     pp.Status__c = 'Renewal Quoted';
@@ -111,7 +112,7 @@ public class RenewableQuoteProcessHelper {
     
     
     
-    public static void createChildPPTforRenewQLByAmendOpp(Set<Id> contIds){
+    public static void createChildPPTforRenewQLByAmendOpp(Set<Id> contIds , Set<Id> relatedQuoteIdSet){
         
         Set<String> pptStatusSet = new Set<String>{'Renewal Quoted','Amendment_Quoted','Contracted'};
         
@@ -138,6 +139,11 @@ public class RenewableQuoteProcessHelper {
                                                                       Subscription__r.SBQQ__Discount__c,Unit_Price_After_Volume_Discount__c,
                                                                       Subscription__r.Line_Classification__c,Contracted_MW_Unit_List_Price__c,
                                                                       Quote_Line_Quantity__c,Plant__r.Plant__r.MWp__c,Account__c,Subscription__c,
+                                                                      Billing_Start_Date__c,
+                                                                      Project_Name__c,
+                                                                 Deployment_date__c,
+                                                                 Customer_Acceptance__c,
+                                                                 Manual_Entry_Implementation_Start_Date__c,
                                                                       Subscription__r.SBQQ__QuoteLine__c
                                                                       from Plant_Product_Transaction__c 
                                                                       where Quote_Line__r.SBQQ__Quote__r.SBQQ__Opportunity2__r.Id In :idSetForAmbedmentOpp
@@ -201,7 +207,8 @@ public class RenewableQuoteProcessHelper {
                         pp.Unit_Price_After_Volume_Discount__c=ppt.Unit_Price_After_Volume_Discount__c;
                         
                         pp.MWp_Quantity__c=pp.Plant__r.Plant__r.MWp__c;
-                        pp.Quote_Line_Quantity__c=pp.Plant__r.Plant__r.MWp__c;
+                        pp.Quote_Line_Quantity__c=ppt.Quote_Line_Quantity__c;
+                        //pp.Quote_Line_Quantity__c=pp.Plant__r.Plant__r.MWp__c;
                         pp.CurrencyIsoCode = ql.SBQQ__Quote__r.CurrencyIsoCode;
                         pp.List_Unit_Price__c=ql.SBQQ__ListPrice__c;
                         pp.Status__c = 'Renewal Quoted';
@@ -248,6 +255,9 @@ public class RenewableQuoteProcessHelper {
             for(Plant_Product_Transaction__c ppt : pptListTOClone){
                 system.debug('ppt--'+ppt);
             }
+        }
+        else if(!relatedQuoteIdSet.isEmpty()){
+            createChildPPTunderRenewableQL(relatedQuoteIdSet);
         }
         
     }

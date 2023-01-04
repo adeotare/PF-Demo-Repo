@@ -2,19 +2,17 @@ public class ContractTriggerHandler {
 	
     public static void manageParentRenQuote(Map<Id,Contract> newRecordsMap , Map<Id,Contract> oldRecordMap){
         Set<Id> idSet = new Set<Id> ();
-       
+       	Set<Id> contractIdsForAmendmentCloning = new Set<Id> ();
         
         for(Contract cnt : newRecordsMap.values()){
             if(oldRecordMap.containsKey(cnt.Id) && !oldRecordMap.get(cnt.Id).SBQQ__RenewalQuoted__c && cnt.SBQQ__RenewalQuoted__c ){
+               	contractIdsForAmendmentCloning.add(cnt.Id);
                 idSet.add(cnt.SBQQ__Quote__c);
             }
-            
-            
-        }
+		}
         
-        if(!idSet.isEmpty()){
-            system.debug('idSet--'+idSet);
-            RenewableQuoteProcessHelper.createChildPPTunderRenewableQL(idSet);
+        if(!contractIdsForAmendmentCloning.isEmpty()){
+            RenewableQuoteProcessHelper.createChildPPTforRenewQLByAmendOpp(contractIdsForAmendmentCloning , idSet);
         }
     }
     
@@ -62,7 +60,8 @@ public class ContractTriggerHandler {
                                                      
                                                      (SELECT id FROM Plant_Product_Transactions__r)
                                                      FROM SBQQ__QuoteLine__c 
-                                                     WHERE SBQQ__Quote__r.SBQQ__Type__c = 'Amendment' 
+                                                     WHERE SBQQ__Quote__r.SBQQ__Type__c = 'Amendment'
+                                                     //AND SBQQ__Quote__r.SBQQ__Primary__c=true
                                                      AND SBQQ__Quote__r.SBQQ__MasterContract__c != null 
                                                      AND SBQQ__Quote__r.SBQQ__MasterContract__c in :idSetForAmbedmentQuote2
                                                      AND SBQQ__Product__c != null LIMIT 50000];

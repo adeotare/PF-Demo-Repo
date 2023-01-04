@@ -208,8 +208,7 @@ public class ContractTriggerHandlerTest {
         Test.startTest();
         Contract cnt = [SELECT Id FROM Contract LIMIT 1];
         cnt.SBQQ__RenewalQuoted__c = true;
-        cnt.Amendment_Quoted__c = true;
-        cnt.Status = 'Activated';
+       cnt.Status = 'Activated';
         update cnt;
         
         List<Plant_Product_Transaction__c> pptList = [SELECT Id FROM Plant_Product_Transaction__c];
@@ -248,7 +247,6 @@ public class ContractTriggerHandlerTest {
         update oppList;
         
         cnt.SBQQ__RenewalQuoted__c = true;
-        cnt.Amendment_Quoted__c = true;
         cnt.Status = 'Activated';
         update cnt;
         List<Opportunity> oppList2 = [Select id,Name,recordtype.name From Opportunity limit 2];
@@ -294,7 +292,6 @@ public class ContractTriggerHandlerTest {
         
         Contract cnt = [SELECT Id FROM Contract LIMIT 1];
         cnt.SBQQ__RenewalQuoted__c = true;
-        cnt.Amendment_Quoted__c = true;
         cnt.Status = 'Activated';
         update cnt;
         
@@ -302,6 +299,7 @@ public class ContractTriggerHandlerTest {
         
         Test.stopTest();
     }
+    
     
     @isTest
     public static void method04(){
@@ -311,6 +309,103 @@ public class ContractTriggerHandlerTest {
         cnt.Amendment_Quoted__c = false;
         cnt.Status = 'Activated';
         update cnt;
+        Test.stopTest();
+    }
+    
+    @isTest
+    public static void method05(){
+        Test.startTest();
+        Contract cnt = [SELECT Id FROM Contract LIMIT 1];
+        cnt.Amendment_Quoted__c = true;
+        cnt.Status = 'Activated';
+        update cnt;
+        
+        List<Plant_Product_Transaction__c> pptList = [SELECT Id FROM Plant_Product_Transaction__c];
+        for(Plant_Product_Transaction__c ppt : pptList){
+            ppt.Quote_Line_Quantity__c = 5;
+        }
+        update pptList;
+        list<SBQQ__QuoteLine__c> qlList = [SELECT Id FROM SBQQ__QuoteLine__c];
+        RenewableQuoteProcessHelper.updateQuantityOnQuoteLineItem2(qlList);
+        Test.stopTest();
+    }
+    
+    @isTest
+    public static void method06(){
+        Test.startTest();
+        Contract cnt = [SELECT Id FROM Contract LIMIT 1];
+        List<SBQQ__Quote__c> quoteList = [Select id from SBQQ__Quote__c];
+        for (SBQQ__Quote__c qut : quoteList) qut.SBQQ__Type__c = 'Amendment';
+        update quoteList;
+        /*
+        List<Plant_Product_Transaction__c> pptList = [SELECT Id FROM Plant_Product_Transaction__c];
+        for(Plant_Product_Transaction__c ppt : pptList){
+            ppt.Quote_Line_Quantity__c = 5;
+        }
+        update pptList;
+        list<SBQQ__QuoteLine__c> qlList = [SELECT Id FROM SBQQ__QuoteLine__c];
+        RenewableQuoteProcessHelper.updateQuantityOnQuoteLineItem2(qlList);*/
+        
+        List<Opportunity> oppList = [Select id,Name,recordtype.name From Opportunity limit 2];
+        for(Opportunity opp : oppList){
+            opp.SBQQ__AmendedContract__c = cnt.id;
+            opp.RecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Amendment').getRecordTypeId();
+            system.debug('-->>'+opp.RecordType.name);
+        } 
+        system.debug('opplist==>>>'+oppList);
+        update oppList;
+        
+        cnt.Amendment_Quoted__c = true;
+        cnt.Status = 'Activated';
+        update cnt;
+        List<Opportunity> oppList2 = [Select id,Name,recordtype.name From Opportunity limit 2];
+        for(Opportunity opp : oppList2){
+            opp.SBQQ__AmendedContract__c = cnt.id;
+            system.debug('-->>'+opp.RecordType.name);
+        }
+        Test.stopTest();
+    }
+    
+    @isTest
+    public static void method07(){
+        Test.startTest();
+        List <Opportunity> oppList = [Select ID,StageName from Opportunity];
+        for(Opportunity opp : oppList){
+            system.debug('stage--'+opp.StageName);
+        }
+        for(Opportunity opp : oppList) opp.StageName = '5 - Verbal Commit/LOI';
+        update oppList;
+        for(Opportunity opp : oppList) opp.StageName = '6 - Negotiations';//	6 - Negotiations
+        update oppList;
+        for(Opportunity opp : oppList) opp.StageName = '7-Execution';//	
+        update oppList;
+        
+        List<SBQQ__Quote__c> qutList = [Select id from SBQQ__Quote__c];
+        for(SBQQ__Quote__c qut : qutList){
+            qut.SBQQ__Type__c = 'Amendment' ;
+            qut.SBQQ__Status__c = 'Approved';
+            qut.SBQQ__Primary__c =  true;
+        } 
+        update qutList;
+        
+        for(Opportunity opp : oppList) {
+            opp.StageName = 'Close Pending';
+            opp.Win_Loss_Reason__c = 'Wrong Persona';
+        }
+        update oppList;
+        for(Opportunity opp : oppList){
+            opp.StageName = 'Closed Won';
+            opp.Finance_Review__c = 'Approved';
+        } 
+        update oppList;
+        
+        Contract cnt = [SELECT Id FROM Contract LIMIT 1];
+        cnt.Amendment_Quoted__c = true;
+        cnt.Status = 'Activated';
+        update cnt;
+        
+        
+        
         Test.stopTest();
     }
 }
