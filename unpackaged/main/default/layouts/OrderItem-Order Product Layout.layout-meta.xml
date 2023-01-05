@@ -58,6 +58,10 @@
                 <behavior>Readonly</behavior>
                 <field>NS_Item_Name__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Netsuite_Integration_Ignore_Flag__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

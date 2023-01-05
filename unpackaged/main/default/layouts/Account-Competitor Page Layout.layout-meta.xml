@@ -24,6 +24,10 @@
                 <behavior>Edit</behavior>
                 <field>QS_Snowball_Product_Solution__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Netsuite_Integration_Ignore_Flag__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

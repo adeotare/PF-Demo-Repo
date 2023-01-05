@@ -77,6 +77,10 @@
                 <behavior>Edit</behavior>
                 <field>Netsuite_Failure_Indicator__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Netsuite_Integration_Ignore_Flag__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -98,10 +102,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Legacy_3MW_ID__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>of_Open_Deals__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

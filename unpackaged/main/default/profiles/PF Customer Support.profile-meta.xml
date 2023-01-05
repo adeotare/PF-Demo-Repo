@@ -178,6 +178,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Netsuite_Integration_Ignore_Flag__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Netsuite_Reprocess_Flag__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3818,6 +3823,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Order.Netsuite_Integration_Ignore_Flag__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Order.Netsuite_Reprocess_Flag__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3914,6 +3924,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>OrderItem.Netsuite_Failure_Indicator__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OrderItem.Netsuite_Integration_Ignore_Flag__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4514,6 +4529,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Plant_Product_Transaction__c.Netsuite_Failure_Indicator__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Plant_Product_Transaction__c.Netsuite_Integration_Ignore_Flag__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>DataDotComAccountInsights</excludeButtons>
-    <excludeButtons>DataDotComClean</excludeButtons>
-    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
     <excludeButtons>DisableCustomerPortalAccount</excludeButtons>
     <excludeButtons>DisablePartnerPortalAccount</excludeButtons>
     <excludeButtons>IncludeOffline</excludeButtons>
@@ -30,6 +27,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Migrated_Data_Confirmed_Correct__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Netsuite_Integration_Ignore_Flag__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -182,10 +183,6 @@
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>Account_Price_Book__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>of_Open_Deals__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -646,7 +643,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h7j000000ZTEH</masterLabel>
+        <masterLabel>00h8F000000Ig9R</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

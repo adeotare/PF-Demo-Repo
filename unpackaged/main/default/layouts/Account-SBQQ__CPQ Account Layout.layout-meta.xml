@@ -74,6 +74,18 @@
                 <behavior>Readonly</behavior>
                 <field>Total_ARR__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Billing_Address_Netsuite_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Shipping_Address_Netsuite_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Netsuite_Integration_Ignore_Flag__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -435,7 +447,6 @@
         <fields>OPPORTUNITY.AMOUNT</fields>
         <fields>Annual_Recurring_Revenue__c</fields>
         <fields>Non_Recurring_Revenue__c</fields>
-        <fields>Order_Type__c</fields>
         <fields>Order_Subtype__c</fields>
         <fields>Primary_Contact__c</fields>
         <fields>OPPORTUNITY.NEXT_STEP</fields>
@@ -591,12 +602,10 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>Total_MW_Solar__c</fields>
-        <fields>Total_MW_Other_Renewable__c</fields>
-        <fields>Total_MW_Hydro__c</fields>
-        <fields>Total_MW_Wind__c</fields>
-        <fields>Total_MW_Storage__c</fields>
-        <fields>Total_Agnostic__c</fields>
+        <fields>MW_Drive__c</fields>
+        <fields>MW_Greenbyte__c</fields>
+        <fields>MW_Bluepoint__c</fields>
+        <fields>MW_Ekhosoft__c</fields>
         <relatedList>Active_Megawatts__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
