@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rate_Type_for_Billing_to_NS__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL(Product2.Product_Category__c, &quot;Software&quot;)  &amp;&amp; (ISPICKVAL(Product2.QuantityUnitOfMeasure, &quot;MWp&quot;) || ISPICKVAL(Product2.QuantityUnitOfMeasure, &quot;Site&quot;)) , &quot;Usage (Variable)&quot;,  IF(ISPICKVAL(Product2.Product_Services__c, &quot;Implementation&quot;) &amp;&amp; ISPICKVAL(Product2.QuantityUnitOfMeasure, &quot;Site&quot;), &quot;Usage (Variable)&quot;, 
+IF( ISPICKVAL(Product2.Product_Category__c, &quot; Implementation&quot;)  &amp;&amp; (NOT (ISPICKVAL(Product2.QuantityUnitOfMeasure, &quot;Site&quot;))) , &quot; One-Time Charge&quot;,  
+&quot;Fixed (Recurring)&quot;)))</formula>
+    <label>Rate Type for Billing to NS</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
