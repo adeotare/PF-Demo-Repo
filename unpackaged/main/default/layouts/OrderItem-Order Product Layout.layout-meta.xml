@@ -31,10 +31,6 @@
                 <field>Quantity</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Rate_Type_for_Billing_to_NS__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>SBQQ__BillingFrequency__c</field>
             </layoutItems>
@@ -59,8 +55,8 @@
                 <field>NS_Item_Name__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Netsuite_Integration_Ignore_Flag__c</field>
+                <behavior>Readonly</behavior>
+                <field>Rate_Type_for_Billing_to_NS__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -107,6 +103,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Netsuite_Reprocess_Flag__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Netsuite_Integration_Ignore_Flag__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Rate_Plan_for_billing_to_NS__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
