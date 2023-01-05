@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rate_Plan_for_billing_to_NS__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL(Product2.Product_Category__c, &quot;Software&quot;)  &amp;&amp; (ISPICKVAL(Product2.QuantityUnitOfMeasure, &quot;MWp&quot;) || ISPICKVAL(Product2.QuantityUnitOfMeasure, &quot;Site&quot;)) , &quot;1&quot;,  IF(ISPICKVAL(Product2.Product_Services__c, &quot;Implementation&quot;) &amp;&amp; ISPICKVAL(Product2.QuantityUnitOfMeasure, &quot;Site&quot;) &amp;&amp; ISPICKVAL( SBQQ__QuoteLine__r.SBQQ__Quote__r.SBQQ__Account__r.Uses_MSA_of__r.Invoicing_Terms_Services__c, &quot;In advance&quot;), &quot;4&quot;, 
+IF(ISPICKVAL(Product2.Product_Services__c, &quot;Implementation&quot;) &amp;&amp; ISPICKVAL(Product2.QuantityUnitOfMeasure, &quot;Site&quot;) &amp;&amp; ISPICKVAL(SBQQ__QuoteLine__r.SBQQ__Quote__r.SBQQ__Account__r.Uses_MSA_of__r.Invoicing_Terms_Services__c, &quot;In arrears&quot;), &quot;3&quot;, 
+&quot;&quot;) ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Rate Plan for billing to NS</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
