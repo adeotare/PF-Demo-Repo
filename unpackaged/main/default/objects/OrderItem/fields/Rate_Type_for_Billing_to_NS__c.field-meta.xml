@@ -3,7 +3,7 @@
     <fullName>Rate_Type_for_Billing_to_NS__c</fullName>
     <externalId>false</externalId>
     <formula>IF( ISPICKVAL(Product2.Product_Category__c, &quot;Software&quot;)  &amp;&amp; (ISPICKVAL(Product2.QuantityUnitOfMeasure, &quot;MWp&quot;) || ISPICKVAL(Product2.QuantityUnitOfMeasure, &quot;Site&quot;)) , &quot;Usage (Variable)&quot;,  IF(ISPICKVAL(Product2.Product_Services__c, &quot;Implementation&quot;) &amp;&amp; ISPICKVAL(Product2.QuantityUnitOfMeasure, &quot;Site&quot;), &quot;Usage (Variable)&quot;, 
-IF( ISPICKVAL(Product2.Product_Category__c, &quot; Implementation&quot;)  &amp;&amp; (NOT (ISPICKVAL(Product2.QuantityUnitOfMeasure, &quot;Site&quot;))) , &quot; One-Time Charge&quot;,  
+IF( ISPICKVAL(Product2.Product_Category__c, &quot;Professional Services&quot;)  &amp;&amp; (NOT (ISPICKVAL(Product2.QuantityUnitOfMeasure, &quot;Site&quot;))&amp;&amp; NOT(ISPICKVAL( Product2.SBQQ__SubscriptionPricing__c, &quot;Fixed Price&quot;))) , &quot; One-Time Charge&quot;,  
 &quot;Fixed (Recurring)&quot;)))</formula>
     <label>Rate Type for Billing to NS</label>
     <required>false</required>
