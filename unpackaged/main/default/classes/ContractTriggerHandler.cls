@@ -32,8 +32,8 @@ public class ContractTriggerHandler {
         // only Ambedment Quote's QuoteLine:
         if(idSetForAmbedmentQuote != null && idSetForAmbedmentQuote.size() > 0){
             
-            List<Contract> conList = [select id ,(select id,name from SBQQ__AmendmentOpportunities__r order by createddate desc LIMIT 2) from contract where Id In :idSetForAmbedmentQuote ];
-            
+            List<Contract> conList = [select id ,(select id,name,stagename from SBQQ__AmendmentOpportunities__r order by createddate desc) from contract where Id In :idSetForAmbedmentQuote ];
+           
             Set<Id> idSetForAmbedmentQuote2 = new Set<Id>();
             List<Opportunity> amendemnetOppLsit =  new List<Opportunity>();
             Map<Id, Opportunity> lastOppMap = new Map<Id, Opportunity>();
@@ -45,8 +45,28 @@ public class ContractTriggerHandler {
                     if(cont.SBQQ__AmendmentOpportunities__r.size() == 1){
                         idSetForAmbedmentQuote2.add(cont.Id);
                     } else{
-                        lastOppMap.put(cont.SBQQ__AmendmentOpportunities__r[1].Id , cont.SBQQ__AmendmentOpportunities__r[0]);
-                        newOppMap.put(cont.SBQQ__AmendmentOpportunities__r[0].Id , cont.SBQQ__AmendmentOpportunities__r[1]);
+                        Opportunity latestOpp = new Opportunity();
+                        Opportunity LastCloseWonOpp = new Opportunity();
+                        latestOpp= cont.SBQQ__AmendmentOpportunities__r[0];
+                        
+                        for(Integer i = 0 ; i < cont.SBQQ__AmendmentOpportunities__r.size() ; i++){
+                            if(cont.SBQQ__AmendmentOpportunities__r[i].stagename == 'Closed Won'){
+                                LastCloseWonOpp = cont.SBQQ__AmendmentOpportunities__r[i];
+                                break;
+                            }
+                        }
+                        system.debug('latestOpp--'+latestOpp);
+                        system.debug('LastCloseWonOpp--'+LastCloseWonOpp);
+                        if(LastCloseWonOpp.Id == null){
+                            system.debug('ifffff');
+                            idSetForAmbedmentQuote2.add(cont.Id);
+                        }else {
+                            system.debug('elsee');
+                            lastOppMap.put(LastCloseWonOpp.Id, latestOpp);
+                            newOppMap.put(latestOpp.Id , LastCloseWonOpp);
+                        }
+                        
+                        
                     }                    
                 }
             }
@@ -60,8 +80,7 @@ public class ContractTriggerHandler {
                                                      
                                                      (SELECT id FROM Plant_Product_Transactions__r)
                                                      FROM SBQQ__QuoteLine__c 
-                                                     WHERE SBQQ__Quote__r.SBQQ__Type__c = 'Amendment'
-                                                     //AND SBQQ__Quote__r.SBQQ__Primary__c=true
+                                                     WHERE SBQQ__Quote__r.SBQQ__Type__c = 'Amendment' 
                                                      AND SBQQ__Quote__r.SBQQ__MasterContract__c != null 
                                                      AND SBQQ__Quote__r.SBQQ__MasterContract__c in :idSetForAmbedmentQuote2
                                                      AND SBQQ__Product__c != null LIMIT 50000];
@@ -71,7 +90,8 @@ public class ContractTriggerHandler {
                  }
             }
             
-            if(newOppMap != null && newOppMap.size() > 0){
+            
+            if(newOppMap != null && newOppMap.size() > 0 && lastOppMap != null && lastOppMap.size() > 0){
                 system.debug('newOppMap--'+newOppMap);
                 system.debug('lastOppMap--'+lastOppMap);
                 AmendmentQuoteProcessHelper.createPPTunderAmbededQLRevised(lastOppMap , newOppMap);
