@@ -15,10 +15,6 @@
                 <behavior>Required</behavior>
                 <field>AccountId</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Netsuite_Integration_Ignore_Flag__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -130,6 +126,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Netsuite_Response_Message__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Netsuite_Integration_Ignore_Flag__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
