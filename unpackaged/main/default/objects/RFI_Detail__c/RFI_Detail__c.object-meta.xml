@@ -141,11 +141,11 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>RFI_Item_Company_Layout</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>false</enableFeeds>
+    <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
@@ -156,10 +156,17 @@
     <label>RFI Item</label>
     <nameField>
         <label>RFI Item</label>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
     <pluralLabel>RFI Items</pluralLabel>
+    <profileSearchLayouts>
+        <fields>NAME</fields>
+        <fields>RFI_Item_Status__c</fields>
+        <fields>IE_Owner__c</fields>
+        <profileName>PF Community User</profileName>
+    </profileSearchLayouts>
     <searchLayouts />
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>

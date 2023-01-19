@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <formula>OR(
 ISPICKVAL($User.UserType,&#39;Standard&#39;),
-$Profile.Name = &#39;PF Community User&#39;
+$Profile.Name = &#39;PF Partner User&#39;
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Is Requestor</label>
