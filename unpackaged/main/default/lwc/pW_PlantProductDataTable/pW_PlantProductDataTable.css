@@ -1,3 +1,5 @@
-.slds-modal__header .slds-modal__close {
+.slds-modal__header .slds-modal__close  {
 	display: none !important;
+	visibility: hidden;
+	top: -8.5rem;
 }

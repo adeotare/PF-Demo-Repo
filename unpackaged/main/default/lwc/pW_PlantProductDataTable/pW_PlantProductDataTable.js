@@ -33,6 +33,7 @@ export default class PW_PlantProductDataTable extends LightningElement {
     @track sortBy;
     @track sortDirection;
     @track plantData;
+    @track accountplantData;
     cols=COLS; 
     acccols = AccountPlantCOLS;
 	@track data = [];
@@ -72,7 +73,8 @@ export default class PW_PlantProductDataTable extends LightningElement {
 		  PlantMWP : row.Plant__r.MWp__c,
 		  PlantMWH : row.Plant__r.MW_Energy_Capacity_MWh__c,
 		  AssetClass : row.Plant__r.Asset_Class__c,  
-      }));					
+      }));
+      this.accountplantData = this.accountplantList;			
       }			
           return refreshApex(this.plantListdata);
     }
@@ -247,6 +249,33 @@ export default class PW_PlantProductDataTable extends LightningElement {
             }
         } else {
             this.plantData = this.data;
+        }
+    }
+    //Handler for searching Account Plant Search results
+    handleSearchForAccountPlant(event) {
+        const searchKey = event.target.value.toLowerCase();
+        this.accountplantData = this.accountplantList;
+        if (searchKey) { 
+            if (this.accountplantData) {
+                let searchRecords = [];
+                for (let record of this.accountplantData) {
+                    let valuesArray = Object.values(record);
+                    for (let val of valuesArray) {
+                        console.log('val is ' + val);
+                        let strVal = String(val);
+                        if (strVal) {
+                            if (strVal.toLowerCase().includes(searchKey)) {
+                                searchRecords.push(record);
+                                break;
+                            }
+                        }
+                    }
+                }
+                console.log('Matched Accounts are ' + JSON.stringify(searchRecords));
+                this.accountplantData = searchRecords;
+            }
+        } else {
+            this.accountplantData = this.accountplantList;
         }
     }
     

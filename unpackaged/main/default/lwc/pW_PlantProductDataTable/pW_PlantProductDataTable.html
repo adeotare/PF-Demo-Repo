@@ -67,10 +67,15 @@
                         </button>
                         -->
                         <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Select from Plants List</h2>
+                         <lightning-layout>
+                            <lightning-layout-item size="4" padding="around-small">
+                                <lightning-input type="search" placeholder="Search Plant" onchange={handleSearchForAccountPlant}></lightning-input>
+                            </lightning-layout-item>
+                        </lightning-layout>
                     </header>
                     <!-- Modal/Popup Box LWC body starts here -->
                     <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
-                        <lightning-datatable data={accountplantList} sorted-by={sortBy} sorted-direction={sortDirection} onsort={doAccountSorting} columns={acccols} key-field="Id" data-id="overview" onrowselection={handleSelectAccountPlant}>  
+                        <lightning-datatable data={accountplantData} sorted-by={sortBy} sorted-direction={sortDirection} onsort={doAccountSorting} columns={acccols} key-field="Id" data-id="overview" onrowselection={handleSelectAccountPlant}>  
                         </lightning-datatable>  
                     </div>
                     <!-- Modal/Popup Box LWC footer starts here -->
