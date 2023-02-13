@@ -1,0 +1,85 @@
+<template>
+    
+		  <template if:true={isModalOpenForManagePlant}>
+            <!-- Modal/Popup Box LWC starts here -->
+            <section aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-2" class="slds-modal slds-fade-in-open slds-modal_large">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box LWC header here -->
+                    <header class="slds-modal__header">
+                        <!--
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeQuickAction}>
+                            <lightning-icon icon-name="utility:close"
+                                alternative-text="close"
+                                variant="inverse"
+                                size="small" ></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        -->
+                        <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">Manage Plants for Product on Quote Line</h2>
+                        
+                        <lightning-layout>
+                            <lightning-layout-item size="4" padding="around-small">
+                                <lightning-input type="search" placeholder="Search Plant" onchange={handleSearch}></lightning-input>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <!--
+                        <lightning-layout>
+							<lightning-layout-item size="6" padding="around-small">
+								<h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">Manage Plants for Product on Quote Line</h2>
+							</lightning-layout-item>
+							<lightning-layout-item size="6" padding="around-small">
+							  <lightning-input type="search" label="Search Plant" onchange={handleSearch}></lightning-input>
+							</lightning-layout-item>
+						 </lightning-layout>
+                         -->
+                    </header>
+                    <!-- Modal/Popup Box LWC body starts here -->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                        <lightning-datatable key-field="id" sorted-by={sortBy} sorted-direction={sortDirection} onsort={doSorting} data={plantData}  columns={cols} onrowselection={handleSelectPlantProduct}>
+						</lightning-datatable>  
+                    </div>
+                    <!-- Modal/Popup Box LWC footer starts here -->
+                    <footer class="slds-modal__footer">
+                        <div class="slds-float_left">
+						<lightning-button variant="brand" label="Add" onclick={openModal} class="slds-m-right_x-small slds-p-bottom_x-small">
+						</lightning-button> 
+						<lightning-button class="slds-p-bottom_x-small" variant="brand" label="Delete" onclick={deleteRecord} disabled={deleteButtontrue}> 
+						</lightning-button> 
+						</div>
+						<lightning-button variant="brand" onclick={closeQuickAction} label="Close" class="slds-float_right slds-p-bottom_x-small"></lightning-button>
+                    </footer>
+                </div>
+            </section>
+		  </template>
+          <template if:true={isModalOpen}>
+            <!-- Modal/Popup Box LWC starts here -->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_large">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box LWC header here -->
+                    <header class="slds-modal__header">
+                        <!--
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                            <lightning-icon icon-name="utility:close"
+                                alternative-text="close"
+                                variant="inverse"
+                                size="small" ></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        -->
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Select from Plants List</h2>
+                    </header>
+                    <!-- Modal/Popup Box LWC body starts here -->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <lightning-datatable data={accountplantList} sorted-by={sortBy} sorted-direction={sortDirection} onsort={doAccountSorting} columns={acccols} key-field="Id" data-id="overview" onrowselection={handleSelectAccountPlant}>  
+                        </lightning-datatable>  
+                    </div>
+                    <!-- Modal/Popup Box LWC footer starts here -->
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+                        <button class="slds-button slds-button_brand" onclick={submitDetails} disabled={saveButtontrue} title="Save">Save</button>
+                    </footer>
+                </div>
+            </section>
+        </template>
+    
+</template>
